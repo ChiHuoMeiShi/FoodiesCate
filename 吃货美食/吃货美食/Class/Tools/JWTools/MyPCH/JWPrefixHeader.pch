@@ -14,10 +14,10 @@
 //明确打印出方法的位置信息
 //JWLog(@"%s  %@",__func__,self);
 #ifdef DEBUG
-#define JWLog(...) NSLog(__VA_ARGS__);
+#define CHLog(...) NSLog(__VA_ARGS__);
 
 #else
-#define JWLog(...)
+#define CHLog(...)
 #endif
 
 #import "JWClass.h"
