@@ -1,0 +1,549 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B71ED8531CDB41660035F6BE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B71ED8521CDB41660035F6BE /* main.m */; };
+		B71ED8561CDB41660035F6BE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B71ED8551CDB41660035F6BE /* AppDelegate.m */; };
+		B71ED85C1CDB41660035F6BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71ED85A1CDB41660035F6BE /* Main.storyboard */; };
+		B71ED85E1CDB41660035F6BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B71ED85D1CDB41660035F6BE /* Assets.xcassets */; };
+		B71ED8611CDB41660035F6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71ED85F1CDB41660035F6BE /* LaunchScreen.storyboard */; };
+		B7F6154D1CDC84A600AF1697 /* CHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F6154C1CDC84A600AF1697 /* CHTabBarController.m */; };
+		B7F615501CDC84F000AF1697 /* CHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F6154F1CDC84F000AF1697 /* CHNavigationController.m */; };
+		B7F615541CDC854500AF1697 /* CHMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F615521CDC854500AF1697 /* CHMeViewController.m */; };
+		B7F615551CDC854500AF1697 /* CHMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F615531CDC854500AF1697 /* CHMeViewController.xib */; };
+		B7F615591CDC857700AF1697 /* CHEChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F615571CDC857700AF1697 /* CHEChatViewController.m */; };
+		B7F6155A1CDC857700AF1697 /* CHEChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F615581CDC857700AF1697 /* CHEChatViewController.xib */; };
+		B7F615671CDCA14300AF1697 /* CHDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F615651CDCA14300AF1697 /* CHDiscoverViewController.m */; };
+		B7F615681CDCA14300AF1697 /* CHDiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F615661CDCA14300AF1697 /* CHDiscoverViewController.xib */; };
+		B7F6156C1CDCA17700AF1697 /* CHRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F6156A1CDCA17700AF1697 /* CHRecommendViewController.m */; };
+		B7F6156D1CDCA17700AF1697 /* CHRecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F6156B1CDCA17700AF1697 /* CHRecommendViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B71ED84E1CDB41650035F6BE /* 吃货美食.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "吃货美食.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B71ED8521CDB41660035F6BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B71ED8541CDB41660035F6BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B71ED8551CDB41660035F6BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B71ED85B1CDB41660035F6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B71ED85D1CDB41660035F6BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B71ED8601CDB41660035F6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B71ED8621CDB41660035F6BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7F6154B1CDC84A600AF1697 /* CHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTabBarController.h; sourceTree = "<group>"; };
+		B7F6154C1CDC84A600AF1697 /* CHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTabBarController.m; sourceTree = "<group>"; };
+		B7F6154E1CDC84F000AF1697 /* CHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNavigationController.h; sourceTree = "<group>"; };
+		B7F6154F1CDC84F000AF1697 /* CHNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHNavigationController.m; sourceTree = "<group>"; };
+		B7F615511CDC854500AF1697 /* CHMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMeViewController.h; sourceTree = "<group>"; };
+		B7F615521CDC854500AF1697 /* CHMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMeViewController.m; sourceTree = "<group>"; };
+		B7F615531CDC854500AF1697 /* CHMeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHMeViewController.xib; sourceTree = "<group>"; };
+		B7F615561CDC857700AF1697 /* CHEChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHEChatViewController.h; sourceTree = "<group>"; };
+		B7F615571CDC857700AF1697 /* CHEChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHEChatViewController.m; sourceTree = "<group>"; };
+		B7F615581CDC857700AF1697 /* CHEChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHEChatViewController.xib; sourceTree = "<group>"; };
+		B7F615641CDCA14300AF1697 /* CHDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHDiscoverViewController.h; sourceTree = "<group>"; };
+		B7F615651CDCA14300AF1697 /* CHDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHDiscoverViewController.m; sourceTree = "<group>"; };
+		B7F615661CDCA14300AF1697 /* CHDiscoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHDiscoverViewController.xib; sourceTree = "<group>"; };
+		B7F615691CDCA17700AF1697 /* CHRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRecommendViewController.h; sourceTree = "<group>"; };
+		B7F6156A1CDCA17700AF1697 /* CHRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRecommendViewController.m; sourceTree = "<group>"; };
+		B7F6156B1CDCA17700AF1697 /* CHRecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRecommendViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B71ED84B1CDB41650035F6BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B71ED8451CDB41650035F6BE = {
+			isa = PBXGroup;
+			children = (
+				B71ED8501CDB41650035F6BE /* 吃货美食 */,
+				B71ED84F1CDB41650035F6BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B71ED84F1CDB41650035F6BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B71ED84E1CDB41650035F6BE /* 吃货美食.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B71ED8501CDB41650035F6BE /* 吃货美食 */ = {
+			isa = PBXGroup;
+			children = (
+				B71ED8681CDB416C0035F6BE /* Class */,
+				B71ED8541CDB41660035F6BE /* AppDelegate.h */,
+				B71ED8551CDB41660035F6BE /* AppDelegate.m */,
+				B71ED85A1CDB41660035F6BE /* Main.storyboard */,
+				B71ED85D1CDB41660035F6BE /* Assets.xcassets */,
+				B71ED85F1CDB41660035F6BE /* LaunchScreen.storyboard */,
+				B71ED8621CDB41660035F6BE /* Info.plist */,
+				B71ED8511CDB41650035F6BE /* Supporting Files */,
+			);
+			path = "吃货美食";
+			sourceTree = "<group>";
+		};
+		B71ED8511CDB41650035F6BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B71ED8521CDB41660035F6BE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B71ED8681CDB416C0035F6BE /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				B7F615701CDCA2D900AF1697 /* Lib */,
+				B7F6156F1CDCA29100AF1697 /* DataBase */,
+				B7F6156E1CDCA27F00AF1697 /* NetWork */,
+				B71ED86E1CDB4E5C0035F6BE /* Me */,
+				B71ED86D1CDB4DC80035F6BE /* EChat */,
+				B71ED86C1CDB4D950035F6BE /* Discover */,
+				B71ED86B1CDB4CFF0035F6BE /* Recommend */,
+				B71ED8691CDB4A610035F6BE /* Main */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		B71ED8691CDB4A610035F6BE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B7F615711CDCA47600AF1697 /* Category */,
+				B7F6154A1CDC815900AF1697 /* TabBarController */,
+				B7F615491CDC812900AF1697 /* NavigationController */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B71ED86B1CDB4CFF0035F6BE /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				B7F615461CDC80B200AF1697 /* Controller */,
+				B7F615471CDC80B200AF1697 /* Model */,
+				B7F615481CDC80B200AF1697 /* View */,
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		B71ED86C1CDB4D950035F6BE /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				B7F615431CDC809B00AF1697 /* Controller */,
+				B7F615441CDC809B00AF1697 /* Model */,
+				B7F615451CDC809B00AF1697 /* View */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		B71ED86D1CDB4DC80035F6BE /* EChat */ = {
+			isa = PBXGroup;
+			children = (
+				B7F615401CDC808A00AF1697 /* Controller */,
+				B7F615411CDC808A00AF1697 /* Model */,
+				B7F615421CDC808A00AF1697 /* View */,
+			);
+			path = EChat;
+			sourceTree = "<group>";
+		};
+		B71ED86E1CDB4E5C0035F6BE /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				B71ED8711CDB52560035F6BE /* Controller */,
+				B71ED8701CDB52450035F6BE /* Model */,
+				B71ED86F1CDB4E7E0035F6BE /* View */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		B71ED86F1CDB4E7E0035F6BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B71ED8701CDB52450035F6BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B71ED8711CDB52560035F6BE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B7F615511CDC854500AF1697 /* CHMeViewController.h */,
+				B7F615521CDC854500AF1697 /* CHMeViewController.m */,
+				B7F615531CDC854500AF1697 /* CHMeViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B7F615401CDC808A00AF1697 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B7F615561CDC857700AF1697 /* CHEChatViewController.h */,
+				B7F615571CDC857700AF1697 /* CHEChatViewController.m */,
+				B7F615581CDC857700AF1697 /* CHEChatViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B7F615411CDC808A00AF1697 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B7F615421CDC808A00AF1697 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B7F615431CDC809B00AF1697 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B7F615641CDCA14300AF1697 /* CHDiscoverViewController.h */,
+				B7F615651CDCA14300AF1697 /* CHDiscoverViewController.m */,
+				B7F615661CDCA14300AF1697 /* CHDiscoverViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B7F615441CDC809B00AF1697 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B7F615451CDC809B00AF1697 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B7F615461CDC80B200AF1697 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B7F615691CDCA17700AF1697 /* CHRecommendViewController.h */,
+				B7F6156A1CDCA17700AF1697 /* CHRecommendViewController.m */,
+				B7F6156B1CDCA17700AF1697 /* CHRecommendViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B7F615471CDC80B200AF1697 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B7F615481CDC80B200AF1697 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B7F615491CDC812900AF1697 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				B7F6154E1CDC84F000AF1697 /* CHNavigationController.h */,
+				B7F6154F1CDC84F000AF1697 /* CHNavigationController.m */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		B7F6154A1CDC815900AF1697 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				B7F6154B1CDC84A600AF1697 /* CHTabBarController.h */,
+				B7F6154C1CDC84A600AF1697 /* CHTabBarController.m */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		B7F6156E1CDCA27F00AF1697 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		B7F6156F1CDCA29100AF1697 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
+		B7F615701CDCA2D900AF1697 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		B7F615711CDCA47600AF1697 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B71ED84D1CDB41650035F6BE /* 吃货美食 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B71ED8651CDB41660035F6BE /* Build configuration list for PBXNativeTarget "吃货美食" */;
+			buildPhases = (
+				B71ED84A1CDB41650035F6BE /* Sources */,
+				B71ED84B1CDB41650035F6BE /* Frameworks */,
+				B71ED84C1CDB41650035F6BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "吃货美食";
+			productName = "吃货美食";
+			productReference = B71ED84E1CDB41650035F6BE /* 吃货美食.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B71ED8461CDB41650035F6BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CH;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "赵天";
+				TargetAttributes = {
+					B71ED84D1CDB41650035F6BE = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = B71ED8491CDB41650035F6BE /* Build configuration list for PBXProject "吃货美食" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B71ED8451CDB41650035F6BE;
+			productRefGroup = B71ED84F1CDB41650035F6BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B71ED84D1CDB41650035F6BE /* 吃货美食 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B71ED84C1CDB41650035F6BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B71ED8611CDB41660035F6BE /* LaunchScreen.storyboard in Resources */,
+				B71ED85E1CDB41660035F6BE /* Assets.xcassets in Resources */,
+				B7F615681CDCA14300AF1697 /* CHDiscoverViewController.xib in Resources */,
+				B7F6155A1CDC857700AF1697 /* CHEChatViewController.xib in Resources */,
+				B71ED85C1CDB41660035F6BE /* Main.storyboard in Resources */,
+				B7F6156D1CDCA17700AF1697 /* CHRecommendViewController.xib in Resources */,
+				B7F615551CDC854500AF1697 /* CHMeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B71ED84A1CDB41650035F6BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7F615591CDC857700AF1697 /* CHEChatViewController.m in Sources */,
+				B7F6156C1CDCA17700AF1697 /* CHRecommendViewController.m in Sources */,
+				B7F615541CDC854500AF1697 /* CHMeViewController.m in Sources */,
+				B71ED8561CDB41660035F6BE /* AppDelegate.m in Sources */,
+				B7F6154D1CDC84A600AF1697 /* CHTabBarController.m in Sources */,
+				B71ED8531CDB41660035F6BE /* main.m in Sources */,
+				B7F615671CDCA14300AF1697 /* CHDiscoverViewController.m in Sources */,
+				B7F615501CDC84F000AF1697 /* CHNavigationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B71ED85A1CDB41660035F6BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B71ED85B1CDB41660035F6BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B71ED85F1CDB41660035F6BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B71ED8601CDB41660035F6BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B71ED8631CDB41660035F6BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B71ED8641CDB41660035F6BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B71ED8661CDB41660035F6BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "吃货美食/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TianTian.----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B71ED8671CDB41660035F6BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "吃货美食/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TianTian.----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B71ED8491CDB41650035F6BE /* Build configuration list for PBXProject "吃货美食" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B71ED8631CDB41660035F6BE /* Debug */,
+				B71ED8641CDB41660035F6BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B71ED8651CDB41660035F6BE /* Build configuration list for PBXNativeTarget "吃货美食" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B71ED8661CDB41660035F6BE /* Debug */,
+				B71ED8671CDB41660035F6BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B71ED8461CDB41650035F6BE /* Project object */;
+}
