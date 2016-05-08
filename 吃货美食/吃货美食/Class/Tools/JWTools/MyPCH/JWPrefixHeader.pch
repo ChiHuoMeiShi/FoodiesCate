@@ -20,6 +20,9 @@
 #define CHLog(...)
 #endif
 
+#define CHSCREENWIDTH [UIScreen mainScreen].bounds.size.width
+#define CHSCREENHEIGH [UIScreen mainScreen].bounds.size.height
+
 #import "JWClass.h"
 
 #endif /* JWPrefixHeader_pch */

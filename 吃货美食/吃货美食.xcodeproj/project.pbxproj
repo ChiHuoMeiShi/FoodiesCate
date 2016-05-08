@@ -73,12 +73,12 @@
 		7AD0DDA21CDCA7CE0057F8B2 /* JWTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWTools.m; sourceTree = "<group>"; };
 		B71ED84E1CDB41650035F6BE /* 吃货美食.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "吃货美食.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B71ED8521CDB41660035F6BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B71ED8541CDB41660035F6BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		B71ED8551CDB41660035F6BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B71ED8541CDB41660035F6BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
+		B71ED8551CDB41660035F6BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
 		B71ED85B1CDB41660035F6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B71ED85D1CDB41660035F6BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B71ED85D1CDB41660035F6BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
 		B71ED8601CDB41660035F6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B71ED8621CDB41660035F6BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B71ED8621CDB41660035F6BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../Info.plist; sourceTree = "<group>"; };
 		B7F6154B1CDC84A600AF1697 /* CHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTabBarController.h; sourceTree = "<group>"; };
 		B7F6154C1CDC84A600AF1697 /* CHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTabBarController.m; sourceTree = "<group>"; };
 		B7F6154E1CDC84F000AF1697 /* CHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNavigationController.h; sourceTree = "<group>"; };
@@ -266,6 +266,19 @@
 			path = MyTools;
 			sourceTree = "<group>";
 		};
+		7AD0DDB21CDCAE8A0057F8B2 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				B71ED8541CDB41660035F6BE /* AppDelegate.h */,
+				B71ED8551CDB41660035F6BE /* AppDelegate.m */,
+				B71ED85A1CDB41660035F6BE /* Main.storyboard */,
+				B71ED85D1CDB41660035F6BE /* Assets.xcassets */,
+				B71ED85F1CDB41660035F6BE /* LaunchScreen.storyboard */,
+				B71ED8621CDB41660035F6BE /* Info.plist */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		B71ED8451CDB41650035F6BE = {
 			isa = PBXGroup;
 			children = (
@@ -286,12 +299,6 @@
 			isa = PBXGroup;
 			children = (
 				B71ED8681CDB416C0035F6BE /* Class */,
-				B71ED8541CDB41660035F6BE /* AppDelegate.h */,
-				B71ED8551CDB41660035F6BE /* AppDelegate.m */,
-				B71ED85A1CDB41660035F6BE /* Main.storyboard */,
-				B71ED85D1CDB41660035F6BE /* Assets.xcassets */,
-				B71ED85F1CDB41660035F6BE /* LaunchScreen.storyboard */,
-				B71ED8621CDB41660035F6BE /* Info.plist */,
 				B71ED8511CDB41650035F6BE /* Supporting Files */,
 			);
 			path = "吃货美食";
@@ -308,6 +315,7 @@
 		B71ED8681CDB416C0035F6BE /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				7AD0DDB21CDCAE8A0057F8B2 /* Other */,
 				B7F615701CDCA2D900AF1697 /* Tools */,
 				B7F6156F1CDCA29100AF1697 /* DataBase */,
 				B7F6156E1CDCA27F00AF1697 /* NetWork */,
@@ -323,7 +331,6 @@
 		B71ED8691CDB4A610035F6BE /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				B7F615711CDCA47600AF1697 /* Category */,
 				B7F6154A1CDC815900AF1697 /* TabBarController */,
 				B7F615491CDC812900AF1697 /* NavigationController */,
 			);
@@ -506,13 +513,6 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
-		B7F615711CDCA47600AF1697 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Category;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -623,6 +623,7 @@
 				B71ED85B1CDB41660035F6BE /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		B71ED85F1CDB41660035F6BE /* LaunchScreen.storyboard */ = {
@@ -631,6 +632,7 @@
 				B71ED8601CDB41660035F6BE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
