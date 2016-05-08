@@ -71,9 +71,9 @@
 		7AD0DD9F1CDCA7CE0057F8B2 /* JWPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWPrefixHeader.pch; sourceTree = "<group>"; };
 		7AD0DDA11CDCA7CE0057F8B2 /* JWTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWTools.h; sourceTree = "<group>"; };
 		7AD0DDA21CDCA7CE0057F8B2 /* JWTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWTools.m; sourceTree = "<group>"; };
+		7AFD61D01CDF1BAC00A4169B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "吃货美食/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
 		B71ED84E1CDB41650035F6BE /* 吃货美食.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "吃货美食.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B71ED8521CDB41660035F6BE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B71ED8541CDB41660035F6BE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
 		B71ED8551CDB41660035F6BE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
 		B71ED85B1CDB41660035F6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B71ED85D1CDB41660035F6BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
@@ -269,7 +269,7 @@
 		7AD0DDB21CDCAE8A0057F8B2 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				B71ED8541CDB41660035F6BE /* AppDelegate.h */,
+				7AFD61D01CDF1BAC00A4169B /* AppDelegate.h */,
 				B71ED8551CDB41660035F6BE /* AppDelegate.m */,
 				B71ED85A1CDB41660035F6BE /* Main.storyboard */,
 				B71ED85D1CDB41660035F6BE /* Assets.xcassets */,
@@ -623,7 +623,7 @@
 				B71ED85B1CDB41660035F6BE /* Base */,
 			);
 			name = Main.storyboard;
-			path = ../..;
+			path = "吃货美食";
 			sourceTree = "<group>";
 		};
 		B71ED85F1CDB41660035F6BE /* LaunchScreen.storyboard */ = {
@@ -632,7 +632,7 @@
 				B71ED8601CDB41660035F6BE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = ../..;
+			path = "吃货美食";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
