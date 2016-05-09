@@ -795,7 +795,7 @@
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/吃货美食/Class/Tools/JWTools/MyPCH/JWPrefixHeader.pch";
-				INFOPLIST_FILE = "吃货美食/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/吃货美食/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TianTian.----";
@@ -811,7 +811,7 @@
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/吃货美食/Class/Tools/JWTools/MyPCH/JWPrefixHeader.pch";
-				INFOPLIST_FILE = "吃货美食/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/吃货美食/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TianTian.----";
