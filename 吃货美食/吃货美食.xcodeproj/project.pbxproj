@@ -42,6 +42,9 @@
 		B71ED85C1CDB41660035F6BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71ED85A1CDB41660035F6BE /* Main.storyboard */; };
 		B71ED85E1CDB41660035F6BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B71ED85D1CDB41660035F6BE /* Assets.xcassets */; };
 		B71ED8611CDB41660035F6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71ED85F1CDB41660035F6BE /* LaunchScreen.storyboard */; };
+		B72A06531CE2113D0091986F /* PellTableViewSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = B72A06521CE2113D0091986F /* PellTableViewSelect.m */; };
+		B72A06571CE216D10091986F /* CHZSendEChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = B72A06551CE216D10091986F /* CHZSendEChatController.m */; };
+		B72A06581CE216D10091986F /* CHZSendEChatController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B72A06561CE216D10091986F /* CHZSendEChatController.xib */; };
 		B7F6154D1CDC84A600AF1697 /* CHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F6154C1CDC84A600AF1697 /* CHTabBarController.m */; };
 		B7F615501CDC84F000AF1697 /* CHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F6154F1CDC84F000AF1697 /* CHNavigationController.m */; };
 		B7F615541CDC854500AF1697 /* CHMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F615521CDC854500AF1697 /* CHMeViewController.m */; };
@@ -116,6 +119,11 @@
 		B71ED85D1CDB41660035F6BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B71ED8601CDB41660035F6BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B71ED8621CDB41660035F6BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B72A06511CE2113D0091986F /* PellTableViewSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PellTableViewSelect.h; sourceTree = "<group>"; };
+		B72A06521CE2113D0091986F /* PellTableViewSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PellTableViewSelect.m; sourceTree = "<group>"; };
+		B72A06541CE216D10091986F /* CHZSendEChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHZSendEChatController.h; sourceTree = "<group>"; };
+		B72A06551CE216D10091986F /* CHZSendEChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHZSendEChatController.m; sourceTree = "<group>"; };
+		B72A06561CE216D10091986F /* CHZSendEChatController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHZSendEChatController.xib; sourceTree = "<group>"; };
 		B7F6154B1CDC84A600AF1697 /* CHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTabBarController.h; sourceTree = "<group>"; };
 		B7F6154C1CDC84A600AF1697 /* CHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTabBarController.m; sourceTree = "<group>"; };
 		B7F6154E1CDC84F000AF1697 /* CHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNavigationController.h; sourceTree = "<group>"; };
@@ -462,9 +470,9 @@
 		B71ED86D1CDB4DC80035F6BE /* EChat */ = {
 			isa = PBXGroup;
 			children = (
+				B72A06501CE2112F0091986F /* View */,
+				B72A064F1CE211250091986F /* Model */,
 				B7F615401CDC808A00AF1697 /* Controller */,
-				B7F615411CDC808A00AF1697 /* Model */,
-				B7F615421CDC808A00AF1697 /* View */,
 			);
 			path = EChat;
 			sourceTree = "<group>";
@@ -503,28 +511,65 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		B7F615401CDC808A00AF1697 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				B7F615561CDC857700AF1697 /* CHEChatViewController.h */,
-				B7F615571CDC857700AF1697 /* CHEChatViewController.m */,
-				B7F615581CDC857700AF1697 /* CHEChatViewController.xib */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		B7F615411CDC808A00AF1697 /* Model */ = {
+		B72A064F1CE211250091986F /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		B7F615421CDC808A00AF1697 /* View */ = {
+		B72A06501CE2112F0091986F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B72A06511CE2113D0091986F /* PellTableViewSelect.h */,
+				B72A06521CE2113D0091986F /* PellTableViewSelect.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B7E55EC41CE1E277003443DA /* CateShow */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = View;
+			name = CateShow;
+			sourceTree = "<group>";
+		};
+		B7E55EC51CE1E2A8003443DA /* SendEChat */ = {
+			isa = PBXGroup;
+			children = (
+				B72A06541CE216D10091986F /* CHZSendEChatController.h */,
+				B72A06551CE216D10091986F /* CHZSendEChatController.m */,
+				B72A06561CE216D10091986F /* CHZSendEChatController.xib */,
+			);
+			path = SendEChat;
+			sourceTree = "<group>";
+		};
+		B7E55EC61CE1E2BE003443DA /* GoodCook */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GoodCook;
+			sourceTree = "<group>";
+		};
+		B7E55EC71CE1E30F003443DA /* FoodClass */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FoodClass;
+			sourceTree = "<group>";
+		};
+		B7F615401CDC808A00AF1697 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B7E55EC71CE1E30F003443DA /* FoodClass */,
+				B7E55EC61CE1E2BE003443DA /* GoodCook */,
+				B7E55EC51CE1E2A8003443DA /* SendEChat */,
+				B7E55EC41CE1E277003443DA /* CateShow */,
+				B7F615561CDC857700AF1697 /* CHEChatViewController.h */,
+				B7F615571CDC857700AF1697 /* CHEChatViewController.m */,
+				B7F615581CDC857700AF1697 /* CHEChatViewController.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		B7F615431CDC809B00AF1697 /* Controller */ = {
@@ -682,6 +727,7 @@
 				B71ED85E1CDB41660035F6BE /* Assets.xcassets in Resources */,
 				B7F615681CDCA14300AF1697 /* CHDiscoverViewController.xib in Resources */,
 				B7F6155A1CDC857700AF1697 /* CHEChatViewController.xib in Resources */,
+				B72A06581CE216D10091986F /* CHZSendEChatController.xib in Resources */,
 				B71ED85C1CDB41660035F6BE /* Main.storyboard in Resources */,
 				7AAF0A361CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.xib in Resources */,
 				7AAF0A401CE184A300708F98 /* CHJRecomdUpdateHCollectionReusableView.xib in Resources */,
@@ -761,6 +807,7 @@
 				7AD0DDA81CDCA7CE0057F8B2 /* UIBarButtonItem+SettingCustom.m in Sources */,
 				7AD0DDA41CDCA7CE0057F8B2 /* NSDictionary+Attributes.m in Sources */,
 				B7F615541CDC854500AF1697 /* CHMeViewController.m in Sources */,
+				B72A06571CE216D10091986F /* CHZSendEChatController.m in Sources */,
 				7AD0DDAA1CDCA7CE0057F8B2 /* UITabBarItem+TextCustom.m in Sources */,
 				7AAF0A371CE184A300708F98 /* CHJRecomdTodayBanerFCollectionReusableView.m in Sources */,
 				B71ED8561CDB41660035F6BE /* AppDelegate.m in Sources */,
@@ -779,6 +826,7 @@
 				7AAF0A3D1CE184A300708F98 /* CHJRecomdTopHCollectionReusableView.m in Sources */,
 				B7F615501CDC84F000AF1697 /* CHNavigationController.m in Sources */,
 				7AD0DDAF1CDCA7CE0057F8B2 /* JWUIViewControllersClass.m in Sources */,
+				B72A06531CE2113D0091986F /* PellTableViewSelect.m in Sources */,
 				7AD0DDA71CDCA7CE0057F8B2 /* JWUIClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
