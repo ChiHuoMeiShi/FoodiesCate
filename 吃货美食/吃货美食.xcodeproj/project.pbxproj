@@ -792,6 +792,7 @@
 			baseConfigurationReference = E515E1C7B1E61D319A6417F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/吃货美食/Class/Tools/JWTools/MyPCH/JWPrefixHeader.pch";
@@ -808,6 +809,7 @@
 			baseConfigurationReference = 5E24DDEC6F9C631EC52496A0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/吃货美食/Class/Tools/JWTools/MyPCH/JWPrefixHeader.pch";
