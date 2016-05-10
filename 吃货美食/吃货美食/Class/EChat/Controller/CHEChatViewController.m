@@ -14,9 +14,18 @@
 
 @implementation CHEChatViewController
 
+-(void)loadView
+{
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:@"topsearchicon_grey_2" withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTarget:self action:@selector(search) forControlEvents:UIControlEventTouchUpInside];
+}
+- (void)search
+{
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
 }
 
 - (void)didReceiveMemoryWarning {
