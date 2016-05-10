@@ -11,7 +11,10 @@
 @implementation CHJRecomdSugstFCollectionReusableView
 
 - (void)awakeFromNib {
-    // Initialization code
+    [self.commitButton.layer setBorderWidth:0.8f];
+    [self.commitButton.layer setCornerRadius:5.f];
+    [self.commitButton.layer setBorderColor:[UIColor orangeColor].CGColor];
+    
 }
 
 @end

@@ -7,10 +7,42 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CHJRecomdSugstFCollectionReusableView" id="U6b-Vx-4bR">
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CHJRecomdSugstFCollectionReusableView" id="U6b-Vx-4bR" customClass="CHJRecomdSugstFCollectionReusableView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
-            <color key="backgroundColor" red="0.92941176469999998" green="0.2274509804" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="藏在这都被你发现了？不感兴趣？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mn3-Jn-dx2">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="J0h-QZ-j3a"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQM-Cf-QZI">
+                    <rect key="frame" x="117" y="36" width="86" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="aeV-59-LzW"/>
+                        <constraint firstAttribute="width" constant="86" id="lY9-7d-wn8"/>
+                    </constraints>
+                    <state key="normal" title="说说为啥">
+                        <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Mn3-Jn-dx2" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="TIx-F1-SQa"/>
+                <constraint firstItem="Mn3-Jn-dx2" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="a5g-hm-UEb"/>
+                <constraint firstItem="zQM-Cf-QZI" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="aoe-un-VaA"/>
+                <constraint firstAttribute="trailing" secondItem="Mn3-Jn-dx2" secondAttribute="trailing" id="ebE-ly-p8D"/>
+                <constraint firstItem="zQM-Cf-QZI" firstAttribute="top" secondItem="Mn3-Jn-dx2" secondAttribute="bottom" constant="15" id="sBj-ik-49u"/>
+            </constraints>
+            <connections>
+                <outlet property="commitButton" destination="zQM-Cf-QZI" id="APY-e2-Q01"/>
+            </connections>
+            <point key="canvasLocation" x="109" y="262"/>
         </collectionReusableView>
     </objects>
 </document>

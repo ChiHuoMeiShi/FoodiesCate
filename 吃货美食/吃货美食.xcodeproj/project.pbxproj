@@ -233,12 +233,12 @@
 		7AAF0A2B1CE184A300708F98 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				7AAF0A2C1CE184A300708F98 /* CHJRecomdTodayHCollectionReusableView.h */,
-				7AAF0A2D1CE184A300708F98 /* CHJRecomdTodayHCollectionReusableView.m */,
-				7AAF0A2E1CE184A300708F98 /* CHJRecomdTodayHCollectionReusableView.xib */,
 				7AAF0A2F1CE184A300708F98 /* CHJRecomdTopHCollectionReusableView.h */,
 				7AAF0A301CE184A300708F98 /* CHJRecomdTopHCollectionReusableView.m */,
 				7AAF0A311CE184A300708F98 /* CHJRecomdTopHCollectionReusableView.xib */,
+				7AAF0A2C1CE184A300708F98 /* CHJRecomdTodayHCollectionReusableView.h */,
+				7AAF0A2D1CE184A300708F98 /* CHJRecomdTodayHCollectionReusableView.m */,
+				7AAF0A2E1CE184A300708F98 /* CHJRecomdTodayHCollectionReusableView.xib */,
 				7AAF0A321CE184A300708F98 /* CHJRecomdUpdateHCollectionReusableView.h */,
 				7AAF0A331CE184A300708F98 /* CHJRecomdUpdateHCollectionReusableView.m */,
 				7AAF0A341CE184A300708F98 /* CHJRecomdUpdateHCollectionReusableView.xib */,

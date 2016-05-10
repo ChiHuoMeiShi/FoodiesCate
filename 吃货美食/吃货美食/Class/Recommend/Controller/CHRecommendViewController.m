@@ -11,7 +11,6 @@
 #import <MJExtension.h>
 
 #import "CHJRecommendModel.h"
-
 #import "CHJRecomdTopHCollectionReusableView.h"
 #import "CHJRecomdTodayHCollectionReusableView.h"
 #import "CHJRecomdUpdateHCollectionReusableView.h"
@@ -23,7 +22,6 @@
 @interface CHRecommendViewController ()
 
 @property (weak, nonatomic) IBOutlet UICollectionView *recommendCollection;
-
 @property (nonatomic,strong)CHJRecommendModel * recommendModel;
 
 @end
@@ -32,7 +30,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self getCollectionViewData];
     [self recommendCollectionRegister];
     
@@ -42,6 +39,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (void)getCollectionViewData{
     AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
@@ -61,7 +59,13 @@
     }];
 }
 
-#pragma mark - Actions
+
+
+#pragma mark - ButtonActions
+- (void)commitAction{
+    
+}
+
 
 #pragma mark - initSubs
 - (void)recommendCollectionRegister{
@@ -125,6 +129,8 @@
             return todayHeaderView;
         }else{
             CHJRecomdUpdateHCollectionReusableView * updateHeaderView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdUpdateHCollectionReusableView" forIndexPath:indexPath];
+            updateHeaderView.showLabel.text = self.recommendModel.myLike.title;
+            updateHeaderView.timeLabel.text = self.recommendModel.myLike.time;
             return updateHeaderView;
         }
     }else if ([kind isEqualToString:UICollectionElementKindSectionFooter]){
@@ -136,11 +142,18 @@
             return todayFooterView;
         }else{
             CHJRecomdSugstFCollectionReusableView * sugFooterView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdSugstFCollectionReusableView" forIndexPath:indexPath];
+            [sugFooterView.commitButton addTarget:self action:@selector(commitAction) forControlEvents:UIControlEventTouchUpInside];
             return sugFooterView;
         }
         
     }
     return nil;
 }
+
+
+
+
+
+
 
 @end

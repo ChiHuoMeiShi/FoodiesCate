@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface CHJRecomdUpdateHCollectionReusableView : UICollectionReusableView
+@property (weak, nonatomic) IBOutlet UILabel *showLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
 
 @end
