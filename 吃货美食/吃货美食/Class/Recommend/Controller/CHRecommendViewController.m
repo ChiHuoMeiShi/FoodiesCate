@@ -15,7 +15,7 @@
 #import "CHJRecmdUpdateCollectionViewCell.h"
 #import "CHJRecomdFucFCollectionReusableView.h"
 #import "CHJRecomdTodayBanerFCollectionReusableView.h"
-#import "CHRecomdSugstFCollectionReusableView.h"
+#import "CHJRecomdSugstFCollectionReusableView.h"
 
 @interface CHRecommendViewController ()
 
@@ -28,7 +28,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
     [self getCollectionViewData];
     [self recommendCollectionRegister];
     
@@ -68,11 +67,26 @@
 //    Footer
     [self.recommendCollection registerNib:[UINib nibWithNibName:@"CHJRecomdFucFCollectionReusableView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"CHJRecomdFucFCollectionReusableView"];
     [self.recommendCollection registerNib:[UINib nibWithNibName:@"CHJRecomdTodayBanerFCollectionReusableView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"CHJRecomdTodayBanerFCollectionReusableView"];
-    [self.recommendCollection registerNib:[UINib nibWithNibName:@"CHRecomdSugstFCollectionReusableView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"CHRecomdSugstFCollectionReusableView"];
+    [self.recommendCollection registerNib:[UINib nibWithNibName:@"CHJRecomdSugstFCollectionReusableView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"CHJRecomdSugstFCollectionReusableView"];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return CGSizeMake(self.view.width, 440.f);
+    }else if (section == 1){
+        return CGSizeMake(self.view.width, 35.f);
+    }
+    
+    return CGSizeMake(self.view.width, 45.f);
+}
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
+    if (section == 0) {
+        return CGSizeMake(self.view.width, 200.f);
+    }
+    return CGSizeMake(self.view.width, 80.f);
+}
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -92,6 +106,32 @@
     return recommdCell;
 }
 
-
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        if (indexPath.section == 0) {
+            CHJRecomdTopHCollectionReusableView * topHeaderView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdTopHCollectionReusableView" forIndexPath:indexPath];
+            return topHeaderView;
+        }else if (indexPath.section == 1){
+            CHJRecomdTodayHCollectionReusableView * todayHeaderView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdTodayHCollectionReusableView" forIndexPath:indexPath];
+            return todayHeaderView;
+        }else{
+            CHJRecomdUpdateHCollectionReusableView * updateHeaderView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdUpdateHCollectionReusableView" forIndexPath:indexPath];
+            return updateHeaderView;
+        }
+    }else if ([kind isEqualToString:UICollectionElementKindSectionFooter]){
+        if (indexPath.section == 0) {
+            CHJRecomdFucFCollectionReusableView * funFooterView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdFucFCollectionReusableView" forIndexPath:indexPath];
+            return funFooterView;
+        }else if (indexPath.section == 1){
+            CHJRecomdTodayBanerFCollectionReusableView * todayFooterView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdTodayBanerFCollectionReusableView" forIndexPath:indexPath];
+            return todayFooterView;
+        }else{
+            CHJRecomdSugstFCollectionReusableView * sugFooterView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdSugstFCollectionReusableView" forIndexPath:indexPath];
+            return sugFooterView;
+        }
+        
+    }
+    return nil;
+}
 
 @end

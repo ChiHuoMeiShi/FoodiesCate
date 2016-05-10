@@ -8,8 +8,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CHJRecomdTopHCollectionReusableView" id="U6b-Vx-4bR">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="440"/>
             <autoresizingMask key="autoresizingMask"/>
+            <color key="backgroundColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
         </collectionReusableView>
     </objects>
 </document>

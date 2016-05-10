@@ -1,5 +1,5 @@
 //
-//  CHRecomdSugstFCollectionReusableView.h
+//  CHJRecomdSugstFCollectionReusableView.h
 //  吃货美食
 //
 //  Created by scjy on 16/5/10.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CHRecomdSugstFCollectionReusableView : UICollectionReusableView
+@interface CHJRecomdSugstFCollectionReusableView : UICollectionReusableView
 
 @end
