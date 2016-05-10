@@ -10,4 +10,17 @@
 
 @interface CHJRecomdFucFCollectionReusableView : UICollectionReusableView
 
+@property (weak, nonatomic) IBOutlet UIButton *foodTypeButton;
+@property (weak, nonatomic) IBOutlet UIButton *audioFoodButton;
+@property (weak, nonatomic) IBOutlet UIButton *breasketFoodButton;
+@property (weak, nonatomic) IBOutlet UIButton *aroundFoodButton;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *audioFoodBtnLeftEndge;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *aroundFoodBtnRightEndge;
+
+@property (weak, nonatomic) IBOutlet UIButton *listButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *composeButton;
+
+
 @end
