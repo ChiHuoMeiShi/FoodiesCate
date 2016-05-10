@@ -22,6 +22,16 @@
 		7AAF0A4A1CE1855300708F98 /* CHJRecmdUpdateCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AAF0A481CE1855300708F98 /* CHJRecmdUpdateCollectionViewCell.xib */; };
 		7AAF0A4E1CE18C4000708F98 /* CHJRecomdSugstFCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A4C1CE18C4000708F98 /* CHJRecomdSugstFCollectionReusableView.m */; };
 		7AAF0A4F1CE18C4000708F98 /* CHJRecomdSugstFCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AAF0A4D1CE18C4000708F98 /* CHJRecomdSugstFCollectionReusableView.xib */; };
+		7AAF0A521CE1D40A00708F98 /* CHJRecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A511CE1D40A00708F98 /* CHJRecommendModel.m */; };
+		7AAF0A5C1CE1DB0F00708F98 /* CHJRTopFunctionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A5B1CE1DB0F00708F98 /* CHJRTopFunctionModel.m */; };
+		7AAF0A5F1CE1DB7600708F98 /* CHJRTopListFunctModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A5E1CE1DB7600708F98 /* CHJRTopListFunctModel.m */; };
+		7AAF0A651CE1DD9600708F98 /* CHJRTopBannerShowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A641CE1DD9600708F98 /* CHJRTopBannerShowModel.m */; };
+		7AAF0A6E1CE1E23500708F98 /* CHJRTopBannerTittleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A6D1CE1E23500708F98 /* CHJRTopBannerTittleModel.m */; };
+		7AAF0A791CE1ECFB00708F98 /* CHJRecommendJumpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A781CE1ECFB00708F98 /* CHJRecommendJumpModel.m */; };
+		7AAF0A7C1CE1ED1600708F98 /* CHJRecomdJumpContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A7B1CE1ED1600708F98 /* CHJRecomdJumpContentModel.m */; };
+		7AAF0A7F1CE1EF9D00708F98 /* CHJRecomdTodayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A7E1CE1EF9D00708F98 /* CHJRecomdTodayModel.m */; };
+		7AAF0A821CE1EFD600708F98 /* CHJRecomdTdayBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A811CE1EFD600708F98 /* CHJRecomdTdayBannerModel.m */; };
+		7AAF0A861CE1F55500708F98 /* CHJRecommendMyLikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A851CE1F55500708F98 /* CHJRecommendMyLikeModel.m */; };
 		7AD0DDA31CDCA7CE0057F8B2 /* JWClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD761CDCA7CE0057F8B2 /* JWClass.m */; };
 		7AD0DDA41CDCA7CE0057F8B2 /* NSDictionary+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD7A1CDCA7CE0057F8B2 /* NSDictionary+Attributes.m */; };
 		7AD0DDA51CDCA7CE0057F8B2 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD7D1CDCA7CE0057F8B2 /* NSArray+Log.m */; };
@@ -77,6 +87,26 @@
 		7AAF0A4B1CE18C4000708F98 /* CHJRecomdSugstFCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRecomdSugstFCollectionReusableView.h; sourceTree = "<group>"; };
 		7AAF0A4C1CE18C4000708F98 /* CHJRecomdSugstFCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRecomdSugstFCollectionReusableView.m; sourceTree = "<group>"; };
 		7AAF0A4D1CE18C4000708F98 /* CHJRecomdSugstFCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHJRecomdSugstFCollectionReusableView.xib; sourceTree = "<group>"; };
+		7AAF0A501CE1D40A00708F98 /* CHJRecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRecommendModel.h; sourceTree = "<group>"; };
+		7AAF0A511CE1D40A00708F98 /* CHJRecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRecommendModel.m; sourceTree = "<group>"; };
+		7AAF0A5A1CE1DB0F00708F98 /* CHJRTopFunctionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRTopFunctionModel.h; sourceTree = "<group>"; };
+		7AAF0A5B1CE1DB0F00708F98 /* CHJRTopFunctionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRTopFunctionModel.m; sourceTree = "<group>"; };
+		7AAF0A5D1CE1DB7600708F98 /* CHJRTopListFunctModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRTopListFunctModel.h; sourceTree = "<group>"; };
+		7AAF0A5E1CE1DB7600708F98 /* CHJRTopListFunctModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRTopListFunctModel.m; sourceTree = "<group>"; };
+		7AAF0A631CE1DD9600708F98 /* CHJRTopBannerShowModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRTopBannerShowModel.h; sourceTree = "<group>"; };
+		7AAF0A641CE1DD9600708F98 /* CHJRTopBannerShowModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRTopBannerShowModel.m; sourceTree = "<group>"; };
+		7AAF0A6C1CE1E23500708F98 /* CHJRTopBannerTittleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRTopBannerTittleModel.h; sourceTree = "<group>"; };
+		7AAF0A6D1CE1E23500708F98 /* CHJRTopBannerTittleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRTopBannerTittleModel.m; sourceTree = "<group>"; };
+		7AAF0A771CE1ECFB00708F98 /* CHJRecommendJumpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRecommendJumpModel.h; sourceTree = "<group>"; };
+		7AAF0A781CE1ECFB00708F98 /* CHJRecommendJumpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRecommendJumpModel.m; sourceTree = "<group>"; };
+		7AAF0A7A1CE1ED1600708F98 /* CHJRecomdJumpContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRecomdJumpContentModel.h; sourceTree = "<group>"; };
+		7AAF0A7B1CE1ED1600708F98 /* CHJRecomdJumpContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRecomdJumpContentModel.m; sourceTree = "<group>"; };
+		7AAF0A7D1CE1EF9D00708F98 /* CHJRecomdTodayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRecomdTodayModel.h; sourceTree = "<group>"; };
+		7AAF0A7E1CE1EF9D00708F98 /* CHJRecomdTodayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRecomdTodayModel.m; sourceTree = "<group>"; };
+		7AAF0A801CE1EFD600708F98 /* CHJRecomdTdayBannerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRecomdTdayBannerModel.h; sourceTree = "<group>"; };
+		7AAF0A811CE1EFD600708F98 /* CHJRecomdTdayBannerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRecomdTdayBannerModel.m; sourceTree = "<group>"; };
+		7AAF0A841CE1F55500708F98 /* CHJRecommendMyLikeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRecommendMyLikeModel.h; sourceTree = "<group>"; };
+		7AAF0A851CE1F55500708F98 /* CHJRecommendMyLikeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRecommendMyLikeModel.m; sourceTree = "<group>"; };
 		7AD0DD751CDCA7CE0057F8B2 /* JWClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWClass.h; sourceTree = "<group>"; };
 		7AD0DD761CDCA7CE0057F8B2 /* JWClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWClass.m; sourceTree = "<group>"; };
 		7AD0DD791CDCA7CE0057F8B2 /* NSDictionary+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Attributes.h"; sourceTree = "<group>"; };
@@ -214,6 +244,68 @@
 				7AAF0A341CE184A300708F98 /* CHJRecomdUpdateHCollectionReusableView.xib */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		7AAF0A541CE1D59100708F98 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				7AAF0A561CE1D8E400708F98 /* Function */,
+				7AAF0A551CE1D8D100708F98 /* Banner */,
+			);
+			path = Top;
+			sourceTree = "<group>";
+		};
+		7AAF0A551CE1D8D100708F98 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				7AAF0A631CE1DD9600708F98 /* CHJRTopBannerShowModel.h */,
+				7AAF0A641CE1DD9600708F98 /* CHJRTopBannerShowModel.m */,
+				7AAF0A6C1CE1E23500708F98 /* CHJRTopBannerTittleModel.h */,
+				7AAF0A6D1CE1E23500708F98 /* CHJRTopBannerTittleModel.m */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		7AAF0A561CE1D8E400708F98 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				7AAF0A5A1CE1DB0F00708F98 /* CHJRTopFunctionModel.h */,
+				7AAF0A5B1CE1DB0F00708F98 /* CHJRTopFunctionModel.m */,
+				7AAF0A5D1CE1DB7600708F98 /* CHJRTopListFunctModel.h */,
+				7AAF0A5E1CE1DB7600708F98 /* CHJRTopListFunctModel.m */,
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
+		7AAF0A721CE1E40A00708F98 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				7AAF0A7D1CE1EF9D00708F98 /* CHJRecomdTodayModel.h */,
+				7AAF0A7E1CE1EF9D00708F98 /* CHJRecomdTodayModel.m */,
+				7AAF0A801CE1EFD600708F98 /* CHJRecomdTdayBannerModel.h */,
+				7AAF0A811CE1EFD600708F98 /* CHJRecomdTdayBannerModel.m */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
+		7AAF0A761CE1ECD300708F98 /* Jump */ = {
+			isa = PBXGroup;
+			children = (
+				7AAF0A771CE1ECFB00708F98 /* CHJRecommendJumpModel.h */,
+				7AAF0A781CE1ECFB00708F98 /* CHJRecommendJumpModel.m */,
+				7AAF0A7A1CE1ED1600708F98 /* CHJRecomdJumpContentModel.h */,
+				7AAF0A7B1CE1ED1600708F98 /* CHJRecomdJumpContentModel.m */,
+			);
+			path = Jump;
+			sourceTree = "<group>";
+		};
+		7AAF0A831CE1F51000708F98 /* MyLike */ = {
+			isa = PBXGroup;
+			children = (
+				7AAF0A841CE1F55500708F98 /* CHJRecommendMyLikeModel.h */,
+				7AAF0A851CE1F55500708F98 /* CHJRecommendMyLikeModel.m */,
+			);
+			path = MyLike;
 			sourceTree = "<group>";
 		};
 		7AD0DD741CDCA7CE0057F8B2 /* JWTools */ = {
@@ -564,6 +656,12 @@
 		B7F615471CDC80B200AF1697 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7AAF0A831CE1F51000708F98 /* MyLike */,
+				7AAF0A761CE1ECD300708F98 /* Jump */,
+				7AAF0A721CE1E40A00708F98 /* Today */,
+				7AAF0A541CE1D59100708F98 /* Top */,
+				7AAF0A501CE1D40A00708F98 /* CHJRecommendModel.h */,
+				7AAF0A511CE1D40A00708F98 /* CHJRecommendModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -752,10 +850,14 @@
 			files = (
 				7AD0DDA91CDCA7CE0057F8B2 /* UILabel+SizeToFit.m in Sources */,
 				B7F615591CDC857700AF1697 /* CHEChatViewController.m in Sources */,
+				7AAF0A5C1CE1DB0F00708F98 /* CHJRTopFunctionModel.m in Sources */,
+				7AAF0A7F1CE1EF9D00708F98 /* CHJRecomdTodayModel.m in Sources */,
 				7AD0DDA61CDCA7CE0057F8B2 /* NSDictionary+Log.m in Sources */,
 				B7F6156C1CDCA17700AF1697 /* CHRecommendViewController.m in Sources */,
 				7AD0DDA31CDCA7CE0057F8B2 /* JWClass.m in Sources */,
+				7AAF0A821CE1EFD600708F98 /* CHJRecomdTdayBannerModel.m in Sources */,
 				7AAF0A491CE1855300708F98 /* CHJRecmdUpdateCollectionViewCell.m in Sources */,
+				7AAF0A7C1CE1ED1600708F98 /* CHJRecomdJumpContentModel.m in Sources */,
 				7AAF0A351CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.m in Sources */,
 				7AD0DDAC1CDCA7CE0057F8B2 /* UIColor+HexColor.m in Sources */,
 				7AD0DDA81CDCA7CE0057F8B2 /* UIBarButtonItem+SettingCustom.m in Sources */,
@@ -765,13 +867,19 @@
 				7AAF0A371CE184A300708F98 /* CHJRecomdTodayBanerFCollectionReusableView.m in Sources */,
 				B71ED8561CDB41660035F6BE /* AppDelegate.m in Sources */,
 				7AAF0A3F1CE184A300708F98 /* CHJRecomdUpdateHCollectionReusableView.m in Sources */,
+				7AAF0A521CE1D40A00708F98 /* CHJRecommendModel.m in Sources */,
 				7AD0DDB11CDCA7CE0057F8B2 /* JWTools.m in Sources */,
 				7AD0DDAE1CDCA7CE0057F8B2 /* UIView+JWFrame.m in Sources */,
 				7AD0DDA51CDCA7CE0057F8B2 /* NSArray+Log.m in Sources */,
 				7AD0DDAD1CDCA7CE0057F8B2 /* UIImage+Draught.m in Sources */,
 				B7F6154D1CDC84A600AF1697 /* CHTabBarController.m in Sources */,
+				7AAF0A791CE1ECFB00708F98 /* CHJRecommendJumpModel.m in Sources */,
+				7AAF0A5F1CE1DB7600708F98 /* CHJRTopListFunctModel.m in Sources */,
 				7AAF0A3B1CE184A300708F98 /* CHJRecomdTodayHCollectionReusableView.m in Sources */,
 				7AD0DDAB1CDCA7CE0057F8B2 /* UIWindow+SettingWithVC.m in Sources */,
+				7AAF0A651CE1DD9600708F98 /* CHJRTopBannerShowModel.m in Sources */,
+				7AAF0A6E1CE1E23500708F98 /* CHJRTopBannerTittleModel.m in Sources */,
+				7AAF0A861CE1F55500708F98 /* CHJRecommendMyLikeModel.m in Sources */,
 				7AD0DDB01CDCA7CE0057F8B2 /* UIStoryboard+GetView.m in Sources */,
 				B71ED8531CDB41660035F6BE /* main.m in Sources */,
 				B7F615671CDCA14300AF1697 /* CHDiscoverViewController.m in Sources */,

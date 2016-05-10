@@ -8,6 +8,9 @@
 
 #import "CHRecommendViewController.h"
 #import <AFNetworking.h>
+#import <MJExtension.h>
+
+#import "CHJRecommendModel.h"
 
 #import "CHJRecomdTopHCollectionReusableView.h"
 #import "CHJRecomdTodayHCollectionReusableView.h"
@@ -20,6 +23,8 @@
 @interface CHRecommendViewController ()
 
 @property (weak, nonatomic) IBOutlet UICollectionView *recommendCollection;
+
+@property (nonatomic,strong)CHJRecommendModel * recommendModel;
 
 @end
 
@@ -46,7 +51,11 @@
     
     NSDictionary * dic = @{@"lat":@"34.6049907522264",@"lon":@"112.4229875834745",@"source":@"iphone",@"format":@"json",@"page":@"1",@"app_liketime":@"1462495842"};
     [manger POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        CHLog(@"%@",responseObject);
+        NSDictionary * dic = (NSDictionary *)responseObject;
+//        CHLog(@"%@",dic[@"obj"]);
+        self.recommendModel = [CHJRecommendModel mj_objectWithKeyValues:dic[@"obj"]];
+        
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         CHLog(@"%@",error);
     }];
