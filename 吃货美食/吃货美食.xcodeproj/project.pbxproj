@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6302A48352870C94A21B65CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2714D066AF4EF14D1D1B684 /* libPods.a */; };
+		7A6ED6F51CE2FFD5005DF78C /* CHJRTopBannerCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ED6F31CE2FFD5005DF78C /* CHJRTopBannerCollectCell.m */; };
+		7A6ED6F61CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A6ED6F41CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib */; };
+		7A6ED7041CE31E87005DF78C /* CHJRTopBannerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ED7031CE31E87005DF78C /* CHJRTopBannerCellView.m */; };
+		7A6ED70A1CE32BCA005DF78C /* NSString+JWStringDeleteToURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ED7091CE32BCA005DF78C /* NSString+JWStringDeleteToURL.m */; };
 		7AAF0A351CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A231CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.m */; };
 		7AAF0A361CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AAF0A241CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.xib */; };
 		7AAF0A371CE184A300708F98 /* CHJRecomdTodayBanerFCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A261CE184A300708F98 /* CHJRecomdTodayBanerFCollectionReusableView.m */; };
@@ -69,6 +73,13 @@
 
 /* Begin PBXFileReference section */
 		5E24DDEC6F9C631EC52496A0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7A6ED6F21CE2FFD5005DF78C /* CHJRTopBannerCollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRTopBannerCollectCell.h; sourceTree = "<group>"; };
+		7A6ED6F31CE2FFD5005DF78C /* CHJRTopBannerCollectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRTopBannerCollectCell.m; sourceTree = "<group>"; };
+		7A6ED6F41CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHJRTopBannerCollectCell.xib; sourceTree = "<group>"; };
+		7A6ED7021CE31E87005DF78C /* CHJRTopBannerCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRTopBannerCellView.h; sourceTree = "<group>"; };
+		7A6ED7031CE31E87005DF78C /* CHJRTopBannerCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRTopBannerCellView.m; sourceTree = "<group>"; };
+		7A6ED7081CE32BCA005DF78C /* NSString+JWStringDeleteToURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JWStringDeleteToURL.h"; sourceTree = "<group>"; };
+		7A6ED7091CE32BCA005DF78C /* NSString+JWStringDeleteToURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JWStringDeleteToURL.m"; sourceTree = "<group>"; };
 		7AAF0A221CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRecomdFucFCollectionReusableView.h; sourceTree = "<group>"; };
 		7AAF0A231CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRecomdFucFCollectionReusableView.m; sourceTree = "<group>"; };
 		7AAF0A241CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHJRecomdFucFCollectionReusableView.xib; sourceTree = "<group>"; };
@@ -203,6 +214,35 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7A6ED6F11CE2FDB1005DF78C /* BannerCell */ = {
+			isa = PBXGroup;
+			children = (
+				7A6ED7011CE31E56005DF78C /* BannerCellView */,
+				7A6ED6F21CE2FFD5005DF78C /* CHJRTopBannerCollectCell.h */,
+				7A6ED6F31CE2FFD5005DF78C /* CHJRTopBannerCollectCell.m */,
+				7A6ED6F41CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib */,
+			);
+			path = BannerCell;
+			sourceTree = "<group>";
+		};
+		7A6ED7011CE31E56005DF78C /* BannerCellView */ = {
+			isa = PBXGroup;
+			children = (
+				7A6ED7021CE31E87005DF78C /* CHJRTopBannerCellView.h */,
+				7A6ED7031CE31E87005DF78C /* CHJRTopBannerCellView.m */,
+			);
+			path = BannerCellView;
+			sourceTree = "<group>";
+		};
+		7A6ED7071CE32B73005DF78C /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				7A6ED7081CE32BCA005DF78C /* NSString+JWStringDeleteToURL.h */,
+				7A6ED7091CE32BCA005DF78C /* NSString+JWStringDeleteToURL.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
 		7AAF0A1F1CE183A500708F98 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +281,7 @@
 		7AAF0A2B1CE184A300708F98 /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				7A6ED6F11CE2FDB1005DF78C /* BannerCell */,
 				7AAF0A2F1CE184A300708F98 /* CHJRecomdTopHCollectionReusableView.h */,
 				7AAF0A301CE184A300708F98 /* CHJRecomdTopHCollectionReusableView.m */,
 				7AAF0A311CE184A300708F98 /* CHJRecomdTopHCollectionReusableView.xib */,
@@ -331,6 +372,7 @@
 		7AD0DD771CDCA7CE0057F8B2 /* MyCategory */ = {
 			isa = PBXGroup;
 			children = (
+				7A6ED7071CE32B73005DF78C /* NSString */,
 				7AD0DD781CDCA7CE0057F8B2 /* NSDictionary */,
 				7AD0DD7B1CDCA7CE0057F8B2 /* NSLog */,
 				7AD0DD801CDCA7CE0057F8B2 /* UI */,
@@ -824,6 +866,7 @@
 				B71ED8611CDB41660035F6BE /* LaunchScreen.storyboard in Resources */,
 				B71ED85E1CDB41660035F6BE /* Assets.xcassets in Resources */,
 				B7F615681CDCA14300AF1697 /* CHDiscoverViewController.xib in Resources */,
+				7A6ED6F61CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib in Resources */,
 				B7F6155A1CDC857700AF1697 /* CHEChatViewController.xib in Resources */,
 				B72A06581CE216D10091986F /* CHZSendEChatController.xib in Resources */,
 				B71ED85C1CDB41660035F6BE /* Main.storyboard in Resources */,
@@ -899,10 +942,12 @@
 				7AAF0A5C1CE1DB0F00708F98 /* CHJRTopFunctionModel.m in Sources */,
 				7AAF0A7F1CE1EF9D00708F98 /* CHJRecomdTodayModel.m in Sources */,
 				7AD0DDA61CDCA7CE0057F8B2 /* NSDictionary+Log.m in Sources */,
+				7A6ED7041CE31E87005DF78C /* CHJRTopBannerCellView.m in Sources */,
 				B7F6156C1CDCA17700AF1697 /* CHRecommendViewController.m in Sources */,
 				7AD0DDA31CDCA7CE0057F8B2 /* JWClass.m in Sources */,
 				7AAF0A821CE1EFD600708F98 /* CHJRecomdTdayBannerModel.m in Sources */,
 				7AAF0A491CE1855300708F98 /* CHJRecmdUpdateCollectionViewCell.m in Sources */,
+				7A6ED6F51CE2FFD5005DF78C /* CHJRTopBannerCollectCell.m in Sources */,
 				7AAF0A7C1CE1ED1600708F98 /* CHJRecomdJumpContentModel.m in Sources */,
 				7AAF0A351CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.m in Sources */,
 				7AD0DDAC1CDCA7CE0057F8B2 /* UIColor+HexColor.m in Sources */,
@@ -933,6 +978,7 @@
 				7AAF0A4E1CE18C4000708F98 /* CHJRecomdSugstFCollectionReusableView.m in Sources */,
 				7AAF0A3D1CE184A300708F98 /* CHJRecomdTopHCollectionReusableView.m in Sources */,
 				B7F615501CDC84F000AF1697 /* CHNavigationController.m in Sources */,
+				7A6ED70A1CE32BCA005DF78C /* NSString+JWStringDeleteToURL.m in Sources */,
 				7AD0DDAF1CDCA7CE0057F8B2 /* JWUIViewControllersClass.m in Sources */,
 				B72A06531CE2113D0091986F /* PellTableViewSelect.m in Sources */,
 				7AD0DDA71CDCA7CE0057F8B2 /* JWUIClass.m in Sources */,

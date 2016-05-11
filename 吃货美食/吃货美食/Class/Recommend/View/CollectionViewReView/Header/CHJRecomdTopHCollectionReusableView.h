@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CHJRTopBannerShowModel.h"
+#import "CHJRTopBannerTittleModel.h"
+#import "CHJRTopBannerCollectCell.h"
 
-@interface CHJRecomdTopHCollectionReusableView : UICollectionReusableView
+#import <UIImageView+WebCache.h>
+@interface CHJRecomdTopHCollectionReusableView : UICollectionReusableView<UICollectionViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UICollectionView *topBannerCollectionView;
+
+@property (weak, nonatomic) IBOutlet UIPageControl *topBanerPageView;
+@property (nonatomic,strong)NSMutableArray * topBannerShow;
+@property (nonatomic,strong)NSMutableArray * topBannerTittle;
+
 
 @end
