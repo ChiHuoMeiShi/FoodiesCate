@@ -19,8 +19,10 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *aroundFoodBtnRightEndge;
 
 @property (weak, nonatomic) IBOutlet UIButton *listButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *listButtonWidth;
 
 @property (weak, nonatomic) IBOutlet UIButton *composeButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *composeButtonWIdth;
 
 
 @end

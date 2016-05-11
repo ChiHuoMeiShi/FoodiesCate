@@ -10,4 +10,7 @@
 
 @interface CHJRecomdSugstFCollectionReusableView : UICollectionReusableView
 
+@property (weak, nonatomic) IBOutlet UIButton *commitButton;
+
+
 @end

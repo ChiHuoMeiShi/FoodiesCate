@@ -11,10 +11,14 @@
 @implementation CHJRecomdFucFCollectionReusableView
 
 - (void)awakeFromNib {
-    CGFloat endge = (self.aroundFoodButton.x - CGRectGetMaxX(self.foodTypeButton.frame) - self.audioFoodButton.width * 2)/2;
-    CHLog(@"%f",CGRectGetMaxX(self.foodTypeButton.frame));
+    CGFloat endge = (CHSCREENWIDTH - 2 * CGRectGetMaxX(self.foodTypeButton.frame) - self.audioFoodButton.width * 2)/3;
     self.audioFoodBtnLeftEndge.constant = endge;
     self.aroundFoodBtnRightEndge.constant = endge;
+    
+    CGFloat width = (CHSCREENWIDTH - 3 * 15.f)/2;
+    self.listButtonWidth.constant = width;
+    self.composeButtonWIdth.constant = width;
+    
     [self setNeedsLayout];
 }
 

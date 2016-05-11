@@ -10,7 +10,49 @@
         <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CHJRecomdTodayHCollectionReusableView" id="U6b-Vx-4bR">
             <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
             <autoresizingMask key="autoresizingMask"/>
-            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TsM-LW-Voe">
+                    <rect key="frame" x="100" y="0.0" width="120" height="35"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ms_fenlei_1" translatesAutoresizingMaskIntoConstraints="NO" id="Ptl-go-whU">
+                            <rect key="frame" x="0.0" y="5" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="2pJ-Jy-jT9"/>
+                                <constraint firstAttribute="width" constant="25" id="Mdn-HJ-YU6"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日推荐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxB-tR-Xos">
+                            <rect key="frame" x="33" y="7" width="87" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="j5h-PG-DZv"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="mxB-tR-Xos" firstAttribute="centerY" secondItem="TsM-LW-Voe" secondAttribute="centerY" id="1AR-JB-P4K"/>
+                        <constraint firstItem="Ptl-go-whU" firstAttribute="leading" secondItem="TsM-LW-Voe" secondAttribute="leading" id="LgS-hB-g15"/>
+                        <constraint firstItem="mxB-tR-Xos" firstAttribute="leading" secondItem="Ptl-go-whU" secondAttribute="trailing" constant="8" id="Rga-J8-VNJ"/>
+                        <constraint firstItem="Ptl-go-whU" firstAttribute="centerY" secondItem="TsM-LW-Voe" secondAttribute="centerY" id="d26-mY-TB5"/>
+                        <constraint firstAttribute="width" constant="120" id="feC-cH-gJe"/>
+                        <constraint firstAttribute="trailing" secondItem="mxB-tR-Xos" secondAttribute="trailing" id="uK3-rQ-eb7"/>
+                        <constraint firstAttribute="height" constant="35" id="yhm-VH-uNs"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="TsM-LW-Voe" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="Et2-eU-K06"/>
+                <constraint firstItem="TsM-LW-Voe" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="Yl4-se-6UT"/>
+                <constraint firstAttribute="bottom" secondItem="TsM-LW-Voe" secondAttribute="bottom" id="xkD-Pg-qeJ"/>
+            </constraints>
+            <point key="canvasLocation" x="117" y="266.5"/>
         </collectionReusableView>
     </objects>
+    <resources>
+        <image name="ms_fenlei_1" width="27" height="27"/>
+    </resources>
 </document>

@@ -20,16 +20,18 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jr0-GJ-htc">
                     <rect key="frame" x="15" y="106" width="135" height="80"/>
-                    <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="width" constant="135" id="GzL-yz-Ybn"/>
                         <constraint firstAttribute="height" constant="80" id="cTf-Yx-V2a"/>
                     </constraints>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2C0-S0-Gsu">
                     <rect key="frame" x="170" y="106" width="135" height="80"/>
-                    <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="9C9-g6-9Tb"/>
+                        <constraint firstAttribute="width" constant="135" id="LwR-Xe-PMC"/>
                     </constraints>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="菜谱分类" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7O6-PZ-e7T">
@@ -39,7 +41,7 @@
                         <constraint firstAttribute="width" constant="55" id="mex-AL-Vts"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJp-Il-yOJ">
@@ -56,7 +58,7 @@
                         <constraint firstAttribute="width" constant="55" id="XI9-d5-XpG"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3JS-X9-HQE">
@@ -73,7 +75,7 @@
                         <constraint firstAttribute="width" constant="55" id="RR8-z2-Pia"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6u-Li-VS5">
@@ -90,7 +92,7 @@
                         <constraint firstAttribute="height" constant="21" id="eOW-zK-rp2"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -122,7 +124,9 @@
             </constraints>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="wH4-tB-zlm"/>
                     <exclude reference="mPh-HV-mL8"/>
+                    <exclude reference="qWT-pI-Htb"/>
                 </mask>
             </variation>
             <connections>
@@ -132,8 +136,10 @@
                 <outlet property="audioFoodButton" destination="uJp-Il-yOJ" id="g65-KX-4kE"/>
                 <outlet property="breasketFoodButton" destination="3JS-X9-HQE" id="Ktr-E0-LcU"/>
                 <outlet property="composeButton" destination="2C0-S0-Gsu" id="pw9-WE-Qwm"/>
+                <outlet property="composeButtonWIdth" destination="LwR-Xe-PMC" id="Csu-dj-uF2"/>
                 <outlet property="foodTypeButton" destination="UFK-N6-YWC" id="i3A-ZV-JGD"/>
                 <outlet property="listButton" destination="jr0-GJ-htc" id="GAV-Pt-lnz"/>
+                <outlet property="listButtonWidth" destination="GzL-yz-Ybn" id="KNb-t1-ENS"/>
             </connections>
             <point key="canvasLocation" x="151" y="176"/>
         </collectionReusableView>

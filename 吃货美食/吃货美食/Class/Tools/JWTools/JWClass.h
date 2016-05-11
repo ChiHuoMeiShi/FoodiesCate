@@ -16,7 +16,7 @@
 #import "NSArray+Log.h"
 #import "NSDictionary+Log.h"
 #import "NSDictionary+Attributes.h"
-
+#import "NSString+JWStringDeleteToURL.h"
 
 
 @interface JWClass : NSObject
