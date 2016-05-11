@@ -7,60 +7,130 @@
 //
 
 #import "CHEChatViewController.h"
-#import "PellTableViewSelect.h"
-@interface CHEChatViewController ()
+#import "CHZSendEChatController.h"
+
+#import "CHEChatHeaderView.h"
+
+@interface CHEChatViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property(strong,nonatomic) UITableView *eChatTableView;
+
+@property(strong,nonatomic)CHEChatHeaderView *headerView;
 
 @end
 
 @implementation CHEChatViewController
 
--(void)loadView
+//
+- (void)segmentItenAction:(UISegmentedControl *)segment
 {
-    //leftBarButtonItem
-    UIBarButtonItem *leftItemAdd = [UIBarButtonItem barItemWithImageName:@"umeng_add_photo" withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTarget:self action:@selector(addClick) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = leftItemAdd;
-    
-    //rightBarButtonItems
-    UIBarButtonItem *rightItemMail = [UIBarButtonItem barItemWithImageName:@"ms_mail2" withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTarget:self action:@selector(msMail) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIBarButtonItem *rightItemSearch = [UIBarButtonItem barItemWithImageName:@"topsearchicon_grey_2" withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTarget:self action:@selector(search) forControlEvents:UIControlEventTouchUpInside];
-    
-    self.navigationItem.rightBarButtonItems = @[rightItemSearch,rightItemMail];
+    NSInteger index = segment.selectedSegmentIndex;
+    switch (index)
+    {
+        case 0:
+            [self loadNew];
+            break;
+        case 1:
+            [self loadHot];
+            break;
+            
+        default:
+            break;
+    }
 }
+//加载最新
+- (void)loadNew{
+    
+}
+//加载最热
+- (void)loadHot{
+    
+}
+
 - (void)msMail
 {
     
 }
 - (void)addClick
 {
-    // 弹出QQ的自定义视图
-    [PellTableViewSelect addPellTableViewSelectWithWindowFrame:CGRectMake(self.view.bounds.size.width - 100, 64, 150, 200) selectData:@[@"发食话",@"餐桌食光",@"玩转烘焙",@"美食讲堂"] images:@[@"saoyisao.png",@"jiahaoyou.png",@"taolun.png",@"diannao.png"] action:^(NSInteger index) {
-        NSLog(@"选择%ld",index);
-    } animated:YES];
+    CHZSendEChatController *targetVC = [[CHZSendEChatController alloc] init];
+    [self.navigationController pushViewController:targetVC animated:YES];
+    
 }
 - (void)search
 {
+
+}
+//
+- (void)addNavigationItem
+{
+    //leftBarButtonItem
+    UIBarButtonItem *leftItemAdd = [UIBarButtonItem barItemWithImageName:@"umeng_add_photo" withSelectImage:@"umeng_add_photo" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTarget:self action:@selector(addClick) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = leftItemAdd;
+    //rightBarButtonItems
+    UIBarButtonItem *rightItemMail = [UIBarButtonItem barItemWithImageName:@"ms_mail2" withSelectImage:@"ms_mail2" withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTarget:self action:@selector(msMail) forControlEvents:UIControlEventTouchUpInside];
     
+    UIBarButtonItem *rightItemSearch = [UIBarButtonItem barItemWithImageName:@"topsearchicon_grey_2" withSelectImage:@"topsearchicon_grey_2" withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTarget:self action:@selector(search) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.rightBarButtonItems = @[rightItemSearch,rightItemMail];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
+    [self addNavigationItem];
+    self.eChatTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
+
+    self.eChatTableView.delegate = self;
+    self.eChatTableView.dataSource = self;
+
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 150)];
+    _eChatTableView.tableHeaderView = v;
+
+    [self.view addSubview:self.eChatTableView];
+    //segment
+//    NSArray *segmentedArray = [[NSArray alloc]initWithObjects:@"最新",@"最热",nil];
+//    UISegmentedControl *segmentControl = [[UISegmentedControl alloc] initWithItems:segmentedArray];
+//    CGFloat segmentW = 200.f;//segment的宽度
+//    CGFloat segmentH = 40.f;//高度
+//    
+//    
+//    segmentControl.frame = CGRectMake(CHSCREENHEIGH / 2 - segmentW, 64 + 8.f, segmentW, segmentH);
+//    //设置默认索引序列
+//    segmentControl.selectedSegmentIndex = 0;
+//    segmentControl.tintColor = [UIColor redColor];
+//    
+//    [segmentControl addTarget:self action:@selector(segmentItenAction:) forControlEvents:UIControlEventValueChanged];
 }
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 20;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *ID = @"ZTCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"测试数据------%ld",(long)indexPath.row];
+    return cell;
+}
+#pragma mark -- UITableViewDelegate
+//- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

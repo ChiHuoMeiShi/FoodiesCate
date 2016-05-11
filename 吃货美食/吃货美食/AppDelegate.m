@@ -22,6 +22,8 @@
     
     self.window = [UIWindow windowInitWithRootViewController:tabBarVC];
     
+    self.window.backgroundColor = [UIColor whiteColor];
+    
     return YES;
 }
 
