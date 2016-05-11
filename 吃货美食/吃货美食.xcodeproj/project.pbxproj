@@ -38,6 +38,7 @@
 		7AAF0A861CE1F55500708F98 /* CHJRecommendMyLikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A851CE1F55500708F98 /* CHJRecommendMyLikeModel.m */; };
 		7AAF3F071CE3459E00573EF6 /* CHRWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF3F051CE3459E00573EF6 /* CHRWebViewController.m */; };
 		7AAF3F081CE3459E00573EF6 /* CHRWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AAF3F061CE3459E00573EF6 /* CHRWebViewController.xib */; };
+		7AAF3F0C1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF3F0B1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m */; };
 		7AD0DDA31CDCA7CE0057F8B2 /* JWClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD761CDCA7CE0057F8B2 /* JWClass.m */; };
 		7AD0DDA41CDCA7CE0057F8B2 /* NSDictionary+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD7A1CDCA7CE0057F8B2 /* NSDictionary+Attributes.m */; };
 		7AD0DDA51CDCA7CE0057F8B2 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD7D1CDCA7CE0057F8B2 /* NSArray+Log.m */; };
@@ -126,6 +127,8 @@
 		7AAF3F041CE3459E00573EF6 /* CHRWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRWebViewController.h; sourceTree = "<group>"; };
 		7AAF3F051CE3459E00573EF6 /* CHRWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRWebViewController.m; sourceTree = "<group>"; };
 		7AAF3F061CE3459E00573EF6 /* CHRWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRWebViewController.xib; sourceTree = "<group>"; };
+		7AAF3F0A1CE35D6700573EF6 /* CHRTodayBannerScrollerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRTodayBannerScrollerView.h; sourceTree = "<group>"; };
+		7AAF3F0B1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRTodayBannerScrollerView.m; sourceTree = "<group>"; };
 		7AD0DD751CDCA7CE0057F8B2 /* JWClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWClass.h; sourceTree = "<group>"; };
 		7AD0DD761CDCA7CE0057F8B2 /* JWClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWClass.m; sourceTree = "<group>"; };
 		7AD0DD791CDCA7CE0057F8B2 /* NSDictionary+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Attributes.h"; sourceTree = "<group>"; };
@@ -270,6 +273,7 @@
 		7AAF0A211CE184A300708F98 /* Footer */ = {
 			isa = PBXGroup;
 			children = (
+				7AAF3F091CE3558B00573EF6 /* TodayBanner */,
 				7AAF0A221CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.h */,
 				7AAF0A231CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.m */,
 				7AAF0A241CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.xib */,
@@ -370,6 +374,15 @@
 				7AAF3F061CE3459E00573EF6 /* CHRWebViewController.xib */,
 			);
 			path = WebView;
+			sourceTree = "<group>";
+		};
+		7AAF3F091CE3558B00573EF6 /* TodayBanner */ = {
+			isa = PBXGroup;
+			children = (
+				7AAF3F0A1CE35D6700573EF6 /* CHRTodayBannerScrollerView.h */,
+				7AAF3F0B1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m */,
+			);
+			path = TodayBanner;
 			sourceTree = "<group>";
 		};
 		7AD0DD741CDCA7CE0057F8B2 /* JWTools */ = {
@@ -962,6 +975,7 @@
 				7A6ED7041CE31E87005DF78C /* CHJRTopBannerCellView.m in Sources */,
 				B7F6156C1CDCA17700AF1697 /* CHRecommendViewController.m in Sources */,
 				7AD0DDA31CDCA7CE0057F8B2 /* JWClass.m in Sources */,
+				7AAF3F0C1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m in Sources */,
 				7AAF0A821CE1EFD600708F98 /* CHJRecomdTdayBannerModel.m in Sources */,
 				7AAF0A491CE1855300708F98 /* CHJRecmdUpdateCollectionViewCell.m in Sources */,
 				7A6ED6F51CE2FFD5005DF78C /* CHJRTopBannerCollectCell.m in Sources */,

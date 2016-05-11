@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CHRTodayBannerScrollerView.h"
 @interface CHJRecomdTodayBanerFCollectionReusableView : UICollectionReusableView
+@property (weak, nonatomic) IBOutlet CHRTodayBannerScrollerView *todayBannerScrollerView;
+@property (weak, nonatomic) IBOutlet UIPageControl *todayBannerPageControl;
 
 @end

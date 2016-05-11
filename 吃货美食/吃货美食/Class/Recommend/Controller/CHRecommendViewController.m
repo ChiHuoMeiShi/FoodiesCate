@@ -19,13 +19,14 @@
 #import "CHJRecomdTodayBanerFCollectionReusableView.h"
 #import "CHJRecomdSugstFCollectionReusableView.h"
 #import "CHRWebViewController.h"
+#import "CHRTodayBannerScrollerView.h"
 @interface CHRecommendViewController ()<UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *recommendCollection;
 @property (nonatomic,strong)CHJRecommendModel * recommendModel;
-@property (nonnull,strong)CHJRecomdTopHCollectionReusableView * topHeaderView;
-
-
+@property (nonatomic,strong)CHJRecomdTopHCollectionReusableView * topHeaderView;
+@property (nonatomic,strong)CHRTodayBannerScrollerView * todayBannerScrollerView;
+@property (nonatomic,strong)CHJRecomdTodayBanerFCollectionReusableView * todayFooterView;
 @end
 
 @implementation CHRecommendViewController
@@ -64,9 +65,10 @@
     }];
 }
 
-- (void)pushToWebViewWithID:(NSNumber *)myID{
+- (void)pushToWebViewWithID:(NSNumber *)myID withUrlString:(NSString *)urlString{
     CHRWebViewController * webVC = [[CHRWebViewController alloc]init];
     webVC.webID = myID;
+    webVC.urlString = urlString;
     [self.navigationController pushViewController:webVC animated:YES];
 }
 
@@ -84,11 +86,16 @@
     
     __weak typeof(self)mySelf = self;
     self.topHeaderView.choosedJump = ^(CHJRTopBannerShowModel * topModel){
-        [mySelf pushToWebViewWithID:topModel.myID];
+        [mySelf pushToWebViewWithID:topModel.myID withUrlString:nil];
     };
     [self.topHeaderView.topBannerCollectionView reloadData];
 }
-
+- (void)recommdTodayBannerHeaderSetting{
+    self.todayFooterView.todayBannerScrollerView.modelArray = self.recommendModel.todayBanner;
+    self.todayFooterView.todayBannerScrollerView.delegate = self;
+    self.todayFooterView.todayBannerScrollerView.tag = 192168;
+    
+}
 - (void)recommendCollectionRegister{
     [self.recommendCollection registerNib:[UINib nibWithNibName:@"CHJRecmdUpdateCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"CHJRecmdUpdateCollectionViewCell"];
 //    Header
@@ -194,8 +201,9 @@
             CHJRecomdFucFCollectionReusableView * funFooterView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdFucFCollectionReusableView" forIndexPath:indexPath];
             return funFooterView;
         }else if (indexPath.section == 1){
-            CHJRecomdTodayBanerFCollectionReusableView * todayFooterView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdTodayBanerFCollectionReusableView" forIndexPath:indexPath];
-            return todayFooterView;
+            self.todayFooterView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdTodayBanerFCollectionReusableView" forIndexPath:indexPath];
+            [self recommdTodayBannerHeaderSetting];
+            return self.todayFooterView;
         }else{
             CHJRecomdSugstFCollectionReusableView * sugFooterView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdSugstFCollectionReusableView" forIndexPath:indexPath];
             [sugFooterView.commitButton addTarget:self action:@selector(commitAction) forControlEvents:UIControlEventTouchUpInside];

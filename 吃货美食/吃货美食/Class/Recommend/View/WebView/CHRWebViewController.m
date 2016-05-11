@@ -18,8 +18,12 @@
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationController.navigationBar.hidden = YES;
-    NSString * loadURL = [NSString stringWithFormat:@"http://m.meishij.net/html5/news.php?id=%@",self.webID];
-    NSURL * requestURL = [NSURL URLWithString:[loadURL stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
+    if (!self.urlString) {
+        self.urlString = [NSString stringWithFormat:@"http://m.meishij.net/html5/news.php?id=%@",self.webID];
+    }else{
+        self.urlString = [self.urlString stringDeleteToURL:self.urlString];
+    }
+    NSURL * requestURL = [NSURL URLWithString:[self.urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
     NSURLRequest * request = [[NSURLRequest alloc]initWithURL:requestURL];
     [self.webDetailView loadRequest:request];
     
