@@ -27,6 +27,7 @@
 @property (nonatomic,strong)CHJRecomdTopHCollectionReusableView * topHeaderView;
 @property (nonatomic,strong)CHRTodayBannerScrollerView * todayBannerScrollerView;
 @property (nonatomic,strong)CHJRecomdTodayBanerFCollectionReusableView * todayFooterView;
+@property (nonatomic,strong)NSTimer * todayBannerTimer;
 @end
 
 @implementation CHRecommendViewController
@@ -41,6 +42,17 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = NO;
+    if (!self.todayBannerTimer) {
+        self.todayBannerTimer = [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(todayBannerTimerAction) userInfo:nil repeats:YES];
+    }
+    
+    if (self.todayFooterView) {
+        NSInteger currentPage = self.todayFooterView.todayBannerScrollerView.currentBannerCount;
+        for (NSInteger i = 0; i < currentPage; i++) {
+            [self.todayFooterView.todayBannerScrollerView rightShift];
+        }
+        self.todayFooterView.todayBannerPageControl.currentPage = self.todayFooterView.todayBannerScrollerView.currentBannerCount;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,13 +89,16 @@
     
 }
 
+- (void)todayBannerTimerAction{
+    [self.todayFooterView.todayBannerScrollerView rightShift];
+    self.todayFooterView.todayBannerPageControl.currentPage = self.todayFooterView.todayBannerScrollerView.currentBannerCount;
+}
 #pragma mark - initSubs
 - (void)recommdTopBannerHeaderSetting{
     self.topHeaderView.topBannerShow = self.recommendModel.topBannerShow;
     self.topHeaderView.topBannerTittle = self.recommendModel.topBannerTittle;
     self.topHeaderView.topBannerCollectionView.tag = 15928;
     self.topHeaderView.topBannerCollectionView.delegate = self;
-    
     __weak typeof(self)mySelf = self;
     self.topHeaderView.choosedJump = ^(CHJRTopBannerShowModel * topModel){
         [mySelf pushToWebViewWithID:topModel.myID withUrlString:nil];
@@ -94,7 +109,10 @@
     self.todayFooterView.todayBannerScrollerView.modelArray = self.recommendModel.todayBanner;
     self.todayFooterView.todayBannerScrollerView.delegate = self;
     self.todayFooterView.todayBannerScrollerView.tag = 192168;
-    
+    __weak typeof(self)mySelf = self;
+    self.todayFooterView.todayBannerScrollerView.todayjump = ^(NSString * todayJumpURL){
+        [mySelf pushToWebViewWithID:nil withUrlString:todayJumpURL];
+    };
 }
 - (void)recommendCollectionRegister{
     [self.recommendCollection registerNib:[UINib nibWithNibName:@"CHJRecmdUpdateCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"CHJRecmdUpdateCollectionViewCell"];
@@ -155,9 +173,18 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if (scrollView.tag == 15928) {
+//        topBannerScrollerView
         NSInteger currentBannerCount = (self.topHeaderView.topBannerCollectionView.contentOffset.x + (CHSCREENWIDTH/2) )/ CHSCREENWIDTH;
         if (currentBannerCount == self.topHeaderView.topBanerPageView.currentPage)return;
         self.topHeaderView.topBanerPageView.currentPage = currentBannerCount;
+    }else if (scrollView.tag == 192168){
+//        todayBannerScrollerView
+        if (self.todayFooterView.todayBannerScrollerView.contentOffset.x >= (CHSCREENWIDTH - 16.f) * 2) {
+            [self.todayFooterView.todayBannerScrollerView rightShift];
+        } else if (self.todayFooterView.todayBannerScrollerView.contentOffset.x <= 0.f){
+            [self.todayFooterView.todayBannerScrollerView leftShift];
+        }
+        self.todayFooterView.todayBannerPageControl.currentPage = self.todayFooterView.todayBannerScrollerView.currentBannerCount;
     }
     
 }
@@ -201,8 +228,10 @@
             CHJRecomdFucFCollectionReusableView * funFooterView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdFucFCollectionReusableView" forIndexPath:indexPath];
             return funFooterView;
         }else if (indexPath.section == 1){
-            self.todayFooterView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdTodayBanerFCollectionReusableView" forIndexPath:indexPath];
-            [self recommdTodayBannerHeaderSetting];
+            if (!self.todayFooterView) {
+                self.todayFooterView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdTodayBanerFCollectionReusableView" forIndexPath:indexPath];
+                [self recommdTodayBannerHeaderSetting];
+            }
             return self.todayFooterView;
         }else{
             CHJRecomdSugstFCollectionReusableView * sugFooterView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdSugstFCollectionReusableView" forIndexPath:indexPath];

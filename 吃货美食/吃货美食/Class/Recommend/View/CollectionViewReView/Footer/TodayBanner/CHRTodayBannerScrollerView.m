@@ -55,6 +55,7 @@ const CGFloat todayBannerHeigh = 80.f;
     self.beyoundView.backgroundColor = [UIColor cyanColor];
     [self addSubview:self.beyoundView];
     self.currentView = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.beyoundView.frame), 0.f, CHSCREENWIDTH - 16.f, todayBannerHeigh)];
+    [self.currentView addTarget:self action:@selector(currentChooseAction) forControlEvents:UIControlEventTouchUpInside];
     self.currentView.backgroundColor = [UIColor yellowColor];
     [self addSubview:self.currentView];
     self.laterView = [[UIView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.currentView.frame), 0.f, CHSCREENWIDTH - 16.f, todayBannerHeigh)];
@@ -90,6 +91,10 @@ const CGFloat todayBannerHeigh = 80.f;
     
     [self viewGetImagesView];
     
+}
+
+- (void)currentChooseAction{
+    self.todayjump(self.urlStringArray[self.currentBannerCount]);
 }
 
 @end

@@ -11,7 +11,7 @@
 #import <UIImageView+WebCache.h>
 extern const CGFloat todayBannerHeigh;
 @interface CHRTodayBannerScrollerView : UIScrollView
-
+typedef void (^todayBannerChosedJump)(NSString *);
 @property (nonatomic,assign)NSInteger currentBannerCount;
 @property (nonatomic,strong)NSMutableArray * imagesArray;
 @property (nonatomic,strong)NSMutableArray * urlStringArray;
@@ -19,6 +19,7 @@ extern const CGFloat todayBannerHeigh;
 @property (nonatomic,strong)UIButton * currentView;
 @property (nonatomic,strong)UIView * beyoundView;
 @property (nonatomic,strong)UIView * laterView;
+@property (nonatomic,copy)todayBannerChosedJump todayjump;
 
 - (void)imagesArrayAdd;
 

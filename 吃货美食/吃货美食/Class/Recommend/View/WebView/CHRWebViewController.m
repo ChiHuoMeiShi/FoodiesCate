@@ -22,6 +22,8 @@
         self.urlString = [NSString stringWithFormat:@"http://m.meishij.net/html5/news.php?id=%@",self.webID];
     }else{
         self.urlString = [self.urlString stringDeleteToURL:self.urlString];
+        [self.backButton setImage:[UIImage imageNamed:@"ms_back_icon2"] forState:UIControlStateNormal];
+        [self.backButton setTitle:@"返回" forState:UIControlStateNormal];
     }
     NSURL * requestURL = [NSURL URLWithString:[self.urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]];
     NSURLRequest * request = [[NSURLRequest alloc]initWithURL:requestURL];
