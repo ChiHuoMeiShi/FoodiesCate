@@ -10,10 +10,12 @@
 #import "CHJRTopBannerShowModel.h"
 #import <UIImageView+WebCache.h>
 
+typedef void (^topBannerSelectedJump)(CHJRTopBannerShowModel *);
 @interface CHJRTopBannerCellView : UIView
 @property (nonatomic,strong)UIButton *chooseButton;
 @property (nonatomic,strong)UILabel *showLabel;
 @property (nonatomic,strong)UILabel *detailLabel;
 @property (nonatomic,strong)CHJRTopBannerShowModel * showBannerModel;
+@property (nonatomic,copy)topBannerSelectedJump selectedJump;
 
 @end

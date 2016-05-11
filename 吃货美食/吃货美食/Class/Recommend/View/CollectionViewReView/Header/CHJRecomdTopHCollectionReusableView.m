@@ -36,14 +36,24 @@
     CHJRTopBannerTittleModel * tittleModel = self.topBannerTittle[indexPath.row];
     topBannerCell.showLabel.text = tittleModel.title;
     topBannerCell.detailLabel.text = tittleModel.sub_title;
+    __weak typeof(self)mySelf = self;
     for (int i = 3 * (int)indexPath.row; i < (3 * (indexPath.row + 1)); i++) {
         CHJRTopBannerShowModel * bannerShowModel = self.topBannerShow[i];
         if (i%3 == 1) {
             topBannerCell.topFoodView.showBannerModel = bannerShowModel;
+            topBannerCell.topFoodView.selectedJump = ^(CHJRTopBannerShowModel * model){
+                mySelf.choosedJump(model);
+            };
         } else if (i%3 == 2) {
             topBannerCell.centerFoodView.showBannerModel = bannerShowModel;
+            topBannerCell.centerFoodView.selectedJump = ^(CHJRTopBannerShowModel * model){
+                mySelf.choosedJump(model);
+            };
         } else{
             topBannerCell.lastFoodView.showBannerModel = bannerShowModel;
+            topBannerCell.lastFoodView.selectedJump = ^(CHJRTopBannerShowModel * model){
+                mySelf.choosedJump(model);
+            };
         }
     }
     return topBannerCell;

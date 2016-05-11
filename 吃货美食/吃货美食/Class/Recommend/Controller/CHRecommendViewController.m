@@ -18,7 +18,7 @@
 #import "CHJRecomdFucFCollectionReusableView.h"
 #import "CHJRecomdTodayBanerFCollectionReusableView.h"
 #import "CHJRecomdSugstFCollectionReusableView.h"
-
+#import "CHRWebViewController.h"
 @interface CHRecommendViewController ()<UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *recommendCollection;
@@ -37,11 +37,15 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = NO;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 - (void)getCollectionViewData{
     AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
@@ -60,12 +64,31 @@
     }];
 }
 
+- (void)pushToWebViewWithID:(NSNumber *)myID{
+    CHRWebViewController * webVC = [[CHRWebViewController alloc]init];
+    webVC.webID = myID;
+    [self.navigationController pushViewController:webVC animated:YES];
+}
+
 #pragma mark - ButtonActions
 - (void)commitAction{
     
 }
 
 #pragma mark - initSubs
+- (void)recommdTopBannerHeaderSetting{
+    self.topHeaderView.topBannerShow = self.recommendModel.topBannerShow;
+    self.topHeaderView.topBannerTittle = self.recommendModel.topBannerTittle;
+    self.topHeaderView.topBannerCollectionView.tag = 15928;
+    self.topHeaderView.topBannerCollectionView.delegate = self;
+    
+    __weak typeof(self)mySelf = self;
+    self.topHeaderView.choosedJump = ^(CHJRTopBannerShowModel * topModel){
+        [mySelf pushToWebViewWithID:topModel.myID];
+    };
+    [self.topHeaderView.topBannerCollectionView reloadData];
+}
+
 - (void)recommendCollectionRegister{
     [self.recommendCollection registerNib:[UINib nibWithNibName:@"CHJRecmdUpdateCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"CHJRecmdUpdateCollectionViewCell"];
 //    Header
@@ -154,11 +177,7 @@
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         if (indexPath.section == 0) {
             self.topHeaderView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdTopHCollectionReusableView" forIndexPath:indexPath];
-            self.topHeaderView.topBannerShow = self.recommendModel.topBannerShow;
-            self.topHeaderView.topBannerTittle = self.recommendModel.topBannerTittle;
-            self.topHeaderView.topBannerCollectionView.tag = 15928;
-            self.topHeaderView.topBannerCollectionView.delegate = self;
-            [self.topHeaderView.topBannerCollectionView reloadData];
+            [self recommdTopBannerHeaderSetting];
             return self.topHeaderView;
         }else if (indexPath.section == 1){
             CHJRecomdTodayHCollectionReusableView * todayHeaderView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdTodayHCollectionReusableView" forIndexPath:indexPath];

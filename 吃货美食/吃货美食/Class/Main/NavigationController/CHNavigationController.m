@@ -9,6 +9,13 @@
 #import "CHNavigationController.h"
 
 @implementation CHNavigationController
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    UINavigationBar * navBar = [[UINavigationBar alloc]init];
+    navBar.backgroundColor = [UIColor whiteColor];
+    navBar.barTintColor = [UIColor whiteColor];
+    [self setValue:navBar forKey:@"navigationBar"];
+}
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
@@ -18,5 +25,7 @@
     }
     [super pushViewController:viewController animated:animated];
 }
+
+
 
 @end

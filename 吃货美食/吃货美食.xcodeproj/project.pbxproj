@@ -36,6 +36,8 @@
 		7AAF0A7F1CE1EF9D00708F98 /* CHJRecomdTodayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A7E1CE1EF9D00708F98 /* CHJRecomdTodayModel.m */; };
 		7AAF0A821CE1EFD600708F98 /* CHJRecomdTdayBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A811CE1EFD600708F98 /* CHJRecomdTdayBannerModel.m */; };
 		7AAF0A861CE1F55500708F98 /* CHJRecommendMyLikeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A851CE1F55500708F98 /* CHJRecommendMyLikeModel.m */; };
+		7AAF3F071CE3459E00573EF6 /* CHRWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF3F051CE3459E00573EF6 /* CHRWebViewController.m */; };
+		7AAF3F081CE3459E00573EF6 /* CHRWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AAF3F061CE3459E00573EF6 /* CHRWebViewController.xib */; };
 		7AD0DDA31CDCA7CE0057F8B2 /* JWClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD761CDCA7CE0057F8B2 /* JWClass.m */; };
 		7AD0DDA41CDCA7CE0057F8B2 /* NSDictionary+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD7A1CDCA7CE0057F8B2 /* NSDictionary+Attributes.m */; };
 		7AD0DDA51CDCA7CE0057F8B2 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD7D1CDCA7CE0057F8B2 /* NSArray+Log.m */; };
@@ -121,6 +123,9 @@
 		7AAF0A811CE1EFD600708F98 /* CHJRecomdTdayBannerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRecomdTdayBannerModel.m; sourceTree = "<group>"; };
 		7AAF0A841CE1F55500708F98 /* CHJRecommendMyLikeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRecommendMyLikeModel.h; sourceTree = "<group>"; };
 		7AAF0A851CE1F55500708F98 /* CHJRecommendMyLikeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRecommendMyLikeModel.m; sourceTree = "<group>"; };
+		7AAF3F041CE3459E00573EF6 /* CHRWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRWebViewController.h; sourceTree = "<group>"; };
+		7AAF3F051CE3459E00573EF6 /* CHRWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRWebViewController.m; sourceTree = "<group>"; };
+		7AAF3F061CE3459E00573EF6 /* CHRWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRWebViewController.xib; sourceTree = "<group>"; };
 		7AD0DD751CDCA7CE0057F8B2 /* JWClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWClass.h; sourceTree = "<group>"; };
 		7AD0DD761CDCA7CE0057F8B2 /* JWClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWClass.m; sourceTree = "<group>"; };
 		7AD0DD791CDCA7CE0057F8B2 /* NSDictionary+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Attributes.h"; sourceTree = "<group>"; };
@@ -355,6 +360,16 @@
 				7AAF0A851CE1F55500708F98 /* CHJRecommendMyLikeModel.m */,
 			);
 			path = MyLike;
+			sourceTree = "<group>";
+		};
+		7AAF3F031CE3455200573EF6 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				7AAF3F041CE3459E00573EF6 /* CHRWebViewController.h */,
+				7AAF3F051CE3459E00573EF6 /* CHRWebViewController.m */,
+				7AAF3F061CE3459E00573EF6 /* CHRWebViewController.xib */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		7AD0DD741CDCA7CE0057F8B2 /* JWTools */ = {
@@ -756,6 +771,7 @@
 		B7F615481CDC80B200AF1697 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7AAF3F031CE3455200573EF6 /* WebView */,
 				7AAF0A201CE184A300708F98 /* CollectionViewReView */,
 				7AAF0A1F1CE183A500708F98 /* Cell */,
 			);
@@ -866,6 +882,7 @@
 				B71ED8611CDB41660035F6BE /* LaunchScreen.storyboard in Resources */,
 				B71ED85E1CDB41660035F6BE /* Assets.xcassets in Resources */,
 				B7F615681CDCA14300AF1697 /* CHDiscoverViewController.xib in Resources */,
+				7AAF3F081CE3459E00573EF6 /* CHRWebViewController.xib in Resources */,
 				7A6ED6F61CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib in Resources */,
 				B7F6155A1CDC857700AF1697 /* CHEChatViewController.xib in Resources */,
 				B72A06581CE216D10091986F /* CHZSendEChatController.xib in Resources */,
@@ -968,6 +985,7 @@
 				7AAF0A791CE1ECFB00708F98 /* CHJRecommendJumpModel.m in Sources */,
 				7AAF0A5F1CE1DB7600708F98 /* CHJRTopListFunctModel.m in Sources */,
 				7AAF0A3B1CE184A300708F98 /* CHJRecomdTodayHCollectionReusableView.m in Sources */,
+				7AAF3F071CE3459E00573EF6 /* CHRWebViewController.m in Sources */,
 				7AD0DDAB1CDCA7CE0057F8B2 /* UIWindow+SettingWithVC.m in Sources */,
 				7AAF0A651CE1DD9600708F98 /* CHJRTopBannerShowModel.m in Sources */,
 				7AAF0A6E1CE1E23500708F98 /* CHJRTopBannerTittleModel.m in Sources */,
