@@ -36,7 +36,6 @@
     [super viewDidLoad];
     [self getCollectionViewData];
     [self recommendCollectionRegister];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
