@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <UIImageView+WebCache.h>
+#import "CHJRTopFunctionModel.h"
+#import "CHJRTopListFunctModel.h"
 
+typedef void (^topFunChooseView)(UIViewController *);
 @interface CHJRecomdFucFCollectionReusableView : UICollectionReusableView
 
 @property (weak, nonatomic) IBOutlet UIButton *foodTypeButton;
@@ -24,5 +29,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *composeButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *composeButtonWIdth;
 
+
+@property (nonatomic,strong)NSArray * functionArr;
+@property (nonatomic,strong)CHJRTopListFunctModel * list;
+@property (nonatomic,strong)CHJRTopListFunctModel * compose;
+@property (nonatomic,copy)topFunChooseView topFunChoosePush;
+
+- (void)buttonSettingFun;
 
 @end
