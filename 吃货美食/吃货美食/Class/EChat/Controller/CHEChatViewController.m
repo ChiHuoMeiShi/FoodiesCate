@@ -83,6 +83,12 @@
     self.eChatTableView.dataSource = self;
 
     UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 150)];
+    CGFloat btnWidth = 80.f;
+    CGFloat btnHeight = 80.f;
+    UIButton *goodCook = [[UIButton alloc] initWithFrame:CGRectMake(CHSCREENWIDTH / 2 - btnWidth / 2, 8.f , btnWidth, btnHeight)];
+    
+    
+//    [self.view addSubview:goodCook];
     _eChatTableView.tableHeaderView = v;
 
     [self.view addSubview:self.eChatTableView];
@@ -122,10 +128,6 @@
     return cell;
 }
 #pragma mark -- UITableViewDelegate
-//- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
