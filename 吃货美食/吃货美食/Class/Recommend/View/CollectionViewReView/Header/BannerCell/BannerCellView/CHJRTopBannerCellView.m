@@ -40,8 +40,9 @@
 - (void)setShowBannerModel:(CHJRTopBannerShowModel *)showBannerModel{
     if (!showBannerModel)return;
     _showBannerModel = showBannerModel;
+    __weak typeof(self)mySelf = self;
     [[SDWebImageManager sharedManager]downloadImageWithURL:[NSURL URLWithString:_showBannerModel.titlepic] options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-        [self.chooseButton setImage:image forState:UIControlStateNormal];
+        [mySelf.chooseButton setImage:image forState:UIControlStateNormal];
     }];
     self.showLabel.text = _showBannerModel.title;
     self.detailLabel.text = _showBannerModel.descr;

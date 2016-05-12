@@ -45,14 +45,15 @@
         CHJRTopFunctionModel * model = self.functionArr[count];
         url = [NSURL URLWithString:model.image];
     }
+    __weak typeof(btn)setBtn = btn;
     [[SDWebImageManager sharedManager] downloadImageWithURL:url options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-        [btn setBackgroundImage:image forState:UIControlStateNormal];
+        [setBtn setBackgroundImage:image forState:UIControlStateNormal];
     }];
 }
 
 #pragma mark - ButtonAction
 - (void)foodTypeButtonAction{
-    self.topFunChoosePush([[UIViewController alloc]init]);
+    self.topFunChoosePush([[CHRJSortViewController alloc]init]);
 }
 - (void)audioFoodButtonAction{
     self.topFunChoosePush([[UIViewController alloc]init]);

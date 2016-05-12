@@ -11,6 +11,7 @@
 #import <UIImageView+WebCache.h>
 #import "CHJRTopFunctionModel.h"
 #import "CHJRTopListFunctModel.h"
+#import "CHRJSortViewController.h"
 
 typedef void (^topFunChooseView)(UIViewController *);
 @interface CHJRecomdFucFCollectionReusableView : UICollectionReusableView
