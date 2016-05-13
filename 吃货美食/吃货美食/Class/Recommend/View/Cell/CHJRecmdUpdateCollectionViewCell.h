@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CHJRecmdUpdateCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *showImageView;
+@property (weak, nonatomic) IBOutlet UILabel *showLabel;
 
 @end

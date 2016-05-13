@@ -12,7 +12,7 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="藏在这都被你发现了？不感兴趣？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mn3-Jn-dx2">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
+                    <rect key="frame" x="0.0" y="10" width="320" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="J0h-QZ-j3a"/>
                     </constraints>
@@ -21,7 +21,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQM-Cf-QZI">
-                    <rect key="frame" x="117" y="36" width="86" height="24"/>
+                    <rect key="frame" x="117" y="46" width="86" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="aeV-59-LzW"/>
                         <constraint firstAttribute="width" constant="86" id="lY9-7d-wn8"/>
@@ -33,7 +33,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Mn3-Jn-dx2" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="TIx-F1-SQa"/>
+                <constraint firstItem="Mn3-Jn-dx2" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="10" id="TIx-F1-SQa"/>
                 <constraint firstItem="Mn3-Jn-dx2" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="a5g-hm-UEb"/>
                 <constraint firstItem="zQM-Cf-QZI" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="aoe-un-VaA"/>
                 <constraint firstAttribute="trailing" secondItem="Mn3-Jn-dx2" secondAttribute="trailing" id="ebE-ly-p8D"/>

@@ -6,8 +6,12 @@
 //  Copyright © 2016年 赵天. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CHRJBasicViewController.h"
+extern const CGFloat myLat;
+extern const CGFloat myLon;
+@interface CHRecommendViewController : CHRJBasicViewController
 
-@interface CHRecommendViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *backToTopButton;
 
+- (void)getCollectionViewData;
 @end

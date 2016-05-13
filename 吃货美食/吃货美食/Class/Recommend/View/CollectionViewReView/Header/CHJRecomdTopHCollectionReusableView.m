@@ -20,7 +20,7 @@
     _topBannerTittle = topBannerTittle;
     if (_topBannerTittle.count >= 2) {
         self.topBanerPageView.numberOfPages = _topBannerTittle.count;
-        [self.topBannerCollectionView setContentOffset:CGPointMake(CHSCREENWIDTH, 0.f)];
+        [self.topBannerCollectionView setContentOffset:CGPointMake(CHSCREENWIDTH - 20.f, 0.f)];
     }else{
         self.topBanerPageView.numberOfPages = 1;
         self.topBanerPageView.currentPage = 0;

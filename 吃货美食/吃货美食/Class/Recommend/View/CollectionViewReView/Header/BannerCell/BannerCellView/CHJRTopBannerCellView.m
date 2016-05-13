@@ -14,16 +14,16 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
-        self.chooseButton = [[UIButton alloc]initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH - 16.f, 115.f)];
+        self.chooseButton = [[UIButton alloc]initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH - 20.f, 115.f)];
         [self.chooseButton addTarget:self action:@selector(selectedJumpAction) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.chooseButton];
-        self.showLabel = [[UILabel alloc]initWithFrame:CGRectMake(8.f, 55.f, CHSCREENWIDTH - 32.f, 21.f)];
+        self.showLabel = [[UILabel alloc]initWithFrame:CGRectMake(8.f, 55.f, CHSCREENWIDTH - 36.f, 21.f)];
         self.showLabel.textColor = [UIColor whiteColor];
         self.showLabel.font = [UIFont systemFontOfSize:20.f];
         self.showLabel.textAlignment = NSTextAlignmentRight;
         [self addSubview:self.showLabel];
         
-        self.detailLabel = [[UILabel alloc]initWithFrame:CGRectMake(8.f, 79.f, CHSCREENWIDTH - 32.f, 21.f)];
+        self.detailLabel = [[UILabel alloc]initWithFrame:CGRectMake(8.f, 79.f, CHSCREENWIDTH - 36.f, 21.f)];
         self.detailLabel.textColor = [UIColor whiteColor];
         self.detailLabel.font = [UIFont systemFontOfSize:14.f];
         self.detailLabel.textAlignment = NSTextAlignmentRight;

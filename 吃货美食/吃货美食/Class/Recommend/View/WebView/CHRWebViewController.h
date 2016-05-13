@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CHJRecommendJumpModel.h"
+
 @interface CHRWebViewController : UIViewController
 @property (nonatomic,strong)NSNumber * webID;
 @property (nonatomic,copy)NSString * urlString;

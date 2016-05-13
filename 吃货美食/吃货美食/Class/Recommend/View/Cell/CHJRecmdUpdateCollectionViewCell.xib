@@ -8,12 +8,42 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CHJRecmdUpdateCollectionViewCell" id="gTV-IL-0wX" customClass="CHJRecmdUpdateCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="238" height="143"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="238" height="143"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nUG-sF-GtC">
+                        <rect key="frame" x="0.0" y="0.0" width="238" height="143"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zp-UT-Hio">
+                        <rect key="frame" x="0.0" y="116" width="238" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="aCm-ec-6As"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="3zp-UT-Hio" secondAttribute="bottom" constant="6" id="1iG-zv-Uan"/>
+                <constraint firstAttribute="trailing" secondItem="3zp-UT-Hio" secondAttribute="trailing" id="Bay-wQ-Ulw"/>
+                <constraint firstAttribute="trailing" secondItem="nUG-sF-GtC" secondAttribute="trailing" id="JmA-8d-H9e"/>
+                <constraint firstItem="nUG-sF-GtC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="NGn-rd-pNE"/>
+                <constraint firstItem="3zp-UT-Hio" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fqh-kw-Np4"/>
+                <constraint firstItem="nUG-sF-GtC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="iOg-UU-F3M"/>
+                <constraint firstAttribute="bottom" secondItem="nUG-sF-GtC" secondAttribute="bottom" id="rlh-px-Ddy"/>
+            </constraints>
+            <size key="customSize" width="238" height="143"/>
+            <connections>
+                <outlet property="showImageView" destination="nUG-sF-GtC" id="isE-kS-R2W"/>
+                <outlet property="showLabel" destination="3zp-UT-Hio" id="UH0-S3-dOZ"/>
+            </connections>
+            <point key="canvasLocation" x="197" y="319.5"/>
         </collectionViewCell>
     </objects>
 </document>
