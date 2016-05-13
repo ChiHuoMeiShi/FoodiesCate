@@ -39,6 +39,15 @@
 		7AAF3F071CE3459E00573EF6 /* CHRWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF3F051CE3459E00573EF6 /* CHRWebViewController.m */; };
 		7AAF3F081CE3459E00573EF6 /* CHRWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AAF3F061CE3459E00573EF6 /* CHRWebViewController.xib */; };
 		7AAF3F0C1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF3F0B1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m */; };
+		7AC8C4231CE4696A0043CAEC /* CHRFenLei.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AC8C4221CE4696A0043CAEC /* CHRFenLei.plist */; };
+		7AC8C4291CE4AE7D0043CAEC /* CHRJSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC8C4271CE4AE7D0043CAEC /* CHRJSortViewController.m */; };
+		7AC8C42A1CE4AE7D0043CAEC /* CHRJSortViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AC8C4281CE4AE7D0043CAEC /* CHRJSortViewController.xib */; };
+		7AC8C42F1CE4B20A0043CAEC /* CHRJSortTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC8C42D1CE4B20A0043CAEC /* CHRJSortTableViewCell.m */; };
+		7AC8C4301CE4B20A0043CAEC /* CHRJSortTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AC8C42E1CE4B20A0043CAEC /* CHRJSortTableViewCell.xib */; };
+		7AC8C4341CE4B2240043CAEC /* CHRJSortCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC8C4321CE4B2240043CAEC /* CHRJSortCollectionViewCell.m */; };
+		7AC8C4351CE4B2240043CAEC /* CHRJSortCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AC8C4331CE4B2240043CAEC /* CHRJSortCollectionViewCell.xib */; };
+		7AC8C4391CE4B3010043CAEC /* CHRJSortModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC8C4381CE4B3010043CAEC /* CHRJSortModel.m */; };
+		7AC8C43C1CE4B3230043CAEC /* CHRJSortContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC8C43B1CE4B3230043CAEC /* CHRJSortContentModel.m */; };
 		7AD0DDA31CDCA7CE0057F8B2 /* JWClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD761CDCA7CE0057F8B2 /* JWClass.m */; };
 		7AD0DDA41CDCA7CE0057F8B2 /* NSDictionary+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD7A1CDCA7CE0057F8B2 /* NSDictionary+Attributes.m */; };
 		7AD0DDA51CDCA7CE0057F8B2 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD7D1CDCA7CE0057F8B2 /* NSArray+Log.m */; };
@@ -138,6 +147,20 @@
 		7AAF3F061CE3459E00573EF6 /* CHRWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRWebViewController.xib; sourceTree = "<group>"; };
 		7AAF3F0A1CE35D6700573EF6 /* CHRTodayBannerScrollerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRTodayBannerScrollerView.h; sourceTree = "<group>"; };
 		7AAF3F0B1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRTodayBannerScrollerView.m; sourceTree = "<group>"; };
+		7AC8C4221CE4696A0043CAEC /* CHRFenLei.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CHRFenLei.plist; sourceTree = "<group>"; };
+		7AC8C4261CE4AE7D0043CAEC /* CHRJSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJSortViewController.h; sourceTree = "<group>"; };
+		7AC8C4271CE4AE7D0043CAEC /* CHRJSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJSortViewController.m; sourceTree = "<group>"; };
+		7AC8C4281CE4AE7D0043CAEC /* CHRJSortViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRJSortViewController.xib; sourceTree = "<group>"; };
+		7AC8C42C1CE4B20A0043CAEC /* CHRJSortTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJSortTableViewCell.h; sourceTree = "<group>"; };
+		7AC8C42D1CE4B20A0043CAEC /* CHRJSortTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJSortTableViewCell.m; sourceTree = "<group>"; };
+		7AC8C42E1CE4B20A0043CAEC /* CHRJSortTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRJSortTableViewCell.xib; sourceTree = "<group>"; };
+		7AC8C4311CE4B2240043CAEC /* CHRJSortCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJSortCollectionViewCell.h; sourceTree = "<group>"; };
+		7AC8C4321CE4B2240043CAEC /* CHRJSortCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJSortCollectionViewCell.m; sourceTree = "<group>"; };
+		7AC8C4331CE4B2240043CAEC /* CHRJSortCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRJSortCollectionViewCell.xib; sourceTree = "<group>"; };
+		7AC8C4371CE4B3010043CAEC /* CHRJSortModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJSortModel.h; sourceTree = "<group>"; };
+		7AC8C4381CE4B3010043CAEC /* CHRJSortModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJSortModel.m; sourceTree = "<group>"; };
+		7AC8C43A1CE4B3230043CAEC /* CHRJSortContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJSortContentModel.h; sourceTree = "<group>"; };
+		7AC8C43B1CE4B3230043CAEC /* CHRJSortContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJSortContentModel.m; sourceTree = "<group>"; };
 		7AD0DD751CDCA7CE0057F8B2 /* JWClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWClass.h; sourceTree = "<group>"; };
 		7AD0DD761CDCA7CE0057F8B2 /* JWClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWClass.m; sourceTree = "<group>"; };
 		7AD0DD791CDCA7CE0057F8B2 /* NSDictionary+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Attributes.h"; sourceTree = "<group>"; };
@@ -410,6 +433,50 @@
 			path = TodayBanner;
 			sourceTree = "<group>";
 		};
+		7AC8C4211CE468BC0043CAEC /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7AC8C4221CE4696A0043CAEC /* CHRFenLei.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		7AC8C4251CE4ABD50043CAEC /* SortViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7AC8C4361CE4B2C40043CAEC /* SortModel */,
+				7AC8C42B1CE4B1C90043CAEC /* SortCell */,
+				7AC8C4261CE4AE7D0043CAEC /* CHRJSortViewController.h */,
+				7AC8C4271CE4AE7D0043CAEC /* CHRJSortViewController.m */,
+				7AC8C4281CE4AE7D0043CAEC /* CHRJSortViewController.xib */,
+			);
+			path = SortViewController;
+			sourceTree = "<group>";
+		};
+		7AC8C42B1CE4B1C90043CAEC /* SortCell */ = {
+			isa = PBXGroup;
+			children = (
+				7AC8C42C1CE4B20A0043CAEC /* CHRJSortTableViewCell.h */,
+				7AC8C42D1CE4B20A0043CAEC /* CHRJSortTableViewCell.m */,
+				7AC8C42E1CE4B20A0043CAEC /* CHRJSortTableViewCell.xib */,
+				7AC8C4311CE4B2240043CAEC /* CHRJSortCollectionViewCell.h */,
+				7AC8C4321CE4B2240043CAEC /* CHRJSortCollectionViewCell.m */,
+				7AC8C4331CE4B2240043CAEC /* CHRJSortCollectionViewCell.xib */,
+			);
+			path = SortCell;
+			sourceTree = "<group>";
+		};
+		7AC8C4361CE4B2C40043CAEC /* SortModel */ = {
+			isa = PBXGroup;
+			children = (
+				7AC8C4371CE4B3010043CAEC /* CHRJSortModel.h */,
+				7AC8C4381CE4B3010043CAEC /* CHRJSortModel.m */,
+				7AC8C43A1CE4B3230043CAEC /* CHRJSortContentModel.h */,
+				7AC8C43B1CE4B3230043CAEC /* CHRJSortContentModel.m */,
+			);
+			path = SortModel;
+			sourceTree = "<group>";
+		};
 		7AD0DD741CDCA7CE0057F8B2 /* JWTools */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +680,7 @@
 		B71ED8681CDB416C0035F6BE /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				7AC8C4211CE468BC0043CAEC /* SupportFiles */,
 				B7F615701CDCA2D900AF1697 /* Tools */,
 				B7F6156F1CDCA29100AF1697 /* DataBase */,
 				B7F6156E1CDCA27F00AF1697 /* NetWork */,
@@ -842,6 +910,7 @@
 		B7F615461CDC80B200AF1697 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7AC8C4251CE4ABD50043CAEC /* SortViewController */,
 				B7F615691CDCA17700AF1697 /* CHRecommendViewController.h */,
 				B7F6156A1CDCA17700AF1697 /* CHRecommendViewController.m */,
 				B7F6156B1CDCA17700AF1697 /* CHRecommendViewController.xib */,
@@ -976,16 +1045,20 @@
 				B71ED8611CDB41660035F6BE /* LaunchScreen.storyboard in Resources */,
 				B72A06971CE369D50091986F /* CHEChatCell.xib in Resources */,
 				B71ED85E1CDB41660035F6BE /* Assets.xcassets in Resources */,
+				7AC8C42A1CE4AE7D0043CAEC /* CHRJSortViewController.xib in Resources */,
 				B7F615681CDCA14300AF1697 /* CHDiscoverViewController.xib in Resources */,
 				7AAF3F081CE3459E00573EF6 /* CHRWebViewController.xib in Resources */,
 				7A6ED6F61CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib in Resources */,
 				B7F6155A1CDC857700AF1697 /* CHEChatViewController.xib in Resources */,
+				7AC8C4301CE4B20A0043CAEC /* CHRJSortTableViewCell.xib in Resources */,
 				B72A06581CE216D10091986F /* CHZSendEChatController.xib in Resources */,
 				B72A06A51CE3AF200091986F /* CHEChatHeaderView.xib in Resources */,
 				B71ED85C1CDB41660035F6BE /* Main.storyboard in Resources */,
 				7AAF0A361CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.xib in Resources */,
+				7AC8C4351CE4B2240043CAEC /* CHRJSortCollectionViewCell.xib in Resources */,
 				7AAF0A401CE184A300708F98 /* CHJRecomdUpdateHCollectionReusableView.xib in Resources */,
 				7AAF0A4F1CE18C4000708F98 /* CHJRecomdSugstFCollectionReusableView.xib in Resources */,
+				7AC8C4231CE4696A0043CAEC /* CHRFenLei.plist in Resources */,
 				B7F6156D1CDCA17700AF1697 /* CHRecommendViewController.xib in Resources */,
 				7AAF0A381CE184A300708F98 /* CHJRecomdTodayBanerFCollectionReusableView.xib in Resources */,
 				7AAF0A3E1CE184A300708F98 /* CHJRecomdTopHCollectionReusableView.xib in Resources */,
@@ -1053,10 +1126,12 @@
 				7AD0DDA91CDCA7CE0057F8B2 /* UILabel+SizeToFit.m in Sources */,
 				B7F615591CDC857700AF1697 /* CHEChatViewController.m in Sources */,
 				7AAF0A5C1CE1DB0F00708F98 /* CHJRTopFunctionModel.m in Sources */,
+				7AC8C42F1CE4B20A0043CAEC /* CHRJSortTableViewCell.m in Sources */,
 				7AAF0A7F1CE1EF9D00708F98 /* CHJRecomdTodayModel.m in Sources */,
 				7AD0DDA61CDCA7CE0057F8B2 /* NSDictionary+Log.m in Sources */,
 				7A6ED7041CE31E87005DF78C /* CHJRTopBannerCellView.m in Sources */,
 				B7F6156C1CDCA17700AF1697 /* CHRecommendViewController.m in Sources */,
+				7AC8C43C1CE4B3230043CAEC /* CHRJSortContentModel.m in Sources */,
 				B72A06A31CE3AEF00091986F /* CHEChatHeaderView.m in Sources */,
 				7AD0DDA31CDCA7CE0057F8B2 /* JWClass.m in Sources */,
 				7AAF3F0C1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m in Sources */,
@@ -1065,8 +1140,10 @@
 				7A6ED6F51CE2FFD5005DF78C /* CHJRTopBannerCollectCell.m in Sources */,
 				7AAF0A7C1CE1ED1600708F98 /* CHJRecomdJumpContentModel.m in Sources */,
 				7AAF0A351CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.m in Sources */,
+				7AC8C4291CE4AE7D0043CAEC /* CHRJSortViewController.m in Sources */,
 				7AD0DDAC1CDCA7CE0057F8B2 /* UIColor+HexColor.m in Sources */,
 				7AD0DDA81CDCA7CE0057F8B2 /* UIBarButtonItem+SettingCustom.m in Sources */,
+				7AC8C4391CE4B3010043CAEC /* CHRJSortModel.m in Sources */,
 				7AD0DDA41CDCA7CE0057F8B2 /* NSDictionary+Attributes.m in Sources */,
 				B7F615541CDC854500AF1697 /* CHMeViewController.m in Sources */,
 				B72A06571CE216D10091986F /* CHZSendEChatController.m in Sources */,
@@ -1088,6 +1165,7 @@
 				7AAF0A3B1CE184A300708F98 /* CHJRecomdTodayHCollectionReusableView.m in Sources */,
 				7AAF3F071CE3459E00573EF6 /* CHRWebViewController.m in Sources */,
 				7AD0DDAB1CDCA7CE0057F8B2 /* UIWindow+SettingWithVC.m in Sources */,
+				7AC8C4341CE4B2240043CAEC /* CHRJSortCollectionViewCell.m in Sources */,
 				7AAF0A651CE1DD9600708F98 /* CHJRTopBannerShowModel.m in Sources */,
 				7AAF0A6E1CE1E23500708F98 /* CHJRTopBannerTittleModel.m in Sources */,
 				B7A3F5D21CE483F100E09AED /* User_infoModel.m in Sources */,

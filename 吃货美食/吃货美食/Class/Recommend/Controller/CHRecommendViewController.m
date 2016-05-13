@@ -62,9 +62,8 @@
 - (void)getCollectionViewData{
     AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
     manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
-    
+
     NSString * url = @"http://api.meishi.cc/v5/index5.php?format=json";
-    
     NSDictionary * dic = @{@"lat":@"34.6049907522264",@"lon":@"112.4229875834745",@"source":@"iphone",@"format":@"json",@"page":@"1",@"app_liketime":@"1462495842"};
     [manger POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary * dic = (NSDictionary *)responseObject;
@@ -225,6 +224,14 @@
     }else if ([kind isEqualToString:UICollectionElementKindSectionFooter]){
         if (indexPath.section == 0) {
             CHJRecomdFucFCollectionReusableView * funFooterView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"CHJRecomdFucFCollectionReusableView" forIndexPath:indexPath];
+            funFooterView.functionArr = self.recommendModel.topFunction;
+            funFooterView.list = self.recommendModel.list;
+            funFooterView.compose = self.recommendModel.compose;
+            [funFooterView buttonSettingFun];
+            __weak typeof(self)mySelf = self;
+            funFooterView.topFunChoosePush = ^(UIViewController * pushVC){
+                [mySelf.navigationController pushViewController:pushVC animated:YES];
+            };
             return funFooterView;
         }else if (indexPath.section == 1){
             if (!self.todayFooterView) {
