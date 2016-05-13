@@ -17,14 +17,13 @@
 #import "CHJRecomdFucFCollectionReusableView.h"
 #import "CHJRecomdTodayBanerFCollectionReusableView.h"
 #import "CHJRecomdSugstFCollectionReusableView.h"
-#import "CHRWebViewController.h"
 #import "CHRTodayBannerScrollerView.h"
 #import "CHJRecmdUpdateCollectionViewCell.h"
 #import "CHJRecmdTodayCollectionViewCell.h"
 
 #define CHRCollectionbWidth (CHSCREENWIDTH - 20.f)
-#define myLat 34.60522149650738
-#define myLon 112.4234234428844
+const CGFloat myLat = 34.60522149650738;
+const CGFloat myLon = 112.4234234428844;
 @interface CHRecommendViewController ()<UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *recommendCollection;
 @property (nonatomic,strong)CHJRecommendModel * recommendModel;
@@ -41,8 +40,8 @@
     self.recommendCollection.tag = 10955617;
     self.navigationItem.leftBarButtonItem = nil;
     [self.backToTopButton addTarget:self action:@selector(backToTopButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self getCollectionViewData];
     [self recommendCollectionRegister];
+    [self getCollectionViewData];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -93,12 +92,7 @@
 //    }];
 }
 
-- (void)pushToWebViewWithID:(NSNumber *)myID withUrlString:(NSString *)urlString{
-    CHRWebViewController * webVC = [[CHRWebViewController alloc]init];
-    webVC.webID = myID;
-    webVC.urlString = urlString;
-    [self.navigationController pushViewController:webVC animated:YES];
-}
+
 
 #pragma mark - ButtonActions
 - (void)commitAction{

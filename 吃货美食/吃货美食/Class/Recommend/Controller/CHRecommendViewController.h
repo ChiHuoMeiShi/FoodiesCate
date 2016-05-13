@@ -7,10 +7,11 @@
 //
 
 #import "CHRJBasicViewController.h"
-
+extern const CGFloat myLat;
+extern const CGFloat myLon;
 @interface CHRecommendViewController : CHRJBasicViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *backToTopButton;
 
-
+- (void)getCollectionViewData;
 @end

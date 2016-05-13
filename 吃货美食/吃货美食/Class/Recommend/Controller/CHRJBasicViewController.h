@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CHRWebViewController.h"
 @interface CHRJBasicViewController : UIViewController
 
 - (void)navBackAction;
-
+- (void)pushToWebViewWithID:(NSNumber *)myID withUrlString:(NSString *)urlString;
 @end

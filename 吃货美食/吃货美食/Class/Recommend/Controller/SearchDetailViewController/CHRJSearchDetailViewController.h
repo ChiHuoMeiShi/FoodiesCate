@@ -8,6 +8,7 @@
 
 #import "CHRJBasicViewController.h"
 #import "CHRJSortModel.h"
+
 @interface CHRJSearchDetailViewController : CHRJBasicViewController
 //SearchVC push
 @property (nonatomic,copy)NSString * searchName;
@@ -15,4 +16,16 @@
 //SortVC push
 @property (nonatomic,strong)NSArray * choosedTypeArr;
 @property (nonatomic,assign)NSInteger choosedListCount;
+
+@property (weak, nonatomic) IBOutlet UIButton *hotButton;
+@property (weak, nonatomic) IBOutlet UIButton *hardButton;
+@property (weak, nonatomic) IBOutlet UIButton *timeButton;
+
+@property (weak, nonatomic) IBOutlet UIImageView *showTopImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *showBomImageView;
+@property (weak, nonatomic) IBOutlet UITableView *showTableView;
+@property (weak, nonatomic) IBOutlet UICollectionView *showCollectionView;
+
+@property (nonatomic,copy)NSString * currentSort;
+
 @end
