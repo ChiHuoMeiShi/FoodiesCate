@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EChatModel.h"
+#import "Hot_topocModel.h"
+typedef void(^ReturnHotBlock)(Hot_topocModel *topicModel);
 
 @interface CHEChatViewController : UIViewController
+
+@property(nonatomic,copy)ReturnHotBlock hotBlock;
+
+@property(strong,nonatomic)EChatModel *echatModel;
+
+- (void)returnTopicModel:(ReturnHotBlock)block;
 
 @end

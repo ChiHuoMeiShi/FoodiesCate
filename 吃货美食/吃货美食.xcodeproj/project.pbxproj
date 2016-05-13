@@ -80,6 +80,22 @@
 		B7A3F5D21CE483F100E09AED /* User_infoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5D11CE483F100E09AED /* User_infoModel.m */; };
 		B7A3F5D51CE4849C00E09AED /* Recipe_infoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5D41CE4849C00E09AED /* Recipe_infoModel.m */; };
 		B7A3F5D81CE4850300E09AED /* ImgsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5D71CE4850300E09AED /* ImgsModel.m */; };
+		B7A512951CE658380085A6C8 /* CHTwoChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A512931CE658380085A6C8 /* CHTwoChatCell.m */; };
+		B7A512961CE658380085A6C8 /* CHTwoChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A512941CE658380085A6C8 /* CHTwoChatCell.xib */; };
+		B7A5129F1CE65F590085A6C8 /* CHThreeChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A5129D1CE65F590085A6C8 /* CHThreeChatCell.m */; };
+		B7A512A01CE65F590085A6C8 /* CHThreeChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A5129E1CE65F590085A6C8 /* CHThreeChatCell.xib */; };
+		B7A512A41CE65F970085A6C8 /* CHTFourChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A512A21CE65F970085A6C8 /* CHTFourChatCell.m */; };
+		B7A512A51CE65F970085A6C8 /* CHTFourChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A512A31CE65F970085A6C8 /* CHTFourChatCell.xib */; };
+		B7A512A91CE65FD80085A6C8 /* CHFiveChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A512A71CE65FD80085A6C8 /* CHFiveChatCell.m */; };
+		B7A512AA1CE65FD80085A6C8 /* CHFiveChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A512A81CE65FD80085A6C8 /* CHFiveChatCell.xib */; };
+		B7A512AE1CE660060085A6C8 /* CHSixChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A512AC1CE660060085A6C8 /* CHSixChatCell.m */; };
+		B7A512AF1CE660060085A6C8 /* CHSixChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A512AD1CE660060085A6C8 /* CHSixChatCell.xib */; };
+		B7A512B31CE6605D0085A6C8 /* CHSevenChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A512B11CE6605D0085A6C8 /* CHSevenChatCell.m */; };
+		B7A512B41CE6605D0085A6C8 /* CHSevenChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A512B21CE6605D0085A6C8 /* CHSevenChatCell.xib */; };
+		B7A512BB1CE660A40085A6C8 /* CHEightChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A512B91CE660A40085A6C8 /* CHEightChatCell.m */; };
+		B7A512BC1CE660A40085A6C8 /* CHEightChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A512BA1CE660A40085A6C8 /* CHEightChatCell.xib */; };
+		B7A512C01CE660DF0085A6C8 /* CHNineChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A512BE1CE660DF0085A6C8 /* CHNineChatCell.m */; };
+		B7A512C11CE660DF0085A6C8 /* CHNineChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A512BF1CE660DF0085A6C8 /* CHNineChatCell.xib */; };
 		B7F6154D1CDC84A600AF1697 /* CHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F6154C1CDC84A600AF1697 /* CHTabBarController.m */; };
 		B7F615501CDC84F000AF1697 /* CHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F6154F1CDC84F000AF1697 /* CHNavigationController.m */; };
 		B7F615541CDC854500AF1697 /* CHMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F615521CDC854500AF1697 /* CHMeViewController.m */; };
@@ -221,6 +237,30 @@
 		B7A3F5D41CE4849C00E09AED /* Recipe_infoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Recipe_infoModel.m; path = EChatModel/Recipe_infoModel.m; sourceTree = "<group>"; };
 		B7A3F5D61CE4850300E09AED /* ImgsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImgsModel.h; path = EChatModel/ImgsModel.h; sourceTree = "<group>"; };
 		B7A3F5D71CE4850300E09AED /* ImgsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImgsModel.m; path = EChatModel/ImgsModel.m; sourceTree = "<group>"; };
+		B7A512921CE658380085A6C8 /* CHTwoChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTwoChatCell.h; sourceTree = "<group>"; };
+		B7A512931CE658380085A6C8 /* CHTwoChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTwoChatCell.m; sourceTree = "<group>"; };
+		B7A512941CE658380085A6C8 /* CHTwoChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHTwoChatCell.xib; sourceTree = "<group>"; };
+		B7A5129C1CE65F590085A6C8 /* CHThreeChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHThreeChatCell.h; sourceTree = "<group>"; };
+		B7A5129D1CE65F590085A6C8 /* CHThreeChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHThreeChatCell.m; sourceTree = "<group>"; };
+		B7A5129E1CE65F590085A6C8 /* CHThreeChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHThreeChatCell.xib; sourceTree = "<group>"; };
+		B7A512A11CE65F970085A6C8 /* CHTFourChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTFourChatCell.h; sourceTree = "<group>"; };
+		B7A512A21CE65F970085A6C8 /* CHTFourChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTFourChatCell.m; sourceTree = "<group>"; };
+		B7A512A31CE65F970085A6C8 /* CHTFourChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHTFourChatCell.xib; sourceTree = "<group>"; };
+		B7A512A61CE65FD80085A6C8 /* CHFiveChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHFiveChatCell.h; sourceTree = "<group>"; };
+		B7A512A71CE65FD80085A6C8 /* CHFiveChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHFiveChatCell.m; sourceTree = "<group>"; };
+		B7A512A81CE65FD80085A6C8 /* CHFiveChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHFiveChatCell.xib; sourceTree = "<group>"; };
+		B7A512AB1CE660060085A6C8 /* CHSixChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSixChatCell.h; sourceTree = "<group>"; };
+		B7A512AC1CE660060085A6C8 /* CHSixChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSixChatCell.m; sourceTree = "<group>"; };
+		B7A512AD1CE660060085A6C8 /* CHSixChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHSixChatCell.xib; sourceTree = "<group>"; };
+		B7A512B01CE6605D0085A6C8 /* CHSevenChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHSevenChatCell.h; sourceTree = "<group>"; };
+		B7A512B11CE6605D0085A6C8 /* CHSevenChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHSevenChatCell.m; sourceTree = "<group>"; };
+		B7A512B21CE6605D0085A6C8 /* CHSevenChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHSevenChatCell.xib; sourceTree = "<group>"; };
+		B7A512B81CE660A40085A6C8 /* CHEightChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHEightChatCell.h; sourceTree = "<group>"; };
+		B7A512B91CE660A40085A6C8 /* CHEightChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHEightChatCell.m; sourceTree = "<group>"; };
+		B7A512BA1CE660A40085A6C8 /* CHEightChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHEightChatCell.xib; sourceTree = "<group>"; };
+		B7A512BD1CE660DF0085A6C8 /* CHNineChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNineChatCell.h; sourceTree = "<group>"; };
+		B7A512BE1CE660DF0085A6C8 /* CHNineChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHNineChatCell.m; sourceTree = "<group>"; };
+		B7A512BF1CE660DF0085A6C8 /* CHNineChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHNineChatCell.xib; sourceTree = "<group>"; };
 		B7F6154B1CDC84A600AF1697 /* CHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTabBarController.h; sourceTree = "<group>"; };
 		B7F6154C1CDC84A600AF1697 /* CHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTabBarController.m; sourceTree = "<group>"; };
 		B7F6154E1CDC84F000AF1697 /* CHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNavigationController.h; sourceTree = "<group>"; };
@@ -820,6 +860,30 @@
 				B72A06931CE369D50091986F /* CHEChatCell.h */,
 				B72A06941CE369D50091986F /* CHEChatCell.m */,
 				B72A06951CE369D50091986F /* CHEChatCell.xib */,
+				B7A512921CE658380085A6C8 /* CHTwoChatCell.h */,
+				B7A512931CE658380085A6C8 /* CHTwoChatCell.m */,
+				B7A512941CE658380085A6C8 /* CHTwoChatCell.xib */,
+				B7A5129C1CE65F590085A6C8 /* CHThreeChatCell.h */,
+				B7A5129D1CE65F590085A6C8 /* CHThreeChatCell.m */,
+				B7A5129E1CE65F590085A6C8 /* CHThreeChatCell.xib */,
+				B7A512A11CE65F970085A6C8 /* CHTFourChatCell.h */,
+				B7A512A21CE65F970085A6C8 /* CHTFourChatCell.m */,
+				B7A512A31CE65F970085A6C8 /* CHTFourChatCell.xib */,
+				B7A512A61CE65FD80085A6C8 /* CHFiveChatCell.h */,
+				B7A512A71CE65FD80085A6C8 /* CHFiveChatCell.m */,
+				B7A512A81CE65FD80085A6C8 /* CHFiveChatCell.xib */,
+				B7A512AB1CE660060085A6C8 /* CHSixChatCell.h */,
+				B7A512AC1CE660060085A6C8 /* CHSixChatCell.m */,
+				B7A512AD1CE660060085A6C8 /* CHSixChatCell.xib */,
+				B7A512B01CE6605D0085A6C8 /* CHSevenChatCell.h */,
+				B7A512B11CE6605D0085A6C8 /* CHSevenChatCell.m */,
+				B7A512B21CE6605D0085A6C8 /* CHSevenChatCell.xib */,
+				B7A512B81CE660A40085A6C8 /* CHEightChatCell.h */,
+				B7A512B91CE660A40085A6C8 /* CHEightChatCell.m */,
+				B7A512BA1CE660A40085A6C8 /* CHEightChatCell.xib */,
+				B7A512BD1CE660DF0085A6C8 /* CHNineChatCell.h */,
+				B7A512BE1CE660DF0085A6C8 /* CHNineChatCell.m */,
+				B7A512BF1CE660DF0085A6C8 /* CHNineChatCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -1048,23 +1112,31 @@
 				7AC8C42A1CE4AE7D0043CAEC /* CHRJSortViewController.xib in Resources */,
 				B7F615681CDCA14300AF1697 /* CHDiscoverViewController.xib in Resources */,
 				7AAF3F081CE3459E00573EF6 /* CHRWebViewController.xib in Resources */,
+				B7A512C11CE660DF0085A6C8 /* CHNineChatCell.xib in Resources */,
 				7A6ED6F61CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib in Resources */,
 				B7F6155A1CDC857700AF1697 /* CHEChatViewController.xib in Resources */,
+				B7A512BC1CE660A40085A6C8 /* CHEightChatCell.xib in Resources */,
 				7AC8C4301CE4B20A0043CAEC /* CHRJSortTableViewCell.xib in Resources */,
 				B72A06581CE216D10091986F /* CHZSendEChatController.xib in Resources */,
 				B72A06A51CE3AF200091986F /* CHEChatHeaderView.xib in Resources */,
 				B71ED85C1CDB41660035F6BE /* Main.storyboard in Resources */,
 				7AAF0A361CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.xib in Resources */,
+				B7A512A51CE65F970085A6C8 /* CHTFourChatCell.xib in Resources */,
 				7AC8C4351CE4B2240043CAEC /* CHRJSortCollectionViewCell.xib in Resources */,
 				7AAF0A401CE184A300708F98 /* CHJRecomdUpdateHCollectionReusableView.xib in Resources */,
 				7AAF0A4F1CE18C4000708F98 /* CHJRecomdSugstFCollectionReusableView.xib in Resources */,
 				7AC8C4231CE4696A0043CAEC /* CHRFenLei.plist in Resources */,
+				B7A512B41CE6605D0085A6C8 /* CHSevenChatCell.xib in Resources */,
 				B7F6156D1CDCA17700AF1697 /* CHRecommendViewController.xib in Resources */,
 				7AAF0A381CE184A300708F98 /* CHJRecomdTodayBanerFCollectionReusableView.xib in Resources */,
 				7AAF0A3E1CE184A300708F98 /* CHJRecomdTopHCollectionReusableView.xib in Resources */,
+				B7A512AA1CE65FD80085A6C8 /* CHFiveChatCell.xib in Resources */,
 				B7F615551CDC854500AF1697 /* CHMeViewController.xib in Resources */,
 				7AAF0A3C1CE184A300708F98 /* CHJRecomdTodayHCollectionReusableView.xib in Resources */,
 				7AAF0A4A1CE1855300708F98 /* CHJRecmdUpdateCollectionViewCell.xib in Resources */,
+				B7A512AF1CE660060085A6C8 /* CHSixChatCell.xib in Resources */,
+				B7A512961CE658380085A6C8 /* CHTwoChatCell.xib in Resources */,
+				B7A512A01CE65F590085A6C8 /* CHThreeChatCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1141,6 +1213,7 @@
 				7AAF0A7C1CE1ED1600708F98 /* CHJRecomdJumpContentModel.m in Sources */,
 				7AAF0A351CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.m in Sources */,
 				7AC8C4291CE4AE7D0043CAEC /* CHRJSortViewController.m in Sources */,
+				B7A512B31CE6605D0085A6C8 /* CHSevenChatCell.m in Sources */,
 				7AD0DDAC1CDCA7CE0057F8B2 /* UIColor+HexColor.m in Sources */,
 				7AD0DDA81CDCA7CE0057F8B2 /* UIBarButtonItem+SettingCustom.m in Sources */,
 				7AC8C4391CE4B3010043CAEC /* CHRJSortModel.m in Sources */,
@@ -1150,6 +1223,7 @@
 				7AD0DDAA1CDCA7CE0057F8B2 /* UITabBarItem+TextCustom.m in Sources */,
 				7AAF0A371CE184A300708F98 /* CHJRecomdTodayBanerFCollectionReusableView.m in Sources */,
 				B71ED8561CDB41660035F6BE /* AppDelegate.m in Sources */,
+				B7A512951CE658380085A6C8 /* CHTwoChatCell.m in Sources */,
 				7AAF0A3F1CE184A300708F98 /* CHJRecomdUpdateHCollectionReusableView.m in Sources */,
 				B7A3F5CF1CE481F700E09AED /* Hot_topocModel.m in Sources */,
 				7AAF0A521CE1D40A00708F98 /* CHJRecommendModel.m in Sources */,
@@ -1163,9 +1237,13 @@
 				7AAF0A791CE1ECFB00708F98 /* CHJRecommendJumpModel.m in Sources */,
 				7AAF0A5F1CE1DB7600708F98 /* CHJRTopListFunctModel.m in Sources */,
 				7AAF0A3B1CE184A300708F98 /* CHJRecomdTodayHCollectionReusableView.m in Sources */,
+				B7A512AE1CE660060085A6C8 /* CHSixChatCell.m in Sources */,
+				B7A5129F1CE65F590085A6C8 /* CHThreeChatCell.m in Sources */,
+				B7A512C01CE660DF0085A6C8 /* CHNineChatCell.m in Sources */,
 				7AAF3F071CE3459E00573EF6 /* CHRWebViewController.m in Sources */,
 				7AD0DDAB1CDCA7CE0057F8B2 /* UIWindow+SettingWithVC.m in Sources */,
 				7AC8C4341CE4B2240043CAEC /* CHRJSortCollectionViewCell.m in Sources */,
+				B7A512A91CE65FD80085A6C8 /* CHFiveChatCell.m in Sources */,
 				7AAF0A651CE1DD9600708F98 /* CHJRTopBannerShowModel.m in Sources */,
 				7AAF0A6E1CE1E23500708F98 /* CHJRTopBannerTittleModel.m in Sources */,
 				B7A3F5D21CE483F100E09AED /* User_infoModel.m in Sources */,
@@ -1174,6 +1252,7 @@
 				B71ED8531CDB41660035F6BE /* main.m in Sources */,
 				B7F615671CDCA14300AF1697 /* CHDiscoverViewController.m in Sources */,
 				7AAF0A4E1CE18C4000708F98 /* CHJRecomdSugstFCollectionReusableView.m in Sources */,
+				B7A512A41CE65F970085A6C8 /* CHTFourChatCell.m in Sources */,
 				7AAF0A3D1CE184A300708F98 /* CHJRecomdTopHCollectionReusableView.m in Sources */,
 				B7F615501CDC84F000AF1697 /* CHNavigationController.m in Sources */,
 				7A6ED70A1CE32BCA005DF78C /* NSString+JWStringDeleteToURL.m in Sources */,
@@ -1181,6 +1260,7 @@
 				B72A06961CE369D50091986F /* CHEChatCell.m in Sources */,
 				7AD0DDA71CDCA7CE0057F8B2 /* JWUIClass.m in Sources */,
 				B72A06661CE327A40091986F /* CHEChatView.m in Sources */,
+				B7A512BB1CE660A40085A6C8 /* CHEightChatCell.m in Sources */,
 				B7A3F5CC1CE4801700E09AED /* EChatModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

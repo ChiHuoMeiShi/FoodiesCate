@@ -10,17 +10,24 @@
 #import "CHZSendEChatController.h"
 #import <UIImageView+WebCache.h>
 #import "CHEChatHeaderView.h"
-
+#import "Hot_topocModel.h"
+#import <AFNetworking.h>
+#import "CHEChatCell.h"
 @interface CHEChatViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong,nonatomic) UITableView *eChatTableView;
 
 @property(strong,nonatomic)CHEChatHeaderView *headerView;
 
+
+
 @end
 
 @implementation CHEChatViewController
-
+- (void)returnTopicModel:(ReturnHotBlock)block
+{
+    self.hotBlock = block;
+}
 //
 - (void)segmentItenAction:(UISegmentedControl *)segment
 {
@@ -28,10 +35,11 @@
     switch (index)
     {
         case 0:
-            [self loadNew];
+            [self getEchatDataWithSort:@"time"];
             break;
         case 1:
-            [self loadHot];
+            [self getEchatDataWithSort:@"hot"];
+            
             break;
             
         default:
@@ -61,6 +69,25 @@
 {
 
 }
+//请求数据
+- (void)getEchatDataWithSort:(NSString *)sort
+{
+    AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
+    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+    NSString *kUrl = @"http://api.meishi.cc/v5/meishiquan_index4.php?format=json";
+    NSDictionary *parameters = @{@"lat" : @"34.6049907522264",@"lon" : @"112.4229875834745",@"source" : @"iphone",@"format" : @"json", @"sort" : sort};
+    [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary * dic = (NSDictionary *)responseObject;
+        self.echatModel = [EChatModel mj_objectWithKeyValues:dic];
+        
+        [self.eChatTableView reloadData];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        CHLog(@"失败原因%@",error)
+    }];
+    
+}
+
 //
 - (void)addNavigationItem
 {
@@ -77,35 +104,96 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addNavigationItem];
+    [self getEchatDataWithSort:@"time"];
     self.eChatTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
 
     self.eChatTableView.delegate = self;
     self.eChatTableView.dataSource = self;
-
+    self.eChatTableView.rowHeight = UITableViewAutomaticDimension;
+    [self.eChatTableView registerNib:[UINib nibWithNibName:@"CHEChatCell" bundle:nil] forCellReuseIdentifier:@"CHEChatCellReuse"];
+    [self.eChatTableView registerNib:[UINib nibWithNibName:@"CHTwoChatCell" bundle:nil] forCellReuseIdentifier:@"CHEChatTwoCellReuse"];
+    [self.eChatTableView registerNib:[UINib nibWithNibName:@"CHThreeChatCell" bundle:nil] forCellReuseIdentifier:@"CHEChatThreeCellReuse"];
+    
+    [self.eChatTableView registerNib:[UINib nibWithNibName:@"CHTFourChatCell" bundle:nil] forCellReuseIdentifier:@"CHEChatFourCellReuse"];
+    [self.eChatTableView registerNib:[UINib nibWithNibName:@"CHFiveChatCell" bundle:nil] forCellReuseIdentifier:@"CHEChatFiveCellReuse"];
+    [self.eChatTableView registerNib:[UINib nibWithNibName:@"CHSixChatCell" bundle:nil] forCellReuseIdentifier:@"CHEChatSixCellReuse"];
+    
+    [self.eChatTableView registerNib:[UINib nibWithNibName:@"CHSevenChatCell" bundle:nil] forCellReuseIdentifier:@"CHEChatSevenCellReuse"];
+    [self.eChatTableView registerNib:[UINib nibWithNibName:@"CHEightChatCell" bundle:nil] forCellReuseIdentifier:@"CHEChatEightCellReuse"];
+    [self.eChatTableView registerNib:[UINib nibWithNibName:@"CHNineChatCell" bundle:nil] forCellReuseIdentifier:@"CHEChatNineCellReuse"];
     [self addHeaderView];
 }
 
 #pragma mark - UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return self.echatModel.hot_topic.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *ID = @"ZTCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (!cell)
+    
+    Hot_topocModel *hotModel = self.echatModel.hot_topic[indexPath.row];
+    
+    if ([hotModel.img_num intValue] == 1) {
+        CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatCellReuse"];
+        eChatCell.showhottopic = self.echatModel.hot_topic[indexPath.row];
+        return eChatCell;
+    } else if ([hotModel.img_num intValue] == 2){
+        CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatTwoCellReuse"];
+        eChatCell.showhottopic = self.echatModel.hot_topic[indexPath.row];
+        return eChatCell;
+    } else if ([hotModel.img_num intValue] == 3){
+        CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatThreeCellReuse"];
+        eChatCell.showhottopic = self.echatModel.hot_topic[indexPath.row];
+        return eChatCell;
+    } else if ([hotModel.img_num intValue] == 4){
+        CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatFourCellReuse"];
+        eChatCell.showhottopic = self.echatModel.hot_topic[indexPath.row];
+        return eChatCell;
+    } else if ([hotModel.img_num intValue] == 5){
+        CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatFiveCellReuse"];
+        eChatCell.showhottopic = self.echatModel.hot_topic[indexPath.row];
+        return eChatCell;
+    } else if ([hotModel.img_num intValue] == 6){
+        CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatSixCellReuse"];
+        eChatCell.showhottopic = self.echatModel.hot_topic[indexPath.row];
+        return eChatCell;
+    } else if ([hotModel.img_num intValue] == 7){
+        CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatSevenCellReuse"];
+        eChatCell.showhottopic = self.echatModel.hot_topic[indexPath.row];
+        return eChatCell;
+    } else if ([hotModel.img_num intValue] == 8){
+        CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatEightCellReuse"];
+        eChatCell.showhottopic = self.echatModel.hot_topic[indexPath.row];
+        return eChatCell;
+    }else if ([hotModel.img_num intValue] == 9)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatNineCellReuse"];
+        eChatCell.showhottopic = self.echatModel.hot_topic[indexPath.row];
+        return eChatCell;
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"测试数据------%ld",(long)indexPath.row];
-    return cell;
+    CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatCellReuse"];
+    eChatCell.showhottopic = self.echatModel.hot_topic[indexPath.row];
+    return eChatCell;
 }
 #pragma mark -- UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //最好写一个非常大的值，不然数据会做一些干扰
+    return 10000;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Hot_topocModel *hotModel = self.echatModel.hot_topic[indexPath.row];
+    if ([hotModel.img_num intValue] == 1) {
+        return 369.f;
+    }else if ([hotModel.img_num intValue] > 1 && [hotModel.img_num intValue] < 4){
+        return 247.f;
+    }else if ([hotModel.img_num intValue] >= 4 && [hotModel.img_num intValue] < 7){
+        return 335.f;
+    }
+    return 427.f;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -140,10 +228,10 @@
     NSArray *segmentedArray = [[NSArray alloc]initWithObjects:@"最新",@"最热",nil];
     UISegmentedControl *segmentControl = [[UISegmentedControl alloc] initWithItems:segmentedArray];
     CGFloat segmentW = 200.f;//segment的宽度
-    CGFloat segmentH = 40.f;//高度
+    CGFloat segmentH = 30.f;//高度
     
     
-    segmentControl.frame = CGRectMake(CHSCREENWIDTH / 2 - segmentW/2, btnHeight + 8.f + 8.f, segmentW, segmentH);
+    segmentControl.frame = CGRectMake(CHSCREENWIDTH / 2 - segmentW/2, btnHeight + 18.f + 8.f, segmentW, segmentH);
     //设置默认索引序列
     segmentControl.selectedSegmentIndex = 0;
     segmentControl.tintColor = [UIColor redColor];
