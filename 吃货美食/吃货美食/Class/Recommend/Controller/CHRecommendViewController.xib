@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHRecommendViewController">
             <connections>
+                <outlet property="backToTopButton" destination="IDp-RG-VJd" id="CsX-WK-Kki"/>
                 <outlet property="recommendCollection" destination="izY-rM-niJ" id="VBG-oo-orJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -18,7 +19,7 @@
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="izY-rM-niJ">
                     <rect key="frame" x="10" y="8" width="580" height="572"/>
-                    <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="seL-XO-yni">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -30,14 +31,27 @@
                         <outlet property="delegate" destination="-1" id="qDH-UB-XnZ"/>
                     </connections>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDp-RG-VJd">
+                    <rect key="frame" x="540" y="495" width="45" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="575-Kd-7lk"/>
+                        <constraint firstAttribute="width" constant="45" id="MqG-XE-ekA"/>
+                    </constraints>
+                    <state key="normal" image="back_top_icon"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="izY-rM-niJ" secondAttribute="trailing" constant="10" id="1ec-iL-1f9"/>
+                <constraint firstAttribute="bottom" secondItem="IDp-RG-VJd" secondAttribute="bottom" constant="60" id="WSW-R4-6ud"/>
                 <constraint firstAttribute="bottom" secondItem="izY-rM-niJ" secondAttribute="bottom" constant="20" symbolic="YES" id="WgC-pl-mct"/>
+                <constraint firstAttribute="trailing" secondItem="IDp-RG-VJd" secondAttribute="trailing" constant="15" id="bec-B4-4hz"/>
                 <constraint firstItem="izY-rM-niJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="txM-fc-urr"/>
                 <constraint firstItem="izY-rM-niJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="vXK-p7-LcL"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="back_top_icon" width="45" height="45"/>
+    </resources>
 </document>

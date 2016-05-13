@@ -6,9 +6,9 @@
 //  Copyright © 2016年 赵天. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CHRJBasicViewController.h"
 #import "CHJRecommendJumpModel.h"
-@interface CHRWebViewController : UIViewController
+@interface CHRWebViewController : CHRJBasicViewController
 @property (nonatomic,strong)NSNumber * webID;
 @property (nonatomic,copy)NSString * urlString;
 @property (nonatomic,strong)CHJRecommendJumpModel * jumpModel;

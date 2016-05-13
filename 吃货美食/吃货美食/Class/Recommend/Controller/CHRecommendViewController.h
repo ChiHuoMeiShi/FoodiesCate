@@ -6,8 +6,11 @@
 //  Copyright © 2016年 赵天. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CHRJBasicViewController.h"
 
-@interface CHRecommendViewController : UIViewController
+@interface CHRecommendViewController : CHRJBasicViewController
+
+@property (weak, nonatomic) IBOutlet UIButton *backToTopButton;
+
 
 @end

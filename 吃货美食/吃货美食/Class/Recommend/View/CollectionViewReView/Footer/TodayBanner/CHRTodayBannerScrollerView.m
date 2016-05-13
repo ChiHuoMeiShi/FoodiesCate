@@ -20,7 +20,6 @@ const CGFloat todayBannerHeigh = 80.f;
     [self imagesArrayAdd];
 }
 
-
 - (void)viewGetImagesView{
     UIImageView * currentImageView = self.imagesArray[0];
     [self.currentView addSubview:currentImageView];
@@ -32,11 +31,9 @@ const CGFloat todayBannerHeigh = 80.f;
     
     UIImageView * beyoundImageView = [self.imagesArray lastObject];
     [self.beyoundView addSubview:beyoundImageView];
-    
 }
 
 - (void)imagesArrayAdd{
-    self.currentBannerCount = 0;
     __weak typeof(self)mySelf = self;
     [self.modelArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         CHJRecomdTdayBannerModel * todayBannerModel = (CHJRecomdTdayBannerModel *)obj;
@@ -69,7 +66,6 @@ const CGFloat todayBannerHeigh = 80.f;
     if (self.currentBannerCount < 0) {
         self.currentBannerCount = [self.modelArray count] - 1;
     }
-    
     UIImageView * imageViewTemp = [self.imagesArray lastObject];
     
     [self.imagesArray removeLastObject];
@@ -83,14 +79,12 @@ const CGFloat todayBannerHeigh = 80.f;
     if (self.currentBannerCount >= self.modelArray.count) {
         self.currentBannerCount = 0;
     }
-    
     UIImageView * imageViewTemp = [self.imagesArray firstObject];
     
     [self.imagesArray removeObjectAtIndex:0];
     [self.imagesArray addObject:imageViewTemp];
     
     [self viewGetImagesView];
-    
 }
 
 - (void)currentChooseAction{
