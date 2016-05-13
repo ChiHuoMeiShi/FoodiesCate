@@ -131,12 +131,12 @@
         return CGSizeZero;
     }
     if (section == 0) {
-        return CGSizeMake(self.view.width, 440.f);
+        return CGSizeMake(CHSCREENWIDTH - 20.f, 440.f);
     }else if (section == 1){
-        return CGSizeMake(self.view.width, 35.f);
+        return CGSizeMake(CHSCREENWIDTH - 20.f, 35.f);
     }
     
-    return CGSizeMake(self.view.width, 45.f);
+    return CGSizeMake(CHSCREENWIDTH - 20.f, 45.f);
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
@@ -144,29 +144,29 @@
         return CGSizeZero;
     }
     if (section == 0) {
-        return CGSizeMake(self.view.width, 200.f);
+        return CGSizeMake(CHSCREENWIDTH - 20.f, 200.f);
     }
-    return CGSizeMake(self.view.width, 80.f);
+    return CGSizeMake(CHSCREENWIDTH - 20.f, 80.f);
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (collectionView.tag == 15928) {
-        return CGSizeMake(CHSCREENWIDTH, 440.f);
+        return CGSizeMake(CHSCREENWIDTH - 20.f, 440.f);
     }
-    return CGSizeMake(CHSCREENWIDTH, 440.f);
+    return CGSizeMake(CHSCREENWIDTH - 20.f, 440.f);
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
     if (collectionView.tag == 15928) {
         return 0;
     }
-    return 0;
+    return 10;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     if (collectionView.tag == 15928) {
         return 0;
     }
-    return 0;
+    return 10;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -177,7 +177,7 @@
         self.topHeaderView.topBanerPageView.currentPage = currentBannerCount;
     }else if (scrollView.tag == 192168){
 //        todayBannerScrollerView
-        if (self.todayFooterView.todayBannerScrollerView.contentOffset.x >= (CHSCREENWIDTH - 16.f) * 2) {
+        if (self.todayFooterView.todayBannerScrollerView.contentOffset.x >= (CHSCREENWIDTH - 20.f) * 2) {
             [self.todayFooterView.todayBannerScrollerView rightShift];
         } else if (self.todayFooterView.todayBannerScrollerView.contentOffset.x <= 0.f){
             [self.todayFooterView.todayBannerScrollerView leftShift];
@@ -193,7 +193,9 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    if (section == 2) {
+    if (section == 1) {
+        return 3;
+    }else if (section == 2) {
         return 10;
     }
     return 0;
