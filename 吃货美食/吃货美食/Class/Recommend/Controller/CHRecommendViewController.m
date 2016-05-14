@@ -71,7 +71,7 @@ const CGFloat myLon = 112.4234234428844;
     
     __weak typeof(self)mySelf = self;
     NSString * url = @"http://api.meishi.cc/v5/index5.php?format=json";
-    NSDictionary * dic = @{@"lat":[NSString stringWithFormat:@"%f",myLat],@"lon":[NSString stringWithFormat:@"%f",myLon],@"source":@"iphone",@"format":@"json",@"page":@"1",@"app_liketime":@"1462495842"};
+    NSDictionary * dic = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"page":@"1",@"app_liketime":@"1462495842"};
     [manger POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary * dic = (NSDictionary *)responseObject;
 //        CHLog(@"%@",dic[@"obj"]);

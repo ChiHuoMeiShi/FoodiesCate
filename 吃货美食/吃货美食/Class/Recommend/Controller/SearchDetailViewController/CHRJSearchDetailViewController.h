@@ -26,6 +26,4 @@
 @property (weak, nonatomic) IBOutlet UITableView *showTableView;
 @property (weak, nonatomic) IBOutlet UICollectionView *showCollectionView;
 
-@property (nonatomic,copy)NSString * currentSort;
-
 @end

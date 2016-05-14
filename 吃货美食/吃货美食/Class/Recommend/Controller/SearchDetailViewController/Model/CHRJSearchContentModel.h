@@ -23,7 +23,7 @@
 @property (nonatomic,strong)NSNumber * item_type;
 @property (nonatomic,strong)NSNumber * rate;
 @property (nonatomic,strong)NSNumber * is_fav;
-@property (nonatomic,strong)NSNumber * mt;
+@property (nonatomic,strong)NSString * mt;
 
 
 @end
