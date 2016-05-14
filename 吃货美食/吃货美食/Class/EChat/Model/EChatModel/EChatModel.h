@@ -10,7 +10,7 @@
 #import <MJExtension.h>
 @interface EChatModel : NSObject
 
-@property (nonatomic,copy) NSString * sort;
+//@property (nonatomic,copy) NSString * sort;
 
 @property (nonatomic,strong) NSMutableArray * hot_topic;
 

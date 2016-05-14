@@ -30,7 +30,7 @@
 
 @property (nonatomic,copy) NSString * time;
 
-@property (nonatomic,strong) NSNumber * comment_num;
+@property (nonatomic,copy) NSString * comment_num;
 
 @property (nonatomic,copy) NSString * is_ding;
 
