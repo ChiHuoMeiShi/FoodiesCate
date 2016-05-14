@@ -7,29 +7,17 @@
 //
 
 #import "CHRecommendViewController.h"
-#import <AFNetworking.h>
-#import <MJExtension.h>
 
-#import "CHJRecommendModel.h"
-#import "CHJRecomdTopHCollectionReusableView.h"
-#import "CHJRecomdTodayHCollectionReusableView.h"
-#import "CHJRecomdUpdateHCollectionReusableView.h"
-#import "CHJRecomdFucFCollectionReusableView.h"
-#import "CHJRecomdTodayBanerFCollectionReusableView.h"
-#import "CHJRecomdSugstFCollectionReusableView.h"
-#import "CHRTodayBannerScrollerView.h"
-#import "CHJRecmdUpdateCollectionViewCell.h"
-#import "CHJRecmdTodayCollectionViewCell.h"
-
-#define CHRCollectionbWidth (CHSCREENWIDTH - 20.f)
 const CGFloat myLat = 34.60522149650738;
 const CGFloat myLon = 112.4234234428844;
 @interface CHRecommendViewController ()<UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *recommendCollection;
 @property (nonatomic,strong)CHJRecommendModel * recommendModel;
 @property (nonatomic,strong)CHJRecomdTopHCollectionReusableView * topHeaderView;
+@property (nonatomic,strong)CHRJSearchModel * searchModel;
 @property (nonatomic,strong)CHRTodayBannerScrollerView * todayBannerScrollerView;
 @property (nonatomic,strong)CHJRecomdTodayBanerFCollectionReusableView * todayFooterView;
+@property (nonatomic,strong)AFHTTPSessionManager * afnManger;
 @property (nonatomic,strong)NSTimer * todayBannerTimer;
 @end
 
@@ -42,6 +30,7 @@ const CGFloat myLon = 112.4234234428844;
     [self.backToTopButton addTarget:self action:@selector(backToTopButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self recommendCollectionRegister];
     [self getCollectionViewData];
+    [self requestUpdateFoodData];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -60,19 +49,24 @@ const CGFloat myLon = 112.4234234428844;
     }
 }
 
+- (AFHTTPSessionManager *)afnManger{
+    if (!_afnManger) {
+        _afnManger = [AFHTTPSessionManager manager];
+        _afnManger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+    }
+    return _afnManger;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 - (void)getCollectionViewData{
-    AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
-    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
-    
     __weak typeof(self)mySelf = self;
     NSString * url = @"http://api.meishi.cc/v5/index5.php?format=json";
     NSDictionary * dic = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"page":@"1",@"app_liketime":@"1462495842"};
-    [manger POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.afnManger POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary * dic = (NSDictionary *)responseObject;
 //        CHLog(@"%@",dic[@"obj"]);
         mySelf.recommendModel = [CHJRecommendModel mj_objectWithKeyValues:dic[@"obj"]];
@@ -80,19 +74,32 @@ const CGFloat myLon = 112.4234234428844;
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         CHLog(@"%@",error);
     }];
-    
-//    NSString * foodURL = @"http://api.meishi.cc/v5/top.php?format=json";
-//    NSDictionary * foodDic = @{@"lat":[NSString stringWithFormat:@"%f",myLat],@"lon":[NSString stringWithFormat:@"%f",myLon],@"source":@"iphone",@"format":@"json",@"st":@"0",@"t":@"1",@"page":@"1"};
-//    [manger POST:foodURL parameters:foodDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSDictionary * dic = (NSDictionary *)responseObject;
-//        CHLog(@"%@",dic);
-//        
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        CHLog(@"%@",error);
-//    }];
 }
 
-
+- (void)requestUpdateFoodData{
+    //    request like food
+    if (self.searchModel)return;
+    __weak typeof(self)mySelf = self;
+    NSString * likeURL = @"http://api.meishi.cc/v5/search_category.php?format=json";
+    NSDictionary * likeDicTemp = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"step":@"",@"kw":@"",@"page":@(0),@"q":@"热菜",@"sort_sc":@"desc",@"sort":@"default",@"gy":@"",@"mt":@""};
+    NSMutableDictionary * likeDic = [NSMutableDictionary dictionaryWithDictionary:likeDicTemp];
+    for (int pageCount = 1; pageCount < 4; pageCount++) {
+        [likeDic setValue:@(pageCount) forKey:@"page"];
+        [self.afnManger POST:likeURL parameters:likeDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSDictionary * dic = (NSDictionary *)responseObject;
+            //        CHLog(@"%@",dic[@"obj"]);
+            if (!mySelf.searchModel) {
+                mySelf.searchModel = [CHRJSearchModel mj_objectWithKeyValues:dic[@"obj"]];
+            }else{
+                CHRJSearchModel * tempModel = [CHRJSearchModel mj_objectWithKeyValues:dic[@"obj"]];
+                [mySelf.searchModel.data addObjectsFromArray:tempModel.data];
+            }
+            [mySelf.recommendCollection reloadData];
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            CHLog(@"%@",error);
+        }];
+    }
+}
 
 #pragma mark - ButtonActions
 - (void)commitAction{
@@ -145,6 +152,9 @@ const CGFloat myLon = 112.4234234428844;
     if (indexPath.section == 1) {
         CHJRecomdTodayModel * todayModel = self.recommendModel.today[indexPath.row];
         [self pushToWebViewWithID:todayModel.myID withUrlString:nil];
+    } else if (indexPath.section == 2){
+        CHRJSearchContentModel * searchMdodel = self.searchModel.data[indexPath.row];
+        [self pushToWebViewWithID:searchMdodel.myID withUrlString:nil];
     }
 }
 
@@ -210,7 +220,6 @@ const CGFloat myLon = 112.4234234428844;
             self.backToTopButton.hidden = YES;
         }
     }
-    
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -222,7 +231,7 @@ const CGFloat myLon = 112.4234234428844;
     if (section == 1) {
         return self.recommendModel.today.count;
     }else if (section == 2) {
-        return 40;
+        return self.searchModel.data.count;
     }
     return 0;
 }
@@ -230,7 +239,7 @@ const CGFloat myLon = 112.4234234428844;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 2) {
         CHJRecmdUpdateCollectionViewCell * recommdCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CHJRecmdUpdateCollectionViewCell" forIndexPath:indexPath];
-        
+        recommdCell.searchMdodel = self.searchModel.data[indexPath.row];
         return recommdCell;
     }
     CHJRecmdTodayCollectionViewCell * todayCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CHJRecmdTodayCollectionViewCell" forIndexPath:indexPath];
@@ -280,6 +289,5 @@ const CGFloat myLon = 112.4234234428844;
     }
     return nil;
 }
-
 
 @end

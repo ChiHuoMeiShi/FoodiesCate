@@ -44,10 +44,10 @@
     self.nameLabel.text = self.searchModel.title;
     NSString * hardString = [NSString stringWithFormat:@"%@步",self.searchModel.step];
     if (![self.searchModel.mt isEqualToString:@""]) {
-        hardString = [NSString stringWithFormat:@"%@//%@",hardString,self.searchModel.mt];
+        hardString = [NSString stringWithFormat:@"%@/%@",hardString,self.searchModel.mt];
     }
     self.hardLabel.text = hardString;
-    NSString * typeString = [NSString stringWithFormat:@"%@//%@",self.searchModel.kouwei,self.searchModel.gongyi];
+    NSString * typeString = [NSString stringWithFormat:@"%@/%@",self.searchModel.kouwei,self.searchModel.gongyi];
     self.typeLabel.text = typeString;
     
 }

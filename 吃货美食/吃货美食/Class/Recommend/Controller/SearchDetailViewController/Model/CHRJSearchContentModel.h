@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MJExtension.h>
 @interface CHRJSearchContentModel : NSObject
-@property (nonatomic,copy)NSString * myID;
+@property (nonatomic,strong)NSNumber * myID;
 @property (nonatomic,copy)NSString * gongyi;
 @property (nonatomic,strong)NSNumber * is_video;
 @property (nonatomic,copy)NSString * kouwei;
@@ -23,7 +23,7 @@
 @property (nonatomic,strong)NSNumber * item_type;
 @property (nonatomic,strong)NSNumber * rate;
 @property (nonatomic,strong)NSNumber * is_fav;
-@property (nonatomic,strong)NSString * mt;
+@property (nonatomic,copy)NSString * mt;
 
 
 @end

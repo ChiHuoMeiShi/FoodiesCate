@@ -14,4 +14,15 @@
     // Initialization code
 }
 
+- (void)setSearchMdodel:(CHRJSearchContentModel *)searchMdodel{
+    if (!searchMdodel)return;
+    _searchMdodel = searchMdodel;
+    __weak typeof(self)mySelf = self;
+    [[SDWebImageManager sharedManager]downloadImageWithURL:[NSURL URLWithString:searchMdodel.titlepic] options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        mySelf.showImageView.image = image;
+    }];
+    self.showLabel.text = searchMdodel.title;
+}
+
+
 @end
