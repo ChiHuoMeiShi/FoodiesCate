@@ -39,7 +39,6 @@ const CGFloat myLon = 112.4234234428844;
     if (!self.todayBannerTimer) {
         self.todayBannerTimer = [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(todayBannerTimerAction) userInfo:nil repeats:YES];
     }
-    
     if (self.todayFooterView) {
         NSInteger currentPage = self.todayFooterView.todayBannerScrollerView.currentBannerCount;
         for (NSInteger i = 0; i < currentPage; i++) {
@@ -55,11 +54,6 @@ const CGFloat myLon = 112.4234234428844;
         _afnManger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     }
     return _afnManger;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)getCollectionViewData{
@@ -221,12 +215,10 @@ const CGFloat myLon = 112.4234234428844;
         }
     }
 }
-
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 3;
 }
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     if (section == 1) {
         return self.recommendModel.today.count;
@@ -289,5 +281,4 @@ const CGFloat myLon = 112.4234234428844;
     }
     return nil;
 }
-
 @end

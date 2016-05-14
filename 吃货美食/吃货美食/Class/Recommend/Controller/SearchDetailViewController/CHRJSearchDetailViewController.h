@@ -24,6 +24,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *showTopImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *showBomImageView;
 @property (weak, nonatomic) IBOutlet UITableView *showTableView;
-@property (weak, nonatomic) IBOutlet UICollectionView *showCollectionView;
+@property (weak, nonatomic) IBOutlet UICollectionView *showColectionView;
 
 @end

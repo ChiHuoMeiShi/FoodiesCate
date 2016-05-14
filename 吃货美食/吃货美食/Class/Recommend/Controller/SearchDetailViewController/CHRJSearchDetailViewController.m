@@ -12,8 +12,10 @@
 #import <MJRefresh.h>
 #import "CHRJSearchModel.h"
 #import "CHRJSearchTableViewCell.h"
+#import "CHRJSearchCollectionViewCell.h"
+
 #define CHRSearchImageX (CHSCREENWIDTH/6 + 18.f)
-@interface CHRJSearchDetailViewController ()
+@interface CHRJSearchDetailViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (nonatomic,strong)UIButton * chooseButton;
 @property (nonatomic,strong)CHRJSearchModel * searchModel;
 @property (nonatomic,copy)NSString * currentSort;
@@ -28,6 +30,14 @@
     self.showTopImageView.hidden = NO;
     self.showBomImageView.x = CHRSearchImageX;
     self.showBomImageView.hidden = NO;
+    if (self.showColectionView) {
+        [self.showColectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:self.choosedListCount inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+    }
+    
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (void)viewDidLoad {
@@ -36,6 +46,24 @@
     [self buttonSetFun];
     self.currentSort = @"default";
     self.pageCount = 1;
+    
+    [self searchCollectionViewSet];
+    [self searchTableViewSet];
+}
+
+- (void)searchCollectionViewSet{
+    if (self.choosedTypeArr) {
+        self.showColectionView.hidden = NO;
+        self.showColectionView.dataSource = self;
+        self.showColectionView.delegate = self;
+        [self.showColectionView registerNib:[UINib nibWithNibName:@"CHRJSearchCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"CHRJSearchCollectionViewCell"];
+    }else{
+        [self.showColectionView removeFromSuperview];
+        self.showColectionView = nil;
+    }
+}
+
+- (void)searchTableViewSet{
     [self.showTableView registerNib:[UINib nibWithNibName:@"CHRJSearchTableViewCell" bundle:nil] forCellReuseIdentifier:@"CHRJSearchTableViewCell"];
     [self requestDataWithSort:self.currentSort];
     __weak typeof(self) mySelf = self;
@@ -111,19 +139,73 @@
         [mySelf.showTableView.mj_footer endRefreshing];
     }];
 }
+- (void)showHud{
+    CHLog(@"HudSuccess");
+}
 
 #pragma mark - UITableViewDelegate
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CHRJSearchContentModel * searchMdodel = self.searchModel.data[indexPath.row];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self pushToWebViewWithID:searchMdodel.myID withUrlString:nil];
+}
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (self.searchModel.data.count%10 != 0) {
+        [self.searchModel.data removeObjectAtIndex:0];
+    }
     return self.searchModel.data.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CHRJSearchTableViewCell * searchCell = [tableView dequeueReusableCellWithIdentifier:@"CHRJSearchTableViewCell"];
     searchCell.searchModel = self.searchModel.data[indexPath.row];
+    __weak typeof(self) mySelf = self;
+    
+    searchCell.isLike = ^(BOOL islike){
+        if (islike) {
+            [mySelf showHUDWithText:@"品味真棒!" withTextFont:[UIFont systemFontOfSize:15.f] withTextColor:[UIColor blackColor] withTextSize:CGSizeMake(MAXFLOAT, 0.f) withAction:@selector(showHud) withIsAnimated:YES];
+        }else{
+            [mySelf showHUDWithText:@"已记住您的喜好!" withTextFont:[UIFont systemFontOfSize:15.f] withTextColor:[UIColor blackColor] withTextSize:CGSizeMake(MAXFLOAT, 0.f) withAction:@selector(showHud) withIsAnimated:YES];
+        }
+    };
     return searchCell;
 }
+
+#pragma mark - UICollectionViewDataSource
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    CHRJSortContentModel * searchNameModel = self.choosedTypeArr[indexPath.row];
+    self.title = searchNameModel.name;
+    self.searchName = searchNameModel.name;
+    self.choosedListCount = indexPath.row;
+    [self.showColectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
+    self.pageCount = 1;
+    [self requestDataWithSort:self.currentSort];
+}
+
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return self.choosedTypeArr.count;
+}
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    CHRJSearchCollectionViewCell * searchCollectionCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CHRJSearchCollectionViewCell" forIndexPath:indexPath];
+    CHRJSortContentModel * searchNameModel = self.choosedTypeArr[indexPath.row];
+    searchCollectionCell.showLabel.text = searchNameModel.name;
+    
+    return searchCollectionCell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary * attributes = [NSDictionary dicOfTextAttributeWithFont:[UIFont systemFontOfSize:16.f] withTextColor:[UIColor lightGrayColor]];
+    CHRJSortContentModel * searchNameModel = self.choosedTypeArr[indexPath.row];
+    CGRect myRect = [searchNameModel.name boundingRectWithSize:CGSizeMake(MAXFLOAT, 0.f) options:NSStringDrawingUsesFontLeading attributes:attributes context:nil];
+    
+    return CGSizeMake(myRect.size.width, 50.f);
+}
+
+
+
 @end

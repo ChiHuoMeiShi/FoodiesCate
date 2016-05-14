@@ -13,6 +13,8 @@
 		7A6ED7041CE31E87005DF78C /* CHJRTopBannerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ED7031CE31E87005DF78C /* CHJRTopBannerCellView.m */; };
 		7A6ED70A1CE32BCA005DF78C /* NSString+JWStringDeleteToURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ED7091CE32BCA005DF78C /* NSString+JWStringDeleteToURL.m */; };
 		7A71C0A51CE6F2B700426378 /* CHRJSearchContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE954BF1CE61E9300E7100E /* CHRJSearchContentModel.m */; };
+		7A71C0B01CE73D0300426378 /* CHRJSearchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A71C0AE1CE73D0300426378 /* CHRJSearchCollectionViewCell.m */; };
+		7A71C0B11CE73D0300426378 /* CHRJSearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A71C0AF1CE73D0300426378 /* CHRJSearchCollectionViewCell.xib */; };
 		7AA949441CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA949421CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.m */; };
 		7AA949451CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA949431CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.xib */; };
 		7AAF0A351CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A231CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.m */; };
@@ -129,6 +131,9 @@
 		7A6ED7031CE31E87005DF78C /* CHJRTopBannerCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRTopBannerCellView.m; sourceTree = "<group>"; };
 		7A6ED7081CE32BCA005DF78C /* NSString+JWStringDeleteToURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JWStringDeleteToURL.h"; sourceTree = "<group>"; };
 		7A6ED7091CE32BCA005DF78C /* NSString+JWStringDeleteToURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JWStringDeleteToURL.m"; sourceTree = "<group>"; };
+		7A71C0AD1CE73D0300426378 /* CHRJSearchCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJSearchCollectionViewCell.h; sourceTree = "<group>"; };
+		7A71C0AE1CE73D0300426378 /* CHRJSearchCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJSearchCollectionViewCell.m; sourceTree = "<group>"; };
+		7A71C0AF1CE73D0300426378 /* CHRJSearchCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRJSearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		7AA949411CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRecmdTodayCollectionViewCell.h; sourceTree = "<group>"; };
 		7AA949421CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRecmdTodayCollectionViewCell.m; sourceTree = "<group>"; };
 		7AA949431CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHJRecmdTodayCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -749,6 +754,9 @@
 				7AE954C51CE626E300E7100E /* CHRJSearchTableViewCell.h */,
 				7AE954C61CE626E300E7100E /* CHRJSearchTableViewCell.m */,
 				7AE954C71CE626E300E7100E /* CHRJSearchTableViewCell.xib */,
+				7A71C0AD1CE73D0300426378 /* CHRJSearchCollectionViewCell.h */,
+				7A71C0AE1CE73D0300426378 /* CHRJSearchCollectionViewCell.m */,
+				7A71C0AF1CE73D0300426378 /* CHRJSearchCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1188,6 +1196,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A71C0B11CE73D0300426378 /* CHRJSearchCollectionViewCell.xib in Resources */,
 				B71ED8611CDB41660035F6BE /* LaunchScreen.storyboard in Resources */,
 				B72A06971CE369D50091986F /* CHEChatCell.xib in Resources */,
 				7AE954A91CE5D13100E7100E /* CHRJBasicViewController.xib in Resources */,
@@ -1305,6 +1314,7 @@
 				7AD0DDAC1CDCA7CE0057F8B2 /* UIColor+HexColor.m in Sources */,
 				7AD0DDA81CDCA7CE0057F8B2 /* UIBarButtonItem+SettingCustom.m in Sources */,
 				7AE954B81CE5D97700E7100E /* CHRJSearchDetailViewController.m in Sources */,
+				7A71C0B01CE73D0300426378 /* CHRJSearchCollectionViewCell.m in Sources */,
 				7AC8C4391CE4B3010043CAEC /* CHRJSortModel.m in Sources */,
 				7A71C0A51CE6F2B700426378 /* CHRJSearchContentModel.m in Sources */,
 				7AD0DDA41CDCA7CE0057F8B2 /* NSDictionary+Attributes.m in Sources */,

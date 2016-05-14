@@ -12,20 +12,24 @@
 
 - (void)awakeFromNib {
     self.starImageViewArr = @[self.firstStarImageView,self.secondStarImageView,self.thirdStarImageView,self.forthStarImageView,self.fifthStarImageView];
-    self.likeButton.hidden = YES;
-    self.hateButton.hidden = YES;
+    [self hideLikeHateButton];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    [self hideLikeHateButton];
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor whiteColor];
+    [self setSelectedBackgroundView:bgColorView];
 }
 
 - (void)setSearchModel:(CHRJSearchContentModel *)searchModel{
     if (!searchModel)return;
     _searchModel = searchModel;
     [self cellLayerSet];
+    [self.isSeeButton.layer setBorderWidth:0.3f];
+    [self.isSeeButton.layer setCornerRadius:5.f];
+    [self.isSeeButton.layer setBorderColor:[UIColor orangeColor].CGColor];
 }
 
 - (void)cellLayerSet{
@@ -49,12 +53,38 @@
     self.hardLabel.text = hardString;
     NSString * typeString = [NSString stringWithFormat:@"%@/%@",self.searchModel.kouwei,self.searchModel.gongyi];
     self.typeLabel.text = typeString;
-    
+    if ([self.searchModel.is_see intValue] == 0) {
+        self.isSeeButton.hidden = YES;
+    }
+    [self buttonSetFunctin];
 }
 
-
-- (IBAction)selectLikeButtton:(UIButton *)sender {
+- (void)showLikeHateButton{
     self.likeButton.hidden = NO;
     self.hateButton.hidden = NO;
 }
+- (void)hideLikeHateButton{
+    self.likeButton.hidden = YES;
+    self.hateButton.hidden = YES;
+}
+- (void)buttonSetFunctin{
+    [self.selectLikeButtton addTarget:self action:@selector(selectLikeButttonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.likeButton addTarget:self action:@selector(likeButttonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.hateButton addTarget:self action:@selector(hateButttonAction:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)selectLikeButttonAction:(UIButton *)sender {
+    [self showLikeHateButton];
+}
+
+- (void)likeButttonAction:(UIButton *)sender {
+    self.isLike(YES);
+    [self hideLikeHateButton];
+}
+
+- (void)hateButttonAction:(UIButton *)sender {
+    self.isLike(NO);
+    [self hideLikeHateButton];
+}
+
 @end

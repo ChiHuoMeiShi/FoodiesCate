@@ -10,7 +10,7 @@
                 <outlet property="hardButton" destination="VsL-dT-fed" id="t9l-tg-MR9"/>
                 <outlet property="hotButton" destination="Trw-2e-Nfi" id="5gk-8J-z2a"/>
                 <outlet property="showBomImageView" destination="OxT-vH-y7i" id="8ta-JB-mwb"/>
-                <outlet property="showCollectionView" destination="vxk-eg-7Mf" id="eoB-25-l2b"/>
+                <outlet property="showColectionView" destination="1Ax-mW-1mI" id="04F-yQ-DeJ"/>
                 <outlet property="showTableView" destination="Fhl-Du-4jp" id="AJp-sG-SGG"/>
                 <outlet property="showTopImageView" destination="X3Y-1C-AXa" id="Tjw-2l-Qba"/>
                 <outlet property="timeButton" destination="SGO-fK-XPU" id="uuG-cq-IdN"/>
@@ -94,12 +94,13 @@
                         <outlet property="delegate" destination="-1" id="xLV-gu-cyR"/>
                     </connections>
                 </tableView>
-                <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vxk-eg-7Mf">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1Ax-mW-1mI">
                     <rect key="frame" x="10" y="550" width="580" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="nZg-im-iY7"/>
+                        <constraint firstAttribute="height" constant="50" id="NSz-l6-gGd"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TYt-Eg-zlL">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DWb-r1-BsA">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -111,14 +112,14 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="G74-tP-lxf" secondAttribute="trailing" id="0bV-fm-V8g"/>
                 <constraint firstItem="G74-tP-lxf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="4u6-Cx-0O3"/>
+                <constraint firstAttribute="trailing" secondItem="1Ax-mW-1mI" secondAttribute="trailing" constant="10" id="G2V-ZJ-QIi"/>
                 <constraint firstItem="G74-tP-lxf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Hg7-oC-UIr"/>
-                <constraint firstAttribute="trailing" secondItem="vxk-eg-7Mf" secondAttribute="trailing" constant="10" id="I12-ge-9IT"/>
-                <constraint firstItem="vxk-eg-7Mf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="OmR-uJ-dSm"/>
                 <constraint firstAttribute="bottom" secondItem="Fhl-Du-4jp" secondAttribute="bottom" id="T7H-mg-vRJ"/>
-                <constraint firstAttribute="bottom" secondItem="vxk-eg-7Mf" secondAttribute="bottom" id="XUg-sS-iSM"/>
                 <constraint firstAttribute="trailing" secondItem="Fhl-Du-4jp" secondAttribute="trailing" constant="10" id="ZoP-cA-8AX"/>
                 <constraint firstItem="Fhl-Du-4jp" firstAttribute="top" secondItem="G74-tP-lxf" secondAttribute="bottom" id="gzn-IE-41v"/>
                 <constraint firstItem="Fhl-Du-4jp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="lDM-fQ-kng"/>
+                <constraint firstAttribute="bottom" secondItem="1Ax-mW-1mI" secondAttribute="bottom" id="s7u-ME-3KX"/>
+                <constraint firstItem="1Ax-mW-1mI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="zVR-jp-bcr"/>
             </constraints>
             <point key="canvasLocation" x="340" y="295"/>
         </view>

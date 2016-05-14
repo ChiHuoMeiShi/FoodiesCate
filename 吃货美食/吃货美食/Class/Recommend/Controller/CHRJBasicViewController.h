@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "CHRWebViewController.h"
-@interface CHRJBasicViewController : UIViewController
+#import <MBProgressHUD.h>
+@interface CHRJBasicViewController : UIViewController<MBProgressHUDDelegate>
+@property (nonatomic,strong)MBProgressHUD * myHUD;
 
 - (void)navBackAction;
 - (void)pushToWebViewWithID:(NSNumber *)myID withUrlString:(NSString *)urlString;
+
+- (void)showHUDWithText:(NSString *)string withTextFont:(UIFont *)font withTextColor:(UIColor *)color withTextSize:(CGSize)textSize withAction:(SEL)method withIsAnimated:(BOOL)isAnimated;
+
 @end
