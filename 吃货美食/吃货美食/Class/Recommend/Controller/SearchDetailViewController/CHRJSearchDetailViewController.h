@@ -26,4 +26,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *showTableView;
 @property (weak, nonatomic) IBOutlet UICollectionView *showColectionView;
 
+- (instancetype)initWithChoosedTypeArr:(NSArray *)choosedTypeArr withChoosedListCount:(NSInteger)choosedListCount withSearchName:(NSString *)searchName;
+
 @end

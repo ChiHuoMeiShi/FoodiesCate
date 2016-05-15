@@ -37,7 +37,6 @@
     self.sortDataArr = [CHRJSortModel mj_objectArrayWithFile:sortDataArrPath];
     [self.sortTableView registerNib:[UINib nibWithNibName:@"CHRJSortTableViewCell" bundle:nil] forCellReuseIdentifier:@"CHRJSortTableViewCell"];
     
-    
     [self.sortCollectionView registerNib:[UINib nibWithNibName:@"CHRJSortCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"CHRJSortCollectionViewCell"];
 }
 

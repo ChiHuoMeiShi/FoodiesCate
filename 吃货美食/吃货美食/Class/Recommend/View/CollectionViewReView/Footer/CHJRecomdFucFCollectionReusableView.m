@@ -59,7 +59,10 @@
     self.topFunChoosePush([[UIViewController alloc]init]);
 }
 - (void)breasketFoodButtonAction{
-    self.topFunChoosePush([[UIViewController alloc]init]);
+    NSString * sortDataArrPath = [[NSBundle mainBundle]pathForResource:@"CHRFenLei" ofType:@"plist"];
+    NSMutableArray * sortDataArr = [CHRJSortModel mj_objectArrayWithFile:sortDataArrPath];
+    CHRJSortModel * sortDataModel = sortDataArr[1];
+    self.topFunChoosePush([[CHRJSearchDetailViewController alloc]initWithChoosedTypeArr:sortDataModel.listArr withChoosedListCount:0 withSearchName:@"早餐"]);
 }
 - (void)aroundFoodButtonAction{
     self.topFunChoosePush([[UIViewController alloc]init]);

@@ -24,6 +24,22 @@
 @end
 
 @implementation CHRJSearchDetailViewController
+- (instancetype)initWithChoosedTypeArr:(NSArray *)choosedTypeArr withChoosedListCount:(NSInteger)choosedListCount withSearchName:(NSString *)searchName{
+    self = [super init];
+    if (self) {
+        if (choosedTypeArr) {
+            self.choosedTypeArr = choosedTypeArr;
+        }else{
+            self.choosedTypeArr = nil;
+        }
+        
+        self.choosedListCount = choosedListCount;
+        self.searchName = searchName;
+    }
+    return self;
+}
+
+
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     self.showTopImageView.x = CHRSearchImageX;
@@ -33,7 +49,6 @@
     if (self.showColectionView) {
         [self.showColectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:self.choosedListCount inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
     }
-    
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -47,12 +62,13 @@
     self.currentSort = @"default";
     self.pageCount = 1;
     
-    [self searchCollectionViewSet];
     [self searchTableViewSet];
+    [self searchCollectionViewSet];
 }
 
 - (void)searchCollectionViewSet{
     if (self.choosedTypeArr) {
+        self.showColectionView.x = 100.f;
         self.showColectionView.hidden = NO;
         self.showColectionView.dataSource = self;
         self.showColectionView.delegate = self;
@@ -206,6 +222,12 @@
     return CGSizeMake(myRect.size.width, 50.f);
 }
 
-
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
+    CGFloat rowMinWidth = 20.f;
+    if (self.choosedTypeArr.count <= 6) {
+        rowMinWidth = (CHSCREENWIDTH - 20.f)/(self.choosedTypeArr.count + 1) - 20.f;
+    }
+    return rowMinWidth;
+}
 
 @end
