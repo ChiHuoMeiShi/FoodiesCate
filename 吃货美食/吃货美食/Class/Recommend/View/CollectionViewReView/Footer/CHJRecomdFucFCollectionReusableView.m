@@ -11,11 +11,11 @@
 @implementation CHJRecomdFucFCollectionReusableView
 
 - (void)awakeFromNib {
-    CGFloat endge = (CHSCREENWIDTH - 2 * CGRectGetMaxX(self.foodTypeButton.frame) - self.audioFoodButton.width * 2)/3;
+    CGFloat endge = (CHSCREENWIDTH - 2 * CGRectGetMaxX(self.foodTypeButton.frame) - self.audioFoodButton.width * 2 - 20.f)/3;
     self.audioFoodBtnLeftEndge.constant = endge;
     self.aroundFoodBtnRightEndge.constant = endge;
     
-    CGFloat width = (CHSCREENWIDTH - 3 * 15.f)/2;
+    CGFloat width = (CHSCREENWIDTH - 30.f)/2;
     self.listButtonWidth.constant = width;
     self.composeButtonWIdth.constant = width;
     [self setNeedsLayout];
@@ -59,7 +59,10 @@
     self.topFunChoosePush([[UIViewController alloc]init]);
 }
 - (void)breasketFoodButtonAction{
-    self.topFunChoosePush([[UIViewController alloc]init]);
+    NSString * sortDataArrPath = [[NSBundle mainBundle]pathForResource:@"CHRFenLei" ofType:@"plist"];
+    NSMutableArray * sortDataArr = [CHRJSortModel mj_objectArrayWithFile:sortDataArrPath];
+    CHRJSortModel * sortDataModel = sortDataArr[1];
+    self.topFunChoosePush([[CHRJSearchDetailViewController alloc]initWithChoosedTypeArr:sortDataModel.listArr withChoosedListCount:0 withSearchName:@"早餐"]);
 }
 - (void)aroundFoodButtonAction{
     self.topFunChoosePush([[UIViewController alloc]init]);

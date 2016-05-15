@@ -6,8 +6,8 @@
 //  Copyright © 2016年 赵天. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "CHRJBasicViewController.h"
 
-@interface CHRJSortViewController : UIViewController
+@interface CHRJSortViewController : CHRJBasicViewController
 
 @end

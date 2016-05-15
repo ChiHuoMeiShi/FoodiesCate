@@ -8,43 +8,51 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CHRJSortCollectionViewCell" id="gTV-IL-0wX" customClass="CHRJSortCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="73" height="80"/>
+            <rect key="frame" x="0.0" y="0.0" width="73" height="90"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="73" height="80"/>
+                <rect key="frame" x="0.0" y="0.0" width="73" height="90"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsw-lw-Arg">
-                        <rect key="frame" x="0.0" y="62" width="73" height="17"/>
+                        <rect key="frame" x="0.0" y="73" width="73" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="K4W-k5-Xjf"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qkv-gJ-em9">
-                        <rect key="frame" x="14" y="11" width="45" height="45"/>
+                        <rect key="frame" x="7" y="7" width="60" height="60"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="45" id="3hG-ZR-KLy"/>
-                            <constraint firstAttribute="width" constant="45" id="GhU-Ce-ZKR"/>
+                            <constraint firstAttribute="height" constant="60" id="3hG-ZR-KLy"/>
+                            <constraint firstAttribute="width" constant="60" id="GhU-Ce-ZKR"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="zsw-lw-Arg" secondAttribute="bottom" id="4Cu-K8-RFV"/>
                 <constraint firstItem="qkv-gJ-em9" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="I14-t3-byZ"/>
+                <constraint firstItem="zsw-lw-Arg" firstAttribute="top" secondItem="qkv-gJ-em9" secondAttribute="bottom" constant="6" id="UgY-zQ-CIG"/>
                 <constraint firstAttribute="trailing" secondItem="zsw-lw-Arg" secondAttribute="trailing" id="amr-GI-fxX"/>
                 <constraint firstItem="zsw-lw-Arg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bd4-kc-eQH"/>
                 <constraint firstItem="qkv-gJ-em9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="11" id="i4m-bt-we1"/>
                 <constraint firstItem="zsw-lw-Arg" firstAttribute="top" secondItem="qkv-gJ-em9" secondAttribute="bottom" constant="6" id="rsd-rt-Ysk"/>
             </constraints>
             <size key="customSize" width="126" height="195"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="i4m-bt-we1"/>
+                    <exclude reference="rsd-rt-Ysk"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="showImageView" destination="qkv-gJ-em9" id="YLK-FH-WDA"/>
                 <outlet property="showLabel" destination="zsw-lw-Arg" id="maO-fJ-Se0"/>
             </connections>
-            <point key="canvasLocation" x="132" y="292.5"/>
+            <point key="canvasLocation" x="131.5" y="292"/>
         </collectionViewCell>
     </objects>
 </document>

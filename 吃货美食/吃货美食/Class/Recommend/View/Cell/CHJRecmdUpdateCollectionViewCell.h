@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <UIImageView+WebCache.h>
+#import "CHRJSearchContentModel.h"
 @interface CHJRecmdUpdateCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *showImageView;
+@property (weak, nonatomic) IBOutlet UILabel *showLabel;
 
+@property (nonatomic,strong)CHRJSearchContentModel * searchMdodel;
 @end

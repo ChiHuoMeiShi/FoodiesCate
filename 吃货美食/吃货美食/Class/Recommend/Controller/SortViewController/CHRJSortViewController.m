@@ -13,6 +13,7 @@
 #import "CHRJSortModel.h"
 #import "CHRJSortTableViewCell.h"
 #import "CHRJSortCollectionViewCell.h"
+#import "CHRJSearchDetailViewController.h"
 @interface CHRJSortViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *sortTableView;
 @property (weak, nonatomic) IBOutlet UICollectionView *sortCollectionView;
@@ -32,11 +33,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
     NSString * sortDataArrPath = [[NSBundle mainBundle]pathForResource:@"CHRFenLei" ofType:@"plist"];
     self.sortDataArr = [CHRJSortModel mj_objectArrayWithFile:sortDataArrPath];
     [self.sortTableView registerNib:[UINib nibWithNibName:@"CHRJSortTableViewCell" bundle:nil] forCellReuseIdentifier:@"CHRJSortTableViewCell"];
-    
     
     [self.sortCollectionView registerNib:[UINib nibWithNibName:@"CHRJSortCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"CHRJSortCollectionViewCell"];
 }
@@ -44,10 +43,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)navBackAction{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UITableViewDelegate
@@ -88,6 +83,15 @@
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     CGFloat cellWidth = CHSCREENWIDTH - 100.f;
-    return CGSizeMake(cellWidth/3, 80.f);
+    return CGSizeMake(cellWidth/3, 90.f);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    CHRJSearchDetailViewController * detailVC = [[CHRJSearchDetailViewController alloc]init];
+    detailVC.choosedTypeArr = self.selectedModel.listArr;
+    detailVC.choosedListCount = indexPath.row;
+    CHRJSortContentModel * choosedModel = self.selectedModel.listArr[indexPath.row];
+    detailVC.searchName = choosedModel.name;
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 @end
