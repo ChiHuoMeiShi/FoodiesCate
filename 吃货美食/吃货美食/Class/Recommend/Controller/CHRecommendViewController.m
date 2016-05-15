@@ -244,7 +244,6 @@
             [sugFooterView.commitButton addTarget:self action:@selector(commitAction) forControlEvents:UIControlEventTouchUpInside];
             return sugFooterView;
         }
-        
     }
     return nil;
 }

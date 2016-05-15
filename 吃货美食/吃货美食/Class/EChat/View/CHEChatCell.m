@@ -210,18 +210,6 @@
     
     [self.iconIamgeView sd_setImageWithURL:[NSURL URLWithString:showhottopic.user_info.avatar]];
     
-    self.num = showhottopic.img_num;
-    
-//    [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:showhottopic.imgs[0][@"small"]] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-//            } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-//                //改变约束
-//                self.imagesHeight.constant = image.size.height;
-//                UIImageView *imgView = [[UIImageView alloc] initWithImage:image];
-//                [self.iamges addSubview:imgView];
-//    
-//                [self setNeedsLayout];
-//            }];
-    
     self.nameLabel.text = showhottopic.user_info.user_name;
     
     self.contentLabel.text = showhottopic.summary;
