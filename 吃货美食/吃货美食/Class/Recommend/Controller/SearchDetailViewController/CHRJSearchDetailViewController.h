@@ -12,10 +12,13 @@
 @interface CHRJSearchDetailViewController : CHRJBasicViewController
 //SearchVC push
 @property (nonatomic,copy)NSString * searchName;
-
 //SortVC push
 @property (nonatomic,strong)NSArray * choosedTypeArr;
 @property (nonatomic,assign)NSInteger choosedListCount;
+//Video push
+@property (nonatomic,assign)BOOL isVideo;
+//Local push
+@property (nonatomic,assign)BOOL isLocal;
 
 @property (weak, nonatomic) IBOutlet UIButton *hotButton;
 @property (weak, nonatomic) IBOutlet UIButton *hardButton;
@@ -27,5 +30,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *showColectionView;
 
 - (instancetype)initWithChoosedTypeArr:(NSArray *)choosedTypeArr withChoosedListCount:(NSInteger)choosedListCount withSearchName:(NSString *)searchName;
+- (instancetype)initWithIsVideo:(BOOL)isVideo;
+- (instancetype)initWithIsLocal:(BOOL)isLocal;
 
 @end

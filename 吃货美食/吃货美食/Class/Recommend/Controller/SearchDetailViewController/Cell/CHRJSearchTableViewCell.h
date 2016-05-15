@@ -17,12 +17,18 @@ typedef void (^searchTableViewSelectedLike)(BOOL);
 @property (nonatomic,strong)CHRJSearchContentModel * searchModel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *showImageView;
+
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *selectLikeButtton;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIButton *hateButton;
 @property (weak, nonatomic) IBOutlet UIButton *isSeeButton;
+
+@property (weak, nonatomic) IBOutlet UIImageView *locationImageView;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+
+
 
 @property (weak, nonatomic) IBOutlet UILabel *hardLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;

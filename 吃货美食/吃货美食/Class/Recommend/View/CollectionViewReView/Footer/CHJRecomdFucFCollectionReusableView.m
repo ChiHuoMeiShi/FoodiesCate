@@ -56,7 +56,7 @@
     self.topFunChoosePush([[CHRJSortViewController alloc]init]);
 }
 - (void)audioFoodButtonAction{
-    self.topFunChoosePush([[UIViewController alloc]init]);
+    self.topFunChoosePush([[CHRJSearchDetailViewController alloc]initWithIsVideo:YES]);
 }
 - (void)breasketFoodButtonAction{
     NSString * sortDataArrPath = [[NSBundle mainBundle]pathForResource:@"CHRFenLei" ofType:@"plist"];
@@ -65,7 +65,7 @@
     self.topFunChoosePush([[CHRJSearchDetailViewController alloc]initWithChoosedTypeArr:sortDataModel.listArr withChoosedListCount:0 withSearchName:@"早餐"]);
 }
 - (void)aroundFoodButtonAction{
-    self.topFunChoosePush([[UIViewController alloc]init]);
+    self.topFunChoosePush([[CHRJSearchDetailViewController alloc]initWithIsLocal:YES]);
 }
 - (void)listButtonAction{
     self.topFunChoosePush([[UIViewController alloc]init]);

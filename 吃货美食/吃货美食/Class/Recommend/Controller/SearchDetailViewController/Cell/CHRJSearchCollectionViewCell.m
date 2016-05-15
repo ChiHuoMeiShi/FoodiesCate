@@ -27,7 +27,4 @@
     [selectedBackgroundView addSubview:addBackgroundView];
 }
 
-
-
-
 @end

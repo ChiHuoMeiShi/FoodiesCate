@@ -24,6 +24,7 @@
 @end
 
 @implementation CHRJSearchDetailViewController
+#pragma mark - initFun
 - (instancetype)initWithChoosedTypeArr:(NSArray *)choosedTypeArr withChoosedListCount:(NSInteger)choosedListCount withSearchName:(NSString *)searchName{
     self = [super init];
     if (self) {
@@ -38,8 +39,25 @@
     }
     return self;
 }
-
-
+- (instancetype)initWithIsVideo:(BOOL)isVideo{
+    self = [super init];
+    if (self) {
+        self.isVideo = isVideo;
+        self.choosedTypeArr = nil;
+        self.searchName = @"热搜菜谱合集";
+    }
+    return self;
+}
+- (instancetype)initWithIsLocal:(BOOL)isLocal{
+    self = [super init];
+    if (self) {
+        self.isLocal = isLocal;
+        self.choosedTypeArr = nil;
+        self.searchName = @"附近菜谱";
+    }
+    return self;
+}
+#pragma mark - ViewActivity
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     self.showTopImageView.x = CHRSearchImageX;
@@ -65,7 +83,11 @@
     [self searchTableViewSet];
     [self searchCollectionViewSet];
 }
-
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+#pragma mark - ViewSet
 - (void)searchCollectionViewSet{
     if (self.choosedTypeArr) {
         self.showColectionView.x = 100.f;
@@ -86,11 +108,6 @@
     self.showTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [mySelf requestDataWithSort:mySelf.currentSort];
     }];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)buttonSetFun{
@@ -136,17 +153,37 @@
     manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     
     NSString * url = @"http://api.meishi.cc/v5/search_category.php?format=json";
-    NSDictionary * dic = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"step":@"",@"kw":@"",@"page":@(self.pageCount),@"q":self.searchName,@"sort_sc":@"desc",@"sort":sort,@"gy":@"",@"mt":@""};
+    NSDictionary * dicTemp = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"step":@"",@"kw":@"",@"page":@(self.pageCount),@"q":self.searchName,@"sort_sc":@"desc",@"sort":sort,@"gy":@"",@"mt":@""};
+    if (self.isLocal) {
+        dicTemp = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"page":@(1)};
+        url = @"http://api.meishi.cc/v5/lsb_news.php?format=json";
+    }
+    NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithDictionary:dicTemp];
+    if (self.isVideo) {
+        url = @"http://api.meishi.cc/v5/zt1.php?format=json";
+        [dic removeObjectForKey:@"q"];
+        [dic setObject:@(20001) forKey:@"cid"];
+    }
     __weak typeof(self)mySelf = self;
     [manger POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [mySelf.showTableView.mj_footer endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
 //        CHLog(@"%@",dic[@"obj"]);
+        
         if (mySelf.pageCount == 1) {
-            mySelf.searchModel = [CHRJSearchModel mj_objectWithKeyValues:dic[@"obj"]];
+            if (self.isLocal) {
+                mySelf.searchModel = [[CHRJSearchModel alloc]init];
+                mySelf.searchModel.data = [CHRJSearchContentModel mj_objectArrayWithKeyValuesArray:dic[@"data"]];
+            }else{
+                mySelf.searchModel = [CHRJSearchModel mj_objectWithKeyValues:dic[@"obj"]];
+            }
         }else{
-            CHRJSearchModel * tempModel = [CHRJSearchModel mj_objectWithKeyValues:dic[@"obj"]];
-            [mySelf.searchModel.data addObjectsFromArray:tempModel.data];
+            if (self.isLocal) {
+                [mySelf.searchModel.data addObjectsFromArray:[CHRJSearchContentModel mj_objectArrayWithKeyValuesArray:dic[@"data"]]];
+            }else{
+                CHRJSearchModel * tempModel = [CHRJSearchModel mj_objectWithKeyValues:dic[@"obj"]];
+                [mySelf.searchModel.data addObjectsFromArray:tempModel.data];
+            }
         }
         mySelf.pageCount++;
         [mySelf.showTableView reloadData];
