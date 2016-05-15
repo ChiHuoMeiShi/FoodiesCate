@@ -28,6 +28,7 @@
         NSIndexPath *selectedIndexPath =[NSIndexPath indexPathForRow:2 inSection:0];
         [self.sortTableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
+    [self recommdSearchBarSetWithRect:CGRectMake(70.f, 26.f, CHSCREENWIDTH - 70.f, 30.f)];
 }
 
 - (void)viewDidLoad {
@@ -87,11 +88,19 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self.searchView removeFromSuperview];
+    self.searchView = nil;
     CHRJSearchDetailViewController * detailVC = [[CHRJSearchDetailViewController alloc]init];
     detailVC.choosedTypeArr = self.selectedModel.listArr;
     detailVC.choosedListCount = indexPath.row;
     CHRJSortContentModel * choosedModel = self.selectedModel.listArr[indexPath.row];
     detailVC.searchName = choosedModel.name;
     [self.navigationController pushViewController:detailVC animated:YES];
+}
+
+- (void)navBackAction{
+    [self.searchView removeFromSuperview];
+    self.searchView = nil;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

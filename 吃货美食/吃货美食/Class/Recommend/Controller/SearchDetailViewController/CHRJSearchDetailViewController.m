@@ -39,6 +39,13 @@
     }
     return self;
 }
+- (instancetype)initWithSearchName:(NSString *)searchName{
+    self = [super init];
+    if (self) {
+        self.searchName = searchName;
+    }
+    return self;
+}
 - (instancetype)initWithIsVideo:(BOOL)isVideo{
     self = [super init];
     if (self) {

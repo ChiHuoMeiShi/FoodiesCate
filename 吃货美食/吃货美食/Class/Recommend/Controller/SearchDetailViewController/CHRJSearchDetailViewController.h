@@ -32,5 +32,6 @@
 - (instancetype)initWithChoosedTypeArr:(NSArray *)choosedTypeArr withChoosedListCount:(NSInteger)choosedListCount withSearchName:(NSString *)searchName;
 - (instancetype)initWithIsVideo:(BOOL)isVideo;
 - (instancetype)initWithIsLocal:(BOOL)isLocal;
+- (instancetype)initWithSearchName:(NSString *)searchName;
 
 @end
