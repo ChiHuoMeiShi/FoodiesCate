@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 #import <MJExtension.h>
 @interface CateShowModel : NSObject
-@property (nonatomic,strong) NSMutableArray * topic_List;
+@property (nonatomic,strong) NSMutableArray * topic_list;
 @end

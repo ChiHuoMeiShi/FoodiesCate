@@ -9,13 +9,12 @@
 #import "CateShowModel.h"
 #import "Topic_List.h"
 #import "User_infoModel.h"
-#import "Recipe_infoModel.h"
 #import "ImgsModel.h"
 @implementation CateShowModel
 
 + (NSDictionary *)mj_objectClassInArray
 {
-    return @{@"topic_List":[Topic_List class]};
+    return @{@"topic_list":[Topic_List class]};
 }
 
 @end

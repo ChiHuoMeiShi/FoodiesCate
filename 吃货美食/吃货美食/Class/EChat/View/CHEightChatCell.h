@@ -11,9 +11,10 @@
 #import <UIImageView+WebCache.h>
 #import "ImgsModel.h"
 #import <UIKit/UIKit.h>
-
+#import "Topic_List.h"
 @interface CHEightChatCell : UITableViewCell
 @property (nonatomic,strong) Hot_topocModel * showhottopic;
+@property (nonatomic,strong) Topic_List * topicList;
 @property (weak, nonatomic) IBOutlet UIImageView *iconIamgeView;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;

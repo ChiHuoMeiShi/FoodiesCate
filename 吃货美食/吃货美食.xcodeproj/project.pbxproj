@@ -63,6 +63,8 @@
 		7AD0DDAF1CDCA7CE0057F8B2 /* JWUIViewControllersClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD9A1CDCA7CE0057F8B2 /* JWUIViewControllersClass.m */; };
 		7AD0DDB01CDCA7CE0057F8B2 /* UIStoryboard+GetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD9D1CDCA7CE0057F8B2 /* UIStoryboard+GetView.m */; };
 		7AD0DDB11CDCA7CE0057F8B2 /* JWTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DDA21CDCA7CE0057F8B2 /* JWTools.m */; };
+		B716865F1CE8257100BEBA3E /* CateUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B716865E1CE8257100BEBA3E /* CateUserInfo.m */; };
+		B71686621CE8261100BEBA3E /* CateImgsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B71686611CE8261100BEBA3E /* CateImgsModel.m */; };
 		B71E54841CE6F6B6003B6BE8 /* CHEChatDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = B71E54821CE6F6B6003B6BE8 /* CHEChatDetailController.m */; };
 		B71E54851CE6F6B6003B6BE8 /* CHEChatDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B71E54831CE6F6B6003B6BE8 /* CHEChatDetailController.xib */; };
 		B71E548C1CE78A53003B6BE8 /* CateShowModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B71E548B1CE78A53003B6BE8 /* CateShowModel.m */; };
@@ -218,6 +220,10 @@
 		7AD0DD9F1CDCA7CE0057F8B2 /* JWPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWPrefixHeader.pch; sourceTree = "<group>"; };
 		7AD0DDA11CDCA7CE0057F8B2 /* JWTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWTools.h; sourceTree = "<group>"; };
 		7AD0DDA21CDCA7CE0057F8B2 /* JWTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWTools.m; sourceTree = "<group>"; };
+		B716865D1CE8257100BEBA3E /* CateUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CateUserInfo.h; sourceTree = "<group>"; };
+		B716865E1CE8257100BEBA3E /* CateUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CateUserInfo.m; sourceTree = "<group>"; };
+		B71686601CE8261100BEBA3E /* CateImgsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CateImgsModel.h; sourceTree = "<group>"; };
+		B71686611CE8261100BEBA3E /* CateImgsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CateImgsModel.m; sourceTree = "<group>"; };
 		B71E54811CE6F6B6003B6BE8 /* CHEChatDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHEChatDetailController.h; sourceTree = "<group>"; };
 		B71E54821CE6F6B6003B6BE8 /* CHEChatDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHEChatDetailController.m; sourceTree = "<group>"; };
 		B71E54831CE6F6B6003B6BE8 /* CHEChatDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHEChatDetailController.xib; sourceTree = "<group>"; };
@@ -709,6 +715,10 @@
 				B71E548B1CE78A53003B6BE8 /* CateShowModel.m */,
 				B71E548E1CE78A87003B6BE8 /* Topic_List.h */,
 				B71E548F1CE78A87003B6BE8 /* Topic_List.m */,
+				B716865D1CE8257100BEBA3E /* CateUserInfo.h */,
+				B716865E1CE8257100BEBA3E /* CateUserInfo.m */,
+				B71686601CE8261100BEBA3E /* CateImgsModel.h */,
+				B71686611CE8261100BEBA3E /* CateImgsModel.m */,
 			);
 			name = "餐桌食光";
 			sourceTree = "<group>";
@@ -1278,6 +1288,7 @@
 				7AC8C43C1CE4B3230043CAEC /* CHRJSortContentModel.m in Sources */,
 				B72A06A31CE3AEF00091986F /* CHEChatHeaderView.m in Sources */,
 				7AD0DDA31CDCA7CE0057F8B2 /* JWClass.m in Sources */,
+				B716865F1CE8257100BEBA3E /* CateUserInfo.m in Sources */,
 				7AAF3F0C1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m in Sources */,
 				7AAF0A821CE1EFD600708F98 /* CHJRecomdTdayBannerModel.m in Sources */,
 				7AAF0A491CE1855300708F98 /* CHJRecmdUpdateCollectionViewCell.m in Sources */,
@@ -1332,6 +1343,7 @@
 				B7F615501CDC84F000AF1697 /* CHNavigationController.m in Sources */,
 				B71E54941CE78C47003B6BE8 /* CHCateShowController.m in Sources */,
 				7A6ED70A1CE32BCA005DF78C /* NSString+JWStringDeleteToURL.m in Sources */,
+				B71686621CE8261100BEBA3E /* CateImgsModel.m in Sources */,
 				7AD0DDAF1CDCA7CE0057F8B2 /* JWUIViewControllersClass.m in Sources */,
 				B72A06961CE369D50091986F /* CHEChatCell.m in Sources */,
 				7AD0DDA71CDCA7CE0057F8B2 /* JWUIClass.m in Sources */,

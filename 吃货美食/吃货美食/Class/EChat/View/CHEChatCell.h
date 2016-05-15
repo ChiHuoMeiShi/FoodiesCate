@@ -11,12 +11,15 @@
 #import "Hot_topocModel.h"
 #import <UIImageView+WebCache.h>
 #import "ImgsModel.h"
-
+#import "CateShowModel.h"
+#import "Topic_List.h"
 @interface CHEChatCell : UITableViewCell
 
 
 
 @property (nonatomic,strong) Hot_topocModel * showhottopic;
+
+@property (nonatomic,strong) Topic_List * topicList;
 
 @property (weak, nonatomic) IBOutlet UIImageView *iconIamgeView;
 

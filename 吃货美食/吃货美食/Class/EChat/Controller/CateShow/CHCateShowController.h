@@ -15,6 +15,6 @@
 
 @property (nonatomic,assign) int page;
 
-@property(strong,nonatomic)EChatModel *echatModel;
+@property(strong,nonatomic)CateShowModel *cateModel;
 
 @end

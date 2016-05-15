@@ -11,6 +11,6 @@
 @implementation Topic_List
 + (NSDictionary *)mj_objectClassInArray
 {
-    return @{@"imgs":[ImgsModel class]};
+    return @{@"imgs":[CateImgsModel class]};
 }
 @end
