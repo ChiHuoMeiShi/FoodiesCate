@@ -19,6 +19,7 @@
     [super viewDidLoad];
     
     CHRecommendViewController *recommend = [[CHRecommendViewController alloc] init];
+    [recommend getCollectionViewData];
     [self addSubVc:recommend title:@"推荐" imageName:nil selectImageName:nil];
     
     CHDiscoverViewController *discover = [[CHDiscoverViewController alloc] init];
@@ -44,6 +45,5 @@
     CHNavigationController *nav = [[CHNavigationController alloc] initWithRootViewController:childVc];
     [self addChildViewController:nav];
 }
-
 
 @end

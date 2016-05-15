@@ -14,28 +14,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="440"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3py-Zc-K4J" customClass="CHJRTopBannerCellView">
-                        <rect key="frame" x="8" y="6" width="304" height="115"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="115" id="fb4-Qz-9pt"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ww-4J-6OD" customClass="CHJRTopBannerCellView">
-                        <rect key="frame" x="8" y="124" width="304" height="115"/>
+                        <rect key="frame" x="0.0" y="118" width="320" height="115"/>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="115" id="gKM-9H-EOX"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VHZ-gG-9VI" customClass="CHJRTopBannerCellView">
-                        <rect key="frame" x="8" y="242" width="304" height="115"/>
+                        <rect key="frame" x="0.0" y="236" width="320" height="115"/>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="115" id="rFg-L0-KZu"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="早餐" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aR-Qj-gVO">
-                        <rect key="frame" x="0.0" y="370" width="320" height="18"/>
+                        <rect key="frame" x="0.0" y="364" width="320" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="fJB-CD-1AK"/>
                         </constraints>
@@ -44,7 +44,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="好吃的" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8A-I5-lKs">
-                        <rect key="frame" x="0.0" y="394" width="320" height="15"/>
+                        <rect key="frame" x="0.0" y="388" width="320" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="ieH-Fu-boq"/>
                         </constraints>
@@ -59,19 +59,19 @@
             <constraints>
                 <constraint firstItem="4aR-Qj-gVO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0Ea-DZ-Xlo"/>
                 <constraint firstAttribute="trailing" secondItem="T8A-I5-lKs" secondAttribute="trailing" id="0I0-M1-8Ao"/>
-                <constraint firstItem="3py-Zc-K4J" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="1V1-hR-kkO"/>
-                <constraint firstAttribute="trailing" secondItem="VHZ-gG-9VI" secondAttribute="trailing" constant="8" id="6Po-3S-Kc0"/>
-                <constraint firstAttribute="trailing" secondItem="3py-Zc-K4J" secondAttribute="trailing" constant="8" id="C8X-Qy-MrF"/>
+                <constraint firstItem="3py-Zc-K4J" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1V1-hR-kkO"/>
+                <constraint firstAttribute="trailing" secondItem="VHZ-gG-9VI" secondAttribute="trailing" id="6Po-3S-Kc0"/>
+                <constraint firstAttribute="trailing" secondItem="3py-Zc-K4J" secondAttribute="trailing" id="C8X-Qy-MrF"/>
                 <constraint firstAttribute="trailing" secondItem="4aR-Qj-gVO" secondAttribute="trailing" id="Gqc-lr-n4U"/>
                 <constraint firstItem="T8A-I5-lKs" firstAttribute="top" secondItem="4aR-Qj-gVO" secondAttribute="bottom" constant="6" id="LMx-5e-2AD"/>
-                <constraint firstItem="3py-Zc-K4J" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Lv1-Dd-n1P"/>
-                <constraint firstItem="3ww-4J-6OD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="W9O-A7-2WB"/>
+                <constraint firstItem="3py-Zc-K4J" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Lv1-Dd-n1P"/>
+                <constraint firstItem="3ww-4J-6OD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="W9O-A7-2WB"/>
                 <constraint firstItem="VHZ-gG-9VI" firstAttribute="top" secondItem="3ww-4J-6OD" secondAttribute="bottom" constant="3" id="k8r-tv-RFm"/>
                 <constraint firstItem="4aR-Qj-gVO" firstAttribute="top" secondItem="VHZ-gG-9VI" secondAttribute="bottom" constant="13" id="lHe-qm-tcu"/>
                 <constraint firstItem="T8A-I5-lKs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pak-He-piU"/>
-                <constraint firstItem="VHZ-gG-9VI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="rEG-2J-5r4"/>
+                <constraint firstItem="VHZ-gG-9VI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="rEG-2J-5r4"/>
                 <constraint firstItem="3ww-4J-6OD" firstAttribute="top" secondItem="3py-Zc-K4J" secondAttribute="bottom" constant="3" id="v3S-p3-khy"/>
-                <constraint firstAttribute="trailing" secondItem="3ww-4J-6OD" secondAttribute="trailing" constant="8" id="zDZ-4k-i7A"/>
+                <constraint firstAttribute="trailing" secondItem="3ww-4J-6OD" secondAttribute="trailing" id="zDZ-4k-i7A"/>
             </constraints>
             <connections>
                 <outlet property="centerFoodView" destination="3ww-4J-6OD" id="xaS-CM-NKI"/>
