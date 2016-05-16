@@ -27,6 +27,16 @@
     [self addHeader];
     [self getEchatDataWithSort:@"time"];
     self.eChatTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
+    [self getEchatDataWithSort:@"time"];
+    __weak typeof(self) mSelf = self;
+    //下拉刷新
+    mSelf.eChatTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [mSelf getEchatDataWithSort:@"time"];
+    }];
+    //上拉刷新
+    mSelf.eChatTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [mSelf upRequestDataWithSort:@"time"];
+    }];
     self.eChatTableView.delegate = self;
     self.eChatTableView.dataSource = self;
     self.eChatTableView.rowHeight = UITableViewAutomaticDimension;
@@ -57,42 +67,41 @@
 {
     
     //    Hot_topocModel *hotModel = self.echatModel.hot_topic[indexPath.row];
-    Hot_topocModel *hotModel = self.dataArr[indexPath.row];
-    
-    if ([hotModel.img_num intValue] == 1) {
+    Topic_List *topicList = self.dataArr[indexPath.row];
+    if ([topicList.img_num intValue] == 1) {
         CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatCellReuse"];
         //        eChatCell.showhottopic = self.echatModel.hot_topic[indexPath.row];
         eChatCell.showhottopic = self.dataArr[indexPath.row];
         return eChatCell;
-    } else if ([hotModel.img_num intValue] == 2){
+    } else if ([topicList.img_num intValue] == 2){
         CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatTwoCellReuse"];
         eChatCell.showhottopic = self.dataArr[indexPath.row];
         return eChatCell;
-    } else if ([hotModel.img_num intValue] == 3){
+    } else if ([topicList.img_num intValue] == 3){
         CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatThreeCellReuse"];
         eChatCell.showhottopic = self.dataArr[indexPath.row];
         return eChatCell;
-    } else if ([hotModel.img_num intValue] == 4){
+    } else if ([topicList.img_num intValue] == 4){
         CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatFourCellReuse"];
         eChatCell.showhottopic = self.dataArr[indexPath.row];
         return eChatCell;
-    } else if ([hotModel.img_num intValue] == 5){
+    } else if ([topicList.img_num intValue] == 5){
         CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatFiveCellReuse"];
         eChatCell.showhottopic = self.dataArr[indexPath.row];
         return eChatCell;
-    } else if ([hotModel.img_num intValue] == 6){
+    } else if ([topicList.img_num intValue] == 6){
         CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatSixCellReuse"];
         eChatCell.showhottopic = self.dataArr[indexPath.row];
         return eChatCell;
-    } else if ([hotModel.img_num intValue] == 7){
+    } else if ([topicList.img_num intValue] == 7){
         CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatSevenCellReuse"];
         eChatCell.showhottopic = self.dataArr[indexPath.row];
         return eChatCell;
-    } else if ([hotModel.img_num intValue] == 8){
+    } else if ([topicList.img_num intValue] == 8){
         CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatEightCellReuse"];
         eChatCell.showhottopic = self.dataArr[indexPath.row];
         return eChatCell;
-    }else if ([hotModel.img_num intValue] == 9)
+    }else if ([topicList.img_num intValue] == 9)
     {
         CHEChatCell *eChatCell = [tableView dequeueReusableCellWithIdentifier:@"CHEChatNineCellReuse"];
         eChatCell.showhottopic = self.dataArr[indexPath.row];
@@ -110,12 +119,12 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Hot_topocModel *hotModel = self.dataArr[indexPath.row];
-    if ([hotModel.img_num intValue] == 1) {
+    Topic_List *topicList = self.dataArr[indexPath.row];
+    if ([topicList.img_num intValue] == 1) {
         return 369.f;
-    }else if ([hotModel.img_num intValue] > 1 && [hotModel.img_num intValue] < 4){
+    }else if ([topicList.img_num intValue] > 1 && [topicList.img_num intValue] < 4){
         return 247.f;
-    }else if ([hotModel.img_num intValue] >= 4 && [hotModel.img_num intValue] < 7){
+    }else if ([topicList.img_num intValue] >= 4 && [topicList.img_num intValue] < 7){
         return 335.f;
     }
     return 427.f;
@@ -123,8 +132,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CHEChatDetailController *targetVC = [[CHEChatDetailController alloc] init];
-    Hot_topocModel *hotModel = self.echatModel.hot_topic[indexPath.row];
-    targetVC.tid = hotModel.tid;
+    Topic_List *topicList = self.cateModel.topic_list[indexPath.row];
+    targetVC.tid = topicList.tid;
+    targetVC.gid = topicList.gid;
     [self.navigationController pushViewController:targetVC animated:YES];
 }
 
@@ -179,18 +189,20 @@
     
 }
 #pragma mark -- 请求数据(上下拉刷新)
-//请求数据(下拉刷新)
 - (void)getEchatDataWithSort:(NSString *)sort
 {
     AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
     manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
-    NSString *kUrl = @"http://api.meishi.cc/v5/meishiquan_index4.php?format=json";
-    NSDictionary *parameters = @{@"lat" : @"34.6049907522264",@"lon" : @"112.4229875834745",@"source" : @"iphone",@"format" : @"json", @"sort" : sort};
+    NSString *kUrl = @"http://api.meishi.cc/v5/topic_list3.php?format=json";
+    NSDictionary *parameters = @{@"lat" : @"34.60513495876783",@"lon" : @"112.4112401412381",@"source" : @"iphone",@"format" : @"json",@"gid":@"21", @"page":@"1",@"order" : sort,@"from":@"0"};
     __weak typeof(self) mySelf = self;
     [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+
+        [mySelf.eChatTableView.mj_header endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
-        mySelf.echatModel = [EChatModel mj_objectWithKeyValues:dic];
-        mySelf.dataArr = [[NSMutableArray alloc] initWithArray:mySelf.echatModel.hot_topic];
+        mySelf.cateModel = [CateShowModel mj_objectWithKeyValues:dic];
+        
+        mySelf.dataArr = [[NSMutableArray alloc] initWithArray:mySelf.cateModel.topic_list];
         
         [mySelf.eChatTableView reloadData];
         
@@ -209,13 +221,14 @@
     //    self.page +=1;
     AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
     manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
-    NSString *kUrl = @"http://api.meishi.cc/v5/meishiquan_index4.php?format=json";
-    NSDictionary *parameters = @{@"lat" : @"34.6049907522264",@"lon" : @"112.4229875834745",@"source" : @"iphone",@"format" : @"json", @"page":@(self.page),@"sort" : sort};
+    NSString *kUrl = @"http://api.meishi.cc/v5/topic_list3.php?format=json";
+    NSDictionary *parameters = @{@"lat" : @"34.60513495876783",@"lon" : @"112.4112401412381",@"source" : @"iphone",@"format" : @"json",@"gid":@"21", @"page":@(self.page),@"order" : sort,@"from":@"0"};
     __weak typeof(self) mySelf = self;
     [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [mySelf.eChatTableView.mj_footer endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
-        mySelf.echatModel = [EChatModel mj_objectWithKeyValues:dic];
-        [mySelf.dataArr addObject:mySelf.echatModel.hot_topic];
+        mySelf.cateModel = [CateShowModel mj_objectWithKeyValues:dic];
+        [mySelf.dataArr addObjectsFromArray:mySelf.cateModel.topic_list];
         [mySelf.eChatTableView reloadData];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

@@ -30,6 +30,16 @@
     [self addHeader];
     [self getEchatDataWithSort:@"new"];
     self.eChatTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
+    [self getEchatDataWithSort:@"time"];
+    __weak typeof(self) mSelf = self;
+    //下拉刷新
+    mSelf.eChatTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [mSelf getEchatDataWithSort:@"time"];
+    }];
+    //上拉刷新
+    mSelf.eChatTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [mSelf upRequestDataWithSort:@"time"];
+    }];
     self.eChatTableView.delegate = self;
     self.eChatTableView.dataSource = self;
     self.eChatTableView.rowHeight = UITableViewAutomaticDimension;
@@ -127,6 +137,7 @@
     CHEChatDetailController *targetVC = [[CHEChatDetailController alloc] init];
     Topic_List *topicList = self.cateModel.topic_list[indexPath.row];
     targetVC.tid = topicList.tid;
+    targetVC.gid = topicList.gid;
     [self.navigationController pushViewController:targetVC animated:YES];
 }
 
@@ -190,6 +201,7 @@
     NSDictionary *parameters = @{@"lat" : @"34.60513495876783",@"lon" : @"112.4112401412381",@"source" : @"iphone",@"format" : @"json",@"gid":@"20", @"page":@"1",@"order" : sort,@"from":@"0"};
     __weak typeof(self) mySelf = self;
     [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [mySelf.eChatTableView.mj_header endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
         mySelf.cateModel = [CateShowModel mj_objectWithKeyValues:dic];
         
@@ -200,9 +212,7 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         CHLog(@"失败原因%@",error);
         [mySelf.eChatTableView.mj_header endRefreshing];
-        
     }];
-    
 }
 //上拉刷新
 - (void)upRequestDataWithSort:(NSString *)sort
@@ -216,9 +226,10 @@
     NSDictionary *parameters = @{@"lat" : @"34.60513495876783",@"lon" : @"112.4112401412381",@"source" : @"iphone",@"format" : @"json",@"gid":@"20", @"page":@(self.page),@"order" : sort,@"from":@"0"};
     __weak typeof(self) mySelf = self;
     [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [mySelf.eChatTableView.mj_footer endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
         mySelf.cateModel = [CateShowModel mj_objectWithKeyValues:dic];
-        [mySelf.dataArr addObject:mySelf.cateModel.topic_list];
+        [mySelf.dataArr addObjectsFromArray:mySelf.cateModel.topic_list];
         [mySelf.eChatTableView reloadData];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

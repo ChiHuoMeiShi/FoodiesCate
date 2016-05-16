@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "EChatModel.h"
 #import "Hot_topocModel.h"
+#import "CateShowModel.h"
+
 @interface CHGoodCookViewController : UIViewController
 
 @property (nonatomic,assign) int page;
 
-@property(strong,nonatomic)EChatModel *echatModel;
+@property(strong,nonatomic)CateShowModel *cateModel;
 @end
