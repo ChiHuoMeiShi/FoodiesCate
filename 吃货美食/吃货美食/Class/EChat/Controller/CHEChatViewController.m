@@ -46,8 +46,6 @@
         mSelf.eChatTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
             [mSelf upRequestDataWithSort:@"time"];
         }];
-        
-        
     }
     //最热
     else if (1 == index){
@@ -87,7 +85,9 @@
     NSString *kUrl = @"http://api.meishi.cc/v5/meishiquan_index4.php?format=json";
     NSDictionary *parameters = @{@"lat" : @"34.6049907522264",@"lon" : @"112.4229875834745",@"source" : @"iphone",@"format" : @"json", @"sort" : sort};
     __weak typeof(self) mySelf = self;
+    
     [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [mySelf.eChatTableView.mj_header endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
         mySelf.echatModel = [EChatModel mj_objectWithKeyValues:dic];
         mySelf.dataArr = [[NSMutableArray alloc] initWithArray:mySelf.echatModel.hot_topic];
@@ -113,9 +113,10 @@
     NSDictionary *parameters = @{@"lat" : @"34.6049907522264",@"lon" : @"112.4229875834745",@"source" : @"iphone",@"format" : @"json", @"page":@(self.page),@"sort" : sort};
     __weak typeof(self) mySelf = self;
     [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [mySelf.eChatTableView.mj_footer endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
         mySelf.echatModel = [EChatModel mj_objectWithKeyValues:dic];
-        [mySelf.dataArr addObject:mySelf.echatModel.hot_topic];
+        [mySelf.dataArr addObjectsFromArray:mySelf.echatModel.hot_topic];
         [mySelf.eChatTableView reloadData];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -144,6 +145,15 @@
     [self addNavigationItem];
     //先加载数据
     [self getEchatDataWithSort:@"time"];
+    __weak typeof(self) mSelf = self;
+    //下拉刷新
+    mSelf.eChatTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [mSelf getEchatDataWithSort:@"time"];
+    }];
+    //上拉刷新
+    mSelf.eChatTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [mSelf upRequestDataWithSort:@"time"];
+    }];
     self.eChatTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
     self.eChatTableView.delegate = self;
     self.eChatTableView.dataSource = self;
@@ -244,6 +254,7 @@
     CHEChatDetailController *targetVC = [[CHEChatDetailController alloc] init];
     Hot_topocModel *hotModel = self.echatModel.hot_topic[indexPath.row];
     targetVC.tid = hotModel.tid;
+    targetVC.gid = hotModel.gid;
     [self.navigationController pushViewController:targetVC animated:YES];
 }
 - (void)didReceiveMemoryWarning {

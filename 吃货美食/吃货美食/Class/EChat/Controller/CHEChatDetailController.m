@@ -17,9 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    NSString *baseUrl = @"http://m.meishij.net/html5/shihua_content.php?gid=20&tid=";
+    //20&tid=
+    NSString *baseUrl = @"http://m.meishij.net/html5/shihua_content.php?gid=";
     
-    NSString *urlStr = [baseUrl stringByAppendingString:self.tid];
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@&tid=%@",baseUrl,self.gid,self.tid];
     
     NSURL *url = [NSURL URLWithString:urlStr];
     
