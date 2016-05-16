@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 - (void)pushToWebViewWithID:(NSNumber *)myID withUrlString:(NSString *)urlString{
@@ -45,6 +46,20 @@
 
 - (void)navBackAction{
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)searchButtonAction{
+    CHRJSearchViewController * searchVC = [[CHRJSearchViewController alloc]init];
+    [self.searchView removeFromSuperview];
+    self.searchView = nil;
+    [self.navigationController pushViewController:searchVC animated:YES];
+}
+
+- (void)recommdSearchBarSetWithRect:(CGRect)rect{
+    self.searchView = [[[NSBundle mainBundle]loadNibNamed:@"CHRJSearchView" owner:nil options:nil]lastObject];
+    self.searchView.frame = rect;
+    [self.searchView.searchButton addTarget:self action:@selector(searchButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:self.searchView];
 }
 
 @end

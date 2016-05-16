@@ -6,8 +6,8 @@
 //  Copyright © 2016年 赵天. All rights reserved.
 //
 
-#import "CHRJBasicViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface CHRJSearchViewController : CHRJBasicViewController
+@interface CHRJSearchViewController : UIViewController
 
 @end

@@ -24,6 +24,6 @@
 @property (nonatomic,strong)NSNumber * rate;
 @property (nonatomic,strong)NSNumber * is_fav;
 @property (nonatomic,copy)NSString * mt;
-
+@property (nonatomic,strong)NSString * distance;
 
 @end

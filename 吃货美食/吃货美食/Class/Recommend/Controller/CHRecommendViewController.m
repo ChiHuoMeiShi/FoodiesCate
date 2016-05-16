@@ -27,15 +27,20 @@ const CGFloat myLon = 112.4234234428844;
     [super viewDidLoad];
     self.recommendCollection.tag = 10955617;
     self.navigationItem.leftBarButtonItem = nil;
+    self.title = @"";
+    
     [self.backToTopButton addTarget:self action:@selector(backToTopButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self recommendCollectionRegister];
     [self getCollectionViewData];
     [self requestUpdateFoodData];
 }
 
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = NO;
+    [self recommdSearchBarSetWithRect:CGRectMake(54.f, 26.f, (CHSCREENWIDTH - 108.f), 30.f)];
+    
     if (!self.todayBannerTimer) {
         self.todayBannerTimer = [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(todayBannerTimerAction) userInfo:nil repeats:YES];
     }
@@ -96,6 +101,7 @@ const CGFloat myLon = 112.4234234428844;
 }
 
 #pragma mark - ButtonActions
+
 - (void)commitAction{
     
 }
@@ -107,6 +113,7 @@ const CGFloat myLon = 112.4234234428844;
     self.todayFooterView.todayBannerPageControl.currentPage = self.todayFooterView.todayBannerScrollerView.currentBannerCount;
 }
 #pragma mark - initSubs
+
 - (void)recommdTopBannerHeaderSetting{
     self.topHeaderView.topBannerShow = self.recommendModel.topBannerShow;
     self.topHeaderView.topBannerTittle = self.recommendModel.topBannerTittle;
@@ -114,6 +121,8 @@ const CGFloat myLon = 112.4234234428844;
     self.topHeaderView.topBannerCollectionView.delegate = self;
     __weak typeof(self)mySelf = self;
     self.topHeaderView.choosedJump = ^(CHJRTopBannerShowModel * topModel){
+        [mySelf.searchView removeFromSuperview];
+        mySelf.searchView = nil;
         [mySelf pushToWebViewWithID:topModel.myID withUrlString:nil];
     };
     [self.topHeaderView.topBannerCollectionView reloadData];
@@ -124,6 +133,8 @@ const CGFloat myLon = 112.4234234428844;
     self.todayFooterView.todayBannerScrollerView.tag = 192168;
     __weak typeof(self)mySelf = self;
     self.todayFooterView.todayBannerScrollerView.todayjump = ^(NSString * todayJumpURL){
+        [mySelf.searchView removeFromSuperview];
+        mySelf.searchView = nil;
         [mySelf pushToWebViewWithID:nil withUrlString:todayJumpURL];
     };
 }
@@ -145,9 +156,13 @@ const CGFloat myLon = 112.4234234428844;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
         CHJRecomdTodayModel * todayModel = self.recommendModel.today[indexPath.row];
+        [self.searchView removeFromSuperview];
+        self.searchView = nil;
         [self pushToWebViewWithID:todayModel.myID withUrlString:nil];
     } else if (indexPath.section == 2){
         CHRJSearchContentModel * searchMdodel = self.searchModel.data[indexPath.row];
+        [self.searchView removeFromSuperview];
+        self.searchView = nil;
         [self pushToWebViewWithID:searchMdodel.myID withUrlString:nil];
     }
 }
@@ -264,6 +279,8 @@ const CGFloat myLon = 112.4234234428844;
             [funFooterView buttonSettingFun];
             __weak typeof(self)mySelf = self;
             funFooterView.topFunChoosePush = ^(UIViewController * pushVC){
+                [self.searchView removeFromSuperview];
+                self.searchView = nil;
                 [mySelf.navigationController pushViewController:pushVC animated:YES];
             };
             return funFooterView;

@@ -29,7 +29,6 @@
     NSURLRequest * request = [[NSURLRequest alloc]initWithURL:requestURL];
     [self.webDetailView loadRequest:request];
     
-    
     [self.backButton addTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
     
 }

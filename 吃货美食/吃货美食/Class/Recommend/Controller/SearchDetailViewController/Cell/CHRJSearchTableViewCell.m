@@ -13,6 +13,7 @@
 - (void)awakeFromNib {
     self.starImageViewArr = @[self.firstStarImageView,self.secondStarImageView,self.thirdStarImageView,self.forthStarImageView,self.fifthStarImageView];
     [self hideLikeHateButton];
+    [self setNeedsLayout];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -56,6 +57,13 @@
     if ([self.searchModel.is_see intValue] == 0) {
         self.isSeeButton.hidden = YES;
     }
+    if (self.searchModel.distance) {
+        self.selectLikeButtton.hidden = YES;
+        self.locationLabel.hidden = NO;
+        self.locationLabel.text = self.searchModel.distance;
+        self.locationImageView.hidden = NO;
+        return;
+    }
     [self buttonSetFunctin];
 }
 
@@ -85,6 +93,15 @@
 - (void)hateButttonAction:(UIButton *)sender {
     self.isLike(NO);
     [self hideLikeHateButton];
+}
+
+- (void)drawRect:(CGRect)rect{
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    [[UIColor colorWithWhite:0.5f alpha:0.5f] set];
+    CGContextSetLineWidth(ctx, 0.5f);
+    CGContextMoveToPoint(ctx, 5.f, CGRectGetMaxY(rect) - 1.f);
+    CGContextAddLineToPoint(ctx, CHSCREENWIDTH - 30.f, CGRectGetMaxY(rect) - 1.f);
+    CGContextStrokePath(ctx);
 }
 
 @end
