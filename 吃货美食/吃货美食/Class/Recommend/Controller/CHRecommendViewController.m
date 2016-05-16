@@ -61,6 +61,13 @@ const CGFloat myLon = 112.4234234428844;
     return _afnManger;
 }
 
+- (void)recommdSearchBarSetWithRect:(CGRect)rect{
+    self.searchView = [[[NSBundle mainBundle]loadNibNamed:@"CHRJSearchView" owner:nil options:nil]lastObject];
+    self.searchView.frame = rect;
+    [self.searchView.searchButton addTarget:self action:@selector(searchButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.titleView = self.searchView;
+}
+
 - (void)getCollectionViewData{
     __weak typeof(self)mySelf = self;
     NSString * url = @"http://api.meishi.cc/v5/index5.php?format=json";
@@ -121,8 +128,6 @@ const CGFloat myLon = 112.4234234428844;
     self.topHeaderView.topBannerCollectionView.delegate = self;
     __weak typeof(self)mySelf = self;
     self.topHeaderView.choosedJump = ^(CHJRTopBannerShowModel * topModel){
-        [mySelf.searchView removeFromSuperview];
-        mySelf.searchView = nil;
         [mySelf pushToWebViewWithID:topModel.myID withUrlString:nil];
     };
     [self.topHeaderView.topBannerCollectionView reloadData];
@@ -133,8 +138,6 @@ const CGFloat myLon = 112.4234234428844;
     self.todayFooterView.todayBannerScrollerView.tag = 192168;
     __weak typeof(self)mySelf = self;
     self.todayFooterView.todayBannerScrollerView.todayjump = ^(NSString * todayJumpURL){
-        [mySelf.searchView removeFromSuperview];
-        mySelf.searchView = nil;
         [mySelf pushToWebViewWithID:nil withUrlString:todayJumpURL];
     };
 }
@@ -156,13 +159,9 @@ const CGFloat myLon = 112.4234234428844;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
         CHJRecomdTodayModel * todayModel = self.recommendModel.today[indexPath.row];
-        [self.searchView removeFromSuperview];
-        self.searchView = nil;
         [self pushToWebViewWithID:todayModel.myID withUrlString:nil];
     } else if (indexPath.section == 2){
         CHRJSearchContentModel * searchMdodel = self.searchModel.data[indexPath.row];
-        [self.searchView removeFromSuperview];
-        self.searchView = nil;
         [self pushToWebViewWithID:searchMdodel.myID withUrlString:nil];
     }
 }
@@ -279,8 +278,6 @@ const CGFloat myLon = 112.4234234428844;
             [funFooterView buttonSettingFun];
             __weak typeof(self)mySelf = self;
             funFooterView.topFunChoosePush = ^(UIViewController * pushVC){
-                [self.searchView removeFromSuperview];
-                self.searchView = nil;
                 [mySelf.navigationController pushViewController:pushVC animated:YES];
             };
             return funFooterView;
