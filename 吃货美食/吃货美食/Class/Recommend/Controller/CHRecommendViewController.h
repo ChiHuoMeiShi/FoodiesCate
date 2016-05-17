@@ -23,8 +23,7 @@
 #import "CHRJSearchModel.h"
 
 #define CHRCollectionbWidth (CHSCREENWIDTH - 20.f)
-extern const CGFloat myLat;
-extern const CGFloat myLon;
+
 @interface CHRecommendViewController : CHRJBasicViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *backToTopButton;

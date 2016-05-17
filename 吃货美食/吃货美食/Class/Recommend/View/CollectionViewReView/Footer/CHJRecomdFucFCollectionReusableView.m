@@ -68,7 +68,7 @@
     self.topFunChoosePush([[CHRJSearchDetailViewController alloc]initWithIsLocal:YES]);
 }
 - (void)listButtonAction{
-    self.topFunChoosePush([[UIViewController alloc]init]);
+    self.topFunChoosePush([[CHRJListViewController alloc]init]);
 }
 - (void)composeButtonAction{
     self.topFunChoosePush([[UIViewController alloc]init]);

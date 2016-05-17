@@ -16,6 +16,12 @@
 		7A6ED6F61CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A6ED6F41CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib */; };
 		7A6ED7041CE31E87005DF78C /* CHJRTopBannerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ED7031CE31E87005DF78C /* CHJRTopBannerCellView.m */; };
 		7A6ED70A1CE32BCA005DF78C /* NSString+JWStringDeleteToURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ED7091CE32BCA005DF78C /* NSString+JWStringDeleteToURL.m */; };
+		7AA5D67E1CE9E6D9007D0912 /* CHRJListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5D67C1CE9E6D9007D0912 /* CHRJListViewController.m */; };
+		7AA5D67F1CE9E6D9007D0912 /* CHRJListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA5D67D1CE9E6D9007D0912 /* CHRJListViewController.xib */; };
+		7AA5D6841CE9E9C2007D0912 /* CHRJListToolBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5D6831CE9E9C2007D0912 /* CHRJListToolBarModel.m */; };
+		7AA5D6871CE9FB86007D0912 /* CHRJListToolBarContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5D6861CE9FB86007D0912 /* CHRJListToolBarContentModel.m */; };
+		7AA5D68C1CEA15AA007D0912 /* CHRJListCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5D68A1CEA15AA007D0912 /* CHRJListCollectionViewCell.m */; };
+		7AA5D68D1CEA15AA007D0912 /* CHRJListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA5D68B1CEA15AA007D0912 /* CHRJListCollectionViewCell.xib */; };
 		7AA949441CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA949421CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.m */; };
 		7AA949451CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA949431CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.xib */; };
 		7AAF0A351CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF0A231CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.m */; };
@@ -153,6 +159,16 @@
 		7A6ED7031CE31E87005DF78C /* CHJRTopBannerCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRTopBannerCellView.m; sourceTree = "<group>"; };
 		7A6ED7081CE32BCA005DF78C /* NSString+JWStringDeleteToURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JWStringDeleteToURL.h"; sourceTree = "<group>"; };
 		7A6ED7091CE32BCA005DF78C /* NSString+JWStringDeleteToURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JWStringDeleteToURL.m"; sourceTree = "<group>"; };
+		7AA5D67B1CE9E6D9007D0912 /* CHRJListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJListViewController.h; sourceTree = "<group>"; };
+		7AA5D67C1CE9E6D9007D0912 /* CHRJListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJListViewController.m; sourceTree = "<group>"; };
+		7AA5D67D1CE9E6D9007D0912 /* CHRJListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRJListViewController.xib; sourceTree = "<group>"; };
+		7AA5D6821CE9E9C2007D0912 /* CHRJListToolBarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJListToolBarModel.h; sourceTree = "<group>"; };
+		7AA5D6831CE9E9C2007D0912 /* CHRJListToolBarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJListToolBarModel.m; sourceTree = "<group>"; };
+		7AA5D6851CE9FB86007D0912 /* CHRJListToolBarContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJListToolBarContentModel.h; sourceTree = "<group>"; };
+		7AA5D6861CE9FB86007D0912 /* CHRJListToolBarContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJListToolBarContentModel.m; sourceTree = "<group>"; };
+		7AA5D6891CEA15AA007D0912 /* CHRJListCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJListCollectionViewCell.h; sourceTree = "<group>"; };
+		7AA5D68A1CEA15AA007D0912 /* CHRJListCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJListCollectionViewCell.m; sourceTree = "<group>"; };
+		7AA5D68B1CEA15AA007D0912 /* CHRJListCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRJListCollectionViewCell.xib; sourceTree = "<group>"; };
 		7AA949411CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRecmdTodayCollectionViewCell.h; sourceTree = "<group>"; };
 		7AA949421CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRecmdTodayCollectionViewCell.m; sourceTree = "<group>"; };
 		7AA949431CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHJRecmdTodayCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -435,6 +451,48 @@
 				7A6ED7091CE32BCA005DF78C /* NSString+JWStringDeleteToURL.m */,
 			);
 			path = NSString;
+			sourceTree = "<group>";
+		};
+		7AA5D67A1CE9E6A3007D0912 /* ListVIewController */ = {
+			isa = PBXGroup;
+			children = (
+				7AA5D6881CEA1553007D0912 /* Cell */,
+				7AA5D6801CE9E954007D0912 /* Model */,
+				7AA5D67B1CE9E6D9007D0912 /* CHRJListViewController.h */,
+				7AA5D67C1CE9E6D9007D0912 /* CHRJListViewController.m */,
+				7AA5D67D1CE9E6D9007D0912 /* CHRJListViewController.xib */,
+			);
+			name = ListVIewController;
+			path = ListViewController;
+			sourceTree = "<group>";
+		};
+		7AA5D6801CE9E954007D0912 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7AA5D6811CE9E99F007D0912 /* ListToolBar */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7AA5D6811CE9E99F007D0912 /* ListToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				7AA5D6821CE9E9C2007D0912 /* CHRJListToolBarModel.h */,
+				7AA5D6831CE9E9C2007D0912 /* CHRJListToolBarModel.m */,
+				7AA5D6851CE9FB86007D0912 /* CHRJListToolBarContentModel.h */,
+				7AA5D6861CE9FB86007D0912 /* CHRJListToolBarContentModel.m */,
+			);
+			path = ListToolBar;
+			sourceTree = "<group>";
+		};
+		7AA5D6881CEA1553007D0912 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7AA5D6891CEA15AA007D0912 /* CHRJListCollectionViewCell.h */,
+				7AA5D68A1CEA15AA007D0912 /* CHRJListCollectionViewCell.m */,
+				7AA5D68B1CEA15AA007D0912 /* CHRJListCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		7AAF0A1F1CE183A500708F98 /* Cell */ = {
@@ -1167,12 +1225,13 @@
 		B7F615461CDC80B200AF1697 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7AA5D67A1CE9E6A3007D0912 /* ListVIewController */,
 				7AC792DB1CE85060001CBAA5 /* SearchDetailViewController */,
 				7AC792EB1CE85060001CBAA5 /* SearchViewController */,
+				7AC8C4251CE4ABD50043CAEC /* SortViewController */,
 				7AC792D61CE85057001CBAA5 /* CHRJBasicViewController.h */,
 				7AC792D71CE85057001CBAA5 /* CHRJBasicViewController.m */,
 				7AC792D81CE85057001CBAA5 /* CHRJBasicViewController.xib */,
-				7AC8C4251CE4ABD50043CAEC /* SortViewController */,
 				B7F615691CDCA17700AF1697 /* CHRecommendViewController.h */,
 				B7F6156A1CDCA17700AF1697 /* CHRecommendViewController.m */,
 				B7F6156B1CDCA17700AF1697 /* CHRecommendViewController.xib */,
@@ -1309,6 +1368,7 @@
 				B71ED85E1CDB41660035F6BE /* Assets.xcassets in Resources */,
 				7AC8C42A1CE4AE7D0043CAEC /* CHRJSortViewController.xib in Resources */,
 				B7F615681CDCA14300AF1697 /* CHDiscoverViewController.xib in Resources */,
+				7AA5D67F1CE9E6D9007D0912 /* CHRJListViewController.xib in Resources */,
 				7AAF3F081CE3459E00573EF6 /* CHRWebViewController.xib in Resources */,
 				B71E549A1CE78D5F003B6BE8 /* CHGoodCookViewController.xib in Resources */,
 				B7A512C11CE660DF0085A6C8 /* CHNineChatCell.xib in Resources */,
@@ -1328,6 +1388,7 @@
 				7AC792DA1CE85057001CBAA5 /* CHRJBasicViewController.xib in Resources */,
 				B7A512A51CE65F970085A6C8 /* CHTFourChatCell.xib in Resources */,
 				7AC8C4351CE4B2240043CAEC /* CHRJSortCollectionViewCell.xib in Resources */,
+				7AA5D68D1CEA15AA007D0912 /* CHRJListCollectionViewCell.xib in Resources */,
 				B71E54951CE78C47003B6BE8 /* CHCateShowController.xib in Resources */,
 				7AAF0A401CE184A300708F98 /* CHJRecomdUpdateHCollectionReusableView.xib in Resources */,
 				B71E549F1CE78DBF003B6BE8 /* CHFoodClassViewController.xib in Resources */,
@@ -1414,7 +1475,9 @@
 				7AC8C42F1CE4B20A0043CAEC /* CHRJSortTableViewCell.m in Sources */,
 				7AAF0A7F1CE1EF9D00708F98 /* CHJRecomdTodayModel.m in Sources */,
 				7AD0DDA61CDCA7CE0057F8B2 /* NSDictionary+Log.m in Sources */,
+				7AA5D68C1CEA15AA007D0912 /* CHRJListCollectionViewCell.m in Sources */,
 				7A6ED7041CE31E87005DF78C /* CHJRTopBannerCellView.m in Sources */,
+				7AA5D6871CE9FB86007D0912 /* CHRJListToolBarContentModel.m in Sources */,
 				B7F6156C1CDCA17700AF1697 /* CHRecommendViewController.m in Sources */,
 				7A3411AE1CE89742003E4F3C /* CHRJSearchView.m in Sources */,
 				7AC8C43C1CE4B3230043CAEC /* CHRJSortContentModel.m in Sources */,
@@ -1430,8 +1493,10 @@
 				7AAF0A351CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.m in Sources */,
 				7AC792F31CE85060001CBAA5 /* CHRJSearchDetailViewController.m in Sources */,
 				7AC8C4291CE4AE7D0043CAEC /* CHRJSortViewController.m in Sources */,
+				7AA5D67E1CE9E6D9007D0912 /* CHRJListViewController.m in Sources */,
 				B7A512B31CE6605D0085A6C8 /* CHSevenChatCell.m in Sources */,
 				7AD0DDAC1CDCA7CE0057F8B2 /* UIColor+HexColor.m in Sources */,
+				7AA5D6841CE9E9C2007D0912 /* CHRJListToolBarModel.m in Sources */,
 				7AD0DDA81CDCA7CE0057F8B2 /* UIBarButtonItem+SettingCustom.m in Sources */,
 				7AC8C4391CE4B3010043CAEC /* CHRJSortModel.m in Sources */,
 				7AD0DDA41CDCA7CE0057F8B2 /* NSDictionary+Attributes.m in Sources */,

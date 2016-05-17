@@ -28,7 +28,7 @@
         NSIndexPath *selectedIndexPath =[NSIndexPath indexPathForRow:2 inSection:0];
         [self.sortTableView selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
-    [self recommdSearchBarSetWithRect:CGRectMake(70.f, 26.f, CHSCREENWIDTH - 70.f, 30.f)];
+    [self recommdSearchBarSetWithRect:CGRectMake(70.f, 26.f, CHSCREENWIDTH - 80.f, 30.f)];
 }
 
 - (void)viewDidLoad {
