@@ -7,7 +7,7 @@
 //
 
 #import "CHRJBasicViewController.h"
-
+#import <MJExtension.h>
 @interface CHRJListViewController : CHRJBasicViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
@@ -20,8 +20,5 @@
 @property (nonatomic,assign)NSInteger btnCurrentCount;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *listControllerView;
-
-
-
 
 @end

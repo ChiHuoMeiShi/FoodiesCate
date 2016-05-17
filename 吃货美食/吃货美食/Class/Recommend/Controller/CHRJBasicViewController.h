@@ -10,14 +10,14 @@
 #import "CHRWebViewController.h"
 #import "CHRJSearchView.h"
 #import "CHRJSearchViewController.h"
-
+#import "CHHTTPRequestManager.h"
 #import <MBProgressHUD.h>
 extern const CGFloat myLat;
 extern const CGFloat myLon;
 @interface CHRJBasicViewController : UIViewController<MBProgressHUDDelegate>
 @property (nonatomic,strong)MBProgressHUD * myHUD;
 @property (nonatomic,strong)CHRJSearchView * searchView;
-
+@property (nonatomic,strong)CHHTTPRequestManager * afnManger;
 - (void)navBackAction;
 - (void)pushToWebViewWithID:(NSNumber *)myID withUrlString:(NSString *)urlString;
 

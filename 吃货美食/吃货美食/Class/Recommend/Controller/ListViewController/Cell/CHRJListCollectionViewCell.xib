@@ -16,6 +16,10 @@
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DdQ-Zd-q2y">
                         <rect key="frame" x="0.0" y="0.0" width="386" height="409"/>
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <connections>
+                            <outlet property="dataSource" destination="gTV-IL-0wX" id="Cci-4m-fAR"/>
+                            <outlet property="delegate" destination="gTV-IL-0wX" id="070-j2-83b"/>
+                        </connections>
                     </tableView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

@@ -7,7 +7,6 @@
 //
 
 #import "CHRJBasicViewController.h"
-#import <AFNetworking.h>
 #import <MJExtension.h>
 
 #import "CHJRecommendModel.h"
