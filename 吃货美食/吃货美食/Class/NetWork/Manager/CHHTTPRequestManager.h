@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "CHUserRequest.h"
 #import "CHMessageRequest.h"
 @interface CHHTTPRequestManager : NSObject

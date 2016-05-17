@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
+
 @interface CHHTTPSessionManager : AFHTTPSessionManager
 
 @end
