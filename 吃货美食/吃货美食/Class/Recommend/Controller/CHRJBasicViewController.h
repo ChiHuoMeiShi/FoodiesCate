@@ -12,6 +12,8 @@
 #import "CHRJSearchViewController.h"
 
 #import <MBProgressHUD.h>
+extern const CGFloat myLat;
+extern const CGFloat myLon;
 @interface CHRJBasicViewController : UIViewController<MBProgressHUDDelegate>
 @property (nonatomic,strong)MBProgressHUD * myHUD;
 @property (nonatomic,strong)CHRJSearchView * searchView;

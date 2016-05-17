@@ -8,8 +8,6 @@
 
 #import "CHRecommendViewController.h"
 
-const CGFloat myLat = 34.60522149650738;
-const CGFloat myLon = 112.4234234428844;
 @interface CHRecommendViewController ()<UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *recommendCollection;
 @property (nonatomic,strong)CHJRecommendModel * recommendModel;
@@ -22,16 +20,14 @@ const CGFloat myLon = 112.4234234428844;
 @end
 
 @implementation CHRecommendViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.recommendCollection.tag = 10955617;
     self.navigationItem.leftBarButtonItem = nil;
     self.title = @"";
-    
-    [self.backToTopButton addTarget:self action:@selector(backToTopButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self recommendCollectionRegister];
     [self getCollectionViewData];
+    [self.backToTopButton addTarget:self action:@selector(backToTopButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self requestUpdateFoodData];
 }
 
