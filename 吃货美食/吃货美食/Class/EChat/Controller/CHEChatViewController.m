@@ -306,7 +306,7 @@
     NSArray *segmentedArray = [[NSArray alloc]initWithObjects:@"最新",@"最热",nil];
     UISegmentedControl *segmentControl = [[UISegmentedControl alloc] initWithItems:segmentedArray];
     CGFloat segmentW = 200.f;//segment的宽度
-    CGFloat segmentH = 30.f;//高度
+    CGFloat segmentH = 30.f; //高度
     
     CGFloat labelSegInterval = 12.f;
     segmentControl.frame = CGRectMake(CHSCREENWIDTH / 2 - segmentW/2, goodLabel.y + goodLabel.height + labelSegInterval, segmentW, segmentH);
