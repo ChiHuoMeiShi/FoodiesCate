@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <UIImageView+WebCache.h>
 #import "CHRJSearchContentModel.h"
+//Protorol
 @interface CHRJListFoodTableViewCell : UITableViewCell
-
+@property (nonatomic,assign)BOOL isLocal;
 @property (nonatomic,strong)CHRJSearchContentModel * searchModel;
+
 @property (weak, nonatomic) IBOutlet UIImageView *firstStarImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *secondStarImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *thirdStarImageView;

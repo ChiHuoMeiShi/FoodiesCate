@@ -34,15 +34,15 @@
             break;
         case 2:
             [dic setValue:@(2) forKey:@"t"];
-            [self cellSetModelClass:[CHRJListFoodBaseModel class] withCellClass:[CHRJListFoodBaseTableViewCell class] withReName:@"CHRJListFoodBaseTableViewCell"];
+            [self cellSetModelClass:[CHRJListFoodAndTypeModel class] withCellClass:[CHRJListFoodBaseTableViewCell class] withReName:@"CHRJListFoodBaseTableViewCell"];
             break;
         case 3:
             [dic setValue:@(3) forKey:@"t"];
-            [self cellSetModelClass:[CHRJListSearchFoodModel class] withCellClass:[CHRJListFoodTableViewCell class] withReName:@"CHRJListFoodTableViewCell"];
+            [self cellSetModelClass:[CHRJListSearchFoodModel class] withCellClass:[CHRJListFoodSearchTableViewCell class] withReName:@"CHRJListFoodSearchTableViewCell"];
             break;
         case 4:
             [dic setValue:@(4) forKey:@"t"];
-            [self cellSetModelClass:[CHRJListFoodTypeModel class] withCellClass:[CHRJListFoodSearchTableViewCell class] withReName:@"CHRJListFoodSearchTableViewCell"];
+            [self cellSetModelClass:[CHRJListFoodAndTypeModel class] withCellClass:[CHRJListFoodBaseTableViewCell class] withReName:@"CHRJListFoodBaseTableViewCell"];
             break;
             
         default:
@@ -51,7 +51,7 @@
     __weak typeof(self)mySelf = self;
     [self.afnManger.messageRequest POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary * dicData = (NSDictionary *)responseObject;
-        //        CHLog(@"%@",dicData[@"d"]);
+//      CHLog(@"%@",dicData[@"d"]);
         mySelf.dataArray = [mySelf.dataClass mj_objectArrayWithKeyValuesArray:dicData[@"d"]];
         [mySelf.listTableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -66,6 +66,19 @@
     [self.listTableView registerNib:[UINib nibWithNibName:reName bundle:nil] forCellReuseIdentifier:reName];
 }
 #pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([self.typeCount intValue] == 0) {
+        return 124.f;
+    }else if ([self.typeCount intValue] == 1){
+        return 124.f;
+    }else if ([self.typeCount intValue] == 2){
+        return 70.f;
+    }else if ([self.typeCount intValue] == 3){
+        return 50.f;
+    }else{
+        return 70.f;
+    }
+}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -75,22 +88,26 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if ([self.typeCount intValue] == 0) {
         CHRJListFoodTableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:self.cellReName];
-        
+        listCell.searchModel = self.dataArray[indexPath.row];
         return listCell;
     }else if ([self.typeCount intValue] == 1){
         CHRJListFoodTableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:self.cellReName];
-        
+        listCell.locationImageView.image = [UIImage imageNamed:@"ph_icon1"];
+        listCell.searchModel = self.dataArray[indexPath.row];
         return listCell;
     }else if ([self.typeCount intValue] == 2){
-        CHRJListFoodBaseTableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:self.cellReName];
-        
+        CHRJListFoodBaseTableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:@"CHRJListFoodBaseTableViewCell"];
+        listCell.myFoodTypeModel = self.dataArray[indexPath.row];
+        [listCell foodTypeModelSetLayer];
         return listCell;
     }else if ([self.typeCount intValue] == 3){
-        CHRJListFoodTableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:self.cellReName];
-        
+        CHRJListFoodSearchTableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:self.cellReName];
+        listCell.searchModel = self.dataArray[indexPath.row];
         return listCell;
     }else{
-        CHRJListFoodSearchTableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:self.cellReName];
+        CHRJListFoodBaseTableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:@"CHRJListFoodBaseTableViewCell"];
+        listCell.myFoodTypeModel = self.dataArray[indexPath.row];
+        [listCell foodTypeModelSetLayer];
         
         return listCell;
     }

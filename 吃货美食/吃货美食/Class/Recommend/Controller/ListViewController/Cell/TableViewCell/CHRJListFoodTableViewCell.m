@@ -39,6 +39,7 @@
     [[SDWebImageManager sharedManager]downloadImageWithURL:[NSURL URLWithString:self.searchModel.titlepic] options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
         mySelf.showImageView.image = image;
     }];
+    self.orderLabel.text = [NSString stringWithFormat:@"%zi",[self.searchModel.order intValue]];
     self.nameLabel.text = self.searchModel.title;
     NSString * hardString = [NSString stringWithFormat:@"%@步",self.searchModel.step];
     if (![self.searchModel.mt isEqualToString:@""]) {
@@ -48,13 +49,8 @@
     NSString * typeString = [NSString stringWithFormat:@"%@,%@",self.searchModel.kouwei,self.searchModel.gongyi];
     self.typeLabel.text = typeString;
     
-    if (self.searchModel.distance) {
-        self.locationLabel.text = self.searchModel.distance;
-        return;
-    }
-    if (self.searchModel.right_w) {
+    if (!self.searchModel.distance) {
         self.locationLabel.text = self.searchModel.right_w;
-        self.locationImageView.image = [UIImage imageNamed:@"ph_icon1"];
         return;
     }
 }

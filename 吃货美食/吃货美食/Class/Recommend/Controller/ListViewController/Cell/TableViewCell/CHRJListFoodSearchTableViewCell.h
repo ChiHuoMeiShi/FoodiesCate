@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CHRJListSearchFoodModel.h"
 
 @interface CHRJListFoodSearchTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *orderLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distenceLabel;
+@property (nonatomic,strong)CHRJListSearchFoodModel * searchModel;
+
 
 @end

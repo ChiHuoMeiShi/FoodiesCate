@@ -58,7 +58,7 @@
     [self btnSetImageWithIsIp:NO];
     self.btnCurrentCount = [self.btnArray indexOfObject:btn];
     [self btnSetImageWithIsIp:YES];
-    [self.listControllerView selectItemAtIndexPath:[NSIndexPath indexPathForRow:self.btnCurrentCount inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+    [self.listControllerView selectItemAtIndexPath:[NSIndexPath indexPathForRow:self.btnCurrentCount inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionLeft];
 }
 - (void)btnActionWithCount:(NSInteger)count{
     [self btnSetImageWithIsIp:NO];
@@ -102,7 +102,7 @@
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CHRJListCollectionViewCell * listCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CHRJListCollectionViewCell" forIndexPath:indexPath];
-    listCell.typeCount = @(self.btnCurrentCount);
+    listCell.typeCount = @(indexPath.row);
     return listCell;
 }
 

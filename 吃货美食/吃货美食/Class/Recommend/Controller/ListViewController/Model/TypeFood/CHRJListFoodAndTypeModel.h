@@ -1,5 +1,5 @@
 //
-//  CHRJListFoodTypeModel.h
+//  CHRJListFoodAndTypeModel.h
 //  吃货美食
 //
 //  Created by scjy on 16/5/17.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MJExtension.h>
-@interface CHRJListFoodTypeModel : NSObject
+@interface CHRJListFoodAndTypeModel : NSObject
 @property (nonatomic,strong)NSNumber * myID;
 @property (nonatomic,strong)NSNumber * order;
 @property (nonatomic,copy)NSString * title;

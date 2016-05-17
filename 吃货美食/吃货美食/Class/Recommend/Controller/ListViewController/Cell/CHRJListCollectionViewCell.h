@@ -10,9 +10,8 @@
 #import <AFHTTPSessionManager.h>
 #import "CHRJBasicViewController.h"
 #import "CHRJSearchContentModel.h"
-#import "CHRJListFoodBaseModel.h"
 #import "CHRJListSearchFoodModel.h"
-#import "CHRJListFoodTypeModel.h"
+#import "CHRJListFoodAndTypeModel.h"
 #import "CHHTTPRequestManager.h"
 
 #import "CHRJListFoodSearchTableViewCell.h"
@@ -27,5 +26,6 @@
 @property (nonatomic,strong)NSString * cellReName;
 @property (nonatomic,strong)NSMutableArray * dataArray;
 @property (nonatomic,strong)CHHTTPRequestManager * afnManger;
+
 
 @end
