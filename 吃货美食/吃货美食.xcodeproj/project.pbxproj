@@ -126,6 +126,10 @@
 		B7A512BC1CE660A40085A6C8 /* CHEightChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A512BA1CE660A40085A6C8 /* CHEightChatCell.xib */; };
 		B7A512C01CE660DF0085A6C8 /* CHNineChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A512BE1CE660DF0085A6C8 /* CHNineChatCell.m */; };
 		B7A512C11CE660DF0085A6C8 /* CHNineChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A512BF1CE660DF0085A6C8 /* CHNineChatCell.xib */; };
+		B7DBAA901CEAC373002534B6 /* CHHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA8F1CEAC373002534B6 /* CHHTTPSessionManager.m */; };
+		B7DBAA931CEAC427002534B6 /* CHUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA921CEAC427002534B6 /* CHUserRequest.m */; };
+		B7DBAA961CEAC4A7002534B6 /* CHMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA951CEAC4A7002534B6 /* CHMessageRequest.m */; };
+		B7DBAA991CEAC50B002534B6 /* CHHTTPRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA981CEAC50B002534B6 /* CHHTTPRequestManager.m */; };
 		B7F6154D1CDC84A600AF1697 /* CHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F6154C1CDC84A600AF1697 /* CHTabBarController.m */; };
 		B7F615501CDC84F000AF1697 /* CHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F6154F1CDC84F000AF1697 /* CHNavigationController.m */; };
 		B7F615541CDC854500AF1697 /* CHMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F615521CDC854500AF1697 /* CHMeViewController.m */; };
@@ -339,6 +343,14 @@
 		B7A512BD1CE660DF0085A6C8 /* CHNineChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNineChatCell.h; sourceTree = "<group>"; };
 		B7A512BE1CE660DF0085A6C8 /* CHNineChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHNineChatCell.m; sourceTree = "<group>"; };
 		B7A512BF1CE660DF0085A6C8 /* CHNineChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHNineChatCell.xib; sourceTree = "<group>"; };
+		B7DBAA8E1CEAC373002534B6 /* CHHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHHTTPSessionManager.h; sourceTree = "<group>"; };
+		B7DBAA8F1CEAC373002534B6 /* CHHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHHTTPSessionManager.m; sourceTree = "<group>"; };
+		B7DBAA911CEAC427002534B6 /* CHUserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHUserRequest.h; sourceTree = "<group>"; };
+		B7DBAA921CEAC427002534B6 /* CHUserRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHUserRequest.m; sourceTree = "<group>"; };
+		B7DBAA941CEAC4A7002534B6 /* CHMessageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMessageRequest.h; sourceTree = "<group>"; };
+		B7DBAA951CEAC4A7002534B6 /* CHMessageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMessageRequest.m; sourceTree = "<group>"; };
+		B7DBAA971CEAC50B002534B6 /* CHHTTPRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHHTTPRequestManager.h; sourceTree = "<group>"; };
+		B7DBAA981CEAC50B002534B6 /* CHHTTPRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHHTTPRequestManager.m; sourceTree = "<group>"; };
 		B7F6154B1CDC84A600AF1697 /* CHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTabBarController.h; sourceTree = "<group>"; };
 		B7F6154C1CDC84A600AF1697 /* CHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTabBarController.m; sourceTree = "<group>"; };
 		B7F6154E1CDC84F000AF1697 /* CHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNavigationController.h; sourceTree = "<group>"; };
@@ -898,10 +910,10 @@
 		B71ED8681CDB416C0035F6BE /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				B7DBAA881CEAC242002534B6 /* NetWork */,
 				7AC8C4211CE468BC0043CAEC /* SupportFiles */,
 				B7F615701CDCA2D900AF1697 /* Tools */,
 				B7F6156F1CDCA29100AF1697 /* DataBase */,
-				B7F6156E1CDCA27F00AF1697 /* NetWork */,
 				B71ED86E1CDB4E5C0035F6BE /* Me */,
 				B71ED86D1CDB4DC80035F6BE /* EChat */,
 				B71ED86C1CDB4D950035F6BE /* Discover */,
@@ -1089,6 +1101,64 @@
 			name = EChatModel;
 			sourceTree = "<group>";
 		};
+		B7DBAA881CEAC242002534B6 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				B7DBAA8D1CEAC2F0002534B6 /* Manager */,
+				B7DBAA891CEAC2F0002534B6 /* Father */,
+				B7DBAA8A1CEAC2F0002534B6 /* HTTPRequest */,
+			);
+			name = NetWork;
+			sourceTree = "<group>";
+		};
+		B7DBAA891CEAC2F0002534B6 /* Father */ = {
+			isa = PBXGroup;
+			children = (
+				B7DBAA8E1CEAC373002534B6 /* CHHTTPSessionManager.h */,
+				B7DBAA8F1CEAC373002534B6 /* CHHTTPSessionManager.m */,
+			);
+			name = Father;
+			path = NetWork/Father;
+			sourceTree = "<group>";
+		};
+		B7DBAA8A1CEAC2F0002534B6 /* HTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				B7DBAA8B1CEAC2F0002534B6 /* MessageRequest */,
+				B7DBAA8C1CEAC2F0002534B6 /* UserRuquest */,
+			);
+			name = HTTPRequest;
+			path = NetWork/HTTPRequest;
+			sourceTree = "<group>";
+		};
+		B7DBAA8B1CEAC2F0002534B6 /* MessageRequest */ = {
+			isa = PBXGroup;
+			children = (
+				B7DBAA941CEAC4A7002534B6 /* CHMessageRequest.h */,
+				B7DBAA951CEAC4A7002534B6 /* CHMessageRequest.m */,
+			);
+			path = MessageRequest;
+			sourceTree = "<group>";
+		};
+		B7DBAA8C1CEAC2F0002534B6 /* UserRuquest */ = {
+			isa = PBXGroup;
+			children = (
+				B7DBAA911CEAC427002534B6 /* CHUserRequest.h */,
+				B7DBAA921CEAC427002534B6 /* CHUserRequest.m */,
+			);
+			path = UserRuquest;
+			sourceTree = "<group>";
+		};
+		B7DBAA8D1CEAC2F0002534B6 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				B7DBAA971CEAC50B002534B6 /* CHHTTPRequestManager.h */,
+				B7DBAA981CEAC50B002534B6 /* CHHTTPRequestManager.m */,
+			);
+			name = Manager;
+			path = NetWork/Manager;
+			sourceTree = "<group>";
+		};
 		B7E55EC41CE1E277003443DA /* CateShow */ = {
 			isa = PBXGroup;
 			children = (
@@ -1219,13 +1289,6 @@
 				B7F6154C1CDC84A600AF1697 /* CHTabBarController.m */,
 			);
 			path = TabBarController;
-			sourceTree = "<group>";
-		};
-		B7F6156E1CDCA27F00AF1697 /* NetWork */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NetWork;
 			sourceTree = "<group>";
 		};
 		B7F6156F1CDCA29100AF1697 /* DataBase */ = {
@@ -1412,6 +1475,7 @@
 				7AAF0A5C1CE1DB0F00708F98 /* CHJRTopFunctionModel.m in Sources */,
 				B71E54901CE78A87003B6BE8 /* Topic_List.m in Sources */,
 				7AC8C42F1CE4B20A0043CAEC /* CHRJSortTableViewCell.m in Sources */,
+				B7DBAA991CEAC50B002534B6 /* CHHTTPRequestManager.m in Sources */,
 				7AAF0A7F1CE1EF9D00708F98 /* CHJRecomdTodayModel.m in Sources */,
 				7AD0DDA61CDCA7CE0057F8B2 /* NSDictionary+Log.m in Sources */,
 				7A6ED7041CE31E87005DF78C /* CHJRTopBannerCellView.m in Sources */,
@@ -1450,6 +1514,7 @@
 				7AD0DDB11CDCA7CE0057F8B2 /* JWTools.m in Sources */,
 				B7A3F5D51CE4849C00E09AED /* Recipe_infoModel.m in Sources */,
 				7AD0DDAE1CDCA7CE0057F8B2 /* UIView+JWFrame.m in Sources */,
+				B7DBAA901CEAC373002534B6 /* CHHTTPSessionManager.m in Sources */,
 				B7A3F5D81CE4850300E09AED /* ImgsModel.m in Sources */,
 				7AD0DDA51CDCA7CE0057F8B2 /* NSArray+Log.m in Sources */,
 				7AD0DDAD1CDCA7CE0057F8B2 /* UIImage+Draught.m in Sources */,
@@ -1477,6 +1542,7 @@
 				B7A512A41CE65F970085A6C8 /* CHTFourChatCell.m in Sources */,
 				B71E54991CE78D5F003B6BE8 /* CHGoodCookViewController.m in Sources */,
 				7AC792F51CE85060001CBAA5 /* CHRJSearchContentModel.m in Sources */,
+				B7DBAA931CEAC427002534B6 /* CHUserRequest.m in Sources */,
 				7AAF0A3D1CE184A300708F98 /* CHJRecomdTopHCollectionReusableView.m in Sources */,
 				B71E54841CE6F6B6003B6BE8 /* CHEChatDetailController.m in Sources */,
 				B7F615501CDC84F000AF1697 /* CHNavigationController.m in Sources */,
@@ -1489,6 +1555,7 @@
 				7AD0DDA71CDCA7CE0057F8B2 /* JWUIClass.m in Sources */,
 				B72A06661CE327A40091986F /* CHEChatView.m in Sources */,
 				B7A512BB1CE660A40085A6C8 /* CHEightChatCell.m in Sources */,
+				B7DBAA961CEAC4A7002534B6 /* CHMessageRequest.m in Sources */,
 				B7A3F5CC1CE4801700E09AED /* EChatModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
