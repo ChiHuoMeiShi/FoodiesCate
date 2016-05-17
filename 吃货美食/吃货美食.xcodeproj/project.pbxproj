@@ -130,6 +130,7 @@
 		B7DBAA931CEAC427002534B6 /* CHUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA921CEAC427002534B6 /* CHUserRequest.m */; };
 		B7DBAA961CEAC4A7002534B6 /* CHMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA951CEAC4A7002534B6 /* CHMessageRequest.m */; };
 		B7DBAA991CEAC50B002534B6 /* CHHTTPRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA981CEAC50B002534B6 /* CHHTTPRequestManager.m */; };
+		B7DBAAA61CEB035B002534B6 /* CHUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAAA51CEB035B002534B6 /* CHUserDefaults.m */; };
 		B7F6154D1CDC84A600AF1697 /* CHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F6154C1CDC84A600AF1697 /* CHTabBarController.m */; };
 		B7F615501CDC84F000AF1697 /* CHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F6154F1CDC84F000AF1697 /* CHNavigationController.m */; };
 		B7F615541CDC854500AF1697 /* CHMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F615521CDC854500AF1697 /* CHMeViewController.m */; };
@@ -351,6 +352,8 @@
 		B7DBAA951CEAC4A7002534B6 /* CHMessageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMessageRequest.m; sourceTree = "<group>"; };
 		B7DBAA971CEAC50B002534B6 /* CHHTTPRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHHTTPRequestManager.h; sourceTree = "<group>"; };
 		B7DBAA981CEAC50B002534B6 /* CHHTTPRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHHTTPRequestManager.m; sourceTree = "<group>"; };
+		B7DBAAA41CEB035B002534B6 /* CHUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHUserDefaults.h; sourceTree = "<group>"; };
+		B7DBAAA51CEB035B002534B6 /* CHUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHUserDefaults.m; sourceTree = "<group>"; };
 		B7F6154B1CDC84A600AF1697 /* CHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTabBarController.h; sourceTree = "<group>"; };
 		B7F6154C1CDC84A600AF1697 /* CHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTabBarController.m; sourceTree = "<group>"; };
 		B7F6154E1CDC84F000AF1697 /* CHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNavigationController.h; sourceTree = "<group>"; };
@@ -965,25 +968,12 @@
 		B71ED86E1CDB4E5C0035F6BE /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				B7DBAA9B1CEAF49E002534B6 /* Model */,
+				B7DBAA9C1CEAF49E002534B6 /* Other */,
+				B7DBAA9D1CEAF49E002534B6 /* View */,
 				B71ED8711CDB52560035F6BE /* Controller */,
-				B71ED8701CDB52450035F6BE /* Model */,
-				B71ED86F1CDB4E7E0035F6BE /* View */,
 			);
 			path = Me;
-			sourceTree = "<group>";
-		};
-		B71ED86F1CDB4E7E0035F6BE /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B71ED8701CDB52450035F6BE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		B71ED8711CDB52560035F6BE /* Controller */ = {
@@ -1159,6 +1149,36 @@
 			path = NetWork/Manager;
 			sourceTree = "<group>";
 		};
+		B7DBAA9A1CEAC8B5002534B6 /* NetWorking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = NetWorking;
+			sourceTree = "<group>";
+		};
+		B7DBAA9B1CEAF49E002534B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B7DBAA9C1CEAF49E002534B6 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				B7DBAAA41CEB035B002534B6 /* CHUserDefaults.h */,
+				B7DBAAA51CEB035B002534B6 /* CHUserDefaults.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		B7DBAA9D1CEAF49E002534B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B7E55EC41CE1E277003443DA /* CateShow */ = {
 			isa = PBXGroup;
 			children = (
@@ -1201,6 +1221,7 @@
 		B7F615401CDC808A00AF1697 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B7DBAA9A1CEAC8B5002534B6 /* NetWorking */,
 				B72A06591CE309130091986F /* EChat */,
 				B7E55EC71CE1E30F003443DA /* FoodClass */,
 				B7E55EC61CE1E2BE003443DA /* GoodCook */,
@@ -1517,6 +1538,7 @@
 				B7DBAA901CEAC373002534B6 /* CHHTTPSessionManager.m in Sources */,
 				B7A3F5D81CE4850300E09AED /* ImgsModel.m in Sources */,
 				7AD0DDA51CDCA7CE0057F8B2 /* NSArray+Log.m in Sources */,
+				B7DBAAA61CEB035B002534B6 /* CHUserDefaults.m in Sources */,
 				7AD0DDAD1CDCA7CE0057F8B2 /* UIImage+Draught.m in Sources */,
 				B7F6154D1CDC84A600AF1697 /* CHTabBarController.m in Sources */,
 				7AAF0A791CE1ECFB00708F98 /* CHJRecommendJumpModel.m in Sources */,
