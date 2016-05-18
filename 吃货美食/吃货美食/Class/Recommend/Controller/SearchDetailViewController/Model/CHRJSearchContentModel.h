@@ -24,6 +24,10 @@
 @property (nonatomic,strong)NSNumber * rate;
 @property (nonatomic,strong)NSNumber * is_fav;
 @property (nonatomic,copy)NSString * mt;
-@property (nonatomic,strong)NSString * distance;
+@property (nonatomic,copy)NSString * distance;
+
+@property (nonatomic,strong)NSNumber * order;
+@property (nonatomic,copy)NSString * lanmu;
+@property (nonatomic,copy)NSString * right_w;
 
 @end

@@ -34,6 +34,7 @@ const CGFloat myLon = 112.4234234428844;
             }
         }
     }
+    self.afnManger = [CHHTTPRequestManager manager];
 }
 
 - (void)pushToWebViewWithID:(NSNumber *)myID withUrlString:(NSString *)urlString{

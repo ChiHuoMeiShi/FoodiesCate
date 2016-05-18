@@ -8,7 +8,6 @@
 
 #import "CHRJSearchDetailViewController.h"
 #import "CHRecommendViewController.h"
-#import <AFHTTPSessionManager.h>
 #import <MJRefresh.h>
 #import "CHRJSearchModel.h"
 #import "CHRJSearchTableViewCell.h"
@@ -156,9 +155,6 @@
 }
 
 - (void)requestDataWithSort:(NSString *)sort{
-    AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
-    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
-    
     NSString * url = @"http://api.meishi.cc/v5/search_category.php?format=json";
     NSDictionary * dicTemp = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"step":@"",@"kw":@"",@"page":@(self.pageCount),@"q":self.searchName,@"sort_sc":@"desc",@"sort":sort,@"gy":@"",@"mt":@""};
     if (self.isLocal) {
@@ -172,7 +168,7 @@
         [dic setObject:@(20001) forKey:@"cid"];
     }
     __weak typeof(self)mySelf = self;
-    [manger POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.afnManger.messageRequest POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [mySelf.showTableView.mj_footer endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
 //        CHLog(@"%@",dic[@"obj"]);

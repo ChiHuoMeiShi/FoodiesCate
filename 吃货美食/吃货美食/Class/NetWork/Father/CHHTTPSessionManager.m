@@ -14,6 +14,7 @@
 {
     self = [super init];
     if (self) {
+        self.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json",nil];
     }
     return self;
 }

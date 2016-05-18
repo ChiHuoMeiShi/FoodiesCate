@@ -15,7 +15,7 @@
 @property (nonatomic,strong)CHRJSearchModel * searchModel;
 @property (nonatomic,strong)CHRTodayBannerScrollerView * todayBannerScrollerView;
 @property (nonatomic,strong)CHJRecomdTodayBanerFCollectionReusableView * todayFooterView;
-@property (nonatomic,strong)AFHTTPSessionManager * afnManger;
+
 @property (nonatomic,strong)NSTimer * todayBannerTimer;
 @end
 
@@ -49,13 +49,6 @@
     }
 }
 
-- (AFHTTPSessionManager *)afnManger{
-    if (!_afnManger) {
-        _afnManger = [AFHTTPSessionManager manager];
-        _afnManger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
-    }
-    return _afnManger;
-}
 
 - (void)recommdSearchBarSetWithRect:(CGRect)rect{
     self.searchView = [[[NSBundle mainBundle]loadNibNamed:@"CHRJSearchView" owner:nil options:nil]lastObject];
@@ -68,7 +61,7 @@
     __weak typeof(self)mySelf = self;
     NSString * url = @"http://api.meishi.cc/v5/index5.php?format=json";
     NSDictionary * dic = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"page":@"1",@"app_liketime":@"1462495842"};
-    [self.afnManger POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.afnManger.messageRequest POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary * dic = (NSDictionary *)responseObject;
 //        CHLog(@"%@",dic[@"obj"]);
         mySelf.recommendModel = [CHJRecommendModel mj_objectWithKeyValues:dic[@"obj"]];
@@ -87,7 +80,7 @@
     NSMutableDictionary * likeDic = [NSMutableDictionary dictionaryWithDictionary:likeDicTemp];
     for (int pageCount = 1; pageCount < 4; pageCount++) {
         [likeDic setValue:@(pageCount) forKey:@"page"];
-        [self.afnManger POST:likeURL parameters:likeDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self.afnManger.messageRequest POST:likeURL parameters:likeDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             NSDictionary * dic = (NSDictionary *)responseObject;
             //        CHLog(@"%@",dic[@"obj"]);
             if (!mySelf.searchModel) {
