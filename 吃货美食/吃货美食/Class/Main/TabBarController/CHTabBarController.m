@@ -19,16 +19,16 @@
     [super viewDidLoad];
     
     CHRecommendViewController *recommend = [[CHRecommendViewController alloc] init];
-    [recommend getCollectionViewData];
-    [self addSubVc:recommend title:@"推荐" imageName:nil selectImageName:nil];
+//    [recommend getCollectionViewData];
+    [self addSubVc:recommend title:@"推荐" imageName:@"chFenlei_1" selectImageName:@"chFenlei_1"];
     
     CHDiscoverViewController *discover = [[CHDiscoverViewController alloc] init];
-    [self addSubVc:discover title:@"发现" imageName:nil selectImageName:nil];
+    [self addSubVc:discover title:@"发现" imageName:@"chFenlei_2" selectImageName:@"chFenlei_2"];
     CHEChatViewController *eChat = [[CHEChatViewController alloc] init];
-    [self addSubVc:eChat title:@"食话" imageName:nil selectImageName:nil];
+    [self addSubVc:eChat title:@"食话" imageName:@"chFenlei_3" selectImageName:@"chFenlei_3"];
     
     CHMeViewController *me = [[CHMeViewController alloc] init];
-    [self addSubVc:me title:@"我" imageName:nil selectImageName:nil];
+    [self addSubVc:me title:@"我" imageName:@"chFenlei_4" selectImageName:@"chFenlei_4"];
     
 }
 

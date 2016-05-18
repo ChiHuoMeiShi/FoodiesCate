@@ -28,10 +28,12 @@ static CHUserDefaults *userDefault = nil;
     NSDictionary *userDict = [defaults objectForKey:kUserDict];
     if (userDict)
     {
-        self.user_id = [userDict objectForKey:@"user_id"];
-        self.user_name = [userDict objectForKey:@"user_name"];
-        self.sex = [userDict objectForKey:@"sex"];
-        self.photo = [userDict objectForKey:@"photo"];
+        self.user_id    = [userDict objectForKey:@"user_id"];
+        self.user_name  = [userDict objectForKey:@"user_name"];
+        self.sex        = [userDict objectForKey:@"sex"];
+        self.photo      = [userDict objectForKey:@"photo"];
+        self.password   = [userDict objectForKey:@"password"];
+        self.email      = [userDict objectForKey:@"email"];
     }
 }
 - (void)setUserDict:(NSDictionary *)userDict
@@ -39,10 +41,12 @@ static CHUserDefaults *userDefault = nil;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     //把传进来的userDict保留到本地
     [defaults setObject:userDict forKey:kUserDict];
-    self.user_id = [userDict objectForKey:@"user_id"];
-    self.user_name = [userDict objectForKey:@"user_name"];
-    self.sex = [userDict objectForKey:@"sex"];
-    self.photo = [userDict objectForKey:@"photo"];
+    self.user_id    = [userDict objectForKey:@"user_id"];
+    self.user_name  = [userDict objectForKey:@"user_name"];
+    self.sex        = [userDict objectForKey:@"sex"];
+    self.photo      = [userDict objectForKey:@"photo"];
+    self.password   = [userDict objectForKey:@"password"];
+    self.email      = [userDict objectForKey:@"email"];
 }
 
 @end

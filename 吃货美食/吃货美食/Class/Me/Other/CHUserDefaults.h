@@ -20,6 +20,10 @@
 
 @property (nonatomic,copy) NSString * user_name;
 
+@property (nonatomic,copy) NSString * password;
+
+@property (nonatomic,copy) NSString * email;
+
 + (instancetype)shareUserDefault;
 
 - (void)setUserDict:(NSDictionary *)userDict;
