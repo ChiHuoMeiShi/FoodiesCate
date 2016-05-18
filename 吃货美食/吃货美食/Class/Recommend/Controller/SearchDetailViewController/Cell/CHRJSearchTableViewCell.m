@@ -48,7 +48,7 @@
     }];
     self.nameLabel.text = self.searchModel.title;
     NSString * hardString = [NSString stringWithFormat:@"%@步",self.searchModel.step];
-    if (![self.searchModel.mt isEqualToString:@""]) {
+    if (self.searchModel.mt) {
         hardString = [NSString stringWithFormat:@"%@/%@",hardString,self.searchModel.mt];
     }
     self.hardLabel.text = hardString;

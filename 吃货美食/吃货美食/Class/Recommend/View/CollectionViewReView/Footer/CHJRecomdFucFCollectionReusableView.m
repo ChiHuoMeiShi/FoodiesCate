@@ -71,7 +71,7 @@
     self.topFunChoosePush([[CHRJListViewController alloc]init]);
 }
 - (void)composeButtonAction{
-    self.topFunChoosePush([[UIViewController alloc]init]);
+    self.topFunChoosePush([[CHRJAIFoodViewController alloc]init]);
 }
 
 @end

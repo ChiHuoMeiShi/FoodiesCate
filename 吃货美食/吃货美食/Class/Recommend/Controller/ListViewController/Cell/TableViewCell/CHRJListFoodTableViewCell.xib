@@ -17,6 +17,10 @@
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afq-CC-oDb">
                         <rect key="frame" x="8" y="8" width="332" height="157"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </state>
                         <connections>
                             <action selector="chooseButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="J78-hR-00R"/>
                         </connections>

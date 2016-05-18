@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHRJAIFoodViewController">
+            <connections>
+                <outlet property="aiCollectionView" destination="Vdn-0e-57c" id="Yis-Gg-ERG"/>
+                <outlet property="choosedButton" destination="FBr-bu-xjh" id="kfg-Lw-e84"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKN-rL-Itb">
+                    <rect key="frame" x="0.0" y="64" width="600" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aby-WI-N5C">
+                            <rect key="frame" x="10" y="10" width="580" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="zs2-gk-HMd"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="chooseFoodAction:" destination="-1" eventType="touchUpInside" id="1uc-Px-vDd"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="umeng_add_photo" translatesAutoresizingMaskIntoConstraints="NO" id="c2Y-Nd-8Uj">
+                            <rect key="frame" x="20" y="20" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="Oh6-Pm-DSs"/>
+                                <constraint firstAttribute="width" constant="20" id="k99-kQ-wge"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入要添加的食材名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKJ-eD-jVU">
+                            <rect key="frame" x="48" y="19" width="532" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="Jxf-Rk-i3Q"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.50980392156862742" green="0.81568627450980391" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="vKJ-eD-jVU" secondAttribute="trailing" constant="20" id="6we-sO-H3V"/>
+                        <constraint firstItem="c2Y-Nd-8Uj" firstAttribute="centerY" secondItem="tKN-rL-Itb" secondAttribute="centerY" id="Q1N-Ue-5VQ"/>
+                        <constraint firstAttribute="height" constant="60" id="Y72-0E-Ayn"/>
+                        <constraint firstItem="vKJ-eD-jVU" firstAttribute="leading" secondItem="c2Y-Nd-8Uj" secondAttribute="trailing" constant="8" id="b8U-Ib-VWM"/>
+                        <constraint firstItem="c2Y-Nd-8Uj" firstAttribute="leading" secondItem="tKN-rL-Itb" secondAttribute="leading" constant="20" id="cxn-vp-yKB"/>
+                        <constraint firstItem="aby-WI-N5C" firstAttribute="centerY" secondItem="tKN-rL-Itb" secondAttribute="centerY" id="hnl-1T-Jy5"/>
+                        <constraint firstItem="vKJ-eD-jVU" firstAttribute="centerY" secondItem="tKN-rL-Itb" secondAttribute="centerY" id="mwO-cU-JMD"/>
+                        <constraint firstAttribute="trailing" secondItem="aby-WI-N5C" secondAttribute="trailing" constant="10" id="qTu-fg-Dnp"/>
+                        <constraint firstItem="aby-WI-N5C" firstAttribute="leading" secondItem="tKN-rL-Itb" secondAttribute="leading" constant="10" id="r8p-Re-BD0"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Vdn-0e-57c">
+                    <rect key="frame" x="10" y="134" width="580" height="466"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MVu-YP-TLo">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Ec5-lm-XgO"/>
+                        <outlet property="delegate" destination="-1" id="n1X-bI-MIF"/>
+                    </connections>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBr-bu-xjh">
+                    <rect key="frame" x="258" y="486" width="84" height="84"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="84" id="4ew-aj-DSC"/>
+                        <constraint firstAttribute="height" constant="84" id="cpc-XC-afM"/>
+                    </constraints>
+                    <state key="normal" title="选好了" backgroundImage="forcheck">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Vdn-0e-57c" firstAttribute="top" secondItem="tKN-rL-Itb" secondAttribute="bottom" constant="10" id="HO5-FJ-4WR"/>
+                <constraint firstItem="tKN-rL-Itb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="KEB-Tr-TCn"/>
+                <constraint firstAttribute="bottom" secondItem="Vdn-0e-57c" secondAttribute="bottom" id="MvF-Tg-Gco"/>
+                <constraint firstAttribute="trailing" secondItem="Vdn-0e-57c" secondAttribute="trailing" constant="10" id="TtB-fz-I7F"/>
+                <constraint firstAttribute="trailing" secondItem="tKN-rL-Itb" secondAttribute="trailing" id="aQs-Hb-A9S"/>
+                <constraint firstItem="tKN-rL-Itb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="b48-YV-72Q"/>
+                <constraint firstItem="Vdn-0e-57c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="h7N-dw-vRm"/>
+                <constraint firstAttribute="bottom" secondItem="FBr-bu-xjh" secondAttribute="bottom" constant="30" id="pLN-yH-IFI"/>
+                <constraint firstItem="FBr-bu-xjh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ufv-oL-1U7"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="forcheck" width="26" height="26"/>
+        <image name="umeng_add_photo" width="43" height="43"/>
+    </resources>
+</document>

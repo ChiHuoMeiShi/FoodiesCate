@@ -69,6 +69,7 @@
         [mySelf.listTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         CHLog(@"%@",error);
+        [mySelf.listTableView.mj_header endRefreshing];
     }];
 }
 
@@ -86,6 +87,7 @@
         [mySelf.listTableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         CHLog(@"%@",error);
+        [mySelf.listTableView.mj_footer endRefreshing];
     }];
 }
 

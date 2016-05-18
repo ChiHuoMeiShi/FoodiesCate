@@ -45,8 +45,7 @@
     self.navigationItem.titleView = showTittleLabel;
 }
 - (void)btnArrSet{
-    NSArray * btnArray = @[self.locationButton,self.foodbutton,self.foodMakeButton,self.searchButton,self.typeButton];
-    self.btnArray = [NSMutableArray arrayWithArray:btnArray];
+    self.btnArray = @[self.locationButton,self.foodbutton,self.foodMakeButton,self.searchButton,self.typeButton];
     __weak typeof(self)mySelf = self;
     [self.btnDataArray enumerateObjectsUsingBlock:^(CHRJListToolBarContentModel *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [[SDWebImageManager sharedManager]downloadImageWithURL:[NSURL URLWithString:obj.p] options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
@@ -113,7 +112,7 @@
 }
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.btnDataArray.count;
+    return 5;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CHRJListCollectionViewCell * listCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CHRJListCollectionViewCell" forIndexPath:indexPath];
