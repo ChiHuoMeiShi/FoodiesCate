@@ -18,6 +18,7 @@
 #import "CHCateShowController.h"
 #import "CHGoodCookViewController.h"
 #import "CHFoodClassViewController.h"
+
 @interface CHEChatViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong,nonatomic) UITableView *eChatTableView;
@@ -30,6 +31,7 @@
 
 @implementation CHEChatViewController
 //
+
 - (void)segmentItenAction:(UISegmentedControl *)segment
 {
     NSInteger index = segment.selectedSegmentIndex;
@@ -60,7 +62,6 @@
             [mSelf upRequestDataWithSort:@"hot"];
         }];
     }
-
 }
 - (void)msMail
 {
@@ -80,13 +81,13 @@
 //请求数据(下拉刷新)
 - (void)getEchatDataWithSort:(NSString *)sort
 {
-    AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
-    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+    CHHTTPRequestManager *myManager = [CHHTTPRequestManager manager];
+    
+    myManager.messageRequest.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     NSString *kUrl = @"http://api.meishi.cc/v5/meishiquan_index4.php?format=json";
     NSDictionary *parameters = @{@"lat" : @"34.6049907522264",@"lon" : @"112.4229875834745",@"source" : @"iphone",@"format" : @"json", @"sort" : sort};
     __weak typeof(self) mySelf = self;
-    
-    [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [myManager.messageRequest POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [mySelf.eChatTableView.mj_header endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
         mySelf.echatModel = [EChatModel mj_objectWithKeyValues:dic];
@@ -97,9 +98,7 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         CHLog(@"失败原因%@",error);
         [mySelf.eChatTableView.mj_header endRefreshing];
-        
     }];
-    
 }
 //上拉刷新
 - (void)upRequestDataWithSort:(NSString *)sort
@@ -107,12 +106,13 @@
     self.page = 1;
     self.page = self.page + 1;
 //    self.page +=1;
-    AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
-    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+    CHHTTPRequestManager *myManager = [CHHTTPRequestManager manager];
+    
+    myManager.messageRequest.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     NSString *kUrl = @"http://api.meishi.cc/v5/meishiquan_index4.php?format=json";
     NSDictionary *parameters = @{@"lat" : @"34.6049907522264",@"lon" : @"112.4229875834745",@"source" : @"iphone",@"format" : @"json", @"page":@(self.page),@"sort" : sort};
     __weak typeof(self) mySelf = self;
-    [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [myManager.messageRequest POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [mySelf.eChatTableView.mj_footer endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
         mySelf.echatModel = [EChatModel mj_objectWithKeyValues:dic];
@@ -122,7 +122,6 @@
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         CHLog(@"失败原因%@",error);
         [mySelf.eChatTableView.mj_footer endRefreshing];
-        
     }];
 }
 
@@ -141,6 +140,7 @@
 }
 #pragma mark -- viewDidLoad
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     [self addNavigationItem];
     //先加载数据

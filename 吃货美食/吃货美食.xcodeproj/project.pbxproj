@@ -87,6 +87,8 @@
 		7AD0DDAF1CDCA7CE0057F8B2 /* JWUIViewControllersClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD9A1CDCA7CE0057F8B2 /* JWUIViewControllersClass.m */; };
 		7AD0DDB01CDCA7CE0057F8B2 /* UIStoryboard+GetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD9D1CDCA7CE0057F8B2 /* UIStoryboard+GetView.m */; };
 		7AD0DDB11CDCA7CE0057F8B2 /* JWTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DDA21CDCA7CE0057F8B2 /* JWTools.m */; };
+		B70640221CEB458400825791 /* CHMeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B70640211CEB458400825791 /* CHMeHeaderView.xib */; };
+		B70640251CEB45EC00825791 /* CHMeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B70640241CEB45EC00825791 /* CHMeHeaderView.m */; };
 		B716865F1CE8257100BEBA3E /* CateUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B716865E1CE8257100BEBA3E /* CateUserInfo.m */; };
 		B71686621CE8261100BEBA3E /* CateImgsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B71686611CE8261100BEBA3E /* CateImgsModel.m */; };
 		B71E54841CE6F6B6003B6BE8 /* CHEChatDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = B71E54821CE6F6B6003B6BE8 /* CHEChatDetailController.m */; };
@@ -287,6 +289,9 @@
 		7AD0DD9F1CDCA7CE0057F8B2 /* JWPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWPrefixHeader.pch; sourceTree = "<group>"; };
 		7AD0DDA11CDCA7CE0057F8B2 /* JWTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWTools.h; sourceTree = "<group>"; };
 		7AD0DDA21CDCA7CE0057F8B2 /* JWTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWTools.m; sourceTree = "<group>"; };
+		B70640211CEB458400825791 /* CHMeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHMeHeaderView.xib; sourceTree = "<group>"; };
+		B70640231CEB45EC00825791 /* CHMeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMeHeaderView.h; sourceTree = "<group>"; };
+		B70640241CEB45EC00825791 /* CHMeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMeHeaderView.m; sourceTree = "<group>"; };
 		B716865D1CE8257100BEBA3E /* CateUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CateUserInfo.h; sourceTree = "<group>"; };
 		B716865E1CE8257100BEBA3E /* CateUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CateUserInfo.m; sourceTree = "<group>"; };
 		B71686601CE8261100BEBA3E /* CateImgsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CateImgsModel.h; sourceTree = "<group>"; };
@@ -1233,6 +1238,9 @@
 		B7DBAA9D1CEAF49E002534B6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B70640231CEB45EC00825791 /* CHMeHeaderView.h */,
+				B70640241CEB45EC00825791 /* CHMeHeaderView.m */,
+				B70640211CEB458400825791 /* CHMeHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1459,6 +1467,7 @@
 				7A6ED6F61CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib in Resources */,
 				B7F6155A1CDC857700AF1697 /* CHEChatViewController.xib in Resources */,
 				7AC792F81CE85060001CBAA5 /* CHRJSearchViewController.xib in Resources */,
+				B70640221CEB458400825791 /* CHMeHeaderView.xib in Resources */,
 				B7A512BC1CE660A40085A6C8 /* CHEightChatCell.xib in Resources */,
 				7AC792F21CE85060001CBAA5 /* CHRJSearchTableViewCell.xib in Resources */,
 				7A3411B21CE8A88F003E4F3C /* CHRJSearchView.xib in Resources */,
@@ -1563,6 +1572,7 @@
 				7AA5D68C1CEA15AA007D0912 /* CHRJListCollectionViewCell.m in Sources */,
 				7A6ED7041CE31E87005DF78C /* CHJRTopBannerCellView.m in Sources */,
 				7AA5D6871CE9FB86007D0912 /* CHRJListToolBarContentModel.m in Sources */,
+				B70640251CEB45EC00825791 /* CHMeHeaderView.m in Sources */,
 				B7F6156C1CDCA17700AF1697 /* CHRecommendViewController.m in Sources */,
 				7A3411AE1CE89742003E4F3C /* CHRJSearchView.m in Sources */,
 				7AC8C43C1CE4B3230043CAEC /* CHRJSortContentModel.m in Sources */,

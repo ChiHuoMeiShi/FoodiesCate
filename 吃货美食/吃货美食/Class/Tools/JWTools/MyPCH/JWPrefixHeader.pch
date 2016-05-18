@@ -24,5 +24,5 @@
 #define CHSCREENHEIGH [UIScreen mainScreen].bounds.size.height
 
 #import "JWClass.h"
-
+#import "CHHTTPRequestManager.h"
 #endif /* JWPrefixHeader_pch */

@@ -27,6 +27,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
+    
     [self addHeader];
     [self getEchatDataWithSort:@"new"];
     self.eChatTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
@@ -195,12 +198,13 @@
 //请求数据(下拉刷新)
 - (void)getEchatDataWithSort:(NSString *)sort
 {
-    AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
-    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+    CHHTTPRequestManager *myManager = [CHHTTPRequestManager manager];
+    
+    myManager.messageRequest.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     NSString *kUrl = @"http://api.meishi.cc/v5/topic_list3.php?format=json";
     NSDictionary *parameters = @{@"lat" : @"34.60513495876783",@"lon" : @"112.4112401412381",@"source" : @"iphone",@"format" : @"json",@"gid":@"20", @"page":@"1",@"order" : sort,@"from":@"0"};
     __weak typeof(self) mySelf = self;
-    [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [myManager.messageRequest POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [mySelf.eChatTableView.mj_header endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
         mySelf.cateModel = [CateShowModel mj_objectWithKeyValues:dic];
@@ -220,26 +224,30 @@
     self.page = 1;
     self.page = self.page + 1;
     //    self.page +=1;
-    AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
-    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+    CHHTTPRequestManager *myManager = [CHHTTPRequestManager manager];
+    
+    myManager.messageRequest.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     NSString *kUrl = @"http://api.meishi.cc/v5/topic_list3.php?format=json";
     NSDictionary *parameters = @{@"lat" : @"34.60513495876783",@"lon" : @"112.4112401412381",@"source" : @"iphone",@"format" : @"json",@"gid":@"20", @"page":@(self.page),@"order" : sort,@"from":@"0"};
     __weak typeof(self) mySelf = self;
-    [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [myManager.messageRequest POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [mySelf.eChatTableView.mj_footer endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
         mySelf.cateModel = [CateShowModel mj_objectWithKeyValues:dic];
         [mySelf.dataArr addObjectsFromArray:mySelf.cateModel.topic_list];
         [mySelf.eChatTableView reloadData];
-        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         CHLog(@"失败原因%@",error);
         [mySelf.eChatTableView.mj_footer endRefreshing];
     }];
 }
-
+- (void)navBackAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
 }
 @end
