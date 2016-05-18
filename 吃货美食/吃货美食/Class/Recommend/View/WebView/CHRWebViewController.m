@@ -13,7 +13,17 @@
 @end
 
 @implementation CHRWebViewController
-
+- (instancetype)initWithURLString:(NSString *)urlString{
+    self = [super init];
+    if (self) {
+        self.urlString = urlString;
+    }
+    return self;
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.hidden = NO;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;

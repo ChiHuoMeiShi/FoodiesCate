@@ -16,11 +16,17 @@
 - (void)setTypeCount:(NSNumber *)typeCount{
     if (!typeCount)return;
     _typeCount = typeCount;
+    self.page = 1;
+    __weak typeof(self) mySelf = self;
+    self.listTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [mySelf requestTableViewData];
+    }];
+    self.listTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [mySelf requestFootTableViewData];
+    }];
     [self requestTableViewData];
 }
-
-- (void)requestTableViewData{
-    NSString * url = @"http://api.meishi.cc/v5/top.php?format=json";
+- (NSMutableDictionary *)requestDic{
     NSDictionary * dicTemp = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"st":@"0",@"t":@"7",@"page":@"1",};
     NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithDictionary:dicTemp];
     switch ([self.typeCount intValue]) {
@@ -47,12 +53,36 @@
             
         default:
             break;
-    }
+    };
+    return dic;
+}
+- (void)requestTableViewData{
+    NSString * url = @"http://api.meishi.cc/v5/top.php?format=json";
+    NSMutableDictionary * dic = [self requestDic];
     __weak typeof(self)mySelf = self;
     [self.afnManger.messageRequest POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [mySelf.listTableView.mj_header endRefreshing];
         NSDictionary * dicData = (NSDictionary *)responseObject;
 //      CHLog(@"%@",dicData[@"d"]);
         mySelf.dataArray = [mySelf.dataClass mj_objectArrayWithKeyValuesArray:dicData[@"d"]];
+        [mySelf.listTableView reloadData];
+        [mySelf.listTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        CHLog(@"%@",error);
+    }];
+}
+
+- (void)requestFootTableViewData{
+    NSString * url = @"http://api.meishi.cc/v5/top.php?format=json";
+    NSMutableDictionary * dic = [self requestDic];
+    self.page++;
+    [dic setObject:@(self.page) forKey:@"page"];
+    __weak typeof(self)mySelf = self;
+    [self.afnManger.messageRequest POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [mySelf.listTableView.mj_footer endRefreshing];
+        NSDictionary * dicData = (NSDictionary *)responseObject;
+        //      CHLog(@"%@",dicData[@"d"]);
+        [mySelf.dataArray addObjectsFromArray:[mySelf.dataClass mj_objectArrayWithKeyValuesArray:dicData[@"d"]]];
         [mySelf.listTableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         CHLog(@"%@",error);
@@ -89,27 +119,43 @@
     if ([self.typeCount intValue] == 0) {
         CHRJListFoodTableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:self.cellReName];
         listCell.searchModel = self.dataArray[indexPath.row];
+        listCell.delegate = self;
         return listCell;
     }else if ([self.typeCount intValue] == 1){
         CHRJListFoodTableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:self.cellReName];
         listCell.locationImageView.image = [UIImage imageNamed:@"ph_icon1"];
         listCell.searchModel = self.dataArray[indexPath.row];
+        listCell.delegate = self;
         return listCell;
     }else if ([self.typeCount intValue] == 2){
         CHRJListFoodBaseTableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:@"CHRJListFoodBaseTableViewCell"];
         listCell.myFoodTypeModel = self.dataArray[indexPath.row];
         [listCell foodTypeModelSetLayer];
+        listCell.delegate = self;
         return listCell;
     }else if ([self.typeCount intValue] == 3){
         CHRJListFoodSearchTableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:self.cellReName];
         listCell.searchModel = self.dataArray[indexPath.row];
+        listCell.delegate = self;
         return listCell;
     }else{
         CHRJListFoodBaseTableViewCell * listCell = [tableView dequeueReusableCellWithIdentifier:@"CHRJListFoodBaseTableViewCell"];
         listCell.myFoodTypeModel = self.dataArray[indexPath.row];
         [listCell foodTypeModelSetLayer];
-        
+        listCell.delegate = self;
         return listCell;
+    }
+}
+
+#pragma mark - CHRJListFoodTableProtocal
+- (void)getShowWebID:(NSNumber *)myID{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(getShowWebID:)]) {
+        [self.delegate  getShowWebID:myID];
+    }
+}
+- (void)getShowSearchName:(NSString *)searchName{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(getShowSearchName:)]) {
+        [self.delegate  getShowSearchName:searchName];
     }
 }
 @end

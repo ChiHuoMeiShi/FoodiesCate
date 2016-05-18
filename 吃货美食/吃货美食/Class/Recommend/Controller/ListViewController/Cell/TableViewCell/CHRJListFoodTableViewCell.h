@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <UIImageView+WebCache.h>
 #import "CHRJSearchContentModel.h"
-//Protorol
+#import "CHRJListFoodTableProtocal.h"
+
 @interface CHRJListFoodTableViewCell : UITableViewCell
 @property (nonatomic,assign)BOOL isLocal;
 @property (nonatomic,strong)CHRJSearchContentModel * searchModel;
@@ -29,6 +30,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *hardLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 
+- (IBAction)chooseButtonAction:(UIButton *)sender;
+
 @property (weak, nonatomic) IBOutlet UILabel *orderLabel;
+
+@property (nonatomic,weak)id<CHRJListFoodTableProtocal> delegate;
 
 @end

@@ -10,20 +10,25 @@
 #import <UIImageView+WebCache.h>
 #import "CHRJListCollectionViewCell.h"
 #import "CHRJListToolBarModel.h"
-@interface CHRJListViewController ()
+#import "CHRJListFoodCollectionProtocal.h"
+#import "CHRJSearchDetailViewController.h"
+@interface CHRJListViewController ()<CHRJListFoodCollectionProtocal>
 @property (nonatomic,strong)CHRJListToolBarModel * toolBarModel;
 
 @end
 
 @implementation CHRJListViewController
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self listVCNavBarSet];
+}
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self listVCNavBarSet];
+    
     [self requestToolBarData];
     self.listControllerView.tag = 54615315;
     [self.listControllerView registerNib:[UINib nibWithNibName:@"CHRJListCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"CHRJListCollectionViewCell"];
@@ -96,6 +101,16 @@
     }];
 }
 
+#pragma mark - CHRJListFoodCollectionProtocal
+- (void)getShowWebID:(NSNumber *)myID{
+    CHRWebViewController * webVC = [[CHRWebViewController alloc]init];
+    webVC.webID = myID;
+    [self.navigationController pushViewController:webVC animated:YES];
+}
+- (void)getShowSearchName:(NSString *)searchName{
+    CHRJSearchDetailViewController * searchVC = [[CHRJSearchDetailViewController alloc]initWithSearchName:searchName];
+    [self.navigationController pushViewController:searchVC animated:YES];
+}
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.btnDataArray.count;
@@ -103,6 +118,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CHRJListCollectionViewCell * listCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CHRJListCollectionViewCell" forIndexPath:indexPath];
     listCell.typeCount = @(indexPath.row);
+    listCell.delegate = self;
     return listCell;
 }
 
@@ -110,7 +126,6 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return CGSizeMake(CHSCREENWIDTH - 20.f, collectionView.height);
 }
-
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if (scrollView.tag == 54615315) {

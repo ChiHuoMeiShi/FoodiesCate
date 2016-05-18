@@ -38,9 +38,14 @@ const CGFloat myLon = 112.4234234428844;
 }
 
 - (void)pushToWebViewWithID:(NSNumber *)myID withUrlString:(NSString *)urlString{
-    CHRWebViewController * webVC = [[CHRWebViewController alloc]init];
-    webVC.webID = myID;
-    webVC.urlString = urlString;
+    CHRWebViewController * webVC;
+    if (urlString) {
+        webVC = [[CHRWebViewController alloc]initWithURLString:urlString];
+    }else{
+        webVC = [[CHRWebViewController alloc]init];
+        webVC.webID = myID;
+    }
+    
     [self.navigationController pushViewController:webVC animated:YES];
 }
 

@@ -51,4 +51,9 @@
     }];
 }
 
+- (IBAction)chooseButtonAction:(UIButton *)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(getShowSearchName:)]) {
+        [self.delegate  getShowSearchName:self.myFoodTypeModel.title];
+    }
+}
 @end

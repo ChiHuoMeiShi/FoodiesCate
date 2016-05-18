@@ -8,6 +8,7 @@
 
 #import "CHRJBasicViewController.h"
 #import <MJExtension.h>
+
 @interface CHRJListViewController : CHRJBasicViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;

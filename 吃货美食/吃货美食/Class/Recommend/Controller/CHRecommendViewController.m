@@ -26,11 +26,14 @@
     self.navigationItem.leftBarButtonItem = nil;
     self.title = @"";
     [self recommendCollectionRegister];
+    __weak typeof(self) mySelf = self;
+    self.recommendCollection.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [mySelf getCollectionViewData];
+    }];
     [self getCollectionViewData];
     [self.backToTopButton addTarget:self action:@selector(backToTopButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self requestUpdateFoodData];
+    
 }
-
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -62,9 +65,11 @@
     NSString * url = @"http://api.meishi.cc/v5/index5.php?format=json";
     NSDictionary * dic = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"page":@"1",@"app_liketime":@"1462495842"};
     [self.afnManger.messageRequest POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [mySelf.recommendCollection.mj_header endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
 //        CHLog(@"%@",dic[@"obj"]);
         mySelf.recommendModel = [CHJRecommendModel mj_objectWithKeyValues:dic[@"obj"]];
+        [mySelf requestUpdateFoodData];
         [mySelf.recommendCollection reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         CHLog(@"%@",error);
@@ -108,6 +113,7 @@
     [self.todayFooterView.todayBannerScrollerView rightShift];
     self.todayFooterView.todayBannerPageControl.currentPage = self.todayFooterView.todayBannerScrollerView.currentBannerCount;
 }
+
 #pragma mark - initSubs
 
 - (void)recommdTopBannerHeaderSetting{

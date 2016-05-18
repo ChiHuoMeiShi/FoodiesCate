@@ -20,7 +20,6 @@
     self.nameLabel.text = searchModel.w;
     self.orderLabel.text = [NSString stringWithFormat:@"%zi",[searchModel.order intValue]];
     self.distenceLabel.text = [NSString stringWithFormat:@"%zi",[searchModel.hot intValue]];
-    
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
@@ -37,4 +36,9 @@
     CGContextStrokePath(ctx);
 }
 
+- (IBAction)chooseButtonAction:(UIButton *)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(getShowSearchName:)]) {
+        [self.delegate  getShowSearchName:self.searchModel.w];
+    }
+}
 @end
