@@ -95,8 +95,6 @@
 		7AD0DDAF1CDCA7CE0057F8B2 /* JWUIViewControllersClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD9A1CDCA7CE0057F8B2 /* JWUIViewControllersClass.m */; };
 		7AD0DDB01CDCA7CE0057F8B2 /* UIStoryboard+GetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD9D1CDCA7CE0057F8B2 /* UIStoryboard+GetView.m */; };
 		7AD0DDB11CDCA7CE0057F8B2 /* JWTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DDA21CDCA7CE0057F8B2 /* JWTools.m */; };
-		B70640221CEB458400825791 /* CHMeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B70640211CEB458400825791 /* CHMeHeaderView.xib */; };
-		B70640251CEB45EC00825791 /* CHMeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B70640241CEB45EC00825791 /* CHMeHeaderView.m */; };
 		B716865F1CE8257100BEBA3E /* CateUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B716865E1CE8257100BEBA3E /* CateUserInfo.m */; };
 		B71686621CE8261100BEBA3E /* CateImgsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B71686611CE8261100BEBA3E /* CateImgsModel.m */; };
 		B71E54841CE6F6B6003B6BE8 /* CHEChatDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = B71E54821CE6F6B6003B6BE8 /* CHEChatDetailController.m */; };
@@ -116,7 +114,6 @@
 		B71ED8611CDB41660035F6BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71ED85F1CDB41660035F6BE /* LaunchScreen.storyboard */; };
 		B72A06571CE216D10091986F /* CHZSendEChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = B72A06551CE216D10091986F /* CHZSendEChatController.m */; };
 		B72A06581CE216D10091986F /* CHZSendEChatController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B72A06561CE216D10091986F /* CHZSendEChatController.xib */; };
-		B72A06661CE327A40091986F /* CHEChatView.m in Sources */ = {isa = PBXBuildFile; fileRef = B72A06651CE327A40091986F /* CHEChatView.m */; };
 		B72A06961CE369D50091986F /* CHEChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B72A06941CE369D50091986F /* CHEChatCell.m */; };
 		B72A06971CE369D50091986F /* CHEChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B72A06951CE369D50091986F /* CHEChatCell.xib */; };
 		B72A06A31CE3AEF00091986F /* CHEChatHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B72A06A21CE3AEF00091986F /* CHEChatHeaderView.m */; };
@@ -142,6 +139,20 @@
 		B7A512BC1CE660A40085A6C8 /* CHEightChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A512BA1CE660A40085A6C8 /* CHEightChatCell.xib */; };
 		B7A512C01CE660DF0085A6C8 /* CHNineChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A512BE1CE660DF0085A6C8 /* CHNineChatCell.m */; };
 		B7A512C11CE660DF0085A6C8 /* CHNineChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A512BF1CE660DF0085A6C8 /* CHNineChatCell.xib */; };
+		B7B7A5BB1CEC91AF002A80E7 /* CHMyPublishController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B7A5B91CEC91AF002A80E7 /* CHMyPublishController.m */; };
+		B7B7A5BC1CEC91AF002A80E7 /* CHMyPublishController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7B7A5BA1CEC91AF002A80E7 /* CHMyPublishController.xib */; };
+		B7B7A5C01CEC91CC002A80E7 /* CHMyCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B7A5BE1CEC91CC002A80E7 /* CHMyCollectController.m */; };
+		B7B7A5C11CEC91CC002A80E7 /* CHMyCollectController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7B7A5BF1CEC91CC002A80E7 /* CHMyCollectController.xib */; };
+		B7B7A5C51CEC91E2002A80E7 /* CHMyDraftController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B7A5C31CEC91E2002A80E7 /* CHMyDraftController.m */; };
+		B7B7A5C61CEC91E2002A80E7 /* CHMyDraftController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7B7A5C41CEC91E2002A80E7 /* CHMyDraftController.xib */; };
+		B7B7A5CA1CEC91F2002A80E7 /* CHMySettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B7A5C81CEC91F2002A80E7 /* CHMySettingController.m */; };
+		B7B7A5CB1CEC91F2002A80E7 /* CHMySettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7B7A5C91CEC91F2002A80E7 /* CHMySettingController.xib */; };
+		B7B7A5D01CEC925A002A80E7 /* CHLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B7A5CE1CEC925A002A80E7 /* CHLoginController.m */; };
+		B7B7A5D11CEC925A002A80E7 /* CHLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7B7A5CF1CEC925A002A80E7 /* CHLoginController.xib */; };
+		B7B7A5D61CECA382002A80E7 /* ZTCookBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B7A5D51CECA382002A80E7 /* ZTCookBookModel.m */; };
+		B7B7A5D91CECA4BA002A80E7 /* CBData.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B7A5D81CECA4BA002A80E7 /* CBData.m */; };
+		B7B7A5DE1CEDB3D0002A80E7 /* CHPublishCookBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B7A5DC1CEDB3D0002A80E7 /* CHPublishCookBookCell.m */; };
+		B7B7A5DF1CEDB3D0002A80E7 /* CHPublishCookBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7B7A5DD1CEDB3D0002A80E7 /* CHPublishCookBookCell.xib */; };
 		B7DBAA901CEAC373002534B6 /* CHHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA8F1CEAC373002534B6 /* CHHTTPSessionManager.m */; };
 		B7DBAA931CEAC427002534B6 /* CHUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA921CEAC427002534B6 /* CHUserRequest.m */; };
 		B7DBAA961CEAC4A7002534B6 /* CHMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA951CEAC4A7002534B6 /* CHMessageRequest.m */; };
@@ -310,9 +321,6 @@
 		7AD0DD9F1CDCA7CE0057F8B2 /* JWPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWPrefixHeader.pch; sourceTree = "<group>"; };
 		7AD0DDA11CDCA7CE0057F8B2 /* JWTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWTools.h; sourceTree = "<group>"; };
 		7AD0DDA21CDCA7CE0057F8B2 /* JWTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWTools.m; sourceTree = "<group>"; };
-		B70640211CEB458400825791 /* CHMeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHMeHeaderView.xib; sourceTree = "<group>"; };
-		B70640231CEB45EC00825791 /* CHMeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMeHeaderView.h; sourceTree = "<group>"; };
-		B70640241CEB45EC00825791 /* CHMeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMeHeaderView.m; sourceTree = "<group>"; };
 		B716865D1CE8257100BEBA3E /* CateUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CateUserInfo.h; sourceTree = "<group>"; };
 		B716865E1CE8257100BEBA3E /* CateUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CateUserInfo.m; sourceTree = "<group>"; };
 		B71686601CE8261100BEBA3E /* CateImgsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CateImgsModel.h; sourceTree = "<group>"; };
@@ -344,8 +352,6 @@
 		B72A06541CE216D10091986F /* CHZSendEChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHZSendEChatController.h; sourceTree = "<group>"; };
 		B72A06551CE216D10091986F /* CHZSendEChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHZSendEChatController.m; sourceTree = "<group>"; };
 		B72A06561CE216D10091986F /* CHZSendEChatController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHZSendEChatController.xib; sourceTree = "<group>"; };
-		B72A06641CE327A40091986F /* CHEChatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHEChatView.h; sourceTree = "<group>"; };
-		B72A06651CE327A40091986F /* CHEChatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHEChatView.m; sourceTree = "<group>"; };
 		B72A06931CE369D50091986F /* CHEChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHEChatCell.h; sourceTree = "<group>"; };
 		B72A06941CE369D50091986F /* CHEChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHEChatCell.m; sourceTree = "<group>"; };
 		B72A06951CE369D50091986F /* CHEChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHEChatCell.xib; sourceTree = "<group>"; };
@@ -386,6 +392,28 @@
 		B7A512BD1CE660DF0085A6C8 /* CHNineChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNineChatCell.h; sourceTree = "<group>"; };
 		B7A512BE1CE660DF0085A6C8 /* CHNineChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHNineChatCell.m; sourceTree = "<group>"; };
 		B7A512BF1CE660DF0085A6C8 /* CHNineChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHNineChatCell.xib; sourceTree = "<group>"; };
+		B7B7A5B81CEC91AF002A80E7 /* CHMyPublishController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMyPublishController.h; sourceTree = "<group>"; };
+		B7B7A5B91CEC91AF002A80E7 /* CHMyPublishController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMyPublishController.m; sourceTree = "<group>"; };
+		B7B7A5BA1CEC91AF002A80E7 /* CHMyPublishController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHMyPublishController.xib; sourceTree = "<group>"; };
+		B7B7A5BD1CEC91CC002A80E7 /* CHMyCollectController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMyCollectController.h; sourceTree = "<group>"; };
+		B7B7A5BE1CEC91CC002A80E7 /* CHMyCollectController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMyCollectController.m; sourceTree = "<group>"; };
+		B7B7A5BF1CEC91CC002A80E7 /* CHMyCollectController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHMyCollectController.xib; sourceTree = "<group>"; };
+		B7B7A5C21CEC91E2002A80E7 /* CHMyDraftController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMyDraftController.h; sourceTree = "<group>"; };
+		B7B7A5C31CEC91E2002A80E7 /* CHMyDraftController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMyDraftController.m; sourceTree = "<group>"; };
+		B7B7A5C41CEC91E2002A80E7 /* CHMyDraftController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHMyDraftController.xib; sourceTree = "<group>"; };
+		B7B7A5C71CEC91F2002A80E7 /* CHMySettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMySettingController.h; sourceTree = "<group>"; };
+		B7B7A5C81CEC91F2002A80E7 /* CHMySettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMySettingController.m; sourceTree = "<group>"; };
+		B7B7A5C91CEC91F2002A80E7 /* CHMySettingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHMySettingController.xib; sourceTree = "<group>"; };
+		B7B7A5CD1CEC925A002A80E7 /* CHLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLoginController.h; sourceTree = "<group>"; };
+		B7B7A5CE1CEC925A002A80E7 /* CHLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLoginController.m; sourceTree = "<group>"; };
+		B7B7A5CF1CEC925A002A80E7 /* CHLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHLoginController.xib; sourceTree = "<group>"; };
+		B7B7A5D41CECA382002A80E7 /* ZTCookBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZTCookBookModel.h; sourceTree = "<group>"; };
+		B7B7A5D51CECA382002A80E7 /* ZTCookBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTCookBookModel.m; sourceTree = "<group>"; };
+		B7B7A5D71CECA4BA002A80E7 /* CBData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBData.h; sourceTree = "<group>"; };
+		B7B7A5D81CECA4BA002A80E7 /* CBData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBData.m; sourceTree = "<group>"; };
+		B7B7A5DB1CEDB3D0002A80E7 /* CHPublishCookBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHPublishCookBookCell.h; sourceTree = "<group>"; };
+		B7B7A5DC1CEDB3D0002A80E7 /* CHPublishCookBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHPublishCookBookCell.m; sourceTree = "<group>"; };
+		B7B7A5DD1CEDB3D0002A80E7 /* CHPublishCookBookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHPublishCookBookCell.xib; sourceTree = "<group>"; };
 		B7DBAA8E1CEAC373002534B6 /* CHHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHHTTPSessionManager.h; sourceTree = "<group>"; };
 		B7DBAA8F1CEAC373002534B6 /* CHHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHHTTPSessionManager.m; sourceTree = "<group>"; };
 		B7DBAA911CEAC427002534B6 /* CHUserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHUserRequest.h; sourceTree = "<group>"; };
@@ -1100,6 +1128,11 @@
 		B71ED8711CDB52560035F6BE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B7B7A5CC1CEC9249002A80E7 /* Login */,
+				B7B7A5B71CEC9180002A80E7 /* MySetting */,
+				B7B7A5B61CEC9156002A80E7 /* MyDraft */,
+				B7B7A5B51CEC9129002A80E7 /* MyCollect */,
+				B7B7A5B41CEC911B002A80E7 /* MyPublish */,
 				B7F615511CDC854500AF1697 /* CHMeViewController.h */,
 				B7F615521CDC854500AF1697 /* CHMeViewController.m */,
 				B7F615531CDC854500AF1697 /* CHMeViewController.xib */,
@@ -1119,8 +1152,6 @@
 			isa = PBXGroup;
 			children = (
 				B72A06921CE369AA0091986F /* Cell */,
-				B72A06641CE327A40091986F /* CHEChatView.h */,
-				B72A06651CE327A40091986F /* CHEChatView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1212,6 +1243,87 @@
 			name = EChatModel;
 			sourceTree = "<group>";
 		};
+		B7B7A5B41CEC911B002A80E7 /* MyPublish */ = {
+			isa = PBXGroup;
+			children = (
+				B7B7A5E01CEDB47E002A80E7 /* Controller */,
+				B7B7A5DA1CEDB38E002A80E7 /* View */,
+				B7B7A5D21CECA215002A80E7 /* CookBookModel */,
+			);
+			name = MyPublish;
+			sourceTree = "<group>";
+		};
+		B7B7A5B51CEC9129002A80E7 /* MyCollect */ = {
+			isa = PBXGroup;
+			children = (
+				B7B7A5BD1CEC91CC002A80E7 /* CHMyCollectController.h */,
+				B7B7A5BE1CEC91CC002A80E7 /* CHMyCollectController.m */,
+				B7B7A5BF1CEC91CC002A80E7 /* CHMyCollectController.xib */,
+			);
+			name = MyCollect;
+			sourceTree = "<group>";
+		};
+		B7B7A5B61CEC9156002A80E7 /* MyDraft */ = {
+			isa = PBXGroup;
+			children = (
+				B7B7A5C21CEC91E2002A80E7 /* CHMyDraftController.h */,
+				B7B7A5C31CEC91E2002A80E7 /* CHMyDraftController.m */,
+				B7B7A5C41CEC91E2002A80E7 /* CHMyDraftController.xib */,
+			);
+			name = MyDraft;
+			sourceTree = "<group>";
+		};
+		B7B7A5B71CEC9180002A80E7 /* MySetting */ = {
+			isa = PBXGroup;
+			children = (
+				B7B7A5C71CEC91F2002A80E7 /* CHMySettingController.h */,
+				B7B7A5C81CEC91F2002A80E7 /* CHMySettingController.m */,
+				B7B7A5C91CEC91F2002A80E7 /* CHMySettingController.xib */,
+			);
+			name = MySetting;
+			sourceTree = "<group>";
+		};
+		B7B7A5CC1CEC9249002A80E7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B7B7A5CD1CEC925A002A80E7 /* CHLoginController.h */,
+				B7B7A5CE1CEC925A002A80E7 /* CHLoginController.m */,
+				B7B7A5CF1CEC925A002A80E7 /* CHLoginController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		B7B7A5D21CECA215002A80E7 /* CookBookModel */ = {
+			isa = PBXGroup;
+			children = (
+				B7B7A5D41CECA382002A80E7 /* ZTCookBookModel.h */,
+				B7B7A5D51CECA382002A80E7 /* ZTCookBookModel.m */,
+				B7B7A5D71CECA4BA002A80E7 /* CBData.h */,
+				B7B7A5D81CECA4BA002A80E7 /* CBData.m */,
+			);
+			name = CookBookModel;
+			sourceTree = "<group>";
+		};
+		B7B7A5DA1CEDB38E002A80E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B7B7A5DB1CEDB3D0002A80E7 /* CHPublishCookBookCell.h */,
+				B7B7A5DC1CEDB3D0002A80E7 /* CHPublishCookBookCell.m */,
+				B7B7A5DD1CEDB3D0002A80E7 /* CHPublishCookBookCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		B7B7A5E01CEDB47E002A80E7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B7B7A5B81CEC91AF002A80E7 /* CHMyPublishController.h */,
+				B7B7A5B91CEC91AF002A80E7 /* CHMyPublishController.m */,
+				B7B7A5BA1CEC91AF002A80E7 /* CHMyPublishController.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		B7DBAA881CEAC242002534B6 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -1296,9 +1408,6 @@
 		B7DBAA9D1CEAF49E002534B6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B70640231CEB45EC00825791 /* CHMeHeaderView.h */,
-				B70640241CEB45EC00825791 /* CHMeHeaderView.m */,
-				B70640211CEB458400825791 /* CHMeHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1523,17 +1632,18 @@
 				7AAF3F081CE3459E00573EF6 /* CHRWebViewController.xib in Resources */,
 				7A53C78E1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.xib in Resources */,
 				B71E549A1CE78D5F003B6BE8 /* CHGoodCookViewController.xib in Resources */,
+				B7B7A5C11CEC91CC002A80E7 /* CHMyCollectController.xib in Resources */,
 				B7A512C11CE660DF0085A6C8 /* CHNineChatCell.xib in Resources */,
 				7A6ED6F61CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib in Resources */,
 				7A53C7831CEB09C20098BFEC /* CHRJListFoodTableViewCell.xib in Resources */,
 				B7F6155A1CDC857700AF1697 /* CHEChatViewController.xib in Resources */,
 				7AC792F81CE85060001CBAA5 /* CHRJSearchViewController.xib in Resources */,
-				B70640221CEB458400825791 /* CHMeHeaderView.xib in Resources */,
 				B7A512BC1CE660A40085A6C8 /* CHEightChatCell.xib in Resources */,
 				7AC792F21CE85060001CBAA5 /* CHRJSearchTableViewCell.xib in Resources */,
 				7A3411B21CE8A88F003E4F3C /* CHRJSearchView.xib in Resources */,
 				7AC8C4301CE4B20A0043CAEC /* CHRJSortTableViewCell.xib in Resources */,
 				B72A06581CE216D10091986F /* CHZSendEChatController.xib in Resources */,
+				B7B7A5DF1CEDB3D0002A80E7 /* CHPublishCookBookCell.xib in Resources */,
 				B72A06A51CE3AF200091986F /* CHEChatHeaderView.xib in Resources */,
 				7A3411BD1CE8C6AB003E4F3C /* CHRJSearchColViewCell.xib in Resources */,
 				B71ED85C1CDB41660035F6BE /* Main.storyboard in Resources */,
@@ -1541,10 +1651,12 @@
 				7AAF0A361CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.xib in Resources */,
 				7AC792DA1CE85057001CBAA5 /* CHRJBasicViewController.xib in Resources */,
 				B7A512A51CE65F970085A6C8 /* CHTFourChatCell.xib in Resources */,
+				B7B7A5CB1CEC91F2002A80E7 /* CHMySettingController.xib in Resources */,
 				7AC8C4351CE4B2240043CAEC /* CHRJSortCollectionViewCell.xib in Resources */,
 				7AA5D68D1CEA15AA007D0912 /* CHRJListCollectionViewCell.xib in Resources */,
 				B71E54951CE78C47003B6BE8 /* CHCateShowController.xib in Resources */,
 				7AAF0A401CE184A300708F98 /* CHJRecomdUpdateHCollectionReusableView.xib in Resources */,
+				B7B7A5BC1CEC91AF002A80E7 /* CHMyPublishController.xib in Resources */,
 				B71E549F1CE78DBF003B6BE8 /* CHFoodClassViewController.xib in Resources */,
 				7AAF0A4F1CE18C4000708F98 /* CHJRecomdSugstFCollectionReusableView.xib in Resources */,
 				7AC792F41CE85060001CBAA5 /* CHRJSearchDetailViewController.xib in Resources */,
@@ -1553,9 +1665,11 @@
 				B7A512B41CE6605D0085A6C8 /* CHSevenChatCell.xib in Resources */,
 				B7F6156D1CDCA17700AF1697 /* CHRecommendViewController.xib in Resources */,
 				7AAF0A381CE184A300708F98 /* CHJRecomdTodayBanerFCollectionReusableView.xib in Resources */,
+				B7B7A5C61CEC91E2002A80E7 /* CHMyDraftController.xib in Resources */,
 				7AAF0A3E1CE184A300708F98 /* CHJRecomdTopHCollectionReusableView.xib in Resources */,
 				B7A512AA1CE65FD80085A6C8 /* CHFiveChatCell.xib in Resources */,
 				B7F615551CDC854500AF1697 /* CHMeViewController.xib in Resources */,
+				B7B7A5D11CEC925A002A80E7 /* CHLoginController.xib in Resources */,
 				7AAF0A3C1CE184A300708F98 /* CHJRecomdTodayHCollectionReusableView.xib in Resources */,
 				7AAF0A4A1CE1855300708F98 /* CHJRecmdUpdateCollectionViewCell.xib in Resources */,
 				7AC792F91CE85248001CBAA5 /* CHRJSearchCollectionViewCell.xib in Resources */,
@@ -1633,23 +1747,26 @@
 				7AA5D68C1CEA15AA007D0912 /* CHRJListCollectionViewCell.m in Sources */,
 				7A6ED7041CE31E87005DF78C /* CHJRTopBannerCellView.m in Sources */,
 				7AA5D6871CE9FB86007D0912 /* CHRJListToolBarContentModel.m in Sources */,
-				B70640251CEB45EC00825791 /* CHMeHeaderView.m in Sources */,
 				B7F6156C1CDCA17700AF1697 /* CHRecommendViewController.m in Sources */,
 				7A53C7791CEAFC790098BFEC /* CHRJListSearchFoodModel.m in Sources */,
 				7A3411AE1CE89742003E4F3C /* CHRJSearchView.m in Sources */,
+				B7B7A5BB1CEC91AF002A80E7 /* CHMyPublishController.m in Sources */,
 				7AC8C43C1CE4B3230043CAEC /* CHRJSortContentModel.m in Sources */,
 				7A53C7881CEB0A070098BFEC /* CHRJListFoodBaseTableViewCell.m in Sources */,
 				B72A06A31CE3AEF00091986F /* CHEChatHeaderView.m in Sources */,
+				B7B7A5CA1CEC91F2002A80E7 /* CHMySettingController.m in Sources */,
 				7AD0DDA31CDCA7CE0057F8B2 /* JWClass.m in Sources */,
 				B716865F1CE8257100BEBA3E /* CateUserInfo.m in Sources */,
 				7AAF3F0C1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m in Sources */,
 				7AAF0A821CE1EFD600708F98 /* CHJRecomdTdayBannerModel.m in Sources */,
 				7AAF0A491CE1855300708F98 /* CHJRecmdUpdateCollectionViewCell.m in Sources */,
 				7A6ED6F51CE2FFD5005DF78C /* CHJRTopBannerCollectCell.m in Sources */,
+				B7B7A5DE1CEDB3D0002A80E7 /* CHPublishCookBookCell.m in Sources */,
 				7AC792F61CE85060001CBAA5 /* CHRJSearchModel.m in Sources */,
 				7AAF0A7C1CE1ED1600708F98 /* CHJRecomdJumpContentModel.m in Sources */,
 				7AAF0A351CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.m in Sources */,
 				7AC792F31CE85060001CBAA5 /* CHRJSearchDetailViewController.m in Sources */,
+				B7B7A5D61CECA382002A80E7 /* ZTCookBookModel.m in Sources */,
 				7AC8C4291CE4AE7D0043CAEC /* CHRJSortViewController.m in Sources */,
 				7AA5D67E1CE9E6D9007D0912 /* CHRJListViewController.m in Sources */,
 				7A53C78D1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.m in Sources */,
@@ -1685,10 +1802,12 @@
 				7AC792D91CE85057001CBAA5 /* CHRJBasicViewController.m in Sources */,
 				7AAF0A3B1CE184A300708F98 /* CHJRecomdTodayHCollectionReusableView.m in Sources */,
 				B7A512AE1CE660060085A6C8 /* CHSixChatCell.m in Sources */,
+				B7B7A5C51CEC91E2002A80E7 /* CHMyDraftController.m in Sources */,
 				B7A5129F1CE65F590085A6C8 /* CHThreeChatCell.m in Sources */,
 				B7A512C01CE660DF0085A6C8 /* CHNineChatCell.m in Sources */,
 				7AAF3F071CE3459E00573EF6 /* CHRWebViewController.m in Sources */,
 				7AD0DDAB1CDCA7CE0057F8B2 /* UIWindow+SettingWithVC.m in Sources */,
+				B7B7A5D91CECA4BA002A80E7 /* CBData.m in Sources */,
 				7AC8C4341CE4B2240043CAEC /* CHRJSortCollectionViewCell.m in Sources */,
 				B7A512A91CE65FD80085A6C8 /* CHFiveChatCell.m in Sources */,
 				7AAF0A651CE1DD9600708F98 /* CHJRTopBannerShowModel.m in Sources */,
@@ -1696,10 +1815,12 @@
 				B7A3F5D21CE483F100E09AED /* User_infoModel.m in Sources */,
 				7AAF0A861CE1F55500708F98 /* CHJRecommendMyLikeModel.m in Sources */,
 				7AD0DDB01CDCA7CE0057F8B2 /* UIStoryboard+GetView.m in Sources */,
+				B7B7A5D01CEC925A002A80E7 /* CHLoginController.m in Sources */,
 				B71ED8531CDB41660035F6BE /* main.m in Sources */,
 				B7F615671CDCA14300AF1697 /* CHDiscoverViewController.m in Sources */,
 				7AAF0A4E1CE18C4000708F98 /* CHJRecomdSugstFCollectionReusableView.m in Sources */,
 				7AC792F71CE85060001CBAA5 /* CHRJSearchViewController.m in Sources */,
+				B7B7A5C01CEC91CC002A80E7 /* CHMyCollectController.m in Sources */,
 				B7A512A41CE65F970085A6C8 /* CHTFourChatCell.m in Sources */,
 				B71E54991CE78D5F003B6BE8 /* CHGoodCookViewController.m in Sources */,
 				7A729C1A1CEB5702008C94EF /* CHRJListFoodAndTypeModel.m in Sources */,
@@ -1716,7 +1837,6 @@
 				B72A06961CE369D50091986F /* CHEChatCell.m in Sources */,
 				7AA949441CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.m in Sources */,
 				7AD0DDA71CDCA7CE0057F8B2 /* JWUIClass.m in Sources */,
-				B72A06661CE327A40091986F /* CHEChatView.m in Sources */,
 				B7A512BB1CE660A40085A6C8 /* CHEightChatCell.m in Sources */,
 				B7DBAA961CEAC4A7002534B6 /* CHMessageRequest.m in Sources */,
 				B7A3F5CC1CE4801700E09AED /* EChatModel.m in Sources */,

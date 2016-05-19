@@ -9,15 +9,14 @@
 #import "CHMeViewController.h"
 #import "CHHTTPRequestManager.h"
 #import "CHUserDefaults.h"
-#import "CHMeHeaderView.h"
 #import <UIImageView+WebCache.h>
 #import <UIButton+WebCache.h>
-#import <UIImage+GIF.h>
+#import "CHMyDraftController.h"
+#import "CHMyCollectController.h"
+#import "CHMyPublishController.h"
+#import "CHMySettingController.h"
+
 @interface CHMeViewController ()<UITableViewDelegate,UITableViewDataSource>
-{
-    UIView *_headerView;
-    CGRect _originHeaderFrame;
-}
 
 @property(nonatomic,strong)UITableView *mTableView;
 //header的背景
@@ -33,21 +32,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    [self.navigationController setNavigationBarHidden:YES];
     self.mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH, CHSCREENHEIGH) style:UITableViewStylePlain];
-//    CHMeHeaderView *mHeader = (CHMeHeaderView *)[[NSBundle mainBundle] loadNibNamed:@"CHMeHeaderView" owner:self options:nil];
-//    self.mTableView.tableHeaderView = mHeader;
     
     self.mTableView.delegate = self;
     self.mTableView.dataSource = self;
     [self addHeaderView];
     [self.view addSubview:self.mTableView];
-    
-    
-    
     [self login];
     CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
-    CHLog(@"用户昵称:%@ 用户id:%@ 用户头像:%@ 性别:%@",userDefault.user_name,userDefault.user_id,userDefault.photo,userDefault.sex);
+    CHLog(@"用户昵称:%@ 用户id:%@ 用户头像:%@ 性别:%@ 邮箱:%@ 密码:%@",userDefault.user_name,userDefault.user_id,userDefault.photo,userDefault.sex,userDefault.email,userDefault.password);
 }
 - (void)login{
     CHHTTPRequestManager *myManager = [CHHTTPRequestManager manager];
@@ -82,44 +76,80 @@
 {
     static NSString *ID = @"ZTCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (!cell)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+    
+    if (0 == indexPath.row) {
+        if (!cell)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        }
+        cell.textLabel.text = @"我的发布";
+        cell.textLabel.font = [UIFont systemFontOfSize:28.f];
+        cell.imageView.image= [UIImage imageNamed:@"feed_love"];
+        cell.backgroundColor = [[UIColor alloc] initWithRed:247.f/255.f green:255.f/157.f blue:221.f/255.f alpha:1];
+
+        return cell;
+    }else if (1 == indexPath.row){
+        if (!cell)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        }
+        cell.textLabel.font = [UIFont systemFontOfSize:28.f];
+        cell.textLabel.text = @"我的收藏";
+        cell.imageView.image= [UIImage imageNamed:@"feed_love"];
+        cell.backgroundColor = [[UIColor alloc] initWithRed:198.f/255.f green:247.f/255.f blue:255.f/255.f alpha:1];
+        return cell;
+    }else if (2 == indexPath.row){
+        if (!cell)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        }
+        cell.textLabel.font = [UIFont systemFontOfSize:28.f];
+        cell.imageView.image= [UIImage imageNamed:@"feed_love"];
+        cell.textLabel.text = @"草稿箱";
+        cell.backgroundColor = [[UIColor alloc] initWithRed:237.f/255.f green:220.f/255.f blue:221.f/255.f alpha:1];
+        return cell;
+    }else if (3 == indexPath.row){
+        if (!cell)
+        {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        }
+        cell.textLabel.font = [UIFont systemFontOfSize:28.f];
+        cell.textLabel.text = @"个人设置";
+        cell.imageView.image= [UIImage imageNamed:@"feed_love"];
+        cell.backgroundColor = [[UIColor alloc] initWithRed:222.f/255.f green:255.f/255.f blue:218.f/255.f alpha:1];
+        return cell;
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"测试数据------%ld",(long)indexPath.row];
-    return cell;
+    return nil;
 }
+#pragma mark -- UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 80.f;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 0.f;
-}
-#pragma mark --- UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if (scrollView.contentOffset.y<0) {
-        //竖直拉伸的比例
-        float scale = scrollView.contentOffset.y*(-1)/_originHeaderFrame.size.height;
-        //宽度  需要 拉伸的宽度
-        CGFloat headerW = _originHeaderFrame.size.width*scale;
-        //高度 需要 拉伸的高度
-        CGFloat headerH = _originHeaderFrame.size.height*scale;
-        
-        _headerView.frame = CGRectMake(-headerW/2, scrollView.contentOffset.y, _originHeaderFrame.size.width+headerW, headerH+_originHeaderFrame.size.height);
-    }else if(scrollView.contentOffset.y==0){
-        // 重置为原来的Frame
-        _headerView.frame = _originHeaderFrame;
+    if (0 == indexPath.row) {
+        CHMyPublishController *targetVC = [[CHMyPublishController alloc] init];
+        [self.navigationController pushViewController:targetVC animated:YES];
+    }
+    if (1 == indexPath.row){
+        CHMyCollectController *targetVC = [[CHMyCollectController alloc] init];
+        [self.navigationController pushViewController:targetVC animated:YES];
+    }
+    if (2 == indexPath.row){
+        CHMyDraftController *targetVC = [[CHMyDraftController alloc] init];
+        [self.navigationController pushViewController:targetVC animated:YES];
+    }
+    if (3 == indexPath.row){
+        CHMySettingController *targetVC = [[CHMySettingController alloc] init];
+        [self.navigationController pushViewController:targetVC animated:YES];
     }
 }
 - (void)addHeaderView{
-    _headerView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH, 300.f)];
-    _originHeaderFrame = _headerView.frame;
-    self.backgroundView = [[UIImageView alloc] initWithFrame:_headerView.frame];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH, 300.f)];
+    self.backgroundView = [[UIImageView alloc] initWithFrame:headerView.frame];
     self.backgroundView.image = [UIImage imageNamed:@"meBackground"];
-    [_headerView addSubview:self.backgroundView];
+    [headerView addSubview:self.backgroundView];
     CGFloat btnW = 80.f;
     CGFloat btnH = 80.f;
     CGFloat btnY = 120.f;
@@ -129,7 +159,8 @@
     CGFloat interval = 18.f;
     self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(CHSCREENWIDTH / 2 - labelW / 2, btnH + btnY + interval, labelW, labelH)];
     self.nameLabel.textAlignment = NSTextAlignmentCenter;
-    self.nameLabel.font = [UIFont systemFontOfSize:17.f];
+    self.nameLabel.font = [UIFont systemFontOfSize:20.f];
+    self.nameLabel.textColor = [UIColor orangeColor];
     CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
     if (userDefault) {
         typeof(self) mySelf = self;
@@ -145,9 +176,9 @@
         [self.iconBtn addTarget:self action:@selector(gotoLoginView) forControlEvents:UIControlEventTouchUpInside];
         self.nameLabel.text = @"未登录";
     }
-    [_headerView addSubview:self.iconBtn];
-    [_headerView addSubview:self.nameLabel];
-    self.mTableView.tableHeaderView = _headerView;
+    [headerView addSubview:self.iconBtn];
+    [headerView addSubview:self.nameLabel];
+    self.mTableView.tableHeaderView = headerView;
 }
 //跳到用户界面
 - (void)gotoUserView
