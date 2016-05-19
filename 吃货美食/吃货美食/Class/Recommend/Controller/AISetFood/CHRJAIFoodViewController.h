@@ -7,8 +7,19 @@
 //
 
 #import "CHRJBasicViewController.h"
+#import "CHRAIFoodCollectionViewCell.h"
+#import "CHRJAISearchViewController.h"
+#import "CHRAIBAseFoodDefault.h"
 
-@interface CHRJAIFoodViewController : CHRJBasicViewController
+@interface CHRJAIFoodViewController : CHRJBasicViewController<CHRAIGetBaseFoodProtocol>
 - (IBAction)chooseFoodAction:(UIButton *)sender;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *aiCollectionView;
+@property (nonatomic,strong)NSMutableArray * chooseFoodArray;
+
+@property (nonatomic,strong)NSMutableArray * dataArray;
+@property (nonatomic,strong)CHRAIBAseFoodDefault * baseFood;
+
+@property (weak, nonatomic) IBOutlet UIButton *choosedButton;
 
 @end

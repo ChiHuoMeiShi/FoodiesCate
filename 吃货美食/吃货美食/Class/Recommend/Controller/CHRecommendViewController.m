@@ -37,7 +37,7 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = NO;
     [self recommdSearchBarSetWithRect:CGRectMake(54.f, 26.f, (CHSCREENWIDTH - 108.f), 30.f)];
-    
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     if (!self.todayBannerTimer) {
         self.todayBannerTimer = [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(todayBannerTimerAction) userInfo:nil repeats:YES];
     }

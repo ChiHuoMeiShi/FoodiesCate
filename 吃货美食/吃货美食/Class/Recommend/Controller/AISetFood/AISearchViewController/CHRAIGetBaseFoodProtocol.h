@@ -10,6 +10,7 @@
 #import "CHAISearchFoodTableModel.h"
 @protocol CHRAIGetBaseFoodProtocol <NSObject>
 
+@optional
 - (void)getBaseFood:(CHAISearchFoodTableModel *)baseFood;
 
 @end

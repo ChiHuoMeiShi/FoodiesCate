@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CHRAIFoodCollectionViewCell">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="JWRAIFoodCollectionViewCell" reuseIdentifier="JWRAIFoodCollectionViewCell" id="gTV-IL-0wX" customClass="CHRAIFoodCollectionViewCell">
             <rect key="frame" x="0.0" y="0.0" width="84" height="118"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -28,7 +28,14 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cd_checked" translatesAutoresizingMaskIntoConstraints="NO" id="ruW-ai-dtO">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTl-VZ-eV4">
+                        <rect key="frame" x="0.0" y="0.0" width="84" height="89"/>
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="chooseButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="3vh-Fu-lVV"/>
+                        </connections>
+                    </button>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bake1" translatesAutoresizingMaskIntoConstraints="NO" id="ruW-ai-dtO">
                         <rect key="frame" x="64" y="5" width="15" height="15"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="15" id="5KG-M8-fRA"/>
@@ -53,9 +60,13 @@
                 <constraint firstItem="Ttg-0p-nax" firstAttribute="top" secondItem="ruW-ai-dtO" secondAttribute="bottom" id="35R-C0-ExR"/>
                 <constraint firstItem="Ji2-Wl-RZl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9EP-Bc-tJM"/>
                 <constraint firstAttribute="trailing" secondItem="Ji2-Wl-RZl" secondAttribute="trailing" id="DKm-hx-dFV"/>
+                <constraint firstItem="dTl-VZ-eV4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="GXc-fh-dAl"/>
+                <constraint firstItem="Ji2-Wl-RZl" firstAttribute="top" secondItem="dTl-VZ-eV4" secondAttribute="bottom" id="MQF-ia-TMO"/>
                 <constraint firstItem="Ttg-0p-nax" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Pah-pG-O4k"/>
                 <constraint firstAttribute="trailing" secondItem="ruW-ai-dtO" secondAttribute="trailing" constant="5" id="Q9n-h0-UVE"/>
+                <constraint firstAttribute="trailing" secondItem="dTl-VZ-eV4" secondAttribute="trailing" id="ZeH-rw-wO7"/>
                 <constraint firstAttribute="trailing" secondItem="RCi-Sw-uS8" secondAttribute="trailing" id="bFu-IV-KSG"/>
+                <constraint firstItem="dTl-VZ-eV4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="g8K-t2-Gra"/>
                 <constraint firstItem="Ttg-0p-nax" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="iKn-z6-EX5"/>
                 <constraint firstItem="RCi-Sw-uS8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lSu-mR-E7S"/>
                 <constraint firstAttribute="trailing" secondItem="Ttg-0p-nax" secondAttribute="trailing" id="mpV-Tt-sgK"/>
@@ -72,7 +83,7 @@
                 </mask>
             </variation>
             <connections>
-                <outlet property="selectedImageView" destination="ruW-ai-dtO" id="ACA-e1-alK"/>
+                <outlet property="choosedImageView" destination="ruW-ai-dtO" id="tdL-gW-c4j"/>
                 <outlet property="showImageView" destination="RCi-Sw-uS8" id="tB0-NA-E62"/>
                 <outlet property="showLabel" destination="Ji2-Wl-RZl" id="m2V-H4-hFe"/>
             </connections>
@@ -80,7 +91,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="cd_checked" width="16" height="16"/>
+        <image name="bake1" width="180" height="180"/>
         <image name="ms_del_icon" width="17" height="21"/>
     </resources>
 </document>

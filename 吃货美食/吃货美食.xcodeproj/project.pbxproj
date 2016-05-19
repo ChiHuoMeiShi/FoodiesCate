@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		078D15D61CEDA13600878771 /* CHRJAISearchViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6AC1CECA7F100F0AC08 /* CHRJAISearchViewController.h */; };
 		078D15D71CEDA13600878771 /* CHRJAISearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6AD1CECA7F100F0AC08 /* CHRJAISearchViewController.m */; };
 		078D15D81CEDA13600878771 /* CHRJAISearchViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6AE1CECA7F100F0AC08 /* CHRJAISearchViewController.xib */; };
 		07AB42891CEC851800F1283F /* CHCActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB41E21CEC851800F1283F /* CHCActivityTableViewCell.m */; };
 		07AB428A1CEC851800F1283F /* CHCActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB41E31CEC851800F1283F /* CHCActivityTableViewCell.xib */; };
-		07AB428B1CEC851800F1283F /* CHCArticalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB41E61CEC851800F1283F /* CHCArticalCell.m */; };
 		07AB428C1CEC851800F1283F /* CHCArticalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB41E71CEC851800F1283F /* CHCArticalCell.xib */; };
 		07AB428D1CEC851800F1283F /* CHVGoods_infoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB41EA1CEC851800F1283F /* CHVGoods_infoTableViewCell.m */; };
 		07AB428E1CEC851800F1283F /* CHVGoods_infoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB41EB1CEC851800F1283F /* CHVGoods_infoTableViewCell.xib */; };
@@ -59,7 +57,6 @@
 		07AB42BA1CEC851800F1283F /* CHCZhunTiuser_info_list.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42451CEC851800F1283F /* CHCZhunTiuser_info_list.m */; };
 		07AB42BB1CEC851800F1283F /* CHRecipesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42491CEC851800F1283F /* CHRecipesCell.m */; };
 		07AB42BC1CEC851800F1283F /* CHRecipesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB424A1CEC851800F1283F /* CHRecipesCell.xib */; };
-		07AB42BD1CEC851800F1283F /* CHTopInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB424D1CEC851800F1283F /* CHTopInfoCell.m */; };
 		07AB42BE1CEC851800F1283F /* CHTopInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB424E1CEC851800F1283F /* CHTopInfoCell.xib */; };
 		07AB42BF1CEC851800F1283F /* CHZTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42511CEC851800F1283F /* CHZTCell.m */; };
 		07AB42C01CEC851800F1283F /* CHZTCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB42521CEC851800F1283F /* CHZTCell.xib */; };
@@ -106,16 +103,13 @@
 		7A53C78D1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A53C78B1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.m */; };
 		7A53C78E1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A53C78C1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.xib */; };
 		7A67A69F1CEC8E5000F0AC08 /* CHRJAIFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A69D1CEC8E5000F0AC08 /* CHRJAIFoodViewController.m */; };
-		7A67A6A01CEC8E5000F0AC08 /* CHRJAIFoodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A67A69E1CEC8E5000F0AC08 /* CHRJAIFoodViewController.xib */; };
-		7A67A6A61CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6A41CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.m */; };
-		7A67A6A71CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A67A6A51CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.xib */; };
-		7A67A6AF1CECA7F100F0AC08 /* CHRJAISearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6AD1CECA7F100F0AC08 /* CHRJAISearchViewController.m */; };
-		7A67A6B01CECA7F100F0AC08 /* CHRJAISearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A67A6AE1CECA7F100F0AC08 /* CHRJAISearchViewController.xib */; };
 		7A6ED6F51CE2FFD5005DF78C /* CHJRTopBannerCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ED6F31CE2FFD5005DF78C /* CHJRTopBannerCollectCell.m */; };
 		7A6ED6F61CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A6ED6F41CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib */; };
 		7A6ED7041CE31E87005DF78C /* CHJRTopBannerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ED7031CE31E87005DF78C /* CHJRTopBannerCellView.m */; };
 		7A6ED70A1CE32BCA005DF78C /* NSString+JWStringDeleteToURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ED7091CE32BCA005DF78C /* NSString+JWStringDeleteToURL.m */; };
 		7A729C1A1CEB5702008C94EF /* CHRJListFoodAndTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A729C191CEB5702008C94EF /* CHRJListFoodAndTypeModel.m */; };
+		7A8F53251CEDEE3F00C96506 /* CHRJAIFoodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A67A69E1CEC8E5000F0AC08 /* CHRJAIFoodViewController.xib */; };
+		7A8F53261CEDEE4D00C96506 /* CHRJAISearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A67A6AE1CECA7F100F0AC08 /* CHRJAISearchViewController.xib */; };
 		7AA5D67E1CE9E6D9007D0912 /* CHRJListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5D67C1CE9E6D9007D0912 /* CHRJListViewController.m */; };
 		7AA5D67F1CE9E6D9007D0912 /* CHRJListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA5D67D1CE9E6D9007D0912 /* CHRJListViewController.xib */; };
 		7AA5D6841CE9E9C2007D0912 /* CHRJListToolBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5D6831CE9E9C2007D0912 /* CHRJListToolBarModel.m */; };
@@ -187,6 +181,9 @@
 		7AD0DDAF1CDCA7CE0057F8B2 /* JWUIViewControllersClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD9A1CDCA7CE0057F8B2 /* JWUIViewControllersClass.m */; };
 		7AD0DDB01CDCA7CE0057F8B2 /* UIStoryboard+GetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DD9D1CDCA7CE0057F8B2 /* UIStoryboard+GetView.m */; };
 		7AD0DDB11CDCA7CE0057F8B2 /* JWTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0DDA21CDCA7CE0057F8B2 /* JWTools.m */; };
+		7AD5475F1CEDFAA800B91B73 /* CHRAIFoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A67A6A51CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.xib */; };
+		7AD547601CEDFDE100B91B73 /* CHRAIFoodCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6A41CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.m */; };
+		7AD547691CEE039100B91B73 /* CHRAIBAseFoodDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD547681CEE039100B91B73 /* CHRAIBAseFoodDefault.m */; };
 		B70640221CEB458400825791 /* CHMeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B70640211CEB458400825791 /* CHMeHeaderView.xib */; };
 		B70640251CEB45EC00825791 /* CHMeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B70640241CEB45EC00825791 /* CHMeHeaderView.m */; };
 		B716865F1CE8257100BEBA3E /* CateUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B716865E1CE8257100BEBA3E /* CateUserInfo.m */; };
@@ -553,6 +550,8 @@
 		7AD0DD9F1CDCA7CE0057F8B2 /* JWPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWPrefixHeader.pch; sourceTree = "<group>"; };
 		7AD0DDA11CDCA7CE0057F8B2 /* JWTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWTools.h; sourceTree = "<group>"; };
 		7AD0DDA21CDCA7CE0057F8B2 /* JWTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWTools.m; sourceTree = "<group>"; };
+		7AD547671CEE039100B91B73 /* CHRAIBAseFoodDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRAIBAseFoodDefault.h; sourceTree = "<group>"; };
+		7AD547681CEE039100B91B73 /* CHRAIBAseFoodDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRAIBAseFoodDefault.m; sourceTree = "<group>"; };
 		B70640211CEB458400825791 /* CHMeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHMeHeaderView.xib; sourceTree = "<group>"; };
 		B70640231CEB45EC00825791 /* CHMeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMeHeaderView.h; sourceTree = "<group>"; };
 		B70640241CEB45EC00825791 /* CHMeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMeHeaderView.m; sourceTree = "<group>"; };
@@ -1272,6 +1271,7 @@
 		7A67A69B1CEC8DFA00F0AC08 /* AISetFood */ = {
 			isa = PBXGroup;
 			children = (
+				7AD547661CEE034D00B91B73 /* AIBaseFoodDefault */,
 				7A67A6AB1CECA7A600F0AC08 /* AISearchViewController */,
 				7A67A6A21CEC96B800F0AC08 /* Cell */,
 				7A67A6A11CEC96A900F0AC08 /* Model */,
@@ -1781,6 +1781,15 @@
 				7AD0DDA21CDCA7CE0057F8B2 /* JWTools.m */,
 			);
 			path = MyTools;
+			sourceTree = "<group>";
+		};
+		7AD547661CEE034D00B91B73 /* AIBaseFoodDefault */ = {
+			isa = PBXGroup;
+			children = (
+				7AD547671CEE039100B91B73 /* CHRAIBAseFoodDefault.h */,
+				7AD547681CEE039100B91B73 /* CHRAIBAseFoodDefault.m */,
+			);
+			path = AIBaseFoodDefault;
 			sourceTree = "<group>";
 		};
 		B71E54871CE789DA003B6BE8 /* 餐桌食光 */ = {
@@ -2312,6 +2321,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AD5475F1CEDFAA800B91B73 /* CHRAIFoodCollectionViewCell.xib in Resources */,
+				7A8F53261CEDEE4D00C96506 /* CHRJAISearchViewController.xib in Resources */,
+				7A8F53251CEDEE3F00C96506 /* CHRJAIFoodViewController.xib in Resources */,
 				07AB42B11CEC851800F1283F /* CHCShiCaiTableViewCell.xib in Resources */,
 				07AB42941CEC851800F1283F /* CHCCommentTableViewCell.xib in Resources */,
 				B71ED8611CDB41660035F6BE /* LaunchScreen.storyboard in Resources */,
@@ -2443,7 +2455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078D15D61CEDA13600878771 /* CHRJAISearchViewController.h in Sources */,
+				7AD547601CEDFDE100B91B73 /* CHRAIFoodCollectionViewCell.m in Sources */,
 				078D15D71CEDA13600878771 /* CHRJAISearchViewController.m in Sources */,
 				078D15D81CEDA13600878771 /* CHRJAISearchViewController.xib in Sources */,
 				7AC792F11CE85060001CBAA5 /* CHRJSearchTableViewCell.m in Sources */,
@@ -2507,6 +2519,7 @@
 				07AB42F21CECABD600F1283F /* CHCSegment.m in Sources */,
 				07AB42CB1CEC851800F1283F /* CHCimages_list.m in Sources */,
 				07AB429E1CEC851800F1283F /* CHCuser_info_caidanlist.m in Sources */,
+				7AD547691CEE039100B91B73 /* CHRAIBAseFoodDefault.m in Sources */,
 				07AB42C41CEC851800F1283F /* CHCFindData.m in Sources */,
 				7AD0DDAA1CDCA7CE0057F8B2 /* UITabBarItem+TextCustom.m in Sources */,
 				07AB429C1CEC851800F1283F /* CHCCaiDandata.m in Sources */,
