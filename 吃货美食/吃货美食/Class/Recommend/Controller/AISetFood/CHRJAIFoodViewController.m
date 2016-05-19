@@ -10,7 +10,7 @@
 #import "CHRAIFoodCollectionViewCell.h"
 #import "CHRJAISearchViewController.h"
 
-@interface CHRJAIFoodViewController ()
+@interface CHRJAIFoodViewController ()<CHRAIGetBaseFoodProtocol>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *aiCollectionView;
 @property (nonatomic,strong)NSMutableArray * dataArray;
@@ -26,8 +26,9 @@
     [super viewDidLoad];
     [self listVCNavBarSet];
     [self.aiCollectionView registerNib:[UINib nibWithNibName:@"CHRAIFoodCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"CHRAIFoodCollectionViewCell"];
-    
-    
+    if (!self.dataArray) {
+        self.dataArray = [[NSMutableArray alloc]initWithCapacity:0];
+    }
 }
 
 - (void)listVCNavBarSet{
@@ -50,18 +51,17 @@
 
 - (IBAction)chooseFoodAction:(UIButton *)sender {
     CHRJAISearchViewController * aiSearchVC = [[CHRJAISearchViewController alloc]init];
-    
+    aiSearchVC.delegate = self;
     [self presentViewController:aiSearchVC animated:NO completion:nil];
 }
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-//    return self.dataArray.count;
-    return 10.f;
+    return self.dataArray.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CHRAIFoodCollectionViewCell * aiCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CHRAIFoodCollectionViewCell" forIndexPath:indexPath];
-    
+    aiCell.foodModel = self.dataArray[indexPath.row];
     return aiCell;
 }
 
@@ -69,6 +69,12 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     CGFloat cellWidth = CHSCREENWIDTH/3 - 20.f;
     return CGSizeMake(cellWidth, 118.f);
+}
+
+#pragma mark - CHRAIGetBaseFoodProtocol
+- (void)getBaseFood:(CHAISearchFoodTableModel *)baseFood{
+    [self.dataArray addObject:baseFood];
+    [self.aiCollectionView reloadData];
 }
 
 @end

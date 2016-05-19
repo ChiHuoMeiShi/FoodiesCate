@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UIImageView+WebCache.h>
+#import "CHAISearchFoodTableModel.h"
 
 @interface CHRAIFoodCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic,strong)CHAISearchFoodTableModel * foodModel;
 @property (weak, nonatomic) IBOutlet UIImageView *showImageView;
 @property (weak, nonatomic) IBOutlet UILabel *showLabel;
 
