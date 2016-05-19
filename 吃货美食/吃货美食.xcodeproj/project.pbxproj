@@ -206,6 +206,7 @@
 		B748A54D1CEE323100A8338C /* CHPublishShiHuaOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B748A54B1CEE323100A8338C /* CHPublishShiHuaOneCell.xib */; };
 		B748A54F1CEE3F5D00A8338C /* CHTPublishSHCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = B748A5371CEDF63100A8338C /* CHTPublishSHCell.xib */; };
 		B748A5501CEE46EF00A8338C /* SHImgs.m in Sources */ = {isa = PBXBuildFile; fileRef = B748A5421CEDFCB200A8338C /* SHImgs.m */; };
+		B748A5511CEE497900A8338C /* CHCDiscoverTableViewcell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42181CEC851800F1283F /* CHCDiscoverTableViewcell.xib */; };
 		B7A3F5CC1CE4801700E09AED /* EChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5CB1CE4801700E09AED /* EChatModel.m */; };
 		B7A3F5CF1CE481F700E09AED /* Hot_topocModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5CE1CE481F700E09AED /* Hot_topocModel.m */; };
 		B7A3F5D21CE483F100E09AED /* User_infoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5D11CE483F100E09AED /* User_infoModel.m */; };
@@ -2581,6 +2582,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B748A5511CEE497900A8338C /* CHCDiscoverTableViewcell.xib in Sources */,
 				B748A5501CEE46EF00A8338C /* SHImgs.m in Sources */,
 				B748A54F1CEE3F5D00A8338C /* CHTPublishSHCell.xib in Sources */,
 				B7B7A5E51CEDEA8C002A80E7 /* CHDiscoverViewController.m in Sources */,
