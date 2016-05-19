@@ -15,6 +15,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brw-1C-NgI">
+                        <rect key="frame" x="8" y="8" width="304" height="27"/>
+                        <connections>
+                            <action selector="chooseButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UMi-RN-o6e"/>
+                        </connections>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="香肠" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTR-z5-v4w">
                         <rect key="frame" x="55" y="11" width="80" height="21"/>
                         <constraints>
@@ -22,7 +28,7 @@
                             <constraint firstAttribute="height" constant="21" id="qrh-2S-G1i"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diV-As-4dQ">
@@ -59,9 +65,13 @@
                     <constraint firstItem="wrM-vd-vuK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="1XH-gY-fRd"/>
                     <constraint firstItem="jTR-z5-v4w" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5RF-8b-XNL"/>
                     <constraint firstItem="jTR-z5-v4w" firstAttribute="leading" secondItem="diV-As-4dQ" secondAttribute="trailing" constant="6" id="8Mm-rH-Yz1"/>
+                    <constraint firstItem="Brw-1C-NgI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="BvY-7v-Cxf"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Brw-1C-NgI" secondAttribute="bottom" id="D4E-6g-Wok"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Brw-1C-NgI" secondAttribute="trailing" id="Lnz-ry-VIm"/>
                     <constraint firstItem="diV-As-4dQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="14" id="Q1l-hL-RK8"/>
                     <constraint firstItem="fJd-4e-KOq" firstAttribute="leading" secondItem="jTR-z5-v4w" secondAttribute="trailing" id="Sg0-SO-tWA"/>
                     <constraint firstItem="diV-As-4dQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="WxD-yX-AeV"/>
+                    <constraint firstItem="Brw-1C-NgI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="dL8-0v-53G"/>
                     <constraint firstItem="wrM-vd-vuK" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="hzP-1f-SwE"/>
                     <constraint firstItem="wrM-vd-vuK" firstAttribute="leading" secondItem="fJd-4e-KOq" secondAttribute="trailing" constant="3" id="keK-9K-bty"/>
                     <constraint firstItem="fJd-4e-KOq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="vdT-KK-BMD"/>

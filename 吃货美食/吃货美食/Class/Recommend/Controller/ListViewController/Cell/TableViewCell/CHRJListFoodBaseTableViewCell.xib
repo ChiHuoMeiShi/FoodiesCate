@@ -15,6 +15,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="322" height="78"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ui-bD-LfX">
+                        <rect key="frame" x="8" y="8" width="306" height="62"/>
+                        <connections>
+                            <action selector="chooseButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CtX-c4-tYo"/>
+                        </connections>
+                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKx-NR-5lB">
                         <rect key="frame" x="16" y="29" width="27" height="21"/>
                         <constraints>
@@ -58,6 +64,7 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="5ui-bD-LfX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="2VG-cL-lfD"/>
                     <constraint firstItem="PNj-m9-XYj" firstAttribute="leading" secondItem="xxV-rG-EQQ" secondAttribute="trailing" constant="10" id="3W1-o6-GGz"/>
                     <constraint firstItem="EKx-NR-5lB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8ML-qs-I6Z"/>
                     <constraint firstItem="PNj-m9-XYj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="EUm-4f-sPl"/>
@@ -68,6 +75,9 @@
                     <constraint firstItem="EKx-NR-5lB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="mYB-Wp-PYh"/>
                     <constraint firstItem="fiw-Vt-nbw" firstAttribute="leading" secondItem="EKx-NR-5lB" secondAttribute="trailing" id="nle-bu-bNG"/>
                     <constraint firstItem="tnI-81-uLq" firstAttribute="leading" secondItem="PNj-m9-XYj" secondAttribute="trailing" constant="10" id="rN5-zY-6rG"/>
+                    <constraint firstItem="5ui-bD-LfX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="tEG-jC-HFO"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="5ui-bD-LfX" secondAttribute="trailing" id="u1b-0j-MPW"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="5ui-bD-LfX" secondAttribute="bottom" id="zt0-If-uwV"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -77,7 +87,7 @@
                 <outlet property="secondImageView" destination="PNj-m9-XYj" id="bt0-Af-FLe"/>
                 <outlet property="thirdImageView" destination="tnI-81-uLq" id="eY4-oX-H0N"/>
             </connections>
-            <point key="canvasLocation" x="334" y="215.5"/>
+            <point key="canvasLocation" x="520" y="310.5"/>
         </tableViewCell>
     </objects>
 </document>

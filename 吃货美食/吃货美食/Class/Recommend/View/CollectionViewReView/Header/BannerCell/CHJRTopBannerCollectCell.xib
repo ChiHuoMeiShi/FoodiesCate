@@ -13,6 +13,12 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="440"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_yuanhu" translatesAutoresizingMaskIntoConstraints="NO" id="HSA-IZ-xwi">
+                        <rect key="frame" x="0.0" y="404" width="320" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="rN9-g3-C8y"/>
+                        </constraints>
+                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3py-Zc-K4J" customClass="CHJRTopBannerCellView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
                         <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -65,7 +71,10 @@
                 <constraint firstAttribute="trailing" secondItem="4aR-Qj-gVO" secondAttribute="trailing" id="Gqc-lr-n4U"/>
                 <constraint firstItem="T8A-I5-lKs" firstAttribute="top" secondItem="4aR-Qj-gVO" secondAttribute="bottom" constant="6" id="LMx-5e-2AD"/>
                 <constraint firstItem="3py-Zc-K4J" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Lv1-Dd-n1P"/>
+                <constraint firstItem="HSA-IZ-xwi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NUd-eG-d7l"/>
                 <constraint firstItem="3ww-4J-6OD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="W9O-A7-2WB"/>
+                <constraint firstAttribute="trailing" secondItem="HSA-IZ-xwi" secondAttribute="trailing" id="aea-fv-ezJ"/>
+                <constraint firstAttribute="bottom" secondItem="HSA-IZ-xwi" secondAttribute="bottom" id="bEp-Fy-uBq"/>
                 <constraint firstItem="VHZ-gG-9VI" firstAttribute="top" secondItem="3ww-4J-6OD" secondAttribute="bottom" constant="3" id="k8r-tv-RFm"/>
                 <constraint firstItem="4aR-Qj-gVO" firstAttribute="top" secondItem="VHZ-gG-9VI" secondAttribute="bottom" constant="13" id="lHe-qm-tcu"/>
                 <constraint firstItem="T8A-I5-lKs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pak-He-piU"/>
@@ -83,4 +92,7 @@
             <point key="canvasLocation" x="300" y="241"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="home_yuanhu" width="375" height="27"/>
+    </resources>
 </document>

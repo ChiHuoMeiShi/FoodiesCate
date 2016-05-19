@@ -63,4 +63,9 @@
     CGContextStrokePath(ctx);
 }
 
+- (IBAction)chooseButtonAction:(UIButton *)sender {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(getShowWebID:)]) {
+        [self.delegate  getShowWebID:self.searchModel.myID];
+    }
+}
 @end

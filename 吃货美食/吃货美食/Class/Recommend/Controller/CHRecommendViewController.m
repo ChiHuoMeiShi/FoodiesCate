@@ -24,13 +24,14 @@
     [super viewDidLoad];
     self.recommendCollection.tag = 10955617;
     self.navigationItem.leftBarButtonItem = nil;
-    self.title = @"";
     [self recommendCollectionRegister];
     [self getCollectionViewData];
     [self.backToTopButton addTarget:self action:@selector(backToTopButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self requestUpdateFoodData];
+    __weak typeof(self) mySelf = self;
+    self.recommendCollection.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [mySelf getCollectionViewData];
+    }];
 }
-
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -62,12 +63,15 @@
     NSString * url = @"http://api.meishi.cc/v5/index5.php?format=json";
     NSDictionary * dic = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"page":@"1",@"app_liketime":@"1462495842"};
     [self.afnManger.messageRequest POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [mySelf.recommendCollection.mj_header endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
 //        CHLog(@"%@",dic[@"obj"]);
         mySelf.recommendModel = [CHJRecommendModel mj_objectWithKeyValues:dic[@"obj"]];
+        [mySelf requestUpdateFoodData];
         [mySelf.recommendCollection reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         CHLog(@"%@",error);
+        [mySelf.recommendCollection.mj_header endRefreshing];
     }];
 }
 
@@ -81,6 +85,7 @@
     for (int pageCount = 1; pageCount < 4; pageCount++) {
         [likeDic setValue:@(pageCount) forKey:@"page"];
         [self.afnManger.messageRequest POST:likeURL parameters:likeDic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            [mySelf.recommendCollection.mj_footer endRefreshing];
             NSDictionary * dic = (NSDictionary *)responseObject;
             //        CHLog(@"%@",dic[@"obj"]);
             if (!mySelf.searchModel) {
@@ -92,6 +97,7 @@
             [mySelf.recommendCollection reloadData];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             CHLog(@"%@",error);
+            [mySelf.recommendCollection.mj_footer endRefreshing];
         }];
     }
 }
@@ -108,6 +114,7 @@
     [self.todayFooterView.todayBannerScrollerView rightShift];
     self.todayFooterView.todayBannerPageControl.currentPage = self.todayFooterView.todayBannerScrollerView.currentBannerCount;
 }
+
 #pragma mark - initSubs
 
 - (void)recommdTopBannerHeaderSetting{
@@ -267,7 +274,7 @@
             [funFooterView buttonSettingFun];
             __weak typeof(self)mySelf = self;
             funFooterView.topFunChoosePush = ^(UIViewController * pushVC){
-                [mySelf.navigationController pushViewController:pushVC animated:YES];
+                [mySelf.navigationController pushViewController:pushVC animated:NO];
             };
             return funFooterView;
         }else if (indexPath.section == 1){
