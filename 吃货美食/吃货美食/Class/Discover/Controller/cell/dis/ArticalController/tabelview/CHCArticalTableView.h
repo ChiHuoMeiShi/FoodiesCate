@@ -10,5 +10,5 @@
 
 @interface CHCArticalTableView : UITableView<UITableViewDataSource,UITableViewDelegate>
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style;
-
+//@property(nonatomic,strong)UIScrollView *tableViewTopScrollview;
 @end
