@@ -85,8 +85,6 @@
 		07AB42F11CECABD600F1283F /* CHArticalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB42E61CECABD600F1283F /* CHArticalViewController.xib */; };
 		07AB42F21CECABD600F1283F /* CHCSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42EA1CECABD600F1283F /* CHCSegment.m */; };
 		07AB42F31CECABD600F1283F /* CHCArticalTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42ED1CECABD600F1283F /* CHCArticalTableView.m */; };
-		07AB42F61CECAC0B00F1283F /* CHCArtScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42F51CECAC0B00F1283F /* CHCArtScrollerView.m */; };
-		07AB42F81CECAC4B00F1283F /* CHCArtScrollerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB42F71CECAC4B00F1283F /* CHCArtScrollerView.xib */; };
 		6302A48352870C94A21B65CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2714D066AF4EF14D1D1B684 /* libPods.a */; };
 		7A3411AE1CE89742003E4F3C /* CHRJSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3411AD1CE89742003E4F3C /* CHRJSearchView.m */; };
 		7A3411B21CE8A88F003E4F3C /* CHRJSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A3411B11CE8A88F003E4F3C /* CHRJSearchView.xib */; };
@@ -247,12 +245,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		073676251CEDFBF800AF337B /* CHCArticalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCArticalCell.h; sourceTree = "<group>"; };
+		073676261CEDFBF800AF337B /* CHCArticalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCArticalCell.m; sourceTree = "<group>"; };
+		073676271CEDFBF800AF337B /* CHCArticalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCArticalCell.xib; sourceTree = "<group>"; };
+		0736762A1CEDFC4700AF337B /* CHTopInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTopInfoCell.h; sourceTree = "<group>"; };
+		0736762B1CEDFC4700AF337B /* CHTopInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTopInfoCell.m; sourceTree = "<group>"; };
+		0736762C1CEDFC4700AF337B /* CHTopInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHTopInfoCell.xib; sourceTree = "<group>"; };
 		07AB41E11CEC851800F1283F /* CHCActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCActivityTableViewCell.h; sourceTree = "<group>"; };
 		07AB41E21CEC851800F1283F /* CHCActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCActivityTableViewCell.m; sourceTree = "<group>"; };
 		07AB41E31CEC851800F1283F /* CHCActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCActivityTableViewCell.xib; sourceTree = "<group>"; };
-		07AB41E51CEC851800F1283F /* CHCArticalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCArticalCell.h; sourceTree = "<group>"; };
-		07AB41E61CEC851800F1283F /* CHCArticalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCArticalCell.m; sourceTree = "<group>"; };
-		07AB41E71CEC851800F1283F /* CHCArticalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCArticalCell.xib; sourceTree = "<group>"; };
 		07AB41E91CEC851800F1283F /* CHVGoods_infoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHVGoods_infoTableViewCell.h; sourceTree = "<group>"; };
 		07AB41EA1CEC851800F1283F /* CHVGoods_infoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHVGoods_infoTableViewCell.m; sourceTree = "<group>"; };
 		07AB41EB1CEC851800F1283F /* CHVGoods_infoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHVGoods_infoTableViewCell.xib; sourceTree = "<group>"; };
@@ -327,9 +328,6 @@
 		07AB42481CEC851800F1283F /* CHRecipesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRecipesCell.h; sourceTree = "<group>"; };
 		07AB42491CEC851800F1283F /* CHRecipesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRecipesCell.m; sourceTree = "<group>"; };
 		07AB424A1CEC851800F1283F /* CHRecipesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRecipesCell.xib; sourceTree = "<group>"; };
-		07AB424C1CEC851800F1283F /* CHTopInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTopInfoCell.h; sourceTree = "<group>"; };
-		07AB424D1CEC851800F1283F /* CHTopInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTopInfoCell.m; sourceTree = "<group>"; };
-		07AB424E1CEC851800F1283F /* CHTopInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHTopInfoCell.xib; sourceTree = "<group>"; };
 		07AB42501CEC851800F1283F /* CHZTCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHZTCell.h; sourceTree = "<group>"; };
 		07AB42511CEC851800F1283F /* CHZTCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHZTCell.m; sourceTree = "<group>"; };
 		07AB42521CEC851800F1283F /* CHZTCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHZTCell.xib; sourceTree = "<group>"; };
@@ -380,9 +378,6 @@
 		07AB42EA1CECABD600F1283F /* CHCSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSegment.m; sourceTree = "<group>"; };
 		07AB42EC1CECABD600F1283F /* CHCArticalTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCArticalTableView.h; sourceTree = "<group>"; };
 		07AB42ED1CECABD600F1283F /* CHCArticalTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCArticalTableView.m; sourceTree = "<group>"; };
-		07AB42F41CECAC0B00F1283F /* CHCArtScrollerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCArtScrollerView.h; sourceTree = "<group>"; };
-		07AB42F51CECAC0B00F1283F /* CHCArtScrollerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCArtScrollerView.m; sourceTree = "<group>"; };
-		07AB42F71CECAC4B00F1283F /* CHCArtScrollerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCArtScrollerView.xib; sourceTree = "<group>"; };
 		5E24DDEC6F9C631EC52496A0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7A3411AC1CE89742003E4F3C /* CHRJSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJSearchView.h; sourceTree = "<group>"; };
 		7A3411AD1CE89742003E4F3C /* CHRJSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJSearchView.m; sourceTree = "<group>"; };
@@ -712,9 +707,9 @@
 		07AB41E41CEC851800F1283F /* article_infocell */ = {
 			isa = PBXGroup;
 			children = (
-				07AB41E51CEC851800F1283F /* CHCArticalCell.h */,
-				07AB41E61CEC851800F1283F /* CHCArticalCell.m */,
-				07AB41E71CEC851800F1283F /* CHCArticalCell.xib */,
+				073676251CEDFBF800AF337B /* CHCArticalCell.h */,
+				073676261CEDFBF800AF337B /* CHCArticalCell.m */,
+				073676271CEDFBF800AF337B /* CHCArticalCell.xib */,
 			);
 			path = article_infocell;
 			sourceTree = "<group>";
@@ -775,7 +770,6 @@
 			isa = PBXGroup;
 			children = (
 				07AB42E31CECABD600F1283F /* Controller */,
-				07AB42E71CECABD600F1283F /* scrollerView */,
 				07AB42E81CECABD600F1283F /* segment */,
 				07AB42EB1CECABD600F1283F /* tabelview */,
 				07AB42DF1CECABD600F1283F /* cell */,
@@ -952,9 +946,9 @@
 		07AB424B1CEC851800F1283F /* topic_info_cell */ = {
 			isa = PBXGroup;
 			children = (
-				07AB424C1CEC851800F1283F /* CHTopInfoCell.h */,
-				07AB424D1CEC851800F1283F /* CHTopInfoCell.m */,
-				07AB424E1CEC851800F1283F /* CHTopInfoCell.xib */,
+				0736762A1CEDFC4700AF337B /* CHTopInfoCell.h */,
+				0736762B1CEDFC4700AF337B /* CHTopInfoCell.m */,
+				0736762C1CEDFC4700AF337B /* CHTopInfoCell.xib */,
 			);
 			path = topic_info_cell;
 			sourceTree = "<group>";
@@ -1147,16 +1141,6 @@
 				07AB42E61CECABD600F1283F /* CHArticalViewController.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		07AB42E71CECABD600F1283F /* scrollerView */ = {
-			isa = PBXGroup;
-			children = (
-				07AB42F41CECAC0B00F1283F /* CHCArtScrollerView.h */,
-				07AB42F51CECAC0B00F1283F /* CHCArtScrollerView.m */,
-				07AB42F71CECAC4B00F1283F /* CHCArtScrollerView.xib */,
-			);
-			path = scrollerView;
 			sourceTree = "<group>";
 		};
 		07AB42E81CECABD600F1283F /* segment */ = {
@@ -2362,7 +2346,7 @@
 				7AA949451CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.xib in Resources */,
 				07AB42AC1CEC851800F1283F /* CHFruitViewController.xib in Resources */,
 				7AAF0A361CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.xib in Resources */,
-				07AB42F81CECAC4B00F1283F /* CHCArtScrollerView.xib in Resources */,
+				0736762E1CEDFC4700AF337B /* CHTopInfoCell.xib in Resources */,
 				07AB428A1CEC851800F1283F /* CHCActivityTableViewCell.xib in Resources */,
 				7AC792DA1CE85057001CBAA5 /* CHRJBasicViewController.xib in Resources */,
 				07AB42901CEC851800F1283F /* CHCaiDanCell.xib in Resources */,
@@ -2372,11 +2356,9 @@
 				B71E54951CE78C47003B6BE8 /* CHCateShowController.xib in Resources */,
 				07AB42C01CEC851800F1283F /* CHZTCell.xib in Resources */,
 				07AB42A21CEC851800F1283F /* CHCCaiDanViewController.xib in Resources */,
-				07AB428C1CEC851800F1283F /* CHCArticalCell.xib in Resources */,
 				7AAF0A401CE184A300708F98 /* CHJRecomdUpdateHCollectionReusableView.xib in Resources */,
 				B71E549F1CE78DBF003B6BE8 /* CHFoodClassViewController.xib in Resources */,
 				07AB42EF1CECABD600F1283F /* CHCArticalTableViewCell.xib in Resources */,
-				07AB42BE1CEC851800F1283F /* CHTopInfoCell.xib in Resources */,
 				7AAF0A4F1CE18C4000708F98 /* CHJRecomdSugstFCollectionReusableView.xib in Resources */,
 				7AC792F41CE85060001CBAA5 /* CHRJSearchDetailViewController.xib in Resources */,
 				B71E54851CE6F6B6003B6BE8 /* CHEChatDetailController.xib in Resources */,
@@ -2395,6 +2377,7 @@
 				7AC792F91CE85248001CBAA5 /* CHRJSearchCollectionViewCell.xib in Resources */,
 				B7A512AF1CE660060085A6C8 /* CHSixChatCell.xib in Resources */,
 				B7A512961CE658380085A6C8 /* CHTwoChatCell.xib in Resources */,
+				073676291CEDFBF800AF337B /* CHCArticalCell.xib in Resources */,
 				07AB42C21CEC851800F1283F /* CHDiscoverViewController.xib in Resources */,
 				B7A512A01CE65F590085A6C8 /* CHThreeChatCell.xib in Resources */,
 			);
@@ -2487,8 +2470,8 @@
 				7AD0DDA31CDCA7CE0057F8B2 /* JWClass.m in Sources */,
 				07AB428F1CEC851800F1283F /* CHCaiDanCell.m in Sources */,
 				B716865F1CE8257100BEBA3E /* CateUserInfo.m in Sources */,
+				073676281CEDFBF800AF337B /* CHCArticalCell.m in Sources */,
 				7AAF3F0C1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m in Sources */,
-				07AB42F61CECAC0B00F1283F /* CHCArtScrollerView.m in Sources */,
 				7AAF0A821CE1EFD600708F98 /* CHJRecomdTdayBannerModel.m in Sources */,
 				7AAF0A491CE1855300708F98 /* CHJRecmdUpdateCollectionViewCell.m in Sources */,
 				7A6ED6F51CE2FFD5005DF78C /* CHJRTopBannerCollectCell.m in Sources */,
@@ -2521,6 +2504,7 @@
 				07AB429E1CEC851800F1283F /* CHCuser_info_caidanlist.m in Sources */,
 				7AD547691CEE039100B91B73 /* CHRAIBAseFoodDefault.m in Sources */,
 				07AB42C41CEC851800F1283F /* CHCFindData.m in Sources */,
+				0736762D1CEDFC4700AF337B /* CHTopInfoCell.m in Sources */,
 				7AD0DDAA1CDCA7CE0057F8B2 /* UITabBarItem+TextCustom.m in Sources */,
 				07AB429C1CEC851800F1283F /* CHCCaiDandata.m in Sources */,
 				07AB42B91CEC851800F1283F /* CHCZhuanTiData_list.m in Sources */,
