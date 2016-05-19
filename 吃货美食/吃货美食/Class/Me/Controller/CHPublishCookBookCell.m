@@ -31,7 +31,7 @@
         
         [self.showImageView sd_setImageWithURL:[NSURL URLWithString:data.titlepic]];
         
-        self.nameLabel.text = data.titlepic;
+        self.nameLabel.text = data.title;
         
         NSString *hardString = [NSString stringWithFormat:@"%@步",data.step];
         

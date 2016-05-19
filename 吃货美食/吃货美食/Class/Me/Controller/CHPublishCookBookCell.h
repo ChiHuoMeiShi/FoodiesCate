@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ZTCookBookModel.h"
+
 @interface CHPublishCookBookCell : UITableViewCell
 @property (nonatomic,strong)ZTCookBookModel * cookBookModel;
 

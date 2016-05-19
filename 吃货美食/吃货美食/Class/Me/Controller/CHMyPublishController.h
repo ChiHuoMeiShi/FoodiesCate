@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define kPublishCBUrl @"http://api.meishi.cc/v5/my_recipe_new.php?format=json"
+#define kPublishSHUrl @"http://api.meishi.cc/v5/my_topic.php?format=json"
 @interface CHMyPublishController : UIViewController
 
 @end

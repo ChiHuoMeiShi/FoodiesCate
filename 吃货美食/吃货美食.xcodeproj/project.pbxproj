@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		078D15D61CEDA13600878771 /* CHRJAISearchViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6AC1CECA7F100F0AC08 /* CHRJAISearchViewController.h */; };
 		078D15D71CEDA13600878771 /* CHRJAISearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6AD1CECA7F100F0AC08 /* CHRJAISearchViewController.m */; };
 		078D15D81CEDA13600878771 /* CHRJAISearchViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6AE1CECA7F100F0AC08 /* CHRJAISearchViewController.xib */; };
 		07AB42891CEC851800F1283F /* CHCActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB41E21CEC851800F1283F /* CHCActivityTableViewCell.m */; };
@@ -34,7 +33,6 @@
 		07AB42A11CEC851800F1283F /* CHCCaiDanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42141CEC851800F1283F /* CHCCaiDanViewController.m */; };
 		07AB42A21CEC851800F1283F /* CHCCaiDanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB42151CEC851800F1283F /* CHCCaiDanViewController.xib */; };
 		07AB42A31CEC851800F1283F /* CHCDiscoverTableViewcell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42171CEC851800F1283F /* CHCDiscoverTableViewcell.m */; };
-		07AB42A41CEC851800F1283F /* CHCDiscoverTableViewcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB42181CEC851800F1283F /* CHCDiscoverTableViewcell.xib */; };
 		07AB42A51CEC851800F1283F /* CHCShiCaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB421B1CEC851800F1283F /* CHCShiCaiViewController.m */; };
 		07AB42A61CEC851800F1283F /* CHCShiCaiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB421C1CEC851800F1283F /* CHCShiCaiViewController.xib */; };
 		07AB42A71CEC851800F1283F /* CHFiveCrealsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB421F1CEC851800F1283F /* CHFiveCrealsViewController.m */; };
@@ -48,7 +46,6 @@
 		07AB42AF1CEC851800F1283F /* CHCShiCaiTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42311CEC851800F1283F /* CHCShiCaiTableView.m */; };
 		07AB42B01CEC851800F1283F /* CHCShiCaiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42331CEC851800F1283F /* CHCShiCaiTableViewCell.m */; };
 		07AB42B11CEC851800F1283F /* CHCShiCaiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB42341CEC851800F1283F /* CHCShiCaiTableViewCell.xib */; };
-		07AB42B21CEC851800F1283F /* CHCVegetableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42361CEC851800F1283F /* CHCVegetableController.m */; };
 		07AB42B31CEC851800F1283F /* CHCVegetableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB42371CEC851800F1283F /* CHCVegetableController.xib */; };
 		07AB42B41CEC851800F1283F /* CHCZhuanTiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB423A1CEC851800F1283F /* CHCZhuanTiTableViewCell.m */; };
 		07AB42B51CEC851800F1283F /* CHCZhuanTiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB423B1CEC851800F1283F /* CHCZhuanTiTableViewCell.xib */; };
@@ -63,14 +60,12 @@
 		07AB42BE1CEC851800F1283F /* CHTopInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB424E1CEC851800F1283F /* CHTopInfoCell.xib */; };
 		07AB42BF1CEC851800F1283F /* CHZTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42511CEC851800F1283F /* CHZTCell.m */; };
 		07AB42C01CEC851800F1283F /* CHZTCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB42521CEC851800F1283F /* CHZTCell.xib */; };
-		07AB42C11CEC851800F1283F /* CHDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42541CEC851800F1283F /* CHDiscoverViewController.m */; };
 		07AB42C21CEC851800F1283F /* CHDiscoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB42551CEC851800F1283F /* CHDiscoverViewController.xib */; };
 		07AB42C31CEC851800F1283F /* CHCfaxian_list.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42591CEC851800F1283F /* CHCfaxian_list.m */; };
 		07AB42C41CEC851800F1283F /* CHCFindData.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB425B1CEC851800F1283F /* CHCFindData.m */; };
 		07AB42C51CEC851800F1283F /* CHCCaidan_list.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB425F1CEC851800F1283F /* CHCCaidan_list.m */; };
 		07AB42C61CEC851800F1283F /* CHCGongxiao_list.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42621CEC851800F1283F /* CHCGongxiao_list.m */; };
 		07AB42C71CEC851800F1283F /* CHCgongyi_info_list.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42651CEC851800F1283F /* CHCgongyi_info_list.m */; };
-		07AB42C81CEC851800F1283F /* CHCgoods_info_list.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42681CEC851800F1283F /* CHCgoods_info_list.m */; };
 		07AB42C91CEC851800F1283F /* CHCHuoDong_list.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB426B1CEC851800F1283F /* CHCHuoDong_list.m */; };
 		07AB42CA1CEC851800F1283F /* CHCHuoDongimag_list.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB426D1CEC851800F1283F /* CHCHuoDongimag_list.m */; };
 		07AB42CB1CEC851800F1283F /* CHCimages_list.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42701CEC851800F1283F /* CHCimages_list.m */; };
@@ -203,6 +198,14 @@
 		B72A06971CE369D50091986F /* CHEChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B72A06951CE369D50091986F /* CHEChatCell.xib */; };
 		B72A06A31CE3AEF00091986F /* CHEChatHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B72A06A21CE3AEF00091986F /* CHEChatHeaderView.m */; };
 		B72A06A51CE3AF200091986F /* CHEChatHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B72A06A41CE3AF200091986F /* CHEChatHeaderView.xib */; };
+		B748A5381CEDF63100A8338C /* CHTPublishSHCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B748A5361CEDF63100A8338C /* CHTPublishSHCell.m */; };
+		B748A5391CEDF63100A8338C /* CHTPublishSHCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B748A5371CEDF63100A8338C /* CHTPublishSHCell.xib */; };
+		B748A53D1CEDF73600A8338C /* ShiHuaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B748A53C1CEDF73600A8338C /* ShiHuaModel.m */; };
+		B748A5401CEDF7AA00A8338C /* SHData.m in Sources */ = {isa = PBXBuildFile; fileRef = B748A53F1CEDF7AA00A8338C /* SHData.m */; };
+		B748A54C1CEE323100A8338C /* CHPublishShiHuaOneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B748A54A1CEE323100A8338C /* CHPublishShiHuaOneCell.m */; };
+		B748A54D1CEE323100A8338C /* CHPublishShiHuaOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B748A54B1CEE323100A8338C /* CHPublishShiHuaOneCell.xib */; };
+		B748A54F1CEE3F5D00A8338C /* CHTPublishSHCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = B748A5371CEDF63100A8338C /* CHTPublishSHCell.xib */; };
+		B748A5501CEE46EF00A8338C /* SHImgs.m in Sources */ = {isa = PBXBuildFile; fileRef = B748A5421CEDFCB200A8338C /* SHImgs.m */; };
 		B7A3F5CC1CE4801700E09AED /* EChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5CB1CE4801700E09AED /* EChatModel.m */; };
 		B7A3F5CF1CE481F700E09AED /* Hot_topocModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5CE1CE481F700E09AED /* Hot_topocModel.m */; };
 		B7A3F5D21CE483F100E09AED /* User_infoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5D11CE483F100E09AED /* User_infoModel.m */; };
@@ -238,6 +241,10 @@
 		B7B7A5D91CECA4BA002A80E7 /* CBData.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B7A5D81CECA4BA002A80E7 /* CBData.m */; };
 		B7B7A5DE1CEDB3D0002A80E7 /* CHPublishCookBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B7A5DC1CEDB3D0002A80E7 /* CHPublishCookBookCell.m */; };
 		B7B7A5DF1CEDB3D0002A80E7 /* CHPublishCookBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7B7A5DD1CEDB3D0002A80E7 /* CHPublishCookBookCell.xib */; };
+		B7B7A5E21CEDEA72002A80E7 /* CHCVegetableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42361CEC851800F1283F /* CHCVegetableController.m */; };
+		B7B7A5E31CEDEA72002A80E7 /* CHCVegetableController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42371CEC851800F1283F /* CHCVegetableController.xib */; };
+		B7B7A5E51CEDEA8C002A80E7 /* CHDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42541CEC851800F1283F /* CHDiscoverViewController.m */; };
+		B7B7A5E61CEDEA8C002A80E7 /* CHDiscoverViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42551CEC851800F1283F /* CHDiscoverViewController.xib */; };
 		B7DBAA901CEAC373002534B6 /* CHHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA8F1CEAC373002534B6 /* CHHTTPSessionManager.m */; };
 		B7DBAA931CEAC427002534B6 /* CHUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA921CEAC427002534B6 /* CHUserRequest.m */; };
 		B7DBAA961CEAC4A7002534B6 /* CHMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA951CEAC4A7002534B6 /* CHMessageRequest.m */; };
@@ -590,6 +597,18 @@
 		B72A06A11CE3AEF00091986F /* CHEChatHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHEChatHeaderView.h; sourceTree = "<group>"; };
 		B72A06A21CE3AEF00091986F /* CHEChatHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHEChatHeaderView.m; sourceTree = "<group>"; };
 		B72A06A41CE3AF200091986F /* CHEChatHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHEChatHeaderView.xib; sourceTree = "<group>"; };
+		B748A5351CEDF63100A8338C /* CHTPublishSHCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTPublishSHCell.h; sourceTree = "<group>"; };
+		B748A5361CEDF63100A8338C /* CHTPublishSHCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTPublishSHCell.m; sourceTree = "<group>"; };
+		B748A5371CEDF63100A8338C /* CHTPublishSHCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHTPublishSHCell.xib; sourceTree = "<group>"; };
+		B748A53B1CEDF73600A8338C /* ShiHuaModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShiHuaModel.h; sourceTree = "<group>"; };
+		B748A53C1CEDF73600A8338C /* ShiHuaModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShiHuaModel.m; sourceTree = "<group>"; };
+		B748A53E1CEDF7AA00A8338C /* SHData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHData.h; sourceTree = "<group>"; };
+		B748A53F1CEDF7AA00A8338C /* SHData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHData.m; sourceTree = "<group>"; };
+		B748A5411CEDFCB200A8338C /* SHImgs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHImgs.h; sourceTree = "<group>"; };
+		B748A5421CEDFCB200A8338C /* SHImgs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHImgs.m; sourceTree = "<group>"; };
+		B748A5491CEE323100A8338C /* CHPublishShiHuaOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHPublishShiHuaOneCell.h; sourceTree = "<group>"; };
+		B748A54A1CEE323100A8338C /* CHPublishShiHuaOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHPublishShiHuaOneCell.m; sourceTree = "<group>"; };
+		B748A54B1CEE323100A8338C /* CHPublishShiHuaOneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHPublishShiHuaOneCell.xib; sourceTree = "<group>"; };
 		B7A3F5CA1CE4801700E09AED /* EChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EChatModel.h; path = EChatModel/EChatModel.h; sourceTree = "<group>"; };
 		B7A3F5CB1CE4801700E09AED /* EChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EChatModel.m; path = EChatModel/EChatModel.m; sourceTree = "<group>"; };
 		B7A3F5CD1CE481F700E09AED /* Hot_topocModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hot_topocModel.h; path = EChatModel/Hot_topocModel.h; sourceTree = "<group>"; };
@@ -2014,6 +2033,42 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		B748A5331CEDF28C00A8338C /* CookBookCell */ = {
+			isa = PBXGroup;
+			children = (
+				B7B7A5DB1CEDB3D0002A80E7 /* CHPublishCookBookCell.h */,
+				B7B7A5DC1CEDB3D0002A80E7 /* CHPublishCookBookCell.m */,
+				B7B7A5DD1CEDB3D0002A80E7 /* CHPublishCookBookCell.xib */,
+			);
+			name = CookBookCell;
+			sourceTree = "<group>";
+		};
+		B748A5341CEDF60200A8338C /* ShiHuaCell */ = {
+			isa = PBXGroup;
+			children = (
+				B748A5351CEDF63100A8338C /* CHTPublishSHCell.h */,
+				B748A5361CEDF63100A8338C /* CHTPublishSHCell.m */,
+				B748A5371CEDF63100A8338C /* CHTPublishSHCell.xib */,
+				B748A5491CEE323100A8338C /* CHPublishShiHuaOneCell.h */,
+				B748A54A1CEE323100A8338C /* CHPublishShiHuaOneCell.m */,
+				B748A54B1CEE323100A8338C /* CHPublishShiHuaOneCell.xib */,
+			);
+			name = ShiHuaCell;
+			sourceTree = "<group>";
+		};
+		B748A53A1CEDF65500A8338C /* ShiHuaModel */ = {
+			isa = PBXGroup;
+			children = (
+				B748A53B1CEDF73600A8338C /* ShiHuaModel.h */,
+				B748A53C1CEDF73600A8338C /* ShiHuaModel.m */,
+				B748A53E1CEDF7AA00A8338C /* SHData.h */,
+				B748A53F1CEDF7AA00A8338C /* SHData.m */,
+				B748A5411CEDFCB200A8338C /* SHImgs.h */,
+				B748A5421CEDFCB200A8338C /* SHImgs.m */,
+			);
+			name = ShiHuaModel;
+			sourceTree = "<group>";
+		};
 		B7A3F5C81CE47F7700E09AED /* EChatModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -2091,6 +2146,7 @@
 				B7B7A5D51CECA382002A80E7 /* ZTCookBookModel.m */,
 				B7B7A5D71CECA4BA002A80E7 /* CBData.h */,
 				B7B7A5D81CECA4BA002A80E7 /* CBData.m */,
+				B748A53A1CEDF65500A8338C /* ShiHuaModel */,
 			);
 			name = CookBookModel;
 			sourceTree = "<group>";
@@ -2098,9 +2154,8 @@
 		B7B7A5DA1CEDB38E002A80E7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B7B7A5DB1CEDB3D0002A80E7 /* CHPublishCookBookCell.h */,
-				B7B7A5DC1CEDB3D0002A80E7 /* CHPublishCookBookCell.m */,
-				B7B7A5DD1CEDB3D0002A80E7 /* CHPublishCookBookCell.xib */,
+				B748A5341CEDF60200A8338C /* ShiHuaCell */,
+				B748A5331CEDF28C00A8338C /* CookBookCell */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -2395,6 +2450,7 @@
 				B71ED8611CDB41660035F6BE /* LaunchScreen.storyboard in Resources */,
 				B72A06971CE369D50091986F /* CHEChatCell.xib in Resources */,
 				B71ED85E1CDB41660035F6BE /* Assets.xcassets in Resources */,
+				B748A54D1CEE323100A8338C /* CHPublishShiHuaOneCell.xib in Resources */,
 				7A53C7891CEB0A070098BFEC /* CHRJListFoodBaseTableViewCell.xib in Resources */,
 				07AB42A81CEC851800F1283F /* CHFiveCrealsViewController.xib in Resources */,
 				7AC8C42A1CE4AE7D0043CAEC /* CHRJSortViewController.xib in Resources */,
@@ -2410,6 +2466,7 @@
 				B7A512C11CE660DF0085A6C8 /* CHNineChatCell.xib in Resources */,
 				7A6ED6F61CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib in Resources */,
 				7A53C7831CEB09C20098BFEC /* CHRJListFoodTableViewCell.xib in Resources */,
+				B748A5391CEDF63100A8338C /* CHTPublishSHCell.xib in Resources */,
 				B7F6155A1CDC857700AF1697 /* CHEChatViewController.xib in Resources */,
 				7AC792F81CE85060001CBAA5 /* CHRJSearchViewController.xib in Resources */,
 				B7A512BC1CE660A40085A6C8 /* CHEightChatCell.xib in Resources */,
@@ -2524,12 +2581,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078D15D61CEDA13600878771 /* CHRJAISearchViewController.h in Sources */,
+				B748A5501CEE46EF00A8338C /* SHImgs.m in Sources */,
+				B748A54F1CEE3F5D00A8338C /* CHTPublishSHCell.xib in Sources */,
+				B7B7A5E51CEDEA8C002A80E7 /* CHDiscoverViewController.m in Sources */,
+				B7B7A5E61CEDEA8C002A80E7 /* CHDiscoverViewController.xib in Sources */,
+				B7B7A5E21CEDEA72002A80E7 /* CHCVegetableController.m in Sources */,
+				B748A53D1CEDF73600A8338C /* ShiHuaModel.m in Sources */,
+				B7B7A5E31CEDEA72002A80E7 /* CHCVegetableController.xib in Sources */,
 				078D15D71CEDA13600878771 /* CHRJAISearchViewController.m in Sources */,
 				078D15D81CEDA13600878771 /* CHRJAISearchViewController.xib in Sources */,
 				7AC792F11CE85060001CBAA5 /* CHRJSearchTableViewCell.m in Sources */,
 				B71E549E1CE78DBF003B6BE8 /* CHFoodClassViewController.m in Sources */,
 				07AB42C31CEC851800F1283F /* CHCfaxian_list.m in Sources */,
+				B748A54C1CEE323100A8338C /* CHPublishShiHuaOneCell.m in Sources */,
 				7AD0DDA91CDCA7CE0057F8B2 /* UILabel+SizeToFit.m in Sources */,
 				B7F615591CDC857700AF1697 /* CHEChatViewController.m in Sources */,
 				7AAF0A5C1CE1DB0F00708F98 /* CHJRTopFunctionModel.m in Sources */,
@@ -2544,6 +2608,7 @@
 				7AA5D68C1CEA15AA007D0912 /* CHRJListCollectionViewCell.m in Sources */,
 				7A6ED7041CE31E87005DF78C /* CHJRTopBannerCellView.m in Sources */,
 				7AA5D6871CE9FB86007D0912 /* CHRJListToolBarContentModel.m in Sources */,
+				07AB42A51CEC851800F1283F /* CHCShiCaiViewController.m in Sources */,
 				B7F6156C1CDCA17700AF1697 /* CHRecommendViewController.m in Sources */,
 				7A53C7791CEAFC790098BFEC /* CHRJListSearchFoodModel.m in Sources */,
 				7A3411AE1CE89742003E4F3C /* CHRJSearchView.m in Sources */,
@@ -2577,6 +2642,7 @@
 				07AB42B81CEC851800F1283F /* CHCZhuanTiData.m in Sources */,
 				B7A512B31CE6605D0085A6C8 /* CHSevenChatCell.m in Sources */,
 				7AD0DDAC1CDCA7CE0057F8B2 /* UIColor+HexColor.m in Sources */,
+				B748A5401CEDF7AA00A8338C /* SHData.m in Sources */,
 				07AB42A31CEC851800F1283F /* CHCDiscoverTableViewcell.m in Sources */,
 				07AB42951CEC851800F1283F /* CHCArticalData.m in Sources */,
 				7AA5D6841CE9E9C2007D0912 /* CHRJListToolBarModel.m in Sources */,
@@ -2607,6 +2673,7 @@
 				07AB42AD1CEC851800F1283F /* CHCMeatViewController.m in Sources */,
 				07AB42B61CEC851800F1283F /* CHZhuanTiViewController.m in Sources */,
 				07AB42911CEC851800F1283F /* CHClickTableViewCell.m in Sources */,
+				B748A5381CEDF63100A8338C /* CHTPublishSHCell.m in Sources */,
 				7A3411BC1CE8C6AB003E4F3C /* CHRJSearchColViewCell.m in Sources */,
 				07AB42A11CEC851800F1283F /* CHCCaiDanViewController.m in Sources */,
 				07AB42AA1CEC851800F1283F /* CHCSHiCaiObjData.m in Sources */,
@@ -2680,6 +2747,7 @@
 				B72A06961CE369D50091986F /* CHEChatCell.m in Sources */,
 				7AA949441CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.m in Sources */,
 				7AD0DDA71CDCA7CE0057F8B2 /* JWUIClass.m in Sources */,
+				07AB42D21CEC851800F1283F /* CHArticle_info_list.m in Sources */,
 				B7A512BB1CE660A40085A6C8 /* CHEightChatCell.m in Sources */,
 				B7DBAA961CEAC4A7002534B6 /* CHMessageRequest.m in Sources */,
 				B7A3F5CC1CE4801700E09AED /* EChatModel.m in Sources */,

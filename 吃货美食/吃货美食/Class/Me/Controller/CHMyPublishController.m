@@ -11,6 +11,14 @@
 #import "ZTCookBookModel.h"
 #import <MJExtension.h>
 #import <MJRefresh.h>
+#import "CHPublishCookBookCell.h"
+#import "CHTPublishSHCell.h"
+#import "CHPublishShiHuaOneCell.h"
+#import "CBData.h"
+#import "ShiHuaModel.h"
+#import "SHData.h"
+#import "SHImgs.h"
+#import <UIImageView+WebCache.h>
 @interface CHMyPublishController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSInteger _selectIndex;
@@ -18,6 +26,7 @@
 
 @property(nonatomic,strong)ZTCookBookModel *cookBookModel;
 
+@property (nonatomic,strong)ShiHuaModel *shihuaModel;
 @property(nonatomic,strong)UITableView *mTableView;
 
 
@@ -32,8 +41,13 @@
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
 
     
+    //注册cell
+    [self.mTableView registerNib:[UINib nibWithNibName:@"CHPublishCookBookCell" bundle:nil] forCellReuseIdentifier:@"CHPublishCookBookCell"];
+    [self.mTableView registerNib:[UINib nibWithNibName:@"CHTPublishSHCell" bundle:nil] forCellReuseIdentifier:@"CHTPublishSHCell"];
+    [self.mTableView registerNib:[UINib nibWithNibName:@"CHPublishShiHuaOneCell" bundle:nil] forCellReuseIdentifier:@"CHPublishShiHuaOneCell"];
     [self addHeader];
-    [self getPublishData];
+    [self getPublishCBData];
+    [self getPublishSHData];
     
 }
 - (UITableView *)mTableView
@@ -43,6 +57,7 @@
         
         _mTableView.delegate = self;
         _mTableView.dataSource = self;
+//        _mTableView.rowHeight = UITableViewAutomaticDimension;
     }
     return _mTableView;
 }
@@ -54,53 +69,86 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+
+    
     if (0 == _selectIndex) {
         //用菜单模型的data.count
-        return 10;
+        return self.cookBookModel.data.count;
     }else
         //食话模型的count
-        return 20;
+        return self.shihuaModel.data.count;
     
-
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     if (0 == _selectIndex) {
         //加载菜单的cell
-        static NSString *ID = @"ZTCell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-        if (!cell)
-        {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        }
-        cell.textLabel.text = [NSString stringWithFormat:@"测试数据------%ld",(long)indexPath.row];
-        return cell;
+        CHPublishCookBookCell *cbCell = [tableView dequeueReusableCellWithIdentifier:@"CHPublishCookBookCell"];
+        ZTCookBookModel *cbModel = self.cookBookModel;
+        cbCell.cookBookModel = cbModel;
+        return cbCell;
     }
-        //加载食话的cell
-    static NSString *ID = @"ZTCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    if (!cell)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
-    cell.textLabel.text = [NSString stringWithFormat:@"测试数据------%ld",(long)indexPath.row];
-    return cell;
     
+    SHData *shData = self.shihuaModel.data[indexPath.row];
+        //加载食话的cell
+    if ([shData.img_num intValue] == 0) {
+        CHPublishShiHuaOneCell *shCell = [tableView dequeueReusableCellWithIdentifier:@"CHPublishShiHuaOneCell"];
+        shCell.summaryLabel.text = shData.summary;
+        shCell.createLabel.text = shData.create_time;
+        return shCell;
+    }
+    
+    SHImgs *imgs = shData.imgs[0];
+    CHTPublishSHCell *shCell = [tableView dequeueReusableCellWithIdentifier:@"CHTPublishSHCell"];
+    shCell.summaryLabel.text = shData.summary;
+    shCell.createLabel.text = shData.create_time;
+    [shCell.imgView sd_setImageWithURL:[NSURL URLWithString:imgs.small]];
+    return shCell;
+
 }
+#pragma mark -- UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SHData *shData = self.shihuaModel.data[indexPath.row];
+    if (0 == _selectIndex) {
+        return 124.f;
+    }
+    if ([shData.img_num intValue] == 0) {
+        return 81.f;
+    }
+    return 406.f;
+}
+
 #pragma mark -- GetPublishData
-- (void)getPublishData{
+- (void)getPublishCBData{
     CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
     CHHTTPRequestManager *myManager = [CHHTTPRequestManager manager];
     myManager.userRequest.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     [myManager.userRequest.requestSerializer setAuthorizationHeaderFieldWithUsername:userDefault.email password:userDefault.password];
-    NSString *url = @"http://api.meishi.cc/v5/my_recipe_new.php?format=json";
+    NSString *url = kPublishCBUrl;
     NSDictionary *parameter = @{@"lat" : @"34.6049907522264",@"lon" : @"112.4229875834745",@"source" : @"iphone" ,@"format" : @"json",@"uid" : userDefault.user_id ,@"page":@"1"};
     __weak typeof(self) mySelf = self;
     [myManager.userRequest POST:url parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary * dic = (NSDictionary *)responseObject;
         CHLog(@"%@",dic);
         mySelf.cookBookModel = [ZTCookBookModel mj_objectWithKeyValues:dic];
+        [mySelf.mTableView reloadData];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    }];
+}
+- (void)getPublishSHData{
+    CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
+    CHHTTPRequestManager *myManager = [CHHTTPRequestManager manager];
+    myManager.userRequest.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+    [myManager.userRequest.requestSerializer setAuthorizationHeaderFieldWithUsername:userDefault.email password:userDefault.password];
+    NSString *url = kPublishSHUrl;
+    NSDictionary *parameter = @{@"lat" : @"34.6049907522264",@"lon" : @"112.4229875834745",@"source" : @"iphone" ,@"format" : @"json",@"uid" : userDefault.user_id ,@"page":@"1"};
+    __weak typeof(self) mySelf = self;
+    [myManager.userRequest POST:url parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary * dic = (NSDictionary *)responseObject;
+        CHLog(@"%@",dic);
+        mySelf.shihuaModel = [ShiHuaModel mj_objectWithKeyValues:dic];
         [mySelf.mTableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];
@@ -134,9 +182,13 @@
     if (0 == _selectIndex) {
         //加载我发布的菜单
         
+        
+        [self.mTableView reloadData];
     }else if (1 == _selectIndex){
         //加载我发布的食话
         
+        
+        [self.mTableView reloadData];
     }
 }
 - (void)navBackAction

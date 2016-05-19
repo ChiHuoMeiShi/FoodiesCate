@@ -12,5 +12,4 @@
 @interface CHCShiCaiTableView : UITableView<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)CHCShiCaiData *data2;
 
--(void)WithData:(CHCShiCaiData*) data;
 @end
