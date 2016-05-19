@@ -107,22 +107,26 @@
 }
 #pragma mark -- AddHeaderView
 - (void)addHeader{
-    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 46.f)];
-    //tableView的headerview是  V
-    _mTableView.tableHeaderView = v;
-    //segment
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH, 59.f)];
+    CGFloat interval = 12.f;
     NSArray *segmentedArray = [[NSArray alloc]initWithObjects:@"菜谱",@"食话",nil];
     UISegmentedControl *segmentControl = [[UISegmentedControl alloc] initWithItems:segmentedArray];
     CGFloat segmentW = 300.f;//segment的宽度
-    CGFloat segmentH = 30.f;//高度
-    segmentControl.frame = CGRectMake(CHSCREENWIDTH / 2 - segmentW/2, 8, segmentW, segmentH);
+    CGFloat segmentH = 35.f;//高度
+    segmentControl.frame = CGRectMake(CHSCREENWIDTH / 2 - segmentW/2, interval, segmentW, segmentH);
     //设置默认索引序列
     segmentControl.selectedSegmentIndex = 0;
     segmentControl.tintColor = [UIColor redColor];
-    
     [segmentControl addTarget:self action:@selector(segmentItenAction:) forControlEvents:UIControlEventValueChanged];
-    [v addSubview:segmentControl];
+    //字体
+    NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:18.f]};
+    [segmentControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    
+    [headerView addSubview:segmentControl];
+    self.mTableView.tableHeaderView = headerView;
     [self.view addSubview:self.mTableView];
+
 }
 - (void)segmentItenAction:(UISegmentedControl *)segment{
     
