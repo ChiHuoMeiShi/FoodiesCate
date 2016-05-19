@@ -130,8 +130,9 @@
     NSDictionary *parameter = @{@"lat" : @"34.6049907522264",@"lon" : @"112.4229875834745",@"source" : @"iphone" ,@"format" : @"json",@"uid" : userDefault.user_id ,@"page":@"1"};
     __weak typeof(self) mySelf = self;
     [myManager.userRequest POST:url parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [mySelf.mTableView.mj_header endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
-        CHLog(@"%@",dic);
+//        CHLog(@"%@",dic);
         mySelf.cookBookModel = [ZTCookBookModel mj_objectWithKeyValues:dic];
         [mySelf.mTableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -146,8 +147,9 @@
     NSDictionary *parameter = @{@"lat" : @"34.6049907522264",@"lon" : @"112.4229875834745",@"source" : @"iphone" ,@"format" : @"json",@"uid" : userDefault.user_id ,@"page":@"1"};
     __weak typeof(self) mySelf = self;
     [myManager.userRequest POST:url parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [mySelf.mTableView.mj_header endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
-        CHLog(@"%@",dic);
+//        CHLog(@"%@",dic);
         mySelf.shihuaModel = [ShiHuaModel mj_objectWithKeyValues:dic];
         [mySelf.mTableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -181,12 +183,16 @@
     _selectIndex = segment.selectedSegmentIndex;
     if (0 == _selectIndex) {
         //加载我发布的菜单
-        
+        self.mTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            [self getPublishCBData];
+        }];
         
         [self.mTableView reloadData];
     }else if (1 == _selectIndex){
         //加载我发布的食话
-        
+        self.mTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            [self getPublishSHData];
+        }];
         
         [self.mTableView reloadData];
     }

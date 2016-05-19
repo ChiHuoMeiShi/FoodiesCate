@@ -7,10 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CHHTTPRequestManager.h"
+#import <UIImageView+WebCache.h>
 #import "CHRJBasicViewController.h"
+#import "CHAISearchFoodTableModel.h"
+#import "CHAISearchShowTableViewCell.h"
+#import "CHRAIGetBaseFoodProtocol.h"
+
 @interface CHRJAISearchViewController : UIViewController
+@property (nonatomic,strong)NSMutableArray * dataArray;
+
+@property (weak, nonatomic) IBOutlet UITextField *foodTextField;
+@property (weak, nonatomic) IBOutlet UITableView *baseFoodTableView;
+@property (nonatomic,strong)CHHTTPRequestManager * afnManger;
+
+@property (nonatomic,weak)id<CHRAIGetBaseFoodProtocol> delegate;
 
 - (IBAction)canelButtonAction:(UIButton *)sender;
-
 
 @end

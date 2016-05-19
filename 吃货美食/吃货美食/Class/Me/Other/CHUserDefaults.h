@@ -24,6 +24,7 @@
 
 @property (nonatomic,copy) NSString * email;
 
+
 + (instancetype)shareUserDefault;
 
 - (void)setUserDict:(NSDictionary *)userDict;

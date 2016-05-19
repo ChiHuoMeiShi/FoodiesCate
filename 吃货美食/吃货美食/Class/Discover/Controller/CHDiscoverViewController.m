@@ -105,7 +105,8 @@
     CHCaiDanCell *caidancell=[tableView dequeueReusableCellWithIdentifier:@"CDCCadancell"];
     
      CHZTCell *ztcell3=[tableView dequeueReusableCellWithIdentifier:@"CDCZtcell"];
-    CHTopInfoCell *topcell=[tableView dequeueReusableCellWithIdentifier:@"CDCtopcell"];
+    NSString *CellTableIdentifier = @"CDCtopcell";
+    CHTopInfoCell *topcell=[tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
    
     if (!discell&&indexPath.section==0)
     {

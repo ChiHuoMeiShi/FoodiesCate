@@ -7,13 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UIImageView+WebCache.h>
+#import "CHAISearchFoodTableModel.h"
 
 @interface CHRAIFoodCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic,strong)CHAISearchFoodTableModel * foodModel;
 @property (weak, nonatomic) IBOutlet UIImageView *showImageView;
 @property (weak, nonatomic) IBOutlet UILabel *showLabel;
 
-@property (weak, nonatomic) IBOutlet UIImageView *selectedImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *choosedImageView;
+
+@property (nonatomic,assign)BOOL isChoosed;
+@property (nonatomic,assign)BOOL isDelete;
+
+- (IBAction)chooseButtonAction:(UIButton *)sender;
 
 - (IBAction)deleButtonAction:(UIButton *)sender;
 

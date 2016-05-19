@@ -12,13 +12,12 @@
 #import "UIView+JWFrame.h"
 #import "CHCSegment.h"
 #import "CHCArticalTableView.h"
-#import "CHCArtScrollerView.h"
 @interface CHArticalViewController ()<UIScrollViewDelegate>
 @property (nonatomic,strong)UIScrollView *headscroll;
 @property (nonatomic,strong)UIScrollView *scrollerView;
 @property(nonatomic,strong)CHCSegment *segment;
 @property(nonatomic,strong)NSMutableArray *classesArr;
-//@property(nonatomic,strong)CHCArtScrollerView *scrollerView;
+@property(nonatomic,strong)UIScrollView *tableViewTopScrollview;
 @end
 
 @implementation CHArticalViewController
@@ -64,7 +63,7 @@
 }
 -(void)addScrollerWithTableView
 {
-//    _scrollerView=[CHCArtScrollerView addScrollView];
+
     _scrollerView=[[UIScrollView alloc]init];
    _scrollerView.backgroundColor=[UIColor greenColor];
    _scrollerView.frame=CGRectMake(0,80, self.view.width, self.view.height-80);
@@ -78,15 +77,17 @@
     
     for (int i=0;i<_segment.items.count; i++) {
         CHCArticalTableView *tabelView=[[CHCArticalTableView alloc]initWithFrame:CGRectMake(self.view.width*i,0, self.view.width, _scrollerView.frame.size.height) style:UITableViewStyleGrouped];
-        if(i==0){
-            tabelView.backgroundColor=[UIColor blueColor];
-        }else{
-             tabelView.backgroundColor=[UIColor redColor];
-        }
-        
-        
-        
-        
+        tabelView.tableHeaderView.backgroundColor=[UIColor redColor];
+        tabelView.sectionFooterHeight=300;
+          tabelView.sectionFooterHeight = 0;
+        _tableViewTopScrollview=[[UIScrollView alloc]init];
+        _tableViewTopScrollview.backgroundColor=[UIColor purpleColor];
+        _tableViewTopScrollview.frame=CGRectMake(0, 0, self.view.width, 200);
+        _tableViewTopScrollview.contentSize=CGSizeMake(self.view.width*4, 0);
+         _tableViewTopScrollview.showsHorizontalScrollIndicator = YES;
+           _tableViewTopScrollview.pagingEnabled=YES;
+//
+        [tabelView.tableHeaderView addSubview:_tableViewTopScrollview ];
         [_scrollerView addSubview:tabelView];
     }
     

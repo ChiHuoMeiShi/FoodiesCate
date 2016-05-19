@@ -1,36 +1,23 @@
 //
-//  CHRAIFoodCollectionViewCell.m
+//  CHAISearchShowTableViewCell.m
 //  吃货美食
 //
-//  Created by scjy on 16/5/18.
+//  Created by scjy on 16/5/19.
 //  Copyright © 2016年 赵天. All rights reserved.
 //
 
-#import "CHRAIFoodCollectionViewCell.h"
+#import "CHAISearchShowTableViewCell.h"
 
-@implementation CHRAIFoodCollectionViewCell
+@implementation CHAISearchShowTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
 }
 
-- (IBAction)chooseButtonAction:(UIButton *)sender {
-    self.isChoosed = !self.isChoosed;
-    self.choosedImageView.hidden = self.isChoosed;
-    
-}
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
 
-- (IBAction)deleButtonAction:(UIButton *)sender {
-    if (!self.isDelete)return;
-    
-}
-
-- (void)setSelected:(BOOL)selected{
-    [super setSelected:selected];
-    
-    UIView *bgColorView = [[UIView alloc] init];
-    bgColorView.backgroundColor = [UIColor colorWithHexString:@"#f5f5f5"];
-    [self setSelectedBackgroundView:bgColorView];
+    // Configure the view for the selected state
 }
 
 - (void)setFoodModel:(CHAISearchFoodTableModel *)foodModel{
@@ -44,7 +31,8 @@
     self.showLabel.text = self.foodModel.t;
     [[SDWebImageManager sharedManager]downloadImageWithURL:[NSURL URLWithString:self.foodModel.myImg] options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
         mySelf.showImageView.image = image;
-
+        
     }];
 }
+
 @end
