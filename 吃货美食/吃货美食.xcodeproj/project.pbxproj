@@ -19,6 +19,13 @@
 		7A53C7891CEB0A070098BFEC /* CHRJListFoodBaseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A53C7871CEB0A070098BFEC /* CHRJListFoodBaseTableViewCell.xib */; };
 		7A53C78D1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A53C78B1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.m */; };
 		7A53C78E1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A53C78C1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.xib */; };
+		7A67A69F1CEC8E5000F0AC08 /* CHRJAIFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A69D1CEC8E5000F0AC08 /* CHRJAIFoodViewController.m */; };
+		7A67A6A01CEC8E5000F0AC08 /* CHRJAIFoodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A67A69E1CEC8E5000F0AC08 /* CHRJAIFoodViewController.xib */; };
+		7A67A6A61CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6A41CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.m */; };
+		7A67A6A71CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A67A6A51CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.xib */; };
+		7A67A6AA1CEC9A2500F0AC08 /* CHRAIBaseFoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6A91CEC9A2500F0AC08 /* CHRAIBaseFoodModel.m */; };
+		7A67A6AF1CECA7F100F0AC08 /* CHRJAISearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6AD1CECA7F100F0AC08 /* CHRJAISearchViewController.m */; };
+		7A67A6B01CECA7F100F0AC08 /* CHRJAISearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A67A6AE1CECA7F100F0AC08 /* CHRJAISearchViewController.xib */; };
 		7A6ED6F51CE2FFD5005DF78C /* CHJRTopBannerCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ED6F31CE2FFD5005DF78C /* CHJRTopBannerCollectCell.m */; };
 		7A6ED6F61CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A6ED6F41CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib */; };
 		7A6ED7041CE31E87005DF78C /* CHJRTopBannerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ED7031CE31E87005DF78C /* CHJRTopBannerCellView.m */; };
@@ -189,6 +196,19 @@
 		7A53C78A1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJListFoodSearchTableViewCell.h; sourceTree = "<group>"; };
 		7A53C78B1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJListFoodSearchTableViewCell.m; sourceTree = "<group>"; };
 		7A53C78C1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRJListFoodSearchTableViewCell.xib; sourceTree = "<group>"; };
+		7A67A6991CEC677A00F0AC08 /* CHRJListFoodTableProtocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJListFoodTableProtocal.h; sourceTree = "<group>"; };
+		7A67A69A1CEC6E8900F0AC08 /* CHRJListFoodCollectionProtocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJListFoodCollectionProtocal.h; sourceTree = "<group>"; };
+		7A67A69C1CEC8E5000F0AC08 /* CHRJAIFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJAIFoodViewController.h; sourceTree = "<group>"; };
+		7A67A69D1CEC8E5000F0AC08 /* CHRJAIFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJAIFoodViewController.m; sourceTree = "<group>"; };
+		7A67A69E1CEC8E5000F0AC08 /* CHRJAIFoodViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRJAIFoodViewController.xib; sourceTree = "<group>"; };
+		7A67A6A31CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRAIFoodCollectionViewCell.h; sourceTree = "<group>"; };
+		7A67A6A41CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRAIFoodCollectionViewCell.m; sourceTree = "<group>"; };
+		7A67A6A51CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRAIFoodCollectionViewCell.xib; sourceTree = "<group>"; };
+		7A67A6A81CEC9A2500F0AC08 /* CHRAIBaseFoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRAIBaseFoodModel.h; sourceTree = "<group>"; };
+		7A67A6A91CEC9A2500F0AC08 /* CHRAIBaseFoodModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRAIBaseFoodModel.m; sourceTree = "<group>"; };
+		7A67A6AC1CECA7F100F0AC08 /* CHRJAISearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJAISearchViewController.h; sourceTree = "<group>"; };
+		7A67A6AD1CECA7F100F0AC08 /* CHRJAISearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJAISearchViewController.m; sourceTree = "<group>"; };
+		7A67A6AE1CECA7F100F0AC08 /* CHRJAISearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRJAISearchViewController.xib; sourceTree = "<group>"; };
 		7A6ED6F21CE2FFD5005DF78C /* CHJRTopBannerCollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHJRTopBannerCollectCell.h; sourceTree = "<group>"; };
 		7A6ED6F31CE2FFD5005DF78C /* CHJRTopBannerCollectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHJRTopBannerCollectCell.m; sourceTree = "<group>"; };
 		7A6ED6F41CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHJRTopBannerCollectCell.xib; sourceTree = "<group>"; };
@@ -514,6 +534,7 @@
 		7A53C77E1CEB097E0098BFEC /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				7A67A6981CEC66F000F0AC08 /* ViewProtorol */,
 				7A53C77F1CEB09C20098BFEC /* CHRJListFoodTableViewCell.h */,
 				7A53C7801CEB09C20098BFEC /* CHRJListFoodTableViewCell.m */,
 				7A53C7811CEB09C20098BFEC /* CHRJListFoodTableViewCell.xib */,
@@ -525,6 +546,57 @@
 				7A53C78C1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.xib */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		7A67A6981CEC66F000F0AC08 /* ViewProtorol */ = {
+			isa = PBXGroup;
+			children = (
+				7A67A6991CEC677A00F0AC08 /* CHRJListFoodTableProtocal.h */,
+				7A67A69A1CEC6E8900F0AC08 /* CHRJListFoodCollectionProtocal.h */,
+			);
+			path = ViewProtorol;
+			sourceTree = "<group>";
+		};
+		7A67A69B1CEC8DFA00F0AC08 /* AISetFood */ = {
+			isa = PBXGroup;
+			children = (
+				7A67A6AB1CECA7A600F0AC08 /* AISearchViewController */,
+				7A67A6A21CEC96B800F0AC08 /* Cell */,
+				7A67A6A11CEC96A900F0AC08 /* Model */,
+				7A67A69C1CEC8E5000F0AC08 /* CHRJAIFoodViewController.h */,
+				7A67A69D1CEC8E5000F0AC08 /* CHRJAIFoodViewController.m */,
+				7A67A69E1CEC8E5000F0AC08 /* CHRJAIFoodViewController.xib */,
+			);
+			path = AISetFood;
+			sourceTree = "<group>";
+		};
+		7A67A6A11CEC96A900F0AC08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7A67A6A81CEC9A2500F0AC08 /* CHRAIBaseFoodModel.h */,
+				7A67A6A91CEC9A2500F0AC08 /* CHRAIBaseFoodModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7A67A6A21CEC96B800F0AC08 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7A67A6A31CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.h */,
+				7A67A6A41CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.m */,
+				7A67A6A51CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		7A67A6AB1CECA7A600F0AC08 /* AISearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7A67A6AC1CECA7F100F0AC08 /* CHRJAISearchViewController.h */,
+				7A67A6AD1CECA7F100F0AC08 /* CHRJAISearchViewController.m */,
+				7A67A6AE1CECA7F100F0AC08 /* CHRJAISearchViewController.xib */,
+			);
+			path = AISearchViewController;
 			sourceTree = "<group>";
 		};
 		7A6ED6F11CE2FDB1005DF78C /* BannerCell */ = {
@@ -1491,6 +1563,7 @@
 		B7F615461CDC80B200AF1697 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7A67A69B1CEC8DFA00F0AC08 /* AISetFood */,
 				7AA5D67A1CE9E6A3007D0912 /* ListVIewController */,
 				7AC792DB1CE85060001CBAA5 /* SearchDetailViewController */,
 				7AC792EB1CE85060001CBAA5 /* SearchViewController */,
@@ -1648,6 +1721,8 @@
 				7A3411BD1CE8C6AB003E4F3C /* CHRJSearchColViewCell.xib in Resources */,
 				B71ED85C1CDB41660035F6BE /* Main.storyboard in Resources */,
 				7AA949451CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.xib in Resources */,
+				7A67A6A71CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.xib in Resources */,
+				7A67A6A01CEC8E5000F0AC08 /* CHRJAIFoodViewController.xib in Resources */,
 				7AAF0A361CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.xib in Resources */,
 				7AC792DA1CE85057001CBAA5 /* CHRJBasicViewController.xib in Resources */,
 				B7A512A51CE65F970085A6C8 /* CHTFourChatCell.xib in Resources */,
@@ -1655,6 +1730,7 @@
 				7AC8C4351CE4B2240043CAEC /* CHRJSortCollectionViewCell.xib in Resources */,
 				7AA5D68D1CEA15AA007D0912 /* CHRJListCollectionViewCell.xib in Resources */,
 				B71E54951CE78C47003B6BE8 /* CHCateShowController.xib in Resources */,
+				7A67A6B01CECA7F100F0AC08 /* CHRJAISearchViewController.xib in Resources */,
 				7AAF0A401CE184A300708F98 /* CHJRecomdUpdateHCollectionReusableView.xib in Resources */,
 				B7B7A5BC1CEC91AF002A80E7 /* CHMyPublishController.xib in Resources */,
 				B71E549F1CE78DBF003B6BE8 /* CHFoodClassViewController.xib in Resources */,
@@ -1782,6 +1858,7 @@
 				7AD0DDAA1CDCA7CE0057F8B2 /* UITabBarItem+TextCustom.m in Sources */,
 				7AAF0A371CE184A300708F98 /* CHJRecomdTodayBanerFCollectionReusableView.m in Sources */,
 				B71ED8561CDB41660035F6BE /* AppDelegate.m in Sources */,
+				7A67A6AF1CECA7F100F0AC08 /* CHRJAISearchViewController.m in Sources */,
 				B7A512951CE658380085A6C8 /* CHTwoChatCell.m in Sources */,
 				7AAF0A3F1CE184A300708F98 /* CHJRecomdUpdateHCollectionReusableView.m in Sources */,
 				B7A3F5CF1CE481F700E09AED /* Hot_topocModel.m in Sources */,
@@ -1797,13 +1874,16 @@
 				B7DBAAA61CEB035B002534B6 /* CHUserDefaults.m in Sources */,
 				7AD0DDAD1CDCA7CE0057F8B2 /* UIImage+Draught.m in Sources */,
 				B7F6154D1CDC84A600AF1697 /* CHTabBarController.m in Sources */,
+				7A67A6A61CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.m in Sources */,
 				7AAF0A791CE1ECFB00708F98 /* CHJRecommendJumpModel.m in Sources */,
 				7AAF0A5F1CE1DB7600708F98 /* CHJRTopListFunctModel.m in Sources */,
+				7A67A69F1CEC8E5000F0AC08 /* CHRJAIFoodViewController.m in Sources */,
 				7AC792D91CE85057001CBAA5 /* CHRJBasicViewController.m in Sources */,
 				7AAF0A3B1CE184A300708F98 /* CHJRecomdTodayHCollectionReusableView.m in Sources */,
 				B7A512AE1CE660060085A6C8 /* CHSixChatCell.m in Sources */,
 				B7B7A5C51CEC91E2002A80E7 /* CHMyDraftController.m in Sources */,
 				B7A5129F1CE65F590085A6C8 /* CHThreeChatCell.m in Sources */,
+				7A67A6AA1CEC9A2500F0AC08 /* CHRAIBaseFoodModel.m in Sources */,
 				B7A512C01CE660DF0085A6C8 /* CHNineChatCell.m in Sources */,
 				7AAF3F071CE3459E00573EF6 /* CHRWebViewController.m in Sources */,
 				7AD0DDAB1CDCA7CE0057F8B2 /* UIWindow+SettingWithVC.m in Sources */,

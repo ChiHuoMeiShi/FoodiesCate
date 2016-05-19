@@ -16,4 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webDetailView;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 
+- (instancetype)initWithURLString:(NSString *)urlString;
+
 @end

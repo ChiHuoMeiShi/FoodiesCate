@@ -8,6 +8,7 @@
 
 #import "CHRJBasicViewController.h"
 #import <MJExtension.h>
+#import <MJRefresh.h>
 
 #import "CHJRecommendModel.h"
 #import "CHJRecomdTopHCollectionReusableView.h"

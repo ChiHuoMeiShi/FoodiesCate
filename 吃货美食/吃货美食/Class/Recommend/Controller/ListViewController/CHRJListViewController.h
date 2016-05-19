@@ -8,6 +8,7 @@
 
 #import "CHRJBasicViewController.h"
 #import <MJExtension.h>
+
 @interface CHRJListViewController : CHRJBasicViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
@@ -15,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *foodMakeButton;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
 @property (weak, nonatomic) IBOutlet UIButton *typeButton;
-@property (nonatomic,strong)NSMutableArray * btnArray;
+@property (nonatomic,strong)NSArray * btnArray;
 @property (nonatomic,strong)NSMutableArray * btnDataArray;
 @property (nonatomic,assign)NSInteger btnCurrentCount;
 

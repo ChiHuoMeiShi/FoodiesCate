@@ -15,6 +15,7 @@
 #import "CHRJSearchDetailViewController.h"
 #import "CHRJSortModel.h"
 #import "CHRJListViewController.h"
+#import "CHRJAIFoodViewController.h"
 
 typedef void (^topFunChooseView)(UIViewController *);
 @interface CHJRecomdFucFCollectionReusableView : UICollectionReusableView

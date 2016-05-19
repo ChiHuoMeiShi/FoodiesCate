@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHRJAISearchViewController">
+            <connections>
+                <outlet property="baseFoodTableView" destination="2MF-cx-dml" id="UXh-zJ-ZuV"/>
+                <outlet property="foodTextField" destination="kdh-ic-7bB" id="VP6-lQ-Sxd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" alpha="0.80000000000000004" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="2MF-cx-dml">
+                    <rect key="frame" x="0.0" y="66" width="600" height="534"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYP-b5-aqd">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入要添加的食材" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kdh-ic-7bB">
+                            <rect key="frame" x="10" y="28" width="515" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="bPw-VB-HAL"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jk2-Qf-nHq">
+                            <rect key="frame" x="525" y="28" width="75" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="KXX-7h-ETw"/>
+                                <constraint firstAttribute="width" constant="75" id="au6-CG-FIt"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="取消">
+                                <color key="titleColor" red="1" green="0.29803921568627451" blue="0.22352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="canelButtonAction:" destination="-1" eventType="touchUpInside" id="daf-3F-0tv"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="jk2-Qf-nHq" secondAttribute="bottom" constant="6" id="9id-hE-UMT"/>
+                        <constraint firstItem="kdh-ic-7bB" firstAttribute="leading" secondItem="FYP-b5-aqd" secondAttribute="leading" constant="10" id="YXT-ML-HJD"/>
+                        <constraint firstAttribute="bottom" secondItem="kdh-ic-7bB" secondAttribute="bottom" constant="6" id="oKk-8a-U6J"/>
+                        <constraint firstItem="jk2-Qf-nHq" firstAttribute="leading" secondItem="kdh-ic-7bB" secondAttribute="trailing" id="rvN-UK-Z4n"/>
+                        <constraint firstAttribute="height" constant="64" id="sNd-3r-tKd"/>
+                        <constraint firstAttribute="trailing" secondItem="jk2-Qf-nHq" secondAttribute="trailing" id="zAX-qu-q8I"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="2MF-cx-dml" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7tu-JS-cOn"/>
+                <constraint firstAttribute="bottom" secondItem="2MF-cx-dml" secondAttribute="bottom" id="W1X-F5-KDf"/>
+                <constraint firstItem="FYP-b5-aqd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gli-k9-Cur"/>
+                <constraint firstAttribute="trailing" secondItem="2MF-cx-dml" secondAttribute="trailing" id="k2y-wI-5yL"/>
+                <constraint firstItem="FYP-b5-aqd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="kMj-5K-1DB"/>
+                <constraint firstItem="2MF-cx-dml" firstAttribute="top" secondItem="FYP-b5-aqd" secondAttribute="bottom" constant="2" id="o99-Ry-3G7"/>
+                <constraint firstAttribute="trailing" secondItem="FYP-b5-aqd" secondAttribute="trailing" id="vdz-Q2-zCw"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

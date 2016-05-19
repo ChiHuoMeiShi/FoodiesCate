@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CHRAIFoodCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="84" height="118"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="84" height="118"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RCi-Sw-uS8">
+                        <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="84" id="cQe-M5-dkk"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="西瓜" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ji2-Wl-RZl">
+                        <rect key="frame" x="0.0" y="89" width="84" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="XII-Ja-dOZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cd_checked" translatesAutoresizingMaskIntoConstraints="NO" id="ruW-ai-dtO">
+                        <rect key="frame" x="64" y="5" width="15" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="5KG-M8-fRA"/>
+                            <constraint firstAttribute="height" constant="15" id="puf-TE-pcS"/>
+                        </constraints>
+                    </imageView>
+                    <button hidden="YES" opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ttg-0p-nax">
+                        <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="84" id="XUU-eU-MnF"/>
+                        </constraints>
+                        <state key="normal" image="ms_del_icon"/>
+                        <connections>
+                            <action selector="deleButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Z6S-lr-RjB"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="Ttg-0p-nax" firstAttribute="top" secondItem="ruW-ai-dtO" secondAttribute="bottom" id="35R-C0-ExR"/>
+                <constraint firstItem="Ji2-Wl-RZl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9EP-Bc-tJM"/>
+                <constraint firstAttribute="trailing" secondItem="Ji2-Wl-RZl" secondAttribute="trailing" id="DKm-hx-dFV"/>
+                <constraint firstItem="Ttg-0p-nax" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Pah-pG-O4k"/>
+                <constraint firstAttribute="trailing" secondItem="ruW-ai-dtO" secondAttribute="trailing" constant="5" id="Q9n-h0-UVE"/>
+                <constraint firstAttribute="trailing" secondItem="RCi-Sw-uS8" secondAttribute="trailing" id="bFu-IV-KSG"/>
+                <constraint firstItem="Ttg-0p-nax" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="iKn-z6-EX5"/>
+                <constraint firstItem="RCi-Sw-uS8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lSu-mR-E7S"/>
+                <constraint firstAttribute="trailing" secondItem="Ttg-0p-nax" secondAttribute="trailing" id="mpV-Tt-sgK"/>
+                <constraint firstItem="RCi-Sw-uS8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nGH-dt-Y1p"/>
+                <constraint firstItem="ruW-ai-dtO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="q2D-3Z-1na"/>
+                <constraint firstAttribute="bottom" secondItem="Ttg-0p-nax" secondAttribute="bottom" id="vbl-Pu-bgv"/>
+                <constraint firstItem="Ji2-Wl-RZl" firstAttribute="top" secondItem="RCi-Sw-uS8" secondAttribute="bottom" constant="5" id="vxz-kH-IK1"/>
+            </constraints>
+            <size key="customSize" width="120" height="131"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="35R-C0-ExR"/>
+                    <exclude reference="vbl-Pu-bgv"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="selectedImageView" destination="ruW-ai-dtO" id="ACA-e1-alK"/>
+                <outlet property="showImageView" destination="RCi-Sw-uS8" id="tB0-NA-E62"/>
+                <outlet property="showLabel" destination="Ji2-Wl-RZl" id="m2V-H4-hFe"/>
+            </connections>
+            <point key="canvasLocation" x="148" y="218"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="cd_checked" width="16" height="16"/>
+        <image name="ms_del_icon" width="17" height="21"/>
+    </resources>
+</document>
