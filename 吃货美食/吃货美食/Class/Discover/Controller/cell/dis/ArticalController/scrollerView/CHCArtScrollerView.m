@@ -11,7 +11,7 @@
 @implementation CHCArtScrollerView
 +(id)addScrollView
 {
-    return [[[NSBundle mainBundle]loadNibNamed:@"CHCArtScrollerView" owner:nil options:nil] firstObject];
+    return [[[NSBundle mainBundle]loadNibNamed:@"CHCArtScrollerView" owner:nil options:nil] lastObject];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

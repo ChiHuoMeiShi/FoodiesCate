@@ -13,7 +13,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.perWidth = (self.width)/ 5;
+        self.perWidth = (self.width)/ 4;
         
         _items = items;
         

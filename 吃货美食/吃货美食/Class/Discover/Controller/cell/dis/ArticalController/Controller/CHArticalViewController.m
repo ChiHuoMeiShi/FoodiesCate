@@ -15,15 +15,18 @@
 #import "CHCArtScrollerView.h"
 @interface CHArticalViewController ()<UIScrollViewDelegate>
 @property (nonatomic,strong)UIScrollView *headscroll;
+@property (nonatomic,strong)UIScrollView *scrollerView;
 @property(nonatomic,strong)CHCSegment *segment;
 @property(nonatomic,strong)NSMutableArray *classesArr;
-@property(nonatomic,strong)CHCArtScrollerView *scrollerView;
+//@property(nonatomic,strong)CHCArtScrollerView *scrollerView;
 @end
 
 @implementation CHArticalViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.automaticallyAdjustsScrollViewInsets=NO;
+    
     _classesArr=[[NSMutableArray alloc]init];
     
     UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
@@ -61,6 +64,31 @@
 }
 -(void)addScrollerWithTableView
 {
+//    _scrollerView=[CHCArtScrollerView addScrollView];
+    _scrollerView=[[UIScrollView alloc]init];
+   _scrollerView.backgroundColor=[UIColor greenColor];
+   _scrollerView.frame=CGRectMake(0,80, self.view.width, self.view.height-80);
+   _scrollerView.delegate=self;
+    _scrollerView.contentSize=CGSizeMake(self.segment.items.count*self.view.width, self.view.height-80);
+    _scrollerView.pagingEnabled=YES;
+    _scrollerView.showsHorizontalScrollIndicator = YES;
+    _scrollerView.showsVerticalScrollIndicator = YES;
+    
+  [self.view addSubview:_scrollerView];
+    
+    for (int i=0;i<_segment.items.count; i++) {
+        CHCArticalTableView *tabelView=[[CHCArticalTableView alloc]initWithFrame:CGRectMake(self.view.width*i,0, self.view.width, _scrollerView.frame.size.height) style:UITableViewStyleGrouped];
+        if(i==0){
+            tabelView.backgroundColor=[UIColor blueColor];
+        }else{
+             tabelView.backgroundColor=[UIColor redColor];
+        }
+        
+        
+        
+        
+        [_scrollerView addSubview:tabelView];
+    }
     
 }
 -(void)getArTicalData
@@ -84,6 +112,7 @@
         }
         
         [self addSegment];
+        [self addScrollerWithTableView];
   //   [_zhuanTiTableView reloadData];
    
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

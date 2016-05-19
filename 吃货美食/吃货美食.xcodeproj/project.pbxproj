@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		078D15D61CEDA13600878771 /* CHRJAISearchViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6AC1CECA7F100F0AC08 /* CHRJAISearchViewController.h */; };
+		078D15D71CEDA13600878771 /* CHRJAISearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6AD1CECA7F100F0AC08 /* CHRJAISearchViewController.m */; };
+		078D15D81CEDA13600878771 /* CHRJAISearchViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6AE1CECA7F100F0AC08 /* CHRJAISearchViewController.xib */; };
 		07AB42891CEC851800F1283F /* CHCActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB41E21CEC851800F1283F /* CHCActivityTableViewCell.m */; };
 		07AB428A1CEC851800F1283F /* CHCActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AB41E31CEC851800F1283F /* CHCActivityTableViewCell.xib */; };
 		07AB428B1CEC851800F1283F /* CHCArticalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB41E61CEC851800F1283F /* CHCArticalCell.m */; };
@@ -100,12 +103,7 @@
 		7A53C78D1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A53C78B1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.m */; };
 		7A53C78E1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A53C78C1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.xib */; };
 		7A67A69F1CEC8E5000F0AC08 /* CHRJAIFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A69D1CEC8E5000F0AC08 /* CHRJAIFoodViewController.m */; };
-		7A67A6A01CEC8E5000F0AC08 /* CHRJAIFoodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A67A69E1CEC8E5000F0AC08 /* CHRJAIFoodViewController.xib */; };
-		7A67A6A61CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6A41CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.m */; };
-		7A67A6A71CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A67A6A51CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.xib */; };
 		7A67A6AA1CEC9A2500F0AC08 /* CHRAIBaseFoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6A91CEC9A2500F0AC08 /* CHRAIBaseFoodModel.m */; };
-		7A67A6AF1CECA7F100F0AC08 /* CHRJAISearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6AD1CECA7F100F0AC08 /* CHRJAISearchViewController.m */; };
-		7A67A6B01CECA7F100F0AC08 /* CHRJAISearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A67A6AE1CECA7F100F0AC08 /* CHRJAISearchViewController.xib */; };
 		7A6ED6F51CE2FFD5005DF78C /* CHJRTopBannerCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ED6F31CE2FFD5005DF78C /* CHJRTopBannerCollectCell.m */; };
 		7A6ED6F61CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A6ED6F41CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib */; };
 		7A6ED7041CE31E87005DF78C /* CHJRTopBannerCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6ED7031CE31E87005DF78C /* CHJRTopBannerCellView.m */; };
@@ -2413,6 +2411,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078D15D61CEDA13600878771 /* CHRJAISearchViewController.h in Sources */,
+				078D15D71CEDA13600878771 /* CHRJAISearchViewController.m in Sources */,
+				078D15D81CEDA13600878771 /* CHRJAISearchViewController.xib in Sources */,
 				7AC792F11CE85060001CBAA5 /* CHRJSearchTableViewCell.m in Sources */,
 				B71E549E1CE78DBF003B6BE8 /* CHFoodClassViewController.m in Sources */,
 				07AB42C31CEC851800F1283F /* CHCfaxian_list.m in Sources */,
