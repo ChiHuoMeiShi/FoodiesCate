@@ -7,9 +7,14 @@
 //
 
 #import "CHCArticalTableViewCell.h"
-
+#import <UIImageView+WebCache.h>
 @implementation CHCArticalTableViewCell
-
+-(void)setTableVIewData_list:(CHCTableVIewData_list *)TableVIewData_list
+{
+    _TableVIewData_list=TableVIewData_list;
+    [_tabelViewimageView sd_setImageWithURL:[NSURL URLWithString:TableVIewData_list.titlepic]];
+    
+}
 - (void)awakeFromNib {
     // Initialization code
 }

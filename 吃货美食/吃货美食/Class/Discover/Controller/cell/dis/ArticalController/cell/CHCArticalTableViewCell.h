@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CHCTableVIewData_list.h"
 @interface CHCArticalTableViewCell : UITableViewCell
-
+@property(nonatomic,strong)CHCTableVIewData_list *TableVIewData_list;
+-(void)setTableVIewData_list:(CHCTableVIewData_list *)TableVIewData_list;
+@property (weak, nonatomic) IBOutlet UIImageView *tabelViewimageView;
 @end

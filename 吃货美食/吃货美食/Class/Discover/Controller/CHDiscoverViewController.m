@@ -27,6 +27,9 @@
 #import "CHZhuanTiViewController.h"
 #import "CHArticalViewController.h"
 #import <UIImageView+WebCache.h>
+#import "CHEChatDetailController.h"
+
+#import <MJRefresh.h>
 @interface CHDiscoverViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 {
@@ -37,13 +40,27 @@
 
 @end
 @implementation CHDiscoverViewController
+- (void)headerRefreshAction
+{
+    //    刷新
+    [_mytableView.mj_header beginRefreshing];
+    [self getTableViewData];
+    
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  
     [self getTableViewData];
-    [self CreatTableView];
+     [self CreatTableView];
+    
+    MJRefreshStateHeader *header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshAction)];
+     _mytableView.mj_header=header;
+    [ header setTitle:@"正在刷新中..." forState:MJRefreshStateRefreshing];
+    [_mytableView addSubview:header];
+    
+   
+   
 }
 -(void)getTableViewData
 {
@@ -57,6 +74,7 @@
          CHLog(@"1111%@",responseObject);
         dispatch_async(dispatch_get_main_queue(), ^
          {
+             [_mytableView.mj_header endRefreshing];
 
         CHCFindData *data=[CHCFindData mj_objectWithKeyValues:responseObject];
         mySelf.data=data;
@@ -64,13 +82,13 @@
          });
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        CHLog(@"%@",error);
+       
     }];
     
 }
 -(void)CreatTableView
 {
-    _mytableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height+200) style:UITableViewStyleGrouped];
+    _mytableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, CHSCREENWIDTH, CHSCREENHEIGH) style:UITableViewStylePlain];
     _mytableView.delegate=self;
     _mytableView.dataSource=self;
     [self.view addSubview:_mytableView];
