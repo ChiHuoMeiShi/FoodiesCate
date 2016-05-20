@@ -7,16 +7,8 @@
 //
 
 #import "CHRJAIFoodViewController.h"
-#import "CHRAIFoodCollectionViewCell.h"
-#import "CHRJAISearchViewController.h"
 
-@interface CHRJAIFoodViewController ()<CHRAIGetBaseFoodProtocol>
-
-@property (weak, nonatomic) IBOutlet UICollectionView *aiCollectionView;
-@property (nonatomic,strong)NSMutableArray * dataArray;
-
-@property (weak, nonatomic) IBOutlet UIButton *choosedButton;
-
+@interface CHRJAIFoodViewController ()
 
 @end
 
@@ -25,10 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self listVCNavBarSet];
-    [self.aiCollectionView registerNib:[UINib nibWithNibName:@"CHRAIFoodCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"CHRAIFoodCollectionViewCell"];
-    if (!self.dataArray) {
-        self.dataArray = [[NSMutableArray alloc]initWithCapacity:0];
-    }
+    [self.aiCollectionView registerNib:[UINib nibWithNibName:@"CHRAIFoodCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"JWRAIFoodCollectionViewCell"];
+    
+    self.baseFood = [CHRAIBAseFoodDefault shareSelectedBaseFood];
+    self.dataArray = self.baseFood.baseFoodArray;
+    
+    self.chooseFoodArray = [[NSMutableArray alloc]initWithCapacity:0];
+    
+    [self.choosedButton addTarget:self action:@selector(choosedFoodAction) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)listVCNavBarSet{
@@ -55,13 +51,19 @@
     [self presentViewController:aiSearchVC animated:NO completion:nil];
 }
 
+- (void)choosedFoodAction{
+    if (self.chooseFoodArray.count <= 0)return;
+    
+}
+
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.dataArray.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    CHRAIFoodCollectionViewCell * aiCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CHRAIFoodCollectionViewCell" forIndexPath:indexPath];
-    aiCell.foodModel = self.dataArray[indexPath.row];
+    CHRAIFoodCollectionViewCell * aiCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JWRAIFoodCollectionViewCell" forIndexPath:indexPath];
+    
+    aiCell.foodModel = (CHAISearchFoodTableModel *)self.dataArray[indexPath.row];
     return aiCell;
 }
 
@@ -73,8 +75,25 @@
 
 #pragma mark - CHRAIGetBaseFoodProtocol
 - (void)getBaseFood:(CHAISearchFoodTableModel *)baseFood{
-    [self.dataArray addObject:baseFood];
-    [self.aiCollectionView reloadData];
+    if (self.dataArray.count == 0) {
+        [self.dataArray addObject:baseFood];
+        [self.aiCollectionView reloadData];
+        return;
+    }
+    __block NSUInteger foodCount = 0;
+    __weak typeof(self)mySelf = self;
+    [self.dataArray enumerateObjectsUsingBlock:^(CHAISearchFoodTableModel *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([baseFood.myID isEqual:obj.myID]) {
+            return ;
+        }else{
+            if (foodCount <= idx) {
+                [mySelf.dataArray addObject:baseFood];
+                [mySelf.aiCollectionView reloadData];
+                return;
+            }
+        }
+        foodCount++;
+    }];
 }
 
 @end

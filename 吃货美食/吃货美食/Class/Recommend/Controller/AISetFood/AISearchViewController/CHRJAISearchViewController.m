@@ -47,7 +47,7 @@
     __weak typeof(self)mySelf = self;
     [self.afnManger.messageRequest POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary * dic = (NSDictionary *)responseObject;
-        CHLog(@"%@",dic[@"obj"]);
+//        CHLog(@"%@",dic[@"obj"]);
         mySelf.dataArray = [CHAISearchFoodTableModel mj_objectArrayWithKeyValuesArray:dic[@"obj"]];
         
         [mySelf.baseFoodTableView reloadData];
@@ -70,8 +70,9 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.foodTextField resignFirstResponder];
+    CHAISearchFoodTableModel * model = self.dataArray[indexPath.row];
     if (self.delegate && [self.delegate respondsToSelector:@selector(getBaseFood:)]) {
-        [self.delegate  getBaseFood:self.dataArray[indexPath.row]];
+        [self.delegate  getBaseFood:model];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }

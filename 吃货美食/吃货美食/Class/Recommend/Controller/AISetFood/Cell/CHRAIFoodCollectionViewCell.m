@@ -14,7 +14,23 @@
     // Initialization code
 }
 
+- (IBAction)chooseButtonAction:(UIButton *)sender {
+    self.isChoosed = !self.isChoosed;
+    self.choosedImageView.hidden = self.isChoosed;
+    
+}
+
 - (IBAction)deleButtonAction:(UIButton *)sender {
+    if (!self.isDelete)return;
+    
+}
+
+- (void)setSelected:(BOOL)selected{
+    [super setSelected:selected];
+    
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor colorWithHexString:@"#f5f5f5"];
+    [self setSelectedBackgroundView:bgColorView];
 }
 
 - (void)setFoodModel:(CHAISearchFoodTableModel *)foodModel{
