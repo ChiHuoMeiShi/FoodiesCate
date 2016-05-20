@@ -47,7 +47,7 @@
   
         self.index = point.x / self.perWidth;
     
-//    self.mycountBlock(self.index);
+    self.mycountBlock(self.index);
   }
 #pragma mark-设置文字的属性
 - (void)drawRect:(CGRect)rect {

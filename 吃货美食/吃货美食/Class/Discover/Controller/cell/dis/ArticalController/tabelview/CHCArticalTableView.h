@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CHCArticalData.h"
 @interface CHCArticalTableView : UITableView<UITableViewDataSource,UITableViewDelegate>
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style;
-//@property(nonatomic,strong)UIScrollView *tableViewTopScrollview;
+@property(nonatomic,strong)CHCArticalData *data;
+
 @end

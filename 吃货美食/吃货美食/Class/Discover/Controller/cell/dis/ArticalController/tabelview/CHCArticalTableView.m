@@ -15,29 +15,27 @@
     if (self) {
         self.dataSource = self;
         self.delegate = self;
-   
-//        _tableViewTopScrollview=[[UIScrollView alloc]init];
-//        _tableViewTopScrollview.backgroundColor=[UIColor purpleColor];
-//        _tableViewTopScrollview.frame=CGRectMake(0, 0, self.width, 200);
-//        _tableViewTopScrollview.contentSize=CGSizeMake(self.width*4, 0);
-//         _tableViewTopScrollview.showsHorizontalScrollIndicator = YES;
-//        _tableViewTopScrollview.pagingEnabled=YES;
-//        [self.tableHeaderView addSubview:_tableViewTopScrollview];
-//        [self addSubview:_tableViewTopScrollview ];
-
+        
         [self registerNib:[UINib nibWithNibName:@"CHCArticalTableViewCell" bundle:nil]forCellReuseIdentifier:@"CHCArticalCell"];
     }
     return self;
 }
 #pragma mark -- UITableViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 6;
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 100;
 }
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     CHCArticalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CHCArticalCell"];
+    CHCTableVIewData_list *TableVIewData_list= (CHCTableVIewData_list*)self.data.list[indexPath.row];
+    cell.TableVIewData_list=TableVIewData_list;
         return cell;
 }
 #pragma mark --  UITableViewDelegate
@@ -45,6 +43,18 @@
 {
      return 200;
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section==0) {
+        return 0;
+    }
+    return 1;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 1;
+}
+
 //- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
 //
 //    //最好写一个非常大的值，不然数据会做一些干扰
@@ -53,6 +63,9 @@
 //{
 //    return 200;
 //}
-
+//-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+//{
+//    return 0.00001;
+//}
 
 @end

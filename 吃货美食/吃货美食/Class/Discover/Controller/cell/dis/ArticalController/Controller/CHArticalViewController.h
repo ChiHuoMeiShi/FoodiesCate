@@ -10,4 +10,5 @@
 #import "CHCArticalData.h"
 @interface CHArticalViewController : UIViewController
 @property(nonatomic,strong)CHCArticalData *data;
+
 @end
