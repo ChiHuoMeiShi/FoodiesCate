@@ -30,10 +30,10 @@
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="233" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZN8-l0-0bp">
-                        <rect key="frame" x="232" y="10" width="30" height="21"/>
+                        <rect key="frame" x="202" y="10" width="60" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Q4p-9x-oKl"/>
-                            <constraint firstAttribute="width" constant="30" id="gel-AH-eLI"/>
+                            <constraint firstAttribute="width" constant="60" id="gel-AH-eLI"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.92941176469999998" green="0.2274509804" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -71,7 +71,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="共" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEx-YD-WLD">
-                        <rect key="frame" x="216" y="10" width="16" height="21"/>
+                        <rect key="frame" x="186" y="10" width="16" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="16" id="TcE-RA-Yyn"/>
                             <constraint firstAttribute="height" constant="21" id="dBB-2h-JBk"/>
