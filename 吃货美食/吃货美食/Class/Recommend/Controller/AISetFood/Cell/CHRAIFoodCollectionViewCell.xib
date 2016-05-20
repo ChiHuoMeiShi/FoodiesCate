@@ -29,10 +29,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTl-VZ-eV4">
-                        <rect key="frame" x="0.0" y="0.0" width="84" height="89"/>
-                        <state key="normal" title="Button"/>
+                        <rect key="frame" x="0.0" y="0.0" width="84" height="118"/>
                         <connections>
-                            <action selector="chooseButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="3vh-Fu-lVV"/>
+                            <action selector="chooseButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="5S2-Y4-fZN"/>
                         </connections>
                     </button>
                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bake1" translatesAutoresizingMaskIntoConstraints="NO" id="ruW-ai-dtO">
@@ -42,44 +41,28 @@
                             <constraint firstAttribute="height" constant="15" id="puf-TE-pcS"/>
                         </constraints>
                     </imageView>
-                    <button hidden="YES" opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ttg-0p-nax">
-                        <rect key="frame" x="0.0" y="0.0" width="84" height="84"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="84" id="XUU-eU-MnF"/>
-                        </constraints>
-                        <state key="normal" image="ms_del_icon"/>
-                        <connections>
-                            <action selector="deleButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Z6S-lr-RjB"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="Ttg-0p-nax" firstAttribute="top" secondItem="ruW-ai-dtO" secondAttribute="bottom" id="35R-C0-ExR"/>
                 <constraint firstItem="Ji2-Wl-RZl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9EP-Bc-tJM"/>
                 <constraint firstAttribute="trailing" secondItem="Ji2-Wl-RZl" secondAttribute="trailing" id="DKm-hx-dFV"/>
                 <constraint firstItem="dTl-VZ-eV4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="GXc-fh-dAl"/>
                 <constraint firstItem="Ji2-Wl-RZl" firstAttribute="top" secondItem="dTl-VZ-eV4" secondAttribute="bottom" id="MQF-ia-TMO"/>
-                <constraint firstItem="Ttg-0p-nax" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Pah-pG-O4k"/>
                 <constraint firstAttribute="trailing" secondItem="ruW-ai-dtO" secondAttribute="trailing" constant="5" id="Q9n-h0-UVE"/>
+                <constraint firstAttribute="bottom" secondItem="dTl-VZ-eV4" secondAttribute="bottom" id="ZCz-cM-jZL"/>
                 <constraint firstAttribute="trailing" secondItem="dTl-VZ-eV4" secondAttribute="trailing" id="ZeH-rw-wO7"/>
                 <constraint firstAttribute="trailing" secondItem="RCi-Sw-uS8" secondAttribute="trailing" id="bFu-IV-KSG"/>
                 <constraint firstItem="dTl-VZ-eV4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="g8K-t2-Gra"/>
-                <constraint firstItem="Ttg-0p-nax" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="iKn-z6-EX5"/>
                 <constraint firstItem="RCi-Sw-uS8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lSu-mR-E7S"/>
-                <constraint firstAttribute="trailing" secondItem="Ttg-0p-nax" secondAttribute="trailing" id="mpV-Tt-sgK"/>
                 <constraint firstItem="RCi-Sw-uS8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nGH-dt-Y1p"/>
                 <constraint firstItem="ruW-ai-dtO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="q2D-3Z-1na"/>
-                <constraint firstAttribute="bottom" secondItem="Ttg-0p-nax" secondAttribute="bottom" id="vbl-Pu-bgv"/>
                 <constraint firstItem="Ji2-Wl-RZl" firstAttribute="top" secondItem="RCi-Sw-uS8" secondAttribute="bottom" constant="5" id="vxz-kH-IK1"/>
             </constraints>
             <size key="customSize" width="120" height="131"/>
             <variation key="default">
                 <mask key="constraints">
-                    <exclude reference="35R-C0-ExR"/>
-                    <exclude reference="vbl-Pu-bgv"/>
+                    <exclude reference="MQF-ia-TMO"/>
                 </mask>
             </variation>
             <connections>
@@ -92,6 +75,5 @@
     </objects>
     <resources>
         <image name="bake1" width="180" height="180"/>
-        <image name="ms_del_icon" width="17" height="21"/>
     </resources>
 </document>

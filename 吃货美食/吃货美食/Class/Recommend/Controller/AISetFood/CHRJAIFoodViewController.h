@@ -10,6 +10,7 @@
 #import "CHRAIFoodCollectionViewCell.h"
 #import "CHRJAISearchViewController.h"
 #import "CHRAIBAseFoodDefault.h"
+#import "CHRJAIFoodCreateViewController.h"
 
 @interface CHRJAIFoodViewController : CHRJBasicViewController<CHRAIGetBaseFoodProtocol>
 - (IBAction)chooseFoodAction:(UIButton *)sender;
@@ -19,6 +20,8 @@
 
 @property (nonatomic,strong)NSMutableArray * dataArray;
 @property (nonatomic,strong)CHRAIBAseFoodDefault * baseFood;
+
+@property (nonatomic,assign)BOOL isDelete;
 
 @property (weak, nonatomic) IBOutlet UIButton *choosedButton;
 

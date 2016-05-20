@@ -13,6 +13,10 @@
 @end
 
 @implementation CHRJAIFoodViewController
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithHexString:@"#6ec95e"];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,9 +43,11 @@
     self.navigationItem.titleView = showTittleLabel;
 }
 - (void)editMyFood{
+    self.isDelete = YES;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTittle:@"完成" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(finishEditMyFood) forControlEvents:UIControlEventTouchUpInside];
 }
 - (void)finishEditMyFood{
+    self.isDelete = NO;
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTittle:@"编辑" withTittleColor:[UIColor whiteColor] withTarget:self action:@selector(editMyFood) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -53,7 +59,8 @@
 
 - (void)choosedFoodAction{
     if (self.chooseFoodArray.count <= 0)return;
-    
+    CHRJAIFoodCreateViewController * createVC = [[CHRJAIFoodCreateViewController alloc]initWithRequestBaseFoodArray:self.chooseFoodArray];
+    [self.navigationController pushViewController:createVC animated:YES];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -62,8 +69,8 @@
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     CHRAIFoodCollectionViewCell * aiCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"JWRAIFoodCollectionViewCell" forIndexPath:indexPath];
-    
     aiCell.foodModel = (CHAISearchFoodTableModel *)self.dataArray[indexPath.row];
+    aiCell.delegate = self;
     return aiCell;
 }
 
@@ -80,20 +87,29 @@
         [self.aiCollectionView reloadData];
         return;
     }
-    __block NSUInteger foodCount = 0;
+    __block NSUInteger foodCount = 1;
     __weak typeof(self)mySelf = self;
     [self.dataArray enumerateObjectsUsingBlock:^(CHAISearchFoodTableModel *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([baseFood.myID isEqual:obj.myID]) {
-            return ;
-        }else{
-            if (foodCount <= idx) {
+        if (![baseFood.myID isEqual:obj.myID]) {
+            if (foodCount >= mySelf.dataArray.count) {
                 [mySelf.dataArray addObject:baseFood];
                 [mySelf.aiCollectionView reloadData];
                 return;
             }
+            foodCount++;
+        }else{
+            return;
         }
-        foodCount++;
     }];
+}
+- (void)getCellBaseFood:(CHAISearchFoodTableModel *)baseFood{
+    if (self.isDelete) {
+        [self.dataArray removeObject:baseFood];
+        [self.aiCollectionView reloadData];
+        return;
+    }else{
+        [self.chooseFoodArray addObject:baseFood];
+    }
 }
 
 @end

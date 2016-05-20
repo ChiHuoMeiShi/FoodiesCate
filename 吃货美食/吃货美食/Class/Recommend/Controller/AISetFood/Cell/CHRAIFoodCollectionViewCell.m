@@ -14,17 +14,6 @@
     // Initialization code
 }
 
-- (IBAction)chooseButtonAction:(UIButton *)sender {
-    self.isChoosed = !self.isChoosed;
-    self.choosedImageView.hidden = self.isChoosed;
-    
-}
-
-- (IBAction)deleButtonAction:(UIButton *)sender {
-    if (!self.isDelete)return;
-    
-}
-
 - (void)setSelected:(BOOL)selected{
     [super setSelected:selected];
     
@@ -46,5 +35,13 @@
         mySelf.showImageView.image = image;
 
     }];
+}
+- (IBAction)chooseButtonAction:(UIButton *)sender {
+    self.choosedImageView.hidden = self.isChoosed;
+    self.isChoosed = !self.isChoosed;
+    __weak typeof(self)mySelf = self;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(getCellBaseFood:)]) {
+        [mySelf.delegate  getCellBaseFood:mySelf.foodModel];
+    }
 }
 @end

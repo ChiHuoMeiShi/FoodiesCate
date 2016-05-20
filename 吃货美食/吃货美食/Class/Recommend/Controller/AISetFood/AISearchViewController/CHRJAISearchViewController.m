@@ -33,6 +33,7 @@
 }
 
 - (void)finishSetMessage{
+    [self.view endEditing:YES];
     [self sendMessageSearch];
 }
 
@@ -42,8 +43,8 @@
 
 - (void)requestData{
     NSString * url = @"http://api.meishi.cc/v5/shicaizucai_img.php?format=json";
-//    self.foodTextField.text
-    NSDictionary * dic = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"sname":@"紫"};
+//    NSDictionary * dic = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"sname":self.foodTextField.text};
+    NSDictionary * dic = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"sname":@"茄"};
     __weak typeof(self)mySelf = self;
     [self.afnManger.messageRequest POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary * dic = (NSDictionary *)responseObject;
@@ -59,7 +60,6 @@
 #pragma mark - UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     if ([string isEqualToString:@"\n"]) {
-        [textField resignFirstResponder];
         [self finishSetMessage];
     }else{
         [self sendMessageSearch];
@@ -71,8 +71,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.foodTextField resignFirstResponder];
     CHAISearchFoodTableModel * model = self.dataArray[indexPath.row];
+    __weak typeof(self)mySelf = self;
     if (self.delegate && [self.delegate respondsToSelector:@selector(getBaseFood:)]) {
-        [self.delegate  getBaseFood:model];
+        [mySelf.delegate  getBaseFood:model];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }

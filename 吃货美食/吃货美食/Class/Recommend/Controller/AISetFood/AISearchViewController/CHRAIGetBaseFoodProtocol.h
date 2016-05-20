@@ -13,4 +13,6 @@
 @optional
 - (void)getBaseFood:(CHAISearchFoodTableModel *)baseFood;
 
+- (void)getCellBaseFood:(CHAISearchFoodTableModel *)baseFood;
+
 @end

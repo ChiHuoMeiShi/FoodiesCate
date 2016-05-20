@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHRWebViewController">
             <connections>
-                <outlet property="backButton" destination="UYc-5C-ijD" id="AwH-8S-Kag"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="webDetailView" destination="93t-Vk-0Wf" id="qrg-lY-5uQ"/>
             </connections>
@@ -19,30 +18,28 @@
             <subviews>
                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93t-Vk-0Wf">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="CIn-oh-dC1"/>
                     </connections>
                 </webView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYc-5C-ijD">
-                    <rect key="frame" x="8" y="0.0" width="64" height="64"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2CW-UC-zxg">
+                    <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="64" id="aRl-YA-qwM"/>
-                        <constraint firstAttribute="width" constant="64" id="hua-Ia-4Hu"/>
+                        <constraint firstAttribute="height" constant="50" id="d7x-qZ-xga"/>
                     </constraints>
-                    <state key="normal">
-                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                </button>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="93t-Vk-0Wf" secondAttribute="trailing" id="5x4-od-6Qn"/>
                 <constraint firstAttribute="bottom" secondItem="93t-Vk-0Wf" secondAttribute="bottom" id="PQP-Si-9sZ"/>
-                <constraint firstItem="UYc-5C-ijD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bMT-Ep-maA"/>
+                <constraint firstItem="2CW-UC-zxg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Zoq-kV-CSA"/>
                 <constraint firstItem="93t-Vk-0Wf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="d89-4q-nkO"/>
                 <constraint firstItem="93t-Vk-0Wf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fkm-Vk-K9c"/>
-                <constraint firstItem="UYc-5C-ijD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="yXi-Op-uG3"/>
+                <constraint firstAttribute="bottom" secondItem="2CW-UC-zxg" secondAttribute="bottom" id="l2M-4V-Cg0"/>
+                <constraint firstAttribute="trailing" secondItem="2CW-UC-zxg" secondAttribute="trailing" id="rPG-lw-Xeq"/>
             </constraints>
         </view>
     </objects>
