@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHRPublishNextViewController">
             <connections>
-                <outlet property="showTextView" destination="jS1-LK-jUp" id="5Lr-yY-Byk"/>
+                <outlet property="publicTableView" destination="rgO-Jo-JmW" id="qj6-97-Zc3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,14 +16,18 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jS1-LK-jUp" customClass="CHRTextView">
-                    <rect key="frame" x="86" y="276" width="240" height="128"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rgO-Jo-JmW">
+                    <rect key="frame" x="10" y="0.0" width="580" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="rgO-Jo-JmW" secondAttribute="bottom" id="8qX-1b-DQi"/>
+                <constraint firstItem="rgO-Jo-JmW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BDD-RW-61o"/>
+                <constraint firstItem="rgO-Jo-JmW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="IJX-Hq-bCk"/>
+                <constraint firstAttribute="trailing" secondItem="rgO-Jo-JmW" secondAttribute="trailing" constant="10" id="zsi-GV-lnB"/>
+            </constraints>
         </view>
     </objects>
 </document>

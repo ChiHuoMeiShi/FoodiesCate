@@ -18,7 +18,6 @@ const CGFloat myLon = 112.4234234428844;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
-    
     if ([self.navigationController.navigationBar respondsToSelector:@selector( setBackgroundImage:forBarMetrics:)]){
         NSArray *list=self.navigationController.navigationBar.subviews;
         for (id obj in list) {
@@ -90,5 +89,52 @@ const CGFloat myLon = 112.4234234428844;
     CHLog(@"Hud Success");
 }
 
-
+#pragma mark -- ImageViewTouch
+- (void)imageTakePhoto
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    __weak typeof(self)mySelf = self;
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //take photo
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            [mySelf myImagePickerWithType:UIImagePickerControllerSourceTypeCamera];
+        } else {
+            NSLog(@"照片源不可用");
+        }
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //to localPhotos
+        [mySelf myImagePickerWithType:UIImagePickerControllerSourceTypePhotoLibrary];
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+- (void)myImagePickerWithType:(UIImagePickerControllerSourceType)sourceType{
+    if ([UIImagePickerController isSourceTypeAvailable:sourceType]) {
+        UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+        [picker setSourceType:sourceType];
+        [picker setAllowsEditing:YES];
+        [picker setDelegate:self];
+        [self presentViewController:picker animated:YES completion:nil];
+    } else {
+        CHLog(@"照片源不可用");
+    }
+}
+#pragma mark - ImagePickerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    self.choosedImage = info[@"UIImagePickerControllerEditedImage"];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSArray *docs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        NSDate * date = [NSDate date];
+        dateFormatter.dateFormat = @"yyyyMMddHHmmss";
+        NSString *dateStr = [dateFormatter stringFromDate:date];
+        self.imageChoosedPath = [docs[0]stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@.png",dateStr,self.tagStr]];
+        NSData *imageData = UIImagePNGRepresentation(self.choosedImage);
+        [imageData writeToFile:self.imageChoosedPath atomically:YES];
+    });
+}
 @end
