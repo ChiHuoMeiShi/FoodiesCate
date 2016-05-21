@@ -153,6 +153,18 @@
 		7A82E5BD1CEF5F47001D3D82 /* CHJRecmdTodayCollectionViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 7AA949431CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.xib */; };
 		7A8F53251CEDEE3F00C96506 /* CHRJAIFoodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A67A69E1CEC8E5000F0AC08 /* CHRJAIFoodViewController.xib */; };
 		7A8F53261CEDEE4D00C96506 /* CHRJAISearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A67A6AE1CECA7F100F0AC08 /* CHRJAISearchViewController.xib */; };
+		7A9CF49C1CEFF5EC00A2D830 /* CHRPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF49A1CEFF5EC00A2D830 /* CHRPublishViewController.m */; };
+		7A9CF49D1CEFF5EC00A2D830 /* CHRPublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CF49B1CEFF5EC00A2D830 /* CHRPublishViewController.xib */; };
+		7A9CF4A31CF00AA700A2D830 /* CHRPublishObjData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4A21CF00AA700A2D830 /* CHRPublishObjData.m */; };
+		7A9CF4A61CF00CB900A2D830 /* CHRPublishObjGetDic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4A51CF00CB900A2D830 /* CHRPublishObjGetDic.m */; };
+		7A9CF4AB1CF03ABF00A2D830 /* CHRPublishChooseTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4A91CF03ABF00A2D830 /* CHRPublishChooseTypeViewController.m */; };
+		7A9CF4AC1CF03ABF00A2D830 /* CHRPublishChooseTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CF4AA1CF03ABF00A2D830 /* CHRPublishChooseTypeViewController.xib */; };
+		7A9CF4B11CF03F2800A2D830 /* CHRPublishChooseTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4AF1CF03F2800A2D830 /* CHRPublishChooseTypeCell.m */; };
+		7A9CF4B21CF03F2800A2D830 /* CHRPublishChooseTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CF4B01CF03F2800A2D830 /* CHRPublishChooseTypeCell.xib */; };
+		7A9CF4B81CF04A1D00A2D830 /* CHRPublicShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4B61CF04A1D00A2D830 /* CHRPublicShowTableViewCell.m */; };
+		7A9CF4B91CF04A1D00A2D830 /* CHRPublicShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CF4B71CF04A1D00A2D830 /* CHRPublicShowTableViewCell.xib */; };
+		7A9CF4C31CF05AD500A2D830 /* CHRPublishNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4C11CF05AD500A2D830 /* CHRPublishNextViewController.m */; };
+		7A9CF4C41CF05AD500A2D830 /* CHRPublishNextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CF4C21CF05AD500A2D830 /* CHRPublishNextViewController.xib */; };
 		7AA5D67E1CE9E6D9007D0912 /* CHRJListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5D67C1CE9E6D9007D0912 /* CHRJListViewController.m */; };
 		7AA5D67F1CE9E6D9007D0912 /* CHRJListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA5D67D1CE9E6D9007D0912 /* CHRJListViewController.xib */; };
 		7AA5D6841CE9E9C2007D0912 /* CHRJListToolBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5D6831CE9E9C2007D0912 /* CHRJListToolBarModel.m */; };
@@ -247,8 +259,6 @@
 		B72A06581CE216D10091986F /* CHZSendEChatController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B72A06561CE216D10091986F /* CHZSendEChatController.xib */; };
 		B72A06961CE369D50091986F /* CHEChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B72A06941CE369D50091986F /* CHEChatCell.m */; };
 		B72A06971CE369D50091986F /* CHEChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B72A06951CE369D50091986F /* CHEChatCell.xib */; };
-		B72A06A31CE3AEF00091986F /* CHEChatHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B72A06A21CE3AEF00091986F /* CHEChatHeaderView.m */; };
-		B72A06A51CE3AF200091986F /* CHEChatHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B72A06A41CE3AF200091986F /* CHEChatHeaderView.xib */; };
 		B748A5381CEDF63100A8338C /* CHTPublishSHCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B748A5361CEDF63100A8338C /* CHTPublishSHCell.m */; };
 		B748A5391CEDF63100A8338C /* CHTPublishSHCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B748A5371CEDF63100A8338C /* CHTPublishSHCell.xib */; };
 		B748A53D1CEDF73600A8338C /* ShiHuaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B748A53C1CEDF73600A8338C /* ShiHuaModel.m */; };
@@ -504,6 +514,26 @@
 		7A82E5991CEF26E7001D3D82 /* CHRJAICreateCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJAICreateCollectionViewCell.m; sourceTree = "<group>"; };
 		7A82E59A1CEF26E7001D3D82 /* CHRJAICreateCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRJAICreateCollectionViewCell.xib; sourceTree = "<group>"; };
 		7A8F53241CEDDE6F00C96506 /* CHRAIGetBaseFoodProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRAIGetBaseFoodProtocol.h; sourceTree = "<group>"; };
+		7A9CF4991CEFF5EC00A2D830 /* CHRPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRPublishViewController.h; sourceTree = "<group>"; };
+		7A9CF49A1CEFF5EC00A2D830 /* CHRPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRPublishViewController.m; sourceTree = "<group>"; };
+		7A9CF49B1CEFF5EC00A2D830 /* CHRPublishViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRPublishViewController.xib; sourceTree = "<group>"; };
+		7A9CF4A11CF00AA700A2D830 /* CHRPublishObjData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRPublishObjData.h; sourceTree = "<group>"; };
+		7A9CF4A21CF00AA700A2D830 /* CHRPublishObjData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRPublishObjData.m; sourceTree = "<group>"; };
+		7A9CF4A41CF00CB900A2D830 /* CHRPublishObjGetDic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRPublishObjGetDic.h; sourceTree = "<group>"; };
+		7A9CF4A51CF00CB900A2D830 /* CHRPublishObjGetDic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRPublishObjGetDic.m; sourceTree = "<group>"; };
+		7A9CF4A81CF03ABF00A2D830 /* CHRPublishChooseTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRPublishChooseTypeViewController.h; sourceTree = "<group>"; };
+		7A9CF4A91CF03ABF00A2D830 /* CHRPublishChooseTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRPublishChooseTypeViewController.m; sourceTree = "<group>"; };
+		7A9CF4AA1CF03ABF00A2D830 /* CHRPublishChooseTypeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRPublishChooseTypeViewController.xib; sourceTree = "<group>"; };
+		7A9CF4AE1CF03F2800A2D830 /* CHRPublishChooseTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRPublishChooseTypeCell.h; sourceTree = "<group>"; };
+		7A9CF4AF1CF03F2800A2D830 /* CHRPublishChooseTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRPublishChooseTypeCell.m; sourceTree = "<group>"; };
+		7A9CF4B01CF03F2800A2D830 /* CHRPublishChooseTypeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRPublishChooseTypeCell.xib; sourceTree = "<group>"; };
+		7A9CF4B31CF0479800A2D830 /* CHRPublicChooseTypeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRPublicChooseTypeProtocol.h; sourceTree = "<group>"; };
+		7A9CF4B51CF04A1D00A2D830 /* CHRPublicShowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRPublicShowTableViewCell.h; sourceTree = "<group>"; };
+		7A9CF4B61CF04A1D00A2D830 /* CHRPublicShowTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRPublicShowTableViewCell.m; sourceTree = "<group>"; };
+		7A9CF4B71CF04A1D00A2D830 /* CHRPublicShowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRPublicShowTableViewCell.xib; sourceTree = "<group>"; };
+		7A9CF4C01CF05AD500A2D830 /* CHRPublishNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRPublishNextViewController.h; sourceTree = "<group>"; };
+		7A9CF4C11CF05AD500A2D830 /* CHRPublishNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRPublishNextViewController.m; sourceTree = "<group>"; };
+		7A9CF4C21CF05AD500A2D830 /* CHRPublishNextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRPublishNextViewController.xib; sourceTree = "<group>"; };
 		7AA5D67B1CE9E6D9007D0912 /* CHRJListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJListViewController.h; sourceTree = "<group>"; };
 		7AA5D67C1CE9E6D9007D0912 /* CHRJListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJListViewController.m; sourceTree = "<group>"; };
 		7AA5D67D1CE9E6D9007D0912 /* CHRJListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRJListViewController.xib; sourceTree = "<group>"; };
@@ -663,9 +693,6 @@
 		B72A06931CE369D50091986F /* CHEChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHEChatCell.h; sourceTree = "<group>"; };
 		B72A06941CE369D50091986F /* CHEChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHEChatCell.m; sourceTree = "<group>"; };
 		B72A06951CE369D50091986F /* CHEChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHEChatCell.xib; sourceTree = "<group>"; };
-		B72A06A11CE3AEF00091986F /* CHEChatHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHEChatHeaderView.h; sourceTree = "<group>"; };
-		B72A06A21CE3AEF00091986F /* CHEChatHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHEChatHeaderView.m; sourceTree = "<group>"; };
-		B72A06A41CE3AF200091986F /* CHEChatHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHEChatHeaderView.xib; sourceTree = "<group>"; };
 		B748A5351CEDF63100A8338C /* CHTPublishSHCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTPublishSHCell.h; sourceTree = "<group>"; };
 		B748A5361CEDF63100A8338C /* CHTPublishSHCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTPublishSHCell.m; sourceTree = "<group>"; };
 		B748A5371CEDF63100A8338C /* CHTPublishSHCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHTPublishSHCell.xib; sourceTree = "<group>"; };
@@ -678,6 +705,9 @@
 		B748A5491CEE323100A8338C /* CHPublishShiHuaOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHPublishShiHuaOneCell.h; sourceTree = "<group>"; };
 		B748A54A1CEE323100A8338C /* CHPublishShiHuaOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHPublishShiHuaOneCell.m; sourceTree = "<group>"; };
 		B748A54B1CEE323100A8338C /* CHPublishShiHuaOneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHPublishShiHuaOneCell.xib; sourceTree = "<group>"; };
+		B76AE92A1CEF477700E4A975 /* CHRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRegisterController.h; sourceTree = "<group>"; };
+		B76AE92B1CEF477700E4A975 /* CHRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRegisterController.m; sourceTree = "<group>"; };
+		B76AE92C1CEF477700E4A975 /* CHRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRegisterController.xib; sourceTree = "<group>"; };
 		B7A3F5CA1CE4801700E09AED /* EChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EChatModel.h; path = EChatModel/EChatModel.h; sourceTree = "<group>"; };
 		B7A3F5CB1CE4801700E09AED /* EChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EChatModel.m; path = EChatModel/EChatModel.m; sourceTree = "<group>"; };
 		B7A3F5CD1CE481F700E09AED /* Hot_topocModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hot_topocModel.h; path = EChatModel/Hot_topocModel.h; sourceTree = "<group>"; };
@@ -1383,9 +1413,9 @@
 		7A67A69B1CEC8DFA00F0AC08 /* AISetFood */ = {
 			isa = PBXGroup;
 			children = (
+				7A67A6AB1CECA7A600F0AC08 /* AISearchViewController */,
 				7A82E5851CEF1700001D3D82 /* AICreateFood */,
 				7AD547661CEE034D00B91B73 /* AIBaseFoodDefault */,
-				7A67A6AB1CECA7A600F0AC08 /* AISearchViewController */,
 				7A67A6A21CEC96B800F0AC08 /* Cell */,
 				7A67A6A11CEC96A900F0AC08 /* Model */,
 				7A67A69C1CEC8E5000F0AC08 /* CHRJAIFoodViewController.h */,
@@ -1485,6 +1515,65 @@
 				7A82E59A1CEF26E7001D3D82 /* CHRJAICreateCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		7A9CF4981CEFF57E00A2D830 /* PublishViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7A9CF4BA1CF0593B00A2D830 /* PublishNextViewController */,
+				7A9CF4B41CF049E300A2D830 /* Cell */,
+				7A9CF4A71CF03A6D00A2D830 /* ChoosedViewController */,
+				7A9CF4991CEFF5EC00A2D830 /* CHRPublishViewController.h */,
+				7A9CF49A1CEFF5EC00A2D830 /* CHRPublishViewController.m */,
+				7A9CF49B1CEFF5EC00A2D830 /* CHRPublishViewController.xib */,
+				7A9CF4A11CF00AA700A2D830 /* CHRPublishObjData.h */,
+				7A9CF4A21CF00AA700A2D830 /* CHRPublishObjData.m */,
+				7A9CF4A41CF00CB900A2D830 /* CHRPublishObjGetDic.h */,
+				7A9CF4A51CF00CB900A2D830 /* CHRPublishObjGetDic.m */,
+			);
+			path = PublishViewController;
+			sourceTree = "<group>";
+		};
+		7A9CF4A71CF03A6D00A2D830 /* ChoosedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7A9CF4AD1CF03EDA00A2D830 /* Cell */,
+				7A9CF4A81CF03ABF00A2D830 /* CHRPublishChooseTypeViewController.h */,
+				7A9CF4A91CF03ABF00A2D830 /* CHRPublishChooseTypeViewController.m */,
+				7A9CF4AA1CF03ABF00A2D830 /* CHRPublishChooseTypeViewController.xib */,
+				7A9CF4B31CF0479800A2D830 /* CHRPublicChooseTypeProtocol.h */,
+			);
+			path = ChoosedViewController;
+			sourceTree = "<group>";
+		};
+		7A9CF4AD1CF03EDA00A2D830 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7A9CF4AE1CF03F2800A2D830 /* CHRPublishChooseTypeCell.h */,
+				7A9CF4AF1CF03F2800A2D830 /* CHRPublishChooseTypeCell.m */,
+				7A9CF4B01CF03F2800A2D830 /* CHRPublishChooseTypeCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		7A9CF4B41CF049E300A2D830 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7A9CF4B51CF04A1D00A2D830 /* CHRPublicShowTableViewCell.h */,
+				7A9CF4B61CF04A1D00A2D830 /* CHRPublicShowTableViewCell.m */,
+				7A9CF4B71CF04A1D00A2D830 /* CHRPublicShowTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		7A9CF4BA1CF0593B00A2D830 /* PublishNextViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7A9CF4C01CF05AD500A2D830 /* CHRPublishNextViewController.h */,
+				7A9CF4C11CF05AD500A2D830 /* CHRPublishNextViewController.m */,
+				7A9CF4C21CF05AD500A2D830 /* CHRPublishNextViewController.xib */,
+			);
+			path = PublishNextViewController;
 			sourceTree = "<group>";
 		};
 		7AA5D67A1CE9E6A3007D0912 /* ListVIewController */ = {
@@ -2077,6 +2166,7 @@
 		B71ED8711CDB52560035F6BE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B76AE9291CEF473D00E4A975 /* Register */,
 				B7B7A5CC1CEC9249002A80E7 /* Login */,
 				B7B7A5B71CEC9180002A80E7 /* MySetting */,
 				B7B7A5B61CEC9156002A80E7 /* MyDraft */,
@@ -2131,9 +2221,6 @@
 		B72A06681CE3467A0091986F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B72A06A11CE3AEF00091986F /* CHEChatHeaderView.h */,
-				B72A06A21CE3AEF00091986F /* CHEChatHeaderView.m */,
-				B72A06A41CE3AF200091986F /* CHEChatHeaderView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -2206,6 +2293,16 @@
 				B748A5421CEDFCB200A8338C /* SHImgs.m */,
 			);
 			name = ShiHuaModel;
+			sourceTree = "<group>";
+		};
+		B76AE9291CEF473D00E4A975 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				B76AE92A1CEF477700E4A975 /* CHRegisterController.h */,
+				B76AE92B1CEF477700E4A975 /* CHRegisterController.m */,
+				B76AE92C1CEF477700E4A975 /* CHRegisterController.xib */,
+			);
+			name = Register;
 			sourceTree = "<group>";
 		};
 		B7A3F5C81CE47F7700E09AED /* EChatModel */ = {
@@ -2452,6 +2549,7 @@
 		B7F615461CDC80B200AF1697 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7A9CF4981CEFF57E00A2D830 /* PublishViewController */,
 				7A67A69B1CEC8DFA00F0AC08 /* AISetFood */,
 				7AA5D67A1CE9E6A3007D0912 /* ListVIewController */,
 				7AC792DB1CE85060001CBAA5 /* SearchDetailViewController */,
@@ -2584,6 +2682,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A9CF4B21CF03F2800A2D830 /* CHRPublishChooseTypeCell.xib in Resources */,
 				7AD5475F1CEDFAA800B91B73 /* CHRAIFoodCollectionViewCell.xib in Resources */,
 				077EE4C91CEFF961003F4E1B /* CHCCaiDanTableViewCell.xib in Resources */,
 				077EE4D81CEFF961003F4E1B /* CHCShiCaiTableViewCell.xib in Resources */,
@@ -2609,6 +2708,7 @@
 				B7B7A5C11CEC91CC002A80E7 /* CHMyCollectController.xib in Resources */,
 				077EE40A1CEFF69E003F4E1B /* CHCActivityTableViewCell.xib in Resources */,
 				B7A512C11CE660DF0085A6C8 /* CHNineChatCell.xib in Resources */,
+				7A9CF4B91CF04A1D00A2D830 /* CHRPublicShowTableViewCell.xib in Resources */,
 				7A6ED6F61CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib in Resources */,
 				7A53C7831CEB09C20098BFEC /* CHRJListFoodTableViewCell.xib in Resources */,
 				077EE43F1CEFF69E003F4E1B /* CHRecipesCell.xib in Resources */,
@@ -2655,6 +2755,7 @@
 				7AC8C4231CE4696A0043CAEC /* CHRFenLei.plist in Resources */,
 				B7A512B41CE6605D0085A6C8 /* CHSevenChatCell.xib in Resources */,
 				B7F6156D1CDCA17700AF1697 /* CHRecommendViewController.xib in Resources */,
+				7A9CF49D1CEFF5EC00A2D830 /* CHRPublishViewController.xib in Resources */,
 				7AAF0A381CE184A300708F98 /* CHJRecomdTodayBanerFCollectionReusableView.xib in Resources */,
 				077EE4F51CF0381A003F4E1B /* CHCCaiDanWebViewController.xib in Resources */,
 				B7B7A5C61CEC91E2002A80E7 /* CHMyDraftController.xib in Resources */,
@@ -2734,6 +2835,7 @@
 				077EE44E1CEFF69E003F4E1B /* CHCimages_list.m in Sources */,
 				077EE4481CEFF69E003F4E1B /* CHCCaidan_list.m in Sources */,
 				7A82E5B41CEF5F47001D3D82 /* CHRWebViewController.xib in Sources */,
+				7A9CF49C1CEFF5EC00A2D830 /* CHRPublishViewController.m in Sources */,
 				7A82E5B51CEF5F47001D3D82 /* CHJRecomdFucFCollectionReusableView.xib in Sources */,
 				077EE4CA1CEFF961003F4E1B /* CHCCaiDanViewController.m in Sources */,
 				7A82E5B61CEF5F47001D3D82 /* CHJRecomdTodayBanerFCollectionReusableView.xib in Sources */,
@@ -2752,6 +2854,7 @@
 				7A82E59F1CEF5F0D001D3D82 /* CHAISearchShowTableViewCell.m in Sources */,
 				7A82E5A01CEF5F0D001D3D82 /* CHAISearchShowTableViewCell.xib in Sources */,
 				7A82E5A11CEF5F0D001D3D82 /* CHRAIFoodCollectionViewCell.m in Sources */,
+				7A9CF4AB1CF03ABF00A2D830 /* CHRPublishChooseTypeViewController.m in Sources */,
 				7A82E5A21CEF5F0D001D3D82 /* CHRAIFoodCollectionViewCell.xib in Sources */,
 				077EE4111CEFF69E003F4E1B /* CHClickTableViewCell.m in Sources */,
 				077EE4841CEFF8A2003F4E1B /* CHCZhunTi_classes_list.m in Sources */,
@@ -2776,6 +2879,7 @@
 				7A82E5B11CEF5F0D001D3D82 /* CHRJSortViewController.xib in Sources */,
 				7A82E5B21CEF5F0D001D3D82 /* CHRJBasicViewController.xib in Sources */,
 				B748A5501CEE46EF00A8338C /* SHImgs.m in Sources */,
+				7A9CF4B81CF04A1D00A2D830 /* CHRPublicShowTableViewCell.m in Sources */,
 				B748A54F1CEE3F5D00A8338C /* CHTPublishSHCell.xib in Sources */,
 				077EE4851CEFF8A2003F4E1B /* CHCArticalTableViewCell.m in Sources */,
 				B748A53D1CEDF73600A8338C /* ShiHuaModel.m in Sources */,
@@ -3060,6 +3164,28 @@
 				INFOPLIST_FILE = "$(SRCROOT)/吃货美食/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"FMDB\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"SDWebImage\"",
+					"-l\"sqlite3\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-licucore",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TianTian.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -3077,6 +3203,28 @@
 				INFOPLIST_FILE = "$(SRCROOT)/吃货美食/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"FMDB\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"SDWebImage\"",
+					"-l\"sqlite3\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-licucore",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TianTian.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

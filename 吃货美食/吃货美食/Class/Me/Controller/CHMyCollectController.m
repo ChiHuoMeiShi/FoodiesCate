@@ -7,8 +7,10 @@
 //
 
 #import "CHMyCollectController.h"
+#import "CHPublishCookBookCell.h"
+@interface CHMyCollectController ()<UITableViewDelegate,UITableViewDataSource>
 
-@interface CHMyCollectController ()
+@property (nonatomic,strong)UITableView *mTableView;
 
 @end
 
@@ -16,26 +18,54 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.navigationController setNavigationBarHidden:NO];
+    [self addBarButtonItem];
+
+    [self.view addSubview:self.mTableView];
+    
+    [self.mTableView registerNib:[UINib nibWithNibName:@"CHPublishCookBookCell" bundle:nil] forCellReuseIdentifier:@"CHPublishCookBookCell"];
+}
+- (UITableView *)mTableView{
+    if (!_mTableView) {
+        _mTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
+        self.mTableView.delegate = self;
+        self.mTableView.dataSource = self;
+    }
+    return _mTableView;
+}
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 20;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    CHPublishCookBookCell *myCell = [tableView dequeueReusableCellWithIdentifier:@"CHPublishCookBookCell"];
+    
+    
+    return myCell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 123.f;
+}
+#pragma mark -- addBarButtonItem
+- (void)addBarButtonItem{
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
 }
 - (void)navBackAction
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

@@ -28,4 +28,6 @@ extern const CGFloat myLon;
 - (void)searchButtonAction;
 - (void)recommdSearchBarSetWithRect:(CGRect)rect;
 
+- (void)testHud;
+
 @end

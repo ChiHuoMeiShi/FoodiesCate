@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHRPublishChooseTypeViewController">
+            <connections>
+                <outlet property="chooseFoodCollectionView" destination="QAN-hd-s6a" id="I55-je-DnS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="QAN-hd-s6a">
+                    <rect key="frame" x="10" y="0.0" width="580" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g26-T6-ilm">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="czj-xW-15X"/>
+                        <outlet property="delegate" destination="-1" id="7Gx-dP-0Su"/>
+                    </connections>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hTn-WK-jvg">
+                    <rect key="frame" x="286" y="542" width="28" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="28" id="MEv-1o-0do"/>
+                        <constraint firstAttribute="height" constant="28" id="UUa-xv-r6e"/>
+                    </constraints>
+                    <state key="normal" image="ms_attributes_canlce"/>
+                    <connections>
+                        <action selector="backButtonAction:" destination="-1" eventType="touchUpInside" id="bfs-Ko-9Nu"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="QAN-hd-s6a" secondAttribute="trailing" constant="10" id="1Yj-G8-fYE"/>
+                <constraint firstItem="hTn-WK-jvg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KY2-dl-b9i"/>
+                <constraint firstItem="QAN-hd-s6a" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Smj-Mg-ek1"/>
+                <constraint firstAttribute="bottom" secondItem="QAN-hd-s6a" secondAttribute="bottom" id="kXh-3d-B1u"/>
+                <constraint firstAttribute="bottom" secondItem="hTn-WK-jvg" secondAttribute="bottom" constant="30" id="p0Q-xU-2N5"/>
+                <constraint firstItem="QAN-hd-s6a" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qyY-za-WEk"/>
+            </constraints>
+            <point key="canvasLocation" x="313" y="378"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ms_attributes_canlce" width="28" height="28"/>
+    </resources>
+</document>
