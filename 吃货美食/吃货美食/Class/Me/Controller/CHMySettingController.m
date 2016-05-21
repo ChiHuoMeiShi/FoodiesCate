@@ -7,7 +7,7 @@
 //
 
 #import "CHMySettingController.h"
-
+#import "CHLoginController.h"
 @interface CHMySettingController ()
 
 @end
@@ -25,6 +25,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)loginTest:(id)sender {
+    CHLoginController *targetVC =[[CHLoginController alloc] init];
+    [self.navigationController pushViewController:targetVC animated:YES];
 }
 
 /*

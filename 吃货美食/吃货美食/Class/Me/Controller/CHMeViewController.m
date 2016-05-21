@@ -127,6 +127,9 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     if (0 == indexPath.row) {
         CHMyPublishController *targetVC = [[CHMyPublishController alloc] init];
         [self.navigationController pushViewController:targetVC animated:YES];

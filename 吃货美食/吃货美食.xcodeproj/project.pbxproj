@@ -256,6 +256,8 @@
 		B748A54F1CEE3F5D00A8338C /* CHTPublishSHCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = B748A5371CEDF63100A8338C /* CHTPublishSHCell.xib */; };
 		B748A5501CEE46EF00A8338C /* SHImgs.m in Sources */ = {isa = PBXBuildFile; fileRef = B748A5421CEDFCB200A8338C /* SHImgs.m */; };
 		B748A5511CEE497900A8338C /* CHCDiscoverTableViewcell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42181CEC851800F1283F /* CHCDiscoverTableViewcell.xib */; };
+		B76AE92D1CEF477700E4A975 /* CHRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B76AE92B1CEF477700E4A975 /* CHRegisterController.m */; };
+		B76AE92E1CEF477700E4A975 /* CHRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76AE92C1CEF477700E4A975 /* CHRegisterController.xib */; };
 		B7A3F5CC1CE4801700E09AED /* EChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5CB1CE4801700E09AED /* EChatModel.m */; };
 		B7A3F5CF1CE481F700E09AED /* Hot_topocModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5CE1CE481F700E09AED /* Hot_topocModel.m */; };
 		B7A3F5D21CE483F100E09AED /* User_infoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5D11CE483F100E09AED /* User_infoModel.m */; };
@@ -692,6 +694,9 @@
 		B748A5491CEE323100A8338C /* CHPublishShiHuaOneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHPublishShiHuaOneCell.h; sourceTree = "<group>"; };
 		B748A54A1CEE323100A8338C /* CHPublishShiHuaOneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHPublishShiHuaOneCell.m; sourceTree = "<group>"; };
 		B748A54B1CEE323100A8338C /* CHPublishShiHuaOneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHPublishShiHuaOneCell.xib; sourceTree = "<group>"; };
+		B76AE92A1CEF477700E4A975 /* CHRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRegisterController.h; sourceTree = "<group>"; };
+		B76AE92B1CEF477700E4A975 /* CHRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRegisterController.m; sourceTree = "<group>"; };
+		B76AE92C1CEF477700E4A975 /* CHRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRegisterController.xib; sourceTree = "<group>"; };
 		B7A3F5CA1CE4801700E09AED /* EChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EChatModel.h; path = EChatModel/EChatModel.h; sourceTree = "<group>"; };
 		B7A3F5CB1CE4801700E09AED /* EChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EChatModel.m; path = EChatModel/EChatModel.m; sourceTree = "<group>"; };
 		B7A3F5CD1CE481F700E09AED /* Hot_topocModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hot_topocModel.h; path = EChatModel/Hot_topocModel.h; sourceTree = "<group>"; };
@@ -2141,6 +2146,7 @@
 		B71ED8711CDB52560035F6BE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B76AE9291CEF473D00E4A975 /* Register */,
 				B7B7A5CC1CEC9249002A80E7 /* Login */,
 				B7B7A5B71CEC9180002A80E7 /* MySetting */,
 				B7B7A5B61CEC9156002A80E7 /* MyDraft */,
@@ -2270,6 +2276,16 @@
 				B748A5421CEDFCB200A8338C /* SHImgs.m */,
 			);
 			name = ShiHuaModel;
+			sourceTree = "<group>";
+		};
+		B76AE9291CEF473D00E4A975 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				B76AE92A1CEF477700E4A975 /* CHRegisterController.h */,
+				B76AE92B1CEF477700E4A975 /* CHRegisterController.m */,
+				B76AE92C1CEF477700E4A975 /* CHRegisterController.xib */,
+			);
+			name = Register;
 			sourceTree = "<group>";
 		};
 		B7A3F5C81CE47F7700E09AED /* EChatModel */ = {
@@ -2722,6 +2738,7 @@
 				7AAF0A381CE184A300708F98 /* CHJRecomdTodayBanerFCollectionReusableView.xib in Resources */,
 				B7B7A5C61CEC91E2002A80E7 /* CHMyDraftController.xib in Resources */,
 				7AAF0A3E1CE184A300708F98 /* CHJRecomdTopHCollectionReusableView.xib in Resources */,
+				B76AE92E1CEF477700E4A975 /* CHRegisterController.xib in Resources */,
 				B7A512AA1CE65FD80085A6C8 /* CHFiveChatCell.xib in Resources */,
 				07AB42BC1CEC851800F1283F /* CHRecipesCell.xib in Resources */,
 				7A9CF4C41CF05AD500A2D830 /* CHRPublishNextViewController.xib in Resources */,
@@ -2860,6 +2877,7 @@
 				7A6ED7041CE31E87005DF78C /* CHJRTopBannerCellView.m in Sources */,
 				7AA5D6871CE9FB86007D0912 /* CHRJListToolBarContentModel.m in Sources */,
 				07AB42A51CEC851800F1283F /* CHCShiCaiViewController.m in Sources */,
+				B76AE92D1CEF477700E4A975 /* CHRegisterController.m in Sources */,
 				B7F6156C1CDCA17700AF1697 /* CHRecommendViewController.m in Sources */,
 				7A53C7791CEAFC790098BFEC /* CHRJListSearchFoodModel.m in Sources */,
 				7A3411AE1CE89742003E4F3C /* CHRJSearchView.m in Sources */,
@@ -3128,6 +3146,28 @@
 				INFOPLIST_FILE = "$(SRCROOT)/吃货美食/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"FMDB\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"SDWebImage\"",
+					"-l\"sqlite3\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-licucore",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TianTian.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -3145,6 +3185,28 @@
 				INFOPLIST_FILE = "$(SRCROOT)/吃货美食/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"FMDB\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"SDWebImage\"",
+					"-l\"sqlite3\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-licucore",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TianTian.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

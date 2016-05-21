@@ -9,6 +9,7 @@
 #import "CHPublishCookBookCell.h"
 #import "CBData.h"
 #import <UIImageView+WebCache.h>
+
 @implementation CHPublishCookBookCell
 
 - (void)setCookBookModel:(ZTCookBookModel *)cookBookModel
@@ -53,6 +54,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+    
     UIView *bgColorView = [[UIView alloc] init];
     bgColorView.backgroundColor = [UIColor whiteColor];
     [self setSelectedBackgroundView:bgColorView];
