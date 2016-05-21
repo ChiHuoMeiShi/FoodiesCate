@@ -167,7 +167,9 @@
                 <constraint firstAttribute="trailing" secondItem="J6w-Br-lA9" secondAttribute="trailing" constant="30" id="1CH-Z7-gis"/>
                 <constraint firstItem="J6w-Br-lA9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="2Vw-gQ-9Pp"/>
                 <constraint firstItem="mHJ-X7-IP5" firstAttribute="top" secondItem="Jo1-gg-pX6" secondAttribute="bottom" constant="8" id="7Fi-16-TF7"/>
-                <constraint firstItem="iCU-Q4-EZg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="EKl-jp-fUi"/>
+                <constraint firstItem="iCU-Q4-EZg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="EKl-jp-fUi">
+                    <variation key="heightClass=regular-widthClass=compact" constant="120"/>
+                </constraint>
                 <constraint firstItem="Xra-cq-khk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="H1p-cS-V1i"/>
                 <constraint firstItem="mHJ-X7-IP5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="LSv-Ic-mVF"/>
                 <constraint firstItem="qra-b8-a2p" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="TRZ-jO-IUD"/>
@@ -183,7 +185,9 @@
                 <constraint firstItem="Xra-cq-khk" firstAttribute="top" secondItem="mHJ-X7-IP5" secondAttribute="bottom" constant="61" id="rOO-DZ-FQS">
                     <variation key="heightClass=regular-widthClass=compact" constant="120"/>
                 </constraint>
-                <constraint firstItem="qra-b8-a2p" firstAttribute="top" secondItem="iCU-Q4-EZg" secondAttribute="bottom" constant="20" id="vSy-8m-YZI"/>
+                <constraint firstItem="qra-b8-a2p" firstAttribute="top" secondItem="iCU-Q4-EZg" secondAttribute="bottom" constant="20" id="vSy-8m-YZI">
+                    <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                </constraint>
                 <constraint firstItem="Jo1-gg-pX6" firstAttribute="top" secondItem="qra-b8-a2p" secondAttribute="bottom" constant="20" id="ypl-Kg-YvG"/>
             </constraints>
             <variation key="default">
