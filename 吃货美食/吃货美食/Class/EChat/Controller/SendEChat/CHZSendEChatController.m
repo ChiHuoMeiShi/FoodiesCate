@@ -11,7 +11,7 @@
 @interface CHZSendEChatController ()<UITextViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *myTextView;
 
-@property (weak, nonatomic) IBOutlet UIImageView *showImageView;
+@property (weak, nonatomic) IBOutlet UIButton *selectImage;
 
 @end
 
@@ -20,29 +20,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    UIGestureRecognizer *singeTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageTouch:)];
-    
-    [self.showImageView addGestureRecognizer:singeTap];
+
+    [self.selectImage addTarget:self action:@selector(selectImageClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-#pragma mark -- AddTextField
 
-#pragma mark --UITextViewDelegate
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    if ([text isEqualToString:@"/n"])
-    {
-        [textView resignFirstResponder];
-    }
-    return  YES;
+    
+    
 }
-
-#pragma mark -- ImageViewTouch
-- (void)imageTouch:(UITapGestureRecognizer *)sender
+#pragma mark --selectImageClick
+- (void)selectImageClick
 {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
@@ -92,12 +84,13 @@
     [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     
     [self presentViewController:alertController animated:YES completion:nil];
-
+    
 }
+
 #pragma mark - imagePicker代理方法
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *image = info[@"UIImagePickerControllerEditedImage"];
-    [self.showImageView setImage:image];
+    [self.selectImage setBackgroundImage:image forState:UIControlStateNormal];
     
     // 关闭照片选择器
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -113,5 +106,10 @@
         NSData *imageData = UIImagePNGRepresentation(image);
         [imageData writeToFile:imagePath atomically:YES];
     });
+    
 }
+
+
+
+
 @end

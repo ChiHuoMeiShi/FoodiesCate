@@ -8,7 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHZSendEChatController">
             <connections>
                 <outlet property="myTextView" destination="F9G-OA-EZl" id="PTn-3g-Pf3"/>
-                <outlet property="showImageView" destination="QrU-qX-cYJ" id="7GL-Eb-ZhW"/>
+                <outlet property="selectImage" destination="Q1S-vp-d80" id="ACX-gc-56x"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,25 +17,6 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="umeng_add_photo" translatesAutoresizingMaskIntoConstraints="NO" id="QrU-qX-cYJ">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="128" id="d6l-Fz-zWE"/>
-                        <constraint firstAttribute="width" constant="128" id="yEL-vz-z5s"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="d6l-Fz-zWE"/>
-                            <exclude reference="yEL-vz-z5s"/>
-                        </mask>
-                    </variation>
-                    <variation key="heightClass=regular-widthClass=compact">
-                        <mask key="constraints">
-                            <include reference="d6l-Fz-zWE"/>
-                            <include reference="yEL-vz-z5s"/>
-                        </mask>
-                    </variation>
-                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9G-OA-EZl">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,9 +36,30 @@
                         </mask>
                     </variation>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1S-vp-d80">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="128" id="5sp-mY-SaW"/>
+                        <constraint firstAttribute="height" constant="128" id="hdd-td-Xmv"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="umeng_add_photo"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="5sp-mY-SaW"/>
+                            <exclude reference="hdd-td-Xmv"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="5sp-mY-SaW"/>
+                            <include reference="hdd-td-Xmv"/>
+                        </mask>
+                    </variation>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="Q1S-vp-d80" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="3SN-P3-hRJ"/>
                 <constraint firstItem="F9G-OA-EZl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="TJf-jk-Gxu"/>
                 <constraint firstItem="F9G-OA-EZl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="TVw-9H-IGZ">
                     <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -65,33 +67,32 @@
                 <constraint firstAttribute="trailing" secondItem="F9G-OA-EZl" secondAttribute="trailing" constant="8" id="YWV-vC-8d3">
                     <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                 </constraint>
-                <constraint firstItem="QrU-qX-cYJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="mYi-Dd-Rjg"/>
-                <constraint firstItem="QrU-qX-cYJ" firstAttribute="top" secondItem="F9G-OA-EZl" secondAttribute="bottom" constant="30" id="rpy-A4-La2"/>
+                <constraint firstItem="Q1S-vp-d80" firstAttribute="top" secondItem="F9G-OA-EZl" secondAttribute="bottom" constant="30" id="kgT-ib-7pf"/>
             </constraints>
             <variation key="default">
                 <mask key="subviews">
-                    <exclude reference="QrU-qX-cYJ"/>
                     <exclude reference="F9G-OA-EZl"/>
+                    <exclude reference="Q1S-vp-d80"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="3SN-P3-hRJ"/>
+                    <exclude reference="kgT-ib-7pf"/>
                     <exclude reference="TJf-jk-Gxu"/>
                     <exclude reference="TVw-9H-IGZ"/>
                     <exclude reference="YWV-vC-8d3"/>
-                    <exclude reference="mYi-Dd-Rjg"/>
-                    <exclude reference="rpy-A4-La2"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
-                    <include reference="QrU-qX-cYJ"/>
                     <include reference="F9G-OA-EZl"/>
+                    <include reference="Q1S-vp-d80"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="3SN-P3-hRJ"/>
+                    <include reference="kgT-ib-7pf"/>
                     <include reference="TJf-jk-Gxu"/>
                     <include reference="TVw-9H-IGZ"/>
                     <include reference="YWV-vC-8d3"/>
-                    <include reference="mYi-Dd-Rjg"/>
-                    <include reference="rpy-A4-La2"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="-46" y="216"/>
