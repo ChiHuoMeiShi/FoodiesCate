@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <UIImageView+WebCache.h>
 #import "CHAISearchFoodTableModel.h"
+#import "CHRAIGetBaseFoodProtocol.h"
 
 @interface CHRAIFoodCollectionViewCell : UICollectionViewCell
 
@@ -19,10 +20,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *choosedImageView;
 
 @property (nonatomic,assign)BOOL isChoosed;
-@property (nonatomic,assign)BOOL isDelete;
+
+@property (nonatomic,weak)id<CHRAIGetBaseFoodProtocol> delegate;
 
 - (IBAction)chooseButtonAction:(UIButton *)sender;
-
-- (IBAction)deleButtonAction:(UIButton *)sender;
 
 @end

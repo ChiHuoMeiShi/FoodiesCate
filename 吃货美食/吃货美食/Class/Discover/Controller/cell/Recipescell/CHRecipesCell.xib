@@ -15,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.33921953175438224" green="1" blue="0.8339995119617597" alpha="1" colorSpace="calibratedRGB"/>
-            <point key="canvasLocation" x="281.5" y="249"/>
+            <point key="canvasLocation" x="468.5" y="154"/>
         </tableViewCell>
     </objects>
 </document>

@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "CHJRecommendJumpModel.h"
+#import "CHRJSearchView.h"
+#import <MBProgressHUD.h>
 
-@interface CHRWebViewController : UIViewController
+@interface CHRWebViewController : UIViewController<MBProgressHUDDelegate>
 @property (nonatomic,strong)NSNumber * webID;
 @property (nonatomic,copy)NSString * urlString;
 @property (nonatomic,strong)CHJRecommendJumpModel * jumpModel;
 @property (weak, nonatomic) IBOutlet UIWebView *webDetailView;
-@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (nonatomic,strong)CHRJSearchView * searchView;
+@property (nonatomic,strong)MBProgressHUD * myHUD;
 
 - (instancetype)initWithURLString:(NSString *)urlString;
 

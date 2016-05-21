@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CHHTTPRequestManager.h"
+
 #import <UIImageView+WebCache.h>
 #import "CHRJBasicViewController.h"
 #import "CHAISearchFoodTableModel.h"

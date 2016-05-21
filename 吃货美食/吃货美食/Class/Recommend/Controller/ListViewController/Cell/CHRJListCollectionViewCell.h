@@ -7,14 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CHHTTPRequestManager.h"
 #import "CHRJBasicViewController.h"
 #import "CHRJSearchContentModel.h"
 #import "CHRJListSearchFoodModel.h"
 #import "CHRJListFoodAndTypeModel.h"
-#import "CHHTTPRequestManager.h"
 #import "CHRJListFoodTableProtocal.h"
-
 #import "CHRJListFoodSearchTableViewCell.h"
 #import "CHRJListFoodBaseTableViewCell.h"
 #import "CHRJListFoodTableViewCell.h"

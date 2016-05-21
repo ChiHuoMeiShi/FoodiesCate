@@ -10,8 +10,6 @@
 #import "CHRWebViewController.h"
 #import "CHRJSearchView.h"
 #import "CHRJSearchViewController.h"
-#import "CHHTTPRequestManager.h"
-#import <MBProgressHUD.h>
 
 extern const CGFloat myLat;
 extern const CGFloat myLon;

@@ -7,7 +7,6 @@
 //
 
 #import "CHMeViewController.h"
-#import "CHHTTPRequestManager.h"
 #import "CHUserDefaults.h"
 #import <UIImageView+WebCache.h>
 #import <UIButton+WebCache.h>
