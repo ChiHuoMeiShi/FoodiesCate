@@ -7,9 +7,11 @@
 //
 
 #import "CHZSendEChatController.h"
-
+#import "CHRTextView.h"
 @interface CHZSendEChatController ()<UITextViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-@property (weak, nonatomic) IBOutlet UIView *myTextView;
+
+
+@property (weak, nonatomic) IBOutlet CHRTextView *chTextView;
 
 @property (weak, nonatomic) IBOutlet UIButton *selectImage;
 
@@ -19,18 +21,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 
+    self.chTextView.placeholder = @"无法接受了；扩大及法律凯撒的离开；撒";
     [self.selectImage addTarget:self action:@selector(selectImageClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationController setNavigationBarHidden:NO];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTittle:@"发布" withTittleColor:[UIColor redColor] withTarget:self action:@selector(publishBtnClick) forControlEvents:UIControlEventTouchUpInside];
 }
-
+- (void)navBackAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)publishBtnClick
+{
+    //上传
+    
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    
+    [self.chTextView resignFirstResponder];
     
 }
 #pragma mark --selectImageClick
@@ -61,14 +75,11 @@
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         //点击去相册
-        
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-            
             // 0）实例化控制器
             UIImagePickerController *picker = [[UIImagePickerController alloc]init];
             // 1）设置照片源
             [picker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-            
             // 2) 设置允许修改
             [picker setAllowsEditing:YES];
             // 3) 设置代理
@@ -80,11 +91,8 @@
             CHLog(@"照片源不可用");
         }
     }]];
-    
     [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
-    
     [self presentViewController:alertController animated:YES completion:nil];
-    
 }
 
 #pragma mark - imagePicker代理方法
