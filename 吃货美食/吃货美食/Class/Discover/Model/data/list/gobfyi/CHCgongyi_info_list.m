@@ -8,7 +8,7 @@
 
 #import "CHCgongyi_info_list.h"
 #import <MJExtension.h>
-#import "CHCrecipes_list.h"
+
 @implementation CHCgongyi_info_list
 +(NSDictionary*)mj_objectClassInArray
 {

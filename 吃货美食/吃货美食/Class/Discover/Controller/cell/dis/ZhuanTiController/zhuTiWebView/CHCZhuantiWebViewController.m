@@ -1,36 +1,32 @@
 //
-//  CHEChatDetailController.m
+//  CHCZhuantiWebViewController.m
 //  吃货美食
 //
-//  Created by 赵天 on 16/5/14.
+//  Created by eric on 16/5/21.
 //  Copyright © 2016年 赵天. All rights reserved.
 //
 
-#import "CHEChatDetailController.h"
+#import "CHCZhuantiWebViewController.h"
 
-@interface CHEChatDetailController ()
+@interface CHCZhuantiWebViewController ()
 
 @end
 
-@implementation CHEChatDetailController
+@implementation CHCZhuantiWebViewController
 - (void)navBackAction{
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
-    // Do any additional setup after loading the view from its nib.
-    //20&tid=
-    NSString *baseUrl = @"http://m.meishij.net/html5/shihua_content.php?gid=";
-//    http://api.meishi.cc/v5/faxian_new.php?format=json
-//    @"http://m.meishij.net/html5/faxian_content.php?gid=";
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@&tid=%@",baseUrl,self.gid,self.tid];
+
+    NSURL *url = [NSURL URLWithString:self.f_s_type];
     
-    NSURL *url = [NSURL URLWithString:urlStr];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    
-    [self.webView loadRequest:request];
+        [self.zhuTiWebView loadRequest:request];
+
     
 }
 

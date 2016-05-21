@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "CHCrecipes_list.h"
 @interface CHCgongyi_info_list : NSObject
 @property(nonatomic,strong)NSString *gongyi;
 @property(nonatomic,strong)NSMutableArray *recipes;

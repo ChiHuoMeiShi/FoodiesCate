@@ -12,8 +12,7 @@
 #import "CHCMeatViewController.h"
 #import "CHFiveCrealsViewController.h"
 #import "UIView+JWFrame.h"
-@interface CHCShiCaiViewController ()<UITableViewDelegate,UITableViewDataSource>
-{
+@interface CHCShiCaiViewController (){
     NSMutableArray *_dataArr;
     NSMutableDictionary *_dataDic;
     UIViewController *_selectVC;
@@ -22,8 +21,13 @@
 @end
 
 @implementation CHCShiCaiViewController
+- (void)navBackAction{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)viewDidLoad {
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
+
     [super viewDidLoad];
     UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
     button.frame=CGRectMake(8, 8, 46, 30);
