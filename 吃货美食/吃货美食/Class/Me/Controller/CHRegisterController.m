@@ -48,6 +48,8 @@
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
             [alertController addAction:okAction];
             [self presentViewController:alertController animated:YES completion:nil];
+            
+
         }
         if ([mySelf.passwdTextField.text isEqualToString:@""]) {
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"警告" message:@"密码不能为空" preferredStyle:UIAlertControllerStyleAlert];
@@ -111,6 +113,7 @@
     }];
 
 }
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.accountTextField resignFirstResponder];
     [self.passwdTextField resignFirstResponder];
