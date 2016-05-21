@@ -11,27 +11,38 @@
 #import <AFNetworking.h>
 #import "CHCCaiDanTableViewCell.h"
 #import "CHCCaiDandata.h"
+#import <MJRefresh.h>
+#import "CHCCaiDanWebViewController.h"
 @interface CHCCaiDanViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView *caiDanTableView;
 @property(nonatomic,strong)CHCCaiDandata *data;
 @end
 
 @implementation CHCCaiDanViewController
+- (void)headerRefreshAction
+{
+    //    刷新
+    [self.caiDanTableView.mj_header beginRefreshing];
+    [self getUpToDateDataWithSource:@"iphone"];
+    
+}
+- (void)navBackAction{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame=CGRectMake(8, 8, 46, 30);
-    button.backgroundColor=[UIColor redColor];
-    [button setTitle:@"返回" forState:UIControlStateNormal];
-    [button setTintColor:[UIColor greenColor]];
-    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
+
     [self getUpToDateDataWithSource:@"iphone"];
-   _caiDanTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 64, self.view.width, self.view.height) style:UITableViewStylePlain];
+       _caiDanTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0,CHSCREENWIDTH, CHSCREENHEIGH) style:UITableViewStylePlain];
     _caiDanTableView.dataSource=self;
     _caiDanTableView.delegate=self;
     [self.view addSubview:_caiDanTableView];
+    MJRefreshStateHeader *header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshAction)];
+    self.caiDanTableView.mj_header=header;
+    [self.caiDanTableView addSubview:header];
 
 }
 
@@ -46,6 +57,7 @@
         CHLog(@"1111%@",responseObject);
         dispatch_async(dispatch_get_main_queue(), ^
           {
+              [self.caiDanTableView.mj_header endRefreshing];
             CHCCaiDandata *data=[CHCCaiDandata mj_objectWithKeyValues:responseObject];
               myself.data=data;
               [_caiDanTableView reloadData];
@@ -92,10 +104,19 @@
     return 1;
 }
 
--(void)buttonClick:(id)sender
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    CHCCaiDanWebViewController *webview=[[CHCCaiDanWebViewController alloc]init];
+    
+//    
+    CHCData_list *dataList=(CHCData_list*)self.data.data[indexPath.section];
+    webview.rid=dataList.myid;
+        [self presentViewController:webview animated:YES completion:nil];
 }
+//-(void)buttonClick:(id)sender
+//{
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

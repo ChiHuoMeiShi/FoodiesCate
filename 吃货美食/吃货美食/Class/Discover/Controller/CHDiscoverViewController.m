@@ -27,9 +27,10 @@
 #import "CHZhuanTiViewController.h"
 #import "CHArticalViewController.h"
 #import <UIImageView+WebCache.h>
-#import "CHEChatDetailController.h"
-
 #import <MJRefresh.h>
+#import "CHCFaXianDetailViewController.h"
+#import "Topic_List.h"
+#import "CHEChatDetailController.h"
 @interface CHDiscoverViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 {
@@ -51,16 +52,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  
+    
     [self getTableViewData];
-     [self CreatTableView];
-    
-    MJRefreshStateHeader *header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshAction)];
+    [self CreatTableView];
+     MJRefreshStateHeader *header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshAction)];
      _mytableView.mj_header=header;
-    [ header setTitle:@"正在刷新中..." forState:MJRefreshStateRefreshing];
-    [_mytableView addSubview:header];
+       [_mytableView addSubview:header];
     
-   
-   
 }
 -(void)getTableViewData
 {
@@ -76,13 +75,14 @@
          {
              [_mytableView.mj_header endRefreshing];
 
+
         CHCFindData *data=[CHCFindData mj_objectWithKeyValues:responseObject];
         mySelf.data=data;
         [_mytableView reloadData];
          });
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-       
+        CHLog(@"%@",error);
     }];
     
 }
@@ -219,6 +219,7 @@
           recipescell=arr[0];
           //        设置选择时的显示风格
           recipescell.selectionStyle = UITableViewCellSelectionStyleNone;
+          recipescell.faxian_list=faxianCelllist;
           return recipescell;
       }
 
@@ -265,24 +266,25 @@
 {
 
     CHCShiCaiViewController *shiCaiController=[[CHCShiCaiViewController alloc]init];
-  [self presentViewController:shiCaiController animated:YES completion:nil];
-}
+   [self.navigationController pushViewController:shiCaiController animated:YES];
+
+  }
 
 -(void)caidanButtonClicked:(id)sender
 {
     CHCCaiDanViewController *shiCaiController=[[CHCCaiDanViewController alloc]init];
-    [self presentViewController:shiCaiController animated:YES completion:nil];
+    [self.navigationController pushViewController:shiCaiController animated:YES];
+
 }
 -(void)zhuantiButtonClicked:(id)sender
 {
     CHZhuanTiViewController *shiCaiController=[[CHZhuanTiViewController alloc]init];
-    [self presentViewController:shiCaiController animated:YES completion:nil];
-    
+   [self.navigationController pushViewController:shiCaiController animated:YES];
 }
 -(void)articleButtonClicked:(id)sender
 {
     CHArticalViewController *shiCaiController=[[CHArticalViewController alloc]init];
-    [self presentViewController:shiCaiController animated:YES completion:nil];
+   [self.navigationController pushViewController:shiCaiController animated:YES];
 
 }
 #pragma mark-UITableViewDelegate
@@ -334,11 +336,67 @@
 {
     return 8;
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//        if (indexPath.section==0) {
+//       
+//    }
+//    else ([self.faxianCelllist.type isEqualToString:@"7"]);
+//    {
+    
+    CHEChatDetailController *targetVC = [[CHEChatDetailController alloc] init];
+        CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
+        targetVC.tid = faxianCelllist.caidan_info.myid;
+    [self.navigationController pushViewController:targetVC animated:YES];
+        
+//    }
+    
+//    if(indexPath.section==0)
+//    {
+//        return 140;
+//    }
+//    else if ([self.faxianCelllist.type isEqualToString:@"1"])
+//    {
+//        return 221;
+//    }
+//    else if ([self.faxianCelllist.type isEqualToString:@"2"])
+//    {
+//        return 221;
+//    }
+//    else if ([self.faxianCelllist.type isEqualToString:@"3"])
+//    {
+//        return 264;
+//    }
+//    else if ([self.faxianCelllist.type isEqualToString:@"5"])
+//    {
+//        return 330;
+//    }
+//    else if ([self.faxianCelllist.type isEqualToString:@"7"])
+//    {
+//        return 210;
+//    }
+//    else if ([self.faxianCelllist.type isEqualToString:@"9"])
+//    {
+//        return 260;
+//    }
+//    else if ([self.faxianCelllist.type isEqualToString:@"11"])
+//    {
+//        return 260;
+//    }
+
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+//    CHCFaXianDetailViewController *detaileView=[[CHCFaXianDetailViewController alloc]init];
+//
+//    YLSquareList *squareList = self.meModel.squareList[indexPath.row];
+//
+//    detailVC.loadUrl = squareList.url;
+//
+//    [self.navigationController pushViewController:detailVC animated:YES];
 /*
 #pragma mark - Navigation
 
@@ -348,6 +406,50 @@
     // Pass the selected object to the new view controller.
 }
 */
+//NSString *str=self.faxianCelllist.type ;
+//int a=[str intValue];
+//switch (a) {
+//    case 0:
+//        
+//        break;
+//        //
+//        //        case 1:
+//        //            <#statements#>
+//        //            break;
+//        //        case 2:
+//        //            <#statements#>
+//        //            break;
+//        //        case 3:
+//        //            <#statements#>
+//        //            break;
+//        //        case 4:
+//        //            <#statements#>
+//        //            break;
+//        //            case 5:
+//        //            <#statements#>
+//        //            break;
+//        //        case 6:
+//        //            <#statements#>
+//        //            break;
+//    case 7:
+//    {
+//        CHEChatDetailController *targetVC = [[CHEChatDetailController alloc] init];
+//        CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
+//        targetVC.tid = faxianCelllist.caidan_info.myid;
+//        [self.navigationController pushViewController:targetVC animated:YES];
+//    }
+//        break;
+//        //        case 9:
+//        //            <#statements#>
+//        //            break;
+//        //        case 11:
+//        //            <#statements#>
+//        //            break;
+//        
+//        
+//    default:
+//        break;
+//}
 
 
 @end

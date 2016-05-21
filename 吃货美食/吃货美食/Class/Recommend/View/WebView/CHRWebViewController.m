@@ -13,6 +13,8 @@
 @end
 
 @implementation CHRWebViewController
+
+
 - (instancetype)initWithURLString:(NSString *)urlString{
     self = [super init];
     if (self) {
@@ -53,6 +55,13 @@
     self.webDetailView.scrollView.bounces = NO;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.userDefault = [CHUserDefaults shareUserDefault];
+    if ([self.userDefault.user_name isEqualToString:@""]) {
+        self.showView.hidden = NO;
+    }
+}
 
 - (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
     if(navigationType==UIWebViewNavigationTypeLinkClicked)
@@ -63,6 +72,11 @@
 }
 - (void)navBackAction{
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)loginButtonAction:(UIButton *)sender {
+    CHLoginController * loginVC = [[CHLoginController alloc]init];
+    [self.navigationController pushViewController:loginVC animated:YES];
 }
 #pragma mark - HUD
 - (void)showHUDWithText:(NSString *)string withTextFont:(UIFont *)font withTextColor:(UIColor *)color withTextSize:(CGSize)textSize withAction:(SEL)method withIsAnimated:(BOOL)isAnimated{

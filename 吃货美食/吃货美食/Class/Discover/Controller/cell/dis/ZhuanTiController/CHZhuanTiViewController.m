@@ -11,6 +11,8 @@
 #import "CHCZhuanTiTableViewCell.h"
 #import <MJExtension.h>
 #import "CHCZhuanTiData.h"
+#import <MJRefresh.h>
+#import "CHCZhuantiWebViewController.h"
 @interface CHZhuanTiViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     UITableView *_zhuanTiTableView;
@@ -19,21 +21,27 @@
 @end
 
 @implementation CHZhuanTiViewController
+-(void)RefreshNormalHeader
+{
+    [_zhuanTiTableView.mj_header beginRefreshing];
+    [self getZhuanTiData];
+}
+- (void)navBackAction{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame=CGRectMake(8, 8, 46, 30);
-    button.backgroundColor=[UIColor redColor];
-    [button setTitle:@"返回" forState:UIControlStateNormal];
-    [button setTintColor:[UIColor greenColor]];
-    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
-     [self getZhuanTiData];
-    _zhuanTiTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 64, self.view.width, self.view.height) style:UITableViewStylePlain];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
+
+    [self getZhuanTiData];
+    _zhuanTiTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, CHSCREENWIDTH,CHSCREENHEIGH) style:UITableViewStylePlain];
    _zhuanTiTableView.dataSource=self;
     _zhuanTiTableView.delegate=self;
     [self.view addSubview:_zhuanTiTableView];
+    MJRefreshNormalHeader *header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(RefreshNormalHeader)];
+    _zhuanTiTableView.mj_header=header;
+    [_zhuanTiTableView addSubview:header];
    
 }
 -(void)getZhuanTiData
@@ -47,6 +55,7 @@
         CHLog(@"1111%@",responseObject);
         dispatch_async(dispatch_get_main_queue(), ^
        {
+           [_zhuanTiTableView.mj_header endRefreshing];
            CHCZhuanTiData *data=[CHCZhuanTiData mj_objectWithKeyValues:responseObject];
            myself.data=data;
            [_zhuanTiTableView reloadData];
@@ -93,7 +102,13 @@
 {
     return 13;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CHCZhuantiWebViewController *webView=[[CHCZhuantiWebViewController alloc]init];
+    CHCZhuanTiData_list *dataList=(CHCZhuanTiData_list*)self.data.data[indexPath.section];
+    webView.f_s_type=dataList.f_s_type;
+    [self.navigationController pushViewController:webView animated:YES];
+}
 -(void)buttonClick:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
