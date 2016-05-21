@@ -26,15 +26,13 @@
  */
 + (UIBarButtonItem *)barItemWithImageName:(NSString *)imageName withSelectImage:(NSString *)selectImage withHorizontalAlignment:(UIControlContentHorizontalAlignment)alignment withTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvent{
     UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0.f, 0.f, 60.f, 30.f);
     if (imageName) {
         [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     }
     if (selectImage) {
         [btn setImage:[UIImage imageNamed:selectImage] forState:UIControlStateHighlighted];
     }
-    
-    btn.frame = CGRectMake(0.f, 0.f, 20.f, 30.f);
-    
     btn.contentHorizontalAlignment = alignment;
     
     [btn addTarget:target action:action forControlEvents:controlEvent];
@@ -58,6 +56,7 @@
  */
 + (UIBarButtonItem *)barItemWithImageName:(NSString *)imageName withSelectImage:(NSString *)selectImage withHorizontalAlignment:(UIControlContentHorizontalAlignment)alignment withTittle:(NSString *)itemTittle withTittleColor:(UIColor *)tittleColor withTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvent{
     UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0.f, 0.f, 60.f, 30.f);
     if (imageName) {
         [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     }
@@ -66,8 +65,6 @@
     }
     [btn setTitle:itemTittle forState:UIControlStateNormal];
     [btn setTitleColor:tittleColor forState:UIControlStateNormal];
-    
-    btn.frame = CGRectMake(0.f, 0.f, 60.f, 30.f);
     
     btn.contentHorizontalAlignment = alignment;
     
@@ -78,7 +75,34 @@
     return item;
 }
 
-
+/**
+ *  设置UIBarButtonItem（只有图片,自定义大小）
+ *
+ *  @param imageName   imageName
+ *  @param selectImage selectImage
+ *  @param alignment   控件水平方向靠拢模式
+ *  @param target       UIBarButtonItem添加点击事件
+ *  @param action       UIBarButtonItem添加点击事件
+ *  @param controlEvent UIBarButtonItem添加点击事件9
+ *  @param size         barButton的大小
+ *  @return 自定义的barButtonItem
+ */
++ (UIBarButtonItem *)barItemWithImageName:(NSString *)imageName withSelectImage:(NSString *)selectImage withHorizontalAlignment:(UIControlContentHorizontalAlignment)alignment withTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvent withSize:(CGSize)size{
+    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0.f, 0.f, size.width, size.height);
+    if (imageName) {
+        [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
+    }
+    if (selectImage) {
+        [btn setImage:[UIImage imageNamed:selectImage] forState:UIControlStateHighlighted];
+    }
+    
+    btn.contentHorizontalAlignment = alignment;
+    
+    [btn addTarget:target action:action forControlEvents:controlEvent];
+    
+    return [[UIBarButtonItem alloc]initWithCustomView:btn];
+}
 #pragma mark - PropertySetting
 /**
  *  修改UIBarButtonItem文字颜色

@@ -31,12 +31,15 @@
     self.recommendCollection.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [mySelf getCollectionViewData];
     }];
+    [self recommdSearchBarSetWithRect:CGRectMake(54.f, 26.f, (CHSCREENWIDTH - 108.f), 30.f)];
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"index_icon_photo" withSelectImage:@"index_icon_photo" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTarget:self action:@selector(publishNewFood) forControlEvents:UIControlEventTouchUpInside withSize:CGSizeMake(40.f, 40.f)];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = NO;
-    [self recommdSearchBarSetWithRect:CGRectMake(54.f, 26.f, (CHSCREENWIDTH - 108.f), 30.f)];
+    
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     if (!self.todayBannerTimer) {
         self.todayBannerTimer = [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(todayBannerTimerAction) userInfo:nil repeats:YES];
@@ -49,7 +52,6 @@
         self.todayFooterView.todayBannerPageControl.currentPage = self.todayFooterView.todayBannerScrollerView.currentBannerCount;
     }
 }
-
 
 - (void)recommdSearchBarSetWithRect:(CGRect)rect{
     self.searchView = [[[NSBundle mainBundle]loadNibNamed:@"CHRJSearchView" owner:nil options:nil]lastObject];
@@ -103,9 +105,12 @@
 }
 
 #pragma mark - ButtonActions
-
 - (void)commitAction{
     
+}
+- (void)publishNewFood{
+    CHRPublishViewController * publishVC = [[CHRPublishViewController alloc]init];
+    [self.navigationController pushViewController:publishVC animated:YES];
 }
 - (void)backToTopButtonAction:(id)sender {
     [self.recommendCollection setContentOffset:CGPointMake(0.f, -64.f) animated:YES];
