@@ -13,7 +13,7 @@
 #import "CHCSegment.h"
 #import "CHCArticalTableView.h"
 #import <UIImageView+WebCache.h>
-
+#import <MJRefresh.h>
 @interface CHArticalViewController ()<UIScrollViewDelegate>
 {
      UIPageControl *_pageControl;
@@ -35,29 +35,33 @@
 @end
 
 @implementation CHArticalViewController
+-(void)RefreshNormalHeader
+{
+    [self.tabelView.mj_header beginRefreshing];
+      [self getArTicalData];
+}
+- (void)navBackAction{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets=NO;
     
-    
-    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame=CGRectMake(8, 8, 46, 30);
-    button.backgroundColor=[UIColor redColor];
-    [button setTitle:@"返回" forState:UIControlStateNormal];
-    [button setTintColor:[UIColor greenColor]];
-    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
+
     [self getArTicalData];
     
-    
+    MJRefreshNormalHeader *header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(RefreshNormalHeader)];
+    self.tabelView.mj_header=header;
+    [self.tabelView addSubview:header];
 }
 
 -(void)addSegment
 {
     UIScrollView *headscroll = [[UIScrollView alloc] init];
 
-    headscroll.frame = CGRectMake(0, 50, self.view.width, 30);
+    headscroll.frame = CGRectMake(0, 64, self.view.width, 30);
     headscroll.showsHorizontalScrollIndicator = NO;
     
     self.segment = [[CHCSegment alloc] initWithFrame:CGRectMake(0,0, self.view.width, 30) withItems:self.classesArr];
@@ -80,8 +84,8 @@
 
     _scrollerView=[[UIScrollView alloc]init];
    _scrollerView.backgroundColor=[UIColor greenColor];
-   _scrollerView.frame=CGRectMake(0,80, self.view.width, self.view.height-80);
-    _scrollerView.contentSize=CGSizeMake(self.segment.items.count*self.view.width, self.view.height-80);
+   _scrollerView.frame=CGRectMake(0,94, self.view.width, self.view.height-94);
+    _scrollerView.contentSize=CGSizeMake(self.segment.items.count*self.view.width, self.view.height-94);
         _scrollerView.delegate=self;
     _scrollerView.pagingEnabled=YES;
     _scrollerView.showsHorizontalScrollIndicator = YES;
@@ -122,71 +126,7 @@
     }
     
 }
-//-(void)addPagecontrol
-//{
-//    _pageControl=[[UIPageControl alloc]initWithFrame:CGRectMake(170, 160, 100, 40)];
-//    _pageControl.numberOfPages=self.imagesArr.count;
-//    _pageControl.pageIndicatorTintColor=[UIColor  redColor];
-//    _pageControl.currentPageIndicatorTintColor=[UIColor blueColor];
-//    self.timer=[NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(update:) userInfo:nil repeats:YES];
-//    //获取当前的消息循环对象
-//    NSRunLoop *runloop=[NSRunLoop currentRunLoop];
-//    //改变self.timer的优先级
-//    [runloop addTimer:self.timer forMode:NSRunLoopCommonModes];
-//    [self.view addSubview:_pageControl];
-//
-//}
-//- (void)update:(NSTimer *)timer
-//{
-//    
-//    if (_isDragging == YES)
-//    {
-//        return ;
-//    }
-//    
-//    //每次执行这个方法的时候，都要让图片滚动到下一页
-//    //获取当前的UIPageControl的页码
-//    NSInteger page = _pageControl.currentPage;
-//    //判断是否到达最后
-//    if (page == _pageControl.numberOfPages - 1)
-//    {
-//        page = 0; //回到第一页
-//    }
-//    else
-//    {
-//        page++;
-//    }
-//    
-//    //用每页的宽度 * （页码 + 1）== 计算除了下一页的contentOffset.x
-//    CGFloat offsetX = page * _tableViewTopScrollview.width;
-//    
-//    //设置scrollView的偏移量等于新的偏移值
-//    [_tableViewTopScrollview setContentOffset:CGPointMake(offsetX, 0) animated:YES];
-//    
-//    
-//}
-//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
-//{
-//    //停止计时器
-//    //调用invalidate来停止计时器，一旦计时器停止后，那么这个计时器就不可在重用了，下次必须重新创建一个新的计时器对象。
-//    [self.timer invalidate];
-//    
-//    //因为调用完毕
-//    self.timer = nil;
-//}
-////实现拖拽完毕方法invalidate方法以后，这个计时器对象就已经废了，无法重用了。所以可以直接将self.timer设置为nil
-//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-//{
-//    //重新启动计时器
-//    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(update:) userInfo:nil repeats:YES];
-//    
-//    //再次修改self.timer的优先级
-//    //修改self.timer的优先级与控件一样
-//    //获取当前的消息循环对象
-//    NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
-//    //改变self.timer的优先级
-//    [runLoop addTimer:self.timer forMode:NSRunLoopCommonModes];
-//}
+
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     self.pageNum = _scrollerView.contentOffset.x / _scrollerView.frame.size.width;
@@ -205,6 +145,7 @@
     NSDictionary *parameters = @{@"lat" : @"34.60519775425116",@"lon" : @"112.4231392332194",@"source" : @"iphone",@"format" : @"json", @"cid" : @"",@"page":@"1"};
    
     [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [self.tabelView.mj_header endRefreshing];
         CHLog(@"1111%@",responseObject);
         //        NSDictionary *dict = (NSDictionary *)responseObject;
         //
@@ -264,11 +205,95 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+//-(void)addPagecontrol
+//{
+//    _pageControl=[[UIPageControl alloc]initWithFrame:CGRectMake(170, 160, 100, 40)];
+//    _pageControl.numberOfPages=self.imagesArr.count;
+//    _pageControl.pageIndicatorTintColor=[UIColor  redColor];
+//    _pageControl.currentPageIndicatorTintColor=[UIColor blueColor];
+//    self.timer=[NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(update:) userInfo:nil repeats:YES];
+//    //获取当前的消息循环对象
+//    NSRunLoop *runloop=[NSRunLoop currentRunLoop];
+//    //改变self.timer的优先级
+//    [runloop addTimer:self.timer forMode:NSRunLoopCommonModes];
+//    [self.view addSubview:_pageControl];
+//
+//}
+//- (void)update:(NSTimer *)timer
+//{
+//
+//    if (_isDragging == YES)
+//    {
+//        return ;
+//    }
+//
+//    //每次执行这个方法的时候，都要让图片滚动到下一页
+//    //获取当前的UIPageControl的页码
+//    NSInteger page = _pageControl.currentPage;
+//    //判断是否到达最后
+//    if (page == _pageControl.numberOfPages - 1)
+//    {
+//        page = 0; //回到第一页
+//    }
+//    else
+//    {
+//        page++;
+//    }
+//
+//    //用每页的宽度 * （页码 + 1）== 计算除了下一页的contentOffset.x
+//    CGFloat offsetX = page * _tableViewTopScrollview.width;
+//
+//    //设置scrollView的偏移量等于新的偏移值
+//    [_tableViewTopScrollview setContentOffset:CGPointMake(offsetX, 0) animated:YES];
+//
+//
+//}
+//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+//{
+//    //停止计时器
+//    //调用invalidate来停止计时器，一旦计时器停止后，那么这个计时器就不可在重用了，下次必须重新创建一个新的计时器对象。
+//    [self.timer invalidate];
+//
+//    //因为调用完毕
+//    self.timer = nil;
+//}
+////实现拖拽完毕方法invalidate方法以后，这个计时器对象就已经废了，无法重用了。所以可以直接将self.timer设置为nil
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+//{
+//    //重新启动计时器
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(update:) userInfo:nil repeats:YES];
+//
+//    //再次修改self.timer的优先级
+//    //修改self.timer的优先级与控件一样
+//    //获取当前的消息循环对象
+//    NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
+//    //改变self.timer的优先级
+//    [runLoop addTimer:self.timer forMode:NSRunLoopCommonModes];
+//}
 /*
 #pragma mark - Navigation
 

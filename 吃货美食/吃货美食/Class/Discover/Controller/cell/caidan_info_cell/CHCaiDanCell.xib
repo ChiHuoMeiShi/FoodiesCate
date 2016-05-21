@@ -48,6 +48,7 @@
                         <rect key="frame" x="277" y="65" width="123" height="123"/>
                     </imageView>
                 </subviews>
+                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="tpD-ee-JWG" firstAttribute="top" secondItem="BLG-fX-0Yb" secondAttribute="top" id="2SG-GI-H0f"/>
                     <constraint firstItem="BLG-fX-0Yb" firstAttribute="top" secondItem="0CP-my-UWX" secondAttribute="top" id="8IY-v4-7X0"/>

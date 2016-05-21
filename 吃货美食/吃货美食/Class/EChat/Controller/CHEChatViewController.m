@@ -9,7 +9,6 @@
 #import "CHEChatViewController.h"
 #import "CHZSendEChatController.h"
 #import <UIImageView+WebCache.h>
-#import "CHEChatHeaderView.h"
 #import "Hot_topocModel.h"
 #import <AFNetworking.h>
 #import "CHEChatCell.h"

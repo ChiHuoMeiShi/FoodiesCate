@@ -115,10 +115,8 @@
     CHRegisterController *targetVC = [[CHRegisterController alloc] init];
     [self.navigationController pushViewController:targetVC animated:YES];
 }
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.accountTextField resignFirstResponder];
     [self.passwdTextField resignFirstResponder];
 }
-
 @end

@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CHCfaxian_list.h"
 @interface CHRecipesCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tagLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *oneImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *twoImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *threeImageVIew;
+@property(nonatomic,strong)CHCfaxian_list *faxian_list;
+-(void)setFaxian_list:(CHCfaxian_list *)faxian_list;
+@property(nonatomic,strong)NSMutableArray *Arr;
 @end
