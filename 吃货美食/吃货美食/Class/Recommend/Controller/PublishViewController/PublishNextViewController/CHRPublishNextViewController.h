@@ -7,8 +7,13 @@
 //
 
 #import "CHRJBasicViewController.h"
+#import "CHRTextView.h"
 
 @interface CHRPublishNextViewController : CHRJBasicViewController
+
+
+@property (weak, nonatomic) IBOutlet CHRTextView *showTextView;
+
 
 @property (nonatomic,strong)NSDictionary * foodDataDic;
 @property (nonatomic,copy)NSString * foodName;

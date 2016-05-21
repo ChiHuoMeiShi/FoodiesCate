@@ -151,6 +151,7 @@
 		7A9CF4B91CF04A1D00A2D830 /* CHRPublicShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CF4B71CF04A1D00A2D830 /* CHRPublicShowTableViewCell.xib */; };
 		7A9CF4C31CF05AD500A2D830 /* CHRPublishNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4C11CF05AD500A2D830 /* CHRPublishNextViewController.m */; };
 		7A9CF4C41CF05AD500A2D830 /* CHRPublishNextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CF4C21CF05AD500A2D830 /* CHRPublishNextViewController.xib */; };
+		7A9CF4C81CF0809D00A2D830 /* CHRTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4C71CF0809D00A2D830 /* CHRTextView.m */; };
 		7AA5D67E1CE9E6D9007D0912 /* CHRJListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5D67C1CE9E6D9007D0912 /* CHRJListViewController.m */; };
 		7AA5D67F1CE9E6D9007D0912 /* CHRJListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AA5D67D1CE9E6D9007D0912 /* CHRJListViewController.xib */; };
 		7AA5D6841CE9E9C2007D0912 /* CHRJListToolBarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5D6831CE9E9C2007D0912 /* CHRJListToolBarModel.m */; };
@@ -520,6 +521,8 @@
 		7A9CF4C01CF05AD500A2D830 /* CHRPublishNextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRPublishNextViewController.h; sourceTree = "<group>"; };
 		7A9CF4C11CF05AD500A2D830 /* CHRPublishNextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRPublishNextViewController.m; sourceTree = "<group>"; };
 		7A9CF4C21CF05AD500A2D830 /* CHRPublishNextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRPublishNextViewController.xib; sourceTree = "<group>"; };
+		7A9CF4C61CF0809D00A2D830 /* CHRTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRTextView.h; sourceTree = "<group>"; };
+		7A9CF4C71CF0809D00A2D830 /* CHRTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRTextView.m; sourceTree = "<group>"; };
 		7AA5D67B1CE9E6D9007D0912 /* CHRJListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJListViewController.h; sourceTree = "<group>"; };
 		7AA5D67C1CE9E6D9007D0912 /* CHRJListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJListViewController.m; sourceTree = "<group>"; };
 		7AA5D67D1CE9E6D9007D0912 /* CHRJListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRJListViewController.xib; sourceTree = "<group>"; };
@@ -1555,6 +1558,15 @@
 			path = PublishNextViewController;
 			sourceTree = "<group>";
 		};
+		7A9CF4C51CF0805800A2D830 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				7A9CF4C61CF0809D00A2D830 /* CHRTextView.h */,
+				7A9CF4C71CF0809D00A2D830 /* CHRTextView.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
 		7AA5D67A1CE9E6A3007D0912 /* ListVIewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2532,6 +2544,7 @@
 		B7F615461CDC80B200AF1697 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7A9CF4C51CF0805800A2D830 /* Control */,
 				7A9CF4981CEFF57E00A2D830 /* PublishViewController */,
 				7A67A69B1CEC8DFA00F0AC08 /* AISetFood */,
 				7AA5D67A1CE9E6A3007D0912 /* ListVIewController */,
@@ -2911,6 +2924,7 @@
 				7AD0DDAC1CDCA7CE0057F8B2 /* UIColor+HexColor.m in Sources */,
 				B748A5401CEDF7AA00A8338C /* SHData.m in Sources */,
 				07AB42A31CEC851800F1283F /* CHCDiscoverTableViewcell.m in Sources */,
+				7A9CF4C81CF0809D00A2D830 /* CHRTextView.m in Sources */,
 				07AB42951CEC851800F1283F /* CHCArticalData.m in Sources */,
 				7AA5D6841CE9E9C2007D0912 /* CHRJListToolBarModel.m in Sources */,
 				7AD0DDA81CDCA7CE0057F8B2 /* UIBarButtonItem+SettingCustom.m in Sources */,

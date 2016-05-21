@@ -28,12 +28,36 @@
     [super viewDidLoad];
     self.title = @"编辑菜谱";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTittle:@"发布" withTittleColor:[UIColor redColor] withTarget:self action:@selector(publishFood) forControlEvents:UIControlEventTouchUpInside];
+    [self requestData];
+    self.showTextView.placeholder = @"vbnj";
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//- (void)requestData{
+//    NSString * url = @"http://api.meishi.cc/v5/shicaizucai_img.php?format=json";
+//    NSDictionary * dic = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"sname":self.foodTextField.text};
+//    __weak typeof(self)mySelf = self;
+//    [self.afnManger.messageRequest POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        NSDictionary * dic = (NSDictionary *)responseObject;
+//        //        CHLog(@"%@",dic[@"obj"]);
+//        mySelf.dataArray = [CHAISearchFoodTableModel mj_objectArrayWithKeyValuesArray:dic[@"obj"]];
+//        
+//        [mySelf.baseFoodTableView reloadData];
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        CHLog(@"%@",error);
+//    }];
+//}
+
+- (void)requestData{
+    NSString * url = @"http://api.meishi.cc/v5/upload_recipe_pic.php";
+    NSDictionary * dic = @{@"source":@"iphone",@"format":@"json",@"act":@"step_result",@"photos":@"photos",@"Size":@"51.74 KB (52984 bytes)",@"Content-Type":@"image/jpeg"};
+    __weak typeof(self)mySelf = self;
+    [self.afnManger.messageRequest POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary * dic = (NSDictionary *)responseObject;
+        CHLog(@"%@",dic);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        CHLog(@"%@",error);
+    }];
 }
 
 - (void)publishFood{
