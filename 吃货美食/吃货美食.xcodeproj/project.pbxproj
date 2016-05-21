@@ -246,7 +246,6 @@
 		B748A5511CEE497900A8338C /* CHCDiscoverTableViewcell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 07AB42181CEC851800F1283F /* CHCDiscoverTableViewcell.xib */; };
 		B76AE92D1CEF477700E4A975 /* CHRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B76AE92B1CEF477700E4A975 /* CHRegisterController.m */; };
 		B76AE92E1CEF477700E4A975 /* CHRegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B76AE92C1CEF477700E4A975 /* CHRegisterController.xib */; };
-		B76AE9311CEFF01000E4A975 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = B76AE9301CEFF01000E4A975 /* RegexKitLite.m */; };
 		B7A3F5CC1CE4801700E09AED /* EChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5CB1CE4801700E09AED /* EChatModel.m */; };
 		B7A3F5CF1CE481F700E09AED /* Hot_topocModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5CE1CE481F700E09AED /* Hot_topocModel.m */; };
 		B7A3F5D21CE483F100E09AED /* User_infoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5D11CE483F100E09AED /* User_infoModel.m */; };
@@ -666,8 +665,6 @@
 		B76AE92A1CEF477700E4A975 /* CHRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRegisterController.h; sourceTree = "<group>"; };
 		B76AE92B1CEF477700E4A975 /* CHRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRegisterController.m; sourceTree = "<group>"; };
 		B76AE92C1CEF477700E4A975 /* CHRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRegisterController.xib; sourceTree = "<group>"; };
-		B76AE92F1CEFF01000E4A975 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
-		B76AE9301CEFF01000E4A975 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		B7A3F5CA1CE4801700E09AED /* EChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EChatModel.h; path = EChatModel/EChatModel.h; sourceTree = "<group>"; };
 		B7A3F5CB1CE4801700E09AED /* EChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EChatModel.m; path = EChatModel/EChatModel.m; sourceTree = "<group>"; };
 		B7A3F5CD1CE481F700E09AED /* Hot_topocModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hot_topocModel.h; path = EChatModel/Hot_topocModel.h; sourceTree = "<group>"; };
@@ -2193,8 +2190,6 @@
 		B76AE9291CEF473D00E4A975 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				B76AE92F1CEFF01000E4A975 /* RegexKitLite.h */,
-				B76AE9301CEFF01000E4A975 /* RegexKitLite.m */,
 				B76AE92A1CEF477700E4A975 /* CHRegisterController.h */,
 				B76AE92B1CEF477700E4A975 /* CHRegisterController.m */,
 				B76AE92C1CEF477700E4A975 /* CHRegisterController.xib */,
@@ -2891,7 +2886,6 @@
 				07AB42CC1CEC851800F1283F /* CHCRecipe_info_list.m in Sources */,
 				07AB42BB1CEC851800F1283F /* CHRecipesCell.m in Sources */,
 				07AB42B01CEC851800F1283F /* CHCShiCaiTableViewCell.m in Sources */,
-				B76AE9311CEFF01000E4A975 /* RegexKitLite.m in Sources */,
 				7AD0DDB01CDCA7CE0057F8B2 /* UIStoryboard+GetView.m in Sources */,
 				B7B7A5D01CEC925A002A80E7 /* CHLoginController.m in Sources */,
 				B71ED8531CDB41660035F6BE /* main.m in Sources */,
@@ -3048,6 +3042,28 @@
 				INFOPLIST_FILE = "$(SRCROOT)/吃货美食/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"FMDB\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"SDWebImage\"",
+					"-l\"sqlite3\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-licucore",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TianTian.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -3065,6 +3081,28 @@
 				INFOPLIST_FILE = "$(SRCROOT)/吃货美食/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"FMDB\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"SDWebImage\"",
+					"-l\"sqlite3\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-licucore",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TianTian.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

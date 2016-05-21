@@ -7,7 +7,7 @@
 //
 
 #import "CHRegisterController.h"
-#import "RegexKitLite.h"
+//#import "RegexKitLite.h"
 @interface CHRegisterController ()
 
 @end
@@ -53,18 +53,18 @@
             [alertController addAction:okAction];
         }
         
-        NSString *emailAddress =mySelf.passwdTextField.text;
-        //匹配电话号码：@"^1(3[0-9]|5[0-35-9]|7[017]|8[025-9])\\d{8}$"
-        //匹配邮箱：@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
-        NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}" options:0 error:nil];
-        NSUInteger number = [regular numberOfMatchesInString:emailAddress options:0 range:NSMakeRange(0, emailAddress.length)];
-        
-        if (number <= 0) {
-            CHLog(@"不是电话号码");
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"警告" message:@"这不是一个邮箱请重新输入" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
-            [alertController addAction:okAction];
-        }
+//        NSString *emailAddress =mySelf.passwdTextField.text;
+//        //匹配电话号码：@"^1(3[0-9]|5[0-35-9]|7[017]|8[025-9])\\d{8}$"
+//        //匹配邮箱：@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+//        NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}" options:0 error:nil];
+//        NSUInteger number = [regular numberOfMatchesInString:emailAddress options:0 range:NSMakeRange(0, emailAddress.length)];
+//        
+//        if (number <= 0) {
+//            CHLog(@"不是电话号码");
+//            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"警告" message:@"这不是一个邮箱请重新输入" preferredStyle:UIAlertControllerStyleAlert];
+//            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
+//            [alertController addAction:okAction];
+//        }
     
 
         /*
