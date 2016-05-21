@@ -54,7 +54,7 @@
         __weak typeof(self) mSelf = self;
         //下拉刷新
         mSelf.eChatTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            [self getEchatDataWithSort:@"hot"];
+            [mSelf getEchatDataWithSort:@"hot"];
         }];
         //上拉刷新
         mSelf.eChatTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
@@ -144,15 +144,7 @@
     [self addNavigationItem];
     //先加载数据
     [self getEchatDataWithSort:@"time"];
-    __weak typeof(self) mSelf = self;
-    //下拉刷新
-    mSelf.eChatTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [mSelf getEchatDataWithSort:@"time"];
-    }];
-    //上拉刷新
-    mSelf.eChatTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        [mSelf upRequestDataWithSort:@"time"];
-    }];
+
     self.eChatTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
     self.eChatTableView.delegate = self;
     self.eChatTableView.dataSource = self;
@@ -311,6 +303,15 @@
     segmentControl.frame = CGRectMake(CHSCREENWIDTH / 2 - segmentW/2, goodLabel.y + goodLabel.height + labelSegInterval, segmentW, segmentH);
     //设置默认索引序列
     segmentControl.selectedSegmentIndex = 0;
+    __weak typeof(self) mSelf = self;
+    //下拉刷新
+    mSelf.eChatTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [mSelf getEchatDataWithSort:@"time"];
+    }];
+    //上拉刷新
+    mSelf.eChatTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        [mSelf upRequestDataWithSort:@"time"];
+    }];
     segmentControl.tintColor = [UIColor redColor];
     
     [segmentControl addTarget:self action:@selector(segmentItenAction:) forControlEvents:UIControlEventValueChanged];

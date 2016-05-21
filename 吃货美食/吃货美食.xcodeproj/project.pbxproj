@@ -284,6 +284,12 @@
 		B748A54D1CEE323100A8338C /* CHPublishShiHuaOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B748A54B1CEE323100A8338C /* CHPublishShiHuaOneCell.xib */; };
 		B748A54F1CEE3F5D00A8338C /* CHTPublishSHCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = B748A5371CEDF63100A8338C /* CHTPublishSHCell.xib */; };
 		B748A5501CEE46EF00A8338C /* SHImgs.m in Sources */ = {isa = PBXBuildFile; fileRef = B748A5421CEDFCB200A8338C /* SHImgs.m */; };
+		B76AE9631CF0843100E4A975 /* CHRPublishNextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4C11CF05AD500A2D830 /* CHRPublishNextViewController.m */; };
+		B76AE9641CF0843100E4A975 /* CHRPublishNextViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4C21CF05AD500A2D830 /* CHRPublishNextViewController.xib */; };
+		B76AE9651CF0844900E4A975 /* CHRPublishObjData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4A21CF00AA700A2D830 /* CHRPublishObjData.m */; };
+		B76AE9661CF0846B00E4A975 /* CHRPublishObjGetDic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4A51CF00CB900A2D830 /* CHRPublishObjGetDic.m */; };
+		B76AE9671CF0848F00E4A975 /* CHRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B76AE92B1CEF477700E4A975 /* CHRegisterController.m */; };
+		B76AE9681CF0848F00E4A975 /* CHRegisterController.xib in Sources */ = {isa = PBXBuildFile; fileRef = B76AE92C1CEF477700E4A975 /* CHRegisterController.xib */; };
 		B7A3F5CC1CE4801700E09AED /* EChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5CB1CE4801700E09AED /* EChatModel.m */; };
 		B7A3F5CF1CE481F700E09AED /* Hot_topocModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5CE1CE481F700E09AED /* Hot_topocModel.m */; };
 		B7A3F5D21CE483F100E09AED /* User_infoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5D11CE483F100E09AED /* User_infoModel.m */; };
