@@ -51,23 +51,6 @@ const CGFloat myLon = 112.4234234428844;
 
 
 
-#pragma mark - HUD
-- (void)showHUDWithText:(NSString *)string withTextFont:(UIFont *)font withTextColor:(UIColor *)color withTextSize:(CGSize)textSize withAction:(SEL)method withIsAnimated:(BOOL)isAnimated{
-    NSDictionary * attributes = [NSDictionary dicOfTextAttributeWithFont:font withTextColor:color];
-    CGRect myRect = [string boundingRectWithSize:textSize options:NSStringDrawingUsesFontLeading attributes:attributes context:nil];
-    self.myHUD = [[MBProgressHUD alloc]initWithFrame:myRect];
-    self.myHUD.mode= MBProgressHUDModeText;
-    self.myHUD.delegate= self;
-    self.myHUD.labelText= string;
-    [self.view addSubview:self.myHUD];
-    [self.myHUD showWhileExecuting:method onTarget:self withObject:nil animated:isAnimated];
-}
-
-- (void)hudWasHidden:(MBProgressHUD *)hud{
-    [self.myHUD removeFromSuperview];
-    self.myHUD = nil;
-}
-
 - (void)navBackAction{
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -85,5 +68,27 @@ const CGFloat myLon = 112.4234234428844;
     [self.searchView.searchButton addTarget:self action:@selector(searchButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:self.searchView];
 }
+
+#pragma mark - MBProgressHUDDelegate
+- (void)showHUDWithText:(NSString *)string withTextFont:(UIFont *)font withTextColor:(UIColor *)color withTextSize:(CGSize)textSize withAction:(SEL)method withIsAnimated:(BOOL)isAnimated{
+    NSDictionary * attributes = [NSDictionary dicOfTextAttributeWithFont:font withTextColor:color];
+    CGRect myRect = [string boundingRectWithSize:textSize options:NSStringDrawingUsesFontLeading attributes:attributes context:nil];
+    self.myHUD = [[MBProgressHUD alloc]initWithFrame:myRect];
+    self.myHUD.mode= MBProgressHUDModeText;
+    self.myHUD.delegate= self;
+    self.myHUD.labelText= string;
+    [self.view addSubview:self.myHUD];
+    [self.myHUD showWhileExecuting:method onTarget:self withObject:nil animated:isAnimated];
+}
+
+- (void)hudWasHidden:(MBProgressHUD *)hud{
+    [self.myHUD removeFromSuperview];
+    self.myHUD = nil;
+}
+
+- (void)testHud{
+    CHLog(@"Hud Success");
+}
+
 
 @end
