@@ -156,6 +156,7 @@
 		7A9CF49C1CEFF5EC00A2D830 /* CHRPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF49A1CEFF5EC00A2D830 /* CHRPublishViewController.m */; };
 		7A9CF49D1CEFF5EC00A2D830 /* CHRPublishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CF49B1CEFF5EC00A2D830 /* CHRPublishViewController.xib */; };
 		7A9CF4AB1CF03ABF00A2D830 /* CHRPublishChooseTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4A91CF03ABF00A2D830 /* CHRPublishChooseTypeViewController.m */; };
+		7A9CF4B21CF03F2800A2D830 /* CHRPublishChooseTypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CF4B01CF03F2800A2D830 /* CHRPublishChooseTypeCell.xib */; };
 		7A9CF4B81CF04A1D00A2D830 /* CHRPublicShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4B61CF04A1D00A2D830 /* CHRPublicShowTableViewCell.m */; };
 		7A9CF4B91CF04A1D00A2D830 /* CHRPublicShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CF4B71CF04A1D00A2D830 /* CHRPublicShowTableViewCell.xib */; };
 		7A9CF4C81CF0809D00A2D830 /* CHRTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4C71CF0809D00A2D830 /* CHRTextView.m */; };
