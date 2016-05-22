@@ -8,6 +8,8 @@
 
 #import "CHZSendEChatController.h"
 #import "CHRTextView.h"
+#import "GDataXMLNode.h"
+#import "CHUserDefaults.h"
 @interface CHZSendEChatController ()<UITextViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 
@@ -15,13 +17,17 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *selectImage;
 
+@property (nonatomic, copy) NSString *imageName;
+
+@property (nonatomic, strong)NSData *imageData;
+
 @end
 
 @implementation CHZSendEChatController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.chTextView.placeholder = @"无法接受了；扩大及法律凯撒的离开；撒";
     [self.selectImage addTarget:self action:@selector(selectImageClick) forControlEvents:UIControlEventTouchUpInside];
     [self.navigationController setNavigationBarHidden:NO];
@@ -35,7 +41,45 @@
 - (void)publishBtnClick
 {
     //上传
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    //接收xml
+    //    manager.responseSerializer = [AFXMLParserResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:userDefault.email password:userDefault.password];
+    [manager.requestSerializer setValue:@"text/html; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/plain", @"application/xml",nil];
+    NSString *kUrl = @"http://api.meishi.cc/v5/topic_img_upload.php";
+    [manager POST:kUrl parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        [formData appendPartWithFileData:self.imageData name:@"img_0" fileName:@"img_0.jpg" mimeType:@"image/jpeg"];
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        //开始解析xml
+        
+        GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:responseObject encoding:NSUTF8StringEncoding error:nil];
+        
+        //获取根节点（items）
+        GDataXMLElement *rootElement = [doc rootElement];
+        
+        NSArray *imgs = [rootElement elementsForName:@"imgs"];
+        
+        for (GDataXMLElement *img in imgs) {
+            NSString *imgStr = [img stringValue];
+            
+            /*******************/
+            //	NSString to NSDictionary
+            NSError *error = nil;
+            NSDictionary *string2dic = [NSJSONSerialization JSONObjectWithData: [imgStr dataUsingEncoding:NSUTF8StringEncoding] options: NSJSONReadingMutableContainers error: &error];
+            self.imageName = string2dic[@"img_0"];
+            NSLog(@"%@",self.imageName);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"#######upload error%@", error);
+    }];
     
 }
 - (void)didReceiveMemoryWarning {
@@ -112,12 +156,9 @@
         NSString *imagePath = [docs[0]stringByAppendingPathComponent:@"abc.png"];
         // 2. 转换成NSData保存
         NSData *imageData = UIImagePNGRepresentation(image);
+        
+        self.imageData = imageData;
         [imageData writeToFile:imagePath atomically:YES];
     });
-    
 }
-
-
-
-
 @end
