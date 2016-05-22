@@ -10,7 +10,8 @@
 #import "CHJRecommendJumpModel.h"
 #import "CHRJSearchView.h"
 #import <MBProgressHUD.h>
-
+#import "CHLoginController.h"
+#import "CHUserDefaults.h"
 @interface CHRWebViewController : UIViewController<MBProgressHUDDelegate>
 @property (nonatomic,strong)NSNumber * webID;
 @property (nonatomic,copy)NSString * urlString;
@@ -18,6 +19,11 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webDetailView;
 @property (nonatomic,strong)CHRJSearchView * searchView;
 @property (nonatomic,strong)MBProgressHUD * myHUD;
+@property (nonatomic,strong)CHUserDefaults * userDefault;
+
+- (IBAction)loginButtonAction:(UIButton *)sender;
+
+@property (weak, nonatomic) IBOutlet UIView *showView;
 
 - (instancetype)initWithURLString:(NSString *)urlString;
 
