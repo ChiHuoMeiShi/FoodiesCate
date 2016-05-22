@@ -347,6 +347,9 @@
 		B7DBAA961CEAC4A7002534B6 /* CHMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA951CEAC4A7002534B6 /* CHMessageRequest.m */; };
 		B7DBAA991CEAC50B002534B6 /* CHHTTPRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA981CEAC50B002534B6 /* CHHTTPRequestManager.m */; };
 		B7DBAAA61CEB035B002534B6 /* CHUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAAA51CEB035B002534B6 /* CHUserDefaults.m */; };
+		B7E01C0B1CF1F85F0079815C /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E01C091CF1F85F0079815C /* libxml2.2.tbd */; };
+		B7E01C0C1CF1F85F0079815C /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E01C0A1CF1F85F0079815C /* libxml2.tbd */; };
+		B7E01C0F1CF1F8DF0079815C /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B7E01C0E1CF1F8DF0079815C /* GDataXMLNode.m */; };
 		B7F6154D1CDC84A600AF1697 /* CHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F6154C1CDC84A600AF1697 /* CHTabBarController.m */; };
 		B7F615501CDC84F000AF1697 /* CHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F6154F1CDC84F000AF1697 /* CHNavigationController.m */; };
 		B7F615541CDC854500AF1697 /* CHMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F615521CDC854500AF1697 /* CHMeViewController.m */; };
@@ -863,6 +866,10 @@
 		B7DBAA981CEAC50B002534B6 /* CHHTTPRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHHTTPRequestManager.m; sourceTree = "<group>"; };
 		B7DBAAA41CEB035B002534B6 /* CHUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHUserDefaults.h; sourceTree = "<group>"; };
 		B7DBAAA51CEB035B002534B6 /* CHUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHUserDefaults.m; sourceTree = "<group>"; };
+		B7E01C091CF1F85F0079815C /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		B7E01C0A1CF1F85F0079815C /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		B7E01C0D1CF1F8DF0079815C /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		B7E01C0E1CF1F8DF0079815C /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		B7F6154B1CDC84A600AF1697 /* CHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTabBarController.h; sourceTree = "<group>"; };
 		B7F6154C1CDC84A600AF1697 /* CHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTabBarController.m; sourceTree = "<group>"; };
 		B7F6154E1CDC84F000AF1697 /* CHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNavigationController.h; sourceTree = "<group>"; };
@@ -885,6 +892,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7E01C0B1CF1F85F0079815C /* libxml2.2.tbd in Frameworks */,
+				B7E01C0C1CF1F85F0079815C /* libxml2.tbd in Frameworks */,
 				6302A48352870C94A21B65CA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1431,6 +1440,8 @@
 		097A2F15618DB9C1D6C68FEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B7E01C091CF1F85F0079815C /* libxml2.2.tbd */,
+				B7E01C0A1CF1F85F0079815C /* libxml2.tbd */,
 				C2714D066AF4EF14D1D1B684 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -2404,6 +2415,8 @@
 		B72A06671CE346700091986F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B7E01C0D1CF1F8DF0079815C /* GDataXMLNode.h */,
+				B7E01C0E1CF1F8DF0079815C /* GDataXMLNode.m */,
 				B72A06541CE216D10091986F /* CHZSendEChatController.h */,
 				B72A06551CE216D10091986F /* CHZSendEChatController.m */,
 				B72A06561CE216D10091986F /* CHZSendEChatController.xib */,
@@ -3205,6 +3218,7 @@
 				7AAF0A521CE1D40A00708F98 /* CHJRecommendModel.m in Sources */,
 				7AD0DDB11CDCA7CE0057F8B2 /* JWTools.m in Sources */,
 				B7A3F5D51CE4849C00E09AED /* Recipe_infoModel.m in Sources */,
+				B7E01C0F1CF1F8DF0079815C /* GDataXMLNode.m in Sources */,
 				7AD0DDAE1CDCA7CE0057F8B2 /* UIView+JWFrame.m in Sources */,
 				B7DBAA901CEAC373002534B6 /* CHHTTPSessionManager.m in Sources */,
 				B7A3F5D81CE4850300E09AED /* ImgsModel.m in Sources */,
@@ -3398,6 +3412,17 @@
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/吃货美食/Class/Tools/JWTools/MyPCH/JWPrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"${SDK_ROOT}/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/吃货美食/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -3437,6 +3462,17 @@
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/吃货美食/Class/Tools/JWTools/MyPCH/JWPrefixHeader.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/FMDB\"",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"${SDK_ROOT}/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/吃货美食/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
