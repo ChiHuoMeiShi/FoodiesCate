@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CHRImageButton.h"
 @interface CHRPublicNextHeaderTopView : UIView
 
-@property (nonatomic,strong)UILabel * showLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+@property (weak, nonatomic) IBOutlet CHRImageButton *photoButton;
 
 @end

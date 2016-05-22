@@ -18,4 +18,15 @@
 }
 */
 
+- (void)awakeFromNib {
+    [self.editButton.layer setBorderWidth:0.8f];
+    [self.editButton.layer setCornerRadius:5.f];
+    [self.editButton.layer setBorderColor:[UIColor redColor].CGColor];
+    [self.addButton.layer setBorderWidth:0.8f];
+    [self.addButton.layer setCornerRadius:5.f];
+    [self.addButton.layer setBorderColor:[UIColor redColor].CGColor];
+    
+}
+
+
 @end

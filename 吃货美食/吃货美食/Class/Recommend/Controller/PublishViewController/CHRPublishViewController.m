@@ -50,9 +50,13 @@
             return ;
         }
     }];
-    
+    [self.view endEditing:YES];
     CHRPublishNextViewController * nextVC = [[CHRPublishNextViewController alloc]initWithFoodDic:self.publishDic withFoodName:self.nameTextField.text];
     [self.navigationController pushViewController:nextVC animated:YES];
+//    dispatch_after(0.5, dispatch_get_main_queue(), ^{
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=Privacy"]];
+//        
+//    });
 }
 
 #pragma mark - UITableViewDataSource
@@ -85,10 +89,12 @@
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView * showView = [[UIView alloc]initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH, 35.f)];
-    self.nameTextField = [[UITextField alloc]initWithFrame:CGRectMake(10.f, 0.f, CHSCREENWIDTH - 20.f, 30.f)];
-    self.nameTextField.placeholder = @"请输入菜谱名称";
-    self.nameTextField.delegate = self;
-    self.nameTextField.backgroundColor = [UIColor colorWithHexString:@"#ececec"];
+    if (!self.nameTextField) {
+        self.nameTextField = [[UITextField alloc]initWithFrame:CGRectMake(10.f, 0.f, CHSCREENWIDTH - 20.f, 30.f)];
+        self.nameTextField.placeholder = @"请输入菜谱名称";
+        self.nameTextField.delegate = self;
+        self.nameTextField.backgroundColor = [UIColor colorWithHexString:@"#ececec"];
+    }
     [showView addSubview:self.nameTextField];
     return showView;
 }

@@ -18,10 +18,23 @@
 #import "CHRPublicNextHeaderAddStepView.h"
 
 #import "CHRPublicNextBaseFoodTableViewCell.h"
-@interface CHRPublishNextViewController : CHRJBasicViewController
+#import "CHRPublicNextStepTableViewCell.h"
+@interface CHRPublishNextViewController : CHRJBasicViewController<UITextFieldDelegate,UITextViewDelegate>
 
 @property (nonatomic,strong)NSDictionary * foodDataDic;
 @property (nonatomic,copy)NSString * foodName;
+
+@property (nonatomic,strong)NSMutableArray * mainFoodArray;
+@property (nonatomic,strong)NSMutableArray * supFoodArray;
+@property (nonatomic,strong)NSMutableArray * stepFoodArray;
+
+@property (nonatomic,assign)BOOL stepIsEdit;
+@property (nonatomic,strong)UIButton * editButton;
+
+@property (nonatomic,strong)CHRTextView * storyTextView;
+@property (nonatomic,strong)CHRTextView * shareTextView;
+
+@property (weak, nonatomic) IBOutlet UITableView *publicTableView;
 
 - (instancetype)initWithFoodDic:(NSDictionary *)foodDic withFoodName:(NSString *)foodName;
 

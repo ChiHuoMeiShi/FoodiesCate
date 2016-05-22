@@ -24,29 +24,11 @@
                         <outlet property="delegate" destination="-1" id="CIn-oh-dC1"/>
                     </connections>
                 </webView>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2CW-UC-zxg">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2CW-UC-zxg">
                     <rect key="frame" x="0.0" y="550" width="600" height="50"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkm-tF-F6A">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="50" id="qVR-ly-KXC"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <state key="normal" title="尚未登录，点击登录">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="loginButtonAction:" destination="-1" eventType="touchUpInside" id="paJ-a9-RIV"/>
-                            </connections>
-                        </button>
-                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="pkm-tF-F6A" secondAttribute="bottom" id="6lc-XC-5oR"/>
-                        <constraint firstItem="pkm-tF-F6A" firstAttribute="leading" secondItem="2CW-UC-zxg" secondAttribute="leading" id="8cv-6A-bU7"/>
                         <constraint firstAttribute="height" constant="50" id="d7x-qZ-xga"/>
-                        <constraint firstAttribute="trailing" secondItem="pkm-tF-F6A" secondAttribute="trailing" id="j8g-o8-xNo"/>
                     </constraints>
                 </view>
             </subviews>

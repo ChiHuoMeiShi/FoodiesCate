@@ -10,6 +10,7 @@
 #import "CHRWebViewController.h"
 #import "CHRJSearchView.h"
 #import "CHRJSearchViewController.h"
+#import "CHRImageButton.h"
 
 extern const CGFloat myLat;
 extern const CGFloat myLon;
@@ -19,6 +20,8 @@ extern const CGFloat myLon;
 @property (nonatomic,strong)MBProgressHUD * myHUD;
 @property (nonatomic,strong)CHRJSearchView * searchView;
 @property (nonatomic,strong)CHHTTPRequestManager * afnManger;
+
+@property (nonatomic,strong)CHRImageButton * choosedImagedButton;
 
 @property (nonatomic,strong)UIImage * choosedImage;
 @property (nonatomic,strong)NSString * tagStr;

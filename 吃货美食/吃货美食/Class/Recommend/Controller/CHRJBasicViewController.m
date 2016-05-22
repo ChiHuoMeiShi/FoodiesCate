@@ -47,9 +47,6 @@ const CGFloat myLon = 112.4234234428844;
     
     [self.navigationController pushViewController:webVC animated:YES];
 }
-
-
-
 - (void)navBackAction{
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -121,6 +118,16 @@ const CGFloat myLon = 112.4234234428844;
     } else {
         CHLog(@"照片源不可用");
     }
+}
+- (void)setChoosedImage:(UIImage *)choosedImage{
+    if (!choosedImage)return;
+    _choosedImage = choosedImage;
+    [self.choosedImagedButton setBackgroundImage:self.choosedImage forState:UIControlStateNormal];
+}
+- (void)setImageChoosedPath:(NSString *)imageChoosedPath{
+    if (!imageChoosedPath)return;
+    _imageChoosedPath = imageChoosedPath;
+    self.choosedImagedButton.myImagePath = imageChoosedPath;
 }
 #pragma mark - ImagePickerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{

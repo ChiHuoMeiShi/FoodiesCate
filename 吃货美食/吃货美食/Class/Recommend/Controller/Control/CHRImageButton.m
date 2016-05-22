@@ -1,18 +1,21 @@
 //
-//  CHRPublicNextFooterStoryView.m
+//  CHRImageButton.m
 //  吃货美食
 //
-//  Created by scjy on 16/5/21.
+//  Created by scjy on 16/5/22.
 //  Copyright © 2016年 赵天. All rights reserved.
 //
 
-#import "CHRPublicNextFooterStoryView.h"
+#import "CHRImageButton.h"
 
-@implementation CHRPublicNextFooterStoryView
-
-- (void)awakeFromNib{
-    self.showTextView.placeholder = @"说说这道菜的小故事吧~";
+@implementation CHRImageButton
+- (NSString *)myImagePath{
+    if (!_myImagePath) {
+        _myImagePath = @"";
+    }
+    return _myImagePath;
 }
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

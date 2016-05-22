@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CHRPublicNextHeaderTittleView : UIView
+@property (weak, nonatomic) IBOutlet UILabel *showLabel;
 
 @end

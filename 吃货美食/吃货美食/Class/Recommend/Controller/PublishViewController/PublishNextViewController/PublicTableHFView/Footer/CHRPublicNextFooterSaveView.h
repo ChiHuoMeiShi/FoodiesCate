@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CHRPublicNextFooterSaveView : UIView
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
 
 @end
