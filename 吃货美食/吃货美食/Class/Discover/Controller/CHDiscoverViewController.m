@@ -30,7 +30,8 @@
 #import <MJRefresh.h>
 #import "CHCFaXianDetailViewController.h"
 #import "Topic_List.h"
-#import "CHEChatDetailController.h"
+
+#import "CHCaiViewController.h"
 @interface CHDiscoverViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 {
@@ -59,6 +60,7 @@
      MJRefreshStateHeader *header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshAction)];
      _mytableView.mj_header=header;
        [_mytableView addSubview:header];
+    
     
 }
 -(void)getTableViewData
@@ -132,7 +134,7 @@
             discell=arr[0];
             discell.selectionStyle = UITableViewCellSelectionStyleNone;
       UIButton  *shicaiButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        shicaiButton.frame=CGRectMake(24, 14, 81, 108);
+        shicaiButton.frame=CGRectMake( 24, 14, 81, 108);
         [shicaiButton setImage:[UIImage imageNamed:@"ms_home_find_shicai"] forState:UIControlStateNormal];
         [shicaiButton setImage:[UIImage imageNamed:@"ms_home_find_shicai"] forState:UIControlStateHighlighted];
         [shicaiButton addTarget:self action:@selector(shiCaiButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -336,56 +338,111 @@
 {
     return 8;
 }
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//        if (indexPath.section==0) {
-//       
-//    }
-//    else ([self.faxianCelllist.type isEqualToString:@"7"]);
-//    {
+    u_int count;
+    objc_property_t *properties  =class_copyPropertyList([CHCfaxian_list class], &count);
     
-    CHEChatDetailController *targetVC = [[CHEChatDetailController alloc] init];
-        CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
-        targetVC.tid = faxianCelllist.caidan_info.myid;
-    [self.navigationController pushViewController:targetVC animated:YES];
+    NSMutableArray *propertiesArray = [NSMutableArray arrayWithCapacity:count];
+        for (int i = 0; i<count; i++)
         
+    {
+        const char* propertyName =property_getName(properties[i]);
+        
+        [propertiesArray addObject: [NSString stringWithUTF8String: propertyName]];
+         NSLog(@"Person has a property: '%@'", propertiesArray);
+       
+        if ([propertiesArray[i] isEqual:@"topic_info"])
+        {
+            NSLog(@"rrrrrrrrr%@",propertiesArray[i]);
+            CHCFaXianDetailViewController *targetVC = [[CHCFaXianDetailViewController alloc] init];
+            CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
+            targetVC.tid = faxianCelllist.topic_info.tid;
+            targetVC.gid=faxianCelllist.topic_info.gid;
+            [self presentViewController:targetVC animated:YES completion:nil];
+        }
+        else if([propertiesArray[i] isEqual:@"caidan_info"])
+        {
+             NSLog(@"wwwwwwwww%@",propertiesArray[i]);
+            CHCaiViewController *view=[[ CHCaiViewController alloc]init];
+        CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
+
+        view.rid=faxianCelllist.caidan_info.myid;
+        [self presentViewController:view animated:YES completion:nil];
+
+        }
+
+        
+        
+    }
+    free(properties);
+//    for (int i=0; i<propertiesArray.count; i++)
+//    {
+//       
+//        }
+    
+  
+    
+
+    
+    
+    
+//        [propertiesArray addObject: [NSString stringWithUTF8String: propertyName]];
+//        if ((propertyName ='topic_info'))
+//        {
+//                          CHEChatDetailController *targetVC = [[CHEChatDetailController alloc] init];
+//                    CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
+//                    targetVC.tid = faxianCelllist.topic_info.tid;
+//                    targetVC.gid=faxianCelllist.topic_info.gid;
+//                    [self.navigationController pushViewController:targetVC animated:YES];
+//
+//        }
+//        else if((propertyName ='caidan_info'))
+//        {
+//            CHCaiViewController *view=[[ CHCaiViewController alloc]init];
+//                    CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
+//            
+//                    view.rid=faxianCelllist.caidan_info.myid;
+//                    [self presentViewController:view animated:YES completion:nil];
+//
+//        }
+ 
+//    CHCfaxian_list *model = self.data.faxian_list[indexPath.section];
+//    NSLog(@"+++++++%@",model.title);
+//    NSLog(@"-----%@",self.faxianCelllist.type);
+//    if ()
+//    {
+//      //    }
+//
+//    
+////    11
+//       else if ([self.faxianCelllist.type isEqualToString:@"7"])
+//    {
+//        CHCaiViewController *view=[[ CHCaiViewController alloc]init];
+//        CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
+//
+//        view.rid=faxianCelllist.caidan_info.myid;
+//        [self presentViewController:view animated:YES completion:nil];
+//
 //    }
     
-//    if(indexPath.section==0)
-//    {
-//        return 140;
-//    }
-//    else if ([self.faxianCelllist.type isEqualToString:@"1"])
-//    {
-//        return 221;
-//    }
-//    else if ([self.faxianCelllist.type isEqualToString:@"2"])
-//    {
-//        return 221;
-//    }
-//    else if ([self.faxianCelllist.type isEqualToString:@"3"])
-//    {
-//        return 264;
-//    }
-//    else if ([self.faxianCelllist.type isEqualToString:@"5"])
-//    {
-//        return 330;
-//    }
-//    else if ([self.faxianCelllist.type isEqualToString:@"7"])
-//    {
-//        return 210;
-//    }
-//    else if ([self.faxianCelllist.type isEqualToString:@"9"])
-//    {
-//        return 260;
-//    }
-//    else if ([self.faxianCelllist.type isEqualToString:@"11"])
-//    {
-//        return 260;
-//    }
 
+//    7
+    
+    
+    
+    
+    
 
 }
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
