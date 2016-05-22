@@ -15,4 +15,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *ActivityimageView;
 @property(nonatomic,strong)CHCfaxian_list *faxian_list;
 -(void)setFaxian_list:(CHCfaxian_list *)faxian_list;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageWidth;
 @end

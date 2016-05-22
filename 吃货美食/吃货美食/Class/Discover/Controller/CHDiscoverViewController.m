@@ -28,10 +28,14 @@
 #import "CHArticalViewController.h"
 #import <UIImageView+WebCache.h>
 #import <MJRefresh.h>
-#import "CHCFaXianDetailViewController.h"
+
 #import "Topic_List.h"
 
 #import "CHCaiViewController.h"
+#import "CHCFaXianDetailViewController.h"
+#import "CHCOneWebViewController.h"
+#import "CHzt_infoWebViewController.h"
+#import "CHCWenZhanViewController.h"
 @interface CHDiscoverViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 {
@@ -112,7 +116,8 @@
 //    数据
     CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
     self.faxianCelllist=faxianCelllist;
-    CHCDiscoverTableViewcell *discell=[tableView  dequeueReusableCellWithIdentifier:@"CDCdiscell" ];
+    
+        CHCDiscoverTableViewcell *discell=[tableView  dequeueReusableCellWithIdentifier:@"CDCdiscell" ];
     CHClickTableViewCell *clickcell=[tableView dequeueReusableCellWithIdentifier:@"CDClickcell"];
     CHCCommentTableViewCell *commentcell=[tableView dequeueReusableCellWithIdentifier:@"CDCCommentcell"];
     CHCActivityTableViewCell *activitycell=[tableView dequeueReusableCellWithIdentifier:@"CDCActivitycell"];
@@ -127,32 +132,36 @@
      CHZTCell *ztcell3=[tableView dequeueReusableCellWithIdentifier:@"CDCZtcell"];
     NSString *CellTableIdentifier = @"CDCtopcell";
     CHTopInfoCell *topcell=[tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
-   
+//
+    
+    
     if (!discell&&indexPath.section==0)
     {
      NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHCDiscoverTableViewcell" owner:nil options:nil];
             discell=arr[0];
             discell.selectionStyle = UITableViewCellSelectionStyleNone;
       UIButton  *shicaiButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        shicaiButton.frame=CGRectMake( 24, 14, 81, 108);
+        shicaiButton.frame=CGRectMake
+        (CHSCREENWIDTH*24/414, 14,CHSCREENWIDTH*81/414, 108);
+        
         [shicaiButton setImage:[UIImage imageNamed:@"ms_home_find_shicai"] forState:UIControlStateNormal];
         [shicaiButton setImage:[UIImage imageNamed:@"ms_home_find_shicai"] forState:UIControlStateHighlighted];
         [shicaiButton addTarget:self action:@selector(shiCaiButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         
         UIButton  *caidanButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        caidanButton.frame=CGRectMake(119, 14, 81, 108);
+        caidanButton.frame=CGRectMake(CHSCREENWIDTH*119/414, 14, CHSCREENWIDTH*81/414, 108);
         [caidanButton setImage:[UIImage imageNamed:@"ms_home_find_caidan"] forState:UIControlStateNormal];
         [caidanButton setImage:[UIImage imageNamed:@"ms_home_find_caidan"] forState:UIControlStateHighlighted];
         [caidanButton addTarget:self action:@selector(caidanButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
 
         UIButton  *zhaunTiButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        zhaunTiButton.frame=CGRectMake(216, 14, 81, 108);
+        zhaunTiButton.frame=CGRectMake(CHSCREENWIDTH*216/414, 14, CHSCREENWIDTH*81/414, 108);
         [zhaunTiButton setImage:[UIImage imageNamed:@"ms_home_find_zhuanti"] forState:UIControlStateNormal];
         [zhaunTiButton setImage:[UIImage imageNamed:@"ms_home_find_zhuanti"] forState:UIControlStateHighlighted];
         [zhaunTiButton addTarget:self action:@selector(zhuantiButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         
         UIButton  *articleButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        articleButton.frame=CGRectMake(312, 14, 81, 108);
+        articleButton.frame=CGRectMake(CHSCREENWIDTH*312/414, 14, CHSCREENWIDTH*81/414, 108);
         [articleButton setImage:[UIImage imageNamed:@"ms_home_find_wenzhang"] forState:UIControlStateNormal];
         [articleButton setImage:[UIImage imageNamed:@"ms_home_find_wenzhang"] forState:UIControlStateHighlighted];
         [articleButton addTarget:self action:@selector(articleButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -312,6 +321,11 @@
     {
         return 330;
     }
+    else if ([self.faxianCelllist.type isEqualToString:@"6"])
+    {
+        return  205;
+    }
+
     else if ([self.faxianCelllist.type isEqualToString:@"7"])
     {
         return 210;
@@ -341,50 +355,58 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    u_int count;
-    objc_property_t *properties  =class_copyPropertyList([CHCfaxian_list class], &count);
+   
+CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
     
-    NSMutableArray *propertiesArray = [NSMutableArray arrayWithCapacity:count];
-        for (int i = 0; i<count; i++)
-        
-    {
-        const char* propertyName =property_getName(properties[i]);
-        
-        [propertiesArray addObject: [NSString stringWithUTF8String: propertyName]];
-         NSLog(@"Person has a property: '%@'", propertiesArray);
-       
-        if ([propertiesArray[i] isEqual:@"topic_info"])
-        {
-            NSLog(@"rrrrrrrrr%@",propertiesArray[i]);
-            CHCFaXianDetailViewController *targetVC = [[CHCFaXianDetailViewController alloc] init];
-            CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
-            targetVC.tid = faxianCelllist.topic_info.tid;
-            targetVC.gid=faxianCelllist.topic_info.gid;
-            [self presentViewController:targetVC animated:YES completion:nil];
-        }
-        else if([propertiesArray[i] isEqual:@"caidan_info"])
-        {
-             NSLog(@"wwwwwwwww%@",propertiesArray[i]);
-            CHCaiViewController *view=[[ CHCaiViewController alloc]init];
-        CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
-
-        view.rid=faxianCelllist.caidan_info.myid;
-        [self presentViewController:view animated:YES completion:nil];
-
-        }
-
-        
-        
-    }
-    free(properties);
-//    for (int i=0; i<propertiesArray.count; i++)
+    
+CHCFaXianDetailViewController *targetVC =[[CHCFaXianDetailViewController alloc] init];
+       CHCOneWebViewController *oneView=[[CHCOneWebViewController alloc]init];
+    CHzt_infoWebViewController *zt_infoView=[[CHzt_infoWebViewController alloc]init];
+    CHCWenZhanViewController *wenView=[[CHCWenZhanViewController alloc]init];
+    CHCaiViewController *caiiew=[[ CHCaiViewController alloc]init];
+//    
+//    NSString* nyid =((CHCrecipes_list *)_faxianCelllist.gongyi_info.recipes[0]).myid;
+//    if ((view.rid=nyid))
 //    {
-//       
-//        }
-    
-  
+//        [self.navigationController pushViewController:view animated:YES ];
+//        
+//    }
     
 
+    if ((targetVC.tid = faxianCelllist.topic_info.tid)&&(targetVC.gid=faxianCelllist.topic_info.gid))
+    {
+         [self presentViewController:targetVC animated:YES completion:nil];
+    }
+     else if ((oneView.oneId=faxianCelllist.recipe_info.myid))
+    {
+        [self.navigationController pushViewController:oneView animated:YES ];
+
+    }
+    else if ((wenView.wenId=faxianCelllist.article_info.myid) )
+    {
+        [self.navigationController pushViewController:wenView animated:YES ];
+
+    }
+    else if ((caiiew.rid=faxianCelllist.caidan_info.myid))
+    {
+        [self.navigationController pushViewController:caiiew animated:YES ];
+    }
+    
+//    else if((zt_infoView.ztId=faxianCelllist.zt_info.myid))
+//    {
+//      [self presentViewController:zt_infoView animated:YES completion:nil];
+//    }
+//    else if((view.rid=_faxianCelllist.caidan_info.myid))
+//    {
+//         [self.navigationController pushViewController:view animated:YES ];
+//    }
+    
+    
+    
+
+    
+// [_bagImagView sd_setImageWithURL:[NSURL URLWithString:((CHCimages_list *)faxian_list.topic_info.imgs[1]).big]];
+   
     
     
     
@@ -507,6 +529,109 @@
 //    default:
 //        break;
 //}
+//u_int count;
+//objc_property_t *properties  =class_copyPropertyList([CHCfaxian_list class], &count);
+//
+//NSMutableArray *propertiesArray = [NSMutableArray arrayWithCapacity:count];
+//for (int i = 0; i<count; i++)
+//
+//{
+//    const char* propertyName =property_getName(properties[i]);
+//    
+//    [propertiesArray addObject: [NSString stringWithUTF8String: propertyName]];
+//    NSLog(@"Person has a property: '%@'", propertiesArray);
+//    
+//    if ([propertiesArray[i] isEqual:@"topic_info"])
+//    {
+//        NSLog(@"rrrrrrrrr%@",propertiesArray[i]);
+//        CHCFaXianDetailViewController *targetVC = [[CHCFaXianDetailViewController alloc] init];
+//        CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
+//        targetVC.tid = faxianCelllist.topic_info.tid;
+//        targetVC.gid=faxianCelllist.topic_info.gid;
+//        [self presentViewController:targetVC animated:YES completion:nil];
+//    }
+//    else if([propertiesArray[i] isEqual:@"caidan_info"])
+//    {
+//        NSLog(@"wwwwwwwww%@",propertiesArray[i]);
+//        CHCaiViewController *view=[[ CHCaiViewController alloc]init];
+//        CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
+//        
+//        view.rid=faxianCelllist.caidan_info.myid;
+//        [self presentViewController:view animated:YES completion:nil];
+//        
+//    }
+//    
+//    
+//    
+//}
+//free(properties);
+////    for (int i=0; i<propertiesArray.count; i++)
+////    {
+////
+////        }
+//
+//
+//NSString *CellIdentifierdiscell = [NSString stringWithFormat:@"CDCdiscell%ld%ld", (long)[indexPath section], (long)[indexPath row]];
+//
+//NSString *CellIdentifierclickcell= [NSString stringWithFormat:@"clickcell%ld%ld", (long)[indexPath section], (long)[indexPath row]];
+//NSString *CellIdentifiercommentcell = [NSString stringWithFormat:@"commentcell%ld%ld", (long)[indexPath section], (long)[indexPath row]];
+//NSString *CellIdentifieractivitycell = [NSString stringWithFormat:@"activitycell%ld%ld", (long)[indexPath section], (long)[indexPath row]];
+//NSString *CellIdentifiergoodscell = [NSString stringWithFormat:@"goodscell%ld%ld", (long)[indexPath section], (long)[indexPath row]];
+//NSString *CellIdentifierarticalcell = [NSString stringWithFormat:@"articalcell%ld%ld", (long)[indexPath section], (long)[indexPath row]];
+//NSString *CellIdentifierrecipescell = [NSString stringWithFormat:@"recipescell%ld%ld", (long)[indexPath section], (long)[indexPath row]];
+//NSString *CellIdentifiercaidancell = [NSString stringWithFormat:@"caidancell%ld%ld", (long)[indexPath section], (long)[indexPath row]];
+//NSString *CellIdentifierztcell3 = [NSString stringWithFormat:@"ztcell3%ld%ld", (long)[indexPath section], (long)[indexPath row]];
+//NSString *CellIdentifiertopcell = [NSString stringWithFormat:@"topcell%ld%ld", (long)[indexPath section], (long)[indexPath row]];
+//
+//
+//
+//CHCDiscoverTableViewcell *discell=[tableView  dequeueReusableCellWithIdentifier:CellIdentifierdiscell];
+//CHClickTableViewCell *clickcell=[tableView dequeueReusableCellWithIdentifier:CellIdentifierclickcell];
+//CHCCommentTableViewCell *commentcell=[tableView dequeueReusableCellWithIdentifier:CellIdentifiercommentcell];
+//CHCActivityTableViewCell *activitycell=[tableView dequeueReusableCellWithIdentifier:CellIdentifieractivitycell];
+//
+//
+//CHVGoods_infoTableViewCell *goodscell=[tableView dequeueReusableCellWithIdentifier:CellIdentifiergoodscell];
+//
+//CHCArticalCell *articalcell=[tableView  dequeueReusableCellWithIdentifier:CellIdentifierarticalcell ];
+//CHRecipesCell *recipescell=[tableView dequeueReusableCellWithIdentifier:CellIdentifierrecipescell];
+//CHCaiDanCell *caidancell=[tableView dequeueReusableCellWithIdentifier:CellIdentifiercaidancell];
+//
+//CHZTCell *ztcell3=[tableView dequeueReusableCellWithIdentifier:CellIdentifierztcell3];
+//
+//CHTopInfoCell *topcell=[tableView dequeueReusableCellWithIdentifier:CellIdentifiertopcell];
+//u_int count;
+//objc_property_t *properties  =class_copyPropertyList([CHCfaxian_list class], &count);
+//
+//NSMutableArray *propertiesArray = [NSMutableArray arrayWithCapacity:count];
+//for (int i = 0; i<count; i++)
+//
+//{
+//    const char* propertyName =property_getName(properties[i]);
+//
+//    [propertiesArray addObject: [NSString stringWithUTF8String: propertyName]];
+//    NSLog(@"Person has a property: '%@'", propertiesArray);
+//
+//    if ([propertiesArray[i] isEqual:@"topic_info"])
+//    {
+//        NSLog(@"rrrrrrrrr%@",propertiesArray[i]);
+//        CHCFaXianDetailViewController *targetVC = [[CHCFaXianDetailViewController alloc] init];
+//        CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
+//        targetVC.tid = faxianCelllist.topic_info.tid;
+//        targetVC.gid=faxianCelllist.topic_info.gid;
+//        [self presentViewController:targetVC animated:YES completion:nil];
+//    }
+//    else if([propertiesArray[i] isEqual:@"caidan_info"])
+//    {
+//        NSLog(@"wwwwwwwww%@",propertiesArray[i]);
+//        CHCaiViewController *view=[[ CHCaiViewController alloc]init];
+//        CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
+//
+//        view.rid=faxianCelllist.caidan_info.myid;
+//        [self presentViewController:view animated:YES completion:nil];
+//
+//    }
+
 
 
 @end

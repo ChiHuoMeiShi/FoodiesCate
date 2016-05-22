@@ -56,7 +56,7 @@
                 <outlet property="tagLanel" destination="gJ4-2P-auS" id="KnO-t3-p7A"/>
                 <outlet property="titleLabel" destination="dCd-2b-1Jm" id="fGI-C2-Dz7"/>
             </connections>
-            <point key="canvasLocation" x="572.5" y="221"/>
+            <point key="canvasLocation" x="483.5" y="212"/>
         </tableViewCell>
     </objects>
 </document>

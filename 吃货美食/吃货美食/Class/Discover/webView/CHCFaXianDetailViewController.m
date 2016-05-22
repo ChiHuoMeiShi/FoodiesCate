@@ -35,4 +35,7 @@
 //    [self.webView loadRequest:request];
 //}
 
+- (IBAction)Back:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
