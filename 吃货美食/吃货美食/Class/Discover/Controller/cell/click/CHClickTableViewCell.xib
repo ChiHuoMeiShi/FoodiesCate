@@ -244,7 +244,7 @@
                 <outlet property="commentMax" destination="2hj-K2-h2p" id="ik0-Bd-cU1"/>
                 <outlet property="timeLabel" destination="A49-mF-x0m" id="wQl-Ot-Bew"/>
             </connections>
-            <point key="canvasLocation" x="406" y="-326.5"/>
+            <point key="canvasLocation" x="487" y="-328.5"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -14,11 +14,15 @@
 extern const CGFloat myLat;
 extern const CGFloat myLon;
 
-@interface CHRJBasicViewController : UIViewController<MBProgressHUDDelegate>
+@interface CHRJBasicViewController : UIViewController<MBProgressHUDDelegate,UITextViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic,strong)MBProgressHUD * myHUD;
 @property (nonatomic,strong)CHRJSearchView * searchView;
 @property (nonatomic,strong)CHHTTPRequestManager * afnManger;
+
+@property (nonatomic,strong)UIImage * choosedImage;
+@property (nonatomic,strong)NSString * tagStr;
+@property (nonatomic,copy)NSString * imageChoosedPath;
 
 - (void)navBackAction;
 - (void)pushToWebViewWithID:(NSNumber *)myID withUrlString:(NSString *)urlString;
@@ -29,5 +33,8 @@ extern const CGFloat myLon;
 - (void)recommdSearchBarSetWithRect:(CGRect)rect;
 
 - (void)testHud;
+
+- (void)imageTakePhoto;
+
 
 @end

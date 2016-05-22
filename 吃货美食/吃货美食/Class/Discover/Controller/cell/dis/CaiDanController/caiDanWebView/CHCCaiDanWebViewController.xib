@@ -34,7 +34,7 @@
                                 <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
-                                <action selector="BackClick:" destination="-1" eventType="touchDragInside" id="7bm-Gr-n7s"/>
+                                <action selector="BackClick:" destination="-1" eventType="touchUpInside" id="AhC-i9-toF"/>
                             </connections>
                         </button>
                     </subviews>
@@ -56,7 +56,7 @@
                 <constraint firstItem="qai-rb-WBg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aKo-TK-vI3"/>
                 <constraint firstAttribute="bottom" secondItem="qai-rb-WBg" secondAttribute="bottom" id="fTd-dS-uQm"/>
             </constraints>
-            <point key="canvasLocation" x="290" y="81"/>
+            <point key="canvasLocation" x="-101" y="86"/>
         </view>
     </objects>
 </document>

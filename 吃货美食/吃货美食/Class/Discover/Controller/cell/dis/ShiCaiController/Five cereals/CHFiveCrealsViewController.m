@@ -13,6 +13,8 @@
 #import "CHCShiCaiData.h"
 #import <MJExtension.h>
 #import "CHCShiCaiTableViewCell.h"
+#import "CHRJSearchDetailViewController.h"
+#import "CHRJSearchDetailViewController.h"
 @interface CHFiveCrealsViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     UITableView *_fiveCerealsTableView;
@@ -88,7 +90,65 @@
 {
     return 1;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section==0) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"枣(干)"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+    if (indexPath.section==1) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"花生"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+    if (indexPath.section==2) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"燕麦"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+    
+    if (indexPath.section==3) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"赤小豆"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+    
+    if (indexPath.section==4) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"玉米(鲜)"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+    
+    if (indexPath.section==5) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"绿豆"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+    if (indexPath.section==6) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"小米"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+    if (indexPath.section==7) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"黑豆"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+    
+    if (indexPath.section==8) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"开心果"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+    
+    if (indexPath.section==9) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"黄豆"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+   
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

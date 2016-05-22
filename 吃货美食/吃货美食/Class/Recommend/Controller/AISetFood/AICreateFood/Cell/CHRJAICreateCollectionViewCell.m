@@ -24,7 +24,8 @@
 //    get tittle width
     NSDictionary * attributes = [NSDictionary dicOfTextAttributeWithFont:[UIFont systemFontOfSize:16.f] withTextColor:[UIColor redColor]];
     NSString * foodCountStr = [NSString stringWithFormat:@"%@",self.aiCreateFoodModel.total];
-    CGRect myRect = [foodCountStr boundingRectWithSize:CGSizeMake(MAXFLOAT, 0.f) options:NSStringDrawingUsesFontLeading attributes:attributes context:nil];
+    self.showCountLabel.text = foodCountStr;
+    CGRect myRect = [foodCountStr boundingRectWithSize:CGSizeMake(MAXFLOAT, 0.f) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
     self.showCountLabelWidth.constant = myRect.size.width;
     
     CGFloat showImageWidth = (CHSCREENWIDTH - 20.f - 20.f)/3;
@@ -33,8 +34,6 @@
     self.thirdImageViewWidth.constant = showImageWidth;
     
     [self setNeedsLayout];
-    
-    self.showCountLabel.text = foodCountStr;
     __weak typeof(self)mySelf = self;
     [self.aiCreateFoodModel.newses enumerateObjectsUsingBlock:^(CHRJAICreateFoodNewsesModel *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (idx == 0) {

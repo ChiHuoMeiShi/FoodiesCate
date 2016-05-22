@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHCShiCaiViewController">
             <connections>
+                <outlet property="myView" destination="ttE-Mk-jdf" id="r5f-Nv-SaR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="nI5-kR-QgQ"/>
             </connections>
         </placeholder>
@@ -48,19 +49,6 @@
                                 <action selector="fruit:" destination="-1" eventType="touchUpInside" id="QBX-vY-BxB"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhZ-QI-HwG">
-                            <rect key="frame" x="208" y="16" width="35" height="19"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" title="肉类">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="meat:" destination="-1" eventType="touchUpInside" id="QsM-Bt-Obj"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foF-cD-m0N">
                             <rect key="frame" x="257" y="16" width="35" height="19"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -72,6 +60,19 @@
                             </state>
                             <connections>
                                 <action selector="fiveCreals:" destination="-1" eventType="touchUpInside" id="gNi-LC-hGu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhZ-QI-HwG">
+                            <rect key="frame" x="208" y="16" width="35" height="19"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="肉类">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="meat:" destination="-1" eventType="touchUpInside" id="QsM-Bt-Obj"/>
                             </connections>
                         </button>
                     </subviews>
@@ -101,7 +102,7 @@
                 <constraint firstItem="ttE-Mk-jdf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jWM-j7-pWw"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-            <point key="canvasLocation" x="526" y="403"/>
+            <point key="canvasLocation" x="199" y="344"/>
         </view>
     </objects>
 </document>

@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHCFaXianDetailViewController">
             <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="aon-Rq-EE1"/>
                 <outlet property="webView" destination="SFg-WF-BDP" id="LKv-pu-dPG"/>
             </connections>
         </placeholder>
@@ -19,6 +20,31 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                 </webView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIu-Jm-uoL">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvx-SO-1oP">
+                            <rect key="frame" x="28" y="17" width="46" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="7Z6-4p-vNe"/>
+                                <constraint firstAttribute="width" constant="46" id="UQx-S5-jCr"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="返回">
+                                <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="Back:" destination="-1" eventType="touchUpInside" id="x0l-5K-yhW"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="kvx-SO-1oP" firstAttribute="top" secondItem="aIu-Jm-uoL" secondAttribute="top" constant="17" id="SGe-fd-o76"/>
+                        <constraint firstItem="kvx-SO-1oP" firstAttribute="leading" secondItem="aIu-Jm-uoL" secondAttribute="leading" constant="28" id="wS6-HP-gif"/>
+                        <constraint firstAttribute="height" constant="64" id="xoQ-Fk-mxA"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -26,7 +52,11 @@
                 <constraint firstAttribute="bottom" secondItem="SFg-WF-BDP" secondAttribute="bottom" id="GBG-7o-X6Y"/>
                 <constraint firstItem="SFg-WF-BDP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GhD-wN-Wo1"/>
                 <constraint firstAttribute="trailing" secondItem="SFg-WF-BDP" secondAttribute="trailing" id="dzD-py-RVd"/>
+                <constraint firstItem="aIu-Jm-uoL" firstAttribute="leading" secondItem="SFg-WF-BDP" secondAttribute="leading" id="qUm-Oy-w8b"/>
+                <constraint firstItem="aIu-Jm-uoL" firstAttribute="top" secondItem="SFg-WF-BDP" secondAttribute="top" id="rCZ-yY-oJ9"/>
+                <constraint firstItem="aIu-Jm-uoL" firstAttribute="trailing" secondItem="SFg-WF-BDP" secondAttribute="trailing" id="tVS-MX-CzH"/>
             </constraints>
+            <point key="canvasLocation" x="144" y="422"/>
         </view>
     </objects>
 </document>

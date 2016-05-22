@@ -100,7 +100,7 @@
                 <outlet property="titleLabel" destination="msa-Nc-kq4" id="PbZ-50-Muo"/>
                 <outlet property="use_namelabe" destination="3TD-Nk-Whd" id="wgx-8a-3sI"/>
             </connections>
-            <point key="canvasLocation" x="306" y="236"/>
+            <point key="canvasLocation" x="517" y="236"/>
         </tableViewCell>
     </objects>
 </document>

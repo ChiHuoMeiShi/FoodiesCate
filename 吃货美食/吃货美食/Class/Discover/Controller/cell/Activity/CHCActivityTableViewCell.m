@@ -16,6 +16,7 @@
     _titleLabel.text=faxian_list.title;
     _tagLabel.text=faxian_list.tag;
     [_ActivityimageView sd_setImageWithURL:[NSURL URLWithString:faxian_list.huodong.img.small] ];
+    self.imageWidth.constant= CHSCREENWIDTH* 392/414;
     
 }
 - (void)awakeFromNib {
