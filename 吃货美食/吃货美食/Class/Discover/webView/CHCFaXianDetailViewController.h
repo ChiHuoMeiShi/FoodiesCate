@@ -13,6 +13,7 @@
 @property(nonatomic,copy)NSString *gid;
 @property(nonatomic,strong)NSString *tid;
 
+- (IBAction)Back:(id)sender;
 
 
 

@@ -72,7 +72,6 @@
                         <rect key="frame" x="106" y="152" width="82" height="82"/>
                     </imageView>
                 </subviews>
-                <color key="backgroundColor" red="1" green="0.21948871759999999" blue="0.97939483220000001" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="jBK-sP-2uk" firstAttribute="leading" secondItem="ZFe-Hh-zQo" secondAttribute="trailing" constant="13" id="1pB-En-r0G"/>
                     <constraint firstItem="ZFe-Hh-zQo" firstAttribute="top" secondItem="5QK-pS-hlc" secondAttribute="bottom" constant="16" id="3UR-aQ-U27"/>
@@ -101,7 +100,7 @@
                 <outlet property="titleLabel" destination="msa-Nc-kq4" id="PbZ-50-Muo"/>
                 <outlet property="use_namelabe" destination="3TD-Nk-Whd" id="wgx-8a-3sI"/>
             </connections>
-            <point key="canvasLocation" x="306" y="236"/>
+            <point key="canvasLocation" x="517" y="236"/>
         </tableViewCell>
     </objects>
 </document>

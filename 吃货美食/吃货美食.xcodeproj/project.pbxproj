@@ -89,6 +89,12 @@
 		077EE4EC1CF00F4B003F4E1B /* CHCFaXianDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077EE4EB1CF00F4B003F4E1B /* CHCFaXianDetailViewController.xib */; };
 		077EE4F41CF0381A003F4E1B /* CHCCaiDanWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 077EE4F21CF0381A003F4E1B /* CHCCaiDanWebViewController.m */; };
 		077EE4F51CF0381A003F4E1B /* CHCCaiDanWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077EE4F31CF0381A003F4E1B /* CHCCaiDanWebViewController.xib */; };
+		0787A3D61CF18ACD0016393C /* CHCOneWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0787A3D41CF18ACD0016393C /* CHCOneWebViewController.m */; };
+		0787A3D71CF18ACD0016393C /* CHCOneWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0787A3D51CF18ACD0016393C /* CHCOneWebViewController.xib */; };
+		0787A3DB1CF194EB0016393C /* CHzt_infoWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0787A3D91CF194EB0016393C /* CHzt_infoWebViewController.m */; };
+		0787A3DC1CF194EB0016393C /* CHzt_infoWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0787A3DA1CF194EB0016393C /* CHzt_infoWebViewController.xib */; };
+		0787A3E11CF19E0C0016393C /* CHCWenZhanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0787A3DF1CF19E0C0016393C /* CHCWenZhanViewController.m */; };
+		0787A3E21CF19E0C0016393C /* CHCWenZhanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0787A3E01CF19E0C0016393C /* CHCWenZhanViewController.xib */; };
 		078D15D71CEDA13600878771 /* CHRJAISearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6AD1CECA7F100F0AC08 /* CHRJAISearchViewController.m */; };
 		078D15D81CEDA13600878771 /* CHRJAISearchViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A6AE1CECA7F100F0AC08 /* CHRJAISearchViewController.xib */; };
 		07A458231CF05736001CC3C8 /* CHCZhuantiWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A458211CF05736001CC3C8 /* CHCZhuantiWebViewController.m */; };
@@ -491,6 +497,15 @@
 		077EE4F11CF0381A003F4E1B /* CHCCaiDanWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCCaiDanWebViewController.h; sourceTree = "<group>"; };
 		077EE4F21CF0381A003F4E1B /* CHCCaiDanWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCCaiDanWebViewController.m; sourceTree = "<group>"; };
 		077EE4F31CF0381A003F4E1B /* CHCCaiDanWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCCaiDanWebViewController.xib; sourceTree = "<group>"; };
+		0787A3D31CF18ACD0016393C /* CHCOneWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCOneWebViewController.h; sourceTree = "<group>"; };
+		0787A3D41CF18ACD0016393C /* CHCOneWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCOneWebViewController.m; sourceTree = "<group>"; };
+		0787A3D51CF18ACD0016393C /* CHCOneWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCOneWebViewController.xib; sourceTree = "<group>"; };
+		0787A3D81CF194EB0016393C /* CHzt_infoWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHzt_infoWebViewController.h; sourceTree = "<group>"; };
+		0787A3D91CF194EB0016393C /* CHzt_infoWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHzt_infoWebViewController.m; sourceTree = "<group>"; };
+		0787A3DA1CF194EB0016393C /* CHzt_infoWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHzt_infoWebViewController.xib; sourceTree = "<group>"; };
+		0787A3DE1CF19E0C0016393C /* CHCWenZhanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCWenZhanViewController.h; sourceTree = "<group>"; };
+		0787A3DF1CF19E0C0016393C /* CHCWenZhanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCWenZhanViewController.m; sourceTree = "<group>"; };
+		0787A3E01CF19E0C0016393C /* CHCWenZhanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCWenZhanViewController.xib; sourceTree = "<group>"; };
 		07A458201CF05736001CC3C8 /* CHCZhuantiWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCZhuantiWebViewController.h; sourceTree = "<group>"; };
 		07A458211CF05736001CC3C8 /* CHCZhuantiWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCZhuantiWebViewController.m; sourceTree = "<group>"; };
 		07A458221CF05736001CC3C8 /* CHCZhuantiWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCZhuantiWebViewController.xib; sourceTree = "<group>"; };
@@ -895,11 +910,11 @@
 			isa = PBXGroup;
 			children = (
 				077EE3721CEFF69E003F4E1B /* dis */,
+				077EE36A1CEFF69E003F4E1B /* click */,
 				077EE35A1CEFF69E003F4E1B /* Activity */,
 				077EE35E1CEFF69E003F4E1B /* article_infocell */,
 				077EE3621CEFF69E003F4E1B /* goods */,
 				077EE3661CEFF69E003F4E1B /* caidan_info_cell */,
-				077EE36A1CEFF69E003F4E1B /* click */,
 				077EE36E1CEFF69E003F4E1B /* Comment */,
 				077EE3C91CEFF69E003F4E1B /* Recipescell */,
 				077EE3CD1CEFF69E003F4E1B /* topic_info_cell */,
@@ -1323,14 +1338,14 @@
 		077EE4AE1CEFF961003F4E1B /* VegetableController */ = {
 			isa = PBXGroup;
 			children = (
+				077EE4B41CEFF961003F4E1B /* CHCVegetableController.h */,
+				077EE4B51CEFF961003F4E1B /* CHCVegetableController.m */,
+				077EE4B61CEFF961003F4E1B /* CHCVegetableController.xib */,
 				077EE4AF1CEFF961003F4E1B /* CHCShiCaiTableView.h */,
 				077EE4B01CEFF961003F4E1B /* CHCShiCaiTableView.m */,
 				077EE4B11CEFF961003F4E1B /* CHCShiCaiTableViewCell.h */,
 				077EE4B21CEFF961003F4E1B /* CHCShiCaiTableViewCell.m */,
 				077EE4B31CEFF961003F4E1B /* CHCShiCaiTableViewCell.xib */,
-				077EE4B41CEFF961003F4E1B /* CHCVegetableController.h */,
-				077EE4B51CEFF961003F4E1B /* CHCVegetableController.m */,
-				077EE4B61CEFF961003F4E1B /* CHCVegetableController.xib */,
 			);
 			path = VegetableController;
 			sourceTree = "<group>";
@@ -1369,9 +1384,16 @@
 				077EE4E81CF00F0E003F4E1B /* CHCFaXianDetailViewController.h */,
 				077EE4E91CF00F0E003F4E1B /* CHCFaXianDetailViewController.m */,
 				077EE4EB1CF00F4B003F4E1B /* CHCFaXianDetailViewController.xib */,
+				0787A3D31CF18ACD0016393C /* CHCOneWebViewController.h */,
+				0787A3D41CF18ACD0016393C /* CHCOneWebViewController.m */,
+				0787A3D51CF18ACD0016393C /* CHCOneWebViewController.xib */,
+				0787A3DE1CF19E0C0016393C /* CHCWenZhanViewController.h */,
+				0787A3DF1CF19E0C0016393C /* CHCWenZhanViewController.m */,
+				0787A3E01CF19E0C0016393C /* CHCWenZhanViewController.xib */,
 				07A4583C1CF085EA001CC3C8 /* CHCaiViewController.h */,
 				07A4583D1CF085EA001CC3C8 /* CHCaiViewController.m */,
 				07A4583E1CF085EA001CC3C8 /* CHCaiViewController.xib */,
+				0787A3DD1CF19DD80016393C /* New Group */,
 			);
 			path = webView;
 			sourceTree = "<group>";
@@ -1384,6 +1406,16 @@
 				077EE4F31CF0381A003F4E1B /* CHCCaiDanWebViewController.xib */,
 			);
 			path = caiDanWebView;
+			sourceTree = "<group>";
+		};
+		0787A3DD1CF19DD80016393C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				0787A3D81CF194EB0016393C /* CHzt_infoWebViewController.h */,
+				0787A3D91CF194EB0016393C /* CHzt_infoWebViewController.m */,
+				0787A3DA1CF194EB0016393C /* CHzt_infoWebViewController.xib */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 		07A4581F1CF05718001CC3C8 /* zhuTiWebView */ = {
@@ -2877,6 +2909,7 @@
 				B71E549A1CE78D5F003B6BE8 /* CHGoodCookViewController.xib in Resources */,
 				B7B7A5C11CEC91CC002A80E7 /* CHMyCollectController.xib in Resources */,
 				077EE40A1CEFF69E003F4E1B /* CHCActivityTableViewCell.xib in Resources */,
+				0787A3DC1CF194EB0016393C /* CHzt_infoWebViewController.xib in Resources */,
 				B7A512C11CE660DF0085A6C8 /* CHNineChatCell.xib in Resources */,
 				7A9CF4B91CF04A1D00A2D830 /* CHRPublicShowTableViewCell.xib in Resources */,
 				7A6ED6F61CE2FFD5005DF78C /* CHJRTopBannerCollectCell.xib in Resources */,
@@ -2884,6 +2917,7 @@
 				7A657CB91CF19EAA0057BF33 /* CHRPublicNextFooterAddBaseFoodView.xib in Resources */,
 				077EE43F1CEFF69E003F4E1B /* CHRecipesCell.xib in Resources */,
 				B748A5391CEDF63100A8338C /* CHTPublishSHCell.xib in Resources */,
+				0787A3E21CF19E0C0016393C /* CHCWenZhanViewController.xib in Resources */,
 				B7F6155A1CDC857700AF1697 /* CHEChatViewController.xib in Resources */,
 				7AC792F81CE85060001CBAA5 /* CHRJSearchViewController.xib in Resources */,
 				B7A512BC1CE660A40085A6C8 /* CHEightChatCell.xib in Resources */,
@@ -3140,6 +3174,7 @@
 				077EE4491CEFF69E003F4E1B /* CHCGongxiao_list.m in Sources */,
 				7A53C78D1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.m in Sources */,
 				B7A512B31CE6605D0085A6C8 /* CHSevenChatCell.m in Sources */,
+				0787A3D61CF18ACD0016393C /* CHCOneWebViewController.m in Sources */,
 				7AD0DDAC1CDCA7CE0057F8B2 /* UIColor+HexColor.m in Sources */,
 				077EE4C81CEFF961003F4E1B /* CHCCaiDanTableViewCell.m in Sources */,
 				077EE4CC1CEFF961003F4E1B /* CHCShiCaiViewController.m in Sources */,
@@ -3157,6 +3192,7 @@
 				077EE4091CEFF69E003F4E1B /* CHCActivityTableViewCell.m in Sources */,
 				7AD0DDAA1CDCA7CE0057F8B2 /* UITabBarItem+TextCustom.m in Sources */,
 				7AAF0A371CE184A300708F98 /* CHJRecomdTodayBanerFCollectionReusableView.m in Sources */,
+				0787A3E11CF19E0C0016393C /* CHCWenZhanViewController.m in Sources */,
 				B71ED8561CDB41660035F6BE /* AppDelegate.m in Sources */,
 				B7A512951CE658380085A6C8 /* CHTwoChatCell.m in Sources */,
 				7AAF0A3F1CE184A300708F98 /* CHJRecomdUpdateHCollectionReusableView.m in Sources */,
@@ -3240,6 +3276,7 @@
 				7AA949441CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.m in Sources */,
 				7AD0DDA71CDCA7CE0057F8B2 /* JWUIClass.m in Sources */,
 				B7A512BB1CE660A40085A6C8 /* CHEightChatCell.m in Sources */,
+				0787A3DB1CF194EB0016393C /* CHzt_infoWebViewController.m in Sources */,
 				077EE4811CEFF8A2003F4E1B /* CHCArticalData.m in Sources */,
 				B7DBAA961CEAC4A7002534B6 /* CHMessageRequest.m in Sources */,
 				B7A3F5CC1CE4801700E09AED /* EChatModel.m in Sources */,

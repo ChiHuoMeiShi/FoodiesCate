@@ -19,6 +19,8 @@
 
     [_threeImageVIew sd_setImageWithURL:[NSURL URLWithString:faxian_list.caidan_info.photos[2]]];
 
+   _imageWidth.constant=CHSCREENWIDTH *123/414;
+    _imagehight.constant=CHSCREENWIDTH *123/414;
 }
 - (void)awakeFromNib {
     // Initialization code

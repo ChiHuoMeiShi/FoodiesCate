@@ -1,19 +1,18 @@
 //
-//  CHCaiViewController.m
+//  CHCWenZhanViewController.m
 //  吃货美食
 //
-//  Created by eric on 16/5/21.
+//  Created by eric on 16/5/22.
 //  Copyright © 2016年 赵天. All rights reserved.
 //
 
-#import "CHCaiViewController.h"
+#import "CHCWenZhanViewController.h"
 
-@interface CHCaiViewController ()
+@interface CHCWenZhanViewController ()
 
 @end
 
-@implementation CHCaiViewController
-
+@implementation CHCWenZhanViewController
 - (void)navBackAction{
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -22,9 +21,9 @@
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
 
-    NSString *baseUrl = @"http://m.meishij.net/html5/recipe_list.php?rid=";
-    //   http://m.meishij.net/html5/recipe_list.php?rid=9171013&from=msjmobile
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@&from=msjmobile",baseUrl,self.rid];
+    NSString *baseUrl = @"http://m.meishij.net/html5/news.php?id=";
+    //    http://m.meishij.net/html5/news.php?id=202158
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@",baseUrl,self.wenId];
     //
     NSURL *url = [NSURL URLWithString:urlStr];
     
@@ -50,6 +49,5 @@
 */
 
 - (IBAction)back:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

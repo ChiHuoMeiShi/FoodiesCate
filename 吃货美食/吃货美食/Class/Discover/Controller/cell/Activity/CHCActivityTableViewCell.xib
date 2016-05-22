@@ -53,10 +53,11 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="ActivityimageView" destination="EjO-Ul-iJ7" id="K3r-vK-mDg"/>
+                <outlet property="imageWidth" destination="VLL-He-kJK" id="8fx-nS-GTy"/>
                 <outlet property="tagLabel" destination="trR-3L-lMq" id="74k-pW-Dxz"/>
                 <outlet property="titleLabel" destination="wtQ-3m-NIX" id="ZKG-Vp-2X1"/>
             </connections>
-            <point key="canvasLocation" x="582" y="253"/>
+            <point key="canvasLocation" x="449" y="207"/>
         </tableViewCell>
     </objects>
 </document>

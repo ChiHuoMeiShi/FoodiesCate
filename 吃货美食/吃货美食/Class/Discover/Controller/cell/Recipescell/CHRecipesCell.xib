@@ -71,7 +71,7 @@
                 <outlet property="titleLabel" destination="856-6E-VwV" id="zJx-Zc-ZuV"/>
                 <outlet property="twoImageView" destination="cSz-Zb-gXK" id="SVf-9E-78n"/>
             </connections>
-            <point key="canvasLocation" x="89" y="295.5"/>
+            <point key="canvasLocation" x="325" y="292.5"/>
         </tableViewCell>
     </objects>
 </document>

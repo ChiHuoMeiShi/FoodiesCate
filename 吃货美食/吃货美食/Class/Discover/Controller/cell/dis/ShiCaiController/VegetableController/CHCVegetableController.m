@@ -14,6 +14,7 @@
 #import "CHCShiCaiData.h"
 #import <MJExtension.h>
 #import "CHCShiCaiTableViewCell.h"
+#import "CHRJSearchDetailViewController.h"
 @interface CHCVegetableController ()<UITableViewDelegate,UITableViewDataSource>
 {
     UITableView *_shuCaiTableView;
@@ -107,6 +108,67 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 1;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section==0) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"西红柿"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+
+    }
+    if (indexPath.section==1) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"豇豆"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+
+    }
+    if (indexPath.section==2) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"苦瓜"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+
+    if (indexPath.section==3) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"杏鲍菇"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+
+    if (indexPath.section==4) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"丝瓜"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+
+    if (indexPath.section==5) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"茄子"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+    if (indexPath.section==6) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"卷心菜"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+    if (indexPath.section==7) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"黄瓜"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+
+    if (indexPath.section==8) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"莴笋"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+
+    if (indexPath.section==9) {
+        CHRJSearchDetailViewController *seacchView=[[CHRJSearchDetailViewController alloc]initWithSearchName:@"油麦菜"];
+        [self.navigationController pushViewController:seacchView animated:YES];
+        
+    }
+
+    
+   
 }
 
 

@@ -82,7 +82,7 @@
                 <outlet property="titleLabel" destination="mib-8C-ln7" id="Huv-xX-l2W"/>
                 <outlet property="titlepicImageVIew" destination="tjp-lv-ebj" id="Jwf-mj-8qL"/>
             </connections>
-            <point key="canvasLocation" x="585.5" y="293.5"/>
+            <point key="canvasLocation" x="512" y="242.5"/>
         </tableViewCell>
     </objects>
 </document>

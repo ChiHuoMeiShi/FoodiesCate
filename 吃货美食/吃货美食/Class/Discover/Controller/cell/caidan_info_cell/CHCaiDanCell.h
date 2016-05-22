@@ -16,4 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *threeImageVIew;
 @property(nonatomic,strong)CHCfaxian_list *faxian_list;
 -(void)setFaxian_list:(CHCfaxian_list *)faxian_list;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imageWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *imagehight;
 @end

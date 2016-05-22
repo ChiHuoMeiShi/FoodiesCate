@@ -41,7 +41,7 @@
     UIViewController *fruit =[[UIViewController alloc] init];
     UIViewController *meat =[[UIViewController alloc] init];
     UIViewController *fiveCreals =[[UIViewController alloc] init];
-//    vegetable.view.backgroundColor=[UIColor blueColor];
+   //    vegetable.view.backgroundColor=[UIColor blueColor];
 //    fruit.view.backgroundColor=[UIColor purpleColor];
 //    meat.view.backgroundColor=[UIColor greenColor];
 //    fiveCreals.view.backgroundColor=[UIColor grayColor];
@@ -49,26 +49,27 @@
     CHFruitViewController *fruitViewController=[[CHFruitViewController alloc]init];
     CHCMeatViewController *meatViewController=[[CHCMeatViewController alloc]init];
     CHFiveCrealsViewController *fiveCrealsViewController=[[CHFiveCrealsViewController alloc]init];
-
+    
+ //    vegetableController.tabBarController.view=self.myView;
     vegetable =vegetableController;
-    vegetable.view.frame=CGRectMake(0, 64, self.view.width, self.view.height-187);
+    vegetable.view.frame=CGRectMake(0, 64, CHSCREENWIDTH, CHSCREENHEIGH-187);
     [self.view addSubview:vegetable.view];
     [self addChildViewController:vegetable];
     
     
     
     fruit=fruitViewController;
-    fruit.view.frame=CGRectMake(0,  64, self.view.width, self.view.height-187);
+    fruit.view.frame=CGRectMake(0,  64, CHSCREENWIDTH, CHSCREENHEIGH-187);
     [self.view addSubview:fruit.view];
     [self addChildViewController:fruit];
     
         meat=meatViewController;
-    meat.view.frame=CGRectMake(0,  64, self.view.width, self.view.height-187);
+    meat.view.frame=CGRectMake(0,  64, CHSCREENWIDTH, CHSCREENHEIGH-187);
     [self.view addSubview:meat.view];
     [self addChildViewController:meat];
 
     fiveCreals=fiveCrealsViewController;
-    fiveCreals.view.frame=CGRectMake(0,  64, self.view.width, self.view.height-187);
+    fiveCreals.view.frame=CGRectMake(0,  64, CHSCREENWIDTH, CHSCREENHEIGH-187);
     [self.view addSubview:fiveCreals.view];
     [self addChildViewController:fiveCreals];
     self.arrVC=@[vegetable,fruit,meat,fiveCreals];
@@ -76,6 +77,7 @@
     fruit.view.hidden=YES;
     meat.view.hidden=YES;
     fiveCreals.view.hidden=YES;
+    _myView.hidden=NO;
 
 }
 
@@ -89,6 +91,7 @@
         _selectVC.view.hidden=YES;
         VC.view.hidden=NO;
         _selectVC=VC;
+        _myView.hidden=NO;
     }
 }
 - (IBAction)fruit:(id)sender {
@@ -97,6 +100,7 @@
         _selectVC.view.hidden=YES;
         VC.view.hidden=NO;
         _selectVC=VC;
+        _myView.hidden=NO;
     }
 
 }
@@ -106,6 +110,7 @@
         _selectVC.view.hidden=YES;
         VC.view.hidden=NO;
         _selectVC=VC;
+        _myView.hidden=NO;
     }
 
 }
@@ -115,6 +120,7 @@
         _selectVC.view.hidden=YES;
         VC.view.hidden=NO;
         _selectVC=VC;
+        _myView.hidden=NO;
     }
 
 }
