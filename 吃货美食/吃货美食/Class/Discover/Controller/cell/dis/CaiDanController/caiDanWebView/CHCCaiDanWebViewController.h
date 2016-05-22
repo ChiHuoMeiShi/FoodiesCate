@@ -11,7 +11,7 @@
 @interface CHCCaiDanWebViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIWebView *WebView;
 @property(nonatomic,copy)NSString *rid;
-@property(nonatomic,copy)NSString *from;
+
 
 - (IBAction)BackClick:(id)sender;
 

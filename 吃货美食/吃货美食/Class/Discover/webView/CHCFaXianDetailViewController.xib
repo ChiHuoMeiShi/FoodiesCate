@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHCFaXianDetailViewController">
             <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="aon-Rq-EE1"/>
                 <outlet property="webView" destination="SFg-WF-BDP" id="LKv-pu-dPG"/>
             </connections>
         </placeholder>
@@ -27,6 +28,7 @@
                 <constraint firstItem="SFg-WF-BDP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GhD-wN-Wo1"/>
                 <constraint firstAttribute="trailing" secondItem="SFg-WF-BDP" secondAttribute="trailing" id="dzD-py-RVd"/>
             </constraints>
+            <point key="canvasLocation" x="205" y="396"/>
         </view>
     </objects>
 </document>
