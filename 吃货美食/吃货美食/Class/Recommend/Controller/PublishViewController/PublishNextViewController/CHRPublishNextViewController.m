@@ -28,9 +28,7 @@
     self.title = @"编辑菜谱";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTittle:@"发布" withTittleColor:[UIColor redColor] withTarget:self action:@selector(publishFood) forControlEvents:UIControlEventTouchUpInside];
     
-    self.mainFoodArray = [[NSMutableArray alloc]initWithCapacity:0];
-    self.supFoodArray = [[NSMutableArray alloc]initWithCapacity:0];
-    self.stepFoodArray = [[NSMutableArray alloc]initWithCapacity:0];
+    self.detailFoodModel = [[CHRPublishFoodDetailModel alloc]init];
     
     [self.publicTableView registerNib:[UINib nibWithNibName:@"CHRPublicNextBaseFoodTableViewCell" bundle:nil] forCellReuseIdentifier:@"CHRPublicNextBaseFoodTableViewCell"];
     [self.publicTableView registerNib:[UINib nibWithNibName:@"CHRPublicNextStepTableViewCell" bundle:nil] forCellReuseIdentifier:@"CHRPublicNextStepTableViewCell"];
@@ -47,10 +45,14 @@
     [self imageTakePhoto];
 }
 - (void)addBaseFood{
-    
+    CHRPublicAddCellViewController * mainVC = [[CHRPublicAddCellViewController alloc]init];
+    mainVC.delegate = self;
+    [self.navigationController pushViewController:mainVC animated:YES];
 }
 - (void)addSupFood{
-    
+    CHRPublishSupCellViewController * supVC = [[CHRPublishSupCellViewController alloc]init];
+    supVC.delegate = self;
+    [self.navigationController pushViewController:supVC animated:YES];
 }
 - (void)addStepFood{
     
@@ -58,21 +60,26 @@
 - (void)editStepFood{
     self.stepIsEdit = !self.stepIsEdit;
     if (self.stepIsEdit) {
-        self.editButton.titleLabel.text = @"完成编辑";
+        [self.stepFooterView.editButton setTitle:@"完成编辑" forState:UIControlStateNormal];
         return;
     }
-    self.editButton.titleLabel.text = @"编辑步骤";
+    [self.stepFooterView.editButton setTitle:@"编辑步骤" forState:UIControlStateNormal];
+}
+- (void)foodDetailSave{
+//    self.detailFoodModel
 }
 - (void)saveToFile{
+    [self foodDetailSave];
     self.userDefault = [CHUserDefaults shareUserDefault];
-    CHRPublishSave * dicTemp = [[CHRPublishSave alloc]init];
-    dicTemp.foodName = self.foodName;
-    dicTemp.foodDic = self.foodDataDic;
+    CHRPublishSave * saveModel = [[CHRPublishSave alloc]init];
+    saveModel.foodName = self.foodName;
+    saveModel.foodDic = self.foodDataDic;
     NSDate * date = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     dateFormatter.dateFormat = @"yyyy'-'MM'-'dd'  'HH':'mm':'ss' 'Z'";
-    dicTemp.saveTime = [dateFormatter stringFromDate:date];
-    [self.userDefault.foodSaveArray addObject:dicTemp];
+    saveModel.saveTime = [dateFormatter stringFromDate:date];
+    saveModel.foodDetail = self.detailFoodModel;
+    [self.userDefault.foodSaveArray addObject:saveModel];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -153,11 +160,12 @@
         [footerView.editButton addTarget:self action:@selector(addSupFood) forControlEvents:UIControlEventTouchUpInside];
         return footerView;
     }else if (section == 3){
-        CHRPublicNextFooterAddStepView * footerView = [[[NSBundle mainBundle]loadNibNamed:@"CHRPublicNextFooterAddStepView" owner:nil options:nil]lastObject];
-        [footerView.addButton addTarget:self action:@selector(addStepFood) forControlEvents:UIControlEventTouchUpInside];
-        [footerView.editButton addTarget:self action:@selector(editStepFood) forControlEvents:UIControlEventTouchUpInside];
-        self.editButton = footerView.editButton;
-        return footerView;
+        if (!self.stepFooterView) {
+            self.stepFooterView = [[[NSBundle mainBundle]loadNibNamed:@"CHRPublicNextFooterAddStepView" owner:nil options:nil]lastObject];
+            [self.stepFooterView.addButton addTarget:self action:@selector(addStepFood) forControlEvents:UIControlEventTouchUpInside];
+            [self.stepFooterView.editButton addTarget:self action:@selector(editStepFood) forControlEvents:UIControlEventTouchUpInside];
+        }
+        return self.stepFooterView;
     }else{
         CHRPublicNextFooterSaveView * footerView = [[[NSBundle mainBundle]loadNibNamed:@"CHRPublicNextFooterSaveView" owner:nil options:nil]lastObject];
         [footerView.saveButton addTarget:self action:@selector(saveToFile) forControlEvents:UIControlEventTouchUpInside];
@@ -170,20 +178,11 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 1) {
-        if (self.mainFoodArray.count <= 0) {
-            return 1;
-        }
-        return self.mainFoodArray.count;
+        return self.detailFoodModel.mainFoodArray.count + 1;
     }else if (section == 2){
-        if (self.supFoodArray.count <= 0) {
-            return 1;
-        }
-        return self.supFoodArray.count;
+        return self.detailFoodModel.supFoodArray.count + 1;
     }else if (section == 3){
-        if (self.stepFoodArray.count <= 0) {
-            return 1;
-        }
-        return self.stepFoodArray.count;
+        return self.detailFoodModel.stepFoodArray.count + 1;
     }
     return 0;
 }
@@ -196,32 +195,39 @@
         nextStepCell.namedTextField.returnKeyType = UIReturnKeyDone;
         nextStepCell.stepTextField.delegate = self;
         nextStepCell.stepTextField.returnKeyType = UIReturnKeyDone;
-        if (self.stepFoodArray.count > 0) {
-//            cell has edited
-            return nextStepCell;
-        }
+        nextStepCell.orderButton.titleLabel.text = [NSString stringWithFormat:@"%zi",indexPath.row + 1];
         [nextStepCell.takephotoButton addTarget:self action:@selector(takephoto:) forControlEvents:UIControlEventTouchUpInside];
+        if (indexPath.row < self.detailFoodModel.stepFoodArray.count) {
+            
+            
+            
+            
+        }
         return nextStepCell;
     }
 //    add mainFood Cell
     CHRPublicNextStepTableViewCell * nextFoodCell = [tableView dequeueReusableCellWithIdentifier:@"CHRPublicNextStepTableViewCell"];
     if (indexPath.section == 1) {
-        if (self.mainFoodArray.count > 0) {
-            
+        if (indexPath.row < self.detailFoodModel.mainFoodArray.count) {
+            nextFoodCell.foodModel = self.detailFoodModel.mainFoodArray[indexPath.row];
+            nextFoodCell.showFoodLabel.textColor = [UIColor blackColor];
+            nextFoodCell.showCountLabel.textColor = [UIColor blackColor];
+            return nextFoodCell;
+        }
+        nextFoodCell.showFoodLabel.textColor = [UIColor lightGrayColor];
+        nextFoodCell.showCountLabel.textColor = [UIColor lightGrayColor];
+        return nextFoodCell;
+    }else{//    add supFood cell
+        if (indexPath.row < self.detailFoodModel.supFoodArray.count) {
+            nextFoodCell.foodModel = self.detailFoodModel.supFoodArray[indexPath.row];
+            nextFoodCell.showFoodLabel.textColor = [UIColor blackColor];
+            nextFoodCell.showCountLabel.textColor = [UIColor blackColor];
             return nextFoodCell;
         }
         nextFoodCell.showFoodLabel.textColor = [UIColor lightGrayColor];
         nextFoodCell.showCountLabel.textColor = [UIColor lightGrayColor];
         return nextFoodCell;
     }
-    //    add supFood cell
-    if (self.mainFoodArray.count > 0) {
-        
-        return nextFoodCell;
-    }
-    nextFoodCell.showFoodLabel.textColor = [UIColor lightGrayColor];
-    nextFoodCell.showCountLabel.textColor = [UIColor lightGrayColor];
-    return nextFoodCell;
 }
 #pragma mark - UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
@@ -237,5 +243,23 @@
     }
     return YES;
 }
+#pragma mark - CHRPubAddSupFood
+- (void)getSupCellName:(NSString *)name withCount:(NSString *)count{
+    CHRPublishFoodMainFoodModel * supModel = [[CHRPublishFoodMainFoodModel alloc]init];
+    supModel.name = name;
+    supModel.count = count;
+    [self.detailFoodModel.supFoodArray addObject:supModel];
+    [self.publicTableView reloadData];
+}
+#pragma mark - CHRPubAddMainFood
+- (void)getMainCellName:(NSString *)name withCount:(NSString *)count{
+    CHRPublishFoodMainFoodModel * mainModel = [[CHRPublishFoodMainFoodModel alloc]init];
+    mainModel.name = name;
+    mainModel.count = count;
+    [self.detailFoodModel.mainFoodArray addObject:mainModel];
+    [self.publicTableView reloadData];
+}
+
+
 
 @end

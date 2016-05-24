@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CHRPublishFoodMainFoodModel.h"
 @interface CHRPublicNextStepTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *showFoodLabel;
@@ -16,6 +16,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *showCountLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *showCountLabelWidth;
+
+@property (nonatomic,strong)CHRPublishFoodMainFoodModel * foodModel;
 
 
 @end

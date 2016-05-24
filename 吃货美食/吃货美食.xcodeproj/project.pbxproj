@@ -237,6 +237,10 @@
 		7AAF3F0C1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF3F0B1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m */; };
 		7AB6AE9C1CF4880E00590F63 /* CHRPublishSave.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6AE9B1CF4880E00590F63 /* CHRPublishSave.m */; };
 		7AB6AE9F1CF48C9000590F63 /* CHRPublishFoodDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6AE9E1CF48C9000590F63 /* CHRPublishFoodDetailModel.m */; };
+		7AB6AEA21CF4906B00590F63 /* CHRPublishFoodMainFoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6AEA11CF4906B00590F63 /* CHRPublishFoodMainFoodModel.m */; };
+		7AB6AEA51CF4909800590F63 /* CHRPublishFoodStepModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6AEA41CF4909800590F63 /* CHRPublishFoodStepModel.m */; };
+		7AB6AEAF1CF499C200590F63 /* CHRPublishSupCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6AEAD1CF499C200590F63 /* CHRPublishSupCellViewController.m */; };
+		7AB6AEB01CF499C200590F63 /* CHRPublishSupCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AB6AEAE1CF499C200590F63 /* CHRPublishSupCellViewController.xib */; };
 		7AC792D91CE85057001CBAA5 /* CHRJBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC792D71CE85057001CBAA5 /* CHRJBasicViewController.m */; };
 		7AC792DA1CE85057001CBAA5 /* CHRJBasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AC792D81CE85057001CBAA5 /* CHRJBasicViewController.xib */; };
 		7AC792EF1CE85060001CBAA5 /* CHRJSearchCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC792DE1CE85060001CBAA5 /* CHRJSearchCollectionViewCell.m */; };
@@ -688,6 +692,15 @@
 		7AB6AE9B1CF4880E00590F63 /* CHRPublishSave.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRPublishSave.m; sourceTree = "<group>"; };
 		7AB6AE9D1CF48C9000590F63 /* CHRPublishFoodDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRPublishFoodDetailModel.h; sourceTree = "<group>"; };
 		7AB6AE9E1CF48C9000590F63 /* CHRPublishFoodDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRPublishFoodDetailModel.m; sourceTree = "<group>"; };
+		7AB6AEA01CF4906B00590F63 /* CHRPublishFoodMainFoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRPublishFoodMainFoodModel.h; sourceTree = "<group>"; };
+		7AB6AEA11CF4906B00590F63 /* CHRPublishFoodMainFoodModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRPublishFoodMainFoodModel.m; sourceTree = "<group>"; };
+		7AB6AEA31CF4909800590F63 /* CHRPublishFoodStepModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRPublishFoodStepModel.h; sourceTree = "<group>"; };
+		7AB6AEA41CF4909800590F63 /* CHRPublishFoodStepModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRPublishFoodStepModel.m; sourceTree = "<group>"; };
+		7AB6AEA61CF498FC00590F63 /* CHRPubAddMainFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRPubAddMainFood.h; sourceTree = "<group>"; };
+		7AB6AEA71CF4991700590F63 /* CHRPubAddSupFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRPubAddSupFood.h; sourceTree = "<group>"; };
+		7AB6AEAC1CF499C200590F63 /* CHRPublishSupCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRPublishSupCellViewController.h; sourceTree = "<group>"; };
+		7AB6AEAD1CF499C200590F63 /* CHRPublishSupCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRPublishSupCellViewController.m; sourceTree = "<group>"; };
+		7AB6AEAE1CF499C200590F63 /* CHRPublishSupCellViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRPublishSupCellViewController.xib; sourceTree = "<group>"; };
 		7AC792D61CE85057001CBAA5 /* CHRJBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJBasicViewController.h; sourceTree = "<group>"; };
 		7AC792D71CE85057001CBAA5 /* CHRJBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJBasicViewController.m; sourceTree = "<group>"; };
 		7AC792D81CE85057001CBAA5 /* CHRJBasicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRJBasicViewController.xib; sourceTree = "<group>"; };
@@ -1532,6 +1545,11 @@
 				7A657CDA1CF1CB370057BF33 /* CHRPublicAddCellViewController.h */,
 				7A657CDB1CF1CB370057BF33 /* CHRPublicAddCellViewController.m */,
 				7A657CDC1CF1CB370057BF33 /* CHRPublicAddCellViewController.xib */,
+				7AB6AEA61CF498FC00590F63 /* CHRPubAddMainFood.h */,
+				7AB6AEAC1CF499C200590F63 /* CHRPublishSupCellViewController.h */,
+				7AB6AEAD1CF499C200590F63 /* CHRPublishSupCellViewController.m */,
+				7AB6AEAE1CF499C200590F63 /* CHRPublishSupCellViewController.xib */,
+				7AB6AEA71CF4991700590F63 /* CHRPubAddSupFood.h */,
 			);
 			path = AddCellViewController;
 			sourceTree = "<group>";
@@ -1974,6 +1992,10 @@
 				7AB6AE9B1CF4880E00590F63 /* CHRPublishSave.m */,
 				7AB6AE9D1CF48C9000590F63 /* CHRPublishFoodDetailModel.h */,
 				7AB6AE9E1CF48C9000590F63 /* CHRPublishFoodDetailModel.m */,
+				7AB6AEA01CF4906B00590F63 /* CHRPublishFoodMainFoodModel.h */,
+				7AB6AEA11CF4906B00590F63 /* CHRPublishFoodMainFoodModel.m */,
+				7AB6AEA31CF4909800590F63 /* CHRPublishFoodStepModel.h */,
+				7AB6AEA41CF4909800590F63 /* CHRPublishFoodStepModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3011,6 +3033,7 @@
 				7A657CBF1CF19F0B0057BF33 /* CHRPublicNextHeaderTopView.xib in Resources */,
 				B7A512961CE658380085A6C8 /* CHTwoChatCell.xib in Resources */,
 				B7A512A01CE65F590085A6C8 /* CHThreeChatCell.xib in Resources */,
+				7AB6AEB01CF499C200590F63 /* CHRPublishSupCellViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3093,6 +3116,7 @@
 				07A4582C1CF080CD001CC3C8 /* CHRPublishNextViewController.m in Sources */,
 				07A4582D1CF080CD001CC3C8 /* CHRPublishNextViewController.xib in Sources */,
 				077EE4131CEFF69E003F4E1B /* CHCCommentTableViewCell.m in Sources */,
+				7AB6AEA21CF4906B00590F63 /* CHRPublishFoodMainFoodModel.m in Sources */,
 				7A82E5B31CEF5F47001D3D82 /* CHRecommendViewController.xib in Sources */,
 				077EE4531CEFF69E003F4E1B /* CHCMUser_info_list.m in Sources */,
 				077EE44E1CEFF69E003F4E1B /* CHCimages_list.m in Sources */,
@@ -3143,6 +3167,7 @@
 				7A82E5B21CEF5F0D001D3D82 /* CHRJBasicViewController.xib in Sources */,
 				B748A5501CEE46EF00A8338C /* SHImgs.m in Sources */,
 				7ADF0E3B1CF1ED0A00273AA0 /* CHRImageButton.m in Sources */,
+				7AB6AEA51CF4909800590F63 /* CHRPublishFoodStepModel.m in Sources */,
 				7A9CF4B81CF04A1D00A2D830 /* CHRPublicShowTableViewCell.m in Sources */,
 				B748A54F1CEE3F5D00A8338C /* CHTPublishSHCell.xib in Sources */,
 				077EE4851CEFF8A2003F4E1B /* CHCArticalTableViewCell.m in Sources */,
@@ -3216,6 +3241,7 @@
 				7AC8C4391CE4B3010043CAEC /* CHRJSortModel.m in Sources */,
 				7AD0DDA41CDCA7CE0057F8B2 /* NSDictionary+Attributes.m in Sources */,
 				B7F615541CDC854500AF1697 /* CHMeViewController.m in Sources */,
+				7AB6AEAF1CF499C200590F63 /* CHRPublishSupCellViewController.m in Sources */,
 				B72A06571CE216D10091986F /* CHZSendEChatController.m in Sources */,
 				7AC792EF1CE85060001CBAA5 /* CHRJSearchCollectionViewCell.m in Sources */,
 				077EE4DB1CEFF961003F4E1B /* CHCZhuanTiTableViewCell.m in Sources */,

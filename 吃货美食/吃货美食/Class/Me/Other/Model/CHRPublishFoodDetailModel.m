@@ -10,4 +10,16 @@
 
 @implementation CHRPublishFoodDetailModel
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.mainFoodArray = [[NSMutableArray alloc]initWithCapacity:0];
+        self.supFoodArray = [[NSMutableArray alloc]initWithCapacity:0];
+        self.stepFoodArray = [[NSMutableArray alloc]initWithCapacity:0];
+    }
+    return self;
+}
+
+
 @end

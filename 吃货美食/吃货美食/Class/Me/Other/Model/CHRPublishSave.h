@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CHRPublishFoodDetailModel.h"
 
 @interface CHRPublishSave : NSObject
 @property (nonatomic,strong)NSDictionary * foodDic;
-@property (nonatomic,strong)NSString * foodName;
-@property (nonatomic,strong)NSString * saveTime;
+@property (nonatomic,copy)NSString * foodName;
+@property (nonatomic,copy)NSString * saveTime;
+
+@property (nonatomic,strong)CHRPublishFoodDetailModel * foodDetail;
 
 @end

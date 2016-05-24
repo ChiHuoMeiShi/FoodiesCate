@@ -21,6 +21,7 @@
     _myImagePath = myImagePath;
     NSArray *docs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     UIImage * photoIMG = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%@",docs[0],myImagePath]];
+    self.imageView.image = nil;
     [self setBackgroundImage:photoIMG forState:UIControlStateNormal];
 }
 
