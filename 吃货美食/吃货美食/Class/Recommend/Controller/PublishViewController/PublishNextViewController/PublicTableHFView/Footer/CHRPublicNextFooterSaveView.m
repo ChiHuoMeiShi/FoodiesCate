@@ -18,4 +18,10 @@
 }
 */
 
+- (void)awakeFromNib {
+    [self.saveButton.layer setBorderWidth:0.8f];
+    [self.saveButton.layer setCornerRadius:5.f];
+    [self.saveButton.layer setBorderColor:[UIColor redColor].CGColor];
+}
+
 @end

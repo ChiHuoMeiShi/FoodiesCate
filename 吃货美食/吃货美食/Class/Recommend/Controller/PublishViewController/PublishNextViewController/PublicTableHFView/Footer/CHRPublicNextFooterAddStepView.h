@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CHRPublicNextFooterAddStepView : UIView
+@property (weak, nonatomic) IBOutlet UIButton * editButton;
+@property (weak, nonatomic) IBOutlet UIButton * addButton;
 
 @end

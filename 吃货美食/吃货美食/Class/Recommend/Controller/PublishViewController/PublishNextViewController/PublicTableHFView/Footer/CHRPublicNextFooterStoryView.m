@@ -10,6 +10,9 @@
 
 @implementation CHRPublicNextFooterStoryView
 
+- (void)awakeFromNib{
+    self.showTextView.placeholder = @"说说这道菜的小故事吧~";
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

@@ -47,9 +47,6 @@ const CGFloat myLon = 112.4234234428844;
     
     [self.navigationController pushViewController:webVC animated:YES];
 }
-
-
-
 - (void)navBackAction{
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -122,19 +119,25 @@ const CGFloat myLon = 112.4234234428844;
         CHLog(@"照片源不可用");
     }
 }
+
+- (void)setImageChoosedPath:(NSString *)imageChoosedPath{
+    if (!imageChoosedPath)return;
+    _imageChoosedPath = imageChoosedPath;
+    self.choosedImagedButton.myImagePath = imageChoosedPath;
+}
 #pragma mark - ImagePickerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     self.choosedImage = info[@"UIImagePickerControllerEditedImage"];
     [self dismissViewControllerAnimated:YES completion:nil];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSArray *docs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        NSDate * date = [NSDate date];
-        dateFormatter.dateFormat = @"yyyyMMddHHmmss";
-        NSString *dateStr = [dateFormatter stringFromDate:date];
-        self.imageChoosedPath = [docs[0]stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@.png",dateStr,self.tagStr]];
-        NSData *imageData = UIImagePNGRepresentation(self.choosedImage);
-        [imageData writeToFile:self.imageChoosedPath atomically:YES];
-    });
+    NSArray *docs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDate * date = [NSDate date];
+    dateFormatter.dateFormat = @"yyyyMMddHHmmss";
+    NSString * imgPath = [NSString stringWithFormat:@"%@.png",[dateFormatter stringFromDate:date]];
+    NSData *imageData = UIImagePNGRepresentation(self.choosedImage);
+    NSString * imagePath = [NSString stringWithFormat:@"%@/%@",docs[0],imgPath];
+    [imageData writeToFile:imagePath atomically:YES];
+    self.imageChoosedPath = imgPath;
+    CHLog(@"path is %@",imagePath);
 }
 @end

@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CHRPublicNextFooterAddBaseFoodView : UIView
+@property (weak, nonatomic) IBOutlet UILabel *showLabel;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
 
 @end

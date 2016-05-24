@@ -11,13 +11,24 @@
 @implementation CHRPublicNextStepTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    [self.showFoodLabel.layer setBorderWidth:0.8f];
+    [self.showFoodLabel.layer setCornerRadius:5.f];
+    [self.showFoodLabel.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    self.showFoodLabelWidth.constant = (CHSCREENWIDTH - 20.f)/2;
+    
+    [self.showCountLabel.layer setBorderWidth:0.8f];
+    [self.showCountLabel.layer setCornerRadius:5.f];
+    [self.showCountLabel.layer setBorderColor:[UIColor lightGrayColor].CGColor];
+    self.showCountLabelWidth.constant = (CHSCREENWIDTH - 20.f)/2;
+    
+    [self setNeedsLayout];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor whiteColor];
+    [self setSelectedBackgroundView:bgColorView];
 }
 
 @end

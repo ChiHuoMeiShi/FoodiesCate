@@ -21,7 +21,7 @@
 @property (nonatomic,strong)MBProgressHUD * myHUD;
 @property (nonatomic,strong)CHUserDefaults * userDefault;
 
-- (IBAction)loginButtonAction:(UIButton *)sender;
+//- (IBAction)loginButtonAction:(UIButton *)sender;
 
 @property (weak, nonatomic) IBOutlet UIView *showView;
 

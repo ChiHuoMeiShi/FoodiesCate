@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CHRImageButton.h"
 
 @interface CHRPublicNextBaseFoodTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UIButton *orderButton;
+
+@property (weak, nonatomic) IBOutlet UITextField *namedTextField;
+@property (weak, nonatomic) IBOutlet UITextField *stepTextField;
+
+@property (weak, nonatomic) IBOutlet CHRImageButton *takephotoButton;
+
 
 @end

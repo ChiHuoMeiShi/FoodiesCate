@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="WjL-iM-GOg" customClass="CHRPublicNextHeaderTopView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ODm-qu-j0r">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="tvc-vm-DGy"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="菜名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uR9-lO-nWA">
+                    <rect key="frame" x="10" y="0.0" width="590" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="TQu-Si-y6B"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIL-yF-x8A" customClass="CHRImageButton">
+                    <rect key="frame" x="0.0" y="54" width="600" height="536"/>
+                    <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" image="ms_push_recipe_cm_head"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ODm-qu-j0r" firstAttribute="top" secondItem="WjL-iM-GOg" secondAttribute="top" id="3Bk-Hd-PYP"/>
+                <constraint firstItem="ODm-qu-j0r" firstAttribute="leading" secondItem="WjL-iM-GOg" secondAttribute="leading" id="3Qt-sR-bvm"/>
+                <constraint firstAttribute="trailing" secondItem="uR9-lO-nWA" secondAttribute="trailing" id="RM9-9T-GmQ"/>
+                <constraint firstItem="ODm-qu-j0r" firstAttribute="top" secondItem="uR9-lO-nWA" secondAttribute="bottom" id="TyW-46-oWK"/>
+                <constraint firstItem="XIL-yF-x8A" firstAttribute="top" secondItem="uR9-lO-nWA" secondAttribute="bottom" constant="10" id="VVN-ec-zdx"/>
+                <constraint firstItem="uR9-lO-nWA" firstAttribute="top" secondItem="WjL-iM-GOg" secondAttribute="top" id="b1u-5H-lLn"/>
+                <constraint firstItem="XIL-yF-x8A" firstAttribute="leading" secondItem="WjL-iM-GOg" secondAttribute="leading" id="brk-Yx-Vxt"/>
+                <constraint firstAttribute="trailing" secondItem="XIL-yF-x8A" secondAttribute="trailing" id="fUS-ob-FIe"/>
+                <constraint firstAttribute="trailing" secondItem="ODm-qu-j0r" secondAttribute="trailing" id="uwl-Sr-wwp"/>
+                <constraint firstAttribute="bottom" secondItem="XIL-yF-x8A" secondAttribute="bottom" constant="10" id="wrj-Li-a2u"/>
+                <constraint firstItem="uR9-lO-nWA" firstAttribute="leading" secondItem="WjL-iM-GOg" secondAttribute="leading" constant="10" id="zDP-qW-QcQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="TyW-46-oWK"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="nameLabel" destination="uR9-lO-nWA" id="HbA-gj-eMn"/>
+                <outlet property="photoButton" destination="XIL-yF-x8A" id="r71-2t-fRR"/>
+            </connections>
+            <point key="canvasLocation" x="389" y="402"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ms_push_recipe_cm_head" width="100" height="100"/>
+    </resources>
+</document>

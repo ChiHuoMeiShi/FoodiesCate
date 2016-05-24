@@ -10,4 +10,12 @@
 
 @interface CHRPublicNextStepTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *showFoodLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *showFoodLabelWidth;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *showCountLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *showCountLabelWidth;
+
+
 @end

@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CHRTextView.h"
+#import "CHRImageButton.h"
 @interface CHRPublicNextHeaderDetailView : UIView
+
+@property (weak, nonatomic) IBOutlet CHRTextView *shareTextView;
+
+@property (weak, nonatomic) IBOutlet CHRImageButton *takePhotoButton;
+
 
 @end

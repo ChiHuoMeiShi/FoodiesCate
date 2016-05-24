@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CHRTextView.h"
 @interface CHRPublicNextFooterStoryView : UIView
+
+
+@property (weak, nonatomic) IBOutlet CHRTextView * showTextView;
+
 
 @end
