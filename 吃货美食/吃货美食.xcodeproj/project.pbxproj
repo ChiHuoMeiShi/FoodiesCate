@@ -316,6 +316,7 @@
 		B7B7A5D91CECA4BA002A80E7 /* CBData.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B7A5D81CECA4BA002A80E7 /* CBData.m */; };
 		B7B7A5DE1CEDB3D0002A80E7 /* CHPublishCookBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B7A5DC1CEDB3D0002A80E7 /* CHPublishCookBookCell.m */; };
 		B7B7A5DF1CEDB3D0002A80E7 /* CHPublishCookBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7B7A5DD1CEDB3D0002A80E7 /* CHPublishCookBookCell.xib */; };
+		B7D7E9291CF44C6E00AFEA2E /* CHRTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4C71CF0809D00A2D830 /* CHRTextView.m */; };
 		B7DBAA901CEAC373002534B6 /* CHHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA8F1CEAC373002534B6 /* CHHTTPSessionManager.m */; };
 		B7DBAA931CEAC427002534B6 /* CHUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA921CEAC427002534B6 /* CHUserRequest.m */; };
 		B7DBAA961CEAC4A7002534B6 /* CHMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA951CEAC4A7002534B6 /* CHMessageRequest.m */; };
@@ -2979,6 +2980,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7D7E9291CF44C6E00AFEA2E /* CHRTextView.m in Sources */,
 				07A458351CF08195001CC3C8 /* CHRPublishObjGetDic.h in Sources */,
 				07A458361CF08195001CC3C8 /* CHRPublishObjGetDic.m in Sources */,
 				07A458331CF0815B001CC3C8 /* CHRPublishObjData.h in Sources */,
