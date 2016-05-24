@@ -121,8 +121,6 @@
 		7A53C78D1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A53C78B1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.m */; };
 		7A53C78E1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A53C78C1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.xib */; };
 		7A657CB51CF18F010057BF33 /* CHRPublicNextFooterStoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A657CB41CF18F010057BF33 /* CHRPublicNextFooterStoryView.xib */; };
-		7A657CB61CF19C6D0057BF33 /* CHRPublishChooseTypeCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4B01CF03F2800A2D830 /* CHRPublishChooseTypeCell.xib */; };
-		7A657CB71CF19C8B0057BF33 /* CHRPublishChooseTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4AF1CF03F2800A2D830 /* CHRPublishChooseTypeCell.m */; };
 		7A657CB91CF19EAA0057BF33 /* CHRPublicNextFooterAddBaseFoodView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A657CB81CF19EAA0057BF33 /* CHRPublicNextFooterAddBaseFoodView.xib */; };
 		7A657CBB1CF19EDC0057BF33 /* CHRPublicNextFooterAddStepView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A657CBA1CF19EDC0057BF33 /* CHRPublicNextFooterAddStepView.xib */; };
 		7A657CBD1CF19EEF0057BF33 /* CHRPublicNextFooterSaveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A657CBC1CF19EEF0057BF33 /* CHRPublicNextFooterSaveView.xib */; };
@@ -130,21 +128,9 @@
 		7A657CC11CF19F230057BF33 /* CHRPublicNextHeaderTittleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A657CC01CF19F230057BF33 /* CHRPublicNextHeaderTittleView.xib */; };
 		7A657CC31CF19F3C0057BF33 /* CHRPublicNextHeaderAddStepView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A657CC21CF19F3C0057BF33 /* CHRPublicNextHeaderAddStepView.xib */; };
 		7A657CC51CF19F570057BF33 /* CHRPublicNextHeaderDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A657CC41CF19F570057BF33 /* CHRPublicNextHeaderDetailView.xib */; };
-		7A657CC91CF1AE8C0057BF33 /* CHRPublicNextBaseFoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4FA1CF0A8F800A2D830 /* CHRPublicNextBaseFoodTableViewCell.m */; };
-		7A657CCA1CF1AE8C0057BF33 /* CHRPublicNextFooterStoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4DC1CF09D8D00A2D830 /* CHRPublicNextFooterStoryView.m */; };
-		7A657CCB1CF1AE8C0057BF33 /* CHRPublicNextFooterAddBaseFoodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4DF1CF09DAE00A2D830 /* CHRPublicNextFooterAddBaseFoodView.m */; };
-		7A657CCC1CF1AE8C0057BF33 /* CHRPublicNextFooterAddStepView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4E21CF09DE600A2D830 /* CHRPublicNextFooterAddStepView.m */; };
-		7A657CCD1CF1AE8C0057BF33 /* CHRPublicNextFooterSaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4E51CF09E0000A2D830 /* CHRPublicNextFooterSaveView.m */; };
-		7A657CCE1CF1AE8C0057BF33 /* CHRPublicNextHeaderTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4E81CF09FB600A2D830 /* CHRPublicNextHeaderTopView.m */; };
-		7A657CCF1CF1AE8C0057BF33 /* CHRPublicNextHeaderTittleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4EB1CF09FD800A2D830 /* CHRPublicNextHeaderTittleView.m */; };
-		7A657CD01CF1AE8C0057BF33 /* CHRPublicNextHeaderAddStepView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4EE1CF0A00B00A2D830 /* CHRPublicNextHeaderAddStepView.m */; };
-		7A657CD11CF1AE8C0057BF33 /* CHRPublicNextHeaderDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4F11CF0A03500A2D830 /* CHRPublicNextHeaderDetailView.m */; };
-		7A657CD21CF1AE8C0057BF33 /* CHRPublicShowTableViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4B71CF04A1D00A2D830 /* CHRPublicShowTableViewCell.xib */; };
-		7A657CD31CF1AE8C0057BF33 /* CHRPublishViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF49B1CEFF5EC00A2D830 /* CHRPublishViewController.xib */; };
 		7A657CD51CF1AFF40057BF33 /* CHRPublishNextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CF4C21CF05AD500A2D830 /* CHRPublishNextViewController.xib */; };
 		7A657CD61CF1AFF40057BF33 /* CHRPublishChooseTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CF4AA1CF03ABF00A2D830 /* CHRPublishChooseTypeViewController.xib */; };
 		7A657CD71CF1AFF40057BF33 /* CHAISearchShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A35FD831CEDCAA200BB125A /* CHAISearchShowTableViewCell.xib */; };
-		7A657CD81CF1B06E0057BF33 /* CHRTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4C71CF0809D00A2D830 /* CHRTextView.m */; };
 		7A657CDD1CF1CB370057BF33 /* CHRPublicAddCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A657CDB1CF1CB370057BF33 /* CHRPublicAddCellViewController.m */; };
 		7A657CDE1CF1CB370057BF33 /* CHRPublicAddCellViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A657CDC1CF1CB370057BF33 /* CHRPublicAddCellViewController.xib */; };
 		7A67A69F1CEC8E5000F0AC08 /* CHRJAIFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A67A69D1CEC8E5000F0AC08 /* CHRJAIFoodViewController.m */; };
@@ -280,7 +266,6 @@
 		7AD5475F1CEDFAA800B91B73 /* CHRAIFoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A67A6A51CEC984900F0AC08 /* CHRAIFoodCollectionViewCell.xib */; };
 		7AD547691CEE039100B91B73 /* CHRAIBAseFoodDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD547681CEE039100B91B73 /* CHRAIBAseFoodDefault.m */; };
 		7ADF0E331CF1D49700273AA0 /* CHRPublicNextStepTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CF4F61CF0A8C800A2D830 /* CHRPublicNextStepTableViewCell.xib */; };
-		7ADF0E341CF1D4B700273AA0 /* CHRPublicNextStepTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4F51CF0A8C800A2D830 /* CHRPublicNextStepTableViewCell.m */; };
 		7ADF0E351CF1D89B00273AA0 /* CHRPublicNextBaseFoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CF4FB1CF0A8F800A2D830 /* CHRPublicNextBaseFoodTableViewCell.xib */; };
 		7ADF0E3B1CF1ED0A00273AA0 /* CHRImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADF0E3A1CF1ED0A00273AA0 /* CHRImageButton.m */; };
 		B716865F1CE8257100BEBA3E /* CateUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B716865E1CE8257100BEBA3E /* CateUserInfo.m */; };
@@ -347,6 +332,7 @@
 		B7B7A5D91CECA4BA002A80E7 /* CBData.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B7A5D81CECA4BA002A80E7 /* CBData.m */; };
 		B7B7A5DE1CEDB3D0002A80E7 /* CHPublishCookBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B7A5DC1CEDB3D0002A80E7 /* CHPublishCookBookCell.m */; };
 		B7B7A5DF1CEDB3D0002A80E7 /* CHPublishCookBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7B7A5DD1CEDB3D0002A80E7 /* CHPublishCookBookCell.xib */; };
+		B7D7E9291CF44C6E00AFEA2E /* CHRTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4C71CF0809D00A2D830 /* CHRTextView.m */; };
 		B7DBAA901CEAC373002534B6 /* CHHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA8F1CEAC373002534B6 /* CHHTTPSessionManager.m */; };
 		B7DBAA931CEAC427002534B6 /* CHUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA921CEAC427002534B6 /* CHUserRequest.m */; };
 		B7DBAA961CEAC4A7002534B6 /* CHMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B7DBAA951CEAC4A7002534B6 /* CHMessageRequest.m */; };
@@ -3092,21 +3078,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7ADF0E341CF1D4B700273AA0 /* CHRPublicNextStepTableViewCell.m in Sources */,
-				7A657CD81CF1B06E0057BF33 /* CHRTextView.m in Sources */,
-				7A657CC91CF1AE8C0057BF33 /* CHRPublicNextBaseFoodTableViewCell.m in Sources */,
-				7A657CCA1CF1AE8C0057BF33 /* CHRPublicNextFooterStoryView.m in Sources */,
-				7A657CCB1CF1AE8C0057BF33 /* CHRPublicNextFooterAddBaseFoodView.m in Sources */,
-				7A657CCC1CF1AE8C0057BF33 /* CHRPublicNextFooterAddStepView.m in Sources */,
-				7A657CCD1CF1AE8C0057BF33 /* CHRPublicNextFooterSaveView.m in Sources */,
-				7A657CCE1CF1AE8C0057BF33 /* CHRPublicNextHeaderTopView.m in Sources */,
-				7A657CCF1CF1AE8C0057BF33 /* CHRPublicNextHeaderTittleView.m in Sources */,
-				7A657CD01CF1AE8C0057BF33 /* CHRPublicNextHeaderAddStepView.m in Sources */,
-				7A657CD11CF1AE8C0057BF33 /* CHRPublicNextHeaderDetailView.m in Sources */,
-				7A657CD21CF1AE8C0057BF33 /* CHRPublicShowTableViewCell.xib in Sources */,
-				7A657CD31CF1AE8C0057BF33 /* CHRPublishViewController.xib in Sources */,
-				7A657CB71CF19C8B0057BF33 /* CHRPublishChooseTypeCell.m in Sources */,
-				7A657CB61CF19C6D0057BF33 /* CHRPublishChooseTypeCell.xib in Sources */,
+				B7D7E9291CF44C6E00AFEA2E /* CHRTextView.m in Sources */,
 				07A458361CF08195001CC3C8 /* CHRPublishObjGetDic.m in Sources */,
 				07A458341CF0815B001CC3C8 /* CHRPublishObjData.m in Sources */,
 				07A4583F1CF085EA001CC3C8 /* CHCaiViewController.m in Sources */,
@@ -3452,6 +3424,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E515E1C7B1E61D319A6417F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
@@ -3502,6 +3475,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E24DDEC6F9C631EC52496A0 /* Pods.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
