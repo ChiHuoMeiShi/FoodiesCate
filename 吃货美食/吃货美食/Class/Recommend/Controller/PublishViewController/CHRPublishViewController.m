@@ -31,12 +31,15 @@
     self.publishDic = [NSMutableDictionary dictionaryWithDictionary:@{@"制作工艺":@"",@"口味":@"",@"难度":@"",@"准备时间":@"",@"烹饪时间":@"",@"人数":@""}];
     [self.publicTableView registerNib:[UINib nibWithNibName:@"CHRPublicShowTableViewCell" bundle:nil] forCellReuseIdentifier:@"CHRPublicShowTableViewCell"];
     
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
 }
 
 - (void)publishNextAction{
@@ -53,10 +56,6 @@
     [self.view endEditing:YES];
     CHRPublishNextViewController * nextVC = [[CHRPublishNextViewController alloc]initWithFoodDic:self.publishDic withFoodName:self.nameTextField.text];
     [self.navigationController pushViewController:nextVC animated:YES];
-//    dispatch_after(0.5, dispatch_get_main_queue(), ^{
-//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=Privacy"]];
-//        
-//    });
 }
 
 #pragma mark - UITableViewDataSource

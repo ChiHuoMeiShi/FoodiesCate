@@ -27,7 +27,6 @@
     [super viewDidLoad];
     self.title = @"编辑菜谱";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTittle:@"发布" withTittleColor:[UIColor redColor] withTarget:self action:@selector(publishFood) forControlEvents:UIControlEventTouchUpInside];
-    self.tagStr = @"public";
     
     self.mainFoodArray = [[NSMutableArray alloc]initWithCapacity:0];
     self.supFoodArray = [[NSMutableArray alloc]initWithCapacity:0];
@@ -65,7 +64,15 @@
     self.editButton.titleLabel.text = @"编辑步骤";
 }
 - (void)saveToFile{
-    
+    self.userDefault = [CHUserDefaults shareUserDefault];
+    CHRPublishSave * dicTemp = [[CHRPublishSave alloc]init];
+    dicTemp.foodName = self.foodName;
+    dicTemp.foodDic = self.foodDataDic;
+    NSDate * date = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    dateFormatter.dateFormat = @"yyyy'-'MM'-'dd'  'HH':'mm':'ss' 'Z'";
+    dicTemp.saveTime = [dateFormatter stringFromDate:date];
+    [self.userDefault.foodSaveArray addObject:dicTemp];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -96,27 +103,37 @@
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if (section == 0) {
-        CHRPublicNextHeaderTopView * headerView = [[[NSBundle mainBundle]loadNibNamed:@"CHRPublicNextHeaderTopView" owner:nil options:nil]lastObject];
-        headerView.nameLabel.text = self.foodName;
-        [headerView.photoButton addTarget:self action:@selector(takephoto:) forControlEvents:UIControlEventTouchUpInside];
-        return headerView;
+        if (!self.headerViewTop) {
+            self.headerViewTop = [[[NSBundle mainBundle]loadNibNamed:@"CHRPublicNextHeaderTopView" owner:nil options:nil]lastObject];
+            self.headerViewTop.nameLabel.text = self.foodName;
+            [self.headerViewTop.photoButton addTarget:self action:@selector(takephoto:) forControlEvents:UIControlEventTouchUpInside];
+        }
+        return self.headerViewTop;
     }else if (section == 1){
-        CHRPublicNextHeaderTittleView * headerView = [[[NSBundle mainBundle]loadNibNamed:@"CHRPublicNextHeaderTittleView" owner:nil options:nil]lastObject];
-        return headerView;
+        if (!self.headerViewSecond) {
+            self.headerViewSecond= [[[NSBundle mainBundle]loadNibNamed:@"CHRPublicNextHeaderTittleView" owner:nil options:nil]lastObject];
+        }
+        return self.headerViewSecond;
     }else if (section == 2){
-        CHRPublicNextHeaderTittleView * headerView = [[[NSBundle mainBundle]loadNibNamed:@"CHRPublicNextHeaderTittleView" owner:nil options:nil]lastObject];
-        headerView.showLabel.text = @"辅料";
-        return headerView;
+        if (!self.headerViewTopThird) {
+            self.headerViewTopThird = [[[NSBundle mainBundle]loadNibNamed:@"CHRPublicNextHeaderTittleView" owner:nil options:nil]lastObject];
+            self.headerViewTopThird.showLabel.text = @"辅料";
+        }
+        return self.headerViewTopThird;
     }else if (section == 3){
-        CHRPublicNextHeaderAddStepView * headerView = [[[NSBundle mainBundle]loadNibNamed:@"CHRPublicNextHeaderAddStepView" owner:nil options:nil]lastObject];
-        return headerView;
+        if (!self.headerViewTopForth) {
+            self.headerViewTopForth = [[[NSBundle mainBundle]loadNibNamed:@"CHRPublicNextHeaderAddStepView" owner:nil options:nil]lastObject];
+        }
+        return self.headerViewTopForth;
     }else{
-        CHRPublicNextHeaderDetailView * headerView = [[[NSBundle mainBundle]loadNibNamed:@"CHRPublicNextHeaderDetailView" owner:nil options:nil]lastObject];
-        self.shareTextView = headerView.shareTextView;
-        self.shareTextView.delegate = self;
-        self.shareTextView.returnKeyType = UIReturnKeyDone;
-        [headerView.takePhotoButton addTarget:self action:@selector(takephoto:) forControlEvents:UIControlEventTouchUpInside];
-        return headerView;
+        if (!self.headerViewTopLast) {
+            self.headerViewTopLast = [[[NSBundle mainBundle]loadNibNamed:@"CHRPublicNextHeaderDetailView" owner:nil options:nil]lastObject];
+            self.shareTextView = self.headerViewTopLast.shareTextView;
+            self.shareTextView.delegate = self;
+            self.shareTextView.returnKeyType = UIReturnKeyDone;
+            [self.headerViewTopLast.takePhotoButton addTarget:self action:@selector(takephoto:) forControlEvents:UIControlEventTouchUpInside];
+        }
+        return self.headerViewTopLast;
     }
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{

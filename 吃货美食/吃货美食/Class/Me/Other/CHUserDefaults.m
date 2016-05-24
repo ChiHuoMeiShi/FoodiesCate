@@ -34,6 +34,7 @@ static CHUserDefaults *userDefault = nil;
         self.photo      = [userDict objectForKey:@"photo"];
         self.password   = [userDict objectForKey:@"password"];
         self.email      = [userDict objectForKey:@"email"];
+        self.foodSaveArray = [[NSMutableArray alloc]initWithCapacity:0];
     }
 }
 - (void)setUserDict:(NSDictionary *)userDict

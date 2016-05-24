@@ -24,7 +24,6 @@ extern const CGFloat myLon;
 @property (nonatomic,strong)CHRImageButton * choosedImagedButton;
 
 @property (nonatomic,strong)UIImage * choosedImage;
-@property (nonatomic,strong)NSString * tagStr;
 @property (nonatomic,copy)NSString * imageChoosedPath;
 
 - (void)navBackAction;

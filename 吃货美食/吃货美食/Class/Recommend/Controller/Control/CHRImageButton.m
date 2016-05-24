@@ -9,11 +9,19 @@
 #import "CHRImageButton.h"
 
 @implementation CHRImageButton
-- (NSString *)myImagePath{
-    if (!_myImagePath) {
-        _myImagePath = @"";
-    }
-    return _myImagePath;
+//- (NSString *)myImagePath{
+//    if (!_myImagePath) {
+//        _myImagePath = @"";
+//    }
+//    return _myImagePath;
+//}
+
+- (void)setMyImagePath:(NSString *)myImagePath{
+    if (!myImagePath)return;
+    _myImagePath = myImagePath;
+    NSArray *docs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    UIImage * photoIMG = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%@",docs[0],myImagePath]];
+    [self setBackgroundImage:photoIMG forState:UIControlStateNormal];
 }
 
 /*

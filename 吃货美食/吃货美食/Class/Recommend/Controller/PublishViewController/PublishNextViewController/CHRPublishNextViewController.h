@@ -8,6 +8,8 @@
 
 #import "CHRJBasicViewController.h"
 #import "CHRTextView.h"
+#import "CHRPublishSave.h"
+#import "CHUserDefaults.h"
 #import "CHRPublicNextFooterSaveView.h"
 #import "CHRPublicNextFooterStoryView.h"
 #import "CHRPublicNextFooterAddStepView.h"
@@ -33,6 +35,15 @@
 
 @property (nonatomic,strong)CHRTextView * storyTextView;
 @property (nonatomic,strong)CHRTextView * shareTextView;
+
+
+@property (nonatomic,strong)CHRPublicNextHeaderTopView * headerViewTop;
+@property (nonatomic,strong)CHRPublicNextHeaderTittleView * headerViewSecond;
+@property (nonatomic,strong)CHRPublicNextHeaderTittleView * headerViewTopThird;
+@property (nonatomic,strong)CHRPublicNextHeaderAddStepView * headerViewTopForth;
+@property (nonatomic,strong)CHRPublicNextHeaderDetailView * headerViewTopLast;
+
+@property (nonatomic,strong)CHUserDefaults * userDefault;
 
 @property (weak, nonatomic) IBOutlet UITableView *publicTableView;
 
