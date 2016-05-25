@@ -10,13 +10,15 @@
 #import "CHCArticalTableViewCell.h"
 #import "UIView+JWFrame.h"
 @implementation CHCArticalTableView
+
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
     self = [super initWithFrame:frame style:style];
     if (self) {
         self.dataSource = self;
         self.delegate = self;
-        
         [self registerNib:[UINib nibWithNibName:@"CHCArticalTableViewCell" bundle:nil]forCellReuseIdentifier:@"CHCArticalCell"];
+
+        
     }
     return self;
 }
@@ -24,9 +26,12 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 100;
+     NSLog(@"hhhhhhhhhhhh%ld",_aData.list.count);
+    return _aData.list.count;
 }
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:
+(NSInteger)section{
+    
     return 1;
 }
 
@@ -34,7 +39,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     CHCArticalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CHCArticalCell"];
-    CHCTableVIewData_list *TableVIewData_list= (CHCTableVIewData_list*)self.data.list[indexPath.row];
+    CHCTableVIewData_list *TableVIewData_list= (CHCTableVIewData_list*)self.aData.list[indexPath.section];
     cell.TableVIewData_list=TableVIewData_list;
         return cell;
 }
@@ -55,6 +60,20 @@
     return 1;
 }
 
+@end
+
+
+
+
+
+
+
+
+
+
+
+//        [self getArTicalData];
+//        [self reloadData];
 //- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
 //
 //    //最好写一个非常大的值，不然数据会做一些干扰
@@ -68,4 +87,23 @@
 //    return 0.00001;
 //}
 
-@end
+//-(void)getArTicalData
+//{
+//    AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
+//    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+//    NSString *kUrl = @"http://api.meishi.cc/v5/health_main.php?format=json";
+//    NSDictionary *parameters = @{@"lat" : @"34.60519775425116",@"lon" : @"112.4231392332194",@"source" : @"iphone",@"format" : @"json", @"cid" : @"",@"page":@"2"};
+//
+//    [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//
+//        CHLog(@"1111%@",responseObject);
+//
+//        CHCArticalData *data=[CHCArticalData mj_objectWithKeyValues:responseObject];
+//        self.aData=data;
+//
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        NSLog(@"%@",error);
+//    }];
+//
+//}
+//

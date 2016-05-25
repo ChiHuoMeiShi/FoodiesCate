@@ -67,7 +67,7 @@
         
         NSDictionary *attributes =
       @{NSFontAttributeName:idx ==
-        self.index?[UIFont systemFontOfSize:18]:[UIFont systemFontOfSize:18 ],NSForegroundColorAttributeName:idx == self.index?self.perColor:self.defaultPerColor,NSParagraphStyleAttributeName:style};
+        self.index?[UIFont systemFontOfSize:16]:[UIFont systemFontOfSize:16 ],NSForegroundColorAttributeName:idx == self.index?self.perColor:self.defaultPerColor,NSParagraphStyleAttributeName:style};
         [obj drawInRect:rect withAttributes:attributes];
     }];
     
