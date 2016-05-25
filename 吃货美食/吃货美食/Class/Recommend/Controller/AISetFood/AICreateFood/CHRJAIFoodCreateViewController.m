@@ -42,7 +42,7 @@
 
 - (void)requestData{
     NSString * url = @"http://api.meishi.cc/v5/shicaizucai_index.php?format=json";
-    NSDictionary * dic = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"sids":self.requestSidStr};
+    NSDictionary * dic = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"sids":self.requestSidStr};
     __weak typeof(self)mySelf = self;
     [self.afnManger.messageRequest POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary * dic = (NSDictionary *)responseObject;

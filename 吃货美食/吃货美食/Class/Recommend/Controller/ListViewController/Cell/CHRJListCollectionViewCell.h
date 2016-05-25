@@ -17,6 +17,7 @@
 #import "CHRJListFoodTableViewCell.h"
 #import "CHRJListFoodCollectionProtocal.h"
 #import <MJRefresh.h>
+#import "CHLocation.h"
 
 @interface CHRJListCollectionViewCell : UICollectionViewCell<CHRJListFoodTableProtocal>
 @property (weak, nonatomic) IBOutlet UITableView *listTableView;
@@ -26,7 +27,9 @@
 @property (nonatomic,strong)NSString * cellReName;
 @property (nonatomic,strong)NSMutableArray * dataArray;
 @property (nonatomic,strong)CHHTTPRequestManager * afnManger;
-@property(nonatomic, assign)int page;
+@property (nonatomic, assign)int page;
+
+@property (nonatomic,strong)CHLocation * location;
 
 @property (nonatomic,weak)id<CHRJListFoodCollectionProtocal> delegate;
 

@@ -156,9 +156,9 @@
 
 - (void)requestDataWithSort:(NSString *)sort{
     NSString * url = @"http://api.meishi.cc/v5/search_category.php?format=json";
-    NSDictionary * dicTemp = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"step":@"",@"kw":@"",@"page":@(self.pageCount),@"q":self.searchName,@"sort_sc":@"desc",@"sort":sort,@"gy":@"",@"mt":@""};
+    NSDictionary * dicTemp = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"step":@"",@"kw":@"",@"page":@(self.pageCount),@"q":self.searchName,@"sort_sc":@"desc",@"sort":sort,@"gy":@"",@"mt":@""};
     if (self.isLocal) {
-        dicTemp = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"page":@(1)};
+        dicTemp = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"page":@(1)};
         url = @"http://api.meishi.cc/v5/lsb_news.php?format=json";
     }
     NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithDictionary:dicTemp];

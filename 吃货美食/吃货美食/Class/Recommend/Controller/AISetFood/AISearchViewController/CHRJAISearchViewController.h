@@ -13,6 +13,7 @@
 #import "CHAISearchFoodTableModel.h"
 #import "CHAISearchShowTableViewCell.h"
 #import "CHRAIGetBaseFoodProtocol.h"
+#import "CHLocation.h"
 
 @interface CHRJAISearchViewController : UIViewController
 @property (nonatomic,strong)NSMutableArray * dataArray;
@@ -20,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *foodTextField;
 @property (weak, nonatomic) IBOutlet UITableView *baseFoodTableView;
 @property (nonatomic,strong)CHHTTPRequestManager * afnManger;
+@property (nonatomic,strong)CHLocation * location;
 
 @property (nonatomic,weak)id<CHRAIGetBaseFoodProtocol> delegate;
 

@@ -232,6 +232,7 @@
 		7AAF3F071CE3459E00573EF6 /* CHRWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF3F051CE3459E00573EF6 /* CHRWebViewController.m */; };
 		7AAF3F081CE3459E00573EF6 /* CHRWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AAF3F061CE3459E00573EF6 /* CHRWebViewController.xib */; };
 		7AAF3F0C1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAF3F0B1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m */; };
+		7AB15A2F1CF5DE1900E78547 /* CHLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB15A2E1CF5DE1900E78547 /* CHLocation.m */; };
 		7AB6AE9C1CF4880E00590F63 /* CHRPublishSave.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6AE9B1CF4880E00590F63 /* CHRPublishSave.m */; };
 		7AB6AE9F1CF48C9000590F63 /* CHRPublishFoodDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6AE9E1CF48C9000590F63 /* CHRPublishFoodDetailModel.m */; };
 		7AB6AEA21CF4906B00590F63 /* CHRPublishFoodMainFoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB6AEA11CF4906B00590F63 /* CHRPublishFoodMainFoodModel.m */; };
@@ -685,6 +686,8 @@
 		7AAF3F061CE3459E00573EF6 /* CHRWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRWebViewController.xib; sourceTree = "<group>"; };
 		7AAF3F0A1CE35D6700573EF6 /* CHRTodayBannerScrollerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRTodayBannerScrollerView.h; sourceTree = "<group>"; };
 		7AAF3F0B1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRTodayBannerScrollerView.m; sourceTree = "<group>"; };
+		7AB15A2D1CF5DE1900E78547 /* CHLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHLocation.h; sourceTree = "<group>"; };
+		7AB15A2E1CF5DE1900E78547 /* CHLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHLocation.m; sourceTree = "<group>"; };
 		7AB6AE9A1CF4880E00590F63 /* CHRPublishSave.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRPublishSave.h; sourceTree = "<group>"; };
 		7AB6AE9B1CF4880E00590F63 /* CHRPublishSave.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRPublishSave.m; sourceTree = "<group>"; };
 		7AB6AE9D1CF48C9000590F63 /* CHRPublishFoodDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRPublishFoodDetailModel.h; sourceTree = "<group>"; };
@@ -1982,6 +1985,15 @@
 			path = TodayBanner;
 			sourceTree = "<group>";
 		};
+		7AB15A2C1CF5DDF900E78547 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				7AB15A2D1CF5DE1900E78547 /* CHLocation.h */,
+				7AB15A2E1CF5DE1900E78547 /* CHLocation.m */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		7AB6AE991CF4878E00590F63 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -2339,6 +2351,7 @@
 		B71ED8681CDB416C0035F6BE /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				7AB15A2C1CF5DDF900E78547 /* Location */,
 				B7DBAA881CEAC242002534B6 /* NetWork */,
 				7AC8C4211CE468BC0043CAEC /* SupportFiles */,
 				B7F615701CDCA2D900AF1697 /* Tools */,
@@ -2899,7 +2912,6 @@
 				TargetAttributes = {
 					B71ED84D1CDB41650035F6BE = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 5D5Z473WJW;
 					};
 				};
 			};
@@ -3318,6 +3330,7 @@
 				B71E54941CE78C47003B6BE8 /* CHCateShowController.m in Sources */,
 				7A6ED70A1CE32BCA005DF78C /* NSString+JWStringDeleteToURL.m in Sources */,
 				7A53C7821CEB09C20098BFEC /* CHRJListFoodTableViewCell.m in Sources */,
+				7AB15A2F1CF5DE1900E78547 /* CHLocation.m in Sources */,
 				B71686621CE8261100BEBA3E /* CateImgsModel.m in Sources */,
 				7AD0DDAF1CDCA7CE0057F8B2 /* JWUIViewControllersClass.m in Sources */,
 				077EE4DD1CEFF961003F4E1B /* CHZhuanTiViewController.m in Sources */,
@@ -3490,7 +3503,7 @@
 					"\"SystemConfiguration\"",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TianJiangCh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vhjknkj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -3542,7 +3555,7 @@
 					"\"SystemConfiguration\"",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TianJiangCh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vhjknkj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

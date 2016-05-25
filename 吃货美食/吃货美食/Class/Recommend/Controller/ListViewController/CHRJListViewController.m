@@ -87,7 +87,7 @@
 #pragma mark - RequestData
 - (void)requestToolBarData{
     NSString * url = @"http://api.meishi.cc/v5/top_new.php?format=json";
-    NSDictionary * dic = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"uid":@"",@"st":@"1"};
+    NSDictionary * dic = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"uid":@"",@"st":@"1"};
     __weak typeof(self)mySelf = self;
     [self.afnManger.messageRequest POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary * dic = (NSDictionary *)responseObject;
