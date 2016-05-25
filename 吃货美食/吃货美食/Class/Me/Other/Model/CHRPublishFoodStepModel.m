@@ -10,4 +10,16 @@
 
 @implementation CHRPublishFoodStepModel
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.name = @"";
+        self.photoPath = @"";
+        self.stepDetail = @"";
+    }
+    return self;
+}
+
+
 @end

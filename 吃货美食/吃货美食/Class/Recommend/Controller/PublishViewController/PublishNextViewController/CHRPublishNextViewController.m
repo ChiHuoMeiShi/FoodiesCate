@@ -23,22 +23,46 @@
     return self;
 }
 
+- (instancetype)initWidthSaveIndex:(NSNumber *)savedCount
+{
+    self = [super init];
+    if (self) {
+        self.foodSavedCount = savedCount;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"编辑菜谱";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTittle:@"发布" withTittleColor:[UIColor redColor] withTarget:self action:@selector(publishFood) forControlEvents:UIControlEventTouchUpInside];
     
-    self.detailFoodModel = [[CHRPublishFoodDetailModel alloc]init];
+    self.userDefault = [CHUserDefaults shareUserDefault];
+    
+    if (self.foodSavedCount) {
+        CHRPublishSave * savedModel = self.userDefault.foodSaveArray[[self.foodSavedCount integerValue]];
+        self.foodName = savedModel.foodName;
+        self.foodDataDic = savedModel.foodDic;
+        self.detailFoodModel = savedModel.foodDetail;
+    }else{
+     self.detailFoodModel = [[CHRPublishFoodDetailModel alloc]init];
+    }
     
     [self.publicTableView registerNib:[UINib nibWithNibName:@"CHRPublicNextBaseFoodTableViewCell" bundle:nil] forCellReuseIdentifier:@"CHRPublicNextBaseFoodTableViewCell"];
     [self.publicTableView registerNib:[UINib nibWithNibName:@"CHRPublicNextStepTableViewCell" bundle:nil] forCellReuseIdentifier:@"CHRPublicNextStepTableViewCell"];
-    
 }
 
 #pragma mark - ButtonAction
 - (void)publishFood{
+    if ([self foodDetailSave]) {
+        [self showHUDWithText:@"成功提交~等待审核中" withTextFont:[UIFont systemFontOfSize:16.f] withTextColor:[UIColor whiteColor] withTextSize:CGSizeMake(MAXFLOAT, 0.f) withAction:@selector(testHud) withIsAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }else{
+        [self showHud];
+    }
+}
+- (void)showHud{
     [self showHUDWithText:@"抱歉,请完善数据" withTextFont:[UIFont systemFontOfSize:16.f] withTextColor:[UIColor whiteColor] withTextSize:CGSizeMake(MAXFLOAT, 0.f) withAction:@selector(testHud) withIsAnimated:YES];
-    
 }
 - (void)takephoto:(CHRImageButton *)sender{
     self.choosedImagedButton = sender;
@@ -55,7 +79,16 @@
     [self.navigationController pushViewController:supVC animated:YES];
 }
 - (void)addStepFood{
-    
+    if (self.stepphotoButton.myImagePath&&![self.stepNameTextField.text isEqualToString:@""]&&![self.stepCountTextField.text isEqualToString:@""]) {
+        CHRPublishFoodStepModel * stepModel = [[CHRPublishFoodStepModel alloc]init];
+        stepModel.photoPath = self.stepphotoButton.myImagePath;
+        stepModel.name = self.stepNameTextField.text;
+        stepModel.stepDetail = self.stepCountTextField.text;
+        [self.detailFoodModel.stepFoodArray addObject:stepModel];
+        [self.publicTableView reloadData];
+    }else{
+        [self showHud];
+    }
 }
 - (void)editStepFood{
     self.stepIsEdit = !self.stepIsEdit;
@@ -65,12 +98,36 @@
     }
     [self.stepFooterView.editButton setTitle:@"编辑步骤" forState:UIControlStateNormal];
 }
-- (void)foodDetailSave{
-//    self.detailFoodModel
+- (BOOL)foodDetailSave{
+    NSInteger saveCount = 0;
+    if (![self.storyTextView.text isEqualToString:@""]) {
+        self.detailFoodModel.storyStr = self.storyTextView.text;
+    }else{
+        saveCount++;
+    }
+    if (![self.shareTextView.text isEqualToString:@""]) {
+        self.detailFoodModel.finishStr = self.shareTextView.text;
+    }else{
+        saveCount++;
+    }
+    if (self.detailFoodModel.stepFoodArray.count <= 0 || self.detailFoodModel.stepFoodArray.count <= 0 || self.detailFoodModel.stepFoodArray.count <= 0) {
+        saveCount++;
+    }
+    if (self.headerViewTop.photoButton.myImagePath) {
+        self.detailFoodModel.storyIMGPath = self.headerViewTop.photoButton.myImagePath;
+    }else{
+        saveCount++;
+    }
+    if (self.headerViewTopLast.takePhotoButton.myImagePath) {
+        self.detailFoodModel.finishIMGPath = self.headerViewTopLast.takePhotoButton.myImagePath;
+    }
+    if (saveCount == 0) {
+        return YES;
+    }
+    return NO;
 }
 - (void)saveToFile{
     [self foodDetailSave];
-    self.userDefault = [CHUserDefaults shareUserDefault];
     CHRPublishSave * saveModel = [[CHRPublishSave alloc]init];
     saveModel.foodName = self.foodName;
     saveModel.foodDic = self.foodDataDic;
@@ -80,6 +137,7 @@
     saveModel.saveTime = [dateFormatter stringFromDate:date];
     saveModel.foodDetail = self.detailFoodModel;
     [self.userDefault.foodSaveArray addObject:saveModel];
+    [self showHUDWithText:@"保存成功" withTextFont:[UIFont systemFontOfSize:16.f] withTextColor:[UIColor whiteColor] withTextSize:CGSizeMake(MAXFLOAT, 0.f) withAction:@selector(testHud) withIsAnimated:YES];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -186,7 +244,31 @@
     }
     return 0;
 }
-
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        if (indexPath.section == 1) {
+            if (indexPath.row == self.detailFoodModel.mainFoodArray.count || self.detailFoodModel.mainFoodArray.count == 0) {
+                return;
+            }
+            [self.detailFoodModel.mainFoodArray removeObjectAtIndex:indexPath.row];
+        }else if (indexPath.section == 2){
+            if (indexPath.row == self.detailFoodModel.supFoodArray.count || self.detailFoodModel.supFoodArray.count == 0) {
+                return;
+            }
+            [self.detailFoodModel.supFoodArray removeObjectAtIndex:indexPath.row];
+        }else{
+            if (self.stepIsEdit) {
+                if (indexPath.row == self.detailFoodModel.stepFoodArray.count || self.detailFoodModel.stepFoodArray.count == 0) {
+                    return;
+                }
+                [self.detailFoodModel.stepFoodArray removeObjectAtIndex:indexPath.row];
+            }else{
+                return;
+            }
+        }
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    }
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 //    edit step cell
     if (indexPath.section == 3) {
@@ -197,11 +279,16 @@
         nextStepCell.stepTextField.returnKeyType = UIReturnKeyDone;
         nextStepCell.orderButton.titleLabel.text = [NSString stringWithFormat:@"%zi",indexPath.row + 1];
         [nextStepCell.takephotoButton addTarget:self action:@selector(takephoto:) forControlEvents:UIControlEventTouchUpInside];
+        if (indexPath.row == self.detailFoodModel.stepFoodArray.count) {
+            nextStepCell.namedTextField.userInteractionEnabled = YES;
+            self.stepNameTextField = nextStepCell.namedTextField;
+            nextStepCell.stepTextField.userInteractionEnabled = YES;
+            self.stepCountTextField = nextStepCell.stepTextField;
+            nextStepCell.takephotoButton.userInteractionEnabled = YES;
+            self.stepphotoButton = nextStepCell.takephotoButton;
+        }
         if (indexPath.row < self.detailFoodModel.stepFoodArray.count) {
-            
-            
-            
-            
+            nextStepCell.publishModel = self.detailFoodModel.stepFoodArray[indexPath.row];
         }
         return nextStepCell;
     }
@@ -259,7 +346,5 @@
     [self.detailFoodModel.mainFoodArray addObject:mainModel];
     [self.publicTableView reloadData];
 }
-
-
 
 @end

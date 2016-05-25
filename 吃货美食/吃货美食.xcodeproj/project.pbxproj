@@ -108,6 +108,17 @@
 		07A4583F1CF085EA001CC3C8 /* CHCaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A4583D1CF085EA001CC3C8 /* CHCaiViewController.m */; };
 		07A458401CF085EA001CC3C8 /* CHCaiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A4583E1CF085EA001CC3C8 /* CHCaiViewController.xib */; };
 		6302A48352870C94A21B65CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2714D066AF4EF14D1D1B684 /* libPods.a */; };
+		7A30D5021CF58EC30042DB98 /* CHRPublishChooseTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4AF1CF03F2800A2D830 /* CHRPublishChooseTypeCell.m */; };
+		7A30D5031CF58F060042DB98 /* CHRPublicNextStepTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4F51CF0A8C800A2D830 /* CHRPublicNextStepTableViewCell.m */; };
+		7A30D5041CF58F490042DB98 /* CHRPublicNextBaseFoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4FA1CF0A8F800A2D830 /* CHRPublicNextBaseFoodTableViewCell.m */; };
+		7A30D5051CF58F490042DB98 /* CHRPublicNextFooterStoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4DC1CF09D8D00A2D830 /* CHRPublicNextFooterStoryView.m */; };
+		7A30D5061CF58F490042DB98 /* CHRPublicNextFooterAddBaseFoodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4DF1CF09DAE00A2D830 /* CHRPublicNextFooterAddBaseFoodView.m */; };
+		7A30D5071CF58F490042DB98 /* CHRPublicNextFooterAddStepView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4E21CF09DE600A2D830 /* CHRPublicNextFooterAddStepView.m */; };
+		7A30D5081CF58F490042DB98 /* CHRPublicNextFooterSaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4E51CF09E0000A2D830 /* CHRPublicNextFooterSaveView.m */; };
+		7A30D5091CF58F490042DB98 /* CHRPublicNextHeaderTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4E81CF09FB600A2D830 /* CHRPublicNextHeaderTopView.m */; };
+		7A30D50A1CF58F490042DB98 /* CHRPublicNextHeaderTittleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4EB1CF09FD800A2D830 /* CHRPublicNextHeaderTittleView.m */; };
+		7A30D50B1CF58F490042DB98 /* CHRPublicNextHeaderAddStepView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4EE1CF0A00B00A2D830 /* CHRPublicNextHeaderAddStepView.m */; };
+		7A30D50C1CF58F490042DB98 /* CHRPublicNextHeaderDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4F11CF0A03500A2D830 /* CHRPublicNextHeaderDetailView.m */; };
 		7A3411AE1CE89742003E4F3C /* CHRJSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3411AD1CE89742003E4F3C /* CHRJSearchView.m */; };
 		7A3411B21CE8A88F003E4F3C /* CHRJSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A3411B11CE8A88F003E4F3C /* CHRJSearchView.xib */; };
 		7A3411BC1CE8C6AB003E4F3C /* CHRJSearchColViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A3411BA1CE8C6AB003E4F3C /* CHRJSearchColViewCell.m */; };
@@ -3078,6 +3089,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A30D5041CF58F490042DB98 /* CHRPublicNextBaseFoodTableViewCell.m in Sources */,
+				7A30D5051CF58F490042DB98 /* CHRPublicNextFooterStoryView.m in Sources */,
+				7A30D5061CF58F490042DB98 /* CHRPublicNextFooterAddBaseFoodView.m in Sources */,
+				7A30D5071CF58F490042DB98 /* CHRPublicNextFooterAddStepView.m in Sources */,
+				7A30D5081CF58F490042DB98 /* CHRPublicNextFooterSaveView.m in Sources */,
+				7A30D5091CF58F490042DB98 /* CHRPublicNextHeaderTopView.m in Sources */,
+				7A30D50A1CF58F490042DB98 /* CHRPublicNextHeaderTittleView.m in Sources */,
+				7A30D50B1CF58F490042DB98 /* CHRPublicNextHeaderAddStepView.m in Sources */,
+				7A30D50C1CF58F490042DB98 /* CHRPublicNextHeaderDetailView.m in Sources */,
+				7A30D5031CF58F060042DB98 /* CHRPublicNextStepTableViewCell.m in Sources */,
+				7A30D5021CF58EC30042DB98 /* CHRPublishChooseTypeCell.m in Sources */,
 				B7D7E9291CF44C6E00AFEA2E /* CHRTextView.m in Sources */,
 				07A458361CF08195001CC3C8 /* CHRPublishObjGetDic.m in Sources */,
 				07A458341CF0815B001CC3C8 /* CHRPublishObjData.m in Sources */,

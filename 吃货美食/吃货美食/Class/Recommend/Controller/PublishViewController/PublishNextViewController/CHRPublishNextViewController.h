@@ -43,7 +43,12 @@
 @property (nonatomic,strong)CHRPublicNextHeaderDetailView * headerViewTopLast;
 
 @property (nonatomic,strong)CHUserDefaults * userDefault;
+@property (nonatomic,strong)NSNumber * foodSavedCount;
 @property (nonatomic,strong)CHRPublishFoodDetailModel * detailFoodModel;
+@property (nonatomic,strong)CHRPublishFoodStepModel * stepModel;
+@property (nonatomic,strong)UITextField * stepNameTextField;
+@property (nonatomic,strong)UITextField * stepCountTextField;
+@property (nonatomic,strong)CHRImageButton * stepphotoButton;
 
 @property (weak, nonatomic) IBOutlet UITableView *publicTableView;
 
