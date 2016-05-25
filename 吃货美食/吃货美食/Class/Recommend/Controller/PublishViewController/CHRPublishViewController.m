@@ -38,10 +38,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self.view endEditing:YES];
-}
-
 - (void)publishNextAction{
     if ([self.nameTextField.text isEqualToString:@""]) {
         [self showHUDWithText:@"抱歉,请完善数据" withTextFont:[UIFont systemFontOfSize:16.f] withTextColor:[UIColor whiteColor] withTextSize:CGSizeMake(MAXFLOAT, 0.f) withAction:@selector(testHud) withIsAnimated:YES];

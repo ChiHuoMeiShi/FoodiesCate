@@ -54,4 +54,6 @@
 
 - (instancetype)initWithFoodDic:(NSDictionary *)foodDic withFoodName:(NSString *)foodName;
 
+- (instancetype)initWidthSaveIndex:(NSNumber *)savedCount;
+
 @end
