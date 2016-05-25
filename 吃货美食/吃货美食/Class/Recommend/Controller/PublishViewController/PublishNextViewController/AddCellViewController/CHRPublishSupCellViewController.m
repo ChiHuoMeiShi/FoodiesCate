@@ -1,23 +1,22 @@
 //
-//  CHRPublicAddCellViewController.m
+//  CHRPublishSupCellViewController.m
 //  吃货美食
 //
-//  Created by scjy on 16/5/22.
+//  Created by scjy on 16/5/24.
 //  Copyright © 2016年 赵天. All rights reserved.
 //
 
-#import "CHRPublicAddCellViewController.h"
+#import "CHRPublishSupCellViewController.h"
 
-@interface CHRPublicAddCellViewController ()<UITextFieldDelegate>
+@interface CHRPublishSupCellViewController ()<UITextFieldDelegate>
 
 @end
 
-@implementation CHRPublicAddCellViewController
+@implementation CHRPublishSupCellViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"主料编辑";
-    
+    self.title = @"辅料编辑";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTittle:@"完成" withTittleColor:[UIColor redColor] withTarget:self action:@selector(addFinish) forControlEvents:UIControlEventTouchUpInside];
     self.addNameTextField.delegate = self;
     self.addNameTextField.returnKeyType = UIReturnKeyDone;
@@ -31,16 +30,12 @@
         return;
     }
     __weak typeof(self)mySelf = self;
-    if (self.delegate && [self.delegate respondsToSelector:@selector(getMainCellName:withCount:)]) {
-        [mySelf.delegate getMainCellName:mySelf.addNameTextField.text withCount:mySelf.addCountTextField.text];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(getSupCellName:withCount:)]) {
+        [mySelf.delegate getSupCellName:mySelf.addNameTextField.text withCount:mySelf.addCountTextField.text];
     };
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
@@ -53,6 +48,11 @@
     
     return YES;
 }
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 /*
 #pragma mark - Navigation
 

@@ -8,6 +8,9 @@
 
 #import "CHRJBasicViewController.h"
 #import "CHRTextView.h"
+#import "CHRPublishSave.h"
+#import "CHRPublishFoodDetailModel.h"
+#import "CHUserDefaults.h"
 #import "CHRPublicNextFooterSaveView.h"
 #import "CHRPublicNextFooterStoryView.h"
 #import "CHRPublicNextFooterAddStepView.h"
@@ -19,20 +22,33 @@
 
 #import "CHRPublicNextBaseFoodTableViewCell.h"
 #import "CHRPublicNextStepTableViewCell.h"
-@interface CHRPublishNextViewController : CHRJBasicViewController<UITextFieldDelegate,UITextViewDelegate>
+#import "CHRPublicAddCellViewController.h"
+#import "CHRPublishSupCellViewController.h"
+@interface CHRPublishNextViewController : CHRJBasicViewController<UITextFieldDelegate,UITextViewDelegate,CHRPubAddSupFood,CHRPubAddMainFood>
 
 @property (nonatomic,strong)NSDictionary * foodDataDic;
 @property (nonatomic,copy)NSString * foodName;
 
-@property (nonatomic,strong)NSMutableArray * mainFoodArray;
-@property (nonatomic,strong)NSMutableArray * supFoodArray;
-@property (nonatomic,strong)NSMutableArray * stepFoodArray;
-
 @property (nonatomic,assign)BOOL stepIsEdit;
-@property (nonatomic,strong)UIButton * editButton;
+@property (nonatomic,strong)CHRPublicNextFooterAddStepView * stepFooterView;
 
 @property (nonatomic,strong)CHRTextView * storyTextView;
 @property (nonatomic,strong)CHRTextView * shareTextView;
+
+
+@property (nonatomic,strong)CHRPublicNextHeaderTopView * headerViewTop;
+@property (nonatomic,strong)CHRPublicNextHeaderTittleView * headerViewSecond;
+@property (nonatomic,strong)CHRPublicNextHeaderTittleView * headerViewTopThird;
+@property (nonatomic,strong)CHRPublicNextHeaderAddStepView * headerViewTopForth;
+@property (nonatomic,strong)CHRPublicNextHeaderDetailView * headerViewTopLast;
+
+@property (nonatomic,strong)CHUserDefaults * userDefault;
+@property (nonatomic,strong)NSNumber * foodSavedCount;
+@property (nonatomic,strong)CHRPublishFoodDetailModel * detailFoodModel;
+@property (nonatomic,strong)CHRPublishFoodStepModel * stepModel;
+@property (nonatomic,strong)UITextField * stepNameTextField;
+@property (nonatomic,strong)UITextField * stepCountTextField;
+@property (nonatomic,strong)CHRImageButton * stepphotoButton;
 
 @property (weak, nonatomic) IBOutlet UITableView *publicTableView;
 

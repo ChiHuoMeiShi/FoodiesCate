@@ -31,4 +31,12 @@
     [self setSelectedBackgroundView:bgColorView];
 }
 
+- (void)setFoodModel:(CHRPublishFoodMainFoodModel *)foodModel{
+    if (!foodModel)return;
+    _foodModel = foodModel;
+    self.showFoodLabel.text = foodModel.name;
+    self.showCountLabel.text = foodModel.count;
+}
+
+
 @end

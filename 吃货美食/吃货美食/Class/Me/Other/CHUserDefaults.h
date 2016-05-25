@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CHRPublishSave.h"
 
 @interface CHUserDefaults : NSObject
 
@@ -24,6 +25,7 @@
 
 @property (nonatomic,copy) NSString * email;
 
+@property (nonatomic,strong)NSMutableArray * foodSaveArray;
 
 + (instancetype)shareUserDefault;
 

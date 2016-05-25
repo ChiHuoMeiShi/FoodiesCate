@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CHRImageButton.h"
+#import "CHRPublishFoodStepModel.h"
 
 @interface CHRPublicNextBaseFoodTableViewCell : UITableViewCell
 
@@ -18,5 +19,6 @@
 
 @property (weak, nonatomic) IBOutlet CHRImageButton *takephotoButton;
 
+@property (nonatomic,strong)CHRPublishFoodStepModel * publishModel;
 
 @end
