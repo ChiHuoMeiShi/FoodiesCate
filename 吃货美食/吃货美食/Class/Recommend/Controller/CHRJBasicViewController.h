@@ -11,11 +11,11 @@
 #import "CHRJSearchView.h"
 #import "CHRJSearchViewController.h"
 #import "CHRImageButton.h"
+#import "CHLocation.h"
 
-extern const CGFloat myLat;
-extern const CGFloat myLon;
+#import <CoreLocation/CoreLocation.h>
 
-@interface CHRJBasicViewController : UIViewController<MBProgressHUDDelegate,UITextViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface CHRJBasicViewController : UIViewController<MBProgressHUDDelegate,UITextViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate,CLLocationManagerDelegate>
 
 @property (nonatomic,strong)MBProgressHUD * myHUD;
 @property (nonatomic,strong)CHRJSearchView * searchView;
@@ -25,6 +25,10 @@ extern const CGFloat myLon;
 
 @property (nonatomic,strong)UIImage * choosedImage;
 @property (nonatomic,copy)NSString * imageChoosedPath;
+
+@property (nonatomic,strong)CHLocation * location;
+
+@property(nonatomic, strong)CLLocationManager * loctionManger;
 
 - (void)navBackAction;
 - (void)pushToWebViewWithID:(NSNumber *)myID withUrlString:(NSString *)urlString;

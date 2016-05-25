@@ -7,8 +7,7 @@
 //
 
 #import "CHRJBasicViewController.h"
-const CGFloat myLat = 34.60522149650738;
-const CGFloat myLon = 112.4234234428844;
+
 @interface CHRJBasicViewController ()
 
 @end
@@ -33,7 +32,26 @@ const CGFloat myLon = 112.4234234428844;
             }
         }
     }
+    if (![CLLocationManager locationServicesEnabled]) {
+        return;
+    }
+    self.location = [CHLocation shareLocation];
+#ifdef __IPHONE_8_0
+    [self.loctionManger requestAlwaysAuthorization];
+#else
+    [self.loctionManger requestWhenInUseAuthorization];
+#endif
+    [self.loctionManger startUpdatingLocation];
+    
     self.afnManger = [CHHTTPRequestManager manager];
+}
+
+- (CLLocationManager *)loctionManger{
+    if (!_loctionManger) {
+        _loctionManger = [[CLLocationManager alloc] init];
+        _loctionManger.delegate = self;
+    }
+    return _loctionManger;
 }
 
 - (void)pushToWebViewWithID:(NSNumber *)myID withUrlString:(NSString *)urlString{
@@ -140,4 +158,21 @@ const CGFloat myLon = 112.4234234428844;
     self.imageChoosedPath = imgPath;
     CHLog(@"path is %@",imagePath);
 }
+
+#pragma mark - CLLocationManagerDelegate
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
+    if (status == kCLAuthorizationStatusAuthorizedAlways) {
+        [manager startUpdatingLocation];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    CLLocation * currentLocation = [locations lastObject];
+    self.location.lat = currentLocation.coordinate.latitude;
+    self.location.lon = currentLocation.coordinate.longitude;
+    CHLog(@"Location lat is %f,lon is %f",self.location.lat,self.location.lon);
+}
+
+
+
 @end

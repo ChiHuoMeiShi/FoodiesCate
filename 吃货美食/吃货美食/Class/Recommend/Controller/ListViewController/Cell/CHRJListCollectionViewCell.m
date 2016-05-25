@@ -27,7 +27,7 @@
     [self requestTableViewData];
 }
 - (NSMutableDictionary *)requestDic{
-    NSDictionary * dicTemp = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"st":@"0",@"t":@"7",@"page":@"1",};
+    NSDictionary * dicTemp = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"st":@"0",@"t":@"7",@"page":@"1",};
     NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithDictionary:dicTemp];
     switch ([self.typeCount intValue]) {
         case 0:
