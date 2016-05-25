@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0728DB9E1CF5B57F00D84706 /* ReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0728DB9D1CF5B57F00D84706 /* ReusableView.m */; };
+		0728DBA81CF5D8BD00D84706 /* CHCArticalWebViewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0728DBA61CF5D8BD00D84706 /* CHCArticalWebViewView.m */; };
+		0728DBA91CF5D8BD00D84706 /* CHCArticalWebViewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0728DBA71CF5D8BD00D84706 /* CHCArticalWebViewView.xib */; };
 		077EE4091CEFF69E003F4E1B /* CHCActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 077EE35C1CEFF69E003F4E1B /* CHCActivityTableViewCell.m */; };
 		077EE40A1CEFF69E003F4E1B /* CHCActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077EE35D1CEFF69E003F4E1B /* CHCActivityTableViewCell.xib */; };
 		077EE40B1CEFF69E003F4E1B /* CHCArticalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 077EE3601CEFF69E003F4E1B /* CHCArticalCell.m */; };
@@ -366,6 +368,9 @@
 /* Begin PBXFileReference section */
 		0728DB9C1CF5B57F00D84706 /* ReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReusableView.h; sourceTree = "<group>"; };
 		0728DB9D1CF5B57F00D84706 /* ReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReusableView.m; sourceTree = "<group>"; };
+		0728DBA51CF5D8BD00D84706 /* CHCArticalWebViewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCArticalWebViewView.h; sourceTree = "<group>"; };
+		0728DBA61CF5D8BD00D84706 /* CHCArticalWebViewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCArticalWebViewView.m; sourceTree = "<group>"; };
+		0728DBA71CF5D8BD00D84706 /* CHCArticalWebViewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCArticalWebViewView.xib; sourceTree = "<group>"; };
 		077EE35B1CEFF69E003F4E1B /* CHCActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCActivityTableViewCell.h; sourceTree = "<group>"; };
 		077EE35C1CEFF69E003F4E1B /* CHCActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCActivityTableViewCell.m; sourceTree = "<group>"; };
 		077EE35D1CEFF69E003F4E1B /* CHCActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCActivityTableViewCell.xib; sourceTree = "<group>"; };
@@ -919,6 +924,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0728DB9F1CF5D80000D84706 /* articalWebView */ = {
+			isa = PBXGroup;
+			children = (
+				0728DBA51CF5D8BD00D84706 /* CHCArticalWebViewView.h */,
+				0728DBA61CF5D8BD00D84706 /* CHCArticalWebViewView.m */,
+				0728DBA71CF5D8BD00D84706 /* CHCArticalWebViewView.xib */,
+			);
+			path = articalWebView;
+			sourceTree = "<group>";
+		};
 		077EE3581CEFF69E003F4E1B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1212,6 +1227,7 @@
 				077EE47E1CEFF8A2003F4E1B /* tabelview */,
 				077EE4721CEFF8A2003F4E1B /* cell */,
 				077EE47B1CEFF8A2003F4E1B /* segment */,
+				0728DB9F1CF5D80000D84706 /* articalWebView */,
 				077EE4691CEFF8A2003F4E1B /* ArTicalModel */,
 			);
 			path = ArticalController;
@@ -3006,6 +3022,7 @@
 				7A657CB51CF18F010057BF33 /* CHRPublicNextFooterStoryView.xib in Resources */,
 				7AC8C4231CE4696A0043CAEC /* CHRFenLei.plist in Resources */,
 				B7A512B41CE6605D0085A6C8 /* CHSevenChatCell.xib in Resources */,
+				0728DBA91CF5D8BD00D84706 /* CHCArticalWebViewView.xib in Resources */,
 				B7F6156D1CDCA17700AF1697 /* CHRecommendViewController.xib in Resources */,
 				7A9CF49D1CEFF5EC00A2D830 /* CHRPublishViewController.xib in Resources */,
 				7AAF0A381CE184A300708F98 /* CHJRecomdTodayBanerFCollectionReusableView.xib in Resources */,
@@ -3204,6 +3221,7 @@
 				B716865F1CE8257100BEBA3E /* CateUserInfo.m in Sources */,
 				7AAF3F0C1CE35D6700573EF6 /* CHRTodayBannerScrollerView.m in Sources */,
 				077EE4891CEFF8A2003F4E1B /* CHCSegment.m in Sources */,
+				0728DBA81CF5D8BD00D84706 /* CHCArticalWebViewView.m in Sources */,
 				077EE4541CEFF69E003F4E1B /* CHCUse_info_list.m in Sources */,
 				7AAF0A821CE1EFD600708F98 /* CHJRecomdTdayBannerModel.m in Sources */,
 				7AAF0A491CE1855300708F98 /* CHJRecmdUpdateCollectionViewCell.m in Sources */,

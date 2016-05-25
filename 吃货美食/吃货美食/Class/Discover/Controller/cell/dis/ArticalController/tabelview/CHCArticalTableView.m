@@ -9,6 +9,7 @@
 #import "CHCArticalTableView.h"
 #import "CHCArticalTableViewCell.h"
 #import "UIView+JWFrame.h"
+#import "CHCArticalWebViewView.h"
 @implementation CHCArticalTableView
 
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
@@ -46,7 +47,10 @@
 #pragma mark --  UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     return 200;
+    if (indexPath.section==0) {
+        return 200;
+    }
+     return 123;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -59,7 +63,18 @@
 {
     return 1;
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CHCTableVIewData_list * list  = (CHCTableVIewData_list*)self.aData.list[indexPath.section];
+    CHCArticalWebViewView *view=[[CHCArticalWebViewView alloc]init];
+    view.myid=list.myid;
+    
+    
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:view animated:YES completion:nil];
 
+    
+    
+}
 @end
 
 

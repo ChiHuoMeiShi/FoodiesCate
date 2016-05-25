@@ -40,10 +40,49 @@
 - (void)navBackAction{
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-
+-(void)RefreshNormalHeader
+{
+    [self.tabelView.mj_header beginRefreshing];
+    if (self.segment.index == 0)
+    {
+        //饮食健康
+        [self getArTicalDatawithcid:@""];
+    }
+    else if (self.segment.index == 1)
+    {
+        //          功能性调理
+        [self getArTicalDatawithcid:@"10197"];
+        //
+    }
+    else if (self.segment.index == 2)
+    {
+        //        人群膳食
+        [self getArTicalDatawithcid:@"10252"];
+        
+    }
+    else if (self.segment.index == 3)
+    {
+        //        疾病调理
+        [self getArTicalDatawithcid:@"10159"];
+    }
+    else if (self.segment.index == 4)
+    {
+        //        脏腑调理
+        [self getArTicalDatawithcid:@"10225"];
+    }
+    else
+    {
+        //        烹饪技巧
+        [self getArTicalDatawithcid:@"10153"];
+    }
+    
+    
+    
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=@"饮食新闻";
     self.automaticallyAdjustsScrollViewInsets=NO;
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
@@ -52,9 +91,8 @@
     [self addScrollerWithTableView];
     _segment.index=0;
     
-   
 
-   
+    
     
     
 }
@@ -68,7 +106,7 @@
     NSDictionary *parameters = @{@"lat" : @"34.60519775425116",@"lon" : @"112.4231392332194",@"source" : @"iphone",@"format" : @"json", @"cid" : cid,@"page":@"2"};
     
     [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [self.tabelView.mj_header endRefreshing];
+       
         CHLog(@"1111%@",responseObject);
         CHCArticalData *data=[CHCArticalData mj_objectWithKeyValues:responseObject];
         self.data=data;
@@ -77,41 +115,47 @@
         for (CHCZhunTi_classes_list *model in self.data.classes) {
             [self.classesArr addObject:model.title];
         }
-        
-        _imagesArr=[[NSMutableArray alloc]init];
-        for (CHCTop_Images_list *imagesmodel in self.data.top_imgs ) {
-            [_imagesArr addObject:imagesmodel.photo];
-        }
-        
-        [self loadHeadImageView];
+//        
+//        _imagesArr=[[NSMutableArray alloc]init];
+//        for (CHCTop_Images_list *imagesmodel in self.data.top_imgs ) {
+//            [_imagesArr addObject:imagesmodel.photo];
+//        }
+//        
+//        [self loadHeadImageView];
 
         
         
         if ([((CHCZhunTi_classes_list*)self.data.classes[0]).title isEqualToString:@"饮食健康"]&&[((CHCZhunTi_classes_list*)self.data.classes[0]).is_select isEqualToString:@"1"]) {
+             [((CHCArticalTableView*) _tabelViewlistArr[0]).mj_header endRefreshing];
             ((CHCArticalTableView*) _tabelViewlistArr[0]).aData=data;
             [((CHCArticalTableView*) _tabelViewlistArr[0]) reloadData];
         }
         
         else if ([((CHCZhunTi_classes_list*)self.data.classes[1]).title isEqualToString:@"功能性调理"]&&[((CHCZhunTi_classes_list*)self.data.classes[1]).is_select isEqualToString:@"1"]) {
+            [((CHCArticalTableView*) _tabelViewlistArr[1]).mj_header endRefreshing];
             ((CHCArticalTableView*) _tabelViewlistArr[1]).aData=data;
             [((CHCArticalTableView*) _tabelViewlistArr[1]) reloadData];
         }
         else if ([((CHCZhunTi_classes_list*)self.data.classes[2]).title isEqualToString:@"人群膳食"]&&[((CHCZhunTi_classes_list*)self.data.classes[2]).is_select isEqualToString:@"1"]) {
+            [((CHCArticalTableView*) _tabelViewlistArr[2]).mj_header endRefreshing];
             ((CHCArticalTableView*) _tabelViewlistArr[2]).aData=data;
             [((CHCArticalTableView*) _tabelViewlistArr[2]) reloadData];
         }
         
         else if ([((CHCZhunTi_classes_list*)self.data.classes[3]).title isEqualToString:@"疾病调理"]&&[((CHCZhunTi_classes_list*)self.data.classes[3]).is_select isEqualToString:@"1"]) {
+            [((CHCArticalTableView*) _tabelViewlistArr[3]).mj_header endRefreshing];
             ((CHCArticalTableView*) _tabelViewlistArr[3]).aData=data;
             [((CHCArticalTableView*) _tabelViewlistArr[3]) reloadData];
         }
         
         else if ([((CHCZhunTi_classes_list*)self.data.classes[4]).title isEqualToString:@"脏腑调理"]&&[((CHCZhunTi_classes_list*)self.data.classes[4]).is_select isEqualToString:@"1"]) {
+            [((CHCArticalTableView*) _tabelViewlistArr[4]).mj_header endRefreshing];
             ((CHCArticalTableView*) _tabelViewlistArr[4]).aData=data;
             [((CHCArticalTableView*) _tabelViewlistArr[4]) reloadData];
         }
         
         else if ([((CHCZhunTi_classes_list*)self.data.classes[5]).title isEqualToString:@"烹饪技巧"]&&[((CHCZhunTi_classes_list*)self.data.classes[5]).is_select isEqualToString:@"1"]) {
+            [((CHCArticalTableView*) _tabelViewlistArr[5]).mj_header endRefreshing];
             ((CHCArticalTableView*) _tabelViewlistArr[5]).aData=data;
             [((CHCArticalTableView*) _tabelViewlistArr[5]) reloadData];
         }
@@ -153,7 +197,7 @@
             {
         //          功能性调理
         [myself getArTicalDatawithcid:@"10197"];
-//                [myself.tabelViewlistArr[1] reloadData];
+//
             }
             else if (myself.segment.index == 2)
             {
@@ -201,6 +245,7 @@
     _scrollerView.showsHorizontalScrollIndicator = YES;
     _scrollerView.showsVerticalScrollIndicator = YES;
     
+    
   [self.view addSubview:_scrollerView];
     
     _tabelViewlistArr=[[NSMutableArray alloc]init];
@@ -208,6 +253,13 @@
         CHCArticalTableView *tabelView=[[CHCArticalTableView alloc]initWithFrame:CGRectMake(self.view.width*i,0, self.view.width, _scrollerView.frame.size.height) style:UITableViewStylePlain];
       
         self.tabelView=tabelView;
+        
+        MJRefreshNormalHeader *header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(RefreshNormalHeader)];
+        self.tabelView.mj_header=header;
+        [self.tabelView addSubview:header];
+        
+        ReusableView *view=[[ReusableView alloc]init];
+        _tabelView.tableHeaderView=view;
         [_scrollerView addSubview:tabelView];
         [_tabelViewlistArr addObject:tabelView];
         CHLog(@"eeeeeeeeeeeeeeee%lu",(unsigned long)_tabelViewlistArr.count);
@@ -218,36 +270,46 @@
 
 }
 
-- (void)loadHeadImageView{
-    
-    UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, 200)];
-    _tableViewTopScrollview=[[UIScrollView alloc]init];
-    _tableViewTopScrollview.frame=CGRectMake(0, 0, self.view.width, 200);
-    _tableViewTopScrollview.contentSize=CGSizeMake(self.view.width*4, 0);
-    _tableViewTopScrollview.showsHorizontalScrollIndicator = YES;
-    _tableViewTopScrollview.pagingEnabled=YES;
-    _tableViewTopScrollview.delegate=self;
-    for (int i=0;i< self.imagesArr.count; i++)
-    {
-        UIImageView *imageView=[[UIImageView alloc]initWithFrame:CGRectMake(i*self.view.width, 0, self.view.width, 200)];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:self.imagesArr[i]]];
-        [_tableViewTopScrollview  addSubview:imageView];
-    }
-    
-    _tabelView.backgroundColor=[UIColor redColor];
-    [view addSubview:_tableViewTopScrollview];
 
-    _tabelView.tableHeaderView=view;
-
-}
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-//    self.pageNum = _scrollerView.contentOffset.x / _scrollerView.frame.size.width;
+//    if (self.segment.index == 0)
+//    {
+//        //饮食健康
+//        [self getArTicalDatawithcid:@""];
+//    }
+//    else if (self.segment.index == 1)
+//    {
+//        //          功能性调理
+//        [self getArTicalDatawithcid:@"10197"];
+//        //
+//    }
+//    else if (self.segment.index == 2)
+//    {
+//        //        人群膳食
+//        [self getArTicalDatawithcid:@"10252"];
+//        
+//    }
+//    else if (self.segment.index == 3)
+//    {
+//        //        疾病调理
+//        [self getArTicalDatawithcid:@"10159"];
+//    }
+//    else if (self.segment.index == 4)
+//    {
+//        //        脏腑调理
+//        [self getArTicalDatawithcid:@"10225"];
+//    }
+//    else
+//    {
+//        //        烹饪技巧
+//        [self getArTicalDatawithcid:@"10153"];
+//    }
+
     self.pageNum = _scrollerView.contentOffset.x / CHSCREENWIDTH;
     _segment.index = self.pageNum;
     
-//    _pageControl.currentPage=_tableViewTopScrollview.contentOffset.x/(self.view.width);
     
 
 }
@@ -268,7 +330,28 @@
 @end
 
 
-
+//- (void)loadHeadImageView{
+//    
+//    UIView *view=[[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, 200)];
+//    _tableViewTopScrollview=[[UIScrollView alloc]init];
+//    _tableViewTopScrollview.frame=CGRectMake(0, 0, self.view.width, 200);
+//    _tableViewTopScrollview.contentSize=CGSizeMake(self.view.width*4, 0);
+//    _tableViewTopScrollview.showsHorizontalScrollIndicator = YES;
+//    _tableViewTopScrollview.pagingEnabled=YES;
+//    _tableViewTopScrollview.delegate=self;
+//    for (int i=0;i< self.imagesArr.count; i++)
+//    {
+//        UIImageView *imageView=[[UIImageView alloc]initWithFrame:CGRectMake(i*self.view.width, 0, self.view.width, 200)];
+//        [imageView sd_setImageWithURL:[NSURL URLWithString:self.imagesArr[i]]];
+//        [_tableViewTopScrollview  addSubview:imageView];
+//    }
+//    
+//    _tabelView.backgroundColor=[UIColor redColor];
+//    [view addSubview:_tableViewTopScrollview];
+//    
+//    _tabelView.tableHeaderView=view;
+//    
+//}
 
 
 

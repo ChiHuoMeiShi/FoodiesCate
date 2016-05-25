@@ -14,6 +14,72 @@
 {
 
 }
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self)
+    {
+     
+        _scrollView=[[UIScrollView alloc]init];
+        _scrollView.frame=CGRectMake(0, 0, CHSCREENWIDTH, 200);
+        _scrollView.contentSize=CGSizeMake(CHSCREENWIDTH*4, 0);
+        _scrollView.showsHorizontalScrollIndicator = YES;
+        _scrollView.pagingEnabled=YES;
+        _scrollView.delegate=self;
+        _pageControl=[[UIPageControl alloc]initWithFrame:CGRectMake(-50, 130, 100, 40)];
+        _pageControl.numberOfPages=4;
+        _pageControl.pageIndicatorTintColor=[UIColor  grayColor];
+        _pageControl.currentPageIndicatorTintColor=[UIColor whiteColor];
+        
+        [self addSubview:_scrollView];
+        [self addSubview:_pageControl];
+        
+        [self getArTicalData];
+        
+        self.timer=[NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(update:) userInfo:nil repeats:YES];
+        //获取当前的消息循环对象
+        NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
+        //改变self.timer的优先级
+        [runLoop addTimer:self.timer forMode:NSRunLoopCommonModes];
+    }
+    return self;
+}
+
+-(void)getArTicalData
+{
+    AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
+    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+    NSString *kUrl = @"http://api.meishi.cc/v5/health_main.php?format=json";
+    NSDictionary *parameters = @{@"lat" : @"34.60519775425116",@"lon" : @"112.4231392332194",@"source" : @"iphone",@"format" : @"json", @"cid" : @"",@"page":@"2"};
+
+    [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+
+        CHLog(@"1111%@",responseObject);
+
+        CHCArticalData *data=[CHCArticalData mj_objectWithKeyValues:responseObject];
+        self.data=data;
+        _imagesArr=[[NSMutableArray alloc]init];
+        for (CHCTop_Images_list *imagesmodel in self.data.top_imgs ) {
+            [_imagesArr addObject:imagesmodel.photo];
+        }
+
+        [self addImageview];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"%@",error);
+    }];
+
+}
+-(void)addImageview
+{
+   
+    for (int i=0;i< self.imagesArr.count; i++)
+    {
+        UIImageView *imageView=[[UIImageView alloc]initWithFrame:CGRectMake(i*CHSCREENWIDTH, 0, CHSCREENWIDTH, 200)];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:self.imagesArr[i]]];
+        [_scrollView  addSubview:imageView];
+    }
+    
+}
 /**
  *  此方法必须遵循代理
  *
@@ -25,26 +91,6 @@
 }
 
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self)
-    {
-        
-        
-       
-        self.timer=[NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(update:) userInfo:nil repeats:YES];
-        //获取当前的消息循环对象
-        NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
-        //改变self.timer的优先级
-        [runLoop addTimer:self.timer forMode:NSRunLoopCommonModes];
-      
-        
-
-       
-    }
-    return self;
-}
 - (void)update:(NSTimer *)timer
 {
     
@@ -109,7 +155,7 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     //重新启动计时器
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(update:) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(update:) userInfo:nil repeats:YES];
     
     //再次修改self.timer的优先级
     //修改self.timer的优先级与控件一样

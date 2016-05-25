@@ -8,16 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "UIImageView+WebCache.h"
-
-@interface ReusableView : UICollectionReusableView<UIScrollViewDelegate>
+#import "CHCArticalData.h"
+@interface ReusableView : UIView<UIScrollViewDelegate>
 {
     UIScrollView *_scrollView;
     UIPageControl *_pageControl;
     
 }
 @property (nonatomic,assign) int imageTotal;
-@property(nonatomic,strong)NSMutableArray *arr;
 @property(nonatomic,strong)NSTimer *timer;
 @property (nonatomic,assign) BOOL isDragging;
-
+@property(nonatomic,strong) CHCArticalData *data;
+@property(nonatomic,strong)NSMutableArray *imagesArr;
  @end
