@@ -49,6 +49,7 @@
     }];
 
     _meatTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-187+210) style:UITableViewStylePlain];
+     _meatTableView.scrollEnabled=YES;
     _meatTableView.dataSource=self;
     _meatTableView.delegate=self;
 

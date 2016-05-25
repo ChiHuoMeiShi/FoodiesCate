@@ -68,6 +68,7 @@
     }];
 
    _shuCaiTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-187+75) style:UITableViewStylePlain];
+    _shuCaiTableView.scrollEnabled=YES;
     _shuCaiTableView.delegate=self;
     _shuCaiTableView.dataSource=self;
     [self.view addSubview:_shuCaiTableView];

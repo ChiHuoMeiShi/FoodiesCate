@@ -26,32 +26,24 @@
 }
 
 - (void)viewDidLoad {
+      [super viewDidLoad];
     self.title=@"当季食材";
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
-
-    [super viewDidLoad];
-    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame=CGRectMake(8, 8, 46, 30);
-    button.backgroundColor=[UIColor redColor];
-    [button setTitle:@"返回" forState:UIControlStateNormal];
-    [button setTintColor:[UIColor greenColor]];
-    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
-  
+    UIButton *vegetablebutton=[[UIButton alloc]initWithFrame:CGRectMake(CHSCREENWIDTH-119, CHSCREENHEIGH-22, 19, 35)];
+    [vegetablebutton setTitle:@"shucai" forState:UIControlStateNormal];
+    [vegetablebutton setTintColor:[UIColor blackColor]];
+    [vegetablebutton addTarget:self action:@selector(shuCai:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:vegetablebutton];
+    
     UIViewController *vegetable =[[UIViewController alloc] init];
     UIViewController *fruit =[[UIViewController alloc] init];
     UIViewController *meat =[[UIViewController alloc] init];
     UIViewController *fiveCreals =[[UIViewController alloc] init];
-   //    vegetable.view.backgroundColor=[UIColor blueColor];
-//    fruit.view.backgroundColor=[UIColor purpleColor];
-//    meat.view.backgroundColor=[UIColor greenColor];
-//    fiveCreals.view.backgroundColor=[UIColor grayColor];
     CHCVegetableController *vegetableController=[[CHCVegetableController alloc]init];
     CHFruitViewController *fruitViewController=[[CHFruitViewController alloc]init];
     CHCMeatViewController *meatViewController=[[CHCMeatViewController alloc]init];
     CHFiveCrealsViewController *fiveCrealsViewController=[[CHFiveCrealsViewController alloc]init];
     
- //    vegetableController.tabBarController.view=self.myView;
     vegetable =vegetableController;
     vegetable.view.frame=CGRectMake(0, 64, CHSCREENWIDTH, CHSCREENHEIGH-187);
     [self.view addSubview:vegetable.view];
@@ -64,11 +56,11 @@
     [self.view addSubview:fruit.view];
     [self addChildViewController:fruit];
     
-        meat=meatViewController;
+    meat=meatViewController;
     meat.view.frame=CGRectMake(0,  64, CHSCREENWIDTH, CHSCREENHEIGH-187);
     [self.view addSubview:meat.view];
     [self addChildViewController:meat];
-
+    
     fiveCreals=fiveCrealsViewController;
     fiveCreals.view.frame=CGRectMake(0,  64, CHSCREENWIDTH, CHSCREENHEIGH-187);
     [self.view addSubview:fiveCreals.view];
@@ -78,15 +70,17 @@
     fruit.view.hidden=YES;
     meat.view.hidden=YES;
     fiveCreals.view.hidden=YES;
-    _myView.hidden=NO;
 
+
+    
+   
 }
 
 -(void)buttonClick:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-- (IBAction)shuCai:(id)sender {
+- (void)shuCai:(id)sender {
     UIViewController *VC=_arrVC[0];
     if (![VC isEqual:_selectVC]) {
         _selectVC.view.hidden=YES;
@@ -95,7 +89,7 @@
         _myView.hidden=NO;
     }
 }
-- (IBAction)fruit:(id)sender {
+- (void)fruit:(id)sender {
     UIViewController *VC=_arrVC[1];
     if (![VC isEqual:_selectVC]) {
         _selectVC.view.hidden=YES;
@@ -105,7 +99,7 @@
     }
 
 }
-- (IBAction)meat:(id)sender {
+- (void)meat:(id)sender {
     UIViewController *VC=_arrVC[2];
     if (![VC isEqual:_selectVC]) {
         _selectVC.view.hidden=YES;
@@ -115,7 +109,7 @@
     }
 
 }
-- (IBAction)fiveCreals:(id)sender {
+- (void)fiveCreals:(id)sender {
     UIViewController *VC=_arrVC[3];
     if (![VC isEqual:_selectVC]) {
         _selectVC.view.hidden=YES;
@@ -141,3 +135,52 @@
 */
 
 @end
+//UIViewController *VC=_arrVC[3];
+//if (![VC isEqual:_selectVC]) {
+//    _selectVC.view.hidden=YES;
+//    VC.view.hidden=NO;
+//    _selectVC=VC;
+//    _myView.hidden=NO;
+//}
+//UIViewController *vegetable =[[UIViewController alloc] init];
+//UIViewController *fruit =[[UIViewController alloc] init];
+//UIViewController *meat =[[UIViewController alloc] init];
+//UIViewController *fiveCreals =[[UIViewController alloc] init];
+////    vegetable.view.backgroundColor=[UIColor blueColor];
+////    fruit.view.backgroundColor=[UIColor purpleColor];
+////    meat.view.backgroundColor=[UIColor greenColor];
+////    fiveCreals.view.backgroundColor=[UIColor grayColor];
+//CHCVegetableController *vegetableController=[[CHCVegetableController alloc]init];
+//CHFruitViewController *fruitViewController=[[CHFruitViewController alloc]init];
+//CHCMeatViewController *meatViewController=[[CHCMeatViewController alloc]init];
+//CHFiveCrealsViewController *fiveCrealsViewController=[[CHFiveCrealsViewController alloc]init];
+//
+////    vegetableController.tabBarController.view=self.myView;
+//vegetable =vegetableController;
+//vegetable.view.frame=CGRectMake(0, 64, CHSCREENWIDTH, CHSCREENHEIGH-187);
+//[self.view addSubview:vegetable.view];
+//[self addChildViewController:vegetable];
+//
+//
+//
+//fruit=fruitViewController;
+//fruit.view.frame=CGRectMake(0,  64, CHSCREENWIDTH, CHSCREENHEIGH-187);
+//[self.view addSubview:fruit.view];
+//[self addChildViewController:fruit];
+//
+//meat=meatViewController;
+//meat.view.frame=CGRectMake(0,  64, CHSCREENWIDTH, CHSCREENHEIGH-187);
+//[self.view addSubview:meat.view];
+//[self addChildViewController:meat];
+//
+//fiveCreals=fiveCrealsViewController;
+//fiveCreals.view.frame=CGRectMake(0,  64, CHSCREENWIDTH, CHSCREENHEIGH-187);
+//[self.view addSubview:fiveCreals.view];
+//[self addChildViewController:fiveCreals];
+//self.arrVC=@[vegetable,fruit,meat,fiveCreals];
+//_selectVC=vegetable;
+//fruit.view.hidden=YES;
+//meat.view.hidden=YES;
+//fiveCreals.view.hidden=YES;
+//_myView.hidden=NO;
+
