@@ -58,7 +58,7 @@
 {
     [super viewDidLoad];
   
-    
+    self.title=@"发现";
     [self getTableViewData];
     [self CreatTableView];
      MJRefreshStateHeader *header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshAction)];
@@ -88,7 +88,8 @@
          });
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        CHLog(@"%@",error);
+      
+
     }];
     
 }

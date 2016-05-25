@@ -32,6 +32,7 @@
     
     [self addHeader];
     [self getEchatDataWithSort:@"new"];
+    
     self.eChatTableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
     [self getEchatDataWithSort:@"time"];
     __weak typeof(self) mSelf = self;

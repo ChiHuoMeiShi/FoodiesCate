@@ -12,4 +12,6 @@
 @property(nonatomic,strong)CHCTableVIewData_list *TableVIewData_list;
 -(void)setTableVIewData_list:(CHCTableVIewData_list *)TableVIewData_list;
 @property (weak, nonatomic) IBOutlet UIImageView *tabelViewimageView;
+@property (weak, nonatomic) IBOutlet UILabel *titlelabel;
+@property (weak, nonatomic) IBOutlet UILabel *detalieLabel;
 @end
