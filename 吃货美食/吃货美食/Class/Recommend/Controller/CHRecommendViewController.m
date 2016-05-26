@@ -106,7 +106,8 @@
 
 #pragma mark - ButtonActions
 - (void)commitAction{
-    
+    CHRCommitViewController * commitVC = [[CHRCommitViewController alloc]init];
+    [self.navigationController pushViewController:commitVC animated:YES];
 }
 - (void)publishNewFood{
     CHRPublishViewController * publishVC = [[CHRPublishViewController alloc]init];
