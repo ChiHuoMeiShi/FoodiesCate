@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHCShiCaiViewController">
             <connections>
-                <outlet property="myView" destination="ttE-Mk-jdf" id="r5f-Nv-SaR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="nI5-kR-QgQ"/>
             </connections>
         </placeholder>
@@ -15,92 +14,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttE-Mk-jdf">
-                    <rect key="frame" x="0.0" y="680" width="414" height="56"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBB-KY-UzI">
-                            <rect key="frame" x="110" y="16" width="35" height="19"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="19" id="5do-aT-8R7"/>
-                                <constraint firstAttribute="width" constant="35" id="x0E-gh-3NO"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" title="蔬菜">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="shuCai:" destination="-1" eventType="touchUpInside" id="4Vb-we-1Ml"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LTl-Ep-dOM">
-                            <rect key="frame" x="159" y="16" width="35" height="19"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" title="水果">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="fruit:" destination="-1" eventType="touchUpInside" id="QBX-vY-BxB"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foF-cD-m0N">
-                            <rect key="frame" x="257" y="16" width="35" height="19"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" title="五谷">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="fiveCreals:" destination="-1" eventType="touchUpInside" id="gNi-LC-hGu"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhZ-QI-HwG">
-                            <rect key="frame" x="208" y="16" width="35" height="19"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" title="肉类">
-                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="meat:" destination="-1" eventType="touchUpInside" id="QsM-Bt-Obj"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="LTl-Ep-dOM" firstAttribute="leading" secondItem="nBB-KY-UzI" secondAttribute="trailing" constant="14" id="1Nj-DB-pwr"/>
-                        <constraint firstItem="foF-cD-m0N" firstAttribute="centerY" secondItem="IhZ-QI-HwG" secondAttribute="centerY" id="22x-It-rMq"/>
-                        <constraint firstItem="nBB-KY-UzI" firstAttribute="leading" secondItem="ttE-Mk-jdf" secondAttribute="leading" constant="110" id="5MU-pE-DtQ"/>
-                        <constraint firstItem="foF-cD-m0N" firstAttribute="leading" secondItem="IhZ-QI-HwG" secondAttribute="trailing" constant="14" id="Bel-qd-N7i"/>
-                        <constraint firstItem="IhZ-QI-HwG" firstAttribute="width" secondItem="LTl-Ep-dOM" secondAttribute="width" id="HoN-8g-p7L"/>
-                        <constraint firstItem="LTl-Ep-dOM" firstAttribute="width" secondItem="nBB-KY-UzI" secondAttribute="width" id="Jic-nI-7nO"/>
-                        <constraint firstItem="foF-cD-m0N" firstAttribute="height" secondItem="IhZ-QI-HwG" secondAttribute="height" id="Nab-mq-kvN"/>
-                        <constraint firstItem="LTl-Ep-dOM" firstAttribute="height" secondItem="nBB-KY-UzI" secondAttribute="height" id="OSi-U4-wJ3"/>
-                        <constraint firstItem="nBB-KY-UzI" firstAttribute="top" secondItem="ttE-Mk-jdf" secondAttribute="top" constant="16" id="Obx-I6-bsP"/>
-                        <constraint firstAttribute="height" constant="56" id="XfL-Tx-tRe"/>
-                        <constraint firstItem="IhZ-QI-HwG" firstAttribute="centerY" secondItem="LTl-Ep-dOM" secondAttribute="centerY" id="e9Y-4q-bLV"/>
-                        <constraint firstItem="foF-cD-m0N" firstAttribute="width" secondItem="IhZ-QI-HwG" secondAttribute="width" id="hhx-Ov-yap"/>
-                        <constraint firstItem="IhZ-QI-HwG" firstAttribute="leading" secondItem="LTl-Ep-dOM" secondAttribute="trailing" constant="14" id="m7Z-zx-zQz"/>
-                        <constraint firstItem="LTl-Ep-dOM" firstAttribute="centerY" secondItem="nBB-KY-UzI" secondAttribute="centerY" id="uJI-XZ-p7u"/>
-                        <constraint firstItem="IhZ-QI-HwG" firstAttribute="height" secondItem="LTl-Ep-dOM" secondAttribute="height" id="xAW-r2-plg"/>
-                    </constraints>
-                </view>
-            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="ttE-Mk-jdf" secondAttribute="bottom" id="1SQ-PF-4qO"/>
-                <constraint firstAttribute="trailing" secondItem="ttE-Mk-jdf" secondAttribute="trailing" id="Be6-L0-s27"/>
-                <constraint firstItem="ttE-Mk-jdf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jWM-j7-pWw"/>
-            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
             <point key="canvasLocation" x="199" y="344"/>
         </view>

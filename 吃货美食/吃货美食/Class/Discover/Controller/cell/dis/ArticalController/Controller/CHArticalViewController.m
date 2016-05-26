@@ -239,6 +239,7 @@
     _scrollerView=[[UIScrollView alloc]init];
    _scrollerView.backgroundColor=[UIColor greenColor];
    _scrollerView.frame=CGRectMake(0,94, self.view.width, self.view.height-94);
+    _scrollerView.scrollEnabled = NO;
     _scrollerView.contentSize=CGSizeMake(self.segment.items.count*self.view.width, self.view.height-94);
         _scrollerView.delegate=self;
     _scrollerView.pagingEnabled=YES;
@@ -274,38 +275,6 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-//    if (self.segment.index == 0)
-//    {
-//        //饮食健康
-//        [self getArTicalDatawithcid:@""];
-//    }
-//    else if (self.segment.index == 1)
-//    {
-//        //          功能性调理
-//        [self getArTicalDatawithcid:@"10197"];
-//        //
-//    }
-//    else if (self.segment.index == 2)
-//    {
-//        //        人群膳食
-//        [self getArTicalDatawithcid:@"10252"];
-//        
-//    }
-//    else if (self.segment.index == 3)
-//    {
-//        //        疾病调理
-//        [self getArTicalDatawithcid:@"10159"];
-//    }
-//    else if (self.segment.index == 4)
-//    {
-//        //        脏腑调理
-//        [self getArTicalDatawithcid:@"10225"];
-//    }
-//    else
-//    {
-//        //        烹饪技巧
-//        [self getArTicalDatawithcid:@"10153"];
-//    }
 
     self.pageNum = _scrollerView.contentOffset.x / CHSCREENWIDTH;
     _segment.index = self.pageNum;
@@ -328,6 +297,39 @@
     // Dispose of any resources that can be recreated.
 }
 @end
+//    滑动需要判断
+//    if (self.segment.index == 0)
+//    {
+//        //饮食健康
+//        [self getArTicalDatawithcid:@""];
+//    }
+//    else if (self.segment.index == 1)
+//    {
+//        //          功能性调理
+//        [self getArTicalDatawithcid:@"10197"];
+//        //
+//    }
+//    else if (self.segment.index == 2)
+//    {
+//        //        人群膳食
+//        [self getArTicalDatawithcid:@"10252"];
+//
+//    }
+//    else if (self.segment.index == 3)
+//    {
+//        //        疾病调理
+//        [self getArTicalDatawithcid:@"10159"];
+//    }
+//    else if (self.segment.index == 4)
+//    {
+//        //        脏腑调理
+//        [self getArTicalDatawithcid:@"10225"];
+//    }
+//    else
+//    {
+//        //        烹饪技巧
+//        [self getArTicalDatawithcid:@"10153"];
+//    }
 
 
 //- (void)loadHeadImageView{
