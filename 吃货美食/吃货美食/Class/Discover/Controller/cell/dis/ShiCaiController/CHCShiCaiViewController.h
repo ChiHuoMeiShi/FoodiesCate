@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CHCShiCaiViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIView *myView;
+
 
 @end

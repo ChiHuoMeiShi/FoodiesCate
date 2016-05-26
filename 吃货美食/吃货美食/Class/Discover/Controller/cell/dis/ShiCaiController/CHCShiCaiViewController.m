@@ -29,43 +29,67 @@
       [super viewDidLoad];
     self.title=@"当季食材";
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
-    UIButton *vegetablebutton=[[UIButton alloc]initWithFrame:CGRectMake(CHSCREENWIDTH-119, CHSCREENHEIGH-22, 19, 35)];
-    [vegetablebutton setTitle:@"shucai" forState:UIControlStateNormal];
-    [vegetablebutton setTintColor:[UIColor blackColor]];
+    UIButton *vegetablebutton=[[UIButton alloc]initWithFrame:CGRectMake(CHSCREENWIDTH-254-46, CHSCREENHEIGH-15-30, 46, 30)];
+  
+    [vegetablebutton setTitle:@"蔬菜" forState:UIControlStateNormal];
+    [vegetablebutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [vegetablebutton addTarget:self action:@selector(shuCai:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:vegetablebutton];
+    UIButton *fruitbutton=[[UIButton alloc]initWithFrame:CGRectMake(CHSCREENWIDTH-254-46+16+46, CHSCREENHEIGH-15-30, 46, 30)];
+    [fruitbutton setTitle:@"水果" forState:UIControlStateNormal];
+    [fruitbutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [fruitbutton addTarget:self action:@selector(fruit:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:fruitbutton];
+
+    UIButton *meatablebutton=[[UIButton alloc]initWithFrame:CGRectMake(CHSCREENWIDTH-254-46+16+46+16+46, CHSCREENHEIGH-15-30, 46, 30)];
+    [meatablebutton setTitle:@"肉类" forState:UIControlStateNormal];
+    [meatablebutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [meatablebutton addTarget:self action:@selector(meat:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:meatablebutton];
+
+    UIButton *fiveCrealsbutton=[[UIButton alloc]initWithFrame:CGRectMake(CHSCREENWIDTH-254-46+16+46+16+46+46+16, CHSCREENHEIGH-15-30, 46, 30)];
+    [fiveCrealsbutton setTitle:@"五谷" forState:UIControlStateNormal];
+   [fiveCrealsbutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [fiveCrealsbutton addTarget:self action:@selector(fiveCreals:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:fiveCrealsbutton];
+
+    
+    
     
     UIViewController *vegetable =[[UIViewController alloc] init];
     UIViewController *fruit =[[UIViewController alloc] init];
     UIViewController *meat =[[UIViewController alloc] init];
     UIViewController *fiveCreals =[[UIViewController alloc] init];
+    
+    
     CHCVegetableController *vegetableController=[[CHCVegetableController alloc]init];
     CHFruitViewController *fruitViewController=[[CHFruitViewController alloc]init];
     CHCMeatViewController *meatViewController=[[CHCMeatViewController alloc]init];
     CHFiveCrealsViewController *fiveCrealsViewController=[[CHFiveCrealsViewController alloc]init];
     
     vegetable =vegetableController;
-    vegetable.view.frame=CGRectMake(0, 64, CHSCREENWIDTH, CHSCREENHEIGH-187);
+    vegetable.view.frame=CGRectMake(0, 64,  CHSCREENWIDTH, CHSCREENHEIGH-140);
+    vegetable.view.backgroundColor=[UIColor redColor];
     [self.view addSubview:vegetable.view];
     [self addChildViewController:vegetable];
     
     
     
     fruit=fruitViewController;
-    fruit.view.frame=CGRectMake(0,  64, CHSCREENWIDTH, CHSCREENHEIGH-187);
+    fruit.view.frame=CGRectMake(0,  64, CHSCREENWIDTH, CHSCREENHEIGH-140);
     [self.view addSubview:fruit.view];
     [self addChildViewController:fruit];
     
     meat=meatViewController;
-    meat.view.frame=CGRectMake(0,  64, CHSCREENWIDTH, CHSCREENHEIGH-187);
+    meat.view.frame=CGRectMake(0,  64, CHSCREENWIDTH, CHSCREENHEIGH-140);
     [self.view addSubview:meat.view];
     [self addChildViewController:meat];
     
     fiveCreals=fiveCrealsViewController;
-    fiveCreals.view.frame=CGRectMake(0,  64, CHSCREENWIDTH, CHSCREENHEIGH-187);
+    fiveCreals.view.frame=CGRectMake(0,  64, CHSCREENWIDTH, CHSCREENHEIGH-140);
     [self.view addSubview:fiveCreals.view];
     [self addChildViewController:fiveCreals];
-    self.arrVC=@[vegetable,fruit,meat,fiveCreals];
+    self.arrVC=@[fruit,vegetable,meat,fiveCreals];
     _selectVC=vegetable;
     fruit.view.hidden=YES;
     meat.view.hidden=YES;
@@ -76,17 +100,13 @@
    
 }
 
--(void)buttonClick:(id)sender
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 - (void)shuCai:(id)sender {
     UIViewController *VC=_arrVC[0];
     if (![VC isEqual:_selectVC]) {
         _selectVC.view.hidden=YES;
         VC.view.hidden=NO;
         _selectVC=VC;
-        _myView.hidden=NO;
+       
     }
 }
 - (void)fruit:(id)sender {
@@ -95,7 +115,7 @@
         _selectVC.view.hidden=YES;
         VC.view.hidden=NO;
         _selectVC=VC;
-        _myView.hidden=NO;
+      
     }
 
 }
@@ -105,7 +125,7 @@
         _selectVC.view.hidden=YES;
         VC.view.hidden=NO;
         _selectVC=VC;
-        _myView.hidden=NO;
+       
     }
 
 }
@@ -115,7 +135,7 @@
         _selectVC.view.hidden=YES;
         VC.view.hidden=NO;
         _selectVC=VC;
-        _myView.hidden=NO;
+      
     }
 
 }

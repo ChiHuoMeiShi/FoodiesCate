@@ -1325,10 +1325,10 @@
 				077EE49A1CEFF961003F4E1B /* CHCShiCaiViewController.h */,
 				077EE49B1CEFF961003F4E1B /* CHCShiCaiViewController.m */,
 				077EE49C1CEFF961003F4E1B /* CHCShiCaiViewController.xib */,
+				077EE4AE1CEFF961003F4E1B /* VegetableController */,
 				077EE49D1CEFF961003F4E1B /* Five cereals */,
 				077EE4A61CEFF961003F4E1B /* FruitController */,
 				077EE4AA1CEFF961003F4E1B /* MeatController */,
-				077EE4AE1CEFF961003F4E1B /* VegetableController */,
 			);
 			path = ShiCaiController;
 			sourceTree = "<group>";

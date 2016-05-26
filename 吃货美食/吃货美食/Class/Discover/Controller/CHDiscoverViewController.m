@@ -5,6 +5,7 @@
 //  Created by 赵天 on 16/5/6.
 //  Copyright © 2016年 赵天. All rights reserved.
 //
+#define W  (CHSCREENWIDTH-11*5)/4
 #import <AFNetworking.h>
 #import "CHDiscoverViewController.h"
 #import "UIView+JWFrame.h"
@@ -96,6 +97,10 @@
 -(void)CreatTableView
 {
     _mytableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, CHSCREENWIDTH, CHSCREENHEIGH) style:UITableViewStylePlain];
+    
+    
+    
+    
     _mytableView.delegate=self;
     _mytableView.dataSource=self;
     [self.view addSubview:_mytableView];
@@ -133,47 +138,48 @@
      CHZTCell *ztcell3=[tableView dequeueReusableCellWithIdentifier:@"CDCZtcell"];
     NSString *CellTableIdentifier = @"CDCtopcell";
     CHTopInfoCell *topcell=[tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
-//
-    
-    
+
     if (!discell&&indexPath.section==0)
     {
      NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHCDiscoverTableViewcell" owner:nil options:nil];
             discell=arr[0];
             discell.selectionStyle = UITableViewCellSelectionStyleNone;
-      UIButton  *shicaiButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIImage *image=[UIImage imageNamed:@"ms_home_find_shicai"];
+
+        UIButton  *shicaiButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        把高固定死 14
         shicaiButton.frame=CGRectMake
-        (CHSCREENWIDTH*24/414, 14,CHSCREENWIDTH*81/414, 108);
-        
+        (11, 14,W, image.size.height);
         [shicaiButton setImage:[UIImage imageNamed:@"ms_home_find_shicai"] forState:UIControlStateNormal];
         [shicaiButton setImage:[UIImage imageNamed:@"ms_home_find_shicai"] forState:UIControlStateHighlighted];
         [shicaiButton addTarget:self action:@selector(shiCaiButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         
         UIButton  *caidanButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        caidanButton.frame=CGRectMake(CHSCREENWIDTH*119/414, 14, CHSCREENWIDTH*81/414, 108);
+        caidanButton.frame=CGRectMake(11+W+11, 14, W, image.size.height);
         [caidanButton setImage:[UIImage imageNamed:@"ms_home_find_caidan"] forState:UIControlStateNormal];
         [caidanButton setImage:[UIImage imageNamed:@"ms_home_find_caidan"] forState:UIControlStateHighlighted];
         [caidanButton addTarget:self action:@selector(caidanButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-
+        
         UIButton  *zhaunTiButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        zhaunTiButton.frame=CGRectMake(CHSCREENWIDTH*216/414, 14, CHSCREENWIDTH*81/414, 108);
+        zhaunTiButton.frame=CGRectMake(11+W+11+W+11, 14, W, image.size.height);
         [zhaunTiButton setImage:[UIImage imageNamed:@"ms_home_find_zhuanti"] forState:UIControlStateNormal];
         [zhaunTiButton setImage:[UIImage imageNamed:@"ms_home_find_zhuanti"] forState:UIControlStateHighlighted];
         [zhaunTiButton addTarget:self action:@selector(zhuantiButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         
         UIButton  *articleButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        articleButton.frame=CGRectMake(CHSCREENWIDTH*312/414, 14, CHSCREENWIDTH*81/414, 108);
+        articleButton.frame=CGRectMake(11+W+11+W+11+W+11, 14, W, image.size.height);
         [articleButton setImage:[UIImage imageNamed:@"ms_home_find_wenzhang"] forState:UIControlStateNormal];
         [articleButton setImage:[UIImage imageNamed:@"ms_home_find_wenzhang"] forState:UIControlStateHighlighted];
         [articleButton addTarget:self action:@selector(articleButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-         [discell.contentView addSubview:shicaiButton];
-         [discell.contentView addSubview:caidanButton];
-         [discell.contentView addSubview:zhaunTiButton];
-         [discell.contentView addSubview:articleButton];
+        [discell addSubview:shicaiButton];
+        [discell addSubview:caidanButton];
+        [discell addSubview:zhaunTiButton];
+        [discell addSubview:articleButton];
+      
         return discell;
     }
-    
-    else if (!clickcell&&[faxianCelllist.type isEqualToString:@"1"])
+
+  else if (!clickcell&&[faxianCelllist.type isEqualToString:@"1"])
 
     {
         NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHClickTableViewCell" owner:nil options:nil];
@@ -269,9 +275,6 @@
     
     return nil;
 }
-//-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    }
 
 #pragma mark-buttonClick
 -(void)shiCaiButtonClicked:(id)sender
@@ -300,13 +303,17 @@
 
 }
 #pragma mark-UITableViewDelegate
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 10000;
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.section==0)
     {
         return 140;
     }
-    else if ([self.faxianCelllist.type isEqualToString:@"1"])
+    if ([self.faxianCelllist.type isEqualToString:@"1"])
     {
         return 221;
     }
@@ -341,17 +348,18 @@
     }
 
 
-    return  200;
+    return  0;
 }
 //每个分组上边预留的空白高度
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
- return 8;
+     return 6;
 }
 //每个分组下边预留的空白高度
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 8;
+   
+    return 6;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

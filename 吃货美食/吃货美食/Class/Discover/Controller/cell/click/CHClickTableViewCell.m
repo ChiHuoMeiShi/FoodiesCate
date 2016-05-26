@@ -19,11 +19,21 @@
         
         [_commentImageView sd_setImageWithURL:[NSURL URLWithString:faxian_list.recipe_info.titlepic]];
         _CommentHongTitle.text=faxian_list.recipe_info.title;
-        _COmmentStepLabel.text=faxian_list.recipe_info.step;
-        _timeLabel.text=faxian_list.recipe_info.make_time;
-        _CommentWeiLabel.text=faxian_list.recipe_info.kouwei;
-        _ZhengLabel.text=faxian_list.recipe_info.gongyi;
-    }
+        
+        NSString * stepStr = faxian_list.recipe_info.step;
+        if (faxian_list.recipe_info.make_time) {
+            stepStr = [NSString stringWithFormat:@"%@/%@",stepStr,faxian_list.recipe_info.make_time];
+        }
+        _COmmentStepLabel.text= stepStr;
+        
+        
+        NSString *weiStr=faxian_list.recipe_info.gongyi;
+        if (faxian_list.recipe_info.kouwei) {
+           weiStr=[NSString stringWithFormat:@"%@/%@",weiStr,faxian_list.recipe_info.kouwei];
+        }
+        
+     _CommentWeiLabel.text=weiStr;
+          }
 
     
     

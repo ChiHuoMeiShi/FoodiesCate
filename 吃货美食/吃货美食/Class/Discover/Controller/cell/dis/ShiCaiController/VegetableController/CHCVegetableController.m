@@ -67,7 +67,8 @@
         CHLog(@"%@",error);
     }];
 
-   _shuCaiTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-187+75) style:UITableViewStylePlain];
+   _shuCaiTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, CHSCREENWIDTH,CHSCREENHEIGH-140) style:UITableViewStylePlain];
+  
     _shuCaiTableView.scrollEnabled=YES;
     _shuCaiTableView.delegate=self;
     _shuCaiTableView.dataSource=self;
@@ -75,13 +76,9 @@
     
 }
 #pragma mark-UITableViewDataSource
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return self.data.obj.count;
-}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return self.data.obj.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -92,7 +89,7 @@
         shicaicell=arr[0];
         
     }
-    CHCSHiCaiObjData *shicaiData=(CHCSHiCaiObjData*)self.data.obj[indexPath.section];
+    CHCSHiCaiObjData *shicaiData=(CHCSHiCaiObjData*)self.data.obj[indexPath.row];
     
     shicaicell.shicai=shicaiData;
     return shicaicell;
@@ -101,14 +98,6 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 137;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 1;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    return 1;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
