@@ -16,6 +16,7 @@
     _buttonLabel.text=zhuanTiData_list.title;
     [_rightImageView sd_setImageWithURL:[NSURL URLWithString:zhuanTiData_list.user_info.avatar]];
     _lastLabel.text=zhuanTiData_list.user_info.user_name;
+    _LabelWidth.constant=CHSCREENWIDTH *260/414;
 }
 - (void)awakeFromNib {
     // Initialization code

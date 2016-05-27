@@ -19,5 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *CaiDanFourImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *buttomImageView;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *wedth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *hight;
 
 @end

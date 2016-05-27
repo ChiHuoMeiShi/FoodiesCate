@@ -27,7 +27,7 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-     NSLog(@"hhhhhhhhhhhh%ld",_aData.list.count);
+  
     return _aData.list.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:

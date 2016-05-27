@@ -37,6 +37,7 @@
 #import "CHCOneWebViewController.h"
 #import "CHzt_infoWebViewController.h"
 #import "CHCWenZhanViewController.h"
+#import "CHLocation.h"
 @interface CHDiscoverViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 {
@@ -44,7 +45,7 @@
 }
 @property(nonatomic,strong)CHCFindData *data;
 @property(nonatomic,strong) CHCfaxian_list * faxianCelllist;
-
+@property (nonatomic,strong)CHLocation * location;
 @end
 @implementation CHDiscoverViewController
 - (void)headerRefreshAction
@@ -74,7 +75,7 @@
     manger.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
     NSString *nsurl=@"http://api.meishi.cc/v5/faxian_new.php?format=json";
     NSDictionary * dic =
-  @{@"lat":@"",@"lon":@"",@"source":@"iphone",@"format":@"json",@"page":@"",@"timestamp":@"",@"rid":@""};
+  @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"page":@"",@"timestamp":@"",@"rid":@""};
      __weak typeof(self) mySelf=self;
     [manger POST:nsurl parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
          CHLog(@"1111%@",responseObject);

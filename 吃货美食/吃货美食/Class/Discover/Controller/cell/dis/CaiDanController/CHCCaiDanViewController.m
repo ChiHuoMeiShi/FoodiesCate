@@ -13,9 +13,11 @@
 #import "CHCCaiDandata.h"
 #import <MJRefresh.h>
 #import "CHCCaiDanWebViewController.h"
+#import "CHLocation.h"
 @interface CHCCaiDanViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView *caiDanTableView;
 @property(nonatomic,strong)CHCCaiDandata *data;
+@property (nonatomic,strong)CHLocation * location;
 @end
 
 @implementation CHCCaiDanViewController
@@ -51,7 +53,7 @@
     AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
     manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     NSString *kUrl = @"http://api.meishi.cc/v5/caidans_list1.php?format=json";
-    NSDictionary *parameters = @{@"lat" : @"34.60519775425116",@"lon" : @"112.4231392332194",@"source" : source,@"format" : @"json", @"t" : @"1",@"page":@"1"};
+    NSDictionary *parameters = @{@"lat" : @(self.location.lat),@"lon" : @(self.location.lon),@"source" : source,@"format" : @"json", @"t" : @"1",@"page":@"1"};
     __weak typeof(self) myself=self;
     [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         CHLog(@"1111%@",responseObject);

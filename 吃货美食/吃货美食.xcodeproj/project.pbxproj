@@ -66,19 +66,10 @@
 		077EE4CB1CEFF961003F4E1B /* CHCCaiDanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077EE4981CEFF961003F4E1B /* CHCCaiDanViewController.xib */; };
 		077EE4CC1CEFF961003F4E1B /* CHCShiCaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 077EE49B1CEFF961003F4E1B /* CHCShiCaiViewController.m */; };
 		077EE4CD1CEFF961003F4E1B /* CHCShiCaiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077EE49C1CEFF961003F4E1B /* CHCShiCaiViewController.xib */; };
-		077EE4CE1CEFF961003F4E1B /* CHFiveCrealsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 077EE49F1CEFF961003F4E1B /* CHFiveCrealsViewController.m */; };
-		077EE4CF1CEFF961003F4E1B /* CHFiveCrealsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077EE4A01CEFF961003F4E1B /* CHFiveCrealsViewController.xib */; };
 		077EE4D01CEFF961003F4E1B /* CHCShiCaiData.m in Sources */ = {isa = PBXBuildFile; fileRef = 077EE4A31CEFF961003F4E1B /* CHCShiCaiData.m */; };
 		077EE4D11CEFF961003F4E1B /* CHCSHiCaiObjData.m in Sources */ = {isa = PBXBuildFile; fileRef = 077EE4A51CEFF961003F4E1B /* CHCSHiCaiObjData.m */; };
-		077EE4D21CEFF961003F4E1B /* CHFruitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 077EE4A81CEFF961003F4E1B /* CHFruitViewController.m */; };
-		077EE4D31CEFF961003F4E1B /* CHFruitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077EE4A91CEFF961003F4E1B /* CHFruitViewController.xib */; };
-		077EE4D41CEFF961003F4E1B /* CHCMeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 077EE4AC1CEFF961003F4E1B /* CHCMeatViewController.m */; };
-		077EE4D51CEFF961003F4E1B /* CHCMeatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077EE4AD1CEFF961003F4E1B /* CHCMeatViewController.xib */; };
-		077EE4D61CEFF961003F4E1B /* CHCShiCaiTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 077EE4B01CEFF961003F4E1B /* CHCShiCaiTableView.m */; };
 		077EE4D71CEFF961003F4E1B /* CHCShiCaiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 077EE4B21CEFF961003F4E1B /* CHCShiCaiTableViewCell.m */; };
 		077EE4D81CEFF961003F4E1B /* CHCShiCaiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077EE4B31CEFF961003F4E1B /* CHCShiCaiTableViewCell.xib */; };
-		077EE4D91CEFF961003F4E1B /* CHCVegetableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 077EE4B51CEFF961003F4E1B /* CHCVegetableController.m */; };
-		077EE4DA1CEFF961003F4E1B /* CHCVegetableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077EE4B61CEFF961003F4E1B /* CHCVegetableController.xib */; };
 		077EE4DB1CEFF961003F4E1B /* CHCZhuanTiTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 077EE4B91CEFF961003F4E1B /* CHCZhuanTiTableViewCell.m */; };
 		077EE4DC1CEFF961003F4E1B /* CHCZhuanTiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077EE4BA1CEFF961003F4E1B /* CHCZhuanTiTableViewCell.xib */; };
 		077EE4DD1CEFF961003F4E1B /* CHZhuanTiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 077EE4BC1CEFF961003F4E1B /* CHZhuanTiViewController.m */; };
@@ -92,6 +83,10 @@
 		077EE4EC1CF00F4B003F4E1B /* CHCFaXianDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077EE4EB1CF00F4B003F4E1B /* CHCFaXianDetailViewController.xib */; };
 		077EE4F41CF0381A003F4E1B /* CHCCaiDanWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 077EE4F21CF0381A003F4E1B /* CHCCaiDanWebViewController.m */; };
 		077EE4F51CF0381A003F4E1B /* CHCCaiDanWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077EE4F31CF0381A003F4E1B /* CHCCaiDanWebViewController.xib */; };
+		07836F041CF87EE600F3653C /* CHCVegetableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07836F031CF87EE600F3653C /* CHCVegetableTableView.m */; };
+		07836F071CF87F1400F3653C /* CHFiveCrealsViewTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07836F061CF87F1400F3653C /* CHFiveCrealsViewTableView.m */; };
+		07836F0A1CF87F3F00F3653C /* CHFruitViewTableVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 07836F091CF87F3F00F3653C /* CHFruitViewTableVIew.m */; };
+		07836F0D1CF87F5A00F3653C /* CHMeatTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07836F0C1CF87F5A00F3653C /* CHMeatTableView.m */; };
 		0787A3D61CF18ACD0016393C /* CHCOneWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0787A3D41CF18ACD0016393C /* CHCOneWebViewController.m */; };
 		0787A3DB1CF194EB0016393C /* CHzt_infoWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0787A3D91CF194EB0016393C /* CHzt_infoWebViewController.m */; };
 		0787A3DC1CF194EB0016393C /* CHzt_infoWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0787A3DA1CF194EB0016393C /* CHzt_infoWebViewController.xib */; };
@@ -477,27 +472,13 @@
 		077EE49A1CEFF961003F4E1B /* CHCShiCaiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCShiCaiViewController.h; sourceTree = "<group>"; };
 		077EE49B1CEFF961003F4E1B /* CHCShiCaiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCShiCaiViewController.m; sourceTree = "<group>"; };
 		077EE49C1CEFF961003F4E1B /* CHCShiCaiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCShiCaiViewController.xib; sourceTree = "<group>"; };
-		077EE49E1CEFF961003F4E1B /* CHFiveCrealsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHFiveCrealsViewController.h; sourceTree = "<group>"; };
-		077EE49F1CEFF961003F4E1B /* CHFiveCrealsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHFiveCrealsViewController.m; sourceTree = "<group>"; };
-		077EE4A01CEFF961003F4E1B /* CHFiveCrealsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHFiveCrealsViewController.xib; sourceTree = "<group>"; };
 		077EE4A21CEFF961003F4E1B /* CHCShiCaiData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCShiCaiData.h; sourceTree = "<group>"; };
 		077EE4A31CEFF961003F4E1B /* CHCShiCaiData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCShiCaiData.m; sourceTree = "<group>"; };
 		077EE4A41CEFF961003F4E1B /* CHCSHiCaiObjData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSHiCaiObjData.h; sourceTree = "<group>"; };
 		077EE4A51CEFF961003F4E1B /* CHCSHiCaiObjData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSHiCaiObjData.m; sourceTree = "<group>"; };
-		077EE4A71CEFF961003F4E1B /* CHFruitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHFruitViewController.h; sourceTree = "<group>"; };
-		077EE4A81CEFF961003F4E1B /* CHFruitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHFruitViewController.m; sourceTree = "<group>"; };
-		077EE4A91CEFF961003F4E1B /* CHFruitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHFruitViewController.xib; sourceTree = "<group>"; };
-		077EE4AB1CEFF961003F4E1B /* CHCMeatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCMeatViewController.h; sourceTree = "<group>"; };
-		077EE4AC1CEFF961003F4E1B /* CHCMeatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCMeatViewController.m; sourceTree = "<group>"; };
-		077EE4AD1CEFF961003F4E1B /* CHCMeatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCMeatViewController.xib; sourceTree = "<group>"; };
-		077EE4AF1CEFF961003F4E1B /* CHCShiCaiTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCShiCaiTableView.h; sourceTree = "<group>"; };
-		077EE4B01CEFF961003F4E1B /* CHCShiCaiTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCShiCaiTableView.m; sourceTree = "<group>"; };
-		077EE4B11CEFF961003F4E1B /* CHCShiCaiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCShiCaiTableViewCell.h; sourceTree = "<group>"; };
-		077EE4B21CEFF961003F4E1B /* CHCShiCaiTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCShiCaiTableViewCell.m; sourceTree = "<group>"; };
-		077EE4B31CEFF961003F4E1B /* CHCShiCaiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCShiCaiTableViewCell.xib; sourceTree = "<group>"; };
-		077EE4B41CEFF961003F4E1B /* CHCVegetableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCVegetableController.h; sourceTree = "<group>"; };
-		077EE4B51CEFF961003F4E1B /* CHCVegetableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCVegetableController.m; sourceTree = "<group>"; };
-		077EE4B61CEFF961003F4E1B /* CHCVegetableController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCVegetableController.xib; sourceTree = "<group>"; };
+		077EE4B11CEFF961003F4E1B /* CHCShiCaiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHCShiCaiTableViewCell.h; path = VegetableController/CHCShiCaiTableViewCell.h; sourceTree = "<group>"; };
+		077EE4B21CEFF961003F4E1B /* CHCShiCaiTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHCShiCaiTableViewCell.m; path = VegetableController/CHCShiCaiTableViewCell.m; sourceTree = "<group>"; };
+		077EE4B31CEFF961003F4E1B /* CHCShiCaiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CHCShiCaiTableViewCell.xib; path = VegetableController/CHCShiCaiTableViewCell.xib; sourceTree = "<group>"; };
 		077EE4B81CEFF961003F4E1B /* CHCZhuanTiTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCZhuanTiTableViewCell.h; sourceTree = "<group>"; };
 		077EE4B91CEFF961003F4E1B /* CHCZhuanTiTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCZhuanTiTableViewCell.m; sourceTree = "<group>"; };
 		077EE4BA1CEFF961003F4E1B /* CHCZhuanTiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCZhuanTiTableViewCell.xib; sourceTree = "<group>"; };
@@ -519,6 +500,14 @@
 		077EE4F11CF0381A003F4E1B /* CHCCaiDanWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCCaiDanWebViewController.h; sourceTree = "<group>"; };
 		077EE4F21CF0381A003F4E1B /* CHCCaiDanWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCCaiDanWebViewController.m; sourceTree = "<group>"; };
 		077EE4F31CF0381A003F4E1B /* CHCCaiDanWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCCaiDanWebViewController.xib; sourceTree = "<group>"; };
+		07836F021CF87EE600F3653C /* CHCVegetableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCVegetableTableView.h; sourceTree = "<group>"; };
+		07836F031CF87EE600F3653C /* CHCVegetableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCVegetableTableView.m; sourceTree = "<group>"; };
+		07836F051CF87F1400F3653C /* CHFiveCrealsViewTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHFiveCrealsViewTableView.h; sourceTree = "<group>"; };
+		07836F061CF87F1400F3653C /* CHFiveCrealsViewTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHFiveCrealsViewTableView.m; sourceTree = "<group>"; };
+		07836F081CF87F3F00F3653C /* CHFruitViewTableVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHFruitViewTableVIew.h; sourceTree = "<group>"; };
+		07836F091CF87F3F00F3653C /* CHFruitViewTableVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHFruitViewTableVIew.m; sourceTree = "<group>"; };
+		07836F0B1CF87F5A00F3653C /* CHMeatTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMeatTableView.h; sourceTree = "<group>"; };
+		07836F0C1CF87F5A00F3653C /* CHMeatTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMeatTableView.m; sourceTree = "<group>"; };
 		0787A3D31CF18ACD0016393C /* CHCOneWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCOneWebViewController.h; sourceTree = "<group>"; };
 		0787A3D41CF18ACD0016393C /* CHCOneWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCOneWebViewController.m; sourceTree = "<group>"; };
 		0787A3D51CF18ACD0016393C /* CHCOneWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCOneWebViewController.xib; sourceTree = "<group>"; };
@@ -1345,10 +1334,14 @@
 				077EE49A1CEFF961003F4E1B /* CHCShiCaiViewController.h */,
 				077EE49B1CEFF961003F4E1B /* CHCShiCaiViewController.m */,
 				077EE49C1CEFF961003F4E1B /* CHCShiCaiViewController.xib */,
+				077EE4B11CEFF961003F4E1B /* CHCShiCaiTableViewCell.h */,
+				077EE4B21CEFF961003F4E1B /* CHCShiCaiTableViewCell.m */,
+				077EE4B31CEFF961003F4E1B /* CHCShiCaiTableViewCell.xib */,
+				077EE4A11CEFF961003F4E1B /* Model */,
 				077EE4AE1CEFF961003F4E1B /* VegetableController */,
-				077EE49D1CEFF961003F4E1B /* Five cereals */,
 				077EE4A61CEFF961003F4E1B /* FruitController */,
 				077EE4AA1CEFF961003F4E1B /* MeatController */,
+				077EE49D1CEFF961003F4E1B /* Five cereals */,
 			);
 			path = ShiCaiController;
 			sourceTree = "<group>";
@@ -1356,10 +1349,8 @@
 		077EE49D1CEFF961003F4E1B /* Five cereals */ = {
 			isa = PBXGroup;
 			children = (
-				077EE49E1CEFF961003F4E1B /* CHFiveCrealsViewController.h */,
-				077EE49F1CEFF961003F4E1B /* CHFiveCrealsViewController.m */,
-				077EE4A01CEFF961003F4E1B /* CHFiveCrealsViewController.xib */,
-				077EE4A11CEFF961003F4E1B /* Model */,
+				07836F051CF87F1400F3653C /* CHFiveCrealsViewTableView.h */,
+				07836F061CF87F1400F3653C /* CHFiveCrealsViewTableView.m */,
 			);
 			path = "Five cereals";
 			sourceTree = "<group>";
@@ -1372,15 +1363,15 @@
 				077EE4A41CEFF961003F4E1B /* CHCSHiCaiObjData.h */,
 				077EE4A51CEFF961003F4E1B /* CHCSHiCaiObjData.m */,
 			);
-			path = Model;
+			name = Model;
+			path = "Five cereals/Model";
 			sourceTree = "<group>";
 		};
 		077EE4A61CEFF961003F4E1B /* FruitController */ = {
 			isa = PBXGroup;
 			children = (
-				077EE4A71CEFF961003F4E1B /* CHFruitViewController.h */,
-				077EE4A81CEFF961003F4E1B /* CHFruitViewController.m */,
-				077EE4A91CEFF961003F4E1B /* CHFruitViewController.xib */,
+				07836F081CF87F3F00F3653C /* CHFruitViewTableVIew.h */,
+				07836F091CF87F3F00F3653C /* CHFruitViewTableVIew.m */,
 			);
 			path = FruitController;
 			sourceTree = "<group>";
@@ -1388,9 +1379,8 @@
 		077EE4AA1CEFF961003F4E1B /* MeatController */ = {
 			isa = PBXGroup;
 			children = (
-				077EE4AB1CEFF961003F4E1B /* CHCMeatViewController.h */,
-				077EE4AC1CEFF961003F4E1B /* CHCMeatViewController.m */,
-				077EE4AD1CEFF961003F4E1B /* CHCMeatViewController.xib */,
+				07836F0B1CF87F5A00F3653C /* CHMeatTableView.h */,
+				07836F0C1CF87F5A00F3653C /* CHMeatTableView.m */,
 			);
 			path = MeatController;
 			sourceTree = "<group>";
@@ -1398,14 +1388,8 @@
 		077EE4AE1CEFF961003F4E1B /* VegetableController */ = {
 			isa = PBXGroup;
 			children = (
-				077EE4B41CEFF961003F4E1B /* CHCVegetableController.h */,
-				077EE4B51CEFF961003F4E1B /* CHCVegetableController.m */,
-				077EE4B61CEFF961003F4E1B /* CHCVegetableController.xib */,
-				077EE4AF1CEFF961003F4E1B /* CHCShiCaiTableView.h */,
-				077EE4B01CEFF961003F4E1B /* CHCShiCaiTableView.m */,
-				077EE4B11CEFF961003F4E1B /* CHCShiCaiTableViewCell.h */,
-				077EE4B21CEFF961003F4E1B /* CHCShiCaiTableViewCell.m */,
-				077EE4B31CEFF961003F4E1B /* CHCShiCaiTableViewCell.xib */,
+				07836F021CF87EE600F3653C /* CHCVegetableTableView.h */,
+				07836F031CF87EE600F3653C /* CHCVegetableTableView.m */,
 			);
 			path = VegetableController;
 			sourceTree = "<group>";
@@ -3013,14 +2997,12 @@
 				7A8F53251CEDEE3F00C96506 /* CHRJAIFoodViewController.xib in Resources */,
 				077EE40C1CEFF69E003F4E1B /* CHCArticalCell.xib in Resources */,
 				B71ED8611CDB41660035F6BE /* LaunchScreen.storyboard in Resources */,
-				077EE4D31CEFF961003F4E1B /* CHFruitViewController.xib in Resources */,
 				B72A06971CE369D50091986F /* CHEChatCell.xib in Resources */,
 				7A657CC51CF19F570057BF33 /* CHRPublicNextHeaderDetailView.xib in Resources */,
 				077EE4DC1CEFF961003F4E1B /* CHCZhuanTiTableViewCell.xib in Resources */,
 				B71ED85E1CDB41660035F6BE /* Assets.xcassets in Resources */,
 				077EE4CD1CEFF961003F4E1B /* CHCShiCaiViewController.xib in Resources */,
 				B748A54D1CEE323100A8338C /* CHPublishShiHuaOneCell.xib in Resources */,
-				077EE4DA1CEFF961003F4E1B /* CHCVegetableController.xib in Resources */,
 				7A53C7891CEB0A070098BFEC /* CHRJListFoodBaseTableViewCell.xib in Resources */,
 				7AC8C42A1CE4AE7D0043CAEC /* CHRJSortViewController.xib in Resources */,
 				077EE4431CEFF69E003F4E1B /* CHZTCell.xib in Resources */,
@@ -3051,7 +3033,6 @@
 				7AC8C4301CE4B20A0043CAEC /* CHRJSortTableViewCell.xib in Resources */,
 				B72A06581CE216D10091986F /* CHZSendEChatController.xib in Resources */,
 				B7B7A5DF1CEDB3D0002A80E7 /* CHPublishCookBookCell.xib in Resources */,
-				077EE4D51CEFF961003F4E1B /* CHCMeatViewController.xib in Resources */,
 				077EE4451CEFF69E003F4E1B /* CHDiscoverViewController.xib in Resources */,
 				077EE40E1CEFF69E003F4E1B /* CHVGoods_infoTableViewCell.xib in Resources */,
 				7A05CA791CF71A510055E679 /* CHRCommitViewController.xib in Resources */,
@@ -3072,7 +3053,6 @@
 				077EE4881CEFF8A2003F4E1B /* CHArticalViewController.xib in Resources */,
 				7AC8C4351CE4B2240043CAEC /* CHRJSortCollectionViewCell.xib in Resources */,
 				7AA5D68D1CEA15AA007D0912 /* CHRJListCollectionViewCell.xib in Resources */,
-				077EE4CF1CEFF961003F4E1B /* CHFiveCrealsViewController.xib in Resources */,
 				B71E54951CE78C47003B6BE8 /* CHCateShowController.xib in Resources */,
 				7A82E58A1CEF175D001D3D82 /* CHRJAIFoodCreateViewController.xib in Resources */,
 				7AAF0A401CE184A300708F98 /* CHJRecomdUpdateHCollectionReusableView.xib in Resources */,
@@ -3205,6 +3185,7 @@
 				7A82E5B71CEF5F47001D3D82 /* CHJRecomdSugstFCollectionReusableView.xib in Sources */,
 				7A82E5B81CEF5F47001D3D82 /* CHJRTopBannerCollectCell.xib in Sources */,
 				077EE4D11CEFF961003F4E1B /* CHCSHiCaiObjData.m in Sources */,
+				07836F0A1CF87F3F00F3653C /* CHFruitViewTableVIew.m in Sources */,
 				7A82E5B91CEF5F47001D3D82 /* CHJRecomdTopHCollectionReusableView.xib in Sources */,
 				7A82E5BA1CEF5F47001D3D82 /* CHJRecomdTodayHCollectionReusableView.xib in Sources */,
 				7A82E5BB1CEF5F47001D3D82 /* CHJRecomdUpdateHCollectionReusableView.xib in Sources */,
@@ -3233,11 +3214,11 @@
 				077EE48A1CEFF8A2003F4E1B /* CHCArticalTableView.m in Sources */,
 				7A82E5AB1CEF5F0D001D3D82 /* CHRJSearchDetailViewController.xib in Sources */,
 				7A82E5AC1CEF5F0D001D3D82 /* CHRJSearchColViewCell.xib in Sources */,
+				07836F071CF87F1400F3653C /* CHFiveCrealsViewTableView.m in Sources */,
 				077EE4EA1CF00F0E003F4E1B /* CHCFaXianDetailViewController.m in Sources */,
 				7A82E5AF1CEF5F0D001D3D82 /* CHRJSortTableViewCell.xib in Sources */,
 				7A82E5B01CEF5F0D001D3D82 /* CHRJSortCollectionViewCell.xib in Sources */,
 				077EE4401CEFF69E003F4E1B /* CHTopInfoCell.m in Sources */,
-				077EE4CE1CEFF961003F4E1B /* CHFiveCrealsViewController.m in Sources */,
 				7A82E5B11CEF5F0D001D3D82 /* CHRJSortViewController.xib in Sources */,
 				B7F020651CF5E726009017BC /* CHNameViewCell.m in Sources */,
 				7A82E5B21CEF5F0D001D3D82 /* CHRJBasicViewController.xib in Sources */,
@@ -3282,8 +3263,8 @@
 				B7B7A5BB1CEC91AF002A80E7 /* CHMyPublishController.m in Sources */,
 				7AC8C43C1CE4B3230043CAEC /* CHRJSortContentModel.m in Sources */,
 				7A53C7881CEB0A070098BFEC /* CHRJListFoodBaseTableViewCell.m in Sources */,
-				077EE4D61CEFF961003F4E1B /* CHCShiCaiTableView.m in Sources */,
 				B7B7A5CA1CEC91F2002A80E7 /* CHMySettingController.m in Sources */,
+				07836F0D1CF87F5A00F3653C /* CHMeatTableView.m in Sources */,
 				7AD0DDA31CDCA7CE0057F8B2 /* JWClass.m in Sources */,
 				077EE4DF1CEFF961003F4E1B /* CHCZhuanTiData.m in Sources */,
 				B716865F1CE8257100BEBA3E /* CateUserInfo.m in Sources */,
@@ -3297,7 +3278,6 @@
 				7A6ED6F51CE2FFD5005DF78C /* CHJRTopBannerCollectCell.m in Sources */,
 				B7B7A5DE1CEDB3D0002A80E7 /* CHPublishCookBookCell.m in Sources */,
 				7AC792F61CE85060001CBAA5 /* CHRJSearchModel.m in Sources */,
-				077EE4D91CEFF961003F4E1B /* CHCVegetableController.m in Sources */,
 				7AAF0A7C1CE1ED1600708F98 /* CHJRecomdJumpContentModel.m in Sources */,
 				7AAF0A351CE184A300708F98 /* CHJRecomdFucFCollectionReusableView.m in Sources */,
 				7AC792F31CE85060001CBAA5 /* CHRJSearchDetailViewController.m in Sources */,
@@ -3361,7 +3341,6 @@
 				B7A512AE1CE660060085A6C8 /* CHSixChatCell.m in Sources */,
 				B7B7A5C51CEC91E2002A80E7 /* CHMyDraftController.m in Sources */,
 				B7A5129F1CE65F590085A6C8 /* CHThreeChatCell.m in Sources */,
-				077EE4D41CEFF961003F4E1B /* CHCMeatViewController.m in Sources */,
 				B7A512C01CE660DF0085A6C8 /* CHNineChatCell.m in Sources */,
 				7AAF3F071CE3459E00573EF6 /* CHRWebViewController.m in Sources */,
 				7AD0DDAB1CDCA7CE0057F8B2 /* UIWindow+SettingWithVC.m in Sources */,
@@ -3380,7 +3359,6 @@
 				B7B7A5D01CEC925A002A80E7 /* CHLoginController.m in Sources */,
 				077EE4871CEFF8A2003F4E1B /* CHArticalViewController.m in Sources */,
 				B71ED8531CDB41660035F6BE /* main.m in Sources */,
-				077EE4D21CEFF961003F4E1B /* CHFruitViewController.m in Sources */,
 				7AAF0A4E1CE18C4000708F98 /* CHJRecomdSugstFCollectionReusableView.m in Sources */,
 				7AC792F71CE85060001CBAA5 /* CHRJSearchViewController.m in Sources */,
 				B7B7A5C01CEC91CC002A80E7 /* CHMyCollectController.m in Sources */,
@@ -3414,6 +3392,7 @@
 				07A458231CF05736001CC3C8 /* CHCZhuantiWebViewController.m in Sources */,
 				7AA949441CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.m in Sources */,
 				7AD0DDA71CDCA7CE0057F8B2 /* JWUIClass.m in Sources */,
+				07836F041CF87EE600F3653C /* CHCVegetableTableView.m in Sources */,
 				B7A512BB1CE660A40085A6C8 /* CHEightChatCell.m in Sources */,
 				0787A3DB1CF194EB0016393C /* CHzt_infoWebViewController.m in Sources */,
 				077EE4811CEFF8A2003F4E1B /* CHCArticalData.m in Sources */,

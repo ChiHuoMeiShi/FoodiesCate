@@ -14,4 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *tabelViewimageView;
 @property (weak, nonatomic) IBOutlet UILabel *titlelabel;
 @property (weak, nonatomic) IBOutlet UILabel *detalieLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *width;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *hight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleLabelWidth;
 @end

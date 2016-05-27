@@ -15,7 +15,9 @@
     [_tabelViewimageView sd_setImageWithURL:[NSURL URLWithString:TableVIewData_list.titlepic]];
     _titlelabel.text=TableVIewData_list.title;
     _detalieLabel.text=TableVIewData_list.smalltext;
-    
+    CGFloat W= (CHSCREENWIDTH)*103/414;
+    _width.constant=W;
+    _hight.constant=W;
 }
 
 - (void)awakeFromNib {
