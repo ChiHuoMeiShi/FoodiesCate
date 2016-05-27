@@ -15,6 +15,7 @@
 #import <UIImageView+WebCache.h>
 #import <MJRefresh.h>
 #import "ReusableView.h"
+#import "CHLocation.h"
 @interface CHArticalViewController ()<UIScrollViewDelegate>
 {
      UIPageControl *_pageControl;
@@ -33,7 +34,7 @@
 @property (nonatomic,assign)NSInteger pageNum;
 @property(nonatomic,strong)CHCArticalTableView *tabelView;
 @property(nonatomic,strong)UIScrollView *headscroll;
-
+@property (nonatomic,strong)CHLocation * location;
 @end
 
 @implementation CHArticalViewController
@@ -103,7 +104,7 @@
     AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
     manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     NSString *kUrl = @"http://api.meishi.cc/v5/health_main.php?format=json";
-    NSDictionary *parameters = @{@"lat" : @"34.60519775425116",@"lon" : @"112.4231392332194",@"source" : @"iphone",@"format" : @"json", @"cid" : cid,@"page":@"2"};
+    NSDictionary *parameters = @{@"lat" : @(self.location.lat),@"lon" : @(self.location.lon),@"source" : @"iphone",@"format" : @"json", @"cid" : cid,@"page":@"2"};
     
     [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
        
@@ -171,9 +172,9 @@
 {
     UIScrollView *headscroll = [[UIScrollView alloc] init];
     self.headscroll=headscroll;
-    headscroll.frame = CGRectMake(0, 64, self.view.width, 30);
+    headscroll.frame = CGRectMake(0, 64, CHSCREENWIDTH, 30);
     headscroll.showsHorizontalScrollIndicator = NO;
-    self.segment = [[CHCSegment alloc] initWithFrame:CGRectMake(0,0, self.view.width, 30) withItems:@[@"饮食健康", @"功能性调理", @"人群膳食",@"疾病调理",@"脏腑调理",@"烹饪技巧"]];
+    self.segment = [[CHCSegment alloc] initWithFrame:CGRectMake(0,0, CHSCREENWIDTH, 30) withItems:@[@"饮食健康", @"功能性调理", @"人群膳食",@"疾病调理",@"脏腑调理",@"烹饪技巧"]];
     _segment.segmentBgColor = [UIColor whiteColor];
     
     _segment.defaultPerColor = [UIColor blackColor];
@@ -238,9 +239,9 @@
 
     _scrollerView=[[UIScrollView alloc]init];
    _scrollerView.backgroundColor=[UIColor greenColor];
-   _scrollerView.frame=CGRectMake(0,94, self.view.width, self.view.height-94);
+   _scrollerView.frame=CGRectMake(0,94, CHSCREENWIDTH, CHSCREENHEIGH-94);
     _scrollerView.scrollEnabled = NO;
-    _scrollerView.contentSize=CGSizeMake(self.segment.items.count*self.view.width, self.view.height-94);
+    _scrollerView.contentSize=CGSizeMake(self.segment.items.count*CHSCREENWIDTH, CHSCREENHEIGH-94);
         _scrollerView.delegate=self;
     _scrollerView.pagingEnabled=YES;
     _scrollerView.showsHorizontalScrollIndicator = YES;
@@ -251,7 +252,7 @@
     
     _tabelViewlistArr=[[NSMutableArray alloc]init];
     for (int i=0;i<_segment.items.count; i++) {
-        CHCArticalTableView *tabelView=[[CHCArticalTableView alloc]initWithFrame:CGRectMake(self.view.width*i,0, self.view.width, _scrollerView.frame.size.height) style:UITableViewStylePlain];
+        CHCArticalTableView *tabelView=[[CHCArticalTableView alloc]initWithFrame:CGRectMake(CHSCREENWIDTH*i,0, CHSCREENWIDTH, _scrollerView.frame.size.height) style:UITableViewStylePlain];
       
         self.tabelView=tabelView;
         

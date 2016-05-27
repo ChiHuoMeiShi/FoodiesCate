@@ -22,27 +22,27 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83z-o7-caZ">
-                        <rect key="frame" x="126" y="17" width="272" height="16"/>
+                        <rect key="frame" x="126" y="17" width="262" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="HLR-VF-lcY"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhS-jN-Ls3">
-                        <rect key="frame" x="126" y="59" width="272" height="37"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhS-jN-Ls3">
+                        <rect key="frame" x="126" y="59" width="262" height="37"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="37" id="IhS-8Z-MnV"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="uhS-jN-Ls3" secondAttribute="trailing" id="H43-wR-Kby"/>
-                    <constraint firstAttribute="trailing" secondItem="83z-o7-caZ" secondAttribute="trailing" id="fUw-5E-orc"/>
+                    <constraint firstAttribute="trailing" secondItem="uhS-jN-Ls3" secondAttribute="trailing" constant="10" id="H43-wR-Kby"/>
+                    <constraint firstAttribute="trailing" secondItem="83z-o7-caZ" secondAttribute="trailing" constant="10" id="fUw-5E-orc"/>
                     <constraint firstItem="83z-o7-caZ" firstAttribute="leading" secondItem="IrU-bk-3MH" secondAttribute="trailing" constant="12" id="irw-86-kOT"/>
                     <constraint firstItem="83z-o7-caZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="kRv-NN-J2o"/>
                     <constraint firstItem="83z-o7-caZ" firstAttribute="leading" secondItem="uhS-jN-Ls3" secondAttribute="leading" id="nbP-CM-hTT"/>
@@ -53,8 +53,10 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="detalieLabel" destination="uhS-jN-Ls3" id="4WC-r8-cky"/>
+                <outlet property="hight" destination="u9P-Ju-HDO" id="dY4-gC-ERP"/>
                 <outlet property="tabelViewimageView" destination="IrU-bk-3MH" id="4lC-Et-f5K"/>
                 <outlet property="titlelabel" destination="83z-o7-caZ" id="dkz-Dt-txb"/>
+                <outlet property="width" destination="HAq-S8-N1P" id="PWp-xP-Zki"/>
             </connections>
             <point key="canvasLocation" x="503" y="279"/>
         </tableViewCell>

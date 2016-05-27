@@ -26,47 +26,48 @@
                             <constraint firstAttribute="height" constant="16" id="Hn2-CB-AIy"/>
                             <constraint firstAttribute="width" constant="260" id="kUr-Ib-eCW"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KVs-Rr-Dh5">
                         <rect key="frame" x="315" y="210" width="80" height="80"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="DGU-LG-wJ7"/>
-                            <constraint firstAttribute="height" constant="80" id="eUz-Jn-wm9"/>
+                            <constraint firstAttribute="width" constant="80" id="HYD-gB-kvx"/>
+                            <constraint firstAttribute="height" constant="80" id="aw6-6L-8ng"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Crs-oj-hpW">
                         <rect key="frame" x="298" y="295" width="100" height="16"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="16" id="4F9-mc-QDC"/>
-                            <constraint firstAttribute="width" constant="100" id="LKW-3X-1gM"/>
+                            <constraint firstAttribute="width" constant="100" id="6sY-pd-bjp"/>
+                            <constraint firstAttribute="height" constant="16" id="i51-SV-g2G"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Crs-oj-hpW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="298" id="0aj-ik-ULj"/>
                     <constraint firstItem="TJ7-0C-NB2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="6gR-87-Lao"/>
-                    <constraint firstItem="KVs-Rr-Dh5" firstAttribute="leading" secondItem="TJ7-0C-NB2" secondAttribute="trailing" constant="35" id="Can-eo-VaJ"/>
-                    <constraint firstItem="KVs-Rr-Dh5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="210" id="FRT-bo-nKd"/>
-                    <constraint firstItem="Crs-oj-hpW" firstAttribute="top" secondItem="KVs-Rr-Dh5" secondAttribute="bottom" constant="5" id="PRB-qB-ANQ"/>
+                    <constraint firstAttribute="trailing" secondItem="KVs-Rr-Dh5" secondAttribute="trailing" constant="19" id="Dmt-6t-L0U"/>
+                    <constraint firstAttribute="trailing" secondItem="Crs-oj-hpW" secondAttribute="trailing" constant="16" id="ZDT-SF-e9Z"/>
                     <constraint firstItem="f0i-S6-EwH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="aau-7S-iO6"/>
                     <constraint firstItem="TJ7-0C-NB2" firstAttribute="top" secondItem="f0i-S6-EwH" secondAttribute="bottom" constant="17" id="hoM-ux-e7T"/>
+                    <constraint firstItem="Crs-oj-hpW" firstAttribute="top" secondItem="KVs-Rr-Dh5" secondAttribute="bottom" constant="5" id="ieH-lQ-ptk"/>
                     <constraint firstItem="f0i-S6-EwH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="lEb-Xo-X0H"/>
+                    <constraint firstItem="KVs-Rr-Dh5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="210" id="okE-5n-nSc"/>
                     <constraint firstAttribute="trailing" secondItem="f0i-S6-EwH" secondAttribute="trailing" id="t4J-Gt-kSw"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="LabelWidth" destination="kUr-Ib-eCW" id="Fjd-vg-HnV"/>
                 <outlet property="ZhuanTiImage" destination="f0i-S6-EwH" id="tcf-Ja-DRG"/>
                 <outlet property="buttonLabel" destination="TJ7-0C-NB2" id="OOx-PG-qda"/>
                 <outlet property="lastLabel" destination="Crs-oj-hpW" id="khl-XR-a6T"/>
                 <outlet property="rightImageView" destination="KVs-Rr-Dh5" id="HKf-Wd-XHM"/>
             </connections>
-            <point key="canvasLocation" x="243" y="208"/>
+            <point key="canvasLocation" x="545" y="197"/>
         </tableViewCell>
     </objects>
 </document>

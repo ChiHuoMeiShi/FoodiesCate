@@ -13,7 +13,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         
-        self.perWidth = (self.width)/ 4;
+        self.perWidth = (CHSCREENWIDTH)/ 4;
         
         _items = items;
         
@@ -35,7 +35,7 @@
 - (void)setIndex:(NSInteger)index{
     
     _index = index;
-    self.segmentLayer.frame = CGRectMake(self.perWidth * self.index, self.width, self.perWidth, 0);
+    self.segmentLayer.frame = CGRectMake(self.perWidth * self.index, CHSCREENWIDTH, self.perWidth, 0);
     //每次重置标签索引，必须重新画线
     [self setNeedsDisplay];
     

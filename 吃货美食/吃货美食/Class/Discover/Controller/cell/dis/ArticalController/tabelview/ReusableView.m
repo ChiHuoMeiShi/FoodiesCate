@@ -26,7 +26,7 @@
         _scrollView.showsHorizontalScrollIndicator = YES;
         _scrollView.pagingEnabled=YES;
         _scrollView.delegate=self;
-        _pageControl=[[UIPageControl alloc]initWithFrame:CGRectMake(-50, 130, 100, 40)];
+        _pageControl=[[UIPageControl alloc]initWithFrame:CGRectMake(-50, 150, 100, 40)];
         _pageControl.numberOfPages=4;
         _pageControl.pageIndicatorTintColor=[UIColor  grayColor];
         _pageControl.currentPageIndicatorTintColor=[UIColor whiteColor];
