@@ -18,17 +18,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tabBar.tintColor = [UIColor redColor];
+    
     CHRecommendViewController *recommend = [[CHRecommendViewController alloc] init];
 //    [recommend getCollectionViewData];
-    [self addSubVc:recommend title:@"推荐" imageName:@"chFenlei_1" selectImageName:@"chFenlei_1"];
+    [self addSubVc:recommend title:@"推荐" imageName:@"tuijian" selectImageName:@"tuijian_select"];
     
     CHDiscoverViewController *discover = [[CHDiscoverViewController alloc] init];
-    [self addSubVc:discover title:@"发现" imageName:@"chFenlei_2" selectImageName:@"chFenlei_2"];
+    [self addSubVc:discover title:@"发现" imageName:@"faxian" selectImageName:@"faxian_select"];
     CHEChatViewController *eChat = [[CHEChatViewController alloc] init];
-    [self addSubVc:eChat title:@"食话" imageName:@"chFenlei_3" selectImageName:@"chFenlei_3"];
+    [self addSubVc:eChat title:@"食话" imageName:@"shihua" selectImageName:@"shihua_select"];
     
     CHMeViewController *me = [[CHMeViewController alloc] init];
-    [self addSubVc:me title:@"我" imageName:@"chFenlei_4" selectImageName:@"chFenlei_4"];
+    [self addSubVc:me title:@"我" imageName:@"wode" selectImageName:@"wode_select"];
     
 }
 
