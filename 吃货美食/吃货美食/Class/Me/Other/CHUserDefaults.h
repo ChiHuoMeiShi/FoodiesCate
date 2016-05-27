@@ -11,7 +11,7 @@
 
 @interface CHUserDefaults : NSObject
 
-@property (nonatomic,strong) NSNumber * code;
+
 
 @property (nonatomic,copy) NSString * photo;
 

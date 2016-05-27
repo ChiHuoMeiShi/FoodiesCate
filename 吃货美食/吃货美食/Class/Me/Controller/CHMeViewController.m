@@ -18,6 +18,7 @@
 #import "CHRegisterController.h"
 #import "CHLoginController.h"
 
+
 @interface CHMeViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView *mTableView;
@@ -36,6 +37,7 @@
 
 @implementation CHMeViewController
 
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
@@ -46,15 +48,12 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:YES];
+    
     self.mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH, CHSCREENHEIGH) style:UITableViewStylePlain];
     
     self.mTableView.delegate = self;
     self.mTableView.dataSource = self;
-
     [self.view addSubview:self.mTableView];
-
-    
 }
 //- (void)login{
 //    CHHTTPRequestManager *myManager = [CHHTTPRequestManager manager];
@@ -180,10 +179,10 @@
     self.nameLabel.textAlignment = NSTextAlignmentCenter;
     self.nameLabel.font = [UIFont systemFontOfSize:20.f];
     self.nameLabel.textColor = [UIColor orangeColor];
-    self.userDefault = [CHUserDefaults shareUserDefault];
-    if (self.userDefault.user_id) {
+    CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
+    if (userDefault.user_id) {
         typeof(self) mySelf = self;
-        [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:self.userDefault.photo] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:userDefault.photo] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
             
         } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
             [mySelf.iconBtn setImage:image forState:UIControlStateNormal];
@@ -193,7 +192,7 @@
         self.iconBtn.layer.cornerRadius = self.iconBtn.width * 0.5;
         self.iconBtn.layer.borderWidth = 5.0;
         self.iconBtn.layer.borderColor = [UIColor yellowColor].CGColor;
-        self.nameLabel.text = self.userDefault.user_name;
+        self.nameLabel.text = userDefault.user_name;
     }else{
         [self.iconBtn setImage:[UIImage imageNamed:@"unlogintouxiang"] forState:UIControlStateNormal];
         [self.iconBtn addTarget:self action:@selector(gotoLoginView) forControlEvents:UIControlEventTouchUpInside];
