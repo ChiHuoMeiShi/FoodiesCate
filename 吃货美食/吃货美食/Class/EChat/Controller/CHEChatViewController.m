@@ -73,7 +73,7 @@
     }else{
         CHLoginController *targetVC = [[CHLoginController alloc] init];
         [self.navigationController pushViewController:targetVC animated:YES];
-    }    
+    }
 }
 #pragma mark -- 请求数据(上下拉刷新)
 //请求数据(下拉刷新)
