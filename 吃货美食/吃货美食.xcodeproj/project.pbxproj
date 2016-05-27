@@ -314,6 +314,8 @@
 		B748A54D1CEE323100A8338C /* CHPublishShiHuaOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B748A54B1CEE323100A8338C /* CHPublishShiHuaOneCell.xib */; };
 		B748A54F1CEE3F5D00A8338C /* CHTPublishSHCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = B748A5371CEDF63100A8338C /* CHTPublishSHCell.xib */; };
 		B748A5501CEE46EF00A8338C /* SHImgs.m in Sources */ = {isa = PBXBuildFile; fileRef = B748A5421CEDFCB200A8338C /* SHImgs.m */; };
+		B78E9B471CF82DE700F75885 /* CHRJSearchViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 7AC792EE1CE85060001CBAA5 /* CHRJSearchViewController.xib */; };
+		B78E9B481CF82F1B00F75885 /* CHRJSearchView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 7A3411B11CE8A88F003E4F3C /* CHRJSearchView.xib */; };
 		B7A3F5CC1CE4801700E09AED /* EChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5CB1CE4801700E09AED /* EChatModel.m */; };
 		B7A3F5CF1CE481F700E09AED /* Hot_topocModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5CE1CE481F700E09AED /* Hot_topocModel.m */; };
 		B7A3F5D21CE483F100E09AED /* User_infoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5D11CE483F100E09AED /* User_infoModel.m */; };
@@ -3166,6 +3168,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B78E9B481CF82F1B00F75885 /* CHRJSearchView.xib in Sources */,
+				B78E9B471CF82DE700F75885 /* CHRJSearchViewController.xib in Sources */,
 				7A30D5041CF58F490042DB98 /* CHRPublicNextBaseFoodTableViewCell.m in Sources */,
 				7A30D5051CF58F490042DB98 /* CHRPublicNextFooterStoryView.m in Sources */,
 				7A30D5061CF58F490042DB98 /* CHRPublicNextFooterAddBaseFoodView.m in Sources */,

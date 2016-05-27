@@ -100,7 +100,7 @@
                     //处理后的URL
                     NSString *sendUrlF = [NSString stringWithFormat:@"%@%@%@%@%@",sendUrl,para,self.chTextView.text,mater,self.imageName];
                     NSString *encodeSendUrl = [sendUrlF stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-//                    NSDictionary *parameters = @{@"lat":@"34.60527575482502" ,@"lon":@"" ,@"":@"" ,@"":@"112.4242718465051" ,@"source":@"iphone" ,@"format":@"json" ,@"gid":@"20" ,@"content":self.chTextView.text ,@"img_0":self.imageName};
+
                     if ([self.chTextView.text rangeOfString:@" "].location == NSNotFound) {
                         [myManager.messageRequest POST:encodeSendUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                             NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
@@ -128,51 +128,7 @@
 
     }
 }
-/*
-#pragma mark -- 上传图片
-- (void)upLoadImage{
-    //上传
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    //接收xml
-    //    manager.responseSerializer = [AFXMLParserResponseSerializer serializer];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
-    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:userDefault.email password:userDefault.password];
-    [manager.requestSerializer setValue:@"text/html; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/plain", @"application/xml",nil];
-    NSString *kUrl = @"http://api.meishi.cc/v5/topic_img_upload.php";
-    [manager POST:kUrl parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        [formData appendPartWithFileData:self.imageData name:@"img_0" fileName:@"img_0.jpg" mimeType:@"image/jpeg"];
-    } progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        //开始解析xml
-        
-        GDataXMLDocument *doc = [[GDataXMLDocument alloc] initWithData:responseObject encoding:NSUTF8StringEncoding error:nil];
-        
-        //获取根节点（items）
-        GDataXMLElement *rootElement = [doc rootElement];
-        
-        NSArray *imgs = [rootElement elementsForName:@"imgs"];
-        
-        for (GDataXMLElement *img in imgs) {
-            NSString *imgStr = [img stringValue];
- 
-            //	NSString to NSDictionary
-            NSError *error = nil;
-            NSDictionary *stringDic = [NSJSONSerialization JSONObjectWithData: [imgStr dataUsingEncoding:NSUTF8StringEncoding] options: NSJSONReadingMutableContainers error: &error];
-            self.imageName = stringDic[@"img_0"];
-            CHLog(@"%@",self.imageName);
-        }
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        CHLog(@"#######upload error%@", error);
-    }];
 
-}
-*/
 #pragma mark -- 没图片的
 - (void)sendNoImage{
     CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];

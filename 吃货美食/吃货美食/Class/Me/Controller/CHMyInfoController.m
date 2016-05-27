@@ -12,13 +12,16 @@
 #import <UIButton+WebCache.h>
 #import "CHNameViewCell.h"
 #import "CHLoginController.h"
-@interface CHMyInfoController () <UITableViewDelegate,UITableViewDataSource>
+#import "GDataXMLNode.h"
+@interface CHMyInfoController () <UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     CGFloat _tableViewY;
 }
 @property (nonatomic,strong)UIButton *iconBtn;
 @property (nonatomic,strong)UITextField *nameTextField;
 @property (nonatomic,strong)UITableView *mTableView;
+@property (nonatomic,strong)NSData *imageData;
+@property (nonatomic,strong)NSString *imageName;
 
 
 
@@ -70,11 +73,136 @@
 }
 - (void)changeIcon{
     
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //点击拍照
+        
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            
+            // 0）实例化控制器
+            UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+            // 1）设置照片源
+            [picker setSourceType:UIImagePickerControllerSourceTypeCamera];
+            
+            // 2) 设置允许修改
+            [picker setAllowsEditing:YES];
+            // 3) 设置代理
+            [picker setDelegate:self];
+            // 4) 显示控制器
+            [self presentViewController:picker animated:YES completion:nil];
+            
+        } else {
+            NSLog(@"照片源不可用");
+        }
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //点击去相册
+        if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+            // 0）实例化控制器
+            UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+            // 1）设置照片源
+            [picker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+            // 2) 设置允许修改
+            [picker setAllowsEditing:YES];
+            // 3) 设置代理
+            [picker setDelegate:self];
+            // 4) 显示控制器
+            [self presentViewController:picker animated:YES completion:nil];
+            
+        } else {
+            CHLog(@"照片源不可用");
+        }
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+#pragma mark - imagePicker代理方法
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *image = info[@"UIImagePickerControllerEditedImage"];
+    
+    [self.iconBtn setImage:image forState:UIControlStateNormal];
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    // 需要将照片保存至应用程序沙箱，由于涉及到数据存储，同时与界面无关
+    // 可以使用多线程来保存图像
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // 保存图像
+        // 1. 取图像路径
+        NSArray *docs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *imagePath = [docs[0]stringByAppendingPathComponent:@"newICon.png"];
+        // 2. 转换成NSData保存
+        NSData *imageData = UIImagePNGRepresentation(image);
+        
+        self.imageData = imageData;
+        [imageData writeToFile:imagePath atomically:YES];
+        
+        [self uploadImage];
+        
+    });
+}
+
+- (void)uploadImage{
+    CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager setRequestSerializer:[AFJSONRequestSerializer serializer]];
+    [manager setResponseSerializer:[AFHTTPResponseSerializer serializer]];
+//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    //接收xml
+    //    manager.responseSerializer = [AFXMLParserResponseSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    
+    [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:userDefault.email password:userDefault.password];
+    [manager.requestSerializer setValue:@"text/html; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/plain", @"application/xml",@"text/html",nil];
+    NSString *kUrl = @"http://api.meishi.cc/v5/modi_userinfo.php?format=json";
+    
+    NSString *encodeKurl = [kUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    //如果带图片
+    if (self.imageData) {
+        [manager POST:encodeKurl parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+            [formData appendPartWithFileData:self.imageData name:@"photo" fileName:@"photo.jpg" mimeType:@"image/jpeg"];
+        } progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
+            
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+            NSDictionary *dataDict = dict[@"data"];
+            self.imageName = [dataDict objectForKey:@"photo"];
+            CHLog(@"上传头像返回的信息%@",self.imageName);
+            CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
+            [userDefault setPhoto:self.imageName];
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            CHLog(@"#######upload error%@", error);
+        }];
+    }
+}
+- (void)updateUserDefault{
+    CHUserDefaults *userDefalt = [CHUserDefaults shareUserDefault];
+    AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
+    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+    NSString *kUrl = @"http://api.meishi.cc/v5/login.php?format=json";
+    NSDictionary *parameters = @{@"lat" : @"34.6049907522264",@"lon" : @"112.4229875834745",@"source" : @"iphone",@"format" : @"json"};
+    
+    [manger.requestSerializer setAuthorizationHeaderFieldWithUsername:userDefalt.email password:userDefalt.password];
+    [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSDictionary * dic = (NSDictionary *)responseObject;
+        int code = [[dic objectForKey:@"code"] intValue];
+        if (code == 1) {
+            [userDefalt setUserDict:dic];
+        }
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    }];
 }
 
 #pragma mark - UITableViewDataSource
-
-
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     if (1 == section) {
         return @"设置";
@@ -142,7 +270,5 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-
 
 @end
