@@ -337,6 +337,10 @@
 		B7E01C0B1CF1F85F0079815C /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E01C091CF1F85F0079815C /* libxml2.2.tbd */; };
 		B7E01C0C1CF1F85F0079815C /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B7E01C0A1CF1F85F0079815C /* libxml2.tbd */; };
 		B7E01C0F1CF1F8DF0079815C /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = B7E01C0E1CF1F8DF0079815C /* GDataXMLNode.m */; };
+		B7F020601CF5D32D009017BC /* CHMyInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F0205E1CF5D32D009017BC /* CHMyInfoController.m */; };
+		B7F020611CF5D32D009017BC /* CHMyInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F0205F1CF5D32D009017BC /* CHMyInfoController.xib */; };
+		B7F020651CF5E726009017BC /* CHNameViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F020631CF5E726009017BC /* CHNameViewCell.m */; };
+		B7F020661CF5E726009017BC /* CHNameViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7F020641CF5E726009017BC /* CHNameViewCell.xib */; };
 		B7F6154D1CDC84A600AF1697 /* CHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F6154C1CDC84A600AF1697 /* CHTabBarController.m */; };
 		B7F615501CDC84F000AF1697 /* CHNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F6154F1CDC84F000AF1697 /* CHNavigationController.m */; };
 		B7F615541CDC854500AF1697 /* CHMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7F615521CDC854500AF1697 /* CHMeViewController.m */; };
@@ -861,6 +865,12 @@
 		B7E01C0A1CF1F85F0079815C /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		B7E01C0D1CF1F8DF0079815C /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		B7E01C0E1CF1F8DF0079815C /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		B7F0205D1CF5D32D009017BC /* CHMyInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMyInfoController.h; sourceTree = "<group>"; };
+		B7F0205E1CF5D32D009017BC /* CHMyInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMyInfoController.m; sourceTree = "<group>"; };
+		B7F0205F1CF5D32D009017BC /* CHMyInfoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHMyInfoController.xib; sourceTree = "<group>"; };
+		B7F020621CF5E726009017BC /* CHNameViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNameViewCell.h; sourceTree = "<group>"; };
+		B7F020631CF5E726009017BC /* CHNameViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHNameViewCell.m; sourceTree = "<group>"; };
+		B7F020641CF5E726009017BC /* CHNameViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHNameViewCell.xib; sourceTree = "<group>"; };
 		B7F6154B1CDC84A600AF1697 /* CHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTabBarController.h; sourceTree = "<group>"; };
 		B7F6154C1CDC84A600AF1697 /* CHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTabBarController.m; sourceTree = "<group>"; };
 		B7F6154E1CDC84F000AF1697 /* CHNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNavigationController.h; sourceTree = "<group>"; };
@@ -2372,6 +2382,7 @@
 		B71ED8711CDB52560035F6BE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B7F0205C1CF5D2FE009017BC /* MyInfo */,
 				B76AE9291CEF473D00E4A975 /* Register */,
 				B7B7A5CC1CEC9249002A80E7 /* Login */,
 				B7B7A5B71CEC9180002A80E7 /* MySetting */,
@@ -2742,6 +2753,19 @@
 			name = FoodClass;
 			sourceTree = "<group>";
 		};
+		B7F0205C1CF5D2FE009017BC /* MyInfo */ = {
+			isa = PBXGroup;
+			children = (
+				B7F0205D1CF5D32D009017BC /* CHMyInfoController.h */,
+				B7F0205E1CF5D32D009017BC /* CHMyInfoController.m */,
+				B7F0205F1CF5D32D009017BC /* CHMyInfoController.xib */,
+				B7F020621CF5E726009017BC /* CHNameViewCell.h */,
+				B7F020631CF5E726009017BC /* CHNameViewCell.m */,
+				B7F020641CF5E726009017BC /* CHNameViewCell.xib */,
+			);
+			name = MyInfo;
+			sourceTree = "<group>";
+		};
 		B7F615401CDC808A00AF1697 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -2918,10 +2942,12 @@
 				7AC8C42A1CE4AE7D0043CAEC /* CHRJSortViewController.xib in Resources */,
 				077EE4431CEFF69E003F4E1B /* CHZTCell.xib in Resources */,
 				7A657CC31CF19F3C0057BF33 /* CHRPublicNextHeaderAddStepView.xib in Resources */,
+				B7F020661CF5E726009017BC /* CHNameViewCell.xib in Resources */,
 				7AA5D67F1CE9E6D9007D0912 /* CHRJListViewController.xib in Resources */,
 				077EE4861CEFF8A2003F4E1B /* CHCArticalTableViewCell.xib in Resources */,
 				7AAF3F081CE3459E00573EF6 /* CHRWebViewController.xib in Resources */,
 				7A53C78E1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.xib in Resources */,
+				B7F020611CF5D32D009017BC /* CHMyInfoController.xib in Resources */,
 				B71E549A1CE78D5F003B6BE8 /* CHGoodCookViewController.xib in Resources */,
 				B7B7A5C11CEC91CC002A80E7 /* CHMyCollectController.xib in Resources */,
 				077EE40A1CEFF69E003F4E1B /* CHCActivityTableViewCell.xib in Resources */,
@@ -3072,6 +3098,7 @@
 				7A82E5B41CEF5F47001D3D82 /* CHRWebViewController.xib in Sources */,
 				7A9CF49C1CEFF5EC00A2D830 /* CHRPublishViewController.m in Sources */,
 				7A82E5B51CEF5F47001D3D82 /* CHJRecomdFucFCollectionReusableView.xib in Sources */,
+				B7F020601CF5D32D009017BC /* CHMyInfoController.m in Sources */,
 				077EE4CA1CEFF961003F4E1B /* CHCCaiDanViewController.m in Sources */,
 				7A82E5B61CEF5F47001D3D82 /* CHJRecomdTodayBanerFCollectionReusableView.xib in Sources */,
 				7A82E5B71CEF5F47001D3D82 /* CHJRecomdSugstFCollectionReusableView.xib in Sources */,
@@ -3112,6 +3139,7 @@
 				077EE4401CEFF69E003F4E1B /* CHTopInfoCell.m in Sources */,
 				077EE4CE1CEFF961003F4E1B /* CHFiveCrealsViewController.m in Sources */,
 				7A82E5B11CEF5F0D001D3D82 /* CHRJSortViewController.xib in Sources */,
+				B7F020651CF5E726009017BC /* CHNameViewCell.m in Sources */,
 				7A82E5B21CEF5F0D001D3D82 /* CHRJBasicViewController.xib in Sources */,
 				B748A5501CEE46EF00A8338C /* SHImgs.m in Sources */,
 				7ADF0E3B1CF1ED0A00273AA0 /* CHRImageButton.m in Sources */,
@@ -3398,7 +3426,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E515E1C7B1E61D319A6417F9 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
@@ -3442,6 +3470,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TianTian.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -3449,7 +3478,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E24DDEC6F9C631EC52496A0 /* Pods.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
@@ -3493,6 +3522,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.TianTian.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

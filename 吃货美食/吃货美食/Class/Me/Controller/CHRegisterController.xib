@@ -166,23 +166,23 @@
                     <exclude reference="LXW-sl-PBH"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="4hU-La-zwe"/>
-                    <exclude reference="gcN-nI-9As"/>
                     <exclude reference="2TA-9f-E72"/>
                     <exclude reference="CaY-12-5CD"/>
                     <exclude reference="bot-Vb-Mtm"/>
-                    <exclude reference="Est-so-8fT"/>
-                    <exclude reference="FO0-Ur-fF5"/>
-                    <exclude reference="nwv-AB-gbV"/>
                     <exclude reference="5fs-FQ-RFe"/>
                     <exclude reference="MrE-MF-Ovy"/>
                     <exclude reference="neX-xb-eL7"/>
-                    <exclude reference="OC6-TS-xA5"/>
-                    <exclude reference="Wl1-WH-o3u"/>
-                    <exclude reference="eOy-ms-fmp"/>
                     <exclude reference="ERF-G5-ep0"/>
                     <exclude reference="Q1W-9t-UY0"/>
                     <exclude reference="RST-BC-bJk"/>
+                    <exclude reference="4hU-La-zwe"/>
+                    <exclude reference="gcN-nI-9As"/>
+                    <exclude reference="OC6-TS-xA5"/>
+                    <exclude reference="Wl1-WH-o3u"/>
+                    <exclude reference="eOy-ms-fmp"/>
+                    <exclude reference="Est-so-8fT"/>
+                    <exclude reference="FO0-Ur-fF5"/>
+                    <exclude reference="nwv-AB-gbV"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -194,20 +194,20 @@
                     <include reference="PAW-e5-nuD"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="4hU-La-zwe"/>
-                    <include reference="gcN-nI-9As"/>
                     <include reference="2TA-9f-E72"/>
                     <include reference="CaY-12-5CD"/>
                     <include reference="bot-Vb-Mtm"/>
-                    <include reference="Est-so-8fT"/>
-                    <include reference="FO0-Ur-fF5"/>
-                    <include reference="nwv-AB-gbV"/>
                     <include reference="5fs-FQ-RFe"/>
                     <include reference="MrE-MF-Ovy"/>
                     <include reference="neX-xb-eL7"/>
+                    <include reference="4hU-La-zwe"/>
+                    <include reference="gcN-nI-9As"/>
                     <include reference="OC6-TS-xA5"/>
                     <include reference="Wl1-WH-o3u"/>
                     <include reference="eOy-ms-fmp"/>
+                    <include reference="Est-so-8fT"/>
+                    <include reference="FO0-Ur-fF5"/>
+                    <include reference="nwv-AB-gbV"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">

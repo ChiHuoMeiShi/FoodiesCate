@@ -42,7 +42,7 @@
     NSString *kUrl = @"http://api.meishi.cc/v5/login.php?format=json";
     NSDictionary *parameters = @{@"lat" : @"34.6049907522264",@"lon" : @"112.4229875834745",@"source" : @"iphone",@"format" : @"json"};
     
-    [manger.requestSerializer setAuthorizationHeaderFieldWithUsername:@"13007551820" password:@"zt123456"];
+    [manger.requestSerializer setAuthorizationHeaderFieldWithUsername:self.accountTextField.text password:self.passwdTextField.text];
     __weak typeof(self) mySelf = self;
     [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         

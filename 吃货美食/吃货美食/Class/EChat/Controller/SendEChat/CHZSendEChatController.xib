@@ -73,11 +73,11 @@
                     <exclude reference="Rpf-lq-J6u"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="fdy-5t-ant"/>
+                    <exclude reference="iqE-4d-9fb"/>
                     <exclude reference="Gnr-dX-LrE"/>
                     <exclude reference="MWs-gh-C1i"/>
                     <exclude reference="qOw-Aq-flS"/>
-                    <exclude reference="fdy-5t-ant"/>
-                    <exclude reference="iqE-4d-9fb"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -86,11 +86,11 @@
                     <include reference="Rpf-lq-J6u"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="fdy-5t-ant"/>
+                    <include reference="iqE-4d-9fb"/>
                     <include reference="Gnr-dX-LrE"/>
                     <include reference="MWs-gh-C1i"/>
                     <include reference="qOw-Aq-flS"/>
-                    <include reference="fdy-5t-ant"/>
-                    <include reference="iqE-4d-9fb"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="-46" y="216"/>

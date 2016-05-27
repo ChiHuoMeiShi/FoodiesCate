@@ -62,19 +62,12 @@
         }];
     }
 }
-- (void)msMail
-{
-    
-}
+
 - (void)addClick
 {
     CHZSendEChatController *targetVC = [[CHZSendEChatController alloc] init];
     [self.navigationController pushViewController:targetVC animated:YES];
     
-}
-- (void)search
-{
-
 }
 #pragma mark -- 请求数据(上下拉刷新)
 //请求数据(下拉刷新)
@@ -128,14 +121,17 @@
 - (void)addNavigationItem
 {
     //leftBarButtonItem
-    UIBarButtonItem *leftItemAdd = [UIBarButtonItem barItemWithImageName:@"umeng_add_photo" withSelectImage:@"umeng_add_photo" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTarget:self action:@selector(addClick) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = leftItemAdd;
-    //rightBarButtonItems
-    UIBarButtonItem *rightItemMail = [UIBarButtonItem barItemWithImageName:@"ms_mail2" withSelectImage:@"ms_mail2" withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTarget:self action:@selector(msMail) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem *leftItemAdd = [UIBarButtonItem barItemWithImageName:@"umeng_add_photo" withSelectImage:@"umeng_add_photo" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTarget:self action:@selector(addClick) forControlEvents:UIControlEventTouchUpInside];
+//    self.navigationItem.leftBarButtonItem = leftItemAdd;
     
-    UIBarButtonItem *rightItemSearch = [UIBarButtonItem barItemWithImageName:@"topsearchicon_grey_2" withSelectImage:@"topsearchicon_grey_2" withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTarget:self action:@selector(search) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"index_icon_photo" withSelectImage:@"index_icon_photo" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTarget:self action:@selector(addClick) forControlEvents:UIControlEventTouchUpInside withSize:CGSizeMake(40.f, 40.f)];
     
-    self.navigationItem.rightBarButtonItems = @[rightItemSearch,rightItemMail];
+//    //rightBarButtonItems
+//    UIBarButtonItem *rightItemMail = [UIBarButtonItem barItemWithImageName:@"ms_mail2" withSelectImage:@"ms_mail2" withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTarget:self action:@selector(msMail) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    UIBarButtonItem *rightItemSearch = [UIBarButtonItem barItemWithImageName:@"topsearchicon_grey_2" withSelectImage:@"topsearchicon_grey_2" withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTarget:self action:@selector(search) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    self.navigationItem.rightBarButtonItems = @[rightItemSearch,rightItemMail];
 }
 #pragma mark -- viewDidLoad
 - (void)viewDidLoad {
