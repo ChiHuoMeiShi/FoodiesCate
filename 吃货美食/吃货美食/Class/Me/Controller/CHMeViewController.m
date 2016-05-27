@@ -53,6 +53,7 @@
     
     self.mTableView.delegate = self;
     self.mTableView.dataSource = self;
+    [self.mTableView reloadData];
     [self.view addSubview:self.mTableView];
 }
 //- (void)login{
@@ -140,24 +141,44 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
     UITableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     if (0 == indexPath.row) {
-        CHMyPublishController *targetVC = [[CHMyPublishController alloc] init];
-        [self.navigationController pushViewController:targetVC animated:YES];
+        if (userDefault.user_name) {
+            CHMyPublishController *targetVC = [[CHMyPublishController alloc] init];
+            [self.navigationController pushViewController:targetVC animated:YES];
+        }else{
+            [self gotoLoginView];
+        }
     }
     if (1 == indexPath.row){
-        CHMyCollectController *targetVC = [[CHMyCollectController alloc] init];
-        [self.navigationController pushViewController:targetVC animated:YES];
+        if (userDefault.user_name) {
+            CHMyCollectController *targetVC = [[CHMyCollectController alloc] init];
+            [self.navigationController pushViewController:targetVC animated:YES];
+        }else{
+            [self gotoLoginView];
+        }
     }
     if (2 == indexPath.row){
-        CHMyDraftController *targetVC = [[CHMyDraftController alloc] init];
-        [self.navigationController pushViewController:targetVC animated:YES];
+        
+        if (userDefault.user_name) {
+            CHMyDraftController *targetVC = [[CHMyDraftController alloc] init];
+            [self.navigationController pushViewController:targetVC animated:YES];
+        }else{
+            [self gotoLoginView];
+        }
+
     }
     if (3 == indexPath.row){
-        CHMySettingController *targetVC = [[CHMySettingController alloc] init];
-        [self.navigationController pushViewController:targetVC animated:YES];
+        
+        if (userDefault.user_name) {
+            CHMyInfoController *targetVC = [[CHMyInfoController alloc] init];
+            [self.navigationController pushViewController:targetVC animated:YES];
+        }else{
+            [self gotoLoginView];
+        }
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -200,6 +221,7 @@
     }
     [headerView addSubview:self.iconBtn];
     [headerView addSubview:self.nameLabel];
+    
     return headerView;
 }
 

@@ -17,7 +17,8 @@
 #import "CHCateShowController.h"
 #import "CHGoodCookViewController.h"
 #import "CHFoodClassViewController.h"
-
+#import "CHUserDefaults.h"
+#import "CHLoginController.h"
 @interface CHEChatViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong,nonatomic) UITableView *eChatTableView;
@@ -65,9 +66,14 @@
 
 - (void)addClick
 {
-    CHZSendEChatController *targetVC = [[CHZSendEChatController alloc] init];
-    [self.navigationController pushViewController:targetVC animated:YES];
-    
+    CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
+    if (userDefault.user_name) {
+        CHZSendEChatController *targetVC = [[CHZSendEChatController alloc] init];
+        [self.navigationController pushViewController:targetVC animated:YES];
+    }else{
+        CHLoginController *targetVC = [[CHLoginController alloc] init];
+        [self.navigationController pushViewController:targetVC animated:YES];
+    }    
 }
 #pragma mark -- 请求数据(上下拉刷新)
 //请求数据(下拉刷新)

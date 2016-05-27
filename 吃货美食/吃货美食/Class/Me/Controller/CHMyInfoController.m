@@ -195,8 +195,10 @@
 
 #pragma mark - UITableViewDataSource
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    if (1 == section) {
-        return @"设置昵称 只能输入汉字字母和数字";
+    if (0 == section) {
+        return @"昵称只能输入汉字字母和数字";
+    }else if (1 == section) {
+        return @"设置";
     }else if (2 == section){
         return @"退出当前账号";
     }
