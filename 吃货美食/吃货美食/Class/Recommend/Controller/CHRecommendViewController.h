@@ -22,6 +22,7 @@
 #import "CHJRecmdTodayCollectionViewCell.h"
 #import "CHRJSearchModel.h"
 #import "CHRPublishViewController.h"
+#import "CHRCommitViewController.h"
 
 #define CHRCollectionbWidth (CHSCREENWIDTH - 20.f)
 

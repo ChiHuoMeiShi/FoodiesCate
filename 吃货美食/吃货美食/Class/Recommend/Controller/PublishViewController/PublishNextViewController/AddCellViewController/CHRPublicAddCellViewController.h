@@ -7,7 +7,14 @@
 //
 
 #import "CHRJBasicViewController.h"
-
+#import "CHRPubAddMainFood.h"
 @interface CHRPublicAddCellViewController : CHRJBasicViewController
+
+@property (nonatomic,weak)id<CHRPubAddMainFood> delegate;
+
+@property (weak, nonatomic) IBOutlet UITextField *addNameTextField;
+
+@property (weak, nonatomic) IBOutlet UITextField *addCountTextField;
+
 
 @end

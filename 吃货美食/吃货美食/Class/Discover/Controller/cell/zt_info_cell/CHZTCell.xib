@@ -15,19 +15,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCd-2b-1Jm">
-                        <rect key="frame" x="11" y="10" width="200" height="16"/>
+                        <rect key="frame" x="11" y="10" width="496" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="s11-aU-BXZ"/>
-                            <constraint firstAttribute="width" constant="200" id="uJv-dA-YNx"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJ4-2P-auS">
-                        <rect key="frame" x="11" y="38" width="150" height="18"/>
+                        <rect key="frame" x="11" y="38" width="496" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="150" id="3fh-Y2-Hys"/>
                             <constraint firstAttribute="height" constant="18" id="MXK-5D-1xg"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -35,16 +33,18 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hT0-RW-EYL">
-                        <rect key="frame" x="11" y="67" width="390" height="168"/>
+                        <rect key="frame" x="11" y="67" width="485" height="168"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="390" id="aj6-6w-agA"/>
                             <constraint firstAttribute="height" constant="168" id="dXg-KI-U45"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="dCd-2b-1Jm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="H4j-r8-WZ8"/>
+                    <constraint firstAttribute="trailing" secondItem="hT0-RW-EYL" secondAttribute="trailing" constant="11" id="OwX-oT-CKS"/>
+                    <constraint firstAttribute="trailing" secondItem="dCd-2b-1Jm" secondAttribute="trailing" id="UgJ-72-q5n"/>
                     <constraint firstItem="dCd-2b-1Jm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="aCi-Mi-IUu"/>
+                    <constraint firstAttribute="trailing" secondItem="gJ4-2P-auS" secondAttribute="trailing" id="cyf-cB-jsa"/>
                     <constraint firstItem="gJ4-2P-auS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="jI0-SL-cbk"/>
                     <constraint firstItem="hT0-RW-EYL" firstAttribute="top" secondItem="gJ4-2P-auS" secondAttribute="bottom" constant="11" id="nnZ-LS-Fhi"/>
                     <constraint firstItem="hT0-RW-EYL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="sjY-bR-fe0"/>

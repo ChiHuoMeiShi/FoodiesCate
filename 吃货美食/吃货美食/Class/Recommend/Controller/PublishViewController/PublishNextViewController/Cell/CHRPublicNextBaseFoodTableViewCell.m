@@ -11,7 +11,6 @@
 @implementation CHRPublicNextBaseFoodTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -20,5 +19,15 @@
     bgColorView.backgroundColor = [UIColor whiteColor];
     [self setSelectedBackgroundView:bgColorView];
 }
+
+- (void)setTakephotoButton:(CHRImageButton *)takephotoButton{
+    if (!takephotoButton)return;
+    _takephotoButton = takephotoButton;
+    if (_takephotoButton.myImagePath) {
+        self.publishModel.photoPath = _takephotoButton.myImagePath;
+    }
+}
+
+
 
 @end

@@ -23,56 +23,121 @@
     return self;
 }
 
+- (instancetype)initWidthSaveIndex:(NSNumber *)savedCount
+{
+    self = [super init];
+    if (self) {
+        self.foodSavedCount = savedCount;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"编辑菜谱";
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:nil withSelectImage:nil withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTittle:@"发布" withTittleColor:[UIColor redColor] withTarget:self action:@selector(publishFood) forControlEvents:UIControlEventTouchUpInside];
     
-    self.mainFoodArray = [[NSMutableArray alloc]initWithCapacity:0];
-    self.supFoodArray = [[NSMutableArray alloc]initWithCapacity:0];
-    self.stepFoodArray = [[NSMutableArray alloc]initWithCapacity:0];
+    self.userDefault = [CHUserDefaults shareUserDefault];
+    
+    if (self.foodSavedCount) {
+        CHRPublishSave * savedModel = self.userDefault.foodSaveArray[[self.foodSavedCount integerValue]];
+        self.foodName = savedModel.foodName;
+        self.foodDataDic = savedModel.foodDic;
+        self.detailFoodModel = savedModel.foodDetail;
+    }else{
+     self.detailFoodModel = [[CHRPublishFoodDetailModel alloc]init];
+    }
     
     [self.publicTableView registerNib:[UINib nibWithNibName:@"CHRPublicNextBaseFoodTableViewCell" bundle:nil] forCellReuseIdentifier:@"CHRPublicNextBaseFoodTableViewCell"];
     [self.publicTableView registerNib:[UINib nibWithNibName:@"CHRPublicNextStepTableViewCell" bundle:nil] forCellReuseIdentifier:@"CHRPublicNextStepTableViewCell"];
-    
 }
 
 #pragma mark - ButtonAction
 - (void)publishFood{
+    if ([self foodDetailSave]) {
+        [self showHUDWithText:@"成功提交~等待审核中" withTextFont:[UIFont systemFontOfSize:16.f] withTextColor:[UIColor whiteColor] withTextSize:CGSizeMake(MAXFLOAT, 0.f) withAction:@selector(testHud) withIsAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }else{
+        [self showHud];
+    }
+}
+- (void)showHud{
     [self showHUDWithText:@"抱歉,请完善数据" withTextFont:[UIFont systemFontOfSize:16.f] withTextColor:[UIColor whiteColor] withTextSize:CGSizeMake(MAXFLOAT, 0.f) withAction:@selector(testHud) withIsAnimated:YES];
-    
 }
 - (void)takephoto:(CHRImageButton *)sender{
     self.choosedImagedButton = sender;
     [self imageTakePhoto];
 }
 - (void)addBaseFood{
-    
+    CHRPublicAddCellViewController * mainVC = [[CHRPublicAddCellViewController alloc]init];
+    mainVC.delegate = self;
+    [self.navigationController pushViewController:mainVC animated:YES];
 }
 - (void)addSupFood{
-    
+    CHRPublishSupCellViewController * supVC = [[CHRPublishSupCellViewController alloc]init];
+    supVC.delegate = self;
+    [self.navigationController pushViewController:supVC animated:YES];
 }
 - (void)addStepFood{
-    
+    if (self.stepphotoButton.myImagePath&&![self.stepNameTextField.text isEqualToString:@""]&&![self.stepCountTextField.text isEqualToString:@""]) {
+        CHRPublishFoodStepModel * stepModel = [[CHRPublishFoodStepModel alloc]init];
+        stepModel.photoPath = self.stepphotoButton.myImagePath;
+        stepModel.name = self.stepNameTextField.text;
+        stepModel.stepDetail = self.stepCountTextField.text;
+        [self.detailFoodModel.stepFoodArray addObject:stepModel];
+        [self.publicTableView reloadData];
+    }else{
+        [self showHud];
+    }
 }
 - (void)editStepFood{
     self.stepIsEdit = !self.stepIsEdit;
     if (self.stepIsEdit) {
-        self.editButton.titleLabel.text = @"完成编辑";
+        [self.stepFooterView.editButton setTitle:@"完成编辑" forState:UIControlStateNormal];
         return;
     }
-    self.editButton.titleLabel.text = @"编辑步骤";
+    [self.stepFooterView.editButton setTitle:@"编辑步骤" forState:UIControlStateNormal];
+}
+- (BOOL)foodDetailSave{
+    NSInteger saveCount = 0;
+    if (![self.storyTextView.text isEqualToString:@""]) {
+        self.detailFoodModel.storyStr = self.storyTextView.text;
+    }else{
+        saveCount++;
+    }
+    if (![self.shareTextView.text isEqualToString:@""]) {
+        self.detailFoodModel.finishStr = self.shareTextView.text;
+    }else{
+        saveCount++;
+    }
+    if (self.detailFoodModel.stepFoodArray.count <= 0 || self.detailFoodModel.stepFoodArray.count <= 0 || self.detailFoodModel.stepFoodArray.count <= 0) {
+        saveCount++;
+    }
+    if (self.headerViewTop.photoButton.myImagePath) {
+        self.detailFoodModel.storyIMGPath = self.headerViewTop.photoButton.myImagePath;
+    }else{
+        saveCount++;
+    }
+    if (self.headerViewTopLast.takePhotoButton.myImagePath) {
+        self.detailFoodModel.finishIMGPath = self.headerViewTopLast.takePhotoButton.myImagePath;
+    }
+    if (saveCount == 0) {
+        return YES;
+    }
+    return NO;
 }
 - (void)saveToFile{
-    self.userDefault = [CHUserDefaults shareUserDefault];
-    CHRPublishSave * dicTemp = [[CHRPublishSave alloc]init];
-    dicTemp.foodName = self.foodName;
-    dicTemp.foodDic = self.foodDataDic;
+    [self foodDetailSave];
+    CHRPublishSave * saveModel = [[CHRPublishSave alloc]init];
+    saveModel.foodName = self.foodName;
+    saveModel.foodDic = self.foodDataDic;
     NSDate * date = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     dateFormatter.dateFormat = @"yyyy'-'MM'-'dd'  'HH':'mm':'ss' 'Z'";
-    dicTemp.saveTime = [dateFormatter stringFromDate:date];
-    [self.userDefault.foodSaveArray addObject:dicTemp];
+    saveModel.saveTime = [dateFormatter stringFromDate:date];
+    saveModel.foodDetail = self.detailFoodModel;
+    [self.userDefault.foodSaveArray addObject:saveModel];
+    [self showHUDWithText:@"保存成功" withTextFont:[UIFont systemFontOfSize:16.f] withTextColor:[UIColor whiteColor] withTextSize:CGSizeMake(MAXFLOAT, 0.f) withAction:@selector(testHud) withIsAnimated:YES];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -153,11 +218,12 @@
         [footerView.editButton addTarget:self action:@selector(addSupFood) forControlEvents:UIControlEventTouchUpInside];
         return footerView;
     }else if (section == 3){
-        CHRPublicNextFooterAddStepView * footerView = [[[NSBundle mainBundle]loadNibNamed:@"CHRPublicNextFooterAddStepView" owner:nil options:nil]lastObject];
-        [footerView.addButton addTarget:self action:@selector(addStepFood) forControlEvents:UIControlEventTouchUpInside];
-        [footerView.editButton addTarget:self action:@selector(editStepFood) forControlEvents:UIControlEventTouchUpInside];
-        self.editButton = footerView.editButton;
-        return footerView;
+        if (!self.stepFooterView) {
+            self.stepFooterView = [[[NSBundle mainBundle]loadNibNamed:@"CHRPublicNextFooterAddStepView" owner:nil options:nil]lastObject];
+            [self.stepFooterView.addButton addTarget:self action:@selector(addStepFood) forControlEvents:UIControlEventTouchUpInside];
+            [self.stepFooterView.editButton addTarget:self action:@selector(editStepFood) forControlEvents:UIControlEventTouchUpInside];
+        }
+        return self.stepFooterView;
     }else{
         CHRPublicNextFooterSaveView * footerView = [[[NSBundle mainBundle]loadNibNamed:@"CHRPublicNextFooterSaveView" owner:nil options:nil]lastObject];
         [footerView.saveButton addTarget:self action:@selector(saveToFile) forControlEvents:UIControlEventTouchUpInside];
@@ -170,24 +236,39 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 1) {
-        if (self.mainFoodArray.count <= 0) {
-            return 1;
-        }
-        return self.mainFoodArray.count;
+        return self.detailFoodModel.mainFoodArray.count + 1;
     }else if (section == 2){
-        if (self.supFoodArray.count <= 0) {
-            return 1;
-        }
-        return self.supFoodArray.count;
+        return self.detailFoodModel.supFoodArray.count + 1;
     }else if (section == 3){
-        if (self.stepFoodArray.count <= 0) {
-            return 1;
-        }
-        return self.stepFoodArray.count;
+        return self.detailFoodModel.stepFoodArray.count + 1;
     }
     return 0;
 }
-
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        if (indexPath.section == 1) {
+            if (indexPath.row == self.detailFoodModel.mainFoodArray.count || self.detailFoodModel.mainFoodArray.count == 0) {
+                return;
+            }
+            [self.detailFoodModel.mainFoodArray removeObjectAtIndex:indexPath.row];
+        }else if (indexPath.section == 2){
+            if (indexPath.row == self.detailFoodModel.supFoodArray.count || self.detailFoodModel.supFoodArray.count == 0) {
+                return;
+            }
+            [self.detailFoodModel.supFoodArray removeObjectAtIndex:indexPath.row];
+        }else{
+            if (self.stepIsEdit) {
+                if (indexPath.row == self.detailFoodModel.stepFoodArray.count || self.detailFoodModel.stepFoodArray.count == 0) {
+                    return;
+                }
+                [self.detailFoodModel.stepFoodArray removeObjectAtIndex:indexPath.row];
+            }else{
+                return;
+            }
+        }
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    }
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 //    edit step cell
     if (indexPath.section == 3) {
@@ -196,32 +277,45 @@
         nextStepCell.namedTextField.returnKeyType = UIReturnKeyDone;
         nextStepCell.stepTextField.delegate = self;
         nextStepCell.stepTextField.returnKeyType = UIReturnKeyDone;
-        if (self.stepFoodArray.count > 0) {
-//            cell has edited
-            return nextStepCell;
-        }
+        nextStepCell.orderButton.titleLabel.text = [NSString stringWithFormat:@"%ld",
+                                                    indexPath.row + 1];
         [nextStepCell.takephotoButton addTarget:self action:@selector(takephoto:) forControlEvents:UIControlEventTouchUpInside];
+        if (indexPath.row == self.detailFoodModel.stepFoodArray.count) {
+            nextStepCell.namedTextField.userInteractionEnabled = YES;
+            self.stepNameTextField = nextStepCell.namedTextField;
+            nextStepCell.stepTextField.userInteractionEnabled = YES;
+            self.stepCountTextField = nextStepCell.stepTextField;
+            nextStepCell.takephotoButton.userInteractionEnabled = YES;
+            self.stepphotoButton = nextStepCell.takephotoButton;
+        } else if (indexPath.row < self.detailFoodModel.stepFoodArray.count) {
+            nextStepCell.publishModel = self.detailFoodModel.stepFoodArray[indexPath.row];
+        }
+        
         return nextStepCell;
     }
 //    add mainFood Cell
     CHRPublicNextStepTableViewCell * nextFoodCell = [tableView dequeueReusableCellWithIdentifier:@"CHRPublicNextStepTableViewCell"];
     if (indexPath.section == 1) {
-        if (self.mainFoodArray.count > 0) {
-            
+        if (indexPath.row < self.detailFoodModel.mainFoodArray.count) {
+            nextFoodCell.foodModel = self.detailFoodModel.mainFoodArray[indexPath.row];
+            nextFoodCell.showFoodLabel.textColor = [UIColor blackColor];
+            nextFoodCell.showCountLabel.textColor = [UIColor blackColor];
+            return nextFoodCell;
+        }
+        nextFoodCell.showFoodLabel.textColor = [UIColor lightGrayColor];
+        nextFoodCell.showCountLabel.textColor = [UIColor lightGrayColor];
+        return nextFoodCell;
+    }else{//    add supFood cell
+        if (indexPath.row < self.detailFoodModel.supFoodArray.count) {
+            nextFoodCell.foodModel = self.detailFoodModel.supFoodArray[indexPath.row];
+            nextFoodCell.showFoodLabel.textColor = [UIColor blackColor];
+            nextFoodCell.showCountLabel.textColor = [UIColor blackColor];
             return nextFoodCell;
         }
         nextFoodCell.showFoodLabel.textColor = [UIColor lightGrayColor];
         nextFoodCell.showCountLabel.textColor = [UIColor lightGrayColor];
         return nextFoodCell;
     }
-    //    add supFood cell
-    if (self.mainFoodArray.count > 0) {
-        
-        return nextFoodCell;
-    }
-    nextFoodCell.showFoodLabel.textColor = [UIColor lightGrayColor];
-    nextFoodCell.showCountLabel.textColor = [UIColor lightGrayColor];
-    return nextFoodCell;
 }
 #pragma mark - UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
@@ -236,6 +330,22 @@
         [textView resignFirstResponder];
     }
     return YES;
+}
+#pragma mark - CHRPubAddSupFood
+- (void)getSupCellName:(NSString *)name withCount:(NSString *)count{
+    CHRPublishFoodMainFoodModel * supModel = [[CHRPublishFoodMainFoodModel alloc]init];
+    supModel.name = name;
+    supModel.count = count;
+    [self.detailFoodModel.supFoodArray addObject:supModel];
+    [self.publicTableView reloadData];
+}
+#pragma mark - CHRPubAddMainFood
+- (void)getMainCellName:(NSString *)name withCount:(NSString *)count{
+    CHRPublishFoodMainFoodModel * mainModel = [[CHRPublishFoodMainFoodModel alloc]init];
+    mainModel.name = name;
+    mainModel.count = count;
+    [self.detailFoodModel.mainFoodArray addObject:mainModel];
+    [self.publicTableView reloadData];
 }
 
 @end

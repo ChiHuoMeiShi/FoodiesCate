@@ -13,7 +13,6 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eDX-dk-5IV" id="5gH-1J-DGT">
                 <rect key="frame" x="0.0" y="0.0" width="412" height="135"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
             <point key="canvasLocation" x="368" y="31"/>
         </tableViewCell>

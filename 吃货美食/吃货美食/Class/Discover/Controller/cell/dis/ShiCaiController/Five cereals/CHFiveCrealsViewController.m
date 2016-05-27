@@ -49,7 +49,8 @@
     }];
     
 
-   _fiveCerealsTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-187+210) style:UITableViewStylePlain];
+   _fiveCerealsTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height) style:UITableViewStylePlain];
+    _fiveCerealsTableView.scrollEnabled=YES;
     _fiveCerealsTableView.dataSource=self;
     _fiveCerealsTableView.delegate=self;
     [self.view addSubview:_fiveCerealsTableView];

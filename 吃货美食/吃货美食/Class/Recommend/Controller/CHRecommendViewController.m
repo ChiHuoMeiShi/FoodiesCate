@@ -63,7 +63,7 @@
 - (void)getCollectionViewData{
     __weak typeof(self)mySelf = self;
     NSString * url = @"http://api.meishi.cc/v5/index5.php?format=json";
-    NSDictionary * dic = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"page":@"1",@"app_liketime":@"1462495842"};
+    NSDictionary * dic = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"page":@"1",@"app_liketime":@"1462495842"};
     [self.afnManger.messageRequest POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [mySelf.recommendCollection.mj_header endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
@@ -82,7 +82,7 @@
     if (self.searchModel)return;
     __weak typeof(self)mySelf = self;
     NSString * likeURL = @"http://api.meishi.cc/v5/search_category.php?format=json";
-    NSDictionary * likeDicTemp = @{@"lat":@(myLat),@"lon":@(myLon),@"source":@"iphone",@"format":@"json",@"step":@"",@"kw":@"",@"page":@(0),@"q":@"热菜",@"sort_sc":@"desc",@"sort":@"default",@"gy":@"",@"mt":@""};
+    NSDictionary * likeDicTemp = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"step":@"",@"kw":@"",@"page":@(0),@"q":@"热菜",@"sort_sc":@"desc",@"sort":@"default",@"gy":@"",@"mt":@""};
     NSMutableDictionary * likeDic = [NSMutableDictionary dictionaryWithDictionary:likeDicTemp];
     for (int pageCount = 1; pageCount < 4; pageCount++) {
         [likeDic setValue:@(pageCount) forKey:@"page"];
@@ -106,7 +106,8 @@
 
 #pragma mark - ButtonActions
 - (void)commitAction{
-    
+    CHRCommitViewController * commitVC = [[CHRCommitViewController alloc]init];
+    [self.navigationController pushViewController:commitVC animated:YES];
 }
 - (void)publishNewFood{
     CHRPublishViewController * publishVC = [[CHRPublishViewController alloc]init];

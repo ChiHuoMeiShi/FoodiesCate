@@ -17,4 +17,8 @@
 @property(nonatomic,strong)CHCfaxian_list *faxian_list;
 -(void)setFaxian_list:(CHCfaxian_list *)faxian_list;
 @property(nonatomic,strong)NSMutableArray *Arr;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *hight;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *width;
+
 @end

@@ -21,7 +21,9 @@
         [_oneImageView sd_setImageWithURL:[NSURL URLWithString:self.Arr[0]]];
  [_twoImageView sd_setImageWithURL:[NSURL URLWithString:self.Arr[1]]];
      [_threeImageVIew sd_setImageWithURL:[NSURL URLWithString:self.Arr[2]]];
-    
+    CGFloat W=(CHSCREENWIDTH-11*4)/3;
+    _hight.constant=W;
+    _width.constant=W;
 //    [_oneImageView sd_setImageWithURL:[NSURL URLWithString:((CHCrecipes_list*)faxian_list.gongyi_info.recipes[2]).titlepic]];
    //    [_bagImagView sd_setImageWithURL:[NSURL URLWithString:((CHCimages_list *)faxian_list.topic_info.imgs[1]).big]];
 }
@@ -32,8 +34,9 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor whiteColor];
+    [self setSelectedBackgroundView:bgColorView];
 }
 
 @end

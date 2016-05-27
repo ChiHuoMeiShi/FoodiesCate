@@ -15,17 +15,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="856-6E-VwV">
-                        <rect key="frame" x="11" y="12" width="300" height="16"/>
+                        <rect key="frame" x="11" y="12" width="399" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="43C-pU-zH1"/>
-                            <constraint firstAttribute="width" constant="300" id="kOM-At-Zvh"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1EJ-BL-Npm">
-                        <rect key="frame" x="11" y="41" width="42" height="16"/>
+                        <rect key="frame" x="11" y="41" width="399" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="gsE-Ym-wMg"/>
                         </constraints>
@@ -50,7 +49,9 @@
                 <constraints>
                     <constraint firstItem="FM6-Us-3Zu" firstAttribute="leading" secondItem="cSz-Zb-gXK" secondAttribute="trailing" constant="10" id="0aT-CP-MSe"/>
                     <constraint firstItem="GP7-oA-y1i" firstAttribute="top" secondItem="1EJ-BL-Npm" secondAttribute="bottom" constant="11" id="1X5-WO-iVF"/>
+                    <constraint firstAttribute="trailing" secondItem="856-6E-VwV" secondAttribute="trailing" id="6lD-iF-zD0"/>
                     <constraint firstItem="cSz-Zb-gXK" firstAttribute="leading" secondItem="GP7-oA-y1i" secondAttribute="trailing" constant="10" id="B7Z-yJ-Bp6"/>
+                    <constraint firstAttribute="trailing" secondItem="1EJ-BL-Npm" secondAttribute="trailing" id="M57-Nc-dv8"/>
                     <constraint firstItem="FM6-Us-3Zu" firstAttribute="width" secondItem="cSz-Zb-gXK" secondAttribute="width" id="NRW-hb-HQM"/>
                     <constraint firstItem="FM6-Us-3Zu" firstAttribute="height" secondItem="cSz-Zb-gXK" secondAttribute="height" id="Ndr-ha-sfc"/>
                     <constraint firstItem="1EJ-BL-Npm" firstAttribute="top" secondItem="856-6E-VwV" secondAttribute="bottom" constant="13" id="ONc-V4-QmG"/>
@@ -65,11 +66,13 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="hight" destination="KGv-cD-LWC" id="jAZ-rs-sap"/>
                 <outlet property="oneImageView" destination="GP7-oA-y1i" id="9ba-Id-f4g"/>
                 <outlet property="tagLabel" destination="1EJ-BL-Npm" id="JYV-xt-Dzp"/>
                 <outlet property="threeImageVIew" destination="FM6-Us-3Zu" id="4dI-g7-akA"/>
                 <outlet property="titleLabel" destination="856-6E-VwV" id="zJx-Zc-ZuV"/>
                 <outlet property="twoImageView" destination="cSz-Zb-gXK" id="SVf-9E-78n"/>
+                <outlet property="width" destination="Qfd-pm-03t" id="hhX-by-kVo"/>
             </connections>
             <point key="canvasLocation" x="325" y="292.5"/>
         </tableViewCell>

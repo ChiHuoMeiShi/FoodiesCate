@@ -15,13 +15,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *commentImageView;
 @property (weak, nonatomic) IBOutlet UILabel *CommentHongTitle;
 
-
 @property (weak, nonatomic) IBOutlet UILabel *COmmentStepLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *CommentWeiLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *ZhengLabel;
 
 -(void)setFaxian_list:(CHCfaxian_list *)faxian_list;
 @end

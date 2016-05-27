@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "CHCArticalData.h"
 @interface CHCArticalTableView : UITableView<UITableViewDataSource,UITableViewDelegate>
+
+@property(nonatomic,strong)CHCArticalData *aData;
+
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style;
-@property(nonatomic,strong)CHCArticalData *data;
+
 
 @end
