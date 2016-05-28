@@ -24,7 +24,7 @@
                         <constraint firstAttribute="width" constant="150" id="QNK-nX-Wiv"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="24"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -44,7 +44,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="y3D-e7-P5C"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                     <variation key="default">
                         <mask key="constraints">
@@ -62,8 +62,8 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Bai-S1-lzh"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                     <variation key="default">
                         <mask key="constraints">
                             <exclude reference="Bai-S1-lzh"/>
@@ -201,25 +201,25 @@
                     <exclude reference="KoB-AV-tff"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="TS5-VA-YN9"/>
+                    <exclude reference="fIh-Bd-7fY"/>
+                    <exclude reference="ypl-Kg-YvG"/>
                     <exclude reference="TRZ-jO-IUD"/>
                     <exclude reference="eTW-R9-cix"/>
                     <exclude reference="vSy-8m-YZI"/>
+                    <exclude reference="bvT-Ce-c9v"/>
+                    <exclude reference="cLc-2L-J2J"/>
+                    <exclude reference="H1p-cS-V1i"/>
+                    <exclude reference="atR-9t-GyS"/>
+                    <exclude reference="rOO-DZ-FQS"/>
                     <exclude reference="EKl-jp-fUi"/>
                     <exclude reference="Ycp-Kq-t8U"/>
                     <exclude reference="1CH-Z7-gis"/>
                     <exclude reference="2Vw-gQ-9Pp"/>
                     <exclude reference="ZD7-vO-PfB"/>
-                    <exclude reference="TS5-VA-YN9"/>
-                    <exclude reference="fIh-Bd-7fY"/>
-                    <exclude reference="ypl-Kg-YvG"/>
                     <exclude reference="7Fi-16-TF7"/>
                     <exclude reference="LSv-Ic-mVF"/>
                     <exclude reference="dQv-CM-5fV"/>
-                    <exclude reference="H1p-cS-V1i"/>
-                    <exclude reference="atR-9t-GyS"/>
-                    <exclude reference="rOO-DZ-FQS"/>
-                    <exclude reference="bvT-Ce-c9v"/>
-                    <exclude reference="cLc-2L-J2J"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -233,25 +233,25 @@
                     <include reference="KoB-AV-tff"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="TS5-VA-YN9"/>
+                    <include reference="fIh-Bd-7fY"/>
+                    <include reference="ypl-Kg-YvG"/>
                     <include reference="TRZ-jO-IUD"/>
                     <include reference="eTW-R9-cix"/>
                     <include reference="vSy-8m-YZI"/>
+                    <include reference="bvT-Ce-c9v"/>
+                    <include reference="cLc-2L-J2J"/>
+                    <include reference="H1p-cS-V1i"/>
+                    <include reference="atR-9t-GyS"/>
+                    <include reference="rOO-DZ-FQS"/>
                     <include reference="EKl-jp-fUi"/>
                     <include reference="Ycp-Kq-t8U"/>
                     <include reference="1CH-Z7-gis"/>
                     <include reference="2Vw-gQ-9Pp"/>
                     <include reference="ZD7-vO-PfB"/>
-                    <include reference="TS5-VA-YN9"/>
-                    <include reference="fIh-Bd-7fY"/>
-                    <include reference="ypl-Kg-YvG"/>
                     <include reference="7Fi-16-TF7"/>
                     <include reference="LSv-Ic-mVF"/>
                     <include reference="dQv-CM-5fV"/>
-                    <include reference="H1p-cS-V1i"/>
-                    <include reference="atR-9t-GyS"/>
-                    <include reference="rOO-DZ-FQS"/>
-                    <include reference="bvT-Ce-c9v"/>
-                    <include reference="cLc-2L-J2J"/>
                 </mask>
             </variation>
         </view>

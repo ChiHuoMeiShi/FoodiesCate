@@ -13,7 +13,12 @@
 #import "CHNameViewCell.h"
 #import "CHLoginController.h"
 #import "GDataXMLNode.h"
-@interface CHMyInfoController () <UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+#import "CHHTTPRequestManager.h"
+#import "CHLocation.h"
+
+#define NMUBERS @"./*-+~!@#$%^&()_+-=,./;'[]{}:<>?`"
+
+@interface CHMyInfoController () <UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate>
 {
     CGFloat _tableViewY;
 }
@@ -175,36 +180,24 @@
             self.imageName = [dataDict objectForKey:@"photo"];
             CHLog(@"上传头像返回的信息%@",self.imageName);
             CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
-            [userDefault setPhoto:self.imageName];
+            NSDictionary *userDict = @{@"photo":self.imageName ,@"sex": userDefault.sex ,@"user_id" :userDefault.user_id ,@"user_name":userDefault.user_name, @"password":userDefault.password , @"email":userDefault.email};
+            
+            [userDefault setUserDict:userDict];
+
+//            [userDefault setPhoto:self.imageName];
+            
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             CHLog(@"#######upload error%@", error);
         }];
     }
 }
-- (void)updateUserDefault{
-    CHUserDefaults *userDefalt = [CHUserDefaults shareUserDefault];
-    AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
-    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
-    NSString *kUrl = @"http://api.meishi.cc/v5/login.php?format=json";
-    NSDictionary *parameters = @{@"lat" : @"34.6049907522264",@"lon" : @"112.4229875834745",@"source" : @"iphone",@"format" : @"json"};
-    
-    [manger.requestSerializer setAuthorizationHeaderFieldWithUsername:userDefalt.email password:userDefalt.password];
-    [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        NSDictionary * dic = (NSDictionary *)responseObject;
-        int code = [[dic objectForKey:@"code"] intValue];
-        if (code == 1) {
-            [userDefalt setUserDict:dic];
-        }
-        
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-    }];
-}
+
 
 #pragma mark - UITableViewDataSource
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    if (1 == section) {
+    if (0 == section) {
+        return @"昵称只能输入汉字字母和数字";
+    }else if (1 == section) {
         return @"设置";
     }else if (2 == section){
         return @"退出当前账号";
@@ -230,6 +223,8 @@
         CHNameViewCell *nameCell = [tableView dequeueReusableCellWithIdentifier:@"CHNameViewCell"];
         CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
         nameCell.nameTextField.text = userDefault.user_name;
+
+        nameCell.nameTextField.delegate = self;
         
         return nameCell;
     }
@@ -262,11 +257,46 @@
     }
     return 60.f;
 }
+#pragma mark -- 退出按钮
 - (void)logouClick{
     CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
     [userDefault setUserDict:nil];
     [self.navigationController popViewControllerAnimated:YES];
 }
+#pragma mark -- 输入框代理
+//点击return键响应的函数
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+
+    CHLog(@"%@",textField.text);
+    
+    CHHTTPRequestManager *manager = [CHHTTPRequestManager manager];
+    
+    manager.userRequest.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
+    NSString *kUrl = @"http://api.meishi.cc/v5/modi_userinfo.php?format=json";
+    CHLocation *location = [CHLocation shareLocation];
+    
+    NSDictionary *parameters = @{@"lat" : @(location.lat),@"lon" : @(location.lon),@"source" : @"iphone",@"format" : @"json",@"user_name":textField.text};
+    CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
+    [manager.userRequest.requestSerializer setAuthorizationHeaderFieldWithUsername:userDefault.email password:userDefault.password];
+    [manager.userRequest POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        NSDictionary * dic = (NSDictionary *)responseObject;
+        int code = [[dic objectForKey:@"code"] intValue];
+        
+        if (code == 1) {
+            //如果成功的话，更改本地用户名吃货美食123
+            NSDictionary *userDict = @{@"photo":userDefault.photo ,@"sex": userDefault.sex ,@"user_id" :userDefault.user_id ,@"user_name":textField.text , @"password":userDefault.password , @"email":userDefault.email};
+            [userDefault setUserDict:userDict];
+            CHLog(@"%@",dic);
+        }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    }];
+
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
