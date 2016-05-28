@@ -49,14 +49,14 @@ const CGFloat todayBannerHeigh = 80.f;
     }];
     
     self.beyoundView = [[UIView alloc]initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH - 20.f, todayBannerHeigh)];
-    self.beyoundView.backgroundColor = [UIColor cyanColor];
+    self.beyoundView.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.beyoundView];
     self.currentView = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.beyoundView.frame), 0.f, CHSCREENWIDTH - 20.f, todayBannerHeigh)];
     [self.currentView addTarget:self action:@selector(currentChooseAction) forControlEvents:UIControlEventTouchUpInside];
-    self.currentView.backgroundColor = [UIColor yellowColor];
+    self.currentView.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.currentView];
     self.laterView = [[UIView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.currentView.frame), 0.f, CHSCREENWIDTH - 20.f, todayBannerHeigh)];
-    self.laterView.backgroundColor = [UIColor redColor];
+    self.laterView.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.laterView];
     
 }
