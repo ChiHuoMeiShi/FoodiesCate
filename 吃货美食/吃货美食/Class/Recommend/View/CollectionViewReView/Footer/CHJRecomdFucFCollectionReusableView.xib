@@ -155,11 +155,11 @@
         </collectionReusableView>
     </objects>
     <resources>
-        <image name="20160528190809" width="180" height="180"/>
-        <image name="20160528191014" width="180" height="180"/>
-        <image name="20160528191016" width="180" height="180"/>
-        <image name="20160528191017" width="180" height="180"/>
-        <image name="20160528191018" width="180" height="180"/>
-        <image name="20160528191019" width="180" height="180"/>
+        <image name="20160528190809" width="75" height="75"/>
+        <image name="20160528191014" width="259" height="142"/>
+        <image name="20160528191016" width="259" height="142"/>
+        <image name="20160528191017" width="75" height="75"/>
+        <image name="20160528191018" width="75" height="75"/>
+        <image name="20160528191019" width="75" height="75"/>
     </resources>
 </document>

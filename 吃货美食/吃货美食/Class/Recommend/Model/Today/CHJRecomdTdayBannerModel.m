@@ -10,4 +10,6 @@
 
 @implementation CHJRecomdTdayBannerModel
 
+MJExtensionCodingImplementation;
+
 @end

@@ -10,4 +10,6 @@
 
 @implementation CHJRecomdJumpContentModel
 
+MJExtensionCodingImplementation;
+
 @end

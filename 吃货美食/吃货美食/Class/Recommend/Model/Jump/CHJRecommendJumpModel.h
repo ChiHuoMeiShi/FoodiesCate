@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CHJRecomdJumpContentModel.h"
 #import <MJExtension.h>
-@interface CHJRecommendJumpModel : NSObject
+@interface CHJRecommendJumpModel : NSObject<NSCoding>
 @property (nonatomic,strong)NSNumber * type;
 @property (nonatomic,copy)NSString * class_name;
 @property (nonatomic,strong)CHJRecomdJumpContentModel * property;

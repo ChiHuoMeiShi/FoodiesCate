@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MJExtension.h>
 #import "CHJRecommendJumpModel.h"
-@interface CHJRecomdTdayBannerModel : NSObject
+@interface CHJRecomdTdayBannerModel : NSObject<NSCoding>
 
 @property (nonatomic,copy)NSString * click_trackingURL;
 @property (nonatomic,strong)NSNumber * is_recipe;

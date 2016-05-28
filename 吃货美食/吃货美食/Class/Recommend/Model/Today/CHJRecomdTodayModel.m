@@ -13,4 +13,6 @@
     return @{@"myID":@"id"};
 }
 
+MJExtensionCodingImplementation;
+
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MJExtension.h>
-@interface CHJRecommendMyLikeModel : NSObject
+@interface CHJRecommendMyLikeModel : NSObject<NSCoding>
 @property (nonatomic,copy)NSString * title;
 @property (nonatomic,copy)NSString * time;
 @property (nonatomic,copy)NSString * total;

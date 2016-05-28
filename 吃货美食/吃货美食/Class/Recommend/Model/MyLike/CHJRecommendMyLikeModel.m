@@ -10,6 +10,6 @@
 
 @implementation CHJRecommendMyLikeModel
 
-
+MJExtensionCodingImplementation;
 
 @end

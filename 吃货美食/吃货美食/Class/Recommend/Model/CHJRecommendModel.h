@@ -19,7 +19,7 @@
 
 #import "CHJRecommendMyLikeModel.h"
 
-@interface CHJRecommendModel : NSObject
+@interface CHJRecommendModel : NSObject<NSCoding>
 
 @property (nonatomic,strong)NSMutableArray * topBannerShow;
 @property (nonatomic,strong)NSMutableArray * topBannerTittle;
@@ -32,5 +32,9 @@
 @property (nonatomic,strong)NSMutableArray * todayBanner;
 
 @property (nonatomic,strong)CHJRecommendMyLikeModel * myLike;
+
+- (void)saveInfo;
+
+- (CHJRecommendModel *)getInfo;
 
 @end
