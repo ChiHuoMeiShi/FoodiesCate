@@ -793,7 +793,7 @@ static xmlChar *SplitQNameReverse(const xmlChar *qname, xmlChar **prefix) {
     if (node.childCount != 0) {
         for (GDataXMLNode * childNode in node.children) {
             NSString * string = [str stringByAppendingString:[NSString stringWithFormat:@"--node__%@", childNode.name]];
-            NSLog(@"******type:%@, %@:%@", childNode.kindDescription, string, [childNode XMLString]);
+            CHLog(@"******type:%@, %@:%@", childNode.kindDescription, string, [childNode XMLString]);
             [self printNode:childNode withString:string];
         }
     }

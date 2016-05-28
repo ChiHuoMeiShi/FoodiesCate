@@ -11,6 +11,8 @@
 
 #import <objc/runtime.h>
 
+
+
 @implementation CHDBModel
 
 #pragma mark - override method
@@ -209,7 +211,7 @@
         NSString *sql = [NSString stringWithFormat:@"INSERT INTO %@(%@) VALUES (%@);", tableName, keyString, valueString];
         res = [db executeUpdate:sql withArgumentsInArray:insertValues];
         self.pk = res?[NSNumber numberWithLongLong:db.lastInsertRowId].intValue:0;
-        NSLog(res?@"插入成功":@"插入失败");
+        CHLog(res?@"插入成功":@"插入失败");
     }];
     return res;
 }
@@ -252,7 +254,7 @@
             NSString *sql = [NSString stringWithFormat:@"INSERT INTO %@(%@) VALUES (%@);", tableName, keyString, valueString];
             BOOL flag = [db executeUpdate:sql withArgumentsInArray:insertValues];
             model.pk = flag?[NSNumber numberWithLongLong:db.lastInsertRowId].intValue:0;
-            NSLog(flag?@"插入成功":@"插入失败");
+            CHLog(flag?@"插入成功":@"插入失败");
             if (!flag) {
                 res = NO;
                 *rollback = YES;

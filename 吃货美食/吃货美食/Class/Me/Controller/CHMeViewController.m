@@ -13,7 +13,6 @@
 #import "CHMyDraftController.h"
 #import "CHMyCollectController.h"
 #import "CHMyPublishController.h"
-#import "CHMySettingController.h"
 #import "CHMyInfoController.h"
 #import "CHRegisterController.h"
 #import "CHLoginController.h"
@@ -66,7 +65,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return 3;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -84,17 +83,9 @@
         cell.backgroundColor = [[UIColor alloc] initWithRed:247.f/255.f green:255.f/157.f blue:221.f/255.f alpha:1];
 
         return cell;
-    }else if (1 == indexPath.row){
-        if (!cell)
-        {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        }
-        cell.textLabel.font = [UIFont systemFontOfSize:28.f];
-        cell.textLabel.text = @"我的收藏";
-        cell.imageView.image= [UIImage imageNamed:@"shoucang"];
-        cell.backgroundColor = [[UIColor alloc] initWithRed:198.f/255.f green:247.f/255.f blue:255.f/255.f alpha:1];
-        return cell;
-    }else if (2 == indexPath.row){
+    }
+
+    else if (1 == indexPath.row){
         if (!cell)
         {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
@@ -104,7 +95,7 @@
         cell.textLabel.text = @"草稿箱";
         cell.backgroundColor = [[UIColor alloc] initWithRed:237.f/255.f green:220.f/255.f blue:221.f/255.f alpha:1];
         return cell;
-    }else if (3 == indexPath.row){
+    }else if (2 == indexPath.row){
         if (!cell)
         {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
@@ -136,15 +127,8 @@
             [self gotoLoginView];
         }
     }
+
     if (1 == indexPath.row){
-        if (userDefault.user_name) {
-            CHMyCollectController *targetVC = [[CHMyCollectController alloc] init];
-            [self.navigationController pushViewController:targetVC animated:YES];
-        }else{
-            [self gotoLoginView];
-        }
-    }
-    if (2 == indexPath.row){
         
         if (userDefault.user_name) {
             CHMyDraftController *targetVC = [[CHMyDraftController alloc] init];
@@ -154,7 +138,7 @@
         }
 
     }
-    if (3 == indexPath.row){
+    if (2 == indexPath.row){
         
         if (userDefault.user_name) {
             CHMyInfoController *targetVC = [[CHMyInfoController alloc] init];
