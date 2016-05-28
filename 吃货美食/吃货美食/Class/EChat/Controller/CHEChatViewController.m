@@ -88,7 +88,15 @@
     [myManager.messageRequest POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [mySelf.eChatTableView.mj_header endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
+    
         mySelf.echatModel = [EChatModel mj_objectWithKeyValues:dic];
+        
+        dispatch_queue_t q1 = dispatch_queue_create("queue1", NULL);        
+        dispatch_async(q1, ^{
+            [mySelf.echatModel save];
+        });
+
+        
         mySelf.dataArr = [[NSMutableArray alloc] initWithArray:mySelf.echatModel.hot_topic];
         
         [mySelf.eChatTableView reloadData];
@@ -126,18 +134,7 @@
 //添加barButtonitem
 - (void)addNavigationItem
 {
-    //leftBarButtonItem
-//    UIBarButtonItem *leftItemAdd = [UIBarButtonItem barItemWithImageName:@"umeng_add_photo" withSelectImage:@"umeng_add_photo" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTarget:self action:@selector(addClick) forControlEvents:UIControlEventTouchUpInside];
-//    self.navigationItem.leftBarButtonItem = leftItemAdd;
-    
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"index_icon_photo" withSelectImage:@"index_icon_photo" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTarget:self action:@selector(addClick) forControlEvents:UIControlEventTouchUpInside withSize:CGSizeMake(40.f, 40.f)];
-    
-//    //rightBarButtonItems
-//    UIBarButtonItem *rightItemMail = [UIBarButtonItem barItemWithImageName:@"ms_mail2" withSelectImage:@"ms_mail2" withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTarget:self action:@selector(msMail) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    UIBarButtonItem *rightItemSearch = [UIBarButtonItem barItemWithImageName:@"topsearchicon_grey_2" withSelectImage:@"topsearchicon_grey_2" withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTarget:self action:@selector(search) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    self.navigationItem.rightBarButtonItems = @[rightItemSearch,rightItemMail];
 }
 #pragma mark -- viewDidLoad
 - (void)viewDidLoad {

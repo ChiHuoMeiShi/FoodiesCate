@@ -49,33 +49,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH, CHSCREENHEIGH) style:UITableViewStylePlain];
+    self.mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH, CHSCREENHEIGH) style:UITableViewStyleGrouped];
     
     self.mTableView.delegate = self;
     self.mTableView.dataSource = self;
+    self.mTableView.showsVerticalScrollIndicator = NO;
+    self.mTableView.showsHorizontalScrollIndicator = NO;
     [self.mTableView reloadData];
     [self.view addSubview:self.mTableView];
 }
-//- (void)login{
-//    CHHTTPRequestManager *myManager = [CHHTTPRequestManager manager];
-//    myManager.userRequest.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
-//    [myManager.userRequest.requestSerializer setAuthorizationHeaderFieldWithUsername:@"13007551820" password:@"zt123456"];
-//    NSString *url = @"http://api.meishi.cc/v5/login.php?format=json";
-//    NSDictionary *parameter = @{@"lat" : @"34.6049907522264",@"lon" : @"112.4229875834745",@"source" : @"iphone",@"format" : @"json"};
-//    [myManager.userRequest POST:url parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSDictionary * dic = (NSDictionary *)responseObject;
-//        //            CHUserDefaults
-//        CHLog(@"%@",dic);
-//        int code = [[dic objectForKey:@"code"] intValue];
-//        if (code == 1) {
-//            CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
-//            [userDefault setUserDict:dic];
-//        }else{
-//            CHLog(@"用户名或者密码错误");
-//        }
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//    }];
-//}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -182,10 +165,10 @@
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 300.f;
+    return 280.f;
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH, 300.f)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH, 280.f)];
     self.backgroundView = [[UIImageView alloc] initWithFrame:headerView.frame];
     self.backgroundView.image = [UIImage imageNamed:@"meBackground"];
     [headerView addSubview:self.backgroundView];
@@ -238,6 +221,8 @@
     [self.navigationController pushViewController:targetVC animated:YES];
 }
 - (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
+
 }
 @end

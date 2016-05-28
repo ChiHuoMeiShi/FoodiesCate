@@ -301,6 +301,10 @@
 		B72A06581CE216D10091986F /* CHZSendEChatController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B72A06561CE216D10091986F /* CHZSendEChatController.xib */; };
 		B72A06961CE369D50091986F /* CHEChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B72A06941CE369D50091986F /* CHEChatCell.m */; };
 		B72A06971CE369D50091986F /* CHEChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B72A06951CE369D50091986F /* CHEChatCell.xib */; };
+		B74620BE1CF9312E00047D91 /* CHDBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B74620BB1CF9312E00047D91 /* CHDBHelper.m */; };
+		B74620BF1CF9312E00047D91 /* CHDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B74620BD1CF9312E00047D91 /* CHDBModel.m */; };
+		B74620C41CF948D800047D91 /* CHDraftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B74620C21CF948D800047D91 /* CHDraftCell.m */; };
+		B74620C51CF948D800047D91 /* CHDraftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B74620C31CF948D800047D91 /* CHDraftCell.xib */; };
 		B748A5381CEDF63100A8338C /* CHTPublishSHCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B748A5361CEDF63100A8338C /* CHTPublishSHCell.m */; };
 		B748A5391CEDF63100A8338C /* CHTPublishSHCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B748A5371CEDF63100A8338C /* CHTPublishSHCell.xib */; };
 		B748A53D1CEDF73600A8338C /* ShiHuaModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B748A53C1CEDF73600A8338C /* ShiHuaModel.m */; };
@@ -814,6 +818,13 @@
 		B72A06931CE369D50091986F /* CHEChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHEChatCell.h; sourceTree = "<group>"; };
 		B72A06941CE369D50091986F /* CHEChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHEChatCell.m; sourceTree = "<group>"; };
 		B72A06951CE369D50091986F /* CHEChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHEChatCell.xib; sourceTree = "<group>"; };
+		B74620BA1CF9312E00047D91 /* CHDBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHDBHelper.h; sourceTree = SOURCE_ROOT; };
+		B74620BB1CF9312E00047D91 /* CHDBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHDBHelper.m; sourceTree = SOURCE_ROOT; };
+		B74620BC1CF9312E00047D91 /* CHDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHDBModel.h; sourceTree = SOURCE_ROOT; };
+		B74620BD1CF9312E00047D91 /* CHDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHDBModel.m; sourceTree = SOURCE_ROOT; };
+		B74620C11CF948D800047D91 /* CHDraftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHDraftCell.h; sourceTree = "<group>"; };
+		B74620C21CF948D800047D91 /* CHDraftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHDraftCell.m; sourceTree = "<group>"; };
+		B74620C31CF948D800047D91 /* CHDraftCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHDraftCell.xib; sourceTree = "<group>"; };
 		B748A5351CEDF63100A8338C /* CHTPublishSHCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTPublishSHCell.h; sourceTree = "<group>"; };
 		B748A5361CEDF63100A8338C /* CHTPublishSHCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTPublishSHCell.m; sourceTree = "<group>"; };
 		B748A5371CEDF63100A8338C /* CHTPublishSHCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHTPublishSHCell.xib; sourceTree = "<group>"; };
@@ -2544,6 +2555,27 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		B74620B91CF930F800047D91 /* CHModel */ = {
+			isa = PBXGroup;
+			children = (
+				B74620BA1CF9312E00047D91 /* CHDBHelper.h */,
+				B74620BB1CF9312E00047D91 /* CHDBHelper.m */,
+				B74620BC1CF9312E00047D91 /* CHDBModel.h */,
+				B74620BD1CF9312E00047D91 /* CHDBModel.m */,
+			);
+			name = CHModel;
+			sourceTree = "<group>";
+		};
+		B74620C01CF948BA00047D91 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B74620C11CF948D800047D91 /* CHDraftCell.h */,
+				B74620C21CF948D800047D91 /* CHDraftCell.m */,
+				B74620C31CF948D800047D91 /* CHDraftCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		B748A5331CEDF28C00A8338C /* CookBookCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -2633,6 +2665,7 @@
 		B7B7A5B61CEC9156002A80E7 /* MyDraft */ = {
 			isa = PBXGroup;
 			children = (
+				B74620C01CF948BA00047D91 /* Cell */,
 				B7B7A5C21CEC91E2002A80E7 /* CHMyDraftController.h */,
 				B7B7A5C31CEC91E2002A80E7 /* CHMyDraftController.m */,
 				B7B7A5C41CEC91E2002A80E7 /* CHMyDraftController.xib */,
@@ -2910,6 +2943,7 @@
 		B7F6156F1CDCA29100AF1697 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
+				B74620B91CF930F800047D91 /* CHModel */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -3075,6 +3109,7 @@
 				7AAF0A3E1CE184A300708F98 /* CHJRecomdTopHCollectionReusableView.xib in Resources */,
 				077EE4121CEFF69E003F4E1B /* CHClickTableViewCell.xib in Resources */,
 				B7A512AA1CE65FD80085A6C8 /* CHFiveChatCell.xib in Resources */,
+				B74620C51CF948D800047D91 /* CHDraftCell.xib in Resources */,
 				077EE4DE1CEFF961003F4E1B /* CHZhuanTiViewController.xib in Resources */,
 				7A657CC11CF19F230057BF33 /* CHRPublicNextHeaderTittleView.xib in Resources */,
 				7A05CA7E1CF730940055E679 /* CHRCommitCollectionViewCell.xib in Resources */,
@@ -3204,6 +3239,7 @@
 				077EE4111CEFF69E003F4E1B /* CHClickTableViewCell.m in Sources */,
 				077EE4841CEFF8A2003F4E1B /* CHCZhunTi_classes_list.m in Sources */,
 				7A82E5A31CEF5F0D001D3D82 /* CHRJAIFoodViewController.xib in Sources */,
+				B74620C41CF948D800047D91 /* CHDraftCell.m in Sources */,
 				7A82E5A41CEF5F0D001D3D82 /* CHRJListFoodTableViewCell.xib in Sources */,
 				7A82E5A51CEF5F0D001D3D82 /* CHRJListFoodBaseTableViewCell.xib in Sources */,
 				7A82E5A61CEF5F0D001D3D82 /* CHRJListFoodSearchTableViewCell.xib in Sources */,
@@ -3306,6 +3342,7 @@
 				7AD547691CEE039100B91B73 /* CHRAIBAseFoodDefault.m in Sources */,
 				077EE4091CEFF69E003F4E1B /* CHCActivityTableViewCell.m in Sources */,
 				7AD0DDAA1CDCA7CE0057F8B2 /* UITabBarItem+TextCustom.m in Sources */,
+				B74620BF1CF9312E00047D91 /* CHDBModel.m in Sources */,
 				7AAF0A371CE184A300708F98 /* CHJRecomdTodayBanerFCollectionReusableView.m in Sources */,
 				0787A3E11CF19E0C0016393C /* CHCWenZhanViewController.m in Sources */,
 				B71ED8561CDB41660035F6BE /* AppDelegate.m in Sources */,
@@ -3393,6 +3430,7 @@
 				7AA949441CE5A5BE00AB1C26 /* CHJRecmdTodayCollectionViewCell.m in Sources */,
 				7AD0DDA71CDCA7CE0057F8B2 /* JWUIClass.m in Sources */,
 				07836F041CF87EE600F3653C /* CHCVegetableTableView.m in Sources */,
+				B74620BE1CF9312E00047D91 /* CHDBHelper.m in Sources */,
 				B7A512BB1CE660A40085A6C8 /* CHEightChatCell.m in Sources */,
 				0787A3DB1CF194EB0016393C /* CHzt_infoWebViewController.m in Sources */,
 				077EE4811CEFF8A2003F4E1B /* CHCArticalData.m in Sources */,

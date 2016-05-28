@@ -9,12 +9,6 @@
 #import "CHRImageButton.h"
 
 @implementation CHRImageButton
-//- (NSString *)myImagePath{
-//    if (!_myImagePath) {
-//        _myImagePath = @"";
-//    }
-//    return _myImagePath;
-//}
 
 - (void)setMyImagePath:(NSString *)myImagePath{
     if (!myImagePath)return;

@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <MJExtension.h>
-@interface EChatModel : NSObject
+#import "CHDBModel.h"
+@interface EChatModel : CHDBModel
 
 @property (nonatomic,strong) NSMutableArray * hot_topic;
 
