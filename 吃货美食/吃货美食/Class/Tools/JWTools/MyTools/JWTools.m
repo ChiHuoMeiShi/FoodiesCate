@@ -147,6 +147,24 @@
     return dict;
 }
 
+/**
+ *  保存图片到本地
+ *
+ *  @param image 图片
+ *
+ *  @return 存储地址
+ */
++ (NSString *)saveJImage:(UIImage *)image{
+    NSArray *docs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDate * date = [NSDate date];
+    dateFormatter.dateFormat = @"yyyyMMddHHmmss";
+    NSString * imgPath = [NSString stringWithFormat:@"%@.png",[dateFormatter stringFromDate:date]];
+    NSData *imageData = UIImagePNGRepresentation(image);
+    NSString * imagePath = [NSString stringWithFormat:@"%@/%@",docs[0],imgPath];
+    [imageData writeToFile:imagePath atomically:YES];
+    return imgPath;
+}
 #pragma mark - NSDate
 /**
  *  传一个日期字符串，判断是否是昨天，或者是今天的日期

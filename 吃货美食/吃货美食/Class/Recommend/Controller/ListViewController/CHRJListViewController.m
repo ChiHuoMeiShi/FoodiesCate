@@ -82,6 +82,7 @@
     __weak typeof(btn)myBtn = btn;
     [[SDWebImageManager sharedManager]downloadImageWithURL:[NSURL URLWithString:urlStr] options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
         [myBtn setBackgroundImage:image forState:UIControlStateNormal];
+        [JWTools saveJImage:image];
     }];
 }
 #pragma mark - RequestData

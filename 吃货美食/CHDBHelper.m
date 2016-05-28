@@ -45,13 +45,7 @@ static CHDBHelper *_instance = nil;
     NSString *dbpath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"test.sqlite"];
     
     
-    
-    
-    
-    
-    
-    
-    NSLog(@"%@",dbpath);
+    CHLog(@"%@",dbpath);
     return dbpath;
 }
 
