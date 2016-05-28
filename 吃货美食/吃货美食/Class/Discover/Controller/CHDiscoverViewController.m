@@ -185,7 +185,7 @@
     {
         NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHClickTableViewCell" owner:nil options:nil];
         clickcell=arr[0];
-        //                           设置选择时的显示风格
+//                                设置选择时的显示风格
         clickcell.selectionStyle = UITableViewCellSelectionStyleNone;
         clickcell.faxian_list= faxianCelllist;
         return clickcell;
@@ -371,7 +371,7 @@ CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[index
     
 CHCFaXianDetailViewController *targetVC =[[CHCFaXianDetailViewController alloc] init];
        CHCOneWebViewController *oneView=[[CHCOneWebViewController alloc]init];
-    CHzt_infoWebViewController *zt_infoView=[[CHzt_infoWebViewController alloc]init];
+//    CHzt_infoWebViewController *zt_infoView=[[CHzt_infoWebViewController alloc]init];
     CHCWenZhanViewController *wenView=[[CHCWenZhanViewController alloc]init];
     CHCaiViewController *caiiew=[[ CHCaiViewController alloc]init];
 //    
