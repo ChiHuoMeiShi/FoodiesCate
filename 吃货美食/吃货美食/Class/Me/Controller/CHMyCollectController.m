@@ -48,6 +48,7 @@
     CHPublishCookBookCell *myCell = [tableView dequeueReusableCellWithIdentifier:@"CHPublishCookBookCell"];
     
     
+    
     return myCell;
 }
 
