@@ -31,7 +31,7 @@
     self.recommendCollection.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [mySelf getCollectionViewData];
     }];
-    [self recommdSearchBarSetWithRect:CGRectMake(54.f, 26.f, (CHSCREENWIDTH - 108.f), 30.f)];
+    [self recommdSearchBarSetWithRect:CGRectMake(0.f, 26.f, 200.f, 30.f)];
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"index_icon_photo" withSelectImage:@"index_icon_photo" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTarget:self action:@selector(publishNewFood) forControlEvents:UIControlEventTouchUpInside withSize:CGSizeMake(40.f, 40.f)];
 }
