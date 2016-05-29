@@ -306,7 +306,6 @@
 
         NSFileManager* fileManager=[NSFileManager defaultManager];
         
-        
         NSArray *docs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *pathStr = [NSString stringWithFormat:@"%@/test.sqlite",docs[0]];
         
@@ -315,24 +314,31 @@
         BOOL blHave=[[NSFileManager defaultManager] fileExistsAtPath:pathStr];
         BOOL plHave=[[NSFileManager defaultManager] fileExistsAtPath:plistPathStr];
         if ((!blHave) && (!plHave)) {
-            CHLog(@"缓存为空");
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"缓存已经为空" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
+            [alertController addAction:okAction];
+            [self presentViewController:alertController animated:YES completion:nil];
+
             return;
         }else{
             BOOL blDele= [fileManager removeItemAtPath:pathStr error:nil];
             BOOL plDele= [fileManager removeItemAtPath:plistPathStr error:nil];
-            if (blDele && plDele) {
+            if (blDele || plDele) {
                 NSMutableArray *indexPathes = [NSMutableArray arrayWithObject:indexPath];
                 //刷新
                 [tableView reloadRowsAtIndexPaths:indexPathes withRowAnimation:UITableViewRowAnimationFade];
+                [tableView reloadData];
                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"清除缓存成功" preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
                 [alertController addAction:okAction];
                 [self presentViewController:alertController animated:YES completion:nil];
                 
             }else {
-                
+                [tableView reloadData];
             }
+            [tableView reloadData];
         }
+        [tableView reloadData];
     }else if (indexPath.section == 1 && indexPath.row == 1){
         CHAboutUsController *targetVC = [[CHAboutUsController alloc] init];
         [self.navigationController pushViewController:targetVC animated:YES];
