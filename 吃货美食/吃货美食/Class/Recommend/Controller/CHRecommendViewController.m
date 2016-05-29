@@ -46,7 +46,7 @@
     }
     if (self.todayFooterView) {
         NSInteger currentPage = self.todayFooterView.todayBannerScrollerView.currentBannerCount;
-        for (NSInteger i = 0; i < currentPage; i++) {
+        for (NSInteger i = 0; i < currentPage; ++i) {
             [self.todayFooterView.todayBannerScrollerView rightShift];
         }
         self.todayFooterView.todayBannerPageControl.currentPage = self.todayFooterView.todayBannerScrollerView.currentBannerCount;
