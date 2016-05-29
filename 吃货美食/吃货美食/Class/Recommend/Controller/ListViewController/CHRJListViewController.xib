@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CHRJListViewController">
@@ -41,7 +41,7 @@
                             </constraints>
                             <state key="normal" backgroundImage="20160528194412"/>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wom-xL-lAf">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wom-xL-lAf">
                             <rect key="frame" x="227" y="5" width="146" height="50"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -115,10 +115,10 @@
         </view>
     </objects>
     <resources>
-        <image name="20160528194000" width="180" height="180"/>
-        <image name="20160528194412" width="180" height="180"/>
-        <image name="20160528194726" width="180" height="180"/>
-        <image name="20160528194916" width="180" height="180"/>
-        <image name="20160528194922" width="180" height="180"/>
+        <image name="20160528194000" width="96" height="82"/>
+        <image name="20160528194412" width="96" height="82"/>
+        <image name="20160528194726" width="96" height="82"/>
+        <image name="20160528194916" width="96" height="82"/>
+        <image name="20160528194922" width="96" height="82"/>
     </resources>
 </document>

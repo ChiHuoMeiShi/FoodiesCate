@@ -8,7 +8,7 @@
 
 #import "CHEChatDetailController.h"
 
-@interface CHEChatDetailController ()
+@interface CHEChatDetailController ()<UIWebViewDelegate>
 
 @end
 
@@ -19,11 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
-    // Do any additional setup after loading the view from its nib.
-    //20&tid=
     NSString *baseUrl = @"http://m.meishij.net/html5/shihua_content.php?gid=";
-//    http://api.meishi.cc/v5/faxian_new.php?format=json
-//    @"http://m.meishij.net/html5/faxian_content.php?gid=";
     NSString *urlStr = [NSString stringWithFormat:@"%@%@&tid=%@",baseUrl,self.gid,self.tid];
     
     NSURL *url = [NSURL URLWithString:urlStr];
@@ -37,6 +33,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
+    if(navigationType==UIWebViewNavigationTypeLinkClicked)
+    {
+        return NO;
+    }
+    else{return YES;}
 }
 
 /*

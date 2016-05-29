@@ -58,7 +58,7 @@
     CGFloat btnH = btnW;
     self.iconBtn = [[UIButton alloc] initWithFrame:CGRectMake(btnX, btnY, btnW, btnH)];
     
-    _tableViewY = btnY + btnW + 70.f;
+    _tableViewY = btnY + btnW + 40.f;
     CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
     [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:userDefault.photo] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         
