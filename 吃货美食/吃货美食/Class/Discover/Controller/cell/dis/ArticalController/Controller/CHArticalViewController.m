@@ -319,10 +319,6 @@
       
         self.tabelView=tabelView;
         
-        MJRefreshNormalHeader *header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(RefreshNormalHeader)];
-        self.tabelView.mj_header=header;
-        [self.tabelView addSubview:header];
-        
         ReusableView *view=[[ReusableView alloc]init];
         _tabelView.tableHeaderView=view;
         [_scrollerView addSubview:tabelView];
