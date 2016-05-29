@@ -336,6 +336,8 @@
 		B7A512BC1CE660A40085A6C8 /* CHEightChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A512BA1CE660A40085A6C8 /* CHEightChatCell.xib */; };
 		B7A512C01CE660DF0085A6C8 /* CHNineChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A512BE1CE660DF0085A6C8 /* CHNineChatCell.m */; };
 		B7A512C11CE660DF0085A6C8 /* CHNineChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A512BF1CE660DF0085A6C8 /* CHNineChatCell.xib */; };
+		B7A73B591CF996C20071D71C /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A73B571CF996C20071D71C /* libsqlite3.0.tbd */; };
+		B7A73B5A1CF996C20071D71C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A73B581CF996C20071D71C /* libsqlite3.tbd */; };
 		B7B7A5BB1CEC91AF002A80E7 /* CHMyPublishController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B7A5B91CEC91AF002A80E7 /* CHMyPublishController.m */; };
 		B7B7A5BC1CEC91AF002A80E7 /* CHMyPublishController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7B7A5BA1CEC91AF002A80E7 /* CHMyPublishController.xib */; };
 		B7B7A5C01CEC91CC002A80E7 /* CHMyCollectController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B7A5BE1CEC91CC002A80E7 /* CHMyCollectController.m */; };
@@ -872,6 +874,8 @@
 		B7A512BD1CE660DF0085A6C8 /* CHNineChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHNineChatCell.h; sourceTree = "<group>"; };
 		B7A512BE1CE660DF0085A6C8 /* CHNineChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHNineChatCell.m; sourceTree = "<group>"; };
 		B7A512BF1CE660DF0085A6C8 /* CHNineChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHNineChatCell.xib; sourceTree = "<group>"; };
+		B7A73B571CF996C20071D71C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		B7A73B581CF996C20071D71C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		B7B7A5B81CEC91AF002A80E7 /* CHMyPublishController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMyPublishController.h; sourceTree = "<group>"; };
 		B7B7A5B91CEC91AF002A80E7 /* CHMyPublishController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMyPublishController.m; sourceTree = "<group>"; };
 		B7B7A5BA1CEC91AF002A80E7 /* CHMyPublishController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHMyPublishController.xib; sourceTree = "<group>"; };
@@ -933,6 +937,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7A73B591CF996C20071D71C /* libsqlite3.0.tbd in Frameworks */,
+				B7A73B5A1CF996C20071D71C /* libsqlite3.tbd in Frameworks */,
 				B7E01C0B1CF1F85F0079815C /* libxml2.2.tbd in Frameworks */,
 				B7E01C0C1CF1F85F0079815C /* libxml2.tbd in Frameworks */,
 				6302A48352870C94A21B65CA /* libPods.a in Frameworks */,
@@ -1481,6 +1487,8 @@
 		097A2F15618DB9C1D6C68FEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B7A73B571CF996C20071D71C /* libsqlite3.0.tbd */,
+				B7A73B581CF996C20071D71C /* libsqlite3.tbd */,
 				B7E01C091CF1F85F0079815C /* libxml2.2.tbd */,
 				B7E01C0A1CF1F85F0079815C /* libxml2.tbd */,
 				C2714D066AF4EF14D1D1B684 /* libPods.a */,

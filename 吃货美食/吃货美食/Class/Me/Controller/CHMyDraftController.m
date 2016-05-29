@@ -82,8 +82,8 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     CHRPublishSave *publishSave = self.dataArr[indexPath.row];
-    
     CHRPublishNextViewController *targetVC = [[CHRPublishNextViewController alloc] initWithFoodDic:publishSave.foodDic withFoodName:publishSave.foodName];
+
     [self.navigationController pushViewController:targetVC animated:YES];
     
     

@@ -14,7 +14,7 @@
 #import <MJRefresh.h>
 #import "CHCateShowController.h"
 #import "CHCateShowController.h"
-
+#import "CHDBHelper.h"
 @interface CHCateShowController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong,nonatomic) UITableView *eChatTableView;
@@ -209,6 +209,12 @@
         [mySelf.eChatTableView.mj_header endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
         mySelf.cateModel = [CateShowModel mj_objectWithKeyValues:dic];
+        
+        dispatch_queue_t q1 = dispatch_queue_create("queue1", NULL);
+        dispatch_async(q1, ^{
+            [mySelf.cateModel save];
+        });
+        
         
         mySelf.dataArr = [[NSMutableArray alloc] initWithArray:mySelf.cateModel.topic_list];
         

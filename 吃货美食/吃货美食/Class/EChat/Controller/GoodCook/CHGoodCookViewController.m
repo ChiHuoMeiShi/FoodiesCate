@@ -207,6 +207,7 @@
         NSDictionary * dic = (NSDictionary *)responseObject;
         mySelf.cateModel = [CateShowModel mj_objectWithKeyValues:dic];
         
+        
         mySelf.dataArr = [[NSMutableArray alloc] initWithArray:mySelf.cateModel.topic_list];
         
         [mySelf.eChatTableView reloadData];
