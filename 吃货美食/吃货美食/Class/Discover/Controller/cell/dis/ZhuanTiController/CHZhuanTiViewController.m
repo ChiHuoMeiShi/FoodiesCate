@@ -42,9 +42,15 @@
    _zhuanTiTableView.dataSource=self;
     _zhuanTiTableView.delegate=self;
     [self.view addSubview:_zhuanTiTableView];
+    
     MJRefreshNormalHeader *header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(RefreshNormalHeader)];
     _zhuanTiTableView.mj_header=header;
     [_zhuanTiTableView addSubview:header];
+    _zhuanTiTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+       [self getZhuanTiData];
+    }];
+    
+    //       [_mytableView.mj_footer endRefreshing];
    
 }
 -(void)getZhuanTiData
@@ -60,7 +66,7 @@
            CHCZhuanTiData *data=[CHCZhuanTiData mj_objectWithKeyValues:responseObject];
            myself.data=data;
            [_zhuanTiTableView reloadData];
-  
+     [_zhuanTiTableView.mj_footer endRefreshing];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];

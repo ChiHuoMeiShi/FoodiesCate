@@ -45,6 +45,11 @@
     MJRefreshStateHeader *header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshAction)];
     self.caiDanTableView.mj_header=header;
     [self.caiDanTableView addSubview:header];
+    _caiDanTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+           [self getUpToDateDataWithSource:@"iphone"];
+    }];
+    
+    //       [_mytableView.mj_footer endRefreshing];
 
 }
 
@@ -63,6 +68,7 @@
             CHCCaiDandata *data=[CHCCaiDandata mj_objectWithKeyValues:responseObject];
               myself.data=data;
               [_caiDanTableView reloadData];
+               [_caiDanTableView.mj_footer endRefreshing];
       
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         

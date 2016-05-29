@@ -67,7 +67,13 @@
      _mytableView.mj_header=header;
        [_mytableView addSubview:header];
     
+
     
+    _mytableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+       [self getTableViewData];
+    }];
+
+//       [_mytableView.mj_footer endRefreshing];
 }
 -(void)getTableViewData
 {
@@ -82,11 +88,12 @@
         CHCFindData *data=[CHCFindData mj_objectWithKeyValues:responseObject];
         mySelf.data=data;
         [_mytableView reloadData];
-    
+        
+    [_mytableView.mj_footer endRefreshing];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
       
-
+        
     }];
     
 }
