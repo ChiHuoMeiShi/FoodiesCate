@@ -103,7 +103,6 @@
                 [mySelf.searchModel.data addObjectsFromArray:tempModel.data];
             }
             [mySelf.recommendCollection reloadData];
-            [mySelf.recommendModel saveInfo];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             CHLog(@"%@",error);
             [mySelf.recommendCollection.mj_footer endRefreshing];

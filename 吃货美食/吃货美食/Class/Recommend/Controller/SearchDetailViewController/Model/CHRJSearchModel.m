@@ -14,4 +14,5 @@
     return @{@"data":[CHRJSearchContentModel class]};
 }
 
+
 @end
