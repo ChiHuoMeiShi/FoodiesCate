@@ -52,13 +52,13 @@
 }
 
 - (void)viewlayout{
-    CGFloat btnY = 64 + 50.f;
-    CGFloat btnW = 120.f;
+    CGFloat btnY = 64 + 18.f;
+    CGFloat btnW = 110.f;
     CGFloat btnX = CHSCREENWIDTH / 2 - btnW / 2;
     CGFloat btnH = btnW;
     self.iconBtn = [[UIButton alloc] initWithFrame:CGRectMake(btnX, btnY, btnW, btnH)];
     
-    _tableViewY = btnY + btnW + 40.f;
+    _tableViewY = btnY + btnW + 5.f;
     CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
     [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:userDefault.photo] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         
