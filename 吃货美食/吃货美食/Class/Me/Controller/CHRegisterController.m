@@ -39,15 +39,22 @@
         
         if (code == 1) {
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"注册成功请登录" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [mySelf.navigationController popViewControllerAnimated:YES];
+            }];
+
+            
+            
             [alertController addAction:okAction];
             [self presentViewController:alertController animated:YES completion:nil];
         }
         if (code == -2) {
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"此账号已被注册请登录" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [mySelf.navigationController popViewControllerAnimated:YES];
+            }];
             [alertController addAction:okAction];
-            [self presentViewController:alertController animated:YES completion:nil];
+            [mySelf presentViewController:alertController animated:YES completion:nil];
             
 
         }
@@ -111,7 +118,8 @@
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];
-
+    
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
