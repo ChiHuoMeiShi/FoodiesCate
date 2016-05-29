@@ -7,12 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+
+
 typedef void(^SegmentBlock)(NSInteger a);
 
 @interface CHCSegment : UIControl
 @property (nonatomic,copy)SegmentBlock mycountBlock;
 @property (nonatomic,assign)CGFloat perWidth;
 @property (nonatomic,assign)NSInteger index;
+//上次选中的标签索引
+@property(nonatomic,assign)NSInteger lastSeletIndex;
+
 @property (nonatomic,strong)CALayer *segmentLayer;
 @property (nonatomic,strong)NSArray *items;
 @property (nonatomic,strong)UIColor *underLayerBackgroudColor;

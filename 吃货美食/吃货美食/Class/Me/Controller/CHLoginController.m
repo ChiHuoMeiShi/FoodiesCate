@@ -10,7 +10,7 @@
 #import "CHUserDefaults.h"
 #import "CHRegisterController.h"
 
-@interface CHLoginController ()
+@interface CHLoginController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *accountTextField;
 
@@ -26,6 +26,9 @@
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:NO];
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.accountTextField.delegate = self;
+    self.passwdTextField.delegate = self;
 }
 - (void)navBackAction
 {
@@ -85,4 +88,11 @@
     [self.accountTextField resignFirstResponder];
     [self.passwdTextField resignFirstResponder];
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    return YES;
+}
+
 @end

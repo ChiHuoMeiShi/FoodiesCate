@@ -1,46 +1,33 @@
 //
-//  CHEChatDetailController.m
+//  CHAboutUsController.m
 //  吃货美食
 //
-//  Created by 赵天 on 16/5/14.
+//  Created by 赵天 on 16/5/29.
 //  Copyright © 2016年 赵天. All rights reserved.
 //
 
-#import "CHEChatDetailController.h"
+#import "CHAboutUsController.h"
 
-@interface CHEChatDetailController ()<UIWebViewDelegate>
+@interface CHAboutUsController ()
 
 @end
 
-@implementation CHEChatDetailController
-- (void)navBackAction{
-    [self.navigationController popViewControllerAnimated:YES];
-}
+@implementation CHAboutUsController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.title = @"关于我们";
+    [self.navigationController setNavigationBarHidden:NO];
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
-    NSString *baseUrl = @"http://m.meishij.net/html5/shihua_content.php?gid=";
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@&tid=%@",baseUrl,self.gid,self.tid];
-    
-    NSURL *url = [NSURL URLWithString:urlStr];
-    
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    
-    [self.webView loadRequest:request];
-    
+}
+- (void)navBackAction
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
-    if(navigationType==UIWebViewNavigationTypeLinkClicked)
-    {
-        return NO;
-    }
-    else{return YES;}
 }
 
 /*

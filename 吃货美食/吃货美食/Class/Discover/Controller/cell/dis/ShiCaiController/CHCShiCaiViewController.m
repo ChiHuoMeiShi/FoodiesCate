@@ -38,23 +38,33 @@
     UIButton *vegetablebutton=[[UIButton alloc]initWithFrame:CGRectMake(10, CHSCREENHEIGH-45, W , 30)];
     [vegetablebutton setTitle:@"蔬菜" forState:UIControlStateNormal];
     [vegetablebutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    
+     [vegetablebutton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+    
     [vegetablebutton addTarget:self action:@selector(shuCai:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:vegetablebutton];
     UIButton *fruitbutton=[[UIButton alloc]initWithFrame:CGRectMake(10+W+10, CHSCREENHEIGH-45, W, 30)];
     [fruitbutton setTitle:@"水果" forState:UIControlStateNormal];
     [fruitbutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [fruitbutton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
     [fruitbutton addTarget:self action:@selector(fruit:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:fruitbutton];
 
     UIButton *meatablebutton=[[UIButton alloc]initWithFrame:CGRectMake(10+(W+10)*2, CHSCREENHEIGH-45, W, 30)];
     [meatablebutton setTitle:@"肉类" forState:UIControlStateNormal];
     [meatablebutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [meatablebutton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+
+    [meatablebutton addTarget:self action:@selector(fruit:) forControlEvents:UIControlEventTouchUpInside];
     [meatablebutton addTarget:self action:@selector(meat:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:meatablebutton];
 
-    UIButton *fiveCrealsbutton=[[UIButton alloc]initWithFrame:CGRectMake(10+(W+10)*3, CHSCREENHEIGH-15-30, 46, 30)];
+    UIButton *fiveCrealsbutton=[[UIButton alloc]initWithFrame:CGRectMake(10+(W+10)*3, CHSCREENHEIGH-15-30, W, 30)];
     [fiveCrealsbutton setTitle:@"五谷" forState:UIControlStateNormal];
    [fiveCrealsbutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [fiveCrealsbutton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+
+    [fiveCrealsbutton addTarget:self action:@selector(fruit:) forControlEvents:UIControlEventTouchUpInside];
     [fiveCrealsbutton addTarget:self action:@selector(fiveCreals:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:fiveCrealsbutton];
 
