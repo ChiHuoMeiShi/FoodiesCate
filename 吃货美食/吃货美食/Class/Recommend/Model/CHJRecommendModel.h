@@ -37,4 +37,6 @@
 
 - (CHJRecommendModel *)getInfo;
 
+- (CHJRecommendModel *)getRecommendInfo;
+
 @end
