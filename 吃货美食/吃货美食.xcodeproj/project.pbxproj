@@ -110,6 +110,7 @@
 		7A05CA791CF71A510055E679 /* CHRCommitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A05CA771CF71A510055E679 /* CHRCommitViewController.xib */; };
 		7A05CA7D1CF730940055E679 /* CHRCommitCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A05CA7B1CF730930055E679 /* CHRCommitCollectionViewCell.m */; };
 		7A05CA7E1CF730940055E679 /* CHRCommitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A05CA7C1CF730930055E679 /* CHRCommitCollectionViewCell.xib */; };
+		7A1F7FC81CFAFFB2007895C9 /* CHJRecommendModel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A1F7FC71CFAFFB2007895C9 /* CHJRecommendModel.plist */; };
 		7A30D5021CF58EC30042DB98 /* CHRPublishChooseTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4AF1CF03F2800A2D830 /* CHRPublishChooseTypeCell.m */; };
 		7A30D5031CF58F060042DB98 /* CHRPublicNextStepTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4F51CF0A8C800A2D830 /* CHRPublicNextStepTableViewCell.m */; };
 		7A30D5041CF58F490042DB98 /* CHRPublicNextBaseFoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4FA1CF0A8F800A2D830 /* CHRPublicNextBaseFoodTableViewCell.m */; };
@@ -535,6 +536,7 @@
 		7A05CA7A1CF730930055E679 /* CHRCommitCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRCommitCollectionViewCell.h; sourceTree = "<group>"; };
 		7A05CA7B1CF730930055E679 /* CHRCommitCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRCommitCollectionViewCell.m; sourceTree = "<group>"; };
 		7A05CA7C1CF730930055E679 /* CHRCommitCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRCommitCollectionViewCell.xib; sourceTree = "<group>"; };
+		7A1F7FC71CFAFFB2007895C9 /* CHJRecommendModel.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CHJRecommendModel.plist; sourceTree = "<group>"; };
 		7A3411AC1CE89742003E4F3C /* CHRJSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRJSearchView.h; sourceTree = "<group>"; };
 		7A3411AD1CE89742003E4F3C /* CHRJSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRJSearchView.m; sourceTree = "<group>"; };
 		7A3411B11CE8A88F003E4F3C /* CHRJSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRJSearchView.xib; sourceTree = "<group>"; };
@@ -2108,6 +2110,7 @@
 		7AC8C4211CE468BC0043CAEC /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
+				7A1F7FC71CFAFFB2007895C9 /* CHJRecommendModel.plist */,
 				7AC8C4221CE4696A0043CAEC /* CHRFenLei.plist */,
 			);
 			path = SupportFiles;
@@ -2998,7 +3001,7 @@
 				TargetAttributes = {
 					B71ED84D1CDB41650035F6BE = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = J498C47ANE;
+						DevelopmentTeam = 5D5Z473WJW;
 					};
 				};
 			};
@@ -3070,6 +3073,7 @@
 				B7F6155A1CDC857700AF1697 /* CHEChatViewController.xib in Resources */,
 				7AC792F81CE85060001CBAA5 /* CHRJSearchViewController.xib in Resources */,
 				B7A512BC1CE660A40085A6C8 /* CHEightChatCell.xib in Resources */,
+				7A1F7FC81CFAFFB2007895C9 /* CHJRecommendModel.plist in Resources */,
 				7AC792F21CE85060001CBAA5 /* CHRJSearchTableViewCell.xib in Resources */,
 				7A3411B21CE8A88F003E4F3C /* CHRJSearchView.xib in Resources */,
 				7AC8C4301CE4B20A0043CAEC /* CHRJSortTableViewCell.xib in Resources */,
@@ -3601,7 +3605,7 @@
 					"\"SystemConfiguration\"",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TianGeGe.cn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JiangGeGe.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3657,7 +3661,7 @@
 					"\"SystemConfiguration\"",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TianGeGe.cn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JiangGeGe.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

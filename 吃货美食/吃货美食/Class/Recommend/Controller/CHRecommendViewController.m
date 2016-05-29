@@ -78,6 +78,9 @@
         mySelf.recommendModel = [mySelf.recommendModel getInfo];
         if (mySelf.recommendModel) {
             [mySelf.recommendCollection reloadData];
+        }else{
+            mySelf.recommendModel = [[CHJRecommendModel alloc]init];
+            mySelf.recommendModel = [mySelf.recommendModel getRecommendInfo];
         }
         [mySelf.recommendCollection.mj_header endRefreshing];
     }];
