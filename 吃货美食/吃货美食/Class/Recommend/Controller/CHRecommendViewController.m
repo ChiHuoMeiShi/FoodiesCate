@@ -42,7 +42,7 @@
     
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     if (!self.todayBannerTimer) {
-        self.todayBannerTimer = [NSTimer scheduledTimerWithTimeInterval:8 target:self selector:@selector(todayBannerTimerAction) userInfo:nil repeats:YES];
+        self.todayBannerTimer = [NSTimer scheduledTimerWithTimeInterval:15 target:self selector:@selector(todayBannerTimerAction) userInfo:nil repeats:YES];
     }
     if (self.todayFooterView) {
         NSInteger currentPage = self.todayFooterView.todayBannerScrollerView.currentBannerCount;
