@@ -71,8 +71,14 @@
         mySelf.recommendModel = [CHJRecommendModel mj_objectWithKeyValues:dic[@"obj"]];
         [mySelf requestUpdateFoodData];
         [mySelf.recommendCollection reloadData];
+        [mySelf.recommendModel saveInfo];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         CHLog(@"%@",error);
+        mySelf.recommendModel = [[CHJRecommendModel alloc]init];
+        mySelf.recommendModel = [mySelf.recommendModel getInfo];
+        if (mySelf.recommendModel) {
+            [mySelf.recommendCollection reloadData];
+        }
         [mySelf.recommendCollection.mj_header endRefreshing];
     }];
 }
@@ -97,6 +103,7 @@
                 [mySelf.searchModel.data addObjectsFromArray:tempModel.data];
             }
             [mySelf.recommendCollection reloadData];
+            [mySelf.recommendModel saveInfo];
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
             CHLog(@"%@",error);
             [mySelf.recommendCollection.mj_footer endRefreshing];

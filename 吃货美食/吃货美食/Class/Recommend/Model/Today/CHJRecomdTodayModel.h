@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CHJRecommendJumpModel.h"
 #import <MJExtension.h>
-@interface CHJRecomdTodayModel : NSObject
+@interface CHJRecomdTodayModel : NSObject<NSCoding>
 
 @property (nonatomic,strong)NSNumber * myID;
 @property (nonatomic,copy)NSString * f_s_type;

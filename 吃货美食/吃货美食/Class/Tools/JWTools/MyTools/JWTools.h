@@ -79,6 +79,14 @@
  */
 + (NSDictionary *)contentDictForFileName:(NSString *)fileName;
 
+/**
+ *  保存图片到本地
+ *
+ *  @param image 图片
+ *
+ *  @return 存储地址
+ */
++ (NSString *)saveJImage:(UIImage *)image;
 
 #pragma mark - NSDate
 /**

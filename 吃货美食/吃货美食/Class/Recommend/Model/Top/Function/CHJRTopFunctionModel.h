@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MJExtension.h>
 #import "CHJRecommendJumpModel.h"
-@interface CHJRTopFunctionModel : NSObject
+@interface CHJRTopFunctionModel : NSObject<NSCoding>
 
 @property (nonatomic,copy)NSString * click_obj;
 @property (nonatomic,copy)NSString * title;

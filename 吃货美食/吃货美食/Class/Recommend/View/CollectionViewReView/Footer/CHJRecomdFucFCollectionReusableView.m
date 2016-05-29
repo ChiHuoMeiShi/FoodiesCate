@@ -47,7 +47,9 @@
     }
     __weak typeof(btn)setBtn = btn;
     [[SDWebImageManager sharedManager] downloadImageWithURL:url options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-        [setBtn setBackgroundImage:image forState:UIControlStateNormal];
+        if (image) {
+            [setBtn setBackgroundImage:image forState:UIControlStateNormal];
+        }
     }];
 }
 

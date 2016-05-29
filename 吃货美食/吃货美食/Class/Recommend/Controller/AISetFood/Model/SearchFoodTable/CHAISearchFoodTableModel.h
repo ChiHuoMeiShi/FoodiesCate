@@ -6,9 +6,9 @@
 //  Copyright © 2016年 赵天. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "CHDBModel.h"
 #import <MJExtension.h>
-@interface CHAISearchFoodTableModel : NSObject
+@interface CHAISearchFoodTableModel : CHDBModel<NSCoding>
 
 @property (nonatomic,strong)NSNumber * myID;
 @property (nonatomic,copy)NSString * t;

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MJExtension.h>
 
-@interface CHJRTopBannerTittleModel : NSObject
+@interface CHJRTopBannerTittleModel : NSObject<NSCoding>
 @property (nonatomic,copy)NSString * click_trackingURL;
 @property (nonatomic,copy)NSString * sub_title;
 @property (nonatomic,copy)NSString * titlepic;

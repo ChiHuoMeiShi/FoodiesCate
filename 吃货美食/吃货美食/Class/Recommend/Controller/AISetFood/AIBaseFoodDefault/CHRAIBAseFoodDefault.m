@@ -28,4 +28,28 @@
     return baseFood;
 }
 
+MJExtensionCodingImplementation;
+
+- (void)saveInfo{
+    NSArray *docs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString * savePath = [NSString stringWithFormat:@"%@/CHRAIBAseFoodDefault.plist",docs[0]];
+    NSData * saveData = [NSKeyedArchiver archivedDataWithRootObject:self];
+
+    if ([saveData writeToFile:savePath atomically:YES]) {
+        CHLog(@"save success");
+    } else{
+        CHLog(@"save failed");
+    }
+}
+
+- (CHRAIBAseFoodDefault *)getInfo{
+    NSArray *docs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString * filePath = [NSString stringWithFormat:@"%@/CHRAIBAseFoodDefault.plist",docs[0]];
+    NSData * data = [NSData dataWithContentsOfFile:filePath];
+    CHLog(@"filePath is %@",filePath);
+
+    id idValue = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    return (CHRAIBAseFoodDefault *)idValue;
+}
+
 @end

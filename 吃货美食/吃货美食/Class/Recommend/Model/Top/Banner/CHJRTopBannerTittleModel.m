@@ -10,5 +10,6 @@
 
 @implementation CHJRTopBannerTittleModel
 
+MJExtensionCodingImplementation;
 
 @end
