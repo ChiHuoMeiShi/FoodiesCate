@@ -70,7 +70,7 @@
     self.iconBtn.layer.cornerRadius = self.iconBtn.width * 0.5;
     [self.view addSubview:self.iconBtn];
     //tableView
-    self.mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.f, _tableViewY, CHSCREENWIDTH, CHSCREENHEIGH) style:UITableViewStyleGrouped];
+    self.mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.f, _tableViewY, CHSCREENWIDTH, CHSCREENHEIGH - _tableViewY) style:UITableViewStyleGrouped];
     self.mTableView.delegate = self;
     self.mTableView.dataSource = self;
     
