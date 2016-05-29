@@ -26,14 +26,27 @@
     [_caiDanTwoImageView sd_setImageWithURL:[NSURL URLWithString:data_list.photos[1]]];
     [_caiDanThreeImageView sd_setImageWithURL:[NSURL URLWithString:data_list.photos[2]]];
     [_CaiDanFourImageView sd_setImageWithURL:[NSURL URLWithString:data_list.photos[3]]];
-    [_buttomImageView sd_setImageWithURL:[NSURL URLWithString:data_list.user_info.avatar]];
+    
     CGFloat W=(CHSCREENWIDTH-11*2-5*3)/4;
     _wedth.constant=W;
     _hight.constant=W;
     
+    
+    
+    [_buttomImageView sd_setImageWithURL:[NSURL URLWithString:data_list.user_info.avatar]];
+    
+    
+
 }
+- (void)drawRect:(CGRect)rect
+{
+    [super drawRect:rect];
+    _buttomImageView.layer.cornerRadius =_buttomImageView.bounds.size.width*0.5;
+    _buttomImageView.clipsToBounds = YES;
+}
+
 - (void)awakeFromNib {
-    // Initialization code
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

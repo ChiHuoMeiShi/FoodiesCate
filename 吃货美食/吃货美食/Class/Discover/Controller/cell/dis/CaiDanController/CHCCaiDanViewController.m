@@ -45,6 +45,11 @@
     MJRefreshStateHeader *header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshAction)];
     self.caiDanTableView.mj_header=header;
     [self.caiDanTableView addSubview:header];
+    _caiDanTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+           [self getUpToDateDataWithSource:@"iphone"];
+    }];
+    
+    //       [_mytableView.mj_footer endRefreshing];
 
 }
 
@@ -57,13 +62,14 @@
     __weak typeof(self) myself=self;
     [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         CHLog(@"1111%@",responseObject);
-        dispatch_async(dispatch_get_main_queue(), ^
-          {
+     
+     
               [self.caiDanTableView.mj_header endRefreshing];
             CHCCaiDandata *data=[CHCCaiDandata mj_objectWithKeyValues:responseObject];
               myself.data=data;
               [_caiDanTableView reloadData];
-          });
+               [_caiDanTableView.mj_footer endRefreshing];
+      
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];

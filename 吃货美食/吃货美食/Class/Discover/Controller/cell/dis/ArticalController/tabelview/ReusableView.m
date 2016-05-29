@@ -36,7 +36,7 @@
         
         [self getArTicalData];
         
-        self.timer=[NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(update:) userInfo:nil repeats:YES];
+        self.timer=[NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(update:) userInfo:nil repeats:YES];
         //获取当前的消息循环对象
         NSRunLoop *runLoop = [NSRunLoop currentRunLoop];
         //改变self.timer的优先级
@@ -155,7 +155,7 @@
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     //重新启动计时器
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(update:) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(update:) userInfo:nil repeats:YES];
     
     //再次修改self.timer的优先级
     //修改self.timer的优先级与控件一样

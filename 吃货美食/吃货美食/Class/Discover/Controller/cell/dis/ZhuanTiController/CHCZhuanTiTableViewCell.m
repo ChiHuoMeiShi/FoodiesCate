@@ -21,6 +21,12 @@
 - (void)awakeFromNib {
     // Initialization code
 }
+- (void)drawRect:(CGRect)rect
+{
+    [super drawRect:rect];
+    _rightImageView.layer.cornerRadius =_rightImageView.bounds.size.width*0.5;
+    _rightImageView.clipsToBounds = YES;
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

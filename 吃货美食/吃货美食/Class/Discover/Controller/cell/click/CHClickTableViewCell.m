@@ -13,17 +13,17 @@
 -(void)setFaxian_list:(CHCfaxian_list *)faxian_list
 {
     _faxian_list=faxian_list;
-    if ([faxian_list.type isEqualToString:@"1"]) {
+   
         _CommentTitleLabel.text=faxian_list.title;
         _commentMax.text=faxian_list.tag;
         
         [_commentImageView sd_setImageWithURL:[NSURL URLWithString:faxian_list.recipe_info.titlepic]];
+    
         _CommentHongTitle.text=faxian_list.recipe_info.title;
-        
         NSString * stepStr = faxian_list.recipe_info.step;
         if (faxian_list.recipe_info.make_time) {
             stepStr = [NSString stringWithFormat:@"%@/%@",stepStr,faxian_list.recipe_info.make_time];
-        }
+ 
         _COmmentStepLabel.text= stepStr;
         
         
