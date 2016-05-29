@@ -18,4 +18,5 @@
 @property (nonatomic,strong)NSNumber * total;
 @property (nonatomic,strong)NSNumber * solr_num;
 
+
 @end
