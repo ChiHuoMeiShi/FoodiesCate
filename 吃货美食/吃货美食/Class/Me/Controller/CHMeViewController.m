@@ -13,7 +13,6 @@
 #import "CHMyDraftController.h"
 #import "CHMyCollectController.h"
 #import "CHMyPublishController.h"
-#import "CHMySettingController.h"
 #import "CHMyInfoController.h"
 #import "CHRegisterController.h"
 #import "CHLoginController.h"
@@ -49,33 +48,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH, CHSCREENHEIGH) style:UITableViewStylePlain];
+    self.mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH, CHSCREENHEIGH) style:UITableViewStyleGrouped];
     
     self.mTableView.delegate = self;
     self.mTableView.dataSource = self;
+    self.mTableView.showsVerticalScrollIndicator = NO;
+    self.mTableView.showsHorizontalScrollIndicator = NO;
     [self.mTableView reloadData];
     [self.view addSubview:self.mTableView];
 }
-//- (void)login{
-//    CHHTTPRequestManager *myManager = [CHHTTPRequestManager manager];
-//    myManager.userRequest.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
-//    [myManager.userRequest.requestSerializer setAuthorizationHeaderFieldWithUsername:@"13007551820" password:@"zt123456"];
-//    NSString *url = @"http://api.meishi.cc/v5/login.php?format=json";
-//    NSDictionary *parameter = @{@"lat" : @"34.6049907522264",@"lon" : @"112.4229875834745",@"source" : @"iphone",@"format" : @"json"};
-//    [myManager.userRequest POST:url parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSDictionary * dic = (NSDictionary *)responseObject;
-//        //            CHUserDefaults
-//        CHLog(@"%@",dic);
-//        int code = [[dic objectForKey:@"code"] intValue];
-//        if (code == 1) {
-//            CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
-//            [userDefault setUserDict:dic];
-//        }else{
-//            CHLog(@"用户名或者密码错误");
-//        }
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//    }];
-//}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -83,7 +65,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return 3;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -101,17 +83,9 @@
         cell.backgroundColor = [[UIColor alloc] initWithRed:247.f/255.f green:255.f/157.f blue:221.f/255.f alpha:1];
 
         return cell;
-    }else if (1 == indexPath.row){
-        if (!cell)
-        {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        }
-        cell.textLabel.font = [UIFont systemFontOfSize:28.f];
-        cell.textLabel.text = @"我的收藏";
-        cell.imageView.image= [UIImage imageNamed:@"shoucang"];
-        cell.backgroundColor = [[UIColor alloc] initWithRed:198.f/255.f green:247.f/255.f blue:255.f/255.f alpha:1];
-        return cell;
-    }else if (2 == indexPath.row){
+    }
+
+    else if (1 == indexPath.row){
         if (!cell)
         {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
@@ -121,7 +95,7 @@
         cell.textLabel.text = @"草稿箱";
         cell.backgroundColor = [[UIColor alloc] initWithRed:237.f/255.f green:220.f/255.f blue:221.f/255.f alpha:1];
         return cell;
-    }else if (3 == indexPath.row){
+    }else if (2 == indexPath.row){
         if (!cell)
         {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
@@ -153,15 +127,8 @@
             [self gotoLoginView];
         }
     }
+
     if (1 == indexPath.row){
-        if (userDefault.user_name) {
-            CHMyCollectController *targetVC = [[CHMyCollectController alloc] init];
-            [self.navigationController pushViewController:targetVC animated:YES];
-        }else{
-            [self gotoLoginView];
-        }
-    }
-    if (2 == indexPath.row){
         
         if (userDefault.user_name) {
             CHMyDraftController *targetVC = [[CHMyDraftController alloc] init];
@@ -171,7 +138,7 @@
         }
 
     }
-    if (3 == indexPath.row){
+    if (2 == indexPath.row){
         
         if (userDefault.user_name) {
             CHMyInfoController *targetVC = [[CHMyInfoController alloc] init];
@@ -182,10 +149,10 @@
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 300.f;
+    return 280.f;
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH, 300.f)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH, 280.f)];
     self.backgroundView = [[UIImageView alloc] initWithFrame:headerView.frame];
     self.backgroundView.image = [UIImage imageNamed:@"meBackground"];
     [headerView addSubview:self.backgroundView];
@@ -238,6 +205,8 @@
     [self.navigationController pushViewController:targetVC animated:YES];
 }
 - (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
+
 }
 @end

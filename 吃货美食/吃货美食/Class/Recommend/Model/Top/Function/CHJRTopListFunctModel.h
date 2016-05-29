@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MJExtension.h>
-@interface CHJRTopListFunctModel : NSObject
+@interface CHJRTopListFunctModel : NSObject<NSCoding>
 
 @property (nonatomic,copy)NSString * title;
 @property (nonatomic,copy)NSString * image;

@@ -14,4 +14,9 @@
     return @{@"myID":@"id",@"myImg":@"img"};
 }
 
+MJExtensionCodingImplementation;
+
+
+
+
 @end

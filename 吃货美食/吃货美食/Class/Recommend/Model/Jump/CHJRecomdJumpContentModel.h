@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MJExtension.h>
-@interface CHJRecomdJumpContentModel : NSObject
+@interface CHJRecomdJumpContentModel : NSObject<NSCoding>
 @property (nonatomic,strong)NSNumber * recipeId;
 @property (nonatomic,copy)NSString * urlString;
 

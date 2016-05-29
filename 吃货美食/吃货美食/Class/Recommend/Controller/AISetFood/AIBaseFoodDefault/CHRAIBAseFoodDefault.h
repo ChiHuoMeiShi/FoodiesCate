@@ -6,12 +6,17 @@
 //  Copyright © 2016年 赵天. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "CHDBModel.h"
+#import <MJExtension.h>
 
-@interface CHRAIBAseFoodDefault : NSObject
+@interface CHRAIBAseFoodDefault : CHDBModel<NSCoding>
 
 @property (nonatomic,strong)NSMutableArray * baseFoodArray;
 
 + (instancetype)shareSelectedBaseFood;
+
+- (void)saveInfo;
+
+- (CHRAIBAseFoodDefault *)getInfo;
 
 @end

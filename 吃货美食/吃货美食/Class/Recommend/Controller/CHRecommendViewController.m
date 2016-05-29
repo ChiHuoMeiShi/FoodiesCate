@@ -46,7 +46,7 @@
     }
     if (self.todayFooterView) {
         NSInteger currentPage = self.todayFooterView.todayBannerScrollerView.currentBannerCount;
-        for (NSInteger i = 0; i < currentPage; i++) {
+        for (NSInteger i = 0; i < currentPage; ++i) {
             [self.todayFooterView.todayBannerScrollerView rightShift];
         }
         self.todayFooterView.todayBannerPageControl.currentPage = self.todayFooterView.todayBannerScrollerView.currentBannerCount;
@@ -71,8 +71,14 @@
         mySelf.recommendModel = [CHJRecommendModel mj_objectWithKeyValues:dic[@"obj"]];
         [mySelf requestUpdateFoodData];
         [mySelf.recommendCollection reloadData];
+        [mySelf.recommendModel saveInfo];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         CHLog(@"%@",error);
+        mySelf.recommendModel = [[CHJRecommendModel alloc]init];
+        mySelf.recommendModel = [mySelf.recommendModel getInfo];
+        if (mySelf.recommendModel) {
+            [mySelf.recommendCollection reloadData];
+        }
         [mySelf.recommendCollection.mj_header endRefreshing];
     }];
 }

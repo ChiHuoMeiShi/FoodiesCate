@@ -16,7 +16,7 @@
 #import "CHEChatDetailController.h"
 #import <MJRefresh.h>
 #import "CHCateShowController.h"
-
+#import "CHDBHelper.h"
 @interface CHFoodClassViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong,nonatomic) UITableView *eChatTableView;
@@ -235,6 +235,7 @@
         [mySelf.eChatTableView.mj_footer endRefreshing];
         NSDictionary * dic = (NSDictionary *)responseObject;
         mySelf.cateModel = [CateShowModel mj_objectWithKeyValues:dic];
+        
         [mySelf.dataArr addObjectsFromArray:mySelf.cateModel.topic_list];
         [mySelf.eChatTableView reloadData];
         

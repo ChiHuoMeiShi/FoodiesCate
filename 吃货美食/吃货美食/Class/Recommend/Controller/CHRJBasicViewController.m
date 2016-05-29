@@ -116,7 +116,7 @@
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
             [mySelf myImagePickerWithType:UIImagePickerControllerSourceTypeCamera];
         } else {
-            NSLog(@"照片源不可用");
+            CHLog(@"照片源不可用");
         }
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

@@ -15,8 +15,8 @@
 #import "GDataXMLNode.h"
 #import "CHHTTPRequestManager.h"
 #import "CHLocation.h"
-
-#define NMUBERS @"./*-+~!@#$%^&()_+-=,./;'[]{}:<>?`"
+#import "CHDBHelper.h"
+#import "CHAboutUsController.h"
 
 @interface CHMyInfoController () <UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate>
 {
@@ -33,6 +33,9 @@
 @end
 
 @implementation CHMyInfoController
+- (void)viewWillAppear:(BOOL)animated{
+    [self.mTableView reloadData];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -67,7 +70,7 @@
     self.iconBtn.layer.cornerRadius = self.iconBtn.width * 0.5;
     [self.view addSubview:self.iconBtn];
     //tableView
-    self.mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.f, _tableViewY, CHSCREENWIDTH, CHSCREENHEIGH) style:UITableViewStyleGrouped];
+    self.mTableView = [[UITableView alloc] initWithFrame:CGRectMake(0.f, _tableViewY, CHSCREENWIDTH, CHSCREENHEIGH - _tableViewY) style:UITableViewStyleGrouped];
     self.mTableView.delegate = self;
     self.mTableView.dataSource = self;
     
@@ -98,7 +101,7 @@
             [self presentViewController:picker animated:YES completion:nil];
             
         } else {
-            NSLog(@"照片源不可用");
+            CHLog(@"照片源不可用");
         }
     }]];
     [alertController addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -236,7 +239,47 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     if (indexPath.section == 1 && indexPath.row == 0) {
-        cell.textLabel.text = @"清除缓存";
+        //缓存的路径
+        NSFileManager* fileManager=[NSFileManager defaultManager];
+        NSArray *docs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *pathStr = [NSString stringWithFormat:@"%@/test.sqlite",docs[0]];
+        NSString *plistPathStr = [NSString stringWithFormat:@"%@/CHJRecommendModel.plist",docs[0]];
+        NSError *error = nil;
+        NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:pathStr error:&error];
+        NSDictionary *fileAttributes2 = [fileManager attributesOfItemAtPath:plistPathStr error:&error];
+        
+        float size = 0;
+        float size2 = 0;
+        if (fileAttributes != nil) {
+            //这里是B 字节
+            NSString *fileSize = [fileAttributes objectForKey:NSFileSize];
+            size = [fileSize floatValue] / 1024  ;
+//            fileSize+= fileAttributes.fileSize/ 1024.0/1024.0;
+            if (fileSize) {
+                CHLog(@"File size: %fMB\n",size/10);
+            }
+            
+        }
+        else {  
+            CHLog(@"Path (%@) is invalid.", pathStr);
+        }
+        if (fileAttributes2 != nil) {
+            //这里是B 字节
+            NSString *fileSize = [fileAttributes2 objectForKey:NSFileSize];
+            size2 = [fileSize floatValue] / 1024  ;
+            //            fileSize+= fileAttributes.fileSize/ 1024.0/1024.0;
+            if (fileSize) {
+                CHLog(@"File size: %fMB\n",size2);
+            }
+            
+        }
+        else {
+            CHLog(@"Path (%@) is invalid.", plistPathStr);
+        }
+        
+        float totalSize = (size + size2)/10;
+        cell.textLabel.text = [NSString stringWithFormat:@"清除缓存(%.1fMB)",totalSize];
+        
     }else if (indexPath.section == 1 && indexPath.row == 1){
         cell.textLabel.text = @"关于我们";
     }else if (indexPath.section == 2){
@@ -257,6 +300,45 @@
     }
     return 60.f;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 1 && indexPath.row == 0 ) {
+        CHLog(@"清除缓存");
+
+        NSFileManager* fileManager=[NSFileManager defaultManager];
+        
+        
+        NSArray *docs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *pathStr = [NSString stringWithFormat:@"%@/test.sqlite",docs[0]];
+        
+        NSString *plistPathStr = [NSString stringWithFormat:@"%@/CHJRecommendModel.plist",docs[0]];
+        
+        BOOL blHave=[[NSFileManager defaultManager] fileExistsAtPath:pathStr];
+        BOOL plHave=[[NSFileManager defaultManager] fileExistsAtPath:plistPathStr];
+        if ((!blHave) && (!plHave)) {
+            CHLog(@"缓存为空");
+            return;
+        }else{
+            BOOL blDele= [fileManager removeItemAtPath:pathStr error:nil];
+            BOOL plDele= [fileManager removeItemAtPath:plistPathStr error:nil];
+            if (blDele && plDele) {
+                NSMutableArray *indexPathes = [NSMutableArray arrayWithObject:indexPath];
+                //刷新
+                [tableView reloadRowsAtIndexPaths:indexPathes withRowAnimation:UITableViewRowAnimationFade];
+                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"清除缓存成功" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
+                [alertController addAction:okAction];
+                [self presentViewController:alertController animated:YES completion:nil];
+                
+            }else {
+                
+            }
+        }
+    }else if (indexPath.section == 1 && indexPath.row == 1){
+        CHAboutUsController *targetVC = [[CHAboutUsController alloc] init];
+        [self.navigationController pushViewController:targetVC animated:YES];
+    }
+}
+
 #pragma mark -- 退出按钮
 - (void)logouClick{
     CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
@@ -296,7 +378,6 @@
     
     return YES;
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

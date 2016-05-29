@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MJExtension.h>
 #import "CHJRecommendJumpModel.h"
-@interface CHJRTopBannerShowModel : NSObject
+@interface CHJRTopBannerShowModel : NSObject<NSCoding>
 @property (nonatomic,strong)NSNumber * myID;
 @property (nonatomic,copy)NSString * click_trackingURL;
 @property (nonatomic,strong)NSNumber * click_obj;

@@ -10,4 +10,6 @@
 
 @implementation CHJRTopListFunctModel
 
+MJExtensionCodingImplementation;
+
 @end

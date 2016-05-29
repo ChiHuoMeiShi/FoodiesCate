@@ -23,9 +23,15 @@
     [self listVCNavBarSet];
     [self.aiCollectionView registerNib:[UINib nibWithNibName:@"CHRAIFoodCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"JWRAIFoodCollectionViewCell"];
     
-    self.baseFood = [CHRAIBAseFoodDefault shareSelectedBaseFood];
+    if ([CHRAIBAseFoodDefault isExistInTable]) {
+        self.baseFood = [CHRAIBAseFoodDefault shareSelectedBaseFood];
+        self.baseFood = [self.baseFood getInfo];
+    }
+    if (!self.baseFood){
+        self.baseFood = [CHRAIBAseFoodDefault shareSelectedBaseFood];
+    }
+     
     self.dataArray = self.baseFood.baseFoodArray;
-    
     self.chooseFoodArray = [[NSMutableArray alloc]initWithCapacity:0];
     
     [self.choosedButton addTarget:self action:@selector(choosedFoodAction) forControlEvents:UIControlEventTouchUpInside];
@@ -84,6 +90,8 @@
 - (void)getBaseFood:(CHAISearchFoodTableModel *)baseFood{
     if (self.dataArray.count == 0) {
         [self.dataArray addObject:baseFood];
+        [self.baseFood saveInfo];
+        [self.baseFood saveOrUpdate];
         [self.aiCollectionView reloadData];
         return;
     }
@@ -93,6 +101,8 @@
         if (![baseFood.myID isEqual:obj.myID]) {
             if (foodCount >= mySelf.dataArray.count) {
                 [mySelf.dataArray addObject:baseFood];
+                [self.baseFood saveInfo];
+                [self.baseFood saveOrUpdate];
                 [mySelf.aiCollectionView reloadData];
                 return;
             }
@@ -105,6 +115,8 @@
 - (void)getCellBaseFood:(CHAISearchFoodTableModel *)baseFood{
     if (self.isDelete) {
         [self.dataArray removeObject:baseFood];
+        [self.baseFood saveInfo];
+        [self.baseFood saveOrUpdate];
         [self.aiCollectionView reloadData];
         return;
     }else{

@@ -17,6 +17,7 @@
                         <constraint firstAttribute="height" constant="55" id="Peu-1Q-vfq"/>
                         <constraint firstAttribute="width" constant="55" id="PyN-Ok-Ewz"/>
                     </constraints>
+                    <state key="normal" backgroundImage="20160528191017"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jr0-GJ-htc">
                     <rect key="frame" x="0.0" y="106" width="135" height="80"/>
@@ -25,6 +26,7 @@
                         <constraint firstAttribute="width" constant="135" id="GzL-yz-Ybn"/>
                         <constraint firstAttribute="height" constant="80" id="cTf-Yx-V2a"/>
                     </constraints>
+                    <state key="normal" backgroundImage="20160528191016"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2C0-S0-Gsu">
                     <rect key="frame" x="185" y="106" width="135" height="80"/>
@@ -33,6 +35,7 @@
                         <constraint firstAttribute="height" constant="80" id="9C9-g6-9Tb"/>
                         <constraint firstAttribute="width" constant="135" id="LwR-Xe-PMC"/>
                     </constraints>
+                    <state key="normal" backgroundImage="20160528191014"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="菜谱分类" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7O6-PZ-e7T">
                     <rect key="frame" x="8" y="70" width="55" height="21"/>
@@ -50,6 +53,7 @@
                         <constraint firstAttribute="height" constant="55" id="IOT-gX-59h"/>
                         <constraint firstAttribute="width" constant="55" id="cN2-0e-cub"/>
                     </constraints>
+                    <state key="normal" backgroundImage="20160528191018"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热搜菜谱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6zv-Nh-1Qi">
                     <rect key="frame" x="88" y="70" width="55" height="21"/>
@@ -67,6 +71,7 @@
                         <constraint firstAttribute="width" constant="55" id="XTj-Nb-hLl"/>
                         <constraint firstAttribute="height" constant="55" id="n9z-Or-9Ib"/>
                     </constraints>
+                    <state key="normal" backgroundImage="20160528191019"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="早餐" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36k-kC-j4d">
                     <rect key="frame" x="177" y="70" width="55" height="21"/>
@@ -84,6 +89,7 @@
                         <constraint firstAttribute="height" constant="55" id="FAL-Rp-DMs"/>
                         <constraint firstAttribute="width" constant="55" id="cen-oV-AWy"/>
                     </constraints>
+                    <state key="normal" backgroundImage="20160528190809"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="附近" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRZ-oP-Jj1">
                     <rect key="frame" x="257" y="70" width="55" height="21"/>
@@ -148,4 +154,12 @@
             <point key="canvasLocation" x="151" y="176"/>
         </collectionReusableView>
     </objects>
+    <resources>
+        <image name="20160528190809" width="75" height="75"/>
+        <image name="20160528191014" width="259" height="142"/>
+        <image name="20160528191016" width="259" height="142"/>
+        <image name="20160528191017" width="75" height="75"/>
+        <image name="20160528191018" width="75" height="75"/>
+        <image name="20160528191019" width="75" height="75"/>
+    </resources>
 </document>

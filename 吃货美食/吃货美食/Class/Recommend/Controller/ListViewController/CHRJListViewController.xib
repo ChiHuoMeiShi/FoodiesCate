@@ -31,6 +31,7 @@
                                 <constraint firstAttribute="height" constant="50" id="JcB-lO-at7"/>
                                 <constraint firstAttribute="width" constant="50" id="R3h-vJ-sYV"/>
                             </constraints>
+                            <state key="normal" backgroundImage="20160528194000"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p6R-Xk-OLs">
                             <rect key="frame" x="70" y="5" width="147" height="50"/>
@@ -38,6 +39,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="oG6-A4-yTE"/>
                             </constraints>
+                            <state key="normal" backgroundImage="20160528194412"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wom-xL-lAf">
                             <rect key="frame" x="227" y="5" width="146" height="50"/>
@@ -45,6 +47,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="jCK-C4-X9X"/>
                             </constraints>
+                            <state key="normal" backgroundImage="20160528194916"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juS-7s-bkN">
                             <rect key="frame" x="383" y="5" width="147" height="50"/>
@@ -52,6 +55,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="xQH-Lr-5TA"/>
                             </constraints>
+                            <state key="normal" backgroundImage="20160528194726"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpe-QS-TjS">
                             <rect key="frame" x="540" y="5" width="50" height="50"/>
@@ -60,6 +64,7 @@
                                 <constraint firstAttribute="height" constant="50" id="FaN-jn-MXo"/>
                                 <constraint firstAttribute="width" constant="50" id="uu9-qg-VQy"/>
                             </constraints>
+                            <state key="normal" backgroundImage="20160528194922"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.9882352941176471" green="0.56470588235294117" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
@@ -109,4 +114,11 @@
             <point key="canvasLocation" x="266" y="227"/>
         </view>
     </objects>
+    <resources>
+        <image name="20160528194000" width="180" height="180"/>
+        <image name="20160528194412" width="180" height="180"/>
+        <image name="20160528194726" width="180" height="180"/>
+        <image name="20160528194916" width="180" height="180"/>
+        <image name="20160528194922" width="180" height="180"/>
+    </resources>
 </document>
