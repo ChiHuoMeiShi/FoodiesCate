@@ -28,7 +28,13 @@
 		<true/>
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>当地美食</string>
+	<string>YES</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>YES</string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
