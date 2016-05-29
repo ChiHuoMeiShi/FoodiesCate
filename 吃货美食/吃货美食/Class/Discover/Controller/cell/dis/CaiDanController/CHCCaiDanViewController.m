@@ -57,13 +57,13 @@
     __weak typeof(self) myself=self;
     [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         CHLog(@"1111%@",responseObject);
-        dispatch_async(dispatch_get_main_queue(), ^
-          {
+     
+     
               [self.caiDanTableView.mj_header endRefreshing];
             CHCCaiDandata *data=[CHCCaiDandata mj_objectWithKeyValues:responseObject];
               myself.data=data;
               [_caiDanTableView reloadData];
-          });
+      
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];

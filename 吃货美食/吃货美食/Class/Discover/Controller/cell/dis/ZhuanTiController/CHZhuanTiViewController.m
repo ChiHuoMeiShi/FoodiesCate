@@ -56,13 +56,11 @@
     __weak typeof(self) myself=self;
     [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         CHLog(@"1111%@",responseObject);
-        dispatch_async(dispatch_get_main_queue(), ^
-       {
-           [_zhuanTiTableView.mj_header endRefreshing];
+                  [_zhuanTiTableView.mj_header endRefreshing];
            CHCZhuanTiData *data=[CHCZhuanTiData mj_objectWithKeyValues:responseObject];
            myself.data=data;
            [_zhuanTiTableView reloadData];
-       });
+  
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
@@ -99,11 +97,11 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 13;
+    return 5;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return 13;
+    return 5;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
