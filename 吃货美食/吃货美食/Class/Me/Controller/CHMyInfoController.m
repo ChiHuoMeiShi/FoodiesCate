@@ -16,7 +16,7 @@
 #import "CHHTTPRequestManager.h"
 #import "CHLocation.h"
 #import "CHDBHelper.h"
-
+#import "CHAboutUsController.h"
 
 @interface CHMyInfoController () <UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate>
 {
@@ -256,7 +256,7 @@
             size = [fileSize floatValue] / 1024  ;
 //            fileSize+= fileAttributes.fileSize/ 1024.0/1024.0;
             if (fileSize) {
-                CHLog(@"File size: %fMB\n",size);
+                CHLog(@"File size: %fMB\n",size/10);
             }
             
         }
@@ -334,12 +334,9 @@
             }
         }
     }else if (indexPath.section == 1 && indexPath.row == 1){
-        
-        
-        CHLog(@"关于我们");
+        CHAboutUsController *targetVC = [[CHAboutUsController alloc] init];
+        [self.navigationController pushViewController:targetVC animated:YES];
     }
-    
-    
 }
 
 #pragma mark -- 退出按钮
@@ -381,7 +378,6 @@
     
     return YES;
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

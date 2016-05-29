@@ -8,7 +8,7 @@
 
 #import "CHRegisterController.h"
 //#import "RegexKitLite.h"
-@interface CHRegisterController ()
+@interface CHRegisterController ()<UITextFieldDelegate>
 
 @end
 
@@ -18,6 +18,9 @@
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:NO];
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.accountTextField.delegate = self;
+    self.passwdTextField.delegate = self;
 }
 - (void)navBackAction
 {
@@ -118,12 +121,19 @@
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];
-    
-    
 }
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.accountTextField resignFirstResponder];
     [self.passwdTextField resignFirstResponder];
 }
+#pragma mark -- 键盘的代理
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+
+    return YES;
+}
+
+
+
 @end

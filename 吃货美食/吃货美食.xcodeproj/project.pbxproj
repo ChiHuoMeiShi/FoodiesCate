@@ -314,6 +314,8 @@
 		B748A5501CEE46EF00A8338C /* SHImgs.m in Sources */ = {isa = PBXBuildFile; fileRef = B748A5421CEDFCB200A8338C /* SHImgs.m */; };
 		B78E9B471CF82DE700F75885 /* CHRJSearchViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 7AC792EE1CE85060001CBAA5 /* CHRJSearchViewController.xib */; };
 		B78E9B481CF82F1B00F75885 /* CHRJSearchView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 7A3411B11CE8A88F003E4F3C /* CHRJSearchView.xib */; };
+		B791D4611CFAC7AC0072F042 /* CHAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B791D45F1CFAC7AC0072F042 /* CHAboutUsController.m */; };
+		B791D4621CFAC7AC0072F042 /* CHAboutUsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B791D4601CFAC7AC0072F042 /* CHAboutUsController.xib */; };
 		B7A3F5CC1CE4801700E09AED /* EChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5CB1CE4801700E09AED /* EChatModel.m */; };
 		B7A3F5CF1CE481F700E09AED /* Hot_topocModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5CE1CE481F700E09AED /* Hot_topocModel.m */; };
 		B7A3F5D21CE483F100E09AED /* User_infoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5D11CE483F100E09AED /* User_infoModel.m */; };
@@ -839,6 +841,9 @@
 		B76AE92A1CEF477700E4A975 /* CHRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRegisterController.h; sourceTree = "<group>"; };
 		B76AE92B1CEF477700E4A975 /* CHRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRegisterController.m; sourceTree = "<group>"; };
 		B76AE92C1CEF477700E4A975 /* CHRegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRegisterController.xib; sourceTree = "<group>"; };
+		B791D45E1CFAC7AC0072F042 /* CHAboutUsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAboutUsController.h; sourceTree = "<group>"; };
+		B791D45F1CFAC7AC0072F042 /* CHAboutUsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAboutUsController.m; sourceTree = "<group>"; };
+		B791D4601CFAC7AC0072F042 /* CHAboutUsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHAboutUsController.xib; sourceTree = "<group>"; };
 		B7A3F5CA1CE4801700E09AED /* EChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EChatModel.h; path = EChatModel/EChatModel.h; sourceTree = "<group>"; };
 		B7A3F5CB1CE4801700E09AED /* EChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EChatModel.m; path = EChatModel/EChatModel.m; sourceTree = "<group>"; };
 		B7A3F5CD1CE481F700E09AED /* Hot_topocModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hot_topocModel.h; path = EChatModel/Hot_topocModel.h; sourceTree = "<group>"; };
@@ -2461,6 +2466,7 @@
 		B71ED8711CDB52560035F6BE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B791D45D1CFAC7840072F042 /* AboutUs */,
 				B7F0205C1CF5D2FE009017BC /* MyInfo */,
 				B76AE9291CEF473D00E4A975 /* Register */,
 				B7B7A5CC1CEC9249002A80E7 /* Login */,
@@ -2621,6 +2627,16 @@
 				B76AE92C1CEF477700E4A975 /* CHRegisterController.xib */,
 			);
 			name = Register;
+			sourceTree = "<group>";
+		};
+		B791D45D1CFAC7840072F042 /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				B791D45E1CFAC7AC0072F042 /* CHAboutUsController.h */,
+				B791D45F1CFAC7AC0072F042 /* CHAboutUsController.m */,
+				B791D4601CFAC7AC0072F042 /* CHAboutUsController.xib */,
+			);
+			name = AboutUs;
 			sourceTree = "<group>";
 		};
 		B7A3F5C81CE47F7700E09AED /* EChatModel */ = {
@@ -3087,6 +3103,7 @@
 				7AAF0A4F1CE18C4000708F98 /* CHJRecomdSugstFCollectionReusableView.xib in Resources */,
 				7AC792F41CE85060001CBAA5 /* CHRJSearchDetailViewController.xib in Resources */,
 				077EE4141CEFF69E003F4E1B /* CHCCommentTableViewCell.xib in Resources */,
+				B791D4621CFAC7AC0072F042 /* CHAboutUsController.xib in Resources */,
 				B71E54851CE6F6B6003B6BE8 /* CHEChatDetailController.xib in Resources */,
 				7A657CB51CF18F010057BF33 /* CHRPublicNextFooterStoryView.xib in Resources */,
 				7AC8C4231CE4696A0043CAEC /* CHRFenLei.plist in Resources */,
@@ -3228,6 +3245,7 @@
 				0728DB9E1CF5B57F00D84706 /* ReusableView.m in Sources */,
 				077EE4111CEFF69E003F4E1B /* CHClickTableViewCell.m in Sources */,
 				077EE4841CEFF8A2003F4E1B /* CHCZhunTi_classes_list.m in Sources */,
+				B791D4611CFAC7AC0072F042 /* CHAboutUsController.m in Sources */,
 				7A82E5A31CEF5F0D001D3D82 /* CHRJAIFoodViewController.xib in Sources */,
 				B74620C41CF948D800047D91 /* CHDraftCell.m in Sources */,
 				7A82E5A41CEF5F0D001D3D82 /* CHRJListFoodTableViewCell.xib in Sources */,
