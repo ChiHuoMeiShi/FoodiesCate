@@ -243,11 +243,15 @@
         NSFileManager* fileManager=[NSFileManager defaultManager];
         NSArray *docs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *pathStr = [NSString stringWithFormat:@"%@/test.sqlite",docs[0]];
+        NSString *plistPathStr = [NSString stringWithFormat:@"%@/CHJRecommendModel.plist",docs[0]];
         NSError *error = nil;
         NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:pathStr error:&error];
+        NSDictionary *fileAttributes2 = [fileManager attributesOfItemAtPath:plistPathStr error:&error];
+        
         float size = 0;
+        float size2 = 0;
         if (fileAttributes != nil) {
-            //这里是KB 千字节
+            //这里是B 字节
             NSString *fileSize = [fileAttributes objectForKey:NSFileSize];
             size = [fileSize floatValue] / 1024  ;
 //            fileSize+= fileAttributes.fileSize/ 1024.0/1024.0;
@@ -259,9 +263,22 @@
         else {  
             CHLog(@"Path (%@) is invalid.", pathStr);
         }
+        if (fileAttributes2 != nil) {
+            //这里是B 字节
+            NSString *fileSize = [fileAttributes2 objectForKey:NSFileSize];
+            size2 = [fileSize floatValue] / 1024  ;
+            //            fileSize+= fileAttributes.fileSize/ 1024.0/1024.0;
+            if (fileSize) {
+                CHLog(@"File size: %fMB\n",size2);
+            }
+            
+        }
+        else {
+            CHLog(@"Path (%@) is invalid.", plistPathStr);
+        }
         
-        
-        cell.textLabel.text = [NSString stringWithFormat:@"清除缓存(%.1fMB)",size];
+        float totalSize = (size + size2)/10;
+        cell.textLabel.text = [NSString stringWithFormat:@"清除缓存(%.1fMB)",totalSize];
         
     }else if (indexPath.section == 1 && indexPath.row == 1){
         cell.textLabel.text = @"关于我们";
@@ -288,15 +305,22 @@
         CHLog(@"清除缓存");
 
         NSFileManager* fileManager=[NSFileManager defaultManager];
+        
+        
         NSArray *docs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *pathStr = [NSString stringWithFormat:@"%@/test.sqlite",docs[0]];
+        
+        NSString *plistPathStr = [NSString stringWithFormat:@"%@/CHJRecommendModel.plist",docs[0]];
+        
         BOOL blHave=[[NSFileManager defaultManager] fileExistsAtPath:pathStr];
-        if (!blHave) {
+        BOOL plHave=[[NSFileManager defaultManager] fileExistsAtPath:plistPathStr];
+        if ((!blHave) && (!plHave)) {
             CHLog(@"缓存为空");
             return;
         }else{
             BOOL blDele= [fileManager removeItemAtPath:pathStr error:nil];
-            if (blDele) {
+            BOOL plDele= [fileManager removeItemAtPath:plistPathStr error:nil];
+            if (blDele && plDele) {
                 NSMutableArray *indexPathes = [NSMutableArray arrayWithObject:indexPath];
                 //刷新
                 [tableView reloadRowsAtIndexPaths:indexPathes withRowAnimation:UITableViewRowAnimationFade];

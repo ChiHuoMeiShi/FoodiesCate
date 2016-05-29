@@ -10,7 +10,7 @@
 #import "CHDraftCell.h"
 #import "CHUserDefaults.h"
 #import "CHRPublishSave.h"
-
+#import "CHRPublishNextViewController.h"
 @interface CHMyDraftController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong)UITableView *mTableView;
@@ -79,6 +79,14 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 101.f;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CHRPublishSave *publishSave = self.dataArr[indexPath.row];
+    CHRPublishNextViewController *targetVC = [[CHRPublishNextViewController alloc] initWithFoodDic:publishSave.foodDic withFoodName:publishSave.foodName];
+
+    [self.navigationController pushViewController:targetVC animated:YES];
+    
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

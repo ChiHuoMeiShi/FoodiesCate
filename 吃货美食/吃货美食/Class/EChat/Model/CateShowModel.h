@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MJExtension.h>
-@interface CateShowModel : NSObject
+#import "CHDBModel.h"
+@interface CateShowModel : CHDBModel
 @property (nonatomic,strong) NSMutableArray * topic_list;
 @end
