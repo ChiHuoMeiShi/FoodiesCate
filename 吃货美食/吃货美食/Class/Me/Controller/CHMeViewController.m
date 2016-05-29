@@ -149,10 +149,10 @@
     }
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 280.f;
+    return 250.f;
 }
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH, 280.f)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH, 250.f)];
     self.backgroundView = [[UIImageView alloc] initWithFrame:headerView.frame];
     self.backgroundView.image = [UIImage imageNamed:@"meBackground"];
     [headerView addSubview:self.backgroundView];

@@ -312,9 +312,10 @@
 		B748A54D1CEE323100A8338C /* CHPublishShiHuaOneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B748A54B1CEE323100A8338C /* CHPublishShiHuaOneCell.xib */; };
 		B748A54F1CEE3F5D00A8338C /* CHTPublishSHCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = B748A5371CEDF63100A8338C /* CHTPublishSHCell.xib */; };
 		B748A5501CEE46EF00A8338C /* SHImgs.m in Sources */ = {isa = PBXBuildFile; fileRef = B748A5421CEDFCB200A8338C /* SHImgs.m */; };
+		B756E4441CFAF4EC00F4925F /* CHRJSearchView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 7A3411B11CE8A88F003E4F3C /* CHRJSearchView.xib */; };
+		B756E4451CFAF4EC00F4925F /* CHRJSearchViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 7AC792EE1CE85060001CBAA5 /* CHRJSearchViewController.xib */; };
 		B791D4611CFAC7AC0072F042 /* CHAboutUsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B791D45F1CFAC7AC0072F042 /* CHAboutUsController.m */; };
 		B791D4621CFAC7AC0072F042 /* CHAboutUsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B791D4601CFAC7AC0072F042 /* CHAboutUsController.xib */; };
-		B791D4631CFADA060072F042 /* CHRJSearchView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 7A3411B11CE8A88F003E4F3C /* CHRJSearchView.xib */; };
 		B7A3F5CC1CE4801700E09AED /* EChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5CB1CE4801700E09AED /* EChatModel.m */; };
 		B7A3F5CF1CE481F700E09AED /* Hot_topocModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5CE1CE481F700E09AED /* Hot_topocModel.m */; };
 		B7A3F5D21CE483F100E09AED /* User_infoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A3F5D11CE483F100E09AED /* User_infoModel.m */; };
@@ -2997,7 +2998,7 @@
 				TargetAttributes = {
 					B71ED84D1CDB41650035F6BE = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 5D5Z473WJW;
+						DevelopmentTeam = J498C47ANE;
 					};
 				};
 			};
@@ -3190,7 +3191,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B791D4631CFADA060072F042 /* CHRJSearchView.xib in Sources */,
+				B756E4441CFAF4EC00F4925F /* CHRJSearchView.xib in Sources */,
+				B756E4451CFAF4EC00F4925F /* CHRJSearchViewController.xib in Sources */,
 				7A30D5041CF58F490042DB98 /* CHRPublicNextBaseFoodTableViewCell.m in Sources */,
 				7A30D5051CF58F490042DB98 /* CHRPublicNextFooterStoryView.m in Sources */,
 				7A30D5061CF58F490042DB98 /* CHRPublicNextFooterAddBaseFoodView.m in Sources */,
@@ -3599,7 +3601,7 @@
 					"\"SystemConfiguration\"",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Jiangyfuygvyuhjgb;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TianGeGe.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3655,7 +3657,7 @@
 					"\"SystemConfiguration\"",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Jiangyfuygvyuhjgb;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TianGeGe.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
