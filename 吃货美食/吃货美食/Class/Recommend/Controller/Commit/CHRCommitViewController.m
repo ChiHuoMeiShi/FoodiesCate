@@ -46,9 +46,9 @@
 
 - (void)sendButtonAction{
     [self showHUDWithText:@"建议发送成功" withTextFont:[UIFont systemFontOfSize:16.f] withTextColor:[UIColor whiteColor] withTextSize:CGSizeMake(2333.f, 0.f) withAction:@selector(testHud) withIsAnimated:YES];
-    dispatch_after(0.5, dispatch_get_main_queue(), ^{
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=Privacy"]];
-        [self navBackAction];
+    __weak typeof(self)mySelf = self;
+    dispatch_after(1.f, dispatch_get_main_queue(), ^{
+        [mySelf navBackAction];
     });
 }
 
