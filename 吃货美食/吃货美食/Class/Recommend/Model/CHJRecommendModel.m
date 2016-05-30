@@ -41,4 +41,13 @@ MJExtensionCodingImplementation;
     return (CHJRecommendModel *)idValue;
 }
 
+- (CHJRecommendModel *)getRecommendInfo{
+    NSString * sortDataArrPath = [[NSBundle mainBundle]pathForResource:@"CHRFenLei" ofType:@"plist"];
+    NSData * data = [NSData dataWithContentsOfFile:sortDataArrPath];
+    CHLog(@"filePath is %@",sortDataArrPath);
+    
+    id idValue = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    return (CHJRecommendModel *)idValue;
+}
+
 @end

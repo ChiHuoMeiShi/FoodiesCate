@@ -87,12 +87,13 @@
         [_mytableView.mj_header endRefreshing];
         CHCFindData *data=[CHCFindData mj_objectWithKeyValues:responseObject];
         mySelf.data=data;
+        _mytableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         [_mytableView reloadData];
         
-    [_mytableView.mj_footer endRefreshing];
+
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-      
+          [_mytableView.mj_footer endRefreshing];
         
     }];
     
@@ -103,8 +104,26 @@
     
     _mytableView.delegate=self;
     _mytableView.dataSource=self;
+    _mytableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self registReuseCell];
     [self.view addSubview:_mytableView];
 
+}
+#pragma mark -- 注册Cell
+- (void)registReuseCell
+{
+    [_mytableView registerNib:[UINib nibWithNibName:@"CHCDiscoverTableViewcell" bundle:nil] forCellReuseIdentifier:@"CDCdiscell"];
+    [_mytableView registerNib:[UINib nibWithNibName:@"CHClickTableViewCell" bundle:nil] forCellReuseIdentifier:@"CDClickcell"];
+    [_mytableView registerNib:[UINib nibWithNibName:@"CHCCommentTableViewCell" bundle:nil] forCellReuseIdentifier:@"CDCCommentcell"];
+    
+    [_mytableView registerNib:[UINib nibWithNibName:@"CHCActivityTableViewCell" bundle:nil] forCellReuseIdentifier:@"CDCActivitycell"];
+    [_mytableView registerNib:[UINib nibWithNibName:@"CHVGoods_infoTableViewCell" bundle:nil] forCellReuseIdentifier:@"goodscell"];
+    [_mytableView registerNib:[UINib nibWithNibName:@"CHCArticalCell" bundle:nil] forCellReuseIdentifier:@"CHCArticalCell"];
+    
+    [_mytableView registerNib:[UINib nibWithNibName:@"CHRecipesCell" bundle:nil] forCellReuseIdentifier:@"CDCrecipescell"];
+    [_mytableView registerNib:[UINib nibWithNibName:@"CHZTCell" bundle:nil] forCellReuseIdentifier:@"CDCZtcell"];
+    [_mytableView registerNib:[UINib nibWithNibName:@"CHTopInfoCell" bundle:nil] forCellReuseIdentifier:@"CDCtopcell"];
+    [_mytableView registerNib:[UINib nibWithNibName:@"CHCaiDanCell" bundle:nil] forCellReuseIdentifier:@"CDCCadancell"];
 }
 
 #pragma mark-UITableViewDataSource
@@ -122,28 +141,11 @@
 //    数据
     CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
     self.faxianCelllist=faxianCelllist;
-    
-        CHCDiscoverTableViewcell *discell=[tableView  dequeueReusableCellWithIdentifier:@"CDCdiscell" ];
-    CHClickTableViewCell *clickcell=[tableView dequeueReusableCellWithIdentifier:@"CDClickcell"];
-    CHCCommentTableViewCell *commentcell=[tableView dequeueReusableCellWithIdentifier:@"CDCCommentcell"];
-    CHCActivityTableViewCell *activitycell=[tableView dequeueReusableCellWithIdentifier:@"CDCActivitycell"];
-    
-   
-     CHVGoods_infoTableViewCell *goodscell=[tableView dequeueReusableCellWithIdentifier:@"goodscell"];
-    
-    CHCArticalCell *articalcell=[tableView  dequeueReusableCellWithIdentifier:@"CHCArticalCell" ];
-    CHRecipesCell *recipescell=[tableView dequeueReusableCellWithIdentifier:@"CDCrecipescell"];
-    CHCaiDanCell *caidancell=[tableView dequeueReusableCellWithIdentifier:@"CDCCadancell"];
-    
-     CHZTCell *ztcell3=[tableView dequeueReusableCellWithIdentifier:@"CDCZtcell"];
-    NSString *CellTableIdentifier = @"CDCtopcell";
-    CHTopInfoCell *topcell=[tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
-
-    if (!discell&&indexPath.section==0)
+      if (indexPath.section==0)
     {
-     NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHCDiscoverTableViewcell" owner:nil options:nil];
-            discell=arr[0];
-            discell.selectionStyle = UITableViewCellSelectionStyleNone;
+     
+        CHCDiscoverTableViewcell *discell=[tableView  dequeueReusableCellWithIdentifier:@"CDCdiscell" forIndexPath:indexPath ];
+        
         UIImage *image=[UIImage imageNamed:@"ms_home_find_shicai"];
 
         UIButton  *shicaiButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -178,85 +180,71 @@
       
         return discell;
     }
-
-  else if (!clickcell&&[faxianCelllist.type isEqualToString:@"1"])
+    
+  else if ([faxianCelllist.type isEqualToString:@"1"])
 
     {
-        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHClickTableViewCell" owner:nil options:nil];
-        clickcell=arr[0];
+        CHClickTableViewCell *clickcell=[tableView dequeueReusableCellWithIdentifier:@"CDClickcell" forIndexPath:indexPath];
 
         clickcell.faxian_list= faxianCelllist;
         return clickcell;
     }
 
-        else if (!commentcell&&([faxianCelllist.type isEqualToString:@"2"]))
+        else if ([faxianCelllist.type isEqualToString:@"2"])
     {
-        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHCCommentTableViewCell" owner:nil options:nil];
-        commentcell=arr[0];
-        //        设置选择时的显示风格
-        commentcell.selectionStyle = UITableViewCellSelectionStyleNone;
-
+       CHCCommentTableViewCell *commentcell=[tableView dequeueReusableCellWithIdentifier:@"CDCCommentcell" forIndexPath:indexPath];
+        
         commentcell.faxian_list=faxianCelllist;
-              return commentcell;
+        return commentcell;
     }
-    
-
-    else if (!activitycell&&([faxianCelllist.type isEqualToString:@"3"]))
+        else if ([faxianCelllist.type isEqualToString:@"3"])
     {
-        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHCActivityTableViewCell" owner:nil options:nil];
-        activitycell=arr[0];
-            activitycell.faxian_list=faxianCelllist;
+       CHCActivityTableViewCell *activitycell=[tableView dequeueReusableCellWithIdentifier:@"CDCActivitycell" forIndexPath:indexPath];
+        activitycell.faxian_list=faxianCelllist;
        return activitycell;
     }
     
-    else if (!goodscell&&([faxianCelllist.type isEqualToString:@"4"]))
+    else if ([faxianCelllist.type isEqualToString:@"4"])
     {
-        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHVGoods_infoTableViewCell" owner:nil options:nil];
-        goodscell=arr[0];
+        CHVGoods_infoTableViewCell *goodscell=[tableView dequeueReusableCellWithIdentifier:@"goodscell" forIndexPath:indexPath];
     
         goodscell.faxian_list=faxianCelllist;
         return goodscell;
     }
 
-      else if (!articalcell&&([faxianCelllist.type isEqualToString:@"5"]))
+      else if ([faxianCelllist.type isEqualToString:@"5"])
     {
-        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHCArticalCell" owner:nil options:nil];
-        articalcell=arr[0];
-       
+        CHCArticalCell *articalcell=[tableView  dequeueReusableCellWithIdentifier:@"CHCArticalCell" forIndexPath:indexPath ];
         articalcell.faxian_list=faxianCelllist;
         return articalcell;
     }
-      else if (!recipescell&&([faxianCelllist.type isEqualToString:@"6"]))
+      else if ([faxianCelllist.type isEqualToString:@"6"])
       {
-          NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHRecipesCell" owner:nil options:nil];
-          recipescell=arr[0];
-        recipescell.faxian_list=faxianCelllist;
+          CHRecipesCell *recipescell=[tableView dequeueReusableCellWithIdentifier:@"CDCrecipescell" forIndexPath:indexPath];
+          recipescell.faxian_list=faxianCelllist;
           return recipescell;
       }
 
 
-    else if (!caidancell&&([faxianCelllist.type isEqualToString:@"7"]))
+    else if ([faxianCelllist.type isEqualToString:@"7"])
     {
-        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHCaiDanCell" owner:nil options:nil];
-        caidancell=arr[0];
         
+        CHCaiDanCell *caidancell=[tableView dequeueReusableCellWithIdentifier:@"CDCCadancell" forIndexPath:indexPath];
         caidancell.faxian_list=faxianCelllist;
         return caidancell;
     }
 
-    else if(!ztcell3&&([faxianCelllist.type isEqualToString:@"9"]))
+    else if([faxianCelllist.type isEqualToString:@"9"])
     {
-        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHZTCell" owner:nil options:nil];
-        ztcell3=arr[0];
+        CHZTCell *ztcell3=[tableView dequeueReusableCellWithIdentifier:@"CDCZtcell" forIndexPath:indexPath];
         ztcell3.faxian_list=faxianCelllist;
         return ztcell3;
     }
     else
    
     {
-        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHTopInfoCell" owner:nil options:nil];
-        topcell=arr[0];
-               topcell.faxian_list=faxianCelllist;
+    CHTopInfoCell *topcell=[tableView dequeueReusableCellWithIdentifier: @"CDCtopcell" forIndexPath:indexPath];
+        topcell.faxian_list=faxianCelllist;
         return topcell;
     }
     
@@ -341,13 +329,13 @@
 //每个分组上边预留的空白高度
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-     return 6;
+     return 5;
 }
 //每个分组下边预留的空白高度
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
    
-    return 6;
+    return 5;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -358,8 +346,7 @@
        CHCOneWebViewController *oneView=[[CHCOneWebViewController alloc]init];
     CHCWenZhanViewController *wenView=[[CHCWenZhanViewController alloc]init];
     CHCaiViewController *caiiew=[[ CHCaiViewController alloc]init];
-
-    if ((targetVC.tid = faxianCelllist.topic_info.tid)&&(targetVC.gid=faxianCelllist.topic_info.gid))
+       if ((targetVC.tid = faxianCelllist.topic_info.tid)&&(targetVC.gid=faxianCelllist.topic_info.gid))
     {
          [self presentViewController:targetVC animated:YES completion:nil];
     }
@@ -392,12 +379,6 @@
     
 
 }
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    
-
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -405,3 +386,149 @@
 }
 
 @end
+//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    //    数据
+//    CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
+//    self.faxianCelllist=faxianCelllist;
+//    
+//    CHCDiscoverTableViewcell *discell=[tableView  dequeueReusableCellWithIdentifier:@"CDCdiscell" ];
+//    CHClickTableViewCell *clickcell=[tableView dequeueReusableCellWithIdentifier:@"CDClickcell"];
+//    CHCCommentTableViewCell *commentcell=[tableView dequeueReusableCellWithIdentifier:@"CDCCommentcell"];
+//    CHCActivityTableViewCell *activitycell=[tableView dequeueReusableCellWithIdentifier:@"CDCActivitycell"];
+//    
+//    
+//    CHVGoods_infoTableViewCell *goodscell=[tableView dequeueReusableCellWithIdentifier:@"goodscell"];
+//    
+//    CHCArticalCell *articalcell=[tableView  dequeueReusableCellWithIdentifier:@"CHCArticalCell" ];
+//    CHRecipesCell *recipescell=[tableView dequeueReusableCellWithIdentifier:@"CDCrecipescell"];
+//    CHCaiDanCell *caidancell=[tableView dequeueReusableCellWithIdentifier:@"CDCCadancell"];
+//    
+//    CHZTCell *ztcell3=[tableView dequeueReusableCellWithIdentifier:@"CDCZtcell"];
+//    NSString *CellTableIdentifier = @"CDCtopcell";
+//    CHTopInfoCell *topcell=[tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
+//    
+//    if (!discell&&indexPath.section==0)
+//    {
+//        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHCDiscoverTableViewcell" owner:nil options:nil];
+//        discell=arr[0];
+//        discell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        UIImage *image=[UIImage imageNamed:@"ms_home_find_shicai"];
+//        
+//        UIButton  *shicaiButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        //        把高固定死 14
+//        shicaiButton.frame=CGRectMake
+//        (11, 14,W, image.size.height);
+//        [shicaiButton setImage:[UIImage imageNamed:@"ms_home_find_shicai"] forState:UIControlStateNormal];
+//        [shicaiButton setImage:[UIImage imageNamed:@"ms_home_find_shicai"] forState:UIControlStateHighlighted];
+//        [shicaiButton addTarget:self action:@selector(shiCaiButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+//        
+//        UIButton  *caidanButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        caidanButton.frame=CGRectMake(11+W+11, 14, W, image.size.height);
+//        [caidanButton setImage:[UIImage imageNamed:@"ms_home_find_caidan"] forState:UIControlStateNormal];
+//        [caidanButton setImage:[UIImage imageNamed:@"ms_home_find_caidan"] forState:UIControlStateHighlighted];
+//        [caidanButton addTarget:self action:@selector(caidanButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+//        
+//        UIButton  *zhaunTiButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        zhaunTiButton.frame=CGRectMake(11+W+11+W+11, 14, W, image.size.height);
+//        [zhaunTiButton setImage:[UIImage imageNamed:@"ms_home_find_zhuanti"] forState:UIControlStateNormal];
+//        [zhaunTiButton setImage:[UIImage imageNamed:@"ms_home_find_zhuanti"] forState:UIControlStateHighlighted];
+//        [zhaunTiButton addTarget:self action:@selector(zhuantiButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+//        
+//        UIButton  *articleButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        articleButton.frame=CGRectMake(11+W+11+W+11+W+11, 14, W, image.size.height);
+//        [articleButton setImage:[UIImage imageNamed:@"ms_home_find_wenzhang"] forState:UIControlStateNormal];
+//        [articleButton setImage:[UIImage imageNamed:@"ms_home_find_wenzhang"] forState:UIControlStateHighlighted];
+//        [articleButton addTarget:self action:@selector(articleButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+//        [discell addSubview:shicaiButton];
+//        [discell addSubview:caidanButton];
+//        [discell addSubview:zhaunTiButton];
+//        [discell addSubview:articleButton];
+//        
+//        return discell;
+//    }
+//    
+//    else if (!clickcell&&[faxianCelllist.type isEqualToString:@"1"])
+//        
+//    {
+//        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHClickTableViewCell" owner:nil options:nil];
+//        clickcell=arr[0];
+//        
+//        clickcell.faxian_list= faxianCelllist;
+//        return clickcell;
+//    }
+//    
+//    else if (!commentcell&&([faxianCelllist.type isEqualToString:@"2"]))
+//    {
+//        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHCCommentTableViewCell" owner:nil options:nil];
+//        commentcell=arr[0];
+//        //        设置选择时的显示风格
+//        commentcell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        
+//        commentcell.faxian_list=faxianCelllist;
+//        return commentcell;
+//    }
+//    
+//    
+//    else if (!activitycell&&([faxianCelllist.type isEqualToString:@"3"]))
+//    {
+//        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHCActivityTableViewCell" owner:nil options:nil];
+//        activitycell=arr[0];
+//        activitycell.faxian_list=faxianCelllist;
+//        return activitycell;
+//    }
+//    
+//    else if (!goodscell&&([faxianCelllist.type isEqualToString:@"4"]))
+//    {
+//        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHVGoods_infoTableViewCell" owner:nil options:nil];
+//        goodscell=arr[0];
+//        
+//        goodscell.faxian_list=faxianCelllist;
+//        return goodscell;
+//    }
+//    
+//    else if (!articalcell&&([faxianCelllist.type isEqualToString:@"5"]))
+//    {
+//        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHCArticalCell" owner:nil options:nil];
+//        articalcell=arr[0];
+//        
+//        articalcell.faxian_list=faxianCelllist;
+//        return articalcell;
+//    }
+//    else if (!recipescell&&([faxianCelllist.type isEqualToString:@"6"]))
+//    {
+//        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHRecipesCell" owner:nil options:nil];
+//        recipescell=arr[0];
+//        recipescell.faxian_list=faxianCelllist;
+//        return recipescell;
+//    }
+//    
+//    
+//    else if (!caidancell&&([faxianCelllist.type isEqualToString:@"7"]))
+//    {
+//        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHCaiDanCell" owner:nil options:nil];
+//        caidancell=arr[0];
+//        
+//        caidancell.faxian_list=faxianCelllist;
+//        return caidancell;
+//    }
+//    
+//    else if(!ztcell3&&([faxianCelllist.type isEqualToString:@"9"]))
+//    {
+//        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHZTCell" owner:nil options:nil];
+//        ztcell3=arr[0];
+//        ztcell3.faxian_list=faxianCelllist;
+//        return ztcell3;
+//    }
+//    else
+//        
+//    {
+//        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHTopInfoCell" owner:nil options:nil];
+//        topcell=arr[0];
+//        topcell.faxian_list=faxianCelllist;
+//        return topcell;
+//    }
+//    
+//    
+//    return nil;
+//}
