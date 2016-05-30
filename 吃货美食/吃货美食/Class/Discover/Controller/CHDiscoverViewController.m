@@ -87,12 +87,13 @@
         [_mytableView.mj_header endRefreshing];
         CHCFindData *data=[CHCFindData mj_objectWithKeyValues:responseObject];
         mySelf.data=data;
+        _mytableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         [_mytableView reloadData];
         
-    [_mytableView.mj_footer endRefreshing];
+
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-      
+          [_mytableView.mj_footer endRefreshing];
         
     }];
     
@@ -103,6 +104,7 @@
     
     _mytableView.delegate=self;
     _mytableView.dataSource=self;
+    _mytableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self registReuseCell];
     [self.view addSubview:_mytableView];
 
