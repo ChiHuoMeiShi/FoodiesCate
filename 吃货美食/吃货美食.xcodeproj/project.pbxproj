@@ -3001,7 +3001,7 @@
 				TargetAttributes = {
 					B71ED84D1CDB41650035F6BE = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 5D5Z473WJW;
+						DevelopmentTeam = J498C47ANE;
 					};
 				};
 			};
@@ -3605,7 +3605,7 @@
 					"\"SystemConfiguration\"",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JiangGeGe.cn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TianGeGe.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3661,7 +3661,7 @@
 					"\"SystemConfiguration\"",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.JiangGeGe.cn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TianGeGe.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
