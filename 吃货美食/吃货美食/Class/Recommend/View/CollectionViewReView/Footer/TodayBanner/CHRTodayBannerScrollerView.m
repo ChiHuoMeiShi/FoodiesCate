@@ -62,6 +62,7 @@ const CGFloat todayBannerHeigh = 80.f;
 }
 
 - (void)leftShift{
+    if (self.imagesArray.count <= 0)return;
     self.currentBannerCount--;
     if (self.currentBannerCount < 0) {
         self.currentBannerCount = [self.modelArray count] - 1;
@@ -75,6 +76,7 @@ const CGFloat todayBannerHeigh = 80.f;
 }
 
 - (void)rightShift{
+    if (self.imagesArray.count <= 0)return;
     self.currentBannerCount++;
     if (self.currentBannerCount >= self.modelArray.count) {
         self.currentBannerCount = 0;
