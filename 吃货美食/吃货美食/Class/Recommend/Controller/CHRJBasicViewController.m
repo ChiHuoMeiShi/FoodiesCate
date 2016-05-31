@@ -127,7 +127,7 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 - (void)myImagePickerWithType:(UIImagePickerControllerSourceType)sourceType{
-    if ([UIImagePickerController isSourceTypeAvailable:sourceType]) {
+    if ([UIImagePickerController isSourceTypeAvailable:sourceType]) { 
         UIImagePickerController *picker = [[UIImagePickerController alloc]init];
         [picker setSourceType:sourceType];
         [picker setAllowsEditing:YES];

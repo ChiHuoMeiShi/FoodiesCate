@@ -25,7 +25,7 @@
     NSURL *url = [NSURL URLWithString:urlStr];
     
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    
+    self.webView.scrollView.bounces = NO;
     [self.webView loadRequest:request];
     
 }
