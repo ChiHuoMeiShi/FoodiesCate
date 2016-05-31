@@ -114,6 +114,9 @@
     self.showTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [mySelf requestDataWithSort:mySelf.currentSort];
     }];
+    self.showTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [mySelf requestUPDataWithSort:mySelf.currentSort];
+    }];
 }
 
 - (void)buttonSetFun{
@@ -152,6 +155,38 @@
     [self requestDataWithSort:sort];
     [self.showTableView setContentOffset:CGPointMake(0.f, 0.f) animated:YES];
     [self.showTableView reloadData];
+}
+
+- (void)requestUPDataWithSort:(NSString *)sort{
+    NSString * url = @"http://api.meishi.cc/v5/search_category.php?format=json";
+    NSDictionary * dicTemp = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"step":@"",@"kw":@"",@"page":@(1),@"q":self.searchName,@"sort_sc":@"desc",@"sort":sort,@"gy":@"",@"mt":@""};
+    if (self.isLocal) {
+        dicTemp = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"page":@(1)};
+        url = @"http://api.meishi.cc/v5/lsb_news.php?format=json";
+    }
+    NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithDictionary:dicTemp];
+    if (self.isVideo) {
+        url = @"http://api.meishi.cc/v5/zt1.php?format=json";
+        [dic removeObjectForKey:@"q"];
+        [dic setObject:@(20001) forKey:@"cid"];
+    }
+    __weak typeof(self)mySelf = self;
+    [self.afnManger.messageRequest POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [mySelf.showTableView.mj_header endRefreshing];
+        NSDictionary * dic = (NSDictionary *)responseObject;
+        //        CHLog(@"%@",dic[@"obj"]);
+        
+        if (self.isLocal) {
+            mySelf.searchModel = [[CHRJSearchModel alloc]init];
+            mySelf.searchModel.data = [CHRJSearchContentModel mj_objectArrayWithKeyValuesArray:dic[@"data"]];
+        }else{
+            mySelf.searchModel = [CHRJSearchModel mj_objectWithKeyValues:dic[@"obj"]];
+        }
+        [mySelf.showTableView reloadData];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        CHLog(@"%@",error);
+        [mySelf.showTableView.mj_header endRefreshing];
+    }];
 }
 
 - (void)requestDataWithSort:(NSString *)sort{
