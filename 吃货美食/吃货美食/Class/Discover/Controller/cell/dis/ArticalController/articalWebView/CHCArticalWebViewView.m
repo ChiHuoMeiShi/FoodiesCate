@@ -16,8 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-
+     self.webView.scrollView.bounces = NO;
+  
     NSString *basleurl=@"http://m.meishij.net/html5/news.php?id=";
     NSString *urlStr=[NSString stringWithFormat:@"%@%@",basleurl,self.myid];
     NSURL *url=[NSURL URLWithString:urlStr];

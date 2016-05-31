@@ -18,31 +18,13 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvX-eI-tho">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAR-A1-r8M">
-                            <rect key="frame" x="28" y="17" width="46" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="QZq-3A-uyJ"/>
-                                <constraint firstAttribute="width" constant="46" id="dwV-Hy-onM"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                            <state key="normal" title="返回">
-                                <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="back:" destination="-1" eventType="touchUpInside" id="r0e-IB-8GV"/>
-                            </connections>
-                        </button>
-                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="NPJ-Qv-y03"/>
-                        <constraint firstItem="hAR-A1-r8M" firstAttribute="leading" secondItem="nvX-eI-tho" secondAttribute="leading" constant="28" id="l39-mh-6np"/>
-                        <constraint firstItem="hAR-A1-r8M" firstAttribute="top" secondItem="nvX-eI-tho" secondAttribute="top" constant="17" id="rL1-ki-ZYm"/>
                     </constraints>
                 </view>
                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tkv-EQ-lbP">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="664"/>
                     <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="deviceRGB"/>
                 </webView>
             </subviews>
@@ -54,9 +36,9 @@
                 <constraint firstAttribute="trailing" secondItem="nvX-eI-tho" secondAttribute="trailing" id="CCf-3M-lCF"/>
                 <constraint firstItem="Tkv-EQ-lbP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VdX-WQ-D5n"/>
                 <constraint firstItem="nvX-eI-tho" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="W8K-Ni-CMf"/>
-                <constraint firstAttribute="bottom" secondItem="Tkv-EQ-lbP" secondAttribute="bottom" id="fbl-oL-ZDL"/>
+                <constraint firstAttribute="bottom" secondItem="Tkv-EQ-lbP" secondAttribute="bottom" constant="-64" id="fbl-oL-ZDL"/>
             </constraints>
-            <point key="canvasLocation" x="-59" y="404"/>
+            <point key="canvasLocation" x="-19" y="426"/>
         </view>
     </objects>
 </document>

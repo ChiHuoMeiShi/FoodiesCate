@@ -19,7 +19,7 @@
     [super viewDidLoad];
 //    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
 
-    
+    self.WebView.scrollView.bounces = NO;
     
     NSString *baseUrl = @"http://m.meishij.net/html5/recipe_list.php?rid=";
 //    http://m.meishij.net/html5/recipe_list.php?rid=8976085&from=msjmobile

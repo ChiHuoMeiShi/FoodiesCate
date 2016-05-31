@@ -87,7 +87,6 @@
 		07836F071CF87F1400F3653C /* CHFiveCrealsViewTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07836F061CF87F1400F3653C /* CHFiveCrealsViewTableView.m */; };
 		07836F0A1CF87F3F00F3653C /* CHFruitViewTableVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 07836F091CF87F3F00F3653C /* CHFruitViewTableVIew.m */; };
 		07836F0D1CF87F5A00F3653C /* CHMeatTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07836F0C1CF87F5A00F3653C /* CHMeatTableView.m */; };
-		0787A3D61CF18ACD0016393C /* CHCOneWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0787A3D41CF18ACD0016393C /* CHCOneWebViewController.m */; };
 		0787A3DB1CF194EB0016393C /* CHzt_infoWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0787A3D91CF194EB0016393C /* CHzt_infoWebViewController.m */; };
 		0787A3DC1CF194EB0016393C /* CHzt_infoWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0787A3DA1CF194EB0016393C /* CHzt_infoWebViewController.xib */; };
 		0787A3E11CF19E0C0016393C /* CHCWenZhanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0787A3DF1CF19E0C0016393C /* CHCWenZhanViewController.m */; };
@@ -514,9 +513,6 @@
 		07836F091CF87F3F00F3653C /* CHFruitViewTableVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHFruitViewTableVIew.m; sourceTree = "<group>"; };
 		07836F0B1CF87F5A00F3653C /* CHMeatTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHMeatTableView.h; sourceTree = "<group>"; };
 		07836F0C1CF87F5A00F3653C /* CHMeatTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHMeatTableView.m; sourceTree = "<group>"; };
-		0787A3D31CF18ACD0016393C /* CHCOneWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCOneWebViewController.h; sourceTree = "<group>"; };
-		0787A3D41CF18ACD0016393C /* CHCOneWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCOneWebViewController.m; sourceTree = "<group>"; };
-		0787A3D51CF18ACD0016393C /* CHCOneWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCOneWebViewController.xib; sourceTree = "<group>"; };
 		0787A3D81CF194EB0016393C /* CHzt_infoWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHzt_infoWebViewController.h; sourceTree = "<group>"; };
 		0787A3D91CF194EB0016393C /* CHzt_infoWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHzt_infoWebViewController.m; sourceTree = "<group>"; };
 		0787A3DA1CF194EB0016393C /* CHzt_infoWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHzt_infoWebViewController.xib; sourceTree = "<group>"; };
@@ -1446,9 +1442,6 @@
 				077EE4E81CF00F0E003F4E1B /* CHCFaXianDetailViewController.h */,
 				077EE4E91CF00F0E003F4E1B /* CHCFaXianDetailViewController.m */,
 				077EE4EB1CF00F4B003F4E1B /* CHCFaXianDetailViewController.xib */,
-				0787A3D31CF18ACD0016393C /* CHCOneWebViewController.h */,
-				0787A3D41CF18ACD0016393C /* CHCOneWebViewController.m */,
-				0787A3D51CF18ACD0016393C /* CHCOneWebViewController.xib */,
 				0787A3DE1CF19E0C0016393C /* CHCWenZhanViewController.h */,
 				0787A3DF1CF19E0C0016393C /* CHCWenZhanViewController.m */,
 				0787A3E01CF19E0C0016393C /* CHCWenZhanViewController.xib */,
@@ -3335,7 +3328,6 @@
 				077EE4491CEFF69E003F4E1B /* CHCGongxiao_list.m in Sources */,
 				7A53C78D1CEB0A390098BFEC /* CHRJListFoodSearchTableViewCell.m in Sources */,
 				B7A512B31CE6605D0085A6C8 /* CHSevenChatCell.m in Sources */,
-				0787A3D61CF18ACD0016393C /* CHCOneWebViewController.m in Sources */,
 				7AD0DDAC1CDCA7CE0057F8B2 /* UIColor+HexColor.m in Sources */,
 				077EE4C81CEFF961003F4E1B /* CHCCaiDanTableViewCell.m in Sources */,
 				077EE4CC1CEFF961003F4E1B /* CHCShiCaiViewController.m in Sources */,

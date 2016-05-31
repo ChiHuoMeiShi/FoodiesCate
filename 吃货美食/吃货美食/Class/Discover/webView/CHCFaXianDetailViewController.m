@@ -11,9 +11,7 @@
 @implementation CHCFaXianDetailViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-   
-    
+     self.webView.scrollView.bounces = NO;
     NSString *baseUrl = @"http://m.meishij.net/html5/shihua_content.php?";
 //    http://m.meishij.net/html5/shihua_content.php?gid=20&tid=1069604
 

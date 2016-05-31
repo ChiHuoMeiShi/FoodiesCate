@@ -17,17 +17,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23f-Pf-NWG">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="664"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                 </webView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="23f-Pf-NWG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6rH-uw-cwG"/>
-                <constraint firstAttribute="bottom" secondItem="23f-Pf-NWG" secondAttribute="bottom" id="9kZ-vN-wEJ"/>
+                <constraint firstAttribute="bottom" secondItem="23f-Pf-NWG" secondAttribute="bottom" constant="-64" id="9kZ-vN-wEJ"/>
                 <constraint firstAttribute="trailing" secondItem="23f-Pf-NWG" secondAttribute="trailing" id="fm6-n4-Qxx"/>
                 <constraint firstItem="23f-Pf-NWG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="qow-Y0-bk7"/>
             </constraints>
+            <point key="canvasLocation" x="96" y="-42"/>
         </view>
     </objects>
 </document>

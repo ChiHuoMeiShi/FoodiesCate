@@ -34,7 +34,6 @@
 
 #import "CHCaiViewController.h"
 #import "CHCFaXianDetailViewController.h"
-#import "CHCOneWebViewController.h"
 #import "CHzt_infoWebViewController.h"
 #import "CHCWenZhanViewController.h"
 #import "CHLocation.h"
@@ -46,6 +45,7 @@
 @property(nonatomic,strong)CHCFindData *data;
 @property(nonatomic,strong) CHCfaxian_list * faxianCelllist;
 @property (nonatomic,strong)CHLocation * location;
+@property (nonatomic,assign) int page;
 @end
 @implementation CHDiscoverViewController
 - (void)headerRefreshAction
@@ -70,18 +70,42 @@
 
     
     _mytableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-       [self getTableViewData];
+       [self getTableViewDataWithButtom];
     }];
 
-//       [_mytableView.mj_footer endRefreshing];
+
 }
--(void)getTableViewData
+-(void)getTableViewDataWithButtom
 {
     AFHTTPSessionManager *manger=[AFHTTPSessionManager manager];
     manger.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
     NSString *nsurl=@"http://api.meishi.cc/v5/faxian_new.php?format=json";
     NSDictionary * dic =
-  @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"page":@"",@"timestamp":@"",@"rid":@""};
+    @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"page":@"",@"timestamp":@"",@"rid":@""};
+    __weak typeof(self) mySelf=self;
+    [manger POST:nsurl parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+         [_mytableView.mj_footer endRefreshing];
+        CHCFindData *data=[CHCFindData mj_objectWithKeyValues:responseObject];
+        [mySelf.data.faxian_list addObjectsFromArray:data.faxian_list];
+        [_mytableView reloadData];
+        
+       
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+         [_mytableView.mj_footer endRefreshing];
+    }];
+}
+//上拉刷新
+-(void)getTableViewData
+{
+    self.page = 1;
+    self.page = self.page + 1;
+    AFHTTPSessionManager *manger=[AFHTTPSessionManager manager];
+    manger.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
+    NSString *nsurl=@"http://api.meishi.cc/v5/faxian_new.php?format=json";
+    NSDictionary * dic =
+  @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"page":@(self.page),@"timestamp":@"",@"rid":@""};
      __weak typeof(self) mySelf=self;
     [manger POST:nsurl parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [_mytableView.mj_header endRefreshing];
@@ -89,11 +113,11 @@
         mySelf.data=data;
         [_mytableView reloadData];
         
-    [_mytableView.mj_footer endRefreshing];
+    
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
       
-        
+        [_mytableView.mj_header endRefreshing];
     }];
     
 }
@@ -175,8 +199,7 @@
         [discell addSubview:caidanButton];
         [discell addSubview:zhaunTiButton];
         [discell addSubview:articleButton];
-      
-        return discell;
+                return discell;
     }
     
   else if ([faxianCelllist.type isEqualToString:@"1"])
@@ -185,6 +208,7 @@
         CHClickTableViewCell *clickcell=[tableView dequeueReusableCellWithIdentifier:@"CDClickcell" forIndexPath:indexPath];
 
         clickcell.faxian_list= faxianCelllist;
+        
         return clickcell;
     }
 
@@ -193,12 +217,14 @@
        CHCCommentTableViewCell *commentcell=[tableView dequeueReusableCellWithIdentifier:@"CDCCommentcell" forIndexPath:indexPath];
         
         commentcell.faxian_list=faxianCelllist;
+      
         return commentcell;
     }
         else if ([faxianCelllist.type isEqualToString:@"3"])
     {
        CHCActivityTableViewCell *activitycell=[tableView dequeueReusableCellWithIdentifier:@"CDCActivitycell" forIndexPath:indexPath];
         activitycell.faxian_list=faxianCelllist;
+       
        return activitycell;
     }
     
@@ -207,6 +233,7 @@
         CHVGoods_infoTableViewCell *goodscell=[tableView dequeueReusableCellWithIdentifier:@"goodscell" forIndexPath:indexPath];
     
         goodscell.faxian_list=faxianCelllist;
+        
         return goodscell;
     }
 
@@ -214,12 +241,13 @@
     {
         CHCArticalCell *articalcell=[tableView  dequeueReusableCellWithIdentifier:@"CHCArticalCell" forIndexPath:indexPath ];
         articalcell.faxian_list=faxianCelllist;
-        return articalcell;
+                return articalcell;
     }
       else if ([faxianCelllist.type isEqualToString:@"6"])
       {
           CHRecipesCell *recipescell=[tableView dequeueReusableCellWithIdentifier:@"CDCrecipescell" forIndexPath:indexPath];
           recipescell.faxian_list=faxianCelllist;
+         
           return recipescell;
       }
 
@@ -229,6 +257,7 @@
         
         CHCaiDanCell *caidancell=[tableView dequeueReusableCellWithIdentifier:@"CDCCadancell" forIndexPath:indexPath];
         caidancell.faxian_list=faxianCelllist;
+        
         return caidancell;
     }
 
@@ -236,16 +265,21 @@
     {
         CHZTCell *ztcell3=[tableView dequeueReusableCellWithIdentifier:@"CDCZtcell" forIndexPath:indexPath];
         ztcell3.faxian_list=faxianCelllist;
+        
         return ztcell3;
     }
-    else
+    else if([faxianCelllist.type isEqualToString:@"11"])
    
     {
     CHTopInfoCell *topcell=[tableView dequeueReusableCellWithIdentifier: @"CDCtopcell" forIndexPath:indexPath];
         topcell.faxian_list=faxianCelllist;
+        
+        
         return topcell;
+        
     }
     
+   
     
     return nil;
 }
@@ -341,19 +375,14 @@
    
   CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
    CHCFaXianDetailViewController *targetVC =[[CHCFaXianDetailViewController alloc] init];
-       CHCOneWebViewController *oneView=[[CHCOneWebViewController alloc]init];
+
     CHCWenZhanViewController *wenView=[[CHCWenZhanViewController alloc]init];
     CHCaiViewController *caiiew=[[ CHCaiViewController alloc]init];
        if ((targetVC.tid = faxianCelllist.topic_info.tid)&&(targetVC.gid=faxianCelllist.topic_info.gid))
     {
          [self presentViewController:targetVC animated:YES completion:nil];
     }
-     else if ((oneView.oneId=faxianCelllist.recipe_info.myid))
-    {
-        [self.navigationController pushViewController:oneView animated:YES ];
-
-    }
-    else if ((wenView.wenId=faxianCelllist.article_info.myid))
+     else if ((wenView.wenId=faxianCelllist.article_info.myid))
     {
         [self.navigationController pushViewController:wenView animated:YES ];
 
@@ -364,18 +393,18 @@
     }
     
     
-    //    CHzt_infoWebViewController *zt_infoView=[[CHzt_infoWebViewController alloc]init];
-    //
-    //    NSString* nyid =((CHCrecipes_list *)_faxianCelllist.gongyi_info.recipes[0]).myid;
-    //    if ((view.rid=nyid))
-    //    {
-    //        [self.navigationController pushViewController:view animated:YES ];
-    //        
-    //    }
-  
-    
     
 
+}
+- (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
+    if(navigationType==UIWebViewNavigationTypeLinkClicked)
+    {
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

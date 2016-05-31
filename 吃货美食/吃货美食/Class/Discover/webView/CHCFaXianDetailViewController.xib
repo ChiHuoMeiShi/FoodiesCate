@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFg-WF-BDP">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="664"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                 </webView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIu-Jm-uoL">
@@ -49,14 +49,14 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="SFg-WF-BDP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7h6-1M-NY3"/>
-                <constraint firstAttribute="bottom" secondItem="SFg-WF-BDP" secondAttribute="bottom" id="GBG-7o-X6Y"/>
+                <constraint firstAttribute="bottom" secondItem="SFg-WF-BDP" secondAttribute="bottom" constant="-64" id="GBG-7o-X6Y"/>
                 <constraint firstItem="SFg-WF-BDP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GhD-wN-Wo1"/>
                 <constraint firstAttribute="trailing" secondItem="SFg-WF-BDP" secondAttribute="trailing" id="dzD-py-RVd"/>
                 <constraint firstItem="aIu-Jm-uoL" firstAttribute="leading" secondItem="SFg-WF-BDP" secondAttribute="leading" id="qUm-Oy-w8b"/>
                 <constraint firstItem="aIu-Jm-uoL" firstAttribute="top" secondItem="SFg-WF-BDP" secondAttribute="top" id="rCZ-yY-oJ9"/>
                 <constraint firstItem="aIu-Jm-uoL" firstAttribute="trailing" secondItem="SFg-WF-BDP" secondAttribute="trailing" id="tVS-MX-CzH"/>
             </constraints>
-            <point key="canvasLocation" x="144" y="422"/>
+            <point key="canvasLocation" x="64" y="301"/>
         </view>
     </objects>
 </document>
