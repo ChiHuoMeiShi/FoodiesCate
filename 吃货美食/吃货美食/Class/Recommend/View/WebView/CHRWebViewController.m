@@ -27,6 +27,8 @@
     [super viewDidLoad];
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
     
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barItemWithImageName:@"refresh" withSelectImage:@"refresh" withHorizontalAlignment:UIControlContentHorizontalAlignmentRight withTarget:self action:@selector(webReload) forControlEvents:UIControlEventTouchUpInside];
+    
     if ([self.navigationController.navigationBar respondsToSelector:@selector( setBackgroundImage:forBarMetrics:)]){
         NSArray *list=self.navigationController.navigationBar.subviews;
         for (id obj in list) {
@@ -78,6 +80,9 @@
     self.myHUD.labelText= string;
     [self.view addSubview:self.myHUD];
     [self.myHUD showWhileExecuting:method onTarget:self withObject:nil animated:isAnimated];
+}
+- (void)webReload{
+    [self.webDetailView reload];
 }
 
 - (void)hudWasHidden:(MBProgressHUD *)hud{

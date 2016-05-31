@@ -277,8 +277,7 @@
         nextStepCell.namedTextField.returnKeyType = UIReturnKeyDone;
         nextStepCell.stepTextField.delegate = self;
         nextStepCell.stepTextField.returnKeyType = UIReturnKeyDone;
-        nextStepCell.orderButton.titleLabel.text = [NSString stringWithFormat:@"%ld",
-                                                    indexPath.row + 1];
+        nextStepCell.orderButton.titleLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row + 1];
         [nextStepCell.takephotoButton addTarget:self action:@selector(takephoto:) forControlEvents:UIControlEventTouchUpInside];
         if (indexPath.row == self.detailFoodModel.stepFoodArray.count) {
             nextStepCell.namedTextField.userInteractionEnabled = YES;
