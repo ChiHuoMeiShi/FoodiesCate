@@ -61,13 +61,15 @@
     [super viewDidLoad];
   
     self.title=@"发现";
+    
     [self getTableViewData];
+    
     [self CreatTableView];
      MJRefreshStateHeader *header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshAction)];
      _mytableView.mj_header=header;
        [_mytableView addSubview:header];
     
-
+    self.page = 1;
     
     _mytableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
        [self getTableViewDataWithButtom];
@@ -99,8 +101,6 @@
 //上拉刷新
 -(void)getTableViewData
 {
-    self.page = 1;
-    self.page = self.page + 1;
     AFHTTPSessionManager *manger=[AFHTTPSessionManager manager];
     manger.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"text/html", nil];
     NSString *nsurl=@"http://api.meishi.cc/v5/faxian_new.php?format=json";
@@ -113,8 +113,7 @@
         mySelf.data=data;
         _mytableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         [_mytableView reloadData];
-        
-    
+        mySelf.page = self.page + 1;
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
       
