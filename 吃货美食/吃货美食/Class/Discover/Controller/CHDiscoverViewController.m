@@ -117,7 +117,7 @@
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
       
-        [_mytableView.mj_header endRefreshing];
+        [_mytableView.mj_footer endRefreshing];
     }];
     
 }
