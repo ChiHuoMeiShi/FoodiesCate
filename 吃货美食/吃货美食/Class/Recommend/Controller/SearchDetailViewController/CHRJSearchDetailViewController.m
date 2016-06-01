@@ -66,10 +66,7 @@
 #pragma mark - ViewActivity
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    self.showTopImageView.x = CHRSearchImageX;
-    self.showTopImageView.hidden = NO;
-    self.showBomImageView.x = CHRSearchImageX;
-    self.showBomImageView.hidden = NO;
+
     if (self.showColectionView) {
         [self.showColectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:self.choosedListCount inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
     }
@@ -85,6 +82,13 @@
     [self buttonSetFun];
     self.currentSort = @"default";
     self.pageCount = 1;
+    self.showTopImageView = [[UIImageView alloc]initWithFrame:CGRectMake(CHRSearchImageX, 78.f, 10.f, 3.f)];
+    self.showTopImageView.image = [UIImage imageNamed:@"popover_arrow_black_top"];
+    self.showBomImageView = [[UIImageView alloc]initWithFrame:CGRectMake(CHRSearchImageX, 94.f, 10.f, 3.f)];
+    self.showBomImageView.image = [UIImage imageNamed:@"popover_arrow_black_bottom"];
+    
+    [self.view addSubview:self.showTopImageView];
+    [self.view addSubview:self.showBomImageView];
     
     [self searchTableViewSet];
     [self searchCollectionViewSet];
@@ -96,7 +100,7 @@
 #pragma mark - ViewSet
 - (void)searchCollectionViewSet{
     if (self.choosedTypeArr) {
-        self.showColectionView.x = 100.f;
+        self.showColectionView.x = 10.f;
         self.showColectionView.hidden = NO;
         self.showColectionView.dataSource = self;
         self.showColectionView.delegate = self;
@@ -113,6 +117,9 @@
     __weak typeof(self) mySelf = self;
     self.showTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [mySelf requestDataWithSort:mySelf.currentSort];
+    }];
+    self.showTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [mySelf requestUPDataWithSort:mySelf.currentSort];
     }];
 }
 
@@ -154,11 +161,43 @@
     [self.showTableView reloadData];
 }
 
+- (void)requestUPDataWithSort:(NSString *)sort{
+    NSString * url = @"http://api.meishi.cc/v5/search_category.php?format=json";
+    NSDictionary * dicTemp = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"step":@"",@"kw":@"",@"page":@(1),@"q":self.searchName,@"sort_sc":@"desc",@"sort":sort,@"gy":@"",@"mt":@""};
+    if (self.isLocal) {
+        dicTemp = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"page":@(1)};
+        url = @"http://api.meishi.cc/v5/lsb_news.php?format=json";
+    }
+    NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithDictionary:dicTemp];
+    if (self.isVideo) {
+        url = @"http://api.meishi.cc/v5/zt1.php?format=json";
+        [dic removeObjectForKey:@"q"];
+        [dic setObject:@(20001) forKey:@"cid"];
+    }
+    __weak typeof(self)mySelf = self;
+    [self.afnManger.messageRequest POST:url parameters:dic progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [mySelf.showTableView.mj_header endRefreshing];
+        NSDictionary * dic = (NSDictionary *)responseObject;
+        //        CHLog(@"%@",dic[@"obj"]);
+        
+        if (self.isLocal) {
+            mySelf.searchModel = [[CHRJSearchModel alloc]init];
+            mySelf.searchModel.data = [CHRJSearchContentModel mj_objectArrayWithKeyValuesArray:dic[@"data"]];
+        }else{
+            mySelf.searchModel = [CHRJSearchModel mj_objectWithKeyValues:dic[@"obj"]];
+        }
+        [mySelf.showTableView reloadData];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        CHLog(@"%@",error);
+        [mySelf.showTableView.mj_header endRefreshing];
+    }];
+}
+
 - (void)requestDataWithSort:(NSString *)sort{
     NSString * url = @"http://api.meishi.cc/v5/search_category.php?format=json";
     NSDictionary * dicTemp = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"step":@"",@"kw":@"",@"page":@(self.pageCount),@"q":self.searchName,@"sort_sc":@"desc",@"sort":sort,@"gy":@"",@"mt":@""};
     if (self.isLocal) {
-        dicTemp = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"page":@(1)};
+        dicTemp = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"page":@(self.pageCount)};
         url = @"http://api.meishi.cc/v5/lsb_news.php?format=json";
     }
     NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithDictionary:dicTemp];

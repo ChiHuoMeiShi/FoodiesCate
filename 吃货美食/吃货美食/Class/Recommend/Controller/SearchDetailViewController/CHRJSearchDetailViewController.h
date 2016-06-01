@@ -24,8 +24,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *hardButton;
 @property (weak, nonatomic) IBOutlet UIButton *timeButton;
 
-@property (weak, nonatomic) IBOutlet UIImageView *showTopImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *showBomImageView;
+@property (strong, nonatomic)UIImageView *showTopImageView;
+@property (strong, nonatomic)UIImageView *showBomImageView;
 @property (weak, nonatomic) IBOutlet UITableView *showTableView;
 @property (weak, nonatomic) IBOutlet UICollectionView *showColectionView;
 
