@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface CHLocation : NSObject
 
 @property (nonatomic,assign)CGFloat lat;
 @property (nonatomic,assign)CGFloat lon;
+@property (nonatomic,assign)CLLocationCoordinate2D coordinate;
 
 + (instancetype)shareLocation;
 

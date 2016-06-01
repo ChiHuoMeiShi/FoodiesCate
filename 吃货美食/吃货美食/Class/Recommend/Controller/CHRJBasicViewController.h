@@ -21,6 +21,7 @@
 @property (nonatomic,strong)CHRJSearchView * searchView;
 @property (nonatomic,strong)CHHTTPRequestManager * afnManger;
 
+
 @property (nonatomic,strong)CHRImageButton * choosedImagedButton;
 
 @property (nonatomic,strong)UIImage * choosedImage;

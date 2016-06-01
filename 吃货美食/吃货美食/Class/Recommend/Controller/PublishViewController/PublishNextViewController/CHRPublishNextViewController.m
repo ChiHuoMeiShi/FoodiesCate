@@ -100,17 +100,12 @@
 }
 - (BOOL)foodDetailSave{
     NSInteger saveCount = 0;
-    if (![self.storyTextView.text isEqualToString:@""]) {
-        self.detailFoodModel.storyStr = self.storyTextView.text;
-    }else{
-        saveCount++;
-    }
     if (![self.shareTextView.text isEqualToString:@""]) {
         self.detailFoodModel.finishStr = self.shareTextView.text;
     }else{
         saveCount++;
     }
-    if (self.detailFoodModel.stepFoodArray.count <= 0 || self.detailFoodModel.stepFoodArray.count <= 0 || self.detailFoodModel.stepFoodArray.count <= 0) {
+    if (self.detailFoodModel.stepFoodArray.count <= 0 || self.detailFoodModel.stepFoodArray.count <= 0) {
         saveCount++;
     }
     if (self.headerViewTop.photoButton.myImagePath) {

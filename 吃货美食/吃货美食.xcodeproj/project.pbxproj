@@ -279,6 +279,7 @@
 		7ADF0E331CF1D49700273AA0 /* CHRPublicNextStepTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CF4F61CF0A8C800A2D830 /* CHRPublicNextStepTableViewCell.xib */; };
 		7ADF0E351CF1D89B00273AA0 /* CHRPublicNextBaseFoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9CF4FB1CF0A8F800A2D830 /* CHRPublicNextBaseFoodTableViewCell.xib */; };
 		7ADF0E3B1CF1ED0A00273AA0 /* CHRImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADF0E3A1CF1ED0A00273AA0 /* CHRImageButton.m */; };
+		7AE6A9751CFF0EC8004A24A7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE6A9741CFF0EC8004A24A7 /* MapKit.framework */; };
 		B716865F1CE8257100BEBA3E /* CateUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B716865E1CE8257100BEBA3E /* CateUserInfo.m */; };
 		B71686621CE8261100BEBA3E /* CateImgsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B71686611CE8261100BEBA3E /* CateImgsModel.m */; };
 		B71E54841CE6F6B6003B6BE8 /* CHEChatDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = B71E54821CE6F6B6003B6BE8 /* CHEChatDetailController.m */; };
@@ -783,6 +784,7 @@
 		7AD547681CEE039100B91B73 /* CHRAIBAseFoodDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRAIBAseFoodDefault.m; sourceTree = "<group>"; };
 		7ADF0E391CF1ED0A00273AA0 /* CHRImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRImageButton.h; sourceTree = "<group>"; };
 		7ADF0E3A1CF1ED0A00273AA0 /* CHRImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRImageButton.m; sourceTree = "<group>"; };
+		7AE6A9741CFF0EC8004A24A7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B716865D1CE8257100BEBA3E /* CateUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CateUserInfo.h; sourceTree = "<group>"; };
 		B716865E1CE8257100BEBA3E /* CateUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CateUserInfo.m; sourceTree = "<group>"; };
 		B71686601CE8261100BEBA3E /* CateImgsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CateImgsModel.h; sourceTree = "<group>"; };
@@ -939,6 +941,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AE6A9751CFF0EC8004A24A7 /* MapKit.framework in Frameworks */,
 				B7A73B591CF996C20071D71C /* libsqlite3.0.tbd in Frameworks */,
 				B7A73B5A1CF996C20071D71C /* libsqlite3.tbd in Frameworks */,
 				B7E01C0B1CF1F85F0079815C /* libxml2.2.tbd in Frameworks */,
@@ -1486,6 +1489,7 @@
 		097A2F15618DB9C1D6C68FEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7AE6A9741CFF0EC8004A24A7 /* MapKit.framework */,
 				B7A73B571CF996C20071D71C /* libsqlite3.0.tbd */,
 				B7A73B581CF996C20071D71C /* libsqlite3.tbd */,
 				B7E01C091CF1F85F0079815C /* libxml2.2.tbd */,
