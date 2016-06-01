@@ -20,7 +20,7 @@
                             <constraint firstAttribute="width" constant="100" id="JV6-3z-oUi"/>
                             <constraint firstAttribute="height" constant="16" id="T3v-ew-6as"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
