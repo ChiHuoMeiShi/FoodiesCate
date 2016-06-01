@@ -9,10 +9,8 @@
             <connections>
                 <outlet property="hardButton" destination="VsL-dT-fed" id="t9l-tg-MR9"/>
                 <outlet property="hotButton" destination="Trw-2e-Nfi" id="5gk-8J-z2a"/>
-                <outlet property="showBomImageView" destination="OxT-vH-y7i" id="8ta-JB-mwb"/>
                 <outlet property="showColectionView" destination="1Ax-mW-1mI" id="04F-yQ-DeJ"/>
                 <outlet property="showTableView" destination="Fhl-Du-4jp" id="AJp-sG-SGG"/>
-                <outlet property="showTopImageView" destination="X3Y-1C-AXa" id="Tjw-2l-Qba"/>
                 <outlet property="timeButton" destination="SGO-fK-XPU" id="uuG-cq-IdN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -39,20 +37,6 @@
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
-                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popover_arrow_black_top" translatesAutoresizingMaskIntoConstraints="NO" id="X3Y-1C-AXa">
-                            <rect key="frame" x="75" y="14" width="10" height="3"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="3" id="eXz-Ew-Akf"/>
-                                <constraint firstAttribute="width" constant="10" id="w7G-xQ-C5Q"/>
-                            </constraints>
-                        </imageView>
-                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popover_arrow_black_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="OxT-vH-y7i">
-                            <rect key="frame" x="75" y="28" width="10" height="3"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="10" id="7ZK-CO-Elr"/>
-                                <constraint firstAttribute="height" constant="3" id="f2k-ic-9rm"/>
-                            </constraints>
-                        </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Trw-2e-Nfi">
                             <rect key="frame" x="0.0" y="0.0" width="200" height="45"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -67,20 +51,16 @@
                         <constraint firstAttribute="height" constant="45" id="0cH-uy-TRc"/>
                         <constraint firstItem="Trw-2e-Nfi" firstAttribute="leading" secondItem="G74-tP-lxf" secondAttribute="leading" id="1JU-0N-3pt"/>
                         <constraint firstAttribute="bottom" secondItem="Trw-2e-Nfi" secondAttribute="bottom" id="1ZE-Re-DNs"/>
-                        <constraint firstAttribute="bottom" secondItem="OxT-vH-y7i" secondAttribute="bottom" constant="14" id="2Mg-ea-fR6"/>
                         <constraint firstItem="SGO-fK-XPU" firstAttribute="top" secondItem="G74-tP-lxf" secondAttribute="top" id="8pe-9a-WfI"/>
                         <constraint firstAttribute="bottom" secondItem="VsL-dT-fed" secondAttribute="bottom" id="GI4-8E-nJG"/>
                         <constraint firstItem="VsL-dT-fed" firstAttribute="leading" secondItem="Trw-2e-Nfi" secondAttribute="trailing" id="Hin-Ff-stv"/>
                         <constraint firstItem="SGO-fK-XPU" firstAttribute="height" secondItem="Trw-2e-Nfi" secondAttribute="height" id="HvK-US-Qu7"/>
                         <constraint firstItem="VsL-dT-fed" firstAttribute="height" secondItem="Trw-2e-Nfi" secondAttribute="height" id="JvR-GW-CRH"/>
-                        <constraint firstItem="OxT-vH-y7i" firstAttribute="leading" secondItem="G74-tP-lxf" secondAttribute="leading" constant="75" id="K9T-Xn-TTw"/>
-                        <constraint firstItem="X3Y-1C-AXa" firstAttribute="leading" secondItem="G74-tP-lxf" secondAttribute="leading" constant="75" id="LIX-ms-kdS"/>
                         <constraint firstItem="SGO-fK-XPU" firstAttribute="leading" secondItem="VsL-dT-fed" secondAttribute="trailing" id="Qgg-n1-xuV"/>
                         <constraint firstItem="SGO-fK-XPU" firstAttribute="leading" secondItem="VsL-dT-fed" secondAttribute="trailing" id="ZnT-Yy-3IR"/>
                         <constraint firstItem="VsL-dT-fed" firstAttribute="width" secondItem="Trw-2e-Nfi" secondAttribute="width" id="gkx-sb-whx"/>
                         <constraint firstItem="VsL-dT-fed" firstAttribute="leading" secondItem="Trw-2e-Nfi" secondAttribute="trailing" id="jAj-jN-b3R"/>
                         <constraint firstItem="VsL-dT-fed" firstAttribute="top" secondItem="G74-tP-lxf" secondAttribute="top" id="oC9-8H-Gp3"/>
-                        <constraint firstItem="X3Y-1C-AXa" firstAttribute="top" secondItem="G74-tP-lxf" secondAttribute="top" constant="14" id="qZl-dD-qW0"/>
                         <constraint firstItem="SGO-fK-XPU" firstAttribute="width" secondItem="Trw-2e-Nfi" secondAttribute="width" id="u0q-LC-4A2"/>
                         <constraint firstAttribute="bottom" secondItem="SGO-fK-XPU" secondAttribute="bottom" id="umY-Er-Hfm"/>
                         <constraint firstAttribute="trailing" secondItem="SGO-fK-XPU" secondAttribute="trailing" id="wxn-ev-sVb"/>
@@ -124,8 +104,4 @@
             <point key="canvasLocation" x="340" y="295"/>
         </view>
     </objects>
-    <resources>
-        <image name="popover_arrow_black_bottom" width="21" height="10"/>
-        <image name="popover_arrow_black_top" width="21" height="10"/>
-    </resources>
 </document>

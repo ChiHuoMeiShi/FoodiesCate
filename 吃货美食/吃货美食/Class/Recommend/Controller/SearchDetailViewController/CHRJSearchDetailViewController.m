@@ -66,10 +66,7 @@
 #pragma mark - ViewActivity
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    self.showTopImageView.x = CHRSearchImageX;
-    self.showTopImageView.hidden = NO;
-    self.showBomImageView.x = CHRSearchImageX;
-    self.showBomImageView.hidden = NO;
+
     if (self.showColectionView) {
         [self.showColectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:self.choosedListCount inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
     }
@@ -85,6 +82,13 @@
     [self buttonSetFun];
     self.currentSort = @"default";
     self.pageCount = 1;
+    self.showTopImageView = [[UIImageView alloc]initWithFrame:CGRectMake(CHRSearchImageX, 78.f, 10.f, 3.f)];
+    self.showTopImageView.image = [UIImage imageNamed:@"popover_arrow_black_top"];
+    self.showBomImageView = [[UIImageView alloc]initWithFrame:CGRectMake(CHRSearchImageX, 94.f, 10.f, 3.f)];
+    self.showBomImageView.image = [UIImage imageNamed:@"popover_arrow_black_bottom"];
+    
+    [self.view addSubview:self.showTopImageView];
+    [self.view addSubview:self.showBomImageView];
     
     [self searchTableViewSet];
     [self searchCollectionViewSet];
