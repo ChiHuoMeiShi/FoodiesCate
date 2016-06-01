@@ -96,7 +96,7 @@
 #pragma mark - ViewSet
 - (void)searchCollectionViewSet{
     if (self.choosedTypeArr) {
-        self.showColectionView.x = 100.f;
+        self.showColectionView.x = 10.f;
         self.showColectionView.hidden = NO;
         self.showColectionView.dataSource = self;
         self.showColectionView.delegate = self;
@@ -193,7 +193,7 @@
     NSString * url = @"http://api.meishi.cc/v5/search_category.php?format=json";
     NSDictionary * dicTemp = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"step":@"",@"kw":@"",@"page":@(self.pageCount),@"q":self.searchName,@"sort_sc":@"desc",@"sort":sort,@"gy":@"",@"mt":@""};
     if (self.isLocal) {
-        dicTemp = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"page":@(1)};
+        dicTemp = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"page":@(self.pageCount)};
         url = @"http://api.meishi.cc/v5/lsb_news.php?format=json";
     }
     NSMutableDictionary * dic = [NSMutableDictionary dictionaryWithDictionary:dicTemp];
