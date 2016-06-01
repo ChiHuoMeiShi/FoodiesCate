@@ -63,7 +63,7 @@
     self.title=@"发现";
     
     [self getTableViewData];
-    
+
     [self CreatTableView];
      MJRefreshStateHeader *header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(headerRefreshAction)];
      _mytableView.mj_header=header;
@@ -161,6 +161,7 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
 //    数据
     CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
     self.faxianCelllist=faxianCelllist;
@@ -203,17 +204,19 @@
                 return discell;
     }
     
-  else if ([faxianCelllist.type isEqualToString:@"1"])
+   if ([faxianCelllist.type isEqualToString:@"1"])
 
     {
+        
         CHClickTableViewCell *clickcell=[tableView dequeueReusableCellWithIdentifier:@"CDClickcell" forIndexPath:indexPath];
 
+      
         clickcell.faxian_list= faxianCelllist;
         
         return clickcell;
     }
 
-        else if ([faxianCelllist.type isEqualToString:@"2"])
+         if ([faxianCelllist.type isEqualToString:@"2"])
     {
        CHCCommentTableViewCell *commentcell=[tableView dequeueReusableCellWithIdentifier:@"CDCCommentcell" forIndexPath:indexPath];
         
@@ -221,7 +224,7 @@
       
         return commentcell;
     }
-        else if ([faxianCelllist.type isEqualToString:@"3"])
+         if ([faxianCelllist.type isEqualToString:@"3"])
     {
        CHCActivityTableViewCell *activitycell=[tableView dequeueReusableCellWithIdentifier:@"CDCActivitycell" forIndexPath:indexPath];
         activitycell.faxian_list=faxianCelllist;
@@ -229,22 +232,29 @@
        return activitycell;
     }
     
-    else if ([faxianCelllist.type isEqualToString:@"4"])
+     if ([faxianCelllist.type isEqualToString:@"4"])
+         
     {
+       
         CHVGoods_infoTableViewCell *goodscell=[tableView dequeueReusableCellWithIdentifier:@"goodscell" forIndexPath:indexPath];
+        while ([goodscell.contentView.subviews lastObject] != nil)
+        {
+            [(UIView*)[goodscell.contentView.subviews lastObject] removeFromSuperview];  //删除并进行重新分配
+        }
+
     
         goodscell.faxian_list=faxianCelllist;
         
         return goodscell;
     }
 
-      else if ([faxianCelllist.type isEqualToString:@"5"])
+       if ([faxianCelllist.type isEqualToString:@"5"])
     {
         CHCArticalCell *articalcell=[tableView  dequeueReusableCellWithIdentifier:@"CHCArticalCell" forIndexPath:indexPath ];
         articalcell.faxian_list=faxianCelllist;
                 return articalcell;
     }
-      else if ([faxianCelllist.type isEqualToString:@"6"])
+       if ([faxianCelllist.type isEqualToString:@"6"])
       {
           CHRecipesCell *recipescell=[tableView dequeueReusableCellWithIdentifier:@"CDCrecipescell" forIndexPath:indexPath];
           recipescell.faxian_list=faxianCelllist;
@@ -253,7 +263,7 @@
       }
 
 
-    else if ([faxianCelllist.type isEqualToString:@"7"])
+     if ([faxianCelllist.type isEqualToString:@"7"])
     {
         
         CHCaiDanCell *caidancell=[tableView dequeueReusableCellWithIdentifier:@"CDCCadancell" forIndexPath:indexPath];
@@ -262,14 +272,14 @@
         return caidancell;
     }
 
-    else if([faxianCelllist.type isEqualToString:@"9"])
+     if([faxianCelllist.type isEqualToString:@"9"])
     {
         CHZTCell *ztcell3=[tableView dequeueReusableCellWithIdentifier:@"CDCZtcell" forIndexPath:indexPath];
         ztcell3.faxian_list=faxianCelllist;
         
         return ztcell3;
     }
-    else if([faxianCelllist.type isEqualToString:@"11"])
+     if([faxianCelllist.type isEqualToString:@"11"])
    
     {
     CHTopInfoCell *topcell=[tableView dequeueReusableCellWithIdentifier: @"CDCtopcell" forIndexPath:indexPath];
@@ -279,11 +289,11 @@
         return topcell;
         
     }
-    
-   
+    //
     
     return nil;
 }
+
 
 #pragma mark-buttonClick
 -(void)shiCaiButtonClicked:(id)sender
@@ -359,6 +369,7 @@
 
     return  0;
 }
+
 //每个分组上边预留的空白高度
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -421,20 +432,27 @@
 //    self.faxianCelllist=faxianCelllist;
 //    
 //    CHCDiscoverTableViewcell *discell=[tableView  dequeueReusableCellWithIdentifier:@"CDCdiscell" ];
+//    discell.tag =1;
 //    CHClickTableViewCell *clickcell=[tableView dequeueReusableCellWithIdentifier:@"CDClickcell"];
+//    clickcell.tag =2;
 //    CHCCommentTableViewCell *commentcell=[tableView dequeueReusableCellWithIdentifier:@"CDCCommentcell"];
+//    commentcell.tag =3;
 //    CHCActivityTableViewCell *activitycell=[tableView dequeueReusableCellWithIdentifier:@"CDCActivitycell"];
-//    
+//    activitycell.tag =4;
 //    
 //    CHVGoods_infoTableViewCell *goodscell=[tableView dequeueReusableCellWithIdentifier:@"goodscell"];
-//    
+//    goodscell.tag =5;
 //    CHCArticalCell *articalcell=[tableView  dequeueReusableCellWithIdentifier:@"CHCArticalCell" ];
+//    articalcell.tag =6;
 //    CHRecipesCell *recipescell=[tableView dequeueReusableCellWithIdentifier:@"CDCrecipescell"];
+//    recipescell.tag =7;
 //    CHCaiDanCell *caidancell=[tableView dequeueReusableCellWithIdentifier:@"CDCCadancell"];
-//    
+//    caidancell.tag =8;
 //    CHZTCell *ztcell3=[tableView dequeueReusableCellWithIdentifier:@"CDCZtcell"];
+//    ztcell3.tag =9;
 //    NSString *CellTableIdentifier = @"CDCtopcell";
 //    CHTopInfoCell *topcell=[tableView dequeueReusableCellWithIdentifier:CellTableIdentifier];
+//    topcell.tag =10;
 //    
 //    if (!discell&&indexPath.section==0)
 //    {
@@ -548,7 +566,7 @@
 //        ztcell3.faxian_list=faxianCelllist;
 //        return ztcell3;
 //    }
-//    else
+//    else if(!topcell&&([faxianCelllist.type isEqualToString:@"11"]))
 //        
 //    {
 //        NSArray *arr=[[NSBundle mainBundle]loadNibNamed:@"CHTopInfoCell" owner:nil options:nil];
@@ -556,6 +574,74 @@
 //        topcell.faxian_list=faxianCelllist;
 //        return topcell;
 //    }
+//    else
+//    {
+//        //        if (clickcell != nil)
+//        //        {
+//        //            [clickcell removeFromSuperview];//处理重用
+//        //        }
+//        //        while ([discell.contentView.subviews lastObject] != nil)
+//        //        {
+//        //            [(UIView*)[discell.contentView.subviews lastObject] removeFromSuperview];  //删除并进行重新分配
+//        //        }
+//        //        while ([clickcell.contentView.subviews lastObject] != nil)
+//        //        {
+//        //            [(UIView*)[clickcell.contentView.subviews lastObject] removeFromSuperview];  //删除并进行重新分配
+//        //        }
+//        //        while ([commentcell.contentView.subviews lastObject] != nil)
+//        //        {
+//        //            [(UIView*)[commentcell.contentView.subviews lastObject] removeFromSuperview];  //删除并进行重新分配
+//        //        }
+//        //
+//        //        while ([activitycell.contentView.subviews lastObject] != nil)
+//        //        {
+//        //            [(UIView*)[activitycell.contentView.subviews lastObject] removeFromSuperview];  //删除并进行重新分配
+//        //        }
+//        //
+//        //        while ([goodscell.contentView.subviews lastObject] != nil)
+//        //        {
+//        //            [(UIView*)[goodscell.contentView.subviews lastObject] removeFromSuperview];  //删除并进行重新分配
+//        //        }
+//        //
+//        //        while ([articalcell.contentView.subviews lastObject] != nil)
+//        //        {
+//        //            [(UIView*)[articalcell.contentView.subviews lastObject] removeFromSuperview];  //删除并进行重新分配
+//        //        }
+//        //
+//        //        while ([recipescell.contentView.subviews lastObject] != nil)
+//        //        {
+//        //            [(UIView*)[recipescell.contentView.subviews lastObject] removeFromSuperview];  //删除并进行重新分配
+//        //        }
+//        //
+//        //        while ([caidancell.contentView.subviews lastObject] != nil)
+//        //        {
+//        //            [(UIView*)[caidancell.contentView.subviews lastObject] removeFromSuperview];  //删除并进行重新分配
+//        //        }
+//        //
+//        //        while ([ztcell3.contentView.subviews lastObject] != nil)
+//        //        {
+//        //            [(UIView*)[ztcell3.contentView.subviews lastObject] removeFromSuperview];  //删除并进行重新分配
+//        //        }
+//        //
+//        //        while ([topcell.contentView.subviews lastObject] != nil)
+//        //        {
+//        //            [(UIView*)[topcell.contentView.subviews lastObject] removeFromSuperview];  //删除并进行重新分配
+//        //        }
+//        
+//        NSArray *views = [goodscell subviews];
+//        for (UIView *obj in views) {
+//            if (obj.tag==100|| obj.tag==200||obj.tag==300) {      //只删除指定的画面，不要全部删除，否则tableview的分割线也会被删除
+//                NSLog(@"cell 要删除的子画面是：%@",[obj class]);
+//                [obj removeFromSuperview];
+//            }
+//        }
+//        
+//        
+//        
+//        
+//        
+//    }
+//    
 //    
 //    
 //    return nil;

@@ -58,7 +58,7 @@
                 <outlet property="titlelabel" destination="83z-o7-caZ" id="dkz-Dt-txb"/>
                 <outlet property="width" destination="HAq-S8-N1P" id="PWp-xP-Zki"/>
             </connections>
-            <point key="canvasLocation" x="503" y="279"/>
+            <point key="canvasLocation" x="629" y="259"/>
         </tableViewCell>
     </objects>
 </document>
