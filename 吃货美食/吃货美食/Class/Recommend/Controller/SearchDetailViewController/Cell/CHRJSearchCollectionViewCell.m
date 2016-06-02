@@ -23,6 +23,7 @@
 - (void)setSelectedBackgroundView:(UIView *)selectedBackgroundView{
     [super setSelectedBackgroundView:selectedBackgroundView];
     UIView * addBackgroundView = [[UIView alloc]initWithFrame:CGRectMake(0.f, selectedBackgroundView.height - 5.f, selectedBackgroundView.width, 5.f)];
+    
     addBackgroundView.backgroundColor = [UIColor colorWithHexString:@"#ff4c39"];
     [selectedBackgroundView addSubview:addBackgroundView];
 }

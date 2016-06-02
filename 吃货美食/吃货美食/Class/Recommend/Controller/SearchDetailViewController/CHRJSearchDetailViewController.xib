@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="hardButton" destination="VsL-dT-fed" id="t9l-tg-MR9"/>
                 <outlet property="hotButton" destination="Trw-2e-Nfi" id="5gk-8J-z2a"/>
+                <outlet property="mapView" destination="ckK-UT-W36" id="oFY-yU-x4e"/>
                 <outlet property="showColectionView" destination="1Ax-mW-1mI" id="04F-yQ-DeJ"/>
                 <outlet property="showTableView" destination="Fhl-Du-4jp" id="AJp-sG-SGG"/>
                 <outlet property="timeButton" destination="SGO-fK-XPU" id="uuG-cq-IdN"/>
@@ -87,18 +88,28 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <mapView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ckK-UT-W36">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Es3-co-ek1"/>
+                    </connections>
+                </mapView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="G74-tP-lxf" secondAttribute="trailing" id="0bV-fm-V8g"/>
                 <constraint firstItem="G74-tP-lxf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="4u6-Cx-0O3"/>
+                <constraint firstAttribute="trailing" secondItem="ckK-UT-W36" secondAttribute="trailing" id="5VV-TC-1nv"/>
                 <constraint firstAttribute="trailing" secondItem="1Ax-mW-1mI" secondAttribute="trailing" constant="10" id="G2V-ZJ-QIi"/>
                 <constraint firstItem="G74-tP-lxf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Hg7-oC-UIr"/>
+                <constraint firstItem="ckK-UT-W36" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Mh8-sg-SxH"/>
                 <constraint firstAttribute="bottom" secondItem="Fhl-Du-4jp" secondAttribute="bottom" id="T7H-mg-vRJ"/>
                 <constraint firstAttribute="trailing" secondItem="Fhl-Du-4jp" secondAttribute="trailing" constant="10" id="ZoP-cA-8AX"/>
+                <constraint firstItem="ckK-UT-W36" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ggE-Ec-kyK"/>
                 <constraint firstItem="Fhl-Du-4jp" firstAttribute="top" secondItem="G74-tP-lxf" secondAttribute="bottom" id="gzn-IE-41v"/>
                 <constraint firstItem="Fhl-Du-4jp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="lDM-fQ-kng"/>
                 <constraint firstAttribute="bottom" secondItem="1Ax-mW-1mI" secondAttribute="bottom" id="s7u-ME-3KX"/>
+                <constraint firstAttribute="bottom" secondItem="ckK-UT-W36" secondAttribute="bottom" id="uaO-nb-Oz2"/>
                 <constraint firstItem="1Ax-mW-1mI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="zVR-jp-bcr"/>
             </constraints>
             <point key="canvasLocation" x="340" y="295"/>

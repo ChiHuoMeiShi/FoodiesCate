@@ -7,18 +7,8 @@
 //
 
 #import "CHRJSearchDetailViewController.h"
-#import "CHRecommendViewController.h"
-#import <MJRefresh.h>
-#import "CHRJSearchModel.h"
-#import "CHRJSearchTableViewCell.h"
-#import "CHRJSearchCollectionViewCell.h"
 
-#define CHRSearchImageX (CHSCREENWIDTH/6 + 18.f)
-@interface CHRJSearchDetailViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
-@property (nonatomic,strong)UIButton * chooseButton;
-@property (nonatomic,strong)CHRJSearchModel * searchModel;
-@property (nonatomic,copy)NSString * currentSort;
-@property (nonatomic,assign)NSInteger pageCount;
+@interface CHRJSearchDetailViewController ()
 
 @end
 
@@ -59,7 +49,21 @@
     if (self) {
         self.isLocal = isLocal;
         self.choosedTypeArr = nil;
-        self.searchName = @"附近菜谱";
+        self.searchName = @"附近";
+        
+        self.mapView.mapType = MKMapTypeStandard;
+        self.mapView.rotateEnabled = NO;
+        self.mapView.userTrackingMode = MKUserTrackingModeFollow;
+        MKPointAnnotation *pointLocation = [[MKPointAnnotation alloc] init];
+        pointLocation.coordinate = self.location.coordinate;
+        [self.mapView addAnnotation:pointLocation];
+        
+        self.mineSegmentedControl = [[UISegmentedControl alloc]initWithItems:@[@"列表",@"地图"]];
+        self.mineSegmentedControl.frame = CGRectMake(0.f, 0.f, 120.f, 30.f);
+        self.mineSegmentedControl.tintColor = [UIColor redColor];
+        self.mineSegmentedControl.selectedSegmentIndex = 0;
+        [self.mineSegmentedControl addTarget:self action:@selector(segementChose:) forControlEvents:UIControlEventValueChanged];
+        self.navigationItem.titleView = self.mineSegmentedControl;
     }
     return self;
 }
@@ -70,6 +74,7 @@
     if (self.showColectionView) {
         [self.showColectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:self.choosedListCount inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
     }
+    
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -92,6 +97,12 @@
     
     [self searchTableViewSet];
     [self searchCollectionViewSet];
+    
+    if (!self.isLocal) {
+        [self.mapView removeFromSuperview];
+        self.mapView = nil;
+    }
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -113,7 +124,7 @@
 
 - (void)searchTableViewSet{
     [self.showTableView registerNib:[UINib nibWithNibName:@"CHRJSearchTableViewCell" bundle:nil] forCellReuseIdentifier:@"CHRJSearchTableViewCell"];
-    [self requestDataWithSort:self.currentSort];
+    
     __weak typeof(self) mySelf = self;
     self.showTableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
         [mySelf requestDataWithSort:mySelf.currentSort];
@@ -121,6 +132,7 @@
     self.showTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [mySelf requestUPDataWithSort:mySelf.currentSort];
     }];
+    [self requestUPDataWithSort:self.currentSort];
 }
 
 - (void)buttonSetFun{
@@ -163,7 +175,7 @@
 
 - (void)requestUPDataWithSort:(NSString *)sort{
     NSString * url = @"http://api.meishi.cc/v5/search_category.php?format=json";
-    NSDictionary * dicTemp = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"step":@"",@"kw":@"",@"page":@(1),@"q":self.searchName,@"sort_sc":@"desc",@"sort":sort,@"gy":@"",@"mt":@""};
+    NSDictionary * dicTemp = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"step":@"",@"kw":@"",@"page":@"1",@"q":self.searchName,@"sort_sc":@"desc",@"sort":sort,@"gy":@"",@"mt":@""};
     if (self.isLocal) {
         dicTemp = @{@"lat":@(self.location.lat),@"lon":@(self.location.lon),@"source":@"iphone",@"format":@"json",@"page":@(1)};
         url = @"http://api.meishi.cc/v5/lsb_news.php?format=json";
@@ -234,6 +246,16 @@
         [mySelf.showTableView.mj_footer endRefreshing];
     }];
 }
+
+- (void)segementChose:(UISegmentedControl *)segementTemp{
+    NSInteger segementIndex = segementTemp.selectedSegmentIndex;
+    if (segementIndex == 0){
+        self.mapView.hidden = YES;
+    }else{
+        self.mapView.hidden = NO;
+    }
+}
+
 - (void)showHud{
     CHLog(@"HudSuccess");
 }
@@ -307,6 +329,29 @@
         rowMinWidth = (CHSCREENWIDTH - 20.f)/(self.choosedTypeArr.count + 1) - 20.f;
     }
     return rowMinWidth;
+}
+
+#pragma mark - MKMapViewDelegate
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+    [self.mapView setRegion:MKCoordinateRegionMake(userLocation.coordinate, MKCoordinateSpanMake(0.00005, 0.00005)) animated:YES];
+}
+
+- (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error{
+    [self showHUDWithText:@"获取位置信息失败" withTextFont:[UIFont systemFontOfSize:15.f] withTextColor:[UIColor blackColor] withTextSize:CGSizeMake(MAXFLOAT, 0.f) withAction:@selector(showHud) withIsAnimated:YES];
+}
+
+- (nullable MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation{
+    
+    NSString *ruseIdentifier = @"annotationView";
+    
+    MKAnnotationView *annotationView =  [mapView dequeueReusableAnnotationViewWithIdentifier:ruseIdentifier];
+    
+    if (!annotationView) {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotationView"];
+    }
+    annotationView.image = [UIImage imageNamed:@"ms_ui_location"];
+    annotationView.canShowCallout = NO;
+    return annotationView;
 }
 
 @end
