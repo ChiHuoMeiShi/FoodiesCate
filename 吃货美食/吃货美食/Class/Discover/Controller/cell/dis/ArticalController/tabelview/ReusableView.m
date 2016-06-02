@@ -20,21 +20,18 @@
     if (self)
     {
      
+        
+      
+
         _scrollView=[[UIScrollView alloc]init];
         _scrollView.frame=CGRectMake(0, 0, CHSCREENWIDTH, 200);
-        _scrollView.contentSize=CGSizeMake(CHSCREENWIDTH*4, 0);
+        _scrollView.contentSize=CGSizeMake(CHSCREENWIDTH*_imagesArr.count, 0);
         _scrollView.showsHorizontalScrollIndicator = YES;
         _scrollView.pagingEnabled=YES;
         _scrollView.delegate=self;
-        _pageControl=[[UIPageControl alloc]initWithFrame:CGRectMake(-50, 150, 100, 40)];
-        _pageControl.numberOfPages=4;
-        _pageControl.pageIndicatorTintColor=[UIColor  grayColor];
-        _pageControl.currentPageIndicatorTintColor=[UIColor whiteColor];
-        
         [self addSubview:_scrollView];
-        [self addSubview:_pageControl];
-        
         [self getArTicalData];
+        
         
         self.timer=[NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(update:) userInfo:nil repeats:YES];
         //获取当前的消息循环对象
@@ -50,7 +47,7 @@
     AFHTTPSessionManager * manger = [AFHTTPSessionManager manager];
     manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
     NSString *kUrl = @"http://api.meishi.cc/v5/health_main.php?format=json";
-    NSDictionary *parameters = @{@"lat" : @"34.60519775425116",@"lon" : @"112.4231392332194",@"source" : @"iphone",@"format" : @"json", @"cid" : @"",@"page":@"2"};
+    NSDictionary *parameters = @{@"lat" : @(self.location.lat),@"lon" : @(self.location.lon),@"source" : @"iphone",@"format" : @"json", @"cid" : @"",@"page":@"2"};
 
     [manger POST:kUrl parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 
@@ -61,9 +58,17 @@
         _imagesArr=[[NSMutableArray alloc]init];
         for (CHCTop_Images_list *imagesmodel in self.data.top_imgs ) {
             [_imagesArr addObject:imagesmodel.photo];
+            NSLog(@"+++++++++++++++%@",_imagesArr);
         }
 
         [self addImageview];
+        
+        
+        
+        
+        
+        [self addSubview:_pageControl];
+
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         CHLog(@"%@",error);
     }];
@@ -78,6 +83,10 @@
         [imageView sd_setImageWithURL:[NSURL URLWithString:self.imagesArr[i]]];
         [_scrollView  addSubview:imageView];
     }
+    _pageControl=[[UIPageControl alloc]initWithFrame:CGRectMake(150, 150, 100, 40)];
+    _pageControl.numberOfPages=_imagesArr.count;
+    _pageControl.pageIndicatorTintColor=[UIColor  grayColor];
+    _pageControl.currentPageIndicatorTintColor=[UIColor whiteColor];
     
 }
 /**
@@ -117,29 +126,7 @@
     
     //设置scrollView的偏移量等于新的偏移值
     [_scrollView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
-    
-
-    
-    
-    
-    
-//    //定时移动
-//    
-//    if (_isDragging == YES)
-//    {
-//        return ;
-//    }
-//    CGPoint offSet = _scrollView.contentOffset;
-//    offSet.x +=offSet.x;
-//    
-//    [_scrollView setContentOffset:offSet animated:YES];
-//
-//    if (offSet.x >=screenWidth*2)
-//    {
-//        offSet.x = screenWidth;
-//    }
-//   
-    
+  
 }
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
@@ -164,75 +151,7 @@
     //改变self.timer的优先级
     [runLoop addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
-//self.arr=[NSMutableArray array];
-//
-//_scrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.frame.size.height)];
-//_scrollView.contentSize=CGSizeMake([UIScreen mainScreen].bounds.size.width*4, 200);
-//_scrollView.backgroundColor=[UIColor purpleColor];
-//_scrollView.delegate=self;
-//_scrollView.bounces=NO;
-//_scrollView.pagingEnabled=YES;
-//_scrollView.showsHorizontalScrollIndicator=NO;
-//
-//
-//
-//
-//
-//_pageControl=[[UIPageControl alloc]initWithFrame:CGRectMake(170, 160, 100, 40)];
-//_pageControl.numberOfPages=4;
-//_pageControl.pageIndicatorTintColor=[UIColor  grayColor];
-//_pageControl.currentPageIndicatorTintColor=[UIColor whiteColor];
-//
-//[self addSubview:_scrollView];
-//[self addSubview:_pageControl];
-//
-//NSURLSession *session=[NSURLSession sharedSession];
-//NSString *urlStr=@"http://www.xuer.com/theapi.php?act=bannerlist";
-//NSURL *url=[NSURL URLWithString:urlStr.stringByRemovingPercentEncoding];
-//
-//NSMutableURLRequest *request=[[NSMutableURLRequest alloc]initWithURL:url];
-//[request setHTTPMethod:@"POST"];
-//
-//NSURLSessionDataTask *dataTask= [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
-//                                 {
-//                                     
-//                                     
-//                                     NSDictionary *dic=(NSDictionary *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-//                                     //                     NSLog(@"%@",dic);
-//                                     NSArray *arr=dic[@"data"];
-//                                     //                     NSLog(@"%@",arr);
-//                                     for (NSDictionary *dict in arr)
-//                                     {
-//                                         [self.arr  addObject:dict[@"img"] ];
-//                                         
-//                                     }
-//                                     //                     self.imageTotal=(int)self.arr.count;
-//                                     if (self.arr>=0)
-//                                     {
-//                                         dispatch_async(dispatch_get_main_queue(), ^
-//                                                        {
-//                                                            
-//                                                            for (int i=0;i< self.arr.count; i++)
-//                                                            {
-//                                                                
-//                                                                UIImageView *imageView=[[UIImageView alloc]initWithFrame:CGRectMake(i*[UIScreen mainScreen].bounds.size.width, 0, [UIScreen mainScreen].bounds.size.width, 200)];
-//                                                                [imageView sd_setImageWithURL:[NSURL URLWithString:self.arr[i]]];
-//                                                                [_scrollView  addSubview:imageView];
-//                                                            }
-//                                                            
-//                                                            
-//                                                            
-//                                                        });
-//                                     }
-//                                     
-//                                     
-//                                     
-//                                     
-//                                 }];
-//
-//
-//
-//[dataTask resume];
+
 
 
 
