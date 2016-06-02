@@ -21,7 +21,7 @@
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                 </webView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIu-Jm-uoL">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvx-SO-1oP">
                             <rect key="frame" x="28" y="17" width="46" height="30"/>
@@ -42,7 +42,7 @@
                     <constraints>
                         <constraint firstItem="kvx-SO-1oP" firstAttribute="top" secondItem="aIu-Jm-uoL" secondAttribute="top" constant="17" id="SGe-fd-o76"/>
                         <constraint firstItem="kvx-SO-1oP" firstAttribute="leading" secondItem="aIu-Jm-uoL" secondAttribute="leading" constant="28" id="wS6-HP-gif"/>
-                        <constraint firstAttribute="height" constant="64" id="xoQ-Fk-mxA"/>
+                        <constraint firstAttribute="height" constant="50" id="xoQ-Fk-mxA"/>
                     </constraints>
                 </view>
             </subviews>

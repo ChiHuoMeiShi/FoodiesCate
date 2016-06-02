@@ -386,6 +386,7 @@
 {
    
   CHCfaxian_list * faxianCelllist  = (CHCfaxian_list *)self.data.faxian_list[indexPath.section];
+    
    CHCFaXianDetailViewController *targetVC =[[CHCFaXianDetailViewController alloc] init];
 
     CHCWenZhanViewController *wenView=[[CHCWenZhanViewController alloc]init];
@@ -408,16 +409,22 @@
     
 
 }
-- (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
-    if(navigationType==UIWebViewNavigationTypeLinkClicked)
-    {
-        return NO;
-    }
-    else
-    {
-        return YES;
-    }
+- (void)scrollToRowAtIndexPath:(NSIndexPath *)indexPath atScrollPosition:(UITableViewScrollPosition)scrollPosition animated:(BOOL)animated
+{
+    scrollPosition=UITableViewScrollPositionTop;
+
 }
+
+//- (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
+//    if(navigationType==UIWebViewNavigationTypeLinkClicked)
+//    {
+//        return NO;
+//    }
+//    else
+//    {
+//        return YES;
+//    }
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
