@@ -26,7 +26,7 @@
     NSString * foodCountStr = [NSString stringWithFormat:@"%@",self.aiCreateFoodModel.total];
     self.showCountLabel.text = foodCountStr;
     CGRect myRect = [foodCountStr boundingRectWithSize:CGSizeMake(MAXFLOAT, 0.f) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
-    self.showCountLabelWidth.constant = myRect.size.width;
+    self.showCountLabelWidth.constant = myRect.size.width  * 1.5;
     
     CGFloat showImageWidth = (CHSCREENWIDTH - 20.f - 20.f)/3;
     self.firstImageViewWidth.constant = showImageWidth;

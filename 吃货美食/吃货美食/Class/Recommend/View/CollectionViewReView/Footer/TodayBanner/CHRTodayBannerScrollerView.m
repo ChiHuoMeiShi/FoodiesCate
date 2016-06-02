@@ -21,6 +21,7 @@ const CGFloat todayBannerHeigh = 80.f;
 }
 
 - (void)viewGetImagesView{
+    
     UIImageView * currentImageView = self.imagesArray[0];
     [self.currentView addSubview:currentImageView];
     
@@ -41,7 +42,7 @@ const CGFloat todayBannerHeigh = 80.f;
             UIImageView * imageViewTemp = [[UIImageView alloc]initWithFrame:CGRectMake(0.f, 0.f, CHSCREENWIDTH - 20.f, todayBannerHeigh)];
             imageViewTemp.image = image;
             [mySelf.imagesArray addObject:imageViewTemp];
-            if (idx >= mySelf.modelArray.count - 1) {
+            if (idx >= 3) {
                 [self viewGetImagesView];
             }
         }];

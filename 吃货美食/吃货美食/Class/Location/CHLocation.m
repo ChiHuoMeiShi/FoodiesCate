@@ -23,6 +23,7 @@
         location = [super allocWithZone:zone];
         location.lat = 34.f;
         location.lon = 112.f;
+        location.coordinate = (CLLocationCoordinate2D){34.f,112.f};
     });
     return location;
 }

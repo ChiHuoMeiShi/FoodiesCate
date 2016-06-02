@@ -11,11 +11,14 @@
 @implementation CHVGoods_infoTableViewCell
 -(void)setFaxian_list:(CHCfaxian_list *)faxian_list
 {
-    _faxian_list=faxian_list;
-    _tagLabel.text=faxian_list.tag;
-    _titleLabel.text=faxian_list.title;
-    [_goodImageView sd_setImageWithURL:[NSURL URLWithString:faxian_list.goods_info.image]];
-    _imageTitleLabel.text=faxian_list.goods_info.title;
+    if ([faxian_list.type isEqualToString:@"4"]) {
+        _faxian_list=faxian_list;
+        _tagLabel.text=faxian_list.tag;
+        _titleLabel.text=faxian_list.title;
+        [_goodImageView sd_setImageWithURL:[NSURL URLWithString:faxian_list.goods_info.image]];
+        _imageTitleLabel.text=faxian_list.goods_info.title;
+    }
+    
     
 }
 - (void)awakeFromNib {
