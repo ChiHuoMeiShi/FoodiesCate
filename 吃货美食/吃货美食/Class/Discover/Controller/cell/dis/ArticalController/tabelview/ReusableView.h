@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UIImageView+WebCache.h"
 #import "CHCArticalData.h"
+#import "CHLocation.h"
 @interface ReusableView : UIView<UIScrollViewDelegate>
 {
     UIScrollView *_scrollView;
@@ -20,4 +21,5 @@
 @property (nonatomic,assign) BOOL isDragging;
 @property(nonatomic,strong) CHCArticalData *data;
 @property(nonatomic,strong)NSMutableArray *imagesArr;
+@property (nonatomic,strong)CHLocation * location;
  @end
