@@ -58,7 +58,7 @@
         _imagesArr=[[NSMutableArray alloc]init];
         for (CHCTop_Images_list *imagesmodel in self.data.top_imgs ) {
             [_imagesArr addObject:imagesmodel.photo];
-            NSLog(@"+++++++++++++++%@",_imagesArr);
+           
         }
 
         [self addImageview];
@@ -83,7 +83,7 @@
         [imageView sd_setImageWithURL:[NSURL URLWithString:self.imagesArr[i]]];
         [_scrollView  addSubview:imageView];
     }
-    _pageControl=[[UIPageControl alloc]initWithFrame:CGRectMake(150, 150, 100, 40)];
+    _pageControl=[[UIPageControl alloc]initWithFrame:CGRectMake(CHSCREENWIDTH/2-50, 150, 100, 40)];
     _pageControl.numberOfPages=_imagesArr.count;
     _pageControl.pageIndicatorTintColor=[UIColor  grayColor];
     _pageControl.currentPageIndicatorTintColor=[UIColor whiteColor];
