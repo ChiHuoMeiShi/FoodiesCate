@@ -59,7 +59,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  self.automaticallyAdjustsScrollViewInsets = NO;
+ 
     self.title=@"发现";
     
     [self getTableViewData];
@@ -75,7 +75,7 @@
        [self getTableViewDataWithButtom];
     }];
 
-
+// self.automaticallyAdjustsScrollViewInsets = NO;
 }
 -(void)getTableViewDataWithButtom
 {
