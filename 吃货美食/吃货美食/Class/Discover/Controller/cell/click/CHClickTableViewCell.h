@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *commentImageView;
 @property (weak, nonatomic) IBOutlet UILabel *CommentHongTitle;
 
+
 @property (weak, nonatomic) IBOutlet UILabel *COmmentStepLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *CommentWeiLabel;
