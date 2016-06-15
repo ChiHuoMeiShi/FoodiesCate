@@ -59,7 +59,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-  
+ 
     self.title=@"发现";
     
     [self getTableViewData];
@@ -75,7 +75,7 @@
        [self getTableViewDataWithButtom];
     }];
 
-
+// self.automaticallyAdjustsScrollViewInsets = NO;
 }
 -(void)getTableViewDataWithButtom
 {
@@ -373,6 +373,7 @@
 //每个分组上边预留的空白高度
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
+    
      return 5;
 }
 //每个分组下边预留的空白高度

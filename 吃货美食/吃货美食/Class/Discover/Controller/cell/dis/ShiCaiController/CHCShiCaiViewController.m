@@ -5,7 +5,7 @@
 //  Created by eric on 16/5/14.
 //  Copyright © 2016年 赵天. All rights reserved.
 //
-#define W (CHSCREENWIDTH-10*5)/4
+#define W (CHSCREENWIDTH-10*3-60*2)/4
 #import "CHCShiCaiViewController.h"
 #import "CHCVegetableTableView.h"
 #import "CHFruitViewTableVIew.h"
@@ -35,7 +35,7 @@
       [super viewDidLoad];
     self.title=@"当季食材";
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barItemWithImageName:@"ms_back_icon2" withSelectImage:@"ms_back_icon2" withHorizontalAlignment:UIControlContentHorizontalAlignmentLeft withTittle:@"返回" withTittleColor:[UIColor redColor] withTarget:self action:@selector(navBackAction) forControlEvents:UIControlEventTouchUpInside];
-    UIButton *vegetablebutton=[[UIButton alloc]initWithFrame:CGRectMake(10, CHSCREENHEIGH-45, W , 30)];
+    UIButton *vegetablebutton=[[UIButton alloc]initWithFrame:CGRectMake(60, CHSCREENHEIGH-45, W , 30)];
     [vegetablebutton setTitle:@"蔬菜" forState:UIControlStateNormal];
     [vegetablebutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
@@ -43,14 +43,14 @@
     
     [vegetablebutton addTarget:self action:@selector(shuCai:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:vegetablebutton];
-    UIButton *fruitbutton=[[UIButton alloc]initWithFrame:CGRectMake(10+W+10, CHSCREENHEIGH-45, W, 30)];
+    UIButton *fruitbutton=[[UIButton alloc]initWithFrame:CGRectMake(60+W+10, CHSCREENHEIGH-45, W, 30)];
     [fruitbutton setTitle:@"水果" forState:UIControlStateNormal];
     [fruitbutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [fruitbutton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
     [fruitbutton addTarget:self action:@selector(fruit:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:fruitbutton];
 
-    UIButton *meatablebutton=[[UIButton alloc]initWithFrame:CGRectMake(10+(W+10)*2, CHSCREENHEIGH-45, W, 30)];
+    UIButton *meatablebutton=[[UIButton alloc]initWithFrame:CGRectMake(60+(W+10)*2, CHSCREENHEIGH-45, W, 30)];
     [meatablebutton setTitle:@"肉类" forState:UIControlStateNormal];
     [meatablebutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [meatablebutton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
@@ -59,7 +59,7 @@
     [meatablebutton addTarget:self action:@selector(meat:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:meatablebutton];
 
-    UIButton *fiveCrealsbutton=[[UIButton alloc]initWithFrame:CGRectMake(10+(W+10)*3, CHSCREENHEIGH-15-30, W, 30)];
+    UIButton *fiveCrealsbutton=[[UIButton alloc]initWithFrame:CGRectMake(60+(W+10)*3, CHSCREENHEIGH-15-30, W, 30)];
     [fiveCrealsbutton setTitle:@"五谷" forState:UIControlStateNormal];
    [fiveCrealsbutton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [fiveCrealsbutton setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
