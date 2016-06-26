@@ -52,31 +52,36 @@
         NSDictionary * dic = (NSDictionary *)responseObject;
         int code = [[dic objectForKey:@"code"] intValue];
 
-        if ([mySelf.accountTextField.text isEqualToString:@""]) {
-            
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"警告" message:@"账号不能为空" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
-            [alertController addAction:okAction];
-            [self presentViewController:alertController animated:YES completion:nil];
-        }
-        if ([mySelf.passwdTextField.text isEqualToString:@""]) {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"警告" message:@"密码不能为空" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
-            [alertController addAction:okAction];
-            [self presentViewController:alertController animated:YES completion:nil];
-        }
+        
         if (code == 1) {
             CHUserDefaults *userDefault = [CHUserDefaults shareUserDefault];
             [userDefault setUserDict:dic];
-            [self.navigationController popToRootViewControllerAnimated:YES];
+            [mySelf.navigationController popToRootViewControllerAnimated:YES];
             
-        }else{
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"警告" message:@"请输入正确的账号密码" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
-            [alertController addAction:okAction];
-            [self presentViewController:alertController animated:YES completion:nil];
         }
+
+//            if ([mySelf.accountTextField.text isEqualToString:@""]) {
+//                
+//                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"警告" message:@"账号不能为空" preferredStyle:UIAlertControllerStyleAlert];
+//                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
+//                [alertController addAction:okAction];
+//                [self presentViewController:alertController animated:YES completion:nil];
+//            }
+//            if ([mySelf.passwdTextField.text isEqualToString:@""]) {
+//                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"警告" message:@"密码不能为空" preferredStyle:UIAlertControllerStyleAlert];
+//                UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
+//                [alertController addAction:okAction];
+//                [self presentViewController:alertController animated:YES completion:nil];
+//            }
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        NSLog(@"error%@",error);
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"登录失败" message:@"请检查网络或者输入正确的账号密码" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:okAction];
+        [mySelf presentViewController:alertController animated:YES completion:nil];
     }];
 }
 

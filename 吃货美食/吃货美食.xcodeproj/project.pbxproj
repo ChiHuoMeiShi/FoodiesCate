@@ -104,7 +104,7 @@
 		07A458361CF08195001CC3C8 /* CHRPublishObjGetDic.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CF4A51CF00CB900A2D830 /* CHRPublishObjGetDic.m */; };
 		07A4583F1CF085EA001CC3C8 /* CHCaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A4583D1CF085EA001CC3C8 /* CHCaiViewController.m */; };
 		07A458401CF085EA001CC3C8 /* CHCaiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A4583E1CF085EA001CC3C8 /* CHCaiViewController.xib */; };
-		6302A48352870C94A21B65CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2714D066AF4EF14D1D1B684 /* libPods.a */; };
+		3BD7218856D547AD5E370AF9 /* libPods-吃货美食.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4C72DC55A27DB5994AA13D5 /* libPods-吃货美食.a */; };
 		7A05CA781CF71A510055E679 /* CHRCommitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A05CA761CF71A510055E679 /* CHRCommitViewController.m */; };
 		7A05CA791CF71A510055E679 /* CHRCommitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A05CA771CF71A510055E679 /* CHRCommitViewController.xib */; };
 		7A05CA7D1CF730940055E679 /* CHRCommitCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A05CA7B1CF730930055E679 /* CHRCommitCollectionViewCell.m */; };
@@ -526,7 +526,8 @@
 		07A4583C1CF085EA001CC3C8 /* CHCaiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCaiViewController.h; sourceTree = "<group>"; };
 		07A4583D1CF085EA001CC3C8 /* CHCaiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCaiViewController.m; sourceTree = "<group>"; };
 		07A4583E1CF085EA001CC3C8 /* CHCaiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHCaiViewController.xib; sourceTree = "<group>"; };
-		5E24DDEC6F9C631EC52496A0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		4916C712E7FF46E7F3A7EFAC /* Pods-吃货美食.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-吃货美食.release.xcconfig"; path = "Pods/Target Support Files/Pods-吃货美食/Pods-吃货美食.release.xcconfig"; sourceTree = "<group>"; };
+		6410C00A9DD1FD06BBB6C839 /* Pods-吃货美食.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-吃货美食.debug.xcconfig"; path = "Pods/Target Support Files/Pods-吃货美食/Pods-吃货美食.debug.xcconfig"; sourceTree = "<group>"; };
 		7A05CA751CF71A510055E679 /* CHRCommitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRCommitViewController.h; sourceTree = "<group>"; };
 		7A05CA761CF71A510055E679 /* CHRCommitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRCommitViewController.m; sourceTree = "<group>"; };
 		7A05CA771CF71A510055E679 /* CHRCommitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRCommitViewController.xib; sourceTree = "<group>"; };
@@ -785,6 +786,7 @@
 		7ADF0E391CF1ED0A00273AA0 /* CHRImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRImageButton.h; sourceTree = "<group>"; };
 		7ADF0E3A1CF1ED0A00273AA0 /* CHRImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRImageButton.m; sourceTree = "<group>"; };
 		7AE6A9741CFF0EC8004A24A7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B4C72DC55A27DB5994AA13D5 /* libPods-吃货美食.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-吃货美食.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B716865D1CE8257100BEBA3E /* CateUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CateUserInfo.h; sourceTree = "<group>"; };
 		B716865E1CE8257100BEBA3E /* CateUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CateUserInfo.m; sourceTree = "<group>"; };
 		B71686601CE8261100BEBA3E /* CateImgsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CateImgsModel.h; sourceTree = "<group>"; };
@@ -932,8 +934,6 @@
 		B7F615691CDCA17700AF1697 /* CHRecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHRecommendViewController.h; sourceTree = "<group>"; };
 		B7F6156A1CDCA17700AF1697 /* CHRecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHRecommendViewController.m; sourceTree = "<group>"; };
 		B7F6156B1CDCA17700AF1697 /* CHRecommendViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CHRecommendViewController.xib; sourceTree = "<group>"; };
-		C2714D066AF4EF14D1D1B684 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E515E1C7B1E61D319A6417F9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -946,7 +946,7 @@
 				B7A73B5A1CF996C20071D71C /* libsqlite3.tbd in Frameworks */,
 				B7E01C0B1CF1F85F0079815C /* libxml2.2.tbd in Frameworks */,
 				B7E01C0C1CF1F85F0079815C /* libxml2.tbd in Frameworks */,
-				6302A48352870C94A21B65CA /* libPods.a in Frameworks */,
+				3BD7218856D547AD5E370AF9 /* libPods-吃货美食.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1494,18 +1494,9 @@
 				B7A73B581CF996C20071D71C /* libsqlite3.tbd */,
 				B7E01C091CF1F85F0079815C /* libxml2.2.tbd */,
 				B7E01C0A1CF1F85F0079815C /* libxml2.tbd */,
-				C2714D066AF4EF14D1D1B684 /* libPods.a */,
+				B4C72DC55A27DB5994AA13D5 /* libPods-吃货美食.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		2769BB56C48952D44C8D5705 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E515E1C7B1E61D319A6417F9 /* Pods.debug.xcconfig */,
-				5E24DDEC6F9C631EC52496A0 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		7A05CA741CF71A0E0055E679 /* Commit */ = {
@@ -2360,8 +2351,8 @@
 			children = (
 				B71ED8501CDB41650035F6BE /* 吃货美食 */,
 				B71ED84F1CDB41650035F6BE /* Products */,
-				2769BB56C48952D44C8D5705 /* Pods */,
 				097A2F15618DB9C1D6C68FEC /* Frameworks */,
+				BE759952427B8864AD625E98 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2963,6 +2954,15 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		BE759952427B8864AD625E98 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6410C00A9DD1FD06BBB6C839 /* Pods-吃货美食.debug.xcconfig */,
+				4916C712E7FF46E7F3A7EFAC /* Pods-吃货美食.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2970,12 +2970,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B71ED8651CDB41660035F6BE /* Build configuration list for PBXNativeTarget "吃货美食" */;
 			buildPhases = (
-				9E0C5D3879B76141904D3696 /* Check Pods Manifest.lock */,
+				42C5AC7063ECEBA5AB1D35EE /* [CP] Check Pods Manifest.lock */,
 				B71ED84A1CDB41650035F6BE /* Sources */,
 				B71ED84B1CDB41650035F6BE /* Frameworks */,
 				B71ED84C1CDB41650035F6BE /* Resources */,
-				B23739395484FCD16D693502 /* Embed Pods Frameworks */,
-				C2D34278EF57DECB058B6B39 /* Copy Pods Resources */,
+				A27E8E6B85B6C36E8783B9E9 /* [CP] Embed Pods Frameworks */,
+				6C735F8221604FD05BB4945D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2998,7 +2998,7 @@
 				TargetAttributes = {
 					B71ED84D1CDB41650035F6BE = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = J498C47ANE;
+						DevelopmentTeam = CCQ5LLLX4L;
 					};
 				};
 			};
@@ -3140,14 +3140,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9E0C5D3879B76141904D3696 /* Check Pods Manifest.lock */ = {
+		42C5AC7063ECEBA5AB1D35EE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3155,34 +3155,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B23739395484FCD16D693502 /* Embed Pods Frameworks */ = {
+		6C735F8221604FD05BB4945D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-吃货美食/Pods-吃货美食-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C2D34278EF57DECB058B6B39 /* Copy Pods Resources */ = {
+		A27E8E6B85B6C36E8783B9E9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-吃货美食/Pods-吃货美食-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -3508,6 +3508,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "d84f27f2-e70c-498d-a181-5691e151a743";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3546,6 +3547,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "fbacd8a6-62f6-4339-87ff-31490c5dd4a0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -3554,13 +3556,13 @@
 		};
 		B71ED8661CDB41660035F6BE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E515E1C7B1E61D319A6417F9 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 6410C00A9DD1FD06BBB6C839 /* Pods-吃货美食.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3601,7 +3603,7 @@
 					"\"SystemConfiguration\"",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TianGeGe.cn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ChiHuoMeiShi.CJZ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -3610,13 +3612,13 @@
 		};
 		B71ED8671CDB41660035F6BE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E24DDEC6F9C631EC52496A0 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 4916C712E7FF46E7F3A7EFAC /* Pods-吃货美食.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Lamco Sinyo education technology co., LTD (CCQ5LLLX4L)";
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3657,7 +3659,7 @@
 					"\"SystemConfiguration\"",
 					"-licucore",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.TianGeGe.cn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ChiHuoMeiShi.CJZ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

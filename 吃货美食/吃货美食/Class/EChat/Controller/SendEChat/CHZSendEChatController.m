@@ -103,8 +103,7 @@
 
                     if ([self.chTextView.text rangeOfString:@" "].location == NSNotFound) {
                         [myManager.messageRequest POST:encodeSendUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                            NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-                            CHLog(@"发送成功返回返回信息%@",str);
+
                             self.imageData = nil;
                             self.imageName = nil;
                             self.chTextView.text = nil;
@@ -152,9 +151,8 @@
         [myManager.messageRequest POST:finalUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             
             //        NSDictionary * dic = (NSDictionary *)responseObject;
-            NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+
             CHLog(@"输入的内容是%@",self.chTextView.text);
-            CHLog(@"%@",str);
             self.imageData = nil;
             self.imageName = nil;
             self.chTextView.text = nil;
